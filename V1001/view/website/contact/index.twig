@@ -1,0 +1,12 @@
+{% extends "layout/layout" %}
+{% block meta %}
+    {{ headTitle('Liên hệ').setSeparator(' - ').setAutoEscape(false)|raw }}
+    <meta name="keywords" content="Liên hệ">
+    <meta name="description" content="Liên hệ">
+    <meta property="og:image" content="{{ getBusinessLogo() }}">
+    <meta property="og:url" content="{{ getCurrentUrl() }}">
+    <meta property="og:title" content="Liên hệ">
+    <link rel="canonical" href="{{ getCurrentUrl() }}">
+{% endblock %}
+{% block body %}
+{% endblock %}

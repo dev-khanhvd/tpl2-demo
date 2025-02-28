@@ -1,0 +1,74 @@
+<div class="header-top bg-white">
+    <div class="container d-flex align-items-center justify-content-between">
+        <a href="tel:{{ getKeyContentValue('HOTLINE') }}" class="d-flex align-items-center gap-2">
+            <i class="fal fa-phone-alt"></i>
+            <div>
+                Hotline: <b>{{ getKeyContentValue('HOTLINE') }}</b>
+            </div>
+        </a>
+        <div class="d-flex align-items-center gap-2 social-header">
+            <a href="{{ getKeyContentValue('SOCIAL_FACEBOOK') }}" title="Facebook">
+                <i class="fab fa-facebook-f" style="font-size: 13px"></i>
+            </a>
+            <a href="{{ getKeyContentValue('SOCIAL_SHOPEE') }}" title="Shopee">
+                <i class="fab fa-shopify"></i>
+            </a>
+            <a href="{{ getKeyContentValue('SOCIAL_TIKTOK') }}" title="Tiktok">
+                <i class="fab fa-tiktok" style="font-size: 13px"></i>
+            </a>
+            <a href="{{ getKeyContentValue('SOCIAL_YOUTUBE') }}" title="Youtube">
+                <i class="fab fa-youtube" style="font-size: 13px"></i>
+            </a>
+            {{ getTranslate() | raw }}
+            {% if(hasIdentity() is not empty) %}
+                {% set user = getUser() %}
+                <span></span>
+                <div class="position-relative user">
+                    <a href="/profile" class="user-btn d-flex align-items-center gap-2">
+                        <i class="fas fa-user-circle"></i>
+                        {{ user.fullName }}
+                    </a>
+                    <div class="user-menu-header">
+                        <a href="/profile">
+                            {{ translate('Tài khoản của tôi') }}
+                        </a>
+                        <a href="/order">
+                            {{ translate('Quản lý đơn hàng') }}
+                        </a>
+                        <a href="/profile">
+                            {{ translate('Hạng thành viên') }}
+                        </a>
+                        <a href="/user/signout">
+                            {{ translate('Đăng xuất') }}
+                        </a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<header class="bg-white">
+    <div class="container header-container d-flex align-items-center justify-content-between">
+        <a href="/" title="home">
+            <img src="{{ getBusinessLogo() }}" width="100" height="48.5" alt="logo" class="img-fluid img-logo">
+        </a>
+
+        <div class="heder-center" style="position: relative">
+            <form action="/search" id="_searchForm" class="position-relative d-flex align-items-center">
+                <input aria-label="search" type="text" class="form-control _txtSearch" name="q" placeholder="{{ translate('Tìm kiếm sản phẩm tại đây') }}" required>
+                <i class="fal fa-search"></i>
+                <button class="btn fw-semibold" type="submit">{{ translate('Tìm kiếm') }}</button>
+            </form>
+            <div id="searchFolding" class="_searchFolding"></div>
+        </div>
+        {% set quantity = serviceCart().totalQuantities %}
+        <div class="header-right d-flex align-items-center justify-content-end mini-cart _miniCart">
+            <a href="/cart" title="{{ translate('Giỏ hàng') }}" class="header-cart position-relative">
+                <div class="cart-quantity cart-text-quantity position-absolute d-flex align-items-center justify-content-center fw-bold _totalQuantity">{{ quantity }}</div>
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M32.1973 28.5021L35.7527 19.5697C36.1743 18.5099 36.054 17.4068 35.4136 16.4629C34.7731 15.5191 33.7924 15 32.6525 15H11.5627H9.92425H4.82031C4.36735 15 4 15.3674 4 15.8203C4 16.2744 4.36735 16.6406 4.82031 16.6406H10.5777L15.2991 28.501C15.8149 29.7971 17.0047 30.6033 18.3983 30.6033H29.097C30.4917 30.6033 31.6815 29.7971 32.1962 28.501L32.1973 28.5021ZM18.3994 33.2539C19.7312 33.2539 20.8105 34.3332 20.8105 35.6639C20.8105 36.9957 19.7312 38.075 18.3994 38.075C17.0687 38.075 15.9894 36.9957 15.9894 35.6639C15.9894 34.3332 17.0687 33.2539 18.3994 33.2539ZM29.0981 33.2539C30.4299 33.2539 31.5092 34.3332 31.5092 35.6639C31.5092 36.9957 30.4299 38.075 29.0981 38.075C27.7663 38.075 26.687 36.9957 26.687 35.6639C26.687 34.3332 27.7663 33.2539 29.0981 33.2539Z" fill="#D53C00"></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</header>

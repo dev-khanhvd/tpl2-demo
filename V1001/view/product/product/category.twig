@@ -1,0 +1,197 @@
+{% extends "layout/layout" %}
+{% block meta %}
+    {{ headTitle(category.name).setAutoEscape(false)|raw }}
+    <meta name="description" content="{{ category.metaDescription?:category.name }}">
+    <meta name="keywords" content="{{ category.metaKeywords?:category.name }}">
+    <meta property="og:url" content="{{ category.canonicalLink }}">
+    <meta property="og:title" content="{{ category.metaTitle?:category.name }}">
+    <meta property="og:description" content="{{ category.metaDescription }}">
+    <meta property="og:image" content="{{ category.imageUri }}">
+    <meta property="og:type" content="catgegory">
+    <link rel="canonical" href="{{ category.canonicalLink }}">
+{% endblock %}
+
+{% block body %}
+    {% set icpp = getParam('icpp') %}
+    {% set page = getParam('page') %}
+    <input type="hidden" id="_pagehide" data-url="{{ category.viewLink }}" data-cId="" data-path="{{ category.viewLink }}" data-icpp="{{ icpp }}" data-page="{{ page }}">
+    <input type="hidden" class="_totalProduct" value="{{ paginator.pages.totalItemCount }}">
+    <div class="app-main-content pt-3 pb-3">
+        <div class="container">
+            {% set buildBread = buildBreadcrumbs(category) %}
+            {{ render_breadcrumb(buildBread) }}
+            <div class="page-products-category d-flex flex-wrap">
+                <div class="section-filter">
+                    <a class="button_filter">
+                        <span>{{ translate('Bộ lọc') }}</span>
+                        <i class="fa-solid fa-filter"></i>
+                    </a>
+                    <div class="section-item bg-white ">
+                        {% if category.childs is not empty %}
+                        <div class="filter-group">
+                            <div class="filter-title">{{ category.name }}</div>
+                            {% for c in category.childs %}
+                            <div class="filter-item pt-1 pb-1">
+                                <a rel="nofollow" class="filter-action d-inline-block "
+                                   href=" {{c.viewLink}}" title="{{c.name}}">
+                                    {{c.name}}
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        <div class="filter-group">
+                            <div class="filter-title">{{ translate('Giá') }}</div>
+                            {% set price_ranges = [
+                                ["0", "200000"],
+                                ["200000", "350000"],
+                                ["350000", "500000"],
+                                ["500000", "800000"],
+                                ["800000", "1000000"],
+                                ["1000000", "0"],
+                            ] %}
+                            {% set price_param = getParam('price') %}
+                            {% for range in price_ranges %}
+                                {% set min_price = range[0]|number_format(0, '.', '') %}
+                                {% set max_price = range[1]|number_format(0, '.', '') %}
+                                {% set range_string = min_price ~ ':' ~ max_price %}
+                                {% if(range_string in price_param) %}
+                                        {% set filter = removeFilter('price', range_string) %}
+                                        {% set checked =  'checked' %}
+                                    {% else %}
+                                        {% set filter = addFilter('price', range_string) %}
+                                        {% set checked =  '' %}
+                                {% endif %}
+                                <div class="priceFilter form-check filter-item pt-1 pb-1 mb-0 ">
+                                    <input aria-label="filter" class="form-check-input filter-check" type="checkbox"
+                                           value="{{ filter }}" {{ checked }}>
+                                    <label class="form-check-label">
+                                        {% if(min_price == 0 and max_price == 200000) %}
+                                            Dưới {{ max_price/1000|number_format(0, '.', '') ~ 'k' }}
+                                            {% elseif (min_price == 1000000 and max_price == 0) %}
+                                                Trên 1 triệu
+                                            {% else %}
+                                            Từ {{ min_price/1000|number_format(0, '.', '') ~ 'k' }} - {{ max_price/1000|number_format(0, '.', '') ~ 'k' }}
+                                        {% endif %}
+                                    </label>
+                                </div>
+                            {% endfor %}
+                            </div>
+                        {% set allAttr = getAllAttributes({'categoryId':category.id,'loadViewAttr': true}) %}
+
+                        {% if allAttr is not empty %}
+                            {% for c in allAttr %}
+                                {% set categoryIds = category.id %}
+                                {% if c.options['categoryIds'] %}
+                                    {% set categoryIds = c.options['categoryIds'] | join(',') %}
+                                {% endif %}
+                                <div class="filter-group _itemAttrWrapper">
+                                    <div class="filter-title _loadItemAttrs" data-id="{{ c.id }}" data-column="{{ c.column }}" data-categoryId="{{ categoryIds }}" data-attrColumnValues="{{ attrColumnValues | json_encode() }}">{{ c.name }}</div>
+                                    <div class="item-attr-wrp _itemAttrList"></div>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="section-main">
+                    <div class="section-item section-padding bg-white">
+                        <h1 class="cat-h1">{{ category.name }}</h1>
+                        <div class="section-banner">
+                            {% if(category.imageUri) %}
+                                <a href="javascript:void(0)" title="{{ category.name }}">
+                                    <img class="img-fluid" alt="{{ category.name }}" src="{{ category.imageUri }}">
+                                </a>
+                                {% else %}
+                                    <a href="javascript:void(0)" title="{{ category.name }}">
+                                        <img class="img-fluid" alt="{{ category.name }}" src="https://dummyimage.com/974x243/163645/fff">
+                                    </a>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                    <div class="section-item section-padding bg-white section-filter-sort d-flex align-items-center gap-4">
+                        <a rel="nofollow" href="{{ category.viewLink }}" class="filter-sort position-relative {{ shows == '' ? 'active' : '' }}">
+                           {{ translate('Sản phẩm mới nhất') }}
+                        </a>
+                        <a rel="nofollow" href="{{ addFilter('show', 'priceAsc', 2) }}" class="filter-sort position-relative {{ shows[0] == 'priceAsc' ? 'active' : '' }}">
+                            {{ translate('Giá tăng dần') }}
+                        </a>
+                        <a rel="nofollow" href="{{ addFilter('show', 'priceDesc', 2) }}" class="filter-sort position-relative {{ shows[0] == 'priceDesc' ? 'active' : '' }}">
+                            {{ translate('Giá giảm dần') }}
+                        </a>
+                    </div>
+                    {% if(paginator.currentModels is not empty) %}
+                        <div class="section-item section-products d-flex flex-wrap _productBlock">
+                            {% set t = 1 %}
+                            {% for p in paginator.currentModels %}
+                                {% set priceDiscount = p.priceAfterDiscount %}
+                                <a href="{{ p.viewLink }}"
+                                   title="{{ p.name }}" class="layout-product-item _productItem"
+                                   target="_blank" data-id="{{ p.id }}" data-type="{{ p.typeId }}">
+                                    {% if t <= 5 %}
+                                        <img src="{{ p.thumbnailUri }}" alt="{{ p.name }}" class="img-fluid layout-img">
+                                    {% else %}
+                                        <img loading="lazy" src="{{ p.thumbnailUri }}"
+                                             alt="{{ p.name }}" class="img-fluid layout-img">
+                                    {% endif %}
+
+                                    <div class="layout-content">
+                                        <div class="layout-name">{{ p.name }}</div>
+                                        {% if(p.calcDiscountPercent > 0) %}
+                                            <div class="layout-info">
+                                                <div class="item-info item-percent">{{ translate('Giảm giá') }} {{ p.calcDiscountPercent }}
+                                                    %
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                        {% if(p.contactPrice or (p.price == 0)) %}
+                                            <div class="layout-public-price flex-wrap gap-1">
+                                                <div class="price">
+                                                    {{ translate('Liên hệ') }}
+                                                </div>
+                                                <div class="sold-out"></div>
+                                            </div>
+                                        {% elseif (priceDiscount > 0) %}
+                                            <div class="layout-origin-price">
+                                                {{ p.price|number_format(0) }}<sup>₫</sup>
+                                            </div>
+                                            <div class="layout-public-price flex-wrap gap-1">
+                                                <div class="price">
+                                                    {{ priceDiscount|number_format(0) }}<sup>₫</sup>
+                                                </div>
+                                                <div class="sold-out"></div>
+                                            </div>
+                                        {% elseif (p.oldPrice > 0) %}
+                                            <div class="layout-origin-price">
+                                                {{ p.oldPrice|number_format(0) }}<sup>₫</sup>
+                                            </div>
+                                            <div class="layout-public-price flex-wrap gap-1">
+                                                <div class="price">
+                                                    {{ p.price|number_format(0) }}<sup>₫</sup>
+                                                </div>
+                                                <div class="sold-out"></div>
+                                            </div>
+                                        {% else %}
+                                            <div class="layout-public-price flex-wrap gap-1">
+                                                <div class="price">
+                                                    {{ p.price|number_format(0) }}<sup>₫</sup>
+                                                </div>
+                                                <div class="sold-out"></div>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                </a>
+                                {% set t = t + 1 %}
+                            {% endfor %}
+                            <div class="container-fluid mt-3 mb-3">
+                                <div class="text-center">
+                                    {{ render_paginator(paginator) }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

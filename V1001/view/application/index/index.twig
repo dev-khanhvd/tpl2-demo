@@ -1,0 +1,455 @@
+{% extends "layout/layout" %}
+{% block meta %}
+    {{ headTitle('Trang chủ').setSeparator(' - ').setAutoEscape(false)|raw }}
+    <meta name="keywords" content="{{ getKeyContentValue('META_KEYWORDS') }}">
+    <meta name="description" content="{{ getKeyContentValue('META_DESCRIPTION') }}">
+    <meta property="og:title" content="{{ getKeyContentValue('META_TITLE') }}">
+    <meta property="og:url" content="{{ getCurrentUrl() }}">
+    <meta property="og:image" content="{{ getBusinessLogo() }}">
+    <link rel="canonical" href="{{ getCurrentUrl() }}">
+{% endblock %}
+{% block body %}
+    <h1 class="d-none">{{ getKeyContentValue('META_TITLE') }}</h1>
+    {% set checkUser = false %}
+    {% set user = null %}
+    {% if(hasIdentity() is not empty) %}
+        {% set checkUser = true %}
+        {% set user = getUser() %}
+    {% endif %}
+    <div class="app-main-content pt-3 pb-3">
+        <div class="page-home">
+            <div class="container">
+                <div class="d-flex gap-3 section-top mb-3">
+                    <div class="bg-white section-top-left">
+                        <p class="mb-0 pe-3 ps-3 pt-2 pb-2 fs-6 fw-bold">{{ translate('Danh mục') }}</p>
+                        <div class="section-menu">
+                            {% if(menuIsExisted({'type': 'header' })) %}
+                                {% include 'other/menu_custom' %}
+                            {% else %}
+                                {% include 'other/menu' %}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="section-top-center">
+                        <div class="banner-slide banner-carousel">
+                            {% set banner_home = getBannerByPositionCode('BANNER_HOME') %}
+                            {% if(banner_home is not empty) %}
+                                {% set i = 1 %}
+                                {% for c in banner_home %}
+                                    <div class="item">
+                                        <a {{ c.target }} href="{{ c.viewLink }}" title="{{ c.name }}">
+                                            {% if i == 1 %}
+                                                <img class="img-fluid" alt="{{ c.name }}" src="{{ c.imageSrc }}">
+                                            {% else %}
+                                                <img src="{{ linkSystemImage('/images/grey.gif') }}"
+                                                     class="img-fluid" alt="{{ c.name }}" data-lazy="{{ c.imageSrc }}">
+                                            {% endif %}
+                                        </a>
+                                    </div>
+                                    {% set i = i + 1 %}
+                                {% endfor %}
+                            {% else %}
+                                <div class="item">
+                                    <a href="/" title="demo">
+                                        <img src="https://dummyimage.com/600x300/163645/fff" class="img-fluid" alt="demo">
+                                    </a>
+                                </div>
+                            {% endif %}
+
+                        </div>
+                        <div class="section-icon mt-3 p-3 bg-white d-flex justify-content-between text-center">
+                            {% set banner_mini = getCurrentBannerByCode('BANNER_MINI_HOME',{'limit':6}) %}
+                            {% if(banner_mini is not empty) %}
+                                {% for h in banner_mini %}
+                                    <div>
+                                        <img src="{{ h.imagesrc }}" alt="{{ h.name }}" class="img-fluid mb-2">
+                                        <div>
+                                            {{ h.intro }}
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% else %}
+                                {% for i in 1..6 %}
+                                    <div>
+                                        <img src="https://dummyimage.com/48x48/163645/fff"
+                                             alt="demo" class="img-fluid mb-2">
+                                        <div>
+                                            Chiết khấu <br>
+                                            sản phẩm
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="section-top-right">
+                        <div class="section-user mb-3">
+                            <div class="section-user-top">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div style="width: 100%">
+                                        {% if(checkUser) %}
+                                            <p class="fw-medium">{{ translate('Xin chào') }} {{ user.fullName }}!</p>
+                                            <p><a href="/profile">{{ translate('Tài khoản của tôi') }}</a></p>
+                                        {% else %}
+                                            <p class="fw-medium">{{ translate('Xin chào') }}!</p>
+                                            <p>{{ translate('Đăng nhập để lưu lại lịch sử mua hàng') }}</p>
+                                        {% endif %}
+
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    {% if(checkUser) %}
+                                        <a href="/profile" class="text-center p-2 btn-guest"
+                                           title="{{ translate('Thông tin chung') }}">
+                                            {{ translate('Thông tin chung') }}
+                                        </a>
+                                        <a href="/user/signout" class="text-center p-2 btn-guest"
+                                           title="{{ translate('Đăng xuất') }}">
+                                            {{ translate('Đăng xuất') }}
+                                        </a>
+                                    {% else %}
+                                        <a href="" class="text-center p-2 btn-guest btn-login"
+                                           title="{{ translate('Đăng nhập') }}">
+                                            {{ translate('Đăng nhập') }}
+                                        </a>
+                                        <a href="" class="text-center p-2 btn-guest btn-register"
+                                           title="{{ translate('Đăng ký') }}">
+                                            {{ translate('Đăng ký') }}
+                                        </a>
+                                    {% endif %}
+
+                                </div>
+                            </div>
+                            <div class="section-user-center bg-white text-center">
+                                <div>
+                                    <a href="/order">
+                                        {% set totalMoney = 0 %}
+                                        {% set point = 0 %}
+                                        {% if(checkUser) %}
+                                            {% set customer = getCustomerStore({'mobile':user.mobile}) %}
+                                            {% if customer is not empty %}
+                                                {% if customer.points > 0 %}
+                                                    {% set point = customer.points %}
+                                                {% endif %}
+                                                {% set totalMoney = customer.totalMoney %}
+                                            {% endif %}
+                                        {% endif %}
+                                        <p class="mb-1 fw-semibold">{{ totalMoney | number_format(0) }}<sup>₫</sup></p>
+                                        {{ translate('Tiền tích lũy') }}
+                                    </a>
+                                </div>
+                                <div>
+                                    <p class="mb-1 fw-semibold">{{ point }}</p>
+                                    {{ translate('Điểm tích lũy') }}
+                                </div>
+                            </div>
+                            <div class="section-user-center bg-white text-center text_banner">
+                                <div>
+                                    <a href="/" class="text-center position-relative section-user-btn">
+                                        {{ translate('Khuyến mãi') }}
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="/tra-cuu-don-hang" class="text-center position-relative section-user-btn">
+                                        {{ translate('Tra cứu đơn hàng') }}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-user-banner">
+                            {% set banner_right = getCurrentBannerByCode('BANNER_HOME_RIGHT',{'limit':1}) %}
+                            {% if(banner_right is not empty) %}
+                                {% for bn_r in banner_right %}
+                                    <a href="{{ bn_r.viewLink }}" title="{{ bn_r.name }}">
+                                        <img class="img-fluid" alt="{{ bn_r.name }}" src="{{ bn_r.imageSrc }}">
+                                    </a>
+                                {% endfor %}
+                            {% else %}
+                                <a href="javascript:void(0)" title="demo">
+                                    <img class="img-fluid" alt="demo"
+                                         src="https://dummyimage.com/348x145/163645/fff">
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="section-banner d-flex align-items-center gap-3 mb-3">
+                    {% set banner_top_sale = getCurrentBannerByCode('BANNER_CUSTOM_1',{'limit':2}) %}
+                    {% if(banner_top_sale is not empty) %}
+                        {% for bn_t in banner_top_sale %}
+                            <a href="{{ bn_t.viewLink }}" title="{{ bn_t.name }}">
+                                <img class="img-fluid" alt="{{ bn_t.name }}"
+                                     src="{{ bn_t.imageSrc }}">
+                            </a>
+                        {% endfor %}
+                    {% else %}
+                        {% for i in 1..3 %}
+                            <a href="/" title="banner demo">
+                                <img class="img-fluid" alt="banner demo"
+                                     src="https://dummyimage.com/592x74/163645/fff">
+                            </a>
+                        {% endfor %}
+                    {% endif %}
+
+                </div>
+                <div class="section-sale-tiktok mb-3 d-flex gap-3">
+                    {% set tiktok_class = 'full-width' %}
+                    {% set promotionId = getKeyContentValue('PROMOTION_ID') | e('html') %}
+                    {% if promotionId is not null %}
+                        {% set promotion = getPromotions({'id':promotionId,'limit':1}) %}
+                        {% if(promotion is not empty) %}
+                            {% set tiktok_class = '' %}
+                            {% set promotionObj = promotion|first %}
+                            <div class="bg-white section-item section-sale"
+                                 style="background: linear-gradient(to bottom, rgb(255 13 13) 0%, rgba(0, 0, 0, 0.6) 100%), url('{{ promotionObj.bannerUri }}'), no-repeat; background-size: cover; background-position: center;">
+                                <div class="section-title d-flex align-items-center justify-content-between">
+                                    <div>{{ promotionObj.name }}</div>
+                                    <a href="{{ promotionObj.viewLink }}">{{ translate('Xem thêm') }}</a>
+                                </div>
+                                {% set promotionProduct = getPromotionProduct({'id':promotion.id,'limit':12}) %}
+                                {% if(promotionProduct is not empty) %}
+                                    {% set t = 1 %}
+                                    <div class="section-sale-list">
+                                        <div class="owl-flashsale">
+                                            <div class="section-sale-owl section-sale-owl-9 d-flex flex-wrap">
+                                                {% for p in promotionProduct %}
+                                                    {% set valueNow = 0 %}
+                                                    {% set iconLink = linkTemplateImage('/img/fire-flame.png') %}
+                                                    {% set progressText = '' %}
+                                                    <a href="{{ p.viewLink }}"
+                                                       title="{{ p.name }}" class="sale-item">
+                                                        <div class="position-relative item-image">
+                                                            {% if t < 6 %}
+                                                                <img src="{{ p.imageUri }}" alt="{{ p.name }}"
+                                                                     class="img-fluid item-img">
+                                                            {% else %}
+                                                                <img src="{{ linkSystemImage('/images/grey.gif') }}"
+                                                                     data-lazy="{{ p.imageUri }}" alt="{{ p.name }}"
+                                                                     class="img-fluid item-img">
+                                                            {% endif %}
+                                                            {% if(p.options['psGifts']) %}
+                                                                {% set valueNow = 100 %}
+                                                                {% set iconLink = linkTemplateImage('/img/gift.svg') %}
+                                                                {% set progressText = 'Kèm quà tặng' %}
+                                                                <img src="{{ linkTemplateImage('/img/gift-icon.svg') }}"
+                                                                     alt="Quà tặng" class="img-fluid img-gift">
+                                                            {% endif %}
+                                                        </div>
+                                                        <div class="item-name text-center">
+                                                            <del>{{ p.price |number_format(0) }}<sup>₫</sup></del>
+                                                            {% if(p.priceAfterDiscount > 0) %}
+                                                                <div>{{ p.priceAfterDiscount |number_format(0) }}
+                                                                    <sup>₫</sup></div>
+                                                            {% endif %}
+                                                        </div>
+                                                        <div class="position-relative ps-2 pe-2 item-progress">
+                                                            <div class="progress position-relative" role="progressbar"
+                                                                 aria-label="Sold out" aria-valuenow="{{ valueNow }}"
+                                                                 aria-valuemin="0"
+                                                                 aria-valuemax="100">
+                                                                <div class="progress-bar bg-success"
+                                                                     style="width: {{ valueNow }}%"></div>
+                                                                <div class="position-absolute text-white progress-text">
+                                                                    <div class="count-down d-flex align-items-center gap-1"
+                                                                         data-time-end="{{ promotionObj.endDate | date("F j Y") }} 23:59:00">
+                                                                        {{ progressText }}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <img src="{{ iconLink }}" width="21"
+                                                                 height="24" alt="selling well"
+                                                                 class="img-fluid position-absolute img-hot">
+                                                        </div>
+                                                    </a>
+                                                    {% set t = t + 1 %}
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                    {% set banner_video = getBannerByPositionCode('BANNER_VIDEO_HOME') %}
+                    {% if(banner_video is not empty) %}
+                        <div class="bg-white section-item section-tiktok {{ tiktok_class }}">
+                            <div class="section-title d-flex align-items-center justify-content-between">
+                                <div>{{ translate('Xem các video') }}</div>
+                                <a href="/">{{ translate('Xem thêm') }}</a>
+                            </div>
+                            <div id="owl-tiktok">
+                                <div class="item-tiktok">
+                                    {% for bn_v in banner_video %}
+                                        {% if(bn_v.typeVideo) %}
+                                            <iframe loading="lazy" title="vimeo-player" src="{{ bn_v.description }}"
+                                                    width="100%" height="570" allowfullscreen=""></iframe>
+                                            <div class="item-main">
+                                                <a {{ bn_v.target }} href="{{ bn_v.viewLink }}"
+                                                                     target="_blank" class="item-more">
+                                                    <i class="fal fa-comment-dots"></i>
+                                                    <marquee>{{ bn_v.name }}</marquee>
+                                                    <span>{{ translate('Mua ngay') }}</span>
+                                                </a>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+                {% set banner_ads = getCurrentBannerByCode('BANNER_ADS_HOME',{'limit':2}) %}
+                <div class="section-banner d-flex align-items-center gap-3 mb-3">
+                    {% if banner_ads is not empty %}
+                        {% for bn_a in banner_ads %}
+                            <a {{ bn_a.target }} href="{{ bn_a.viewLink }}" title="{{ bn_a.name }}">
+                                <img class="img-fluid" alt="{{ bn_a.name }}" loading="lazy" src="{{ bn_a.imageSrc }}">
+                            </a>
+                        {% endfor %}
+                    {% else %}
+                        <a href="/" title="banner 2">
+                            <img class="img-fluid" alt="banner 1"
+                                 src="https://dummyimage.com/592x74/163645/fff">
+                        </a>
+                        <a href="/" title="banner 2">
+                            <img class="img-fluid" alt="banner 2"
+                                 src="https://dummyimage.com/592x74/163645/fff">
+                        </a>
+                    {% endif %}
+                </div>
+                <div class="section-product bg-white mb-3">
+                    <div class="mb-2 section-title">Gợi ý hôm nay</div>
+                    <div class="categories d-flex align-items-center flex-wrap row-gap-2 column-gap-3" role="tablist">
+                        <a class="text-title active _category" title="{{ translate('Hàng mới về') }}" type="button"
+                           data-id="">
+                            {{ translate('Hàng mới về') }}
+                        </a>
+                        {% set category = getCategories() %}
+                        {% if(category is not empty) %}
+                            {% for c in category %}
+                                <a class="_category" title="{{ c.name }}" type="button" data-id="{{ c.id }}">
+                                    {{ c.name }}
+                                </a>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+
+                    <div class="tab-content">
+                        <div class="products d-flex flex-wrap product-gap _products">
+                            {% set newProduct = searchProducts({'limit':10}) %}
+                            {% if(newProduct is not empty) %}
+                                {% for p in newProduct %}
+                                    {% set priceDiscount = p.priceAfterDiscount %}
+                                    <a href="{{ p.viewLink }}"
+                                       title="{{ p.name }}" class="layout-product-item _productItem"
+                                       target="_blank" data-id="{{ p.id }}" data-type="{{ p.typeId }}">
+                                        <img loading="lazy" src="{{ p.thumbnailUri }}" alt="{{ p.name }}"
+                                             class="img-fluid layout-img">
+                                        <div class="layout-content">
+                                            <div class="layout-name">{{ p.name }}</div>
+                                            {% if(p.calcDiscountPercent > 0) %}
+                                                <div class="layout-info">
+                                                    <div class="item-info item-percent">{{ translate('Giảm giá') }} {{ p.calcDiscountPercent }}
+                                                        %
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                            {% if(p.contactPrice or (p.price == 0)) %}
+                                                <div class="layout-public-price flex-wrap gap-1">
+                                                    <div class="price">
+                                                        {{ translate('Liên hệ') }}
+                                                    </div>
+                                                    <div class="sold-out"></div>
+                                                </div>
+                                            {% elseif (priceDiscount > 0) %}
+                                                <div class="layout-origin-price">
+                                                    {{ p.price|number_format(0) }}<sup>₫</sup>
+                                                </div>
+                                                <div class="layout-public-price flex-wrap gap-1">
+                                                    <div class="price">
+                                                        {{ priceDiscount|number_format(0) }}<sup>₫</sup>
+                                                    </div>
+                                                    <div class="sold-out"></div>
+                                                </div>
+                                            {% elseif (p.oldPrice > 0) %}
+                                                <div class="layout-origin-price">
+                                                    {{ p.oldPrice|number_format(0) }}<sup>₫</sup>
+                                                </div>
+                                                <div class="layout-public-price flex-wrap gap-1">
+                                                    <div class="price">
+                                                        {{ p.price|number_format(0) }}<sup>₫</sup>
+                                                    </div>
+                                                    <div class="sold-out"></div>
+                                                </div>
+                                            {% else %}
+                                                <div class="layout-public-price flex-wrap gap-1">
+                                                    <div class="price">
+                                                        {{ p.price|number_format(0) }}<sup>₫</sup>
+                                                    </div>
+                                                    <div class="sold-out"></div>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    </a>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% set banner_bottom = getCurrentBannerByCode('BANNER_BOTTOM_HOME',{'limit':1}) %}
+                <div class="section-banner d-flex align-items-center gap-3 mb-3">
+                    {% if banner_bottom is not empty %}
+                        {% set bn = banner_bottom | first %}
+                        <a {{ bn.target }} href="{{ bn.viewLink }}" title="{{ bn.name }}">
+                            <img class="img-fluid" alt="{{ bn.name }}" loading="lazy" src="{{ bn.imageSrc }}">
+                        </a>
+                    {% else %}
+                        <a href="javascript:void(0)" title="demo">
+                            <img class="img-fluid" alt="demo" loading="lazy" src="https://dummyimage.com/1200x110/163645/fff">
+                        </a>
+                    {% endif %}
+                </div>
+                {% set banner_policy = getCurrentBannerByCode('BANNER_POLICY_HOME',{'limit':4}) %}
+                {% if banner_policy is not empty %}
+                    <div class="section-slogan d-flex gap-3 align-items-center">
+                        {% for bn_p in banner_policy %}
+                            <div class="section-item bg-white d-flex align-items-center justify-content-center gap-3">
+                                <img width="40" height="40" src="{{ bn_p.imageSrc }}" alt="{{ bn_p.name }}"
+                                     class="img-fluid" loading="lazy">
+                                <div class="text-uppercase">{{ bn_p.intro }}</div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="section-slogan d-flex gap-3 align-items-center">
+                        <div class="section-item bg-white d-flex align-items-center justify-content-center gap-3">
+                            <img width="40" height="40"
+                                 src="{{ linkTemplateImage('/img/san-pham-chinh-hang.svg') | raw }}"
+                                 alt="Sản phẩm chính hãng"
+                                 class="img-fluid">
+                            <div class="text-uppercase">Sản phẩm <b>chính hãng</b></div>
+                        </div>
+                        <div class="section-item bg-white d-flex align-items-center justify-content-center gap-3">
+                            <img width="40" height="40" src="{{ linkTemplateImage('/img/bao-hanh.svg') }}"
+                                 alt="Bảo hành 1 đổi 1 toàn quốc" class="img-fluid">
+                            <div class="text-uppercase">Bảo hành 1 đổi 1 <b>toàn quốc</b></div>
+                        </div>
+                        <div class="section-item bg-white d-flex align-items-center justify-content-center gap-3">
+                            <img width="40" height="40" src="{{ linkTemplateImage('/img/hotline.svg') }}"
+                                 alt="Hotline hỗ trợ 1900 4351"
+                                 class="img-fluid">
+                            <div class="text-uppercase">Hotline hỗ trợ <b>1900 4351</b></div>
+                        </div>
+                        <div class="section-item bg-white d-flex align-items-center justify-content-center gap-3">
+                            <img width="40" height="40" src="{{ linkTemplateImage('/img/doi-tra.svg') }}"
+                                 alt="Thủ tục đổi trả dễ dàng" class="img-fluid">
+                            <div class="text-uppercase">Thủ tục đổi trả <b>dễ dàng</b></div>
+                        </div>
+                    </div>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

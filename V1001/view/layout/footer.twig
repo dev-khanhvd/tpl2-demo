@@ -1,0 +1,314 @@
+<footer>
+    <div class="container bg-white">
+        <div class="footer-top">
+            <div class="item">
+                <p class="fw-semibold fs-6 mb-2 title">{{ getKeyContentValue('FOOTER_TITLE_1') }}</p>
+                {{ getKeyContentValue('FOOTER_CONTENT_1') }}
+            </div>
+            <div class="item">
+                <p class="fw-semibold fs-6 mb-2 title">{{ getKeyContentValue('FOOTER_TITLE_2') }}</p>
+                {{ getKeyContentValue('FOOTER_CONTENT_2') }}
+
+                <p class="fw-semibold fs-6 mb-2 mt-4 title">{{ translate('Hỗ trợ trực tuyến') }}</p>
+                <div>Hotline: <a
+                            href="tel:{{ getKeyContentValue('HOTLINE') }}"><b>{{ getKeyContentValue('HOTLINE') }}</b></a>
+                </div>
+            </div>
+            <div class="item">
+                <p class="fw-semibold fs-6 mb-2 title">{{ getKeyContentValue('FOOTER_TITLE_3') }}</p>
+                {{ getKeyContentValue('FOOTER_CONTENT_3') }}
+            </div>
+            <div class="item">
+                <p class="fw-semibold fs-6 mb-2 title">{{ getKeyContentValue('FOOTER_TITLE_4') }}</p>
+                <div class="mb-2">
+                    <a href="{{ getKeyContentValue('SOCIAL_FACEBOOK') }}" title="Facebook"
+                       class="d-inline-flex align-items-center gap-2">
+                        <i class="fab fa-facebook"></i>
+                        Fanpage
+                    </a>
+                </div>
+                <div class="mb-2">
+                    <a href="{{ getKeyContentValue('SOCIAL_SHOPEE') }}" title="Shopee"
+                       class="d-inline-flex align-items-center gap-2">
+                        <i class="fab fa-shopify"></i>
+                        Shopee
+                    </a>
+                </div>
+                <div class="mb-2">
+                    <a href="{{ getKeyContentValue('SOCIAL_TIKTOK') }}" title="Tiktok"
+                       class="d-inline-flex align-items-center gap-2">
+                        <i class="fab fa-tiktok"></i>
+                        Tiktok
+                    </a>
+                </div>
+                <div class="mb-2">
+                    <a href="{{ getKeyContentValue('SOCIAL_YOUTUBE') }}" title="Youtube"
+                       class="d-inline-flex align-items-center gap-2">
+                        <i class="fab fa-youtube"></i>
+                        Youtube
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            {% set showTime = showTime({'premiumWebsiteColor': getKeyContentValue('PREMIUM_WEBSITE_COLOR')}) %}
+            <p data-runtime='Memory: {{ showTime.memoryUsed }} - Time: {{ showTime.time }} s' id='runtime'
+               style='clear:both; padding:10px 0; text-align:center; display: {{ showTime.display }};margin: 0'>
+                Thiết kế website bởi
+                <img src="{{ linkSystemImage('/images/favicon.ico') }}" alt='Thiết kế web bởi NHANH.VN'
+                     title='Thiết kế web bởi NHANH.VN'/>
+                <a class='logo' href='https://nhanh.vn' target='_blank'>Nhanh.vn</a>
+            </p>
+            {% if(showTime.premiumWebsite) %}
+                <p style="display:block; text-align: center">
+                    {{ showTime.premiumWebsite | raw }}
+                </p>
+            {% endif %}
+        </div>
+    </div>
+</footer>
+<div class="modal fade" id="memberModal" tabindex="-1" aria-labelledby="memberModalLabel" >
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body p-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="d-grid">
+                    <div class="p-3 grid-content">
+                        <div class="layout-modal layout-login">
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <h4 class="fs-4 m-0">{{ translate('Đăng nhập') }}</h4>
+                                <a href="" class="fs-4 modal-member-tab opacity-50"
+                                   data="register-user">{{ translate('Đăng ký') }}</a>
+                            </div>
+                            <div class="mb-5">{{ translate('Đăng nhập hệ thống') }}!</div>
+                            <form action="" method="POST" id="_formSignIn">
+                                <div class="mb-4">
+                                    <input aria-label="Email/Tên đăng nhập" type="text" class="form-control validate[required]" name="username" id="userlog"
+                                           placeholder="Email/Tên đăng nhập">
+                                </div>
+                                <div class="mb-4 position-relative d-flex align-items-center">
+                                    <input aria-label="password" type="password" class="form-control validate[required]" name="password" id="passlog"
+                                           placeholder="********">
+                                    <a href="" class="toggle-password">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.68634 6.31337L6.31301 9.68671M9.68634 6.31337C9.25301 5.88004 8.65967 5.61337 7.99967 5.61337C6.67967 5.61337 5.61301 6.68004 5.61301 8.00004C5.61301 8.66004 5.87967 9.25337 6.31301 9.68671M9.68634 6.31337L14.6663 1.33337M6.31301 9.68671L1.33301 14.6667M11.8797 3.84671C10.713 2.96671 9.37967 2.48671 7.99967 2.48671C5.64634 2.48671 3.45301 3.87337 1.92634 6.27337C1.32634 7.21337 1.32634 8.79337 1.92634 9.73337C2.45301 10.56 3.06634 11.2734 3.73301 11.8467M5.61301 13.02C6.37301 13.34 7.17967 13.5134 7.99967 13.5134C10.353 13.5134 12.5463 12.1267 14.073 9.72671C14.673 8.78671 14.673 7.20671 14.073 6.26671C13.853 5.92004 13.613 5.59337 13.3663 5.28671M10.3397 8.46671C10.1663 9.40671 9.39967 10.1734 8.45967 10.3467"
+                                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <svg style="display: none;" width="16" height="16" viewBox="0 0 16 16"
+                                             fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.3866 7.99998C10.3866 9.31998 9.3199 10.3866 7.9999 10.3866C6.6799 10.3866 5.61323 9.31998 5.61323 7.99998C5.61323 6.67998 6.6799 5.61331 7.9999 5.61331C9.3199 5.61331 10.3866 6.67998 10.3866 7.99998Z"
+                                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M7.9999 13.5133C10.3532 13.5133 12.5466 12.1266 14.0732 9.72665C14.6732 8.78665 14.6732 7.20665 14.0732 6.26665C12.5466 3.86665 10.3532 2.47998 7.9999 2.47998C5.64656 2.47998 3.45323 3.86665 1.92656 6.26665C1.32656 7.20665 1.32656 8.78665 1.92656 9.72665C3.45323 12.1266 5.64656 13.5133 7.9999 13.5133Z"
+                                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="mb-4">
+                                    <button type="button" id="_btnSignIn"
+                                       class="form-submit text-uppercase d-flex align-items-center justify-content-center fw-medium">
+                                        {{ translate('Đăng nhập') }}
+                                    </button>
+                                </div>
+                            </form>
+                            <div class="mb-4 wrap position-relative d-flex align-items-center justify-content-center">
+                                <span>Hoặc</span>
+                            </div>
+                            <div class="mb-4 d-flex gap-3">
+                                <a href="/user/fbsignin"
+                                   class="btn-log-with w-100 d-flex align-items-center justify-content-center gap-2">
+                                    Facebook
+                                    <img src="{{ linkTemplateImage('/img/facebook.svg') }}" alt="facebook"
+                                         class="img-fluid">
+                                </a>
+                                <a href="/user/ggsignin"
+                                   class="btn-log-with w-100 d-flex align-items-center justify-content-center gap-2">
+                                    Google
+                                    <img src="{{ linkTemplateImage('/img/google.svg') }}" alt="google"
+                                         class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>{{ translate('Khách hàng mới') }}?
+                                    <a href="" class="fw-bold modal-member-tab text-red" data="register-user">
+                                        {{ translate('Đăng ký') }}
+                                    </a>
+                                </div>
+                                <a href="" class="modal-member-tab text-blue" data="password">
+                                    {{ translate('Quên mật khẩu') }}?
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="layout-modal layout-register-user" style="display: none;">
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <h4 class="fs-4 m-0">{{ translate('Đăng ký') }}</h4>
+                                <a href="" class="fs-4 modal-member-tab opacity-50"
+                                   data="login">{{ translate('Đăng nhập') }}</a>
+                            </div>
+                            <div class="mb-3">{{ translate('Tạo tài khoản mới') }}</div>
+                            <div class="form-register-container">
+                                <form action="" method="POST" id="_formSignUp">
+                                    <div class="form-group mb-4">
+                                        <input aria-label="FullName" type="text" class="form-control validate[required]" id="fullName"
+                                               name="fullName" placeholder="{{ translate('Họ và tên') }}">
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <input aria-label="Mobile" type="text" class="form-control validate[required, custom[phone]]" id="mobile"
+                                               name="mobile" placeholder="{{ translate('Điện thoại') }}">
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <input aria-label="Email" type="email" class="form-control validate[required, custom[email]]" id="email"
+                                               name="email" placeholder="Email">
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <input aria-label="Pass" type="password" class="form-control validate[required]" id="password"
+                                               name="password" placeholder="{{ translate('Mật khẩu') }}">
+                                    </div>
+                                    <div class="mb-4">
+                                        <button type="button" id="_btnSignUp"
+                                           class="form-submit text-uppercase d-flex align-items-center justify-content-center fw-medium">
+                                            {{ translate('Đăng ký') }}
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="mb-4 wrap position-relative d-flex align-items-center justify-content-center">
+                                <span>Hoặc</span>
+                            </div>
+                            <div class="mb-4 d-flex gap-3">
+                                <a href="/user/fbsignin"
+                                   class="btn-log-with w-100 d-flex align-items-center justify-content-center gap-2">
+                                    Facebook
+                                    <img src="{{ linkTemplateImage('/img/facebook.svg') }}" alt="facebook"
+                                         class="img-fluid">
+                                </a>
+                                <a href="/user/ggsignin"
+                                   class="btn-log-with w-100 d-flex align-items-center justify-content-center gap-2">
+                                    Google
+                                    <img src="{{ linkTemplateImage('/img/google.svg') }}" alt="google"
+                                         class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="text-center">
+                                {{ translate('Bạn đã có tài khoản') }}? <a href=""
+                                                                           class="fw-bold modal-member-tab text-red"
+                                                                           data="login">{{ translate('Đăng nhập') }}</a>
+                            </div>
+                        </div>
+                        <div class="layout-modal layout-password" style="">
+                            <a href="" class="modal-member-tab" data="login">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14.9998 19.92L8.47984 13.4C7.70984 12.63 7.70984 11.37 8.47984 10.6L14.9998 4.07996"
+                                          stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"
+                                          stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </a>
+                            <div class="d-flex align-items-center justify-content-between mb-2 mt-5">
+                                <h4 class="fs-4 m-0">{{ translate('Quên mật khẩu') }}?</h4>
+                            </div>
+                            <div class="mb-5">Vui lòng nhập thông tin tài khoản để lấy lại mật khẩu</div>
+                            <form action="" method="POST" id="_formPassword">
+                                <div class="mb-4">
+                                    <input aria-label="{{ translate('Quên mật khẩu') }}" type="text" class="form-control validate[required]" name="username" id="telpassword"
+                                           autocomplete="" placeholder="Email hoặc tên đăng nhập">
+                                </div>
+                                <div class="mt-4">
+                                    <button type="button" id="_btnPassword"
+                                       class="form-submit text-uppercase d-flex align-items-center justify-content-center fw-medium">
+                                        {{ translate('Xác nhận') }}
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="p-5 d-flex align-items-center justify-content-center fw-bold grid-banner text-center">
+                        <div>
+                            <img src="{{ linkTemplateImage('/img/member.png') }}" alt="member"
+                                 class="img-fluid">
+                            <div class="fs-6 mt-3">Mua sắm tại Website</div>
+                            <div>Siêu ưu đãi mỗi ngày</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="back_top" style="display: block;">
+    <i class="fas fa-arrow-alt-up"></i>
+    <span>TOP</span>
+</div>
+
+{% set detect = detectDevice() %}
+{% if(detect == 'mobile') %}
+    <div id="menu_mobile">
+        <div class="menu_cat" style="display: none;">
+            {% if(menuIsExisted({'type': 'header' })) %}
+                {% include 'other/menu_custom' %}
+            {% else %}
+                {% include 'other/menu' %}
+            {% endif %}
+        </div>
+        <div class="member_menu" style="display: none;">
+            <a href="/profile">
+                {{ translate('Tài khoản của tôi') }}
+            </a>
+            <a href="/order">
+                {{ translate('Quản lý đơn hàng') }}
+            </a>
+            <a href="/profile">
+                {{ translate('Hạng thành viên') }}
+            </a>
+            <a href="/user/signout">
+                {{ translate('Đăng xuất') }}
+            </a>
+        </div>
+
+        <ul class="list_menu_mobile">
+            <li>
+                <a href="/">
+                    <i class="fal fa-house"></i>
+                    <span>{{ translate('Trang chủ') }}</span>
+                </a>
+            </li>
+            <li>
+                <a class="cat_prd">
+                    <i class="fal fa-list"></i>
+                    <span>{{ translate('Danh mục') }}</span>
+                </a>
+            </li>
+            <li>
+                {% if(hasIdentity() is not empty) %}
+                    <a href="/profile">
+                        <i class="fal fa-user"></i>
+                        <span>{{ translate('Tài khoản') }}</span>
+                    </a>
+                    {% else %}
+                        <a class="btn-login" href="javascript:void(0)">
+                            <i class="fal fa-user"></i>
+                            <span>{{ translate('Đăng nhập') }}</span>
+                        </a>
+                {% endif %}
+            </li>
+        </ul>
+    </div>
+{% endif %}
+<div id="flash-message-container" class="w-100 h-100 position-fixed left-0 top-0 flash-message-container">
+    <div class="d-flex align-items-center justify-content-center w-100 h-100 ">
+        <div id="flash-message" class="p-4 text-center flash-message">
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-success">
+                <rect width="52" height="52" rx="26" fill="#3BA500" fill-opacity="0.08" />
+                <rect x="6" y="6" width="40" height="40" rx="20" fill="#3BA500" fill-opacity="0.08" />
+                <path d="M21.75 26L24.58 28.83L30.25 23.17M26 36C31.5 36 36 31.5 36 26C36 20.5 31.5 16 26 16C20.5 16 16 20.5 16 26C16 31.5 20.5 36 26 36Z" stroke="#3BA500" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-error">
+                <rect width="52" height="52" rx="26" fill="#E81B2B" fill-opacity="0.08" />
+                <rect x="6" y="6" width="40" height="40" rx="20" fill="#E81B2B" fill-opacity="0.08" />
+                <path d="M23.17 28.83L28.83 23.17M28.83 28.83L23.17 23.17M26 36C31.5 36 36 31.5 36 26C36 20.5 31.5 16 26 16C20.5 16 16 20.5 16 26C16 31.5 20.5 36 26 36Z" stroke="#E81B2B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div class="message mt-3"></div>
+        </div>
+    </div>
+</div>

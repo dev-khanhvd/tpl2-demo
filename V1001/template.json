@@ -1,0 +1,133 @@
+{
+  "author": "khanhvd",
+  "sourceLink": "https://muagimuadi.vn/",
+  "domain": {
+    "storeId": 15113,
+    "name": "V1003.khanhvdweb.bot3s.com",
+    "alias": "V1003.khanhvdweb.bot3s.com"
+  },
+  "type": "TYPE_DESIGN",
+  "banners": {
+    "BANNER_HOME": {
+      "name": "Banner slide chính trang chủ",
+      "description": "600 × 300",
+      "size": "600 × 300"
+    },
+    "BANNER_MINI_HOME": {
+      "name": "Banner nhỏ dưới banner slide chính trang chủ",
+      "description": "48 × 48",
+      "size": "48 × 48"
+    },
+    "BANNER_HOME_RIGHT": {
+      "name": "Banner bên phải banner nhỏ dưới banner slide chính trang chủ",
+      "description": "348 × 145",
+      "size": "348 × 145"
+    },
+    "BANNER_CUSTOM_1": {
+      "name": "Banner bên trên CTKM trang chủ",
+      "description": "592 × 74",
+      "size": "592 × 74"
+    },
+     "BANNER_VIDEO_HOME": {
+      "name": "Banner video bên phải CTKM trang chủ",
+      "description": "auto",
+      "size": "auto"
+    },
+     "BANNER_ADS_HOME": {
+      "name": "Banner quảng cáo dưới CTKM trang chủ",
+      "description": "592 × 74",
+      "size": "592 × 74"
+    },
+    "BANNER_BOTTOM_HOME": {
+      "name": "Banner quảng cáo cuối của trang chủ",
+      "description": "1200 × 110",
+      "size": "1200 × 110"
+    },
+    "BANNER_POLICY_HOME": {
+      "name": "Banner chính sách trên trang chủ",
+      "description": "40 × 40",
+      "size": "40 × 40"
+    },
+    "BANNER_LIST_PRODUCT": {
+      "name": "Banner danh sách sản phẩm",
+      "description": "40 × 40",
+      "size": "40 × 40"
+    }
+  },
+
+  "contents":{
+    "HOME":{
+      "name": "Trang chủ",
+      "keys": {
+        "META_TITLE": {
+          "content": "Phần mềm quản lý bán hàng Nhanh.vn"
+        },
+        "META_DESCRIPTION": {
+          "content": "Phần mềm quản lý bán hàng Nhanh.vn giúp bạn dễ dàng quản lý kho hàng, đơn hàng, khách hàng, tiết kiệm thời gian, tăng doanh thu, giảm chi phí cho việc quản lý cửa hàng....."
+        },
+        "META_KEYWORDS": {
+          "content": "Phần mềm quản lý bán hàng Nhanh.vn giúp bạn dễ dàng quản lý kho hàng, đơn hàng, khách hàng, tiết kiệm thời gian, tăng doanh thu, giảm chi phí cho việc quản lý cửa hàng....."
+        },
+        "HOTLINE": {
+          "content": "19002812"
+        },
+        "SOCIAL_FACEBOOK": {
+          "content": "https://www.facebook.com/nhanh.vn"
+        },
+        "SOCIAL_SHOPEE": {
+          "content": ""
+        },
+        "SOCIAL_TIKTOK": {
+          "content": ""
+        },
+        "SOCIAL_YOUTUBE": {
+          "content": ""
+        },
+        "PROMOTION_ID": {
+          "content": ""
+        },
+        "PREMIUM_WEBSITE_COLOR": {
+          "content": "#dd6333"
+        }
+      }
+    },
+    "FOOTER":{
+      "name": "Chân trang",
+      "keys": {
+        "FOOTER_TITLE_1": {
+          "content": "Hỗ trợ khách hàng"
+        },
+        "FOOTER_TITLE_2": {
+          "content": "Về chúng tôi"
+        },
+        "FOOTER_TITLE_3": {
+          "content": "Phương thức thanh toán"
+        },
+        "FOOTER_TITLE_4": {
+          "content": "Kết nối với chúng tôi"
+        },
+        "FOOTER_CONTENT_1": {
+          "type": "TYPE_TEXTEDITOR",
+          "content": ""
+        },
+        "FOOTER_CONTENT_2": {
+          "type": "TYPE_TEXTEDITOR",
+          "content": ""
+        },
+        "FOOTER_CONTENT_3": {
+          "type": "TYPE_TEXTEDITOR",
+          "content": ""
+        }
+      }
+    },
+    "CHECKOUT":{
+      "name": "Trang thanh toán",
+      "keys": {
+        "CHECKOUT_CONTENT_COD": {
+          "type": "TYPE_TEXTEDITOR",
+          "content": "Thanh toán COD"
+        }
+      }
+    }
+  }
+}

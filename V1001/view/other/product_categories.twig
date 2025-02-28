@@ -1,0 +1,60 @@
+{% set categoryId = getParam('cateId') %}
+{% if(categoryId) %}
+    {% set options = {'limit':10,'categoryId':categoryId} %}
+{% else %}
+    {% set options = {'limit':10} %}
+{% endif %}
+{% set categoryProduct = searchProducts(options) %}
+{% if(categoryProduct is not empty) %}
+     {% for p in categoryProduct %}
+         {% set priceDiscount = p.priceAfterDiscount %}
+         <a href="{{ p.viewLink }}"
+            title="{{ p.name }}" class="layout-product-item _productItem"
+            target="_blank" data-id="{{ p.id }}" data-type="{{ p.typeId }}">
+             <img loading="lazy" src="{{ p.thumbnailUri }}" alt="{{ p.name }}" class="img-fluid layout-img">
+             <div class="layout-content">
+                 <div class="layout-name">{{ p.name }}</div>
+                 {% if(p.calcDiscountPercent > 0) %}
+                     <div class="layout-info">
+                         <div class="item-info item-percent">{{ translate('Giảm giá') }} {{ p.calcDiscountPercent }}%</div>
+                     </div>
+                 {% endif %}
+                 {% if(p.contactPrice or (p.price == 0)) %}
+                     <div class="layout-public-price flex-wrap gap-1">
+                         <div class="price">
+                             {{ translate('Liên hệ') }}
+                         </div>
+                         <div class="sold-out"></div>
+                     </div>
+                 {% elseif (priceDiscount > 0) %}
+                     <div class="layout-origin-price">
+                         {{ p.price|number_format(0) }}<sup>₫</sup>
+                     </div>
+                     <div class="layout-public-price flex-wrap gap-1">
+                         <div class="price">
+                             {{ priceDiscount|number_format(0) }}<sup>₫</sup>
+                         </div>
+                         <div class="sold-out"></div>
+                     </div>
+                 {% elseif (p.oldPrice > 0) %}
+                     <div class="layout-origin-price">
+                         {{ p.oldPrice|number_format(0) }}<sup>₫</sup>
+                     </div>
+                     <div class="layout-public-price flex-wrap gap-1">
+                         <div class="price">
+                             {{ p.price|number_format(0) }}<sup>₫</sup>
+                         </div>
+                         <div class="sold-out"></div>
+                     </div>
+                 {% else %}
+                     <div class="layout-public-price flex-wrap gap-1">
+                         <div class="price">
+                             {{ p.price|number_format(0) }}<sup>₫</sup>
+                         </div>
+                         <div class="sold-out"></div>
+                     </div>
+                 {% endif %}
+             </div>
+         </a>
+     {% endfor %}
+ {% endif %}

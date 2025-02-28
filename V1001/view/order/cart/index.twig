@@ -1,0 +1,253 @@
+{% extends "layout/layout" %}
+{% block meta %}
+    {{ headTitle('Giỏ hàng').setSeparator(' - ').setAutoEscape(false)|raw }}
+    <meta property="og:title" content="Giỏ hàng">
+    <meta property="og:url" content="{{ getCurrentUrl() }}">
+    <link rel="canonical" href="{{ getCurrentUrl() }}">
+{% endblock %}
+{% block body %}
+    {% set checkUser = false %}
+    {% set user = null %}
+    {% if(hasIdentity() is not empty) %}
+        {% set checkUser = true %}
+        {% set user = getUser() %}
+    {% elseif jsonDecode(getCookies('cod')) is not empty %}
+        {% set checkUser = false %}
+        {% set user = jsonDecode(getCookies('cod')) %}
+    {% endif %}
+    {% set products = serviceCart().productList %}
+    {% set totalCartMoney = serviceCart().totalMoney %}
+    <div class="app-main-content pt-3 pb-3">
+        <div class="section-cart">
+            <div class="container">
+                {% set br = [{'label': translate('Thanh toán'), 'uri': '/cart/checkout'}] %}
+                {{ render_breadcrumb(br) }}
+            </div>
+            <form action="" method="post" id="_formCheckOut">
+                <div class="container d-flex gap-3">
+                    {% if products is not empty %}
+                        <div class="col-6 d-flex flex-column gap-3">
+                            <div class="section-item bg-white">
+                                <div class="section-header d-flex align-items-center justify-content-between p-3">
+                                    <div class="section-title fw-medium">{{ translate('Giỏ hàng') }}</div>
+                                </div>
+                                <div class="section-body">
+                                    {% for p in products %}
+                                        {% set textUnit = '' %}
+                                        {% if p.productUnit %}
+                                            {% set textUnit = '(' ~ p.productUnit.name ~ ')'%}
+                                        {% endif %}
+                                        {% set moneyDiscount = p.priceAfterDiscount %}
+                                        <div class="cart-item p-3 gap-3">
+                                            <a href="{{ p.viewLink }}">
+                                                <img src="{{ p.thumbnailUri }}" alt="{{ p.name }}" class="img-fluid">
+                                            </a>
+                                            <div>
+                                                <div class="mb-2 product-name">
+                                                    <a href="{{ p.viewLink }}">
+                                                        {{ p.name }} {{ textUnit }}
+                                                    </a>
+                                                    {% if p.attrs is not empty %}
+                                                        {% for at in p.attrs %}
+                                                            {% if at.values %}
+                                                                <span class="d-block pt-2">{{ at.name }}:
+                                                                {% for value in at.values %}
+                                                                    {{ value.name }}
+                                                                {% endfor %}
+                                                                </span>
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    {% endif %}
+                                                </div>
+
+                                                <div class="cart-quantity d-flex align-items-center">
+                                                    <a class="subtract btn _subtract" data-id="{{ p.id }}">
+                                                        <i class="fal fa-minus"></i>
+                                                    </a>
+                                                    <input aria-label="quantity" class="form-control number-only _productQtt_{{ p.id }}" data-id="{{ p.id }}" type="number" data-max="{{ p.inventory.available }}" value="{{ p.quantity }}">
+                                                    <a class="plus btn _plus" data-id="{{ p.id }}">
+                                                        <i class="fal fa-plus"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="position-relative d-flex align-items-end justify-content-end">
+                                                <div>
+                                                    <a class="_removeCart delete-cart position-absolute top-0 end-0" data-id="{{ p.id }}">
+                                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 3.98666C11.78 3.76666 9.54667 3.65333 7.32 3.65333C6 3.65333 4.68 3.72 3.36 3.85333L2 3.98666M5.66667 3.31333L5.81333 2.44C5.92 1.80666 6 1.33333 7.12667 1.33333H8.87333C10 1.33333 10.0867 1.83333 10.1867 2.44666L10.3333 3.31333M12.5667 6.09333L12.1333 12.8067C12.06 13.8533 12 14.6667 10.14 14.6667H5.86C4 14.6667 3.94 13.8533 3.86667 12.8067L3.43333 6.09333M6.88667 11H9.10667M6.33333 8.33333H9.66667" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                                                    </a>
+                                                    {% if(p.contactPrice or (p.price == 0)) %}
+                                                        <div class="price-public fw-semibold">{{ translate('Liên hệ') }}</div>
+                                                    {% elseif (moneyDiscount > 0) %}
+                                                        <div class="price-public fw-semibold">{{ moneyDiscount|number_format(0) }}<sup>₫</sup></div>
+                                                        <div class="price-origin">{{ p.price|number_format(0) }}<sup>₫</sup></div>
+                                                    {% else %}
+                                                        <div class="price-public fw-semibold">{{ p.price|number_format(0) }}<sup>₫</sup></div>
+                                                        {% if (p.oldPrice > 0) %}
+                                                            <div class="price-origin">{{ p.oldPrice|number_format(0) }}<sup>₫</sup></div>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                    <div class="section-price-item">
+                                        <div class="d-flex align-items-center justify-content-between pe-3 ps-3 mb-3 mt-3">
+                                            <div class="price-item-title">{{ translate('Tạm tính') }}</div>
+                                            <div class="fw-semibold">
+                                                {% if domainShowPrice() == 'Liên hệ' %}
+                                                    {{ translate('Liên hệ') }}
+                                                {% else %}
+                                                    {{ totalCartMoney|number_format(0) }}<sup>₫</sup>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                        {#                                        <div class="d-flex align-items-center justify-content-between pe-3 ps-3 mb-3">#}
+                                        {#                                            <div class="price-item-title">{{ translate('Chiết khấu') }}</div>#}
+                                        {#                                            <div class="fw-semibold total-voucher">0</div>#}
+                                        {#                                        </div>#}
+                                        <div class="d-flex align-items-center justify-content-between pe-3 ps-3 mb-3">
+                                            <div class="price-item-title">{{ translate('Phí vận chuyển') }}</div>
+                                            <div class="fw-semibold">
+                                                <span id="_shipFee" class="d-block text-end">0</span>
+                                                <span id="showCarrier"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="section-price p-3 d-flex align-items-center justify-content-between">
+                                        <div class="fw-semibold">{{ translate('Tổng cộng') }}</div>
+                                        <div class="fw-semibold fs-5 red-500 total-payment _showTotalMoney" id="showTotalMoney" value="{{ totalCartMoney }}">
+                                            {% if domainShowPrice() == 'Liên hệ' %}
+                                                {{ translate('Liên hệ') }}
+                                            {% else %}
+                                                {{ totalCartMoney|number_format(0) }}<sup>₫</sup>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tableShipFee" class="mt-4"></div>
+                        </div>
+                        <div class="col-6 d-flex flex-column gap-3">
+                            <div class="section-item bg-white">
+                                <div class="section-header d-flex align-items-center justify-content-between p-3">
+                                    <div class="section-title fw-medium">{{ translate('Thông tin đơn hàng') }}</div>
+                                    {% if (checkUser) %}
+                                        <div class="d-flex align-items-center gap-2">
+                                            <span class="login-title">{{ translate('Xin chào') }} {{ user.fullName }}!</span>
+                                            <a href="/user/signout" class="fw-semibold red-500">{{ translate('Đăng xuất') }}</a>
+                                        </div>
+                                    {% else %}
+                                        <div class="d-flex align-items-center gap-2">
+                                            <span class="login-title">{{ translate('Bạn đã có tài khoản') }}? </span>
+                                            <a href="" class="fw-semibold red-500 btn-login">{{ translate('Đăng nhập') }}</a>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                <div class="section-body p-3 d-flex flex-wrap section-form">
+                                    <div class="col-4">
+                                        <input aria-label="{{ translate('Họ và tên') }}" type="text" placeholder="{{ translate('Họ và tên') }}" class="validate[required] form-control" name="customerName" value="{{ user?user.fullName:'' }}">
+                                    </div>
+                                    <div class="col-4">
+                                        <input aria-label="{{ translate('Điện thoại') }}" class="validate[required,custom[phone]] form-control" name="customerMobile" type="text" placeholder="{{ translate('Điện thoại') }}" value="{{ user ? (user.mobile | replace({'+84': '0'})):'' }}" required>
+                                    </div>
+                                    <div class="col-4">
+                                        <input aria-label="Email" class="form-control" type="email" placeholder="Email" value="{{ user?user.email:'' }}" name="customerEmail">
+                                    </div>
+                                    <div class="col-12">
+                                        <input aria-label="{{ translate('Địa chỉ') }}" type="text" placeholder="{{ translate('Địa chỉ') }}" class="validate[required] form-control"
+                                               id="billing_address_address1"
+                                               value="{{ user?user.address:'' }}" name="customerAddress">
+                                    </div>
+                                    <div class="col-4">
+                                        <select aria-label="customerCity" name="customerCityId" id="customerCityId" class="validate[required] form-control select2" tabindex="-1" >
+                                            <option value="">{{ translate('Chọn Tỉnh/ thành phố') }}</option>
+                                            {% for city in cities %}
+                                                {% set active = '' %}
+                                                {% if(user and user.cityLocationId == city.Id) %}
+                                                    {% set active = 'selected' %}
+                                                {% endif %}
+                                                <option value="{{ city.Id }}" {{ active }}>
+                                                    {{ city.nativeName }}
+                                                </option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="col-4">
+                                        <select aria-label="customerDistrict" name="customerDistrictId" id="customerDistrictId"
+                                                class="validate[required] form-control select2"
+                                                tabindex="-1"
+                                                >
+                                            <option value="">{{ translate('Chọn Quận/ Huyện') }}</option>
+                                            {% if user and user.cityLocationId %}
+                                                {% set dts = getDistrict(user.cityLocationId) %}
+                                                {{ toSelectBox(dts, user.districtLocationId) }}
+                                            {% endif %}
+                                        </select>
+                                    </div>
+                                    <div class="col-4">
+                                        <select aria-label="customerWard" name="customerWardId" id="customerWardId"
+                                                class="validate[required] form-control select2" tabindex="-1">
+                                            <option value="">{{ translate('Chọn Phường/ Xã') }}</option>
+                                            {% if user and user.districtLocationId %}
+                                                {% set dts = getWard(user.districtLocationId) %}
+                                                {{ toSelectBox(dts, user.districtLocationId) }}
+                                            {% endif %}
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea aria-label="description" name="description" class="input form-control" placeholder="{{ translate('Ghi chú đơn hàng') }}" rows="3" style="width: 100%;padding: 5px;box-shadow: 0 0 0 1px #d9d9d9;border-radius: 4px;transition: all .2s ease-out;"></textarea>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="section-item bg-white">
+                                <div class="section-header d-flex align-items-center justify-content-between p-3">
+                                    <div class="section-title fw-medium">{{ translate('Mã giảm giá') }}</div>
+                                    <p class="_couponPrice m-0"></p>
+                                </div>
+                                <div class="section-discount-code p-3" style="border-top: none">
+                                    <div class="discount-box">
+                                        <input aria-label="coupon" type="text" class="form-control _txtCoupon" name="voucher" id="txtCoupon" placeholder="{{ translate('Nhập mã ưu đãi') }}">
+                                        <a class="add-discount add-voucher d-flex align-items-center justify-content-center fw-semibold couponBtn _couponBtn">
+                                            {{ translate('Áp dụng') }}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-item bg-white">
+                                <div class="section-header d-flex align-items-center justify-content-between p-3">
+                                    <div class="section-title fw-medium">{{ translate('Phương thức thanh toán') }}</div>
+                                </div>
+                                <div class="section-body section-payment">
+                                    {{ getPayments({'description': 'FOOTER_TITLE_1'}) | raw }}
+                                </div>
+                            </div>
+                            <button type="button" id="_btnCheckout" class="text-uppercase text-white text-center submit-cart p-3 fw-semibold border-0">{{ translate('Hoàn tất thanh toán') }}</button>
+                        </div>
+                    {% else %}
+                        <div class="section-item p-5 bg-white text-center w-100">
+                            <img src="{{ linkTemplateImage('/img/no-cart.svg') }}" alt="{{ translate('Chưa có sản phẩm nào') }}!" class="img-fluid">
+                            <div class="fw-medium mt-4 mb-4">{{ translate('Chưa có sản phẩm nào') }}!</div>
+                        </div>
+                    {% endif %}
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="progressbar" class="_progressbar">
+        <img width="20" alt="image" src="{{ linkSystemImage('/img/loading.gif') }}"/>
+    </div>
+    <style>
+        #showCarrier {
+            display: block;
+            text-align: right;
+            width: 100%;
+            font-size: 11px;
+        }
+        .changeOrtherShipFee:hover {
+            color: darkred;
+            text-decoration: underline;
+        }
+    </style>
+{% endblock %}

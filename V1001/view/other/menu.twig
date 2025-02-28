@@ -1,0 +1,16 @@
+
+{% set nav = "" %}
+ {% if(getCategories()) %}
+     {% for c in getCategories() %}
+         {% set nav = nav ~ '<a href="'~ c.viewLink ~'" title="' ~ c.name ~ '"
+                               class="ps-3 pe-3 d-flex align-items-center w-100 gap-2 position-relative">' %}
+         {% if(c.iconUri) %}
+             {% set nav = nav ~ '<img width="20" height="20" src="'~c.iconUri~'"
+                                     alt="' ~ c.name ~ '" class="img-fluid img-icon">' %}
+         {% endif %}
+         {% set nav = nav ~ c.name %}
+         {% set nav = nav ~ '</a>' %}
+     {% endfor %}
+ {% endif %}
+{{ nav | raw }}
+

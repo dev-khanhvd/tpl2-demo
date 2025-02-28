@@ -1,0 +1,94 @@
+{% extends "layout/layout" %}
+{% block meta %}
+    {{ headTitle(news.title | e('html')).setSeparator(' - ').setAutoEscape(false)|raw }}
+    <meta name="keywords" content="{{ news.metaKeywords ?: news.title | e('html') }}">
+    <meta name="description" content="{{ (news.metaDescription ?: news.title | e('html')) }}">
+    <meta property="og:title" content="{{ news.metaTitle ?: news.title | e('html') }}">
+    <meta property="og:url" content="{{ news.canonicalLink }}">
+    <meta property="og:image" content="{{ news.pictureUri }}">
+    <meta property="og:type" content="category">
+    <link rel="canonical" href="{{ news.canonicalLink }}">
+{% endblock %}
+
+{% block body %}
+    <div class="app-main-content pt-3 pb-3">
+        <div class="container">
+            {% set buildBread = buildBreadcrumbs(newsCategory) %}
+            {% set buildBread = buildBread | merge ([{'label': news.title,'uri': news.viewLink, 'class' : news.id}]) %}
+            {{ render_breadcrumb(buildBread) }}
+            <div id="blog_main">
+                <div class="row page_news">
+                    <div class="col-md-9 col-sm-12 col-xs-12 left">
+                        <div class="content_blog">
+                            <div class="section-title">
+                                <p>{{ news.title }}</p>
+                                <span class="article-date">{{ news.createdDateTime }}</span>
+                            </div>
+                            <div class="news-content mt-5">
+                                {{ news.content | raw }}
+                                {{ render_embedComment({
+                                    'type': 2,
+                                    'itemId': news.id,
+                                    'title': news.title,
+                                }) }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-12 col-xs-12 right">
+                        <div class="sidebar_block">
+                            {% set lastestNews= getHotNews({'limit':5,'categorId':news.categoryId}) %}
+                            {% if(lastestNews is not empty) %}
+                                <div class="new_last">
+                                    <div class="title_block">
+                                        <h2>{{ translate('Bài viết mới nhất') }}</h2>
+                                    </div>
+                                    <div class="list_news">
+                                        {% for i in lastestNews %}
+                                            <div class="item_news">
+                                                <div class="image">
+                                                    <a href="{{ i.viewLink }}">
+                                                        <img loading="lazy" src="{{ i.imageUri }}" alt="{{ i.title|raw }}">
+                                                    </a>
+                                                </div>
+                                                <div class="content">
+                                                    <h3>
+                                                        <a href="{{ i.viewLink }}">{{ i.title }}</a>
+                                                    </h3>
+                                                    <span class="author">
+                            <span class="date">{{ i.createdDateTime }}</span>
+                          </span>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            {% endif %}
+
+                            {% set newsCategory = getNewsCategories() %}
+                            {% if(newsCategory is not empty) %}
+                                <div class="category-blog">
+                                    <div class="category-box">
+                                        <div class="sidebarblog-title title_blog-news">
+                                            <h2>{{ translate('Danh mục blog') }}</h2>
+                                        </div>
+                                        <div class="layered-category">
+                                            <div class="layered-content">
+                                                <ul>
+                                                    {% for n in newsCategory %}
+                                                        <li class="menu-extra-item"><a href="{{ n.viewLink }}">
+                                                                {{ n.name }}</a></li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
