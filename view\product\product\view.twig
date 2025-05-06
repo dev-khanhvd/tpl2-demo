@@ -78,7 +78,7 @@
              <form accept-charset="UTF-8" action="/account/login" id="customer_login" method="post">
               <input name="form_type" type="hidden" value="customer_login"/>
               <input name="utf8" type="hidden" value="✓"/>
-              <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt8BpLoakcGO0PRoF17ZQsYKp60YV-GeabjcythQJg0c7uJw-15ZQOYlvNywp5kWZZOM3sbUttTbCzAszkzxT4A-A6KJ9oWE6rsO7MHSB1qsurphxub-R-FEL7yNi0aoMl4"/>
+              <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt_wyqx9BUuQrnuuMwLiGThJ1jkVT9Lj2hRMLcNRQufyeWDGusI3X4mdLpMxdQ2-s9xnOVpGA-ePv-jsgHqOkSp979ZUv1rpseFMbsRPJ7rNnAIXfjqA_KhYO2CdIoXU-q4"/>
               <div class="form__input-wrapper form__input-wrapper--labelled">
                <input class="form__field form__field--text" id="login-customer[email]" name="customer[email]" required="required" type="email"/>
                <label class="form__floating-label" for="login-customer[email]">
@@ -135,7 +135,7 @@
              <form accept-charset="UTF-8" action="/account/recover" method="post">
               <input name="form_type" type="hidden" value="recover_customer_password"/>
               <input name="utf8" type="hidden" value="✓"/>
-              <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt8BpLoakcGO0PRoF17ZQsYKp60YV-GeabjcythQJg0c7uJw-15ZQOYlvNywp5kWZZOM3sbUttTbCzAszkzxT4A-A6KJ9oWE6rsO7MHSB1qsurphxub-R-FEL7yNi0aoMl4"/>
+              <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt_wyqx9BUuQrnuuMwLiGThJ1jkVT9Lj2hRMLcNRQufyeWDGusI3X4mdLpMxdQ2-s9xnOVpGA-ePv-jsgHqOkSp979ZUv1rpseFMbsRPJ7rNnAIXfjqA_KhYO2CdIoXU-q4"/>
               <div class="form__input-wrapper form__input-wrapper--labelled">
                <input class="form__field form__field--text" id="recover-customer[recover_email]" name="email" required="required" type="email"/>
                <label class="form__floating-label" for="recover-customer[recover_email]">
@@ -2716,8 +2716,12 @@ Check
     <form accept-charset="UTF-8" action="/contact" class="contact-form" method="post">
      <input name="form_type" type="hidden" value="contact"/>
      <input name="utf8" type="hidden" value="✓"/>
-     <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt8BpLoakcGO0PRoF17ZQsYKp60YV-GeabjcythQJg0c7uJw-15ZQOYlvNywp5kWZZOM3sbUttTbCzAszkzxT4A-A6KJ9oWE6rsO7MHSB1qsurphxub-R-FEL7yNi0aoMl4"/>
+     <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt_wyqx9BUuQrnuuMwLiGThJ1jkVT9Lj2hRMLcNRQufyeWDGusI3X4mdLpMxdQ2-s9xnOVpGA-ePv-jsgHqOkSp979ZUv1rpseFMbsRPJ7rNnAIXfjqA_KhYO2CdIoXU-q4"/>
      <div class="row">
+      <div class="d-none alert-error alert-error-popupform">
+       email can't be blank.
+						message can't be blank.
+      </div>
       <div class="col-12">
        <div class="input-group mb-3">
         <input aria-label="Tên của bạn" class="form-control" id="yourname" name="contact[name]" placeholder="Tên của bạn" required="" type="text"/>
@@ -2757,11 +2761,11 @@ Check
        </button>
       </div>
      </div>
-     <input id="c04f6d61347e4c6abaf0f85dfb4e40fc" name="g-recaptcha-response" type="hidden"/>
+     <input id="520a2629a793453a8dac3d56925ce007" name="g-recaptcha-response" type="hidden"/>
      <noscript data-src="https://www.google.com/recaptcha/api.js?render=6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s">
      </noscript>
      <noscript>
-      let recaptchaElm=document.getElementById('c04f6d61347e4c6abaf0f85dfb4e40fc');let recaptchaForm=recaptchaElm.parentNode;recaptchaForm.addEventListener("submit",function(formEvent){if(!recaptchaElm.value){formEvent.preventDefault();grecaptcha.ready(function(){grecaptcha.execute('6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s',{action:'submit'}).then(function(token){recaptchaElm.value=token;recaptchaForm.requestSubmit(formEvent.submitter)})})}})
+      let recaptchaElm=document.getElementById('520a2629a793453a8dac3d56925ce007');let recaptchaForm=recaptchaElm.parentNode;recaptchaForm.addEventListener("submit",function(formEvent){if(!recaptchaElm.value){formEvent.preventDefault();grecaptcha.ready(function(){grecaptcha.execute('6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s',{action:'submit'}).then(function(token){recaptchaElm.value=token;recaptchaForm.requestSubmit(formEvent.submitter)})})}})
      </noscript>
     </form>
    </div>
