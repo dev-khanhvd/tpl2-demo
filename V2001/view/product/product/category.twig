@@ -1,16 +1,15 @@
 {%extends "layout/layout" %}
 {%block meta %}
     {{ headTitle(category.name).setSeparator(' - ').setAutoEscape(false)|raw }}
-    <meta name="keywords" content="{{ category.metaKeywords?:category.name }}">
-    <meta name="description" content="{{ category.metaDescription?:category.name }}">
-    <meta property="og:title" content="{{ category.metaTitle?:category.name }}">
-    <meta property="og:url" content="{{ category.canonicalLink }}">
-    <meta property="og:image" content="{{ category.imageUri }}">
-    <link rel="canonical" href="{{ category.canonicalLink }}">
+<meta content="{{ category.metaKeywords?:category.name }}" name="keywords"/>
+<meta content="{{ category.metaDescription?:category.name }}" name="description"/>
+<meta content="{{ category.metaTitle?:category.name }}" property="og:title"/>
+<meta content="{{ category.canonicalLink }}" property="og:url"/>
+<meta content="{{ category.imageUri }}" property="og:image"/>
+<link href="{{ category.canonicalLink }}" rel="canonical"/>
 {%endblock %}
 
 {%block body %}
-
 <div class="mainBody-theme-container mainBody-modalshow layoutProduct_scroll">
  <div class="topbar">
   <div class="container">
@@ -182,7 +181,8 @@
            Trang chủ
           </span>
          </a>
-         <meta content="1" itemprop="position"/>
+         <meta content="1" itemprop="position">
+         </meta>
         </li>
         <li class="active" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
          <span content="https://flyfeet.myharavan.com/collections/all" itemprop="item">
@@ -190,7 +190,8 @@
            Tất cả sản phẩm
           </strong>
          </span>
-         <meta content="2" itemprop="position"/>
+         <meta content="2" itemprop="position">
+         </meta>
         </li>
        </ol>
       </div>
@@ -225,50 +226,7 @@
              </div>
              <div class="filter_group-content layered-category">
               <div class="layered-content">
-               <ul class="tree-menu">
-                <li class="">
-                 <span>
-                 </span>
-                 <a class="" href="/search" target="_self" title="Tìm kiếm">
-                  Tìm kiếm
-                 </a>
-                </li>
-                <li class="">
-                 <span>
-                 </span>
-                 <a class="" href="/pages/about-us" target="_self" title="Giới thiệu">
-                  Giới thiệu
-                 </a>
-                </li>
-                <li class="">
-                 <span>
-                 </span>
-                 <a class="" href="/pages/chinh-sach-doi-tra" target="_self" title="Chính sách đổi trả">
-                  Chính sách đổi trả
-                 </a>
-                </li>
-                <li class="">
-                 <span>
-                 </span>
-                 <a class="" href="/pages/chinh-sach-bao-mat" target="_self" title="Chính sách bảo mật">
-                  Chính sách bảo mật
-                 </a>
-                </li>
-                <li class="">
-                 <span>
-                 </span>
-                 <a class="" href="/pages/dieu-khoan-dich-vu" target="_self" title="Điều khoản dịch vụ">
-                  Điều khoản dịch vụ
-                 </a>
-                </li>
-                <li class="">
-                 <span>
-                 </span>
-                 <a class="" href="/pages/lien-he" target="_self" title="Liên hệ">
-                  Liên hệ
-                 </a>
-                </li>
-               </ul>
+               {'success': False, 'message': 'No matching logic found.'}
               </div>
              </div>
             </div>
