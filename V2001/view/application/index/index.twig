@@ -1,12 +1,12 @@
 {%extends "layout/layout" %}
 {%block meta %}
     {{ headTitle(translate('Trang chủ')).setSeparator(' - ').setAutoEscape(false)|raw }}
-<meta content="{{ getKeyContentValue('META_KEYWORDS') }}" name="keywords"/>
-<meta content="{{ getKeyContentValue('META_DESCRIPTION') }}" name="description"/>
-<meta content="{{ getKeyContentValue('META_TITLE') }}" property="og:title"/>
-<meta content="{{ getCurrentUrl() }}" property="og:url"/>
-<meta content="{{ getBusinessLogo() }}" property="og:image"/>
-<link href="{{ getCurrentUrl() }}" rel="canonical"/>
+    <meta name="keywords" content="{{ getKeyContentValue('META_KEYWORDS') }}">
+    <meta name="description" content="{{ getKeyContentValue('META_DESCRIPTION') }}">
+    <meta property="og:title" content="{{ getKeyContentValue('META_TITLE') }}">
+    <meta property="og:url" content="{{ getCurrentUrl() }}">
+    <meta property="og:image" content="{{ getBusinessLogo() }}">
+    <link rel="canonical" href="{{ getCurrentUrl() }}">
 {%endblock %}
 
 {%block body %}
@@ -174,7 +174,39 @@
   <section class="section-home-slider">
    <div class="home-slider swiper">
     <div class="swiper-wrapper slide-banner">
-     <!-- Generated code would appear here -->
+     <div class="swiper-slide">
+      <div class="slide--image boxlazy-img">
+       <a class="boxlazy-img__insert" href="/collections/all" title="chương trình khuyến mãi 1">
+        <picture>
+         <source media="(min-width: 768px)" srcset="//theme.hstatic.net/200000758017/1001229453/14/slide_1_img.jpg?v=22"/>
+         <source media="(max-width: 767px)" srcset="//theme.hstatic.net/200000758017/1001229453/14/slide_1_mb.jpg?v=22"/>
+         <img alt="chương trình khuyến mãi 1" src="//theme.hstatic.net/200000758017/1001229453/14/slide_1_img.jpg?v=22"/>
+        </picture>
+       </a>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <div class="slide--image">
+       <a href="/collections/all" title="chương trình khuyến mãi 2">
+        <picture>
+         <source data-srcset="//theme.hstatic.net/200000758017/1001229453/14/slide_2_mb.jpg?v=22" media="(max-width: 767px)" srcset="//theme.hstatic.net/200000758017/1001229453/14/slide_2_mb.jpg?v=22"/>
+         <source data-srcset="//theme.hstatic.net/200000758017/1001229453/14/slide_2_img.jpg?v=22" media="(min-width: 768px)" srcset="//theme.hstatic.net/200000758017/1001229453/14/slide_2_img.jpg?v=22"/>
+         <img alt="chương trình khuyến mãi 2" class="" data-src="//theme.hstatic.net/200000758017/1001229453/14/slide_2_img.jpg?v=22" src="//theme.hstatic.net/200000758017/1001229453/14/slide_2_img.jpg?v=22"/>
+        </picture>
+       </a>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <div class="slide--image">
+       <a href="/collections/all" title="chương trình khuyến mãi 3">
+        <picture>
+         <source data-srcset="//theme.hstatic.net/200000758017/1001229453/14/slide_3_mb.jpg?v=22" media="(max-width: 767px)" srcset="//theme.hstatic.net/200000758017/1001229453/14/slide_3_mb.jpg?v=22"/>
+         <source data-srcset="//theme.hstatic.net/200000758017/1001229453/14/slide_3_img.jpg?v=22" media="(min-width: 768px)" srcset="//theme.hstatic.net/200000758017/1001229453/14/slide_3_img.jpg?v=22"/>
+         <img alt="chương trình khuyến mãi 3" class="" data-src="//theme.hstatic.net/200000758017/1001229453/14/slide_3_img.jpg?v=22" src="//theme.hstatic.net/200000758017/1001229453/14/slide_3_img.jpg?v=22"/>
+        </picture>
+       </a>
+      </div>
+     </div>
     </div>
     <div class="swiper-button swiper-button-next">
     </div>
