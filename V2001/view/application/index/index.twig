@@ -171,28 +171,51 @@
   </div>
  </div>
  <main class="mainWrapper--content">
-  {% set banner_home = getBannerByPositionCode('BANNER_HOME') %}
-  {% if banner_home is not empty %}
-   <section class="section-home-slider">
-    <div class="home-slider swiper">
-     <div class="swiper-wrapper slide-banner">
-      {% for c in banner_home %}
-       <div class="swiper-slide">
-        <div class="slide--image boxlazy-img">
-         <a class="boxlazy-img__insert" href="{{ c.viewLink }}" title="{{ c.name }}">
-          <picture>
-           <source media="(min-width: 768px)" srcset="{{ c.imageSrc }}"/>
-           <source media="(max-width: 767px)" srcset="{{ c.imageSrc }}"/>
-           <img alt="{{ c.name }}" src="{{ c.imageSrc }}"/>
-          </picture>
-         </a>
-        </div>
-       </div>
-      {% endfor %}
+  <section class="section-home-slider">
+   <div class="home-slider swiper">
+    <div class="swiper-wrapper slide-banner">
+     <div class="swiper-slide">
+      <div class="slide--image boxlazy-img">
+       <a class="boxlazy-img__insert" href="/collections/all" title="chương trình khuyến mãi 1">
+        <picture>
+         <source media="(min-width: 768px)" srcset="//theme.hstatic.net/200000758017/1001229453/14/slide_1_img.jpg?v=22"/>
+         <source media="(max-width: 767px)" srcset="//theme.hstatic.net/200000758017/1001229453/14/slide_1_mb.jpg?v=22"/>
+         <img alt="chương trình khuyến mãi 1" src="//theme.hstatic.net/200000758017/1001229453/14/slide_1_img.jpg?v=22"/>
+        </picture>
+       </a>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <div class="slide--image">
+       <a href="/collections/all" title="chương trình khuyến mãi 2">
+        <picture>
+         <source data-srcset="//theme.hstatic.net/200000758017/1001229453/14/slide_2_mb.jpg?v=22" media="(max-width: 767px)" srcset="//theme.hstatic.net/200000758017/1001229453/14/slide_2_mb.jpg?v=22"/>
+         <source data-srcset="//theme.hstatic.net/200000758017/1001229453/14/slide_2_img.jpg?v=22" media="(min-width: 768px)" srcset="//theme.hstatic.net/200000758017/1001229453/14/slide_2_img.jpg?v=22"/>
+         <img alt="chương trình khuyến mãi 2" class="" data-src="//theme.hstatic.net/200000758017/1001229453/14/slide_2_img.jpg?v=22" src="//theme.hstatic.net/200000758017/1001229453/14/slide_2_img.jpg?v=22"/>
+        </picture>
+       </a>
+      </div>
+     </div>
+     <div class="swiper-slide">
+      <div class="slide--image">
+       <a href="/collections/all" title="chương trình khuyến mãi 3">
+        <picture>
+         <source data-srcset="//theme.hstatic.net/200000758017/1001229453/14/slide_3_mb.jpg?v=22" media="(max-width: 767px)" srcset="//theme.hstatic.net/200000758017/1001229453/14/slide_3_mb.jpg?v=22"/>
+         <source data-srcset="//theme.hstatic.net/200000758017/1001229453/14/slide_3_img.jpg?v=22" media="(min-width: 768px)" srcset="//theme.hstatic.net/200000758017/1001229453/14/slide_3_img.jpg?v=22"/>
+         <img alt="chương trình khuyến mãi 3" class="" data-src="//theme.hstatic.net/200000758017/1001229453/14/slide_3_img.jpg?v=22" src="//theme.hstatic.net/200000758017/1001229453/14/slide_3_img.jpg?v=22"/>
+        </picture>
+       </a>
+      </div>
      </div>
     </div>
-   </section>
-  {% endif %}
+    <div class="swiper-button swiper-button-next">
+    </div>
+    <div class="swiper-button swiper-button-prev">
+    </div>
+    <div class="swiper-pagination">
+    </div>
+   </div>
+  </section>
   <section class="section-home-list-collection home-collection-1">
    <div class="container">
     <div class="wrapper-home-collection">
