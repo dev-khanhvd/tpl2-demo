@@ -171,34 +171,28 @@
   </div>
  </div>
  <main class="mainWrapper--content">
-  <section class="section-home-slider">
-   <div class="home-slider swiper">
-    <div class="swiper-wrapper slide-banner">
-     {% set banner_home = getBannerByPositionCode('BANNER_HOME') %}
-{% if banner_home is not empty %}
-    {% for c in banner_home %}
-     <div class="swiper-slide">
-      <div class="slide--image boxlazy-img">
-       <a class="boxlazy-img__insert" href="{{ c.viewLink }}" title="{{ c.name }}">
-        <picture>
-         <source media="(min-width: 768px)" srcset="{{ c.imageSrc }}"/>
-         <source media="(max-width: 767px)" srcset="{{ c.imageSrc }}"/>
-         <img alt="{{ c.name }}" src="{{ c.imageSrc }}"/>
-        </picture>
-       </a>
-      </div>
+  {% set banner_home = getBannerByPositionCode('BANNER_HOME') %}
+  {% if banner_home is not empty %}
+   <section class="section-home-slider">
+    <div class="home-slider swiper">
+     <div class="swiper-wrapper slide-banner">
+      {% for c in banner_home %}
+       <div class="swiper-slide">
+        <div class="slide--image boxlazy-img">
+         <a class="boxlazy-img__insert" href="{{ c.viewLink }}" title="{{ c.name }}">
+          <picture>
+           <source media="(min-width: 768px)" srcset="{{ c.imageSrc }}"/>
+           <source media="(max-width: 767px)" srcset="{{ c.imageSrc }}"/>
+           <img alt="{{ c.name }}" src="{{ c.imageSrc }}"/>
+          </picture>
+         </a>
+        </div>
+       </div>
+      {% endfor %}
      </div>
-     {% endfor %}
-{% endif %}
     </div>
-    <div class="swiper-button swiper-button-next">
-    </div>
-    <div class="swiper-button swiper-button-prev">
-    </div>
-    <div class="swiper-pagination">
-    </div>
-   </div>
-  </section>
+   </section>
+  {% endif %}
   <section class="section-home-list-collection home-collection-1">
    <div class="container">
     <div class="wrapper-home-collection">
