@@ -90,52 +90,23 @@
          </div>
         </div>
         <div class="product-gallery__thumb swiper">
-            <div class="swiper-wrapper" id="slideThumb">
-                <div class="product-thumb swiper-slide"
-                     data-image="//product.hstatic.net/200000758017/product/805476_01_164da92dedd34ce39222c194ab983bc3_4c82ce6f414f4ad2bb73c1e970ffa63b_compact.jpg">
-                    <div class="product-thumb__link boxlazy-img">
-                        <div class="boxlazy-img__insert lazy-img__prod">
-              <span class="boxlazy-img__aspect">
-               <img alt=" Adidas Nmd R1 " class="product-thumb__photo"
-                    src="//product.hstatic.net/200000758017/product/805476_01_164da92dedd34ce39222c194ab983bc3_4c82ce6f414f4ad2bb73c1e970ffa63b_compact.jpg"/>
-              </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-thumb swiper-slide"
-                     data-image="//product.hstatic.net/200000758017/product/805476_02_cfb9d749e5b44244a81fe2eb26d7d872_ca7f2313d1e944a4a11d4285fb77261f_compact.jpg">
-                    <div class="product-thumb__link boxlazy-img">
-                        <div class="boxlazy-img__insert lazy-img__prod">
-              <span class="boxlazy-img__aspect">
-               <img alt=" Adidas Nmd R1 " class="product-thumb__photo"
-                    src="//product.hstatic.net/200000758017/product/805476_02_cfb9d749e5b44244a81fe2eb26d7d872_ca7f2313d1e944a4a11d4285fb77261f_compact.jpg"/>
-              </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-thumb swiper-slide"
-                     data-image="//product.hstatic.net/200000758017/product/805476_03_5b1f6309b4354dd1b008d8b5e35e0210_543210226b064c628e482622e6f04ae6_compact.jpg">
-                    <div class="product-thumb__link boxlazy-img">
-                        <div class="boxlazy-img__insert lazy-img__prod">
-              <span class="boxlazy-img__aspect">
-               <img alt=" Adidas Nmd R1 " class="product-thumb__photo"
-                    src="//product.hstatic.net/200000758017/product/805476_03_5b1f6309b4354dd1b008d8b5e35e0210_543210226b064c628e482622e6f04ae6_compact.jpg"/>
-              </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-thumb swiper-slide"
-                     data-image="//product.hstatic.net/200000758017/product/805476_04_d066243e2d374e2485153814799ac0a1_631cd9dfaffe417b81f7335cad191791_compact.jpg">
-                    <div class="product-thumb__link boxlazy-img">
-                        <div class="boxlazy-img__insert lazy-img__prod">
-              <span class="boxlazy-img__aspect">
-               <img alt=" Adidas Nmd R1 " class="product-thumb__photo"
-                    src="//product.hstatic.net/200000758017/product/805476_04_d066243e2d374e2485153814799ac0a1_631cd9dfaffe417b81f7335cad191791_compact.jpg"/>
-              </span>
-                        </div>
-                    </div>
-                </div>
+         <div class="swiper-wrapper" id="slideThumb">
+          <div class="product-thumb swiper-slide" data-image="{{ product.images ? product.images[0].thumbnailUri : product.imageUri }}">
+           <div class="product-thumb__link boxlazy-img">
+            <div class="boxlazy-img__insert lazy-img__prod">
+             <span class="boxlazy-img__aspect">
+              {% if product.images %}
+                    {% for i in product.images %}
+              <img alt="{{ product.name }}" class="product-thumb__photo" src="{{ i.thumbnailUri }}"/>
+              {% endfor %}
+                {% else %}
+              <img alt="{{ product.name }}" class="product-thumb__photo" src="{{ product.imageUri }}"/>
+              {% endif %}
+             </span>
             </div>
+           </div>
+          </div>
+         </div>
         </div>
        </div>
       </div>
