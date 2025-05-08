@@ -184,30 +184,26 @@
                  </strong>
                 </div>
                 <div class="select-swap color_attr_item">
-                 <div class="n-sd swatch-element color cam" data-value="Cam">
-                  <input checked="" class="variant-0" data-vhandle="cam" id="swatch-0-cam" name="option1" type="radio" value="Cam"/>
-                  <label class="cam" for="swatch-0-cam">
-                   <span>
-                    Cam
-                   </span>
-                  </label>
+                 {% set color = variableAttributes['color'] %}
+{% if color is not null and color is not empty %}
+    {% set valuesColor = color.childValues %}
+    {% set numbC = (valuesColor | length) %}
+    {% if valuesColor is not null and numbC > 0 %}
+        {% set flag = flag + 1 %}
+                 <div class="req _colorSelect" column="{{ color.column }}">
+                  {% for attrValue in valuesColor %}
+                {% set arrColor = [] %}
+                {% set arrColor = arrColor | merge({ (color.column): attrValue.id }) %}
+                {% set img = getAttrValueImage(arrColor, false, {'return': 'image', 'product': product}) %}
+                {% set pIdsAttrStr = getAttrValueImage(arrColor, true, {'product': product}) | json_encode() %}
+                {% set pIdsAttrStr = pIdsAttrStr | replace({'[': '', ']': ''}) %}
+                  <a class="_pSelect {{ (numbC == 1) ? 'active' : '' }}" data-id="{{ attrValue.id }}" data-psid="{{ pIdsAttrStr }}" data-src="{{ img }}">
+                   {{ attrValue.name }}
+                  </a>
+                  {% endfor %}
                  </div>
-                 <div class="n-sd swatch-element color cam" data-value="Cam">
-                  <input checked="" class="variant-0" data-vhandle="cam" id="swatch-0-cam" name="option1" type="radio" value="Cam"/>
-                  <label class="cam" for="swatch-0-cam">
-                   <span>
-                    Cam
-                   </span>
-                  </label>
-                 </div>
-                 <div class="n-sd swatch-element color cam" data-value="Cam">
-                  <input checked="" class="variant-0" data-vhandle="cam" id="swatch-0-cam" name="option1" type="radio" value="Cam"/>
-                  <label class="cam" for="swatch-0-cam">
-                   <span>
-                    Cam
-                   </span>
-                  </label>
-                 </div>
+                 {% endif %}
+{% endif %}
                 </div>
                </div>
                <div class="swatch clearfix" data-option="option2" data-option-index="1" id="variant-swatch-size">
