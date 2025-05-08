@@ -10,511 +10,353 @@
 {%endblock %}
 
 {%block body %}
- <div class="mainBody-theme-container mainBody-modalshow layoutProduct_scroll">
-  <div class="topbar">
-   <div class="container">
-    <div class="topbar-wrap">
-     <div class="topbar-left">
-      <div class="topbar-left__text">
-       <a href="/">
-        Nhãn hàng của chúng tôi
-       </a>
-      </div>
-      <div class="topbar-left__logo">
-       <div class="wrap-logo">
-        <a href="https://flyfeet.myharavan.com">
-         FlyFeet
-        </a>
-       </div>
-      </div>
-     </div>
-     <div class="topbar-right">
-      <ul class="topbar-right__list">
-       <li>
-        <a href="/pages/lien-he">
-         Liên hệ
-        </a>
-       </li>
-       <li>
-        <a href="/pages/danh-sach-cua-hang">
-         Danh sách cửa hàng
-        </a>
-       </li>
-       <li class="header-action-item header-action_account">
-        <div class="header-action_text">
-         <button aria-label="Tài khoản" class="header-action__link header-action_clicked" id="site-account-handle" title="Tài khoản">
-          Tài khoản
-         </button>
-         <span class="box-triangle">
-         <svg role="presentation" viewbox="0 0 20 9">
-          <path d="M.47108938 9c.2694725-.26871321.57077721-.56867841.90388257-.89986354C3.12384116 6.36134886 5.74788116 3.76338565 9.2467995.30653888c.4145057-.4095171 1.0844277-.40860098 1.4977971.00205122L19.4935156 9H.47108938z" fill="#ffffff">
-          </path>
-         </svg>
-        </span>
-        </div>
-        <div class="header-action_dropdown">
-         <div class="header-dropdown_content">
-          <div class="site_account sitenav-account" id="siteNav-account">
-           <div class="site_account_panel_list">
-            <div class="site_account_panel site_account_default is-selected" id="header-login-panel">
-             <div class="sitenav-content__title">
-              <p class="txt-title">
-               Đăng nhập tài khoản
-              </p>
-              <p class="txt-subtitle">
-               Nhập email và mật khẩu của bạn:
-              </p>
-             </div>
-             <div class="sitenav-content__block">
-              <form accept-charset="UTF-8" action="/account/login" id="customer_login" method="post">
-               <input name="form_type" type="hidden" value="customer_login"/>
-               <input name="utf8" type="hidden" value="✓"/>
-               <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt_WCttT8WC_yvlQSMRkVzJRiVnebjMMxV79yjznZp2tJkmxc7spRwO6kNpZwQHf3j-BkjymoMZsldZpRS4SakiVOA-GdDr_umPMW3Zsrg0CS6S_62VTTW0HqrKYvr0Clhc"/>
-               <div class="form__input-wrapper form__input-wrapper--labelled">
-                <input class="form__field form__field--text" id="login-customer[email]" name="customer[email]" required="required" type="email"/>
-                <label class="form__floating-label" for="login-customer[email]">
-                 Email
-                </label>
-               </div>
-               <div class="form__input-wrapper form__input-wrapper--labelled">
-                <input autocomplete="current-password" class="form__field form__field--text" id="login-customer[password]" name="customer[password]" required="required" type="password"/>
-                <label class="form__floating-label" for="login-customer[password]">
-                 Mật khẩu
-                </label>
-                <div class="sitebox-recaptcha">
-                 This site is protected by reCAPTCHA and the Google
-                 <a href="https://policies.google.com/privacy" rel="noreferrer" target="_blank">
-                  Privacy Policy
-                 </a>
-                 and
-                 <a href="https://policies.google.com/terms" rel="noreferrer" target="_blank">
-                  Terms of Service
-                 </a>
-                 apply.
-                </div>
-               </div>
-               <button class="form__submit button dark" id="form_submit-login" type="submit">
-                Đăng nhập
-               </button>
-              </form>
-              <div class="site_account_secondary-action">
-               <p>
-                Khách hàng mới?
-                <a class="link" href="/account/register">
-                 Tạo tài khoản
-                </a>
-               </p>
-               <p>
-                Quên mật khẩu?
-                <button aria-controls="header-recover-panel" class="js-link link">
-                 Khôi phục mật khẩu
-                </button>
-               </p>
-              </div>
-             </div>
-            </div>
-            <div class="site_account_panel site_account_sliding" id="header-recover-panel">
-             <div class="sitenav-content__title">
-              <p class="txt-title">
-               Khôi phục mật khẩu
-              </p>
-              <p class="txt-subtitle">
-               Nhập email của bạn:
-              </p>
-             </div>
-             <div class="sitenav-content__block">
-              <form accept-charset="UTF-8" action="/account/recover" method="post">
-               <input name="form_type" type="hidden" value="recover_customer_password"/>
-               <input name="utf8" type="hidden" value="✓"/>
-               <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt_WCttT8WC_yvlQSMRkVzJRiVnebjMMxV79yjznZp2tJkmxc7spRwO6kNpZwQHf3j-BkjymoMZsldZpRS4SakiVOA-GdDr_umPMW3Zsrg0CS6S_62VTTW0HqrKYvr0Clhc"/>
-               <div class="form__input-wrapper form__input-wrapper--labelled">
-                <input class="form__field form__field--text" id="recover-customer[recover_email]" name="email" required="required" type="email"/>
-                <label class="form__floating-label" for="recover-customer[recover_email]">
-                 Email
-                </label>
-                <div class="sitebox-recaptcha">
-                 This site is protected by reCAPTCHA and the Google
-                 <a href="https://policies.google.com/privacy" rel="noreferrer" target="_blank">
-                  Privacy Policy
-                 </a>
-                 and
-                 <a href="https://policies.google.com/terms" rel="noreferrer" target="_blank">
-                  Terms of Service
-                 </a>
-                 apply.
-                </div>
-               </div>
-               <button class="form__submit button" id="form_submit-recover" type="submit">
-                Khôi phục
-               </button>
-              </form>
-              <div class="site_account_secondary-action">
-               <p>
-                Bạn đã nhớ mật khẩu?
-                <button aria-controls="header-login-panel" class="js-link link">
-                 Trở về đăng nhập
-                </button>
-               </p>
-              </div>
-             </div>
-            </div>
-           </div>
-          </div>
-         </div>
-        </div>
-       </li>
-      </ul>
-     </div>
-    </div>
-   </div>
-  </div>
-  <main class="mainWrapper--content">
-   <div class="layout-collections">
-    <div class="header-banner">
-     <div class="breadcrumb-shop">
-      <div class="container">
-       <div class="breadcrumb-list">
-        <ol class="breadcrumb breadcrumb-arrows" itemscope="" itemtype="http://schema.org/BreadcrumbList">
-         <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-          <a href="/" itemprop="item" target="_self">
+ <main class="mainWrapper--content">
+  <div class="layout-collections">
+   <div class="header-banner">
+    <div class="breadcrumb-shop">
+     <div class="container">
+      <div class="breadcrumb-list">
+       <ol class="breadcrumb breadcrumb-arrows" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+         <a href="/" itemprop="item" target="_self">
           <span itemprop="name">
            Trang chủ
           </span>
-          </a>
-          <meta content="1" itemprop="position">
-          </meta>
-         </li>
-         <li class="active" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+         </a>
+         <meta content="1" itemprop="position">
+         </meta>
+        </li>
+        <li class="active" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
          <span content="https://flyfeet.myharavan.com/collections/all" itemprop="item">
           <strong itemprop="name">
            Tất cả sản phẩm
           </strong>
          </span>
-          <meta content="2" itemprop="position">
-          </meta>
-         </li>
-        </ol>
-       </div>
+         <meta content="2" itemprop="position">
+         </meta>
+        </li>
+       </ol>
       </div>
      </div>
     </div>
-    <div class="container">
-     <div class="section-collection">
-      <div class="row">
-       <div class="col-lg-3 col-md-12 col-12 sidebar sidebar-left">
-        <div class="filter-wrapper sticky-sidebar">
-         <div class="filter-content">
-          <div class="filter-inner">
-           <div class="filter-head">
-            <p>
-             Bộ lọc
-            </p>
-            <a class="btn-filter-close d-sm-block d-lg-none" name="button-close">
-             <svg role="presentation" viewbox="0 0 19 19">
-              <path d="M9.1923882 8.39339828l7.7781745-7.7781746 1.4142136 1.41421357-7.7781746 7.77817459 7.7781746 7.77817456L16.9705627 19l-7.7781745-7.7781746L1.41421356 19 0 17.5857864l7.7781746-7.77817456L0 2.02943725 1.41421356.61522369 9.1923882 8.39339828z" fill-rule="evenodd">
-              </path>
-             </svg>
-            </a>
-           </div>
-           <div class="filter-options">
-            <div class="filter_group d-none d-lg-block">
-             <div class="group-menu filter_group_block">
-              <div class="filter_group-subtitle">
+   </div>
+   <div class="container">
+    <div class="section-collection">
+     <div class="row">
+      <div class="col-lg-3 col-md-12 col-12 sidebar sidebar-left">
+       <div class="filter-wrapper sticky-sidebar">
+        <div class="filter-content">
+         <div class="filter-inner">
+          <div class="filter-head">
+           <p>
+            Bộ lọc
+           </p>
+           <a class="btn-filter-close d-sm-block d-lg-none" name="button-close">
+            <svg role="presentation" viewbox="0 0 19 19">
+             <path d="M9.1923882 8.39339828l7.7781745-7.7781746 1.4142136 1.41421357-7.7781746 7.77817459 7.7781746 7.77817456L16.9705627 19l-7.7781745-7.7781746L1.41421356 19 0 17.5857864l7.7781746-7.77817456L0 2.02943725 1.41421356.61522369 9.1923882 8.39339828z" fill-rule="evenodd">
+             </path>
+            </svg>
+           </a>
+          </div>
+          <div class="filter-options">
+           <div class="filter_group d-none d-lg-block">
+            <div class="group-menu filter_group_block">
+             <div class="filter_group-subtitle">
               <span>
                Danh mục sản phẩm
               </span>
-              </div>
-              <div class="filter_group-content layered-category">
-               <div class="layered-content">
-                <ul class="tree-menu">
-                 <li class="">
+             </div>
+             <div class="filter_group-content layered-category">
+              <div class="layered-content">
+               <ul class="tree-menu">
+                <li class="">
                  <span>
                  </span>
-                  <a class="" href="/search" target="_self" title="Tìm kiếm">
-                   Tìm kiếm
-                  </a>
-                 </li>
-                 <li class="">
+                 <a class="" href="/search" target="_self" title="Tìm kiếm">
+                  Tìm kiếm
+                 </a>
+                </li>
+                <li class="">
                  <span>
                  </span>
-                  <a class="" href="/pages/about-us" target="_self" title="Giới thiệu">
-                   Giới thiệu
-                  </a>
-                 </li>
-                 <li class="">
+                 <a class="" href="/pages/about-us" target="_self" title="Giới thiệu">
+                  Giới thiệu
+                 </a>
+                </li>
+                <li class="">
                  <span>
                  </span>
-                  <a class="" href="/pages/chinh-sach-doi-tra" target="_self" title="Chính sách đổi trả">
-                   Chính sách đổi trả
-                  </a>
-                 </li>
-                 <li class="">
+                 <a class="" href="/pages/chinh-sach-doi-tra" target="_self" title="Chính sách đổi trả">
+                  Chính sách đổi trả
+                 </a>
+                </li>
+                <li class="">
                  <span>
                  </span>
-                  <a class="" href="/pages/chinh-sach-bao-mat" target="_self" title="Chính sách bảo mật">
-                   Chính sách bảo mật
-                  </a>
-                 </li>
-                 <li class="">
+                 <a class="" href="/pages/chinh-sach-bao-mat" target="_self" title="Chính sách bảo mật">
+                  Chính sách bảo mật
+                 </a>
+                </li>
+                <li class="">
                  <span>
                  </span>
-                  <a class="" href="/pages/dieu-khoan-dich-vu" target="_self" title="Điều khoản dịch vụ">
-                   Điều khoản dịch vụ
-                  </a>
-                 </li>
-                 <li class="">
+                 <a class="" href="/pages/dieu-khoan-dich-vu" target="_self" title="Điều khoản dịch vụ">
+                  Điều khoản dịch vụ
+                 </a>
+                </li>
+                <li class="">
                  <span>
                  </span>
-                  <a class="" href="/pages/lien-he" target="_self" title="Liên hệ">
-                   Liên hệ
-                  </a>
-                 </li>
-                </ul>
-               </div>
+                 <a class="" href="/pages/lien-he" target="_self" title="Liên hệ">
+                  Liên hệ
+                 </a>
+                </li>
+               </ul>
               </div>
              </div>
             </div>
-            <!-- ./filter sortby -->
-            <!-- ./filter brand -->
-            <div class="filter_group">
-             <div class="filter_group_block">
-              <div class="filter_group-subtitle action-group">
+           </div>
+           <!-- ./filter sortby -->
+           <!-- ./filter brand -->
+           <div class="filter_group">
+            <div class="filter_group_block">
+             <div class="filter_group-subtitle action-group">
               <span>
                Thương hiệu
               </span>
-              </div>
-              <div class="filter_group-content filter-brand" style="display: none;">
-               <ul class="checkbox-list">
-                <li>
-                 <input data-vendor="(vendor:product contains Khác)" id="data-brand-p1" name="brand-filter" type="checkbox" value="Khác"/>
-                 <label for="data-brand-p1">
-                  Khác
-                 </label>
-                </li>
-               </ul>
-              </div>
+             </div>
+             <div class="filter_group-content filter-brand" style="display: none;">
+              <ul class="checkbox-list">
+               <li>
+                <input data-vendor="(vendor:product contains Khác)" id="data-brand-p1" name="brand-filter" type="checkbox" value="Khác"/>
+                <label for="data-brand-p1">
+                 Khác
+                </label>
+               </li>
+              </ul>
              </div>
             </div>
-            <!-- ./filter price -->
-            <div class="filter_group">
-             <div class="filter_group_block">
-              <div class="filter_group-subtitle action-group">
+           </div>
+           <!-- ./filter price -->
+           <div class="filter_group">
+            <div class="filter_group_block">
+             <div class="filter_group-subtitle action-group">
               <span>
                Khoảng giá
               </span>
-              </div>
-              <div class="filter_group-content filter-price" style="display: none;">
-               <div class="filter-price__range">
-                <div id="range-price">
-                </div>
+             </div>
+             <div class="filter_group-content filter-price" style="display: none;">
+              <div class="filter-price__range">
+               <div id="range-price">
                </div>
-               <div class="filter-price__value">
-                <div id="smooth-steps-values">
-                </div>
+              </div>
+              <div class="filter-price__value">
+               <div id="smooth-steps-values">
                </div>
               </div>
              </div>
             </div>
-            <div class="filter_group">
-             <div class="filter_group_block attr-block">
-              <div class="filter_group-subtitle action-group">
+           </div>
+           <div class="filter_group">
+            <div class="filter_group_block attr-block">
+             <div class="filter_group-subtitle action-group">
               <span>
                Màu sắc
               </span>
-              </div>
-              <div class="filter_group-content filter-color" style="display: none;">
-               <ul class="checkbox-list clearfix filter-items-list">
-                <li>
-                 <input data-color="(variant:product contains Đỏ)" id="data-color-p1" name="color-filter" type="checkbox" value="Đỏ"/>
-                 <label for="data-color-p1" style="background-color: #ff0000">
-                  Đỏ
-                 </label>
-                </li>
-                <li>
-                 <input data-color="(variant:product contains Vàng)" id="data-color-p2" name="color-filter" type="checkbox" value="Vàng"/>
-                 <label for="data-color-p2" style="background-color: #ffff05">
-                  Vàng
-                 </label>
-                </li>
-                <li>
-                 <input data-color="(variant:product contains Cam)" id="data-color-p3" name="color-filter" type="checkbox" value="Cam"/>
-                 <label for="data-color-p3" style="background-color: #f5b505">
-                  Cam
-                 </label>
-                </li>
-                <li>
-                 <input data-color="(variant:product contains Xanh dương)" id="data-color-p4" name="color-filter" type="checkbox" value="Xanh dương"/>
-                 <label for="data-color-p4" style="background-color: #5100ff">
-                  Xanh dương
-                 </label>
-                </li>
-                <li>
-                 <input data-color="(variant:product contains Xanh lá)" id="data-color-p5" name="color-filter" type="checkbox" value="Xanh lá"/>
-                 <label for="data-color-p5" style="background-color: #3cfa08">
-                  Xanh lá
-                 </label>
-                </li>
-                <li>
-                 <input data-color="(variant:product contains Nâu)" id="data-color-p6" name="color-filter" type="checkbox" value="Nâu"/>
-                 <label for="data-color-p6" style="background-color: #753a3a">
-                  Nâu
-                 </label>
-                </li>
-                <li>
-                 <input data-color="(variant:product contains Xám)" id="data-color-p7" name="color-filter" type="checkbox" value="Xám"/>
-                 <label for="data-color-p7" style="background-color: #cccaca">
-                  Xám
-                 </label>
-                </li>
-                <li>
-                 <input data-color="(variant:product contains Tím)" id="data-color-p8" name="color-filter" type="checkbox" value="Tím"/>
-                 <label for="data-color-p8" style="background-color: #b5129a">
-                  Tím
-                 </label>
-                </li>
-                <li>
-                 <input data-color="(variant:product contains Hồng)" id="data-color-p9" name="color-filter" type="checkbox" value="Hồng"/>
-                 <label for="data-color-p9" style="background-color: #db999b">
-                  Hồng
-                 </label>
-                </li>
-                <li>
-                 <input data-color="(variant:product contains Trắng)" id="data-color-p10" name="color-filter" type="checkbox" value="Trắng"/>
-                 <label for="data-color-p10" style="background-color: #ffffff">
-                  Trắng
-                 </label>
-                </li>
-                <li>
-                 <input data-color="(variant:product contains Xanh nhạt)" id="data-color-p11" name="color-filter" type="checkbox" value="Xanh nhạt"/>
-                 <label for="data-color-p11" style="background-color: #E0FFFF">
-                  Xanh nhạt
-                 </label>
-                </li>
-                <li>
-                 <input data-color="(variant:product contains Đen)" id="data-color-p12" name="color-filter" type="checkbox" value="Đen"/>
-                 <label for="data-color-p12" style="background-color: #000000">
-                  Đen
-                 </label>
-                </li>
-                <li>
-                 <input data-color="(variant:product contains Xanh biển)" id="data-color-p13" name="color-filter" type="checkbox" value="Xanh biển"/>
-                 <label for="data-color-p13" style="background-color: #E6E6FA">
-                  Xanh biển
-                 </label>
-                </li>
-               </ul>
-              </div>
+             </div>
+             <div class="filter_group-content filter-color" style="display: none;">
+              <ul class="checkbox-list clearfix filter-items-list">
+               <li>
+                <input data-color="(variant:product contains Đỏ)" id="data-color-p1" name="color-filter" type="checkbox" value="Đỏ"/>
+                <label for="data-color-p1" style="background-color: #ff0000">
+                 Đỏ
+                </label>
+               </li>
+               <li>
+                <input data-color="(variant:product contains Vàng)" id="data-color-p2" name="color-filter" type="checkbox" value="Vàng"/>
+                <label for="data-color-p2" style="background-color: #ffff05">
+                 Vàng
+                </label>
+               </li>
+               <li>
+                <input data-color="(variant:product contains Cam)" id="data-color-p3" name="color-filter" type="checkbox" value="Cam"/>
+                <label for="data-color-p3" style="background-color: #f5b505">
+                 Cam
+                </label>
+               </li>
+               <li>
+                <input data-color="(variant:product contains Xanh dương)" id="data-color-p4" name="color-filter" type="checkbox" value="Xanh dương"/>
+                <label for="data-color-p4" style="background-color: #5100ff">
+                 Xanh dương
+                </label>
+               </li>
+               <li>
+                <input data-color="(variant:product contains Xanh lá)" id="data-color-p5" name="color-filter" type="checkbox" value="Xanh lá"/>
+                <label for="data-color-p5" style="background-color: #3cfa08">
+                 Xanh lá
+                </label>
+               </li>
+               <li>
+                <input data-color="(variant:product contains Nâu)" id="data-color-p6" name="color-filter" type="checkbox" value="Nâu"/>
+                <label for="data-color-p6" style="background-color: #753a3a">
+                 Nâu
+                </label>
+               </li>
+               <li>
+                <input data-color="(variant:product contains Xám)" id="data-color-p7" name="color-filter" type="checkbox" value="Xám"/>
+                <label for="data-color-p7" style="background-color: #cccaca">
+                 Xám
+                </label>
+               </li>
+               <li>
+                <input data-color="(variant:product contains Tím)" id="data-color-p8" name="color-filter" type="checkbox" value="Tím"/>
+                <label for="data-color-p8" style="background-color: #b5129a">
+                 Tím
+                </label>
+               </li>
+               <li>
+                <input data-color="(variant:product contains Hồng)" id="data-color-p9" name="color-filter" type="checkbox" value="Hồng"/>
+                <label for="data-color-p9" style="background-color: #db999b">
+                 Hồng
+                </label>
+               </li>
+               <li>
+                <input data-color="(variant:product contains Trắng)" id="data-color-p10" name="color-filter" type="checkbox" value="Trắng"/>
+                <label for="data-color-p10" style="background-color: #ffffff">
+                 Trắng
+                </label>
+               </li>
+               <li>
+                <input data-color="(variant:product contains Xanh nhạt)" id="data-color-p11" name="color-filter" type="checkbox" value="Xanh nhạt"/>
+                <label for="data-color-p11" style="background-color: #E0FFFF">
+                 Xanh nhạt
+                </label>
+               </li>
+               <li>
+                <input data-color="(variant:product contains Đen)" id="data-color-p12" name="color-filter" type="checkbox" value="Đen"/>
+                <label for="data-color-p12" style="background-color: #000000">
+                 Đen
+                </label>
+               </li>
+               <li>
+                <input data-color="(variant:product contains Xanh biển)" id="data-color-p13" name="color-filter" type="checkbox" value="Xanh biển"/>
+                <label for="data-color-p13" style="background-color: #E6E6FA">
+                 Xanh biển
+                </label>
+               </li>
+              </ul>
              </div>
             </div>
            </div>
-           <div class="filter-footer">
-            <button class="btn-filter btn-filter-clear" id="clear-btn-filter">
-             Hủy
-            </button>
-            <button class="btn-filter btn-filter-apply" id="apply-btn-filter">
-             Áp dụng
-            </button>
-           </div>
+          </div>
+          <div class="filter-footer">
+           <button class="btn-filter btn-filter-clear" id="clear-btn-filter">
+            Hủy
+           </button>
+           <button class="btn-filter btn-filter-apply" id="apply-btn-filter">
+            Áp dụng
+           </button>
           </div>
          </div>
         </div>
        </div>
-       <div class="col-lg-9 col-md-12 col-12 collection main-container">
-        <div class="toolbar-products">
-         <div class="head-title">
-          <div class="filter-current">
-           <div class="widget-title">
-            <div class="filter-subtitle">
-             Bạn đang xem
-            </div>
+      </div>
+      <div class="col-lg-9 col-md-12 col-12 collection main-container">
+       <div class="toolbar-products">
+        <div class="head-title">
+         <div class="filter-current">
+          <div class="widget-title">
+           <div class="filter-subtitle">
+            Bạn đang xem
            </div>
-           <div class="list-tags">
-            <div class="filter_tags">
-            </div>
-            <div class="filter_tags">
-             Thương hiệu:
-             <b>
-             </b>
-             <span class="filter_tags_remove">
+          </div>
+          <div class="list-tags">
+           <div class="filter_tags">
+           </div>
+           <div class="filter_tags">
+            Thương hiệu:
+            <b>
+            </b>
+            <span class="filter_tags_remove">
              <svg version="1.1" viewbox="0 0 50 50" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
               <path d="M9.016 40.837a1.001 1.001 0 0 0 1.415-.001l14.292-14.309 14.292 14.309a1 1 0 1 0 1.416-1.413L26.153 25.129 40.43 10.836a1 1 0 1 0-1.415-1.413L24.722 23.732 10.43 9.423a1 1 0 1 0-1.415 1.413l14.276 14.293L9.015 39.423a1 1 0 0 0 .001 1.414z" fill="#333">
               </path>
              </svg>
             </span>
-            </div>
-            <div class="filter_tags price">
-             Khoảng giá:
-             <b id="priceNoUiSlide">
-             </b>
-             <span class="filter_tags_remove">
+           </div>
+           <div class="filter_tags price">
+            Khoảng giá:
+            <b id="priceNoUiSlide">
+            </b>
+            <span class="filter_tags_remove">
              <svg version="1.1" viewbox="0 0 50 50" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
               <path d="M9.016 40.837a1.001 1.001 0 0 0 1.415-.001l14.292-14.309 14.292 14.309a1 1 0 1 0 1.416-1.413L26.153 25.129 40.43 10.836a1 1 0 1 0-1.415-1.413L24.722 23.732 10.43 9.423a1 1 0 1 0-1.415 1.413l14.276 14.293L9.015 39.423a1 1 0 0 0 .001 1.414z" fill="#333">
               </path>
              </svg>
             </span>
-            </div>
-            <div class="filter_tags">
-             Màu sắc:
-             <b>
-             </b>
-             <span class="filter_tags_remove">
+           </div>
+           <div class="filter_tags">
+            Màu sắc:
+            <b>
+            </b>
+            <span class="filter_tags_remove">
              <svg version="1.1" viewbox="0 0 50 50" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
               <path d="M9.016 40.837a1.001 1.001 0 0 0 1.415-.001l14.292-14.309 14.292 14.309a1 1 0 1 0 1.416-1.413L26.153 25.129 40.43 10.836a1 1 0 1 0-1.415-1.413L24.722 23.732 10.43 9.423a1 1 0 1 0-1.415 1.413l14.276 14.293L9.015 39.423a1 1 0 0 0 .001 1.414z" fill="#333">
               </path>
              </svg>
             </span>
-            </div>
-            <div class="filter_tags">
-             Size:
-             <b>
-             </b>
-             <span class="filter_tags_remove">
+           </div>
+           <div class="filter_tags">
+            Size:
+            <b>
+            </b>
+            <span class="filter_tags_remove">
              <svg version="1.1" viewbox="0 0 50 50" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
               <path d="M9.016 40.837a1.001 1.001 0 0 0 1.415-.001l14.292-14.309 14.292 14.309a1 1 0 1 0 1.416-1.413L26.153 25.129 40.43 10.836a1 1 0 1 0-1.415-1.413L24.722 23.732 10.43 9.423a1 1 0 1 0-1.415 1.413l14.276 14.293L9.015 39.423a1 1 0 0 0 .001 1.414z" fill="#333">
               </path>
              </svg>
             </span>
-            </div>
-            <div class="filter_tags filter_tags_remove_all">
+           </div>
+           <div class="filter_tags filter_tags_remove_all">
             <span>
              Xóa hết
             </span>
-            </div>
-           </div>
-          </div>
-          <h1 class="title">
-           Tất cả sản phẩm
-          </h1>
-          <div class="product-count">
-           <div class="count">
-            <b>
-             24
-            </b>
-            sản phẩm
            </div>
           </div>
          </div>
-         <div class="product-filter-mb">
-          <p>
-           Bộ lọc
-          </p>
-          <svg height="18" viewbox="0 0 459 459" width="18" xmlns="http://www.w3.org/2000/svg">
+         <h1 class="title">
+          Tất cả sản phẩm
+         </h1>
+         <div class="product-count">
+          <div class="count">
+           <b>
+            24
+           </b>
+           sản phẩm
+          </div>
+         </div>
+        </div>
+        <div class="product-filter-mb">
+         <p>
+          Bộ lọc
+         </p>
+         <svg height="18" viewbox="0 0 459 459" width="18" xmlns="http://www.w3.org/2000/svg">
+          <g>
            <g>
             <g>
-             <g>
-              <path d="M178.5,382.5h102v-51h-102V382.5z M0,76.5v51h459v-51H0z M76.5,255h306v-51h-306V255z">
-              </path>
-             </g>
+             <path d="M178.5,382.5h102v-51h-102V382.5z M0,76.5v51h459v-51H0z M76.5,255h306v-51h-306V255z">
+             </path>
             </g>
            </g>
-          </svg>
-         </div>
-         <div class="product-sort">
-          <label class="title">
+          </g>
+         </svg>
+        </div>
+        <div class="product-sort">
+         <label class="title">
           <span class="text">
            Mới nhất
           </span>
-           <span class="icon">
+          <span class="icon">
            <svg height="18" viewbox="0 0 128 128" width="18" xmlns="http://www.w3.org/2000/svg">
             <g>
              <path d="m64 88c-1.023 0-2.047-.391-2.828-1.172l-40-40c-1.563-1.563-1.563-4.094 0-5.656s4.094-1.563 5.656 0l37.172 37.172 37.172-37.172c1.563-1.563 4.094-1.563 5.656 0s1.563 4.094 0 5.656l-40 40c-.781.781-1.805 1.172-2.828 1.172z">
@@ -522,118 +364,118 @@
             </g>
            </svg>
           </span>
-          </label>
-          <ul class="sort-by sort-by-content">
-           <li>
+         </label>
+         <ul class="sort-by sort-by-content">
+          <li>
            <span data-filter="(price:product=asc)" data-value="price-ascending">
             Giá: Tăng dần
            </span>
-           </li>
-           <li>
+          </li>
+          <li>
            <span data-filter="(price:product=desc)" data-value="price-descending">
             Giá: Giảm dần
            </span>
-           </li>
-           <li>
+          </li>
+          <li>
            <span data-filter="(title:product=asc)" data-value="title-ascending">
             Tên: A-Z
            </span>
-           </li>
-           <li>
+          </li>
+          <li>
            <span data-filter="(title:product=desc)" data-value="title-descending">
             Tên: Z-A
            </span>
-           </li>
-           <li>
+          </li>
+          <li>
            <span data-filter="(updated_at:product=asc)" data-value="created-ascending">
             Cũ nhất
            </span>
-           </li>
-           <li>
+          </li>
+          <li>
            <span data-filter="(updated_at:product=desc)" data-value="created-descending">
             Mới nhất
            </span>
-           </li>
-           <li>
+          </li>
+          <li>
            <span data-filter="(sold_quantity:product=desc)" data-value="best-selling">
             Bán chạy nhất
            </span>
-           </li>
-           <li>
+          </li>
+          <li>
            <span data-filter="(quantity:product=desc)" data-value="quantity-descending">
             Tồn kho giảm dần
            </span>
-           </li>
-          </ul>
-         </div>
+          </li>
+         </ul>
         </div>
-        <div class="row list-product-row listProductFilter">
-         <div class="col-lg-cus5 col-lg-3 col-md-6 col-6 product-loop" data-id="1109941428">
-          <div class="product-inner" data-proid="1048690150" id="collection_loop_1">
-           <div class="proloop-image">
-            <div class="proloop-image__inner">
-             <div class="lazy-img lazy-img__prod first-image">
-              <picture>
-               <source data-srcset="//product.hstatic.net/200000758017/product/untitled-1_4a8c65ba9ede42c29e64daad0bf0fcba_bc5852f702b14ec3af00902c72b836ac_large.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <source data-srcset="//product.hstatic.net/200000758017/product/untitled-1_4a8c65ba9ede42c29e64daad0bf0fcba_bc5852f702b14ec3af00902c72b836ac_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <img alt=" ZX 930 X EQT NEVER MADE PACK " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/untitled-1_4a8c65ba9ede42c29e64daad0bf0fcba_bc5852f702b14ec3af00902c72b836ac_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-              </picture>
-             </div>
-             <div class="lazy-img lazy-img__prod second-image hovered-img d-none d-lg-block">
-              <picture>
-               <source data-srcset="//product.hstatic.net/200000758017/product/805853_01_a860ebc1547f451d89dea37a883305bd_24427e2aeaaf4af7bce63856263c3448_thumb.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <source data-srcset="//product.hstatic.net/200000758017/product/805853_01_a860ebc1547f451d89dea37a883305bd_24427e2aeaaf4af7bce63856263c3448_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <img alt=" ZX 930 X EQT NEVER MADE PACK " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/805853_01_a860ebc1547f451d89dea37a883305bd_24427e2aeaaf4af7bce63856263c3448_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-              </picture>
-             </div>
+       </div>
+       <div class="row list-product-row listProductFilter">
+        <div class="col-lg-cus5 col-lg-3 col-md-6 col-6 product-loop" data-id="1109941428">
+         <div class="product-inner" data-proid="1048690150" id="collection_loop_1">
+          <div class="proloop-image">
+           <div class="proloop-image__inner">
+            <div class="lazy-img lazy-img__prod first-image">
+             <picture>
+              <source data-srcset="//product.hstatic.net/200000758017/product/untitled-1_4a8c65ba9ede42c29e64daad0bf0fcba_bc5852f702b14ec3af00902c72b836ac_large.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <source data-srcset="//product.hstatic.net/200000758017/product/untitled-1_4a8c65ba9ede42c29e64daad0bf0fcba_bc5852f702b14ec3af00902c72b836ac_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <img alt=" ZX 930 X EQT NEVER MADE PACK " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/untitled-1_4a8c65ba9ede42c29e64daad0bf0fcba_bc5852f702b14ec3af00902c72b836ac_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+             </picture>
             </div>
-            <div class="proloop-image__position">
-             <div class="gift product_gift_label d-none" data-id="1048690150">
-              <img alt="icon quà tặng" class="lazyload" data-src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png" src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"/>
-             </div>
-             <a class="proloop-link quickview-product" data-handle="/products/zx-930-x-eqt-never-made-pack" href="/products/zx-930-x-eqt-never-made-pack" title="ZX 930 X EQT NEVER MADE PACK">
-             </a>
+            <div class="lazy-img lazy-img__prod second-image hovered-img d-none d-lg-block">
+             <picture>
+              <source data-srcset="//product.hstatic.net/200000758017/product/805853_01_a860ebc1547f451d89dea37a883305bd_24427e2aeaaf4af7bce63856263c3448_thumb.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <source data-srcset="//product.hstatic.net/200000758017/product/805853_01_a860ebc1547f451d89dea37a883305bd_24427e2aeaaf4af7bce63856263c3448_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <img alt=" ZX 930 X EQT NEVER MADE PACK " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/805853_01_a860ebc1547f451d89dea37a883305bd_24427e2aeaaf4af7bce63856263c3448_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+             </picture>
             </div>
-            <div class="proloop-actions" data-vrid="1109941428">
-             <div class="proloop-actions__inner">
-              <div class="proloop-actions__cart">
-               <div class="actions-primary">
-                <button class="button btn-small btn-proloop-cart add-to-cart btn-addcart-view" onclick="HRT.All.addCartProdItem('1109941428')" type="submit">
-                 <svg height="18" viewbox="0 0 22 22" width="18" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M15.95 6H19.7V17.875C19.7 18.7344 19.3875 19.4635 18.7625 20.0625C18.1635 20.6875 17.4344 21 16.575 21H5.325C4.46563 21 3.72344 20.6875 3.09844 20.0625C2.49948 19.4635 2.2 18.7344 2.2 17.875V6H5.95C5.95 4.61979 6.43177 3.44792 7.39531 2.48438C8.3849 1.49479 9.56979 1 10.95 1C12.3302 1 13.5021 1.49479 14.4656 2.48438C15.4552 3.44792 15.95 4.61979 15.95 6ZM13.1375 3.8125C12.5385 3.1875 11.8094 2.875 10.95 2.875C10.0906 2.875 9.34844 3.1875 8.72344 3.8125C8.12448 4.41146 7.825 5.14062 7.825 6H14.075C14.075 5.14062 13.7625 4.41146 13.1375 3.8125ZM17.825 17.875V7.875H15.95V9.4375C15.95 9.69792 15.8589 9.91927 15.6766 10.1016C15.4943 10.2839 15.2729 10.375 15.0125 10.375C14.7521 10.375 14.5307 10.2839 14.3484 10.1016C14.1661 9.91927 14.075 9.69792 14.075 9.4375V7.875H7.825V9.4375C7.825 9.69792 7.73385 9.91927 7.55156 10.1016C7.36927 10.2839 7.14792 10.375 6.8875 10.375C6.62708 10.375 6.40573 10.2839 6.22344 10.1016C6.04115 9.91927 5.95 9.69792 5.95 9.4375V7.875H4.075V17.875C4.075 18.2135 4.19219 18.5 4.42656 18.7344C4.68698 18.9948 4.98646 19.125 5.325 19.125H16.575C16.9135 19.125 17.2 18.9948 17.4344 18.7344C17.6948 18.5 17.825 18.2135 17.825 17.875Z">
-                  </path>
-                 </svg>
-                 <span class="btnadd">
+           </div>
+           <div class="proloop-image__position">
+            <div class="gift product_gift_label d-none" data-id="1048690150">
+             <img alt="icon quà tặng" class="lazyload" data-src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png" src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"/>
+            </div>
+            <a class="proloop-link quickview-product" data-handle="/products/zx-930-x-eqt-never-made-pack" href="/products/zx-930-x-eqt-never-made-pack" title="ZX 930 X EQT NEVER MADE PACK">
+            </a>
+           </div>
+           <div class="proloop-actions" data-vrid="1109941428">
+            <div class="proloop-actions__inner">
+             <div class="proloop-actions__cart">
+              <div class="actions-primary">
+               <button class="button btn-small btn-proloop-cart add-to-cart btn-addcart-view" onclick="HRT.All.addCartProdItem('1109941428')" type="submit">
+                <svg height="18" viewbox="0 0 22 22" width="18" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M15.95 6H19.7V17.875C19.7 18.7344 19.3875 19.4635 18.7625 20.0625C18.1635 20.6875 17.4344 21 16.575 21H5.325C4.46563 21 3.72344 20.6875 3.09844 20.0625C2.49948 19.4635 2.2 18.7344 2.2 17.875V6H5.95C5.95 4.61979 6.43177 3.44792 7.39531 2.48438C8.3849 1.49479 9.56979 1 10.95 1C12.3302 1 13.5021 1.49479 14.4656 2.48438C15.4552 3.44792 15.95 4.61979 15.95 6ZM13.1375 3.8125C12.5385 3.1875 11.8094 2.875 10.95 2.875C10.0906 2.875 9.34844 3.1875 8.72344 3.8125C8.12448 4.41146 7.825 5.14062 7.825 6H14.075C14.075 5.14062 13.7625 4.41146 13.1375 3.8125ZM17.825 17.875V7.875H15.95V9.4375C15.95 9.69792 15.8589 9.91927 15.6766 10.1016C15.4943 10.2839 15.2729 10.375 15.0125 10.375C14.7521 10.375 14.5307 10.2839 14.3484 10.1016C14.1661 9.91927 14.075 9.69792 14.075 9.4375V7.875H7.825V9.4375C7.825 9.69792 7.73385 9.91927 7.55156 10.1016C7.36927 10.2839 7.14792 10.375 6.8875 10.375C6.62708 10.375 6.40573 10.2839 6.22344 10.1016C6.04115 9.91927 5.95 9.69792 5.95 9.4375V7.875H4.075V17.875C4.075 18.2135 4.19219 18.5 4.42656 18.7344C4.68698 18.9948 4.98646 19.125 5.325 19.125H16.575C16.9135 19.125 17.2 18.9948 17.4344 18.7344C17.6948 18.5 17.825 18.2135 17.825 17.875Z">
+                 </path>
+                </svg>
+                <span class="btnadd">
                  Thêm vào giỏ
                 </span>
+               </button>
+              </div>
+              <div class="actions-boxqty d-flex">
+               <div class="actions-wrapqty d-flex">
+                <button class="qty-btn proloop-minus" onclick="HRT.All.minusQtyProdItem('1109941428')">
+                 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
+                  <rect height="1" width="18" x="1" y="9">
+                  </rect>
+                 </svg>
+                </button>
+                <input class="proloop-value" name="proloop-quantity" readonly="" type="text" value=""/>
+                <button class="qty-btn proloop-plus" onclick="HRT.All.plusQtyProdItem('1109941428')">
+                 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
+                  <rect height="17" width="1" x="9" y="1">
+                  </rect>
+                  <rect height="1" width="17" x="1" y="9">
+                  </rect>
+                 </svg>
                 </button>
                </div>
-               <div class="actions-boxqty d-flex">
-                <div class="actions-wrapqty d-flex">
-                 <button class="qty-btn proloop-minus" onclick="HRT.All.minusQtyProdItem('1109941428')">
-                  <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
-                   <rect height="1" width="18" x="1" y="9">
-                   </rect>
-                  </svg>
-                 </button>
-                 <input class="proloop-value" name="proloop-quantity" readonly="" type="text" value=""/>
-                 <button class="qty-btn proloop-plus" onclick="HRT.All.plusQtyProdItem('1109941428')">
-                  <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
-                   <rect height="17" width="1" x="9" y="1">
-                   </rect>
-                   <rect height="1" width="17" x="1" y="9">
-                   </rect>
-                  </svg>
-                 </button>
-                </div>
-               </div>
               </div>
-              <div class="proloop-actions__quickview">
-               <button class="icon-quickview tooltip-cs" data-handle="/products/zx-930-x-eqt-never-made-pack" title="Xem nhanh">
-                <svg height="22" viewbox="0 0 577.029 577.029" width="22" xmlns="http://www.w3.org/2000/svg">
+             </div>
+             <div class="proloop-actions__quickview">
+              <button class="icon-quickview tooltip-cs" data-handle="/products/zx-930-x-eqt-never-made-pack" title="Xem nhanh">
+               <svg height="22" viewbox="0 0 577.029 577.029" width="22" xmlns="http://www.w3.org/2000/svg">
+                <g>
                  <g>
-                  <g>
-                   <path d="M288.514,148.629c73.746,0,136.162,33.616,175.539,61.821c46.652,33.415,70.66,65.737,76.885,78.065
+                  <path d="M288.514,148.629c73.746,0,136.162,33.616,175.539,61.821c46.652,33.415,70.66,65.737,76.885,78.065
                           c-6.232,12.327-30.232,44.649-76.885,78.065c-39.377,28.204-101.793,61.82-175.539,61.82c-73.746,0-136.161-33.616-175.539-61.82
                           c-46.661-33.416-70.66-65.738-76.894-78.065c6.234-12.328,30.233-44.65,76.885-78.065
                           C152.353,182.245,214.768,148.629,288.514,148.629 M288.514,113.657C129.176,113.657,0,253.543,0,288.515
@@ -642,29 +484,29 @@
                           s104.914-46.976,104.914-104.914C393.428,230.576,346.453,183.601,288.514,183.601z M260.266,288.515
                           c-24.515,0-44.388-19.873-44.388-44.388c0-24.515,19.873-44.387,44.388-44.387c24.515,0,44.388,19.873,44.388,44.387
                           C304.654,268.642,284.781,288.515,260.266,288.515z">
-                   </path>
-                  </g>
+                  </path>
                  </g>
-                </svg>
-                <span class="tooltip-hover">
+                </g>
+               </svg>
+               <span class="tooltip-hover">
                 Xem nhanh
                </span>
-               </button>
-              </div>
+              </button>
              </div>
             </div>
            </div>
-           <div class="proloop-detail">
-            <h3 class="proloop-title">
-             <a data-handle="/products/zx-930-x-eqt-never-made-pack" href="/products/zx-930-x-eqt-never-made-pack">
-              ZX 930 X EQT NEVER MADE PACK
-             </a>
-            </h3>
-            <p class="proloop-price">
+          </div>
+          <div class="proloop-detail">
+           <h3 class="proloop-title">
+            <a data-handle="/products/zx-930-x-eqt-never-made-pack" href="/products/zx-930-x-eqt-never-made-pack">
+             ZX 930 X EQT NEVER MADE PACK
+            </a>
+           </h3>
+           <p class="proloop-price">
             <span class="price">
              4,000,000₫
             </span>
-             <span class="addtocart-mb d-sm-block d-lg-none">
+            <span class="addtocart-mb d-sm-block d-lg-none">
              <a class="icon-addtocart" name="add-to-cart" onclick="HRT.All.addCartProdItem('1109941428')">
               <svg height="18" viewbox="0 0 22 22" width="18" xmlns="http://www.w3.org/2000/svg">
                <path d="M15.95 6H19.7V17.875C19.7 18.7344 19.3875 19.4635 18.7625 20.0625C18.1635 20.6875 17.4344 21 16.575 21H5.325C4.46563 21 3.72344 20.6875 3.09844 20.0625C2.49948 19.4635 2.2 18.7344 2.2 17.875V6H5.95C5.95 4.61979 6.43177 3.44792 7.39531 2.48438C8.3849 1.49479 9.56979 1 10.95 1C12.3302 1 13.5021 1.49479 14.4656 2.48438C15.4552 3.44792 15.95 4.61979 15.95 6ZM13.1375 3.8125C12.5385 3.1875 11.8094 2.875 10.95 2.875C10.0906 2.875 9.34844 3.1875 8.72344 3.8125C8.12448 4.41146 7.825 5.14062 7.825 6H14.075C14.075 5.14062 13.7625 4.41146 13.1375 3.8125ZM17.825 17.875V7.875H15.95V9.4375C15.95 9.69792 15.8589 9.91927 15.6766 10.1016C15.4943 10.2839 15.2729 10.375 15.0125 10.375C14.7521 10.375 14.5307 10.2839 14.3484 10.1016C14.1661 9.91927 14.075 9.69792 14.075 9.4375V7.875H7.825V9.4375C7.825 9.69792 7.73385 9.91927 7.55156 10.1016C7.36927 10.2839 7.14792 10.375 6.8875 10.375C6.62708 10.375 6.40573 10.2839 6.22344 10.1016C6.04115 9.91927 5.95 9.69792 5.95 9.4375V7.875H4.075V17.875C4.075 18.2135 4.19219 18.5 4.42656 18.7344C4.68698 18.9948 4.98646 19.125 5.325 19.125H16.575C16.9135 19.125 17.2 18.9948 17.4344 18.7344C17.6948 18.5 17.825 18.2135 17.825 17.875Z">
@@ -672,76 +514,76 @@
               </svg>
              </a>
             </span>
-            </p>
-           </div>
+           </p>
           </div>
          </div>
-         <div class="col-lg-cus5 col-lg-3 col-md-6 col-6 product-loop" data-id="1109941418">
-          <div class="product-inner" data-proid="1048690145" id="collection_loop_2">
-           <div class="proloop-image">
-            <div class="proloop-image__inner">
-             <div class="lazy-img lazy-img__prod first-image">
-              <picture>
-               <source data-srcset="//product.hstatic.net/200000758017/product/805338_01_eb7365e97d3f471d872159918a8526a9_3dd0173ae99447ccb1c951ea400a006c_large.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <source data-srcset="//product.hstatic.net/200000758017/product/805338_01_eb7365e97d3f471d872159918a8526a9_3dd0173ae99447ccb1c951ea400a006c_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <img alt=" Ultra Boost " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/805338_01_eb7365e97d3f471d872159918a8526a9_3dd0173ae99447ccb1c951ea400a006c_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-              </picture>
-             </div>
-             <div class="lazy-img lazy-img__prod second-image hovered-img d-none d-lg-block">
-              <picture>
-               <source data-srcset="//product.hstatic.net/200000758017/product/805338_02_ad66875719d64ad4afded311dae375a5_fc9f211b5e8b43898ca52ba536c7c29c_thumb.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <source data-srcset="//product.hstatic.net/200000758017/product/805338_02_ad66875719d64ad4afded311dae375a5_fc9f211b5e8b43898ca52ba536c7c29c_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <img alt=" Ultra Boost " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/805338_02_ad66875719d64ad4afded311dae375a5_fc9f211b5e8b43898ca52ba536c7c29c_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-              </picture>
-             </div>
+        </div>
+        <div class="col-lg-cus5 col-lg-3 col-md-6 col-6 product-loop" data-id="1109941418">
+         <div class="product-inner" data-proid="1048690145" id="collection_loop_2">
+          <div class="proloop-image">
+           <div class="proloop-image__inner">
+            <div class="lazy-img lazy-img__prod first-image">
+             <picture>
+              <source data-srcset="//product.hstatic.net/200000758017/product/805338_01_eb7365e97d3f471d872159918a8526a9_3dd0173ae99447ccb1c951ea400a006c_large.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <source data-srcset="//product.hstatic.net/200000758017/product/805338_01_eb7365e97d3f471d872159918a8526a9_3dd0173ae99447ccb1c951ea400a006c_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <img alt=" Ultra Boost " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/805338_01_eb7365e97d3f471d872159918a8526a9_3dd0173ae99447ccb1c951ea400a006c_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+             </picture>
             </div>
-            <div class="proloop-image__position">
-             <div class="gift product_gift_label d-none" data-id="1048690145">
-              <img alt="icon quà tặng" class="lazyload" data-src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png" src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"/>
-             </div>
-             <a class="proloop-link quickview-product" data-handle="/products/ultra-boost" href="/products/ultra-boost" title="Ultra Boost">
-             </a>
+            <div class="lazy-img lazy-img__prod second-image hovered-img d-none d-lg-block">
+             <picture>
+              <source data-srcset="//product.hstatic.net/200000758017/product/805338_02_ad66875719d64ad4afded311dae375a5_fc9f211b5e8b43898ca52ba536c7c29c_thumb.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <source data-srcset="//product.hstatic.net/200000758017/product/805338_02_ad66875719d64ad4afded311dae375a5_fc9f211b5e8b43898ca52ba536c7c29c_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <img alt=" Ultra Boost " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/805338_02_ad66875719d64ad4afded311dae375a5_fc9f211b5e8b43898ca52ba536c7c29c_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+             </picture>
             </div>
-            <div class="proloop-actions" data-vrid="1109941418">
-             <div class="proloop-actions__inner">
-              <div class="proloop-actions__cart">
-               <div class="actions-primary">
-                <button class="button btn-small btn-proloop-cart add-to-cart btn-addcart-view" onclick="HRT.All.addCartProdItem('1109941418')" type="submit">
-                 <svg height="18" viewbox="0 0 22 22" width="18" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M15.95 6H19.7V17.875C19.7 18.7344 19.3875 19.4635 18.7625 20.0625C18.1635 20.6875 17.4344 21 16.575 21H5.325C4.46563 21 3.72344 20.6875 3.09844 20.0625C2.49948 19.4635 2.2 18.7344 2.2 17.875V6H5.95C5.95 4.61979 6.43177 3.44792 7.39531 2.48438C8.3849 1.49479 9.56979 1 10.95 1C12.3302 1 13.5021 1.49479 14.4656 2.48438C15.4552 3.44792 15.95 4.61979 15.95 6ZM13.1375 3.8125C12.5385 3.1875 11.8094 2.875 10.95 2.875C10.0906 2.875 9.34844 3.1875 8.72344 3.8125C8.12448 4.41146 7.825 5.14062 7.825 6H14.075C14.075 5.14062 13.7625 4.41146 13.1375 3.8125ZM17.825 17.875V7.875H15.95V9.4375C15.95 9.69792 15.8589 9.91927 15.6766 10.1016C15.4943 10.2839 15.2729 10.375 15.0125 10.375C14.7521 10.375 14.5307 10.2839 14.3484 10.1016C14.1661 9.91927 14.075 9.69792 14.075 9.4375V7.875H7.825V9.4375C7.825 9.69792 7.73385 9.91927 7.55156 10.1016C7.36927 10.2839 7.14792 10.375 6.8875 10.375C6.62708 10.375 6.40573 10.2839 6.22344 10.1016C6.04115 9.91927 5.95 9.69792 5.95 9.4375V7.875H4.075V17.875C4.075 18.2135 4.19219 18.5 4.42656 18.7344C4.68698 18.9948 4.98646 19.125 5.325 19.125H16.575C16.9135 19.125 17.2 18.9948 17.4344 18.7344C17.6948 18.5 17.825 18.2135 17.825 17.875Z">
-                  </path>
-                 </svg>
-                 <span class="btnadd">
+           </div>
+           <div class="proloop-image__position">
+            <div class="gift product_gift_label d-none" data-id="1048690145">
+             <img alt="icon quà tặng" class="lazyload" data-src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png" src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"/>
+            </div>
+            <a class="proloop-link quickview-product" data-handle="/products/ultra-boost" href="/products/ultra-boost" title="Ultra Boost">
+            </a>
+           </div>
+           <div class="proloop-actions" data-vrid="1109941418">
+            <div class="proloop-actions__inner">
+             <div class="proloop-actions__cart">
+              <div class="actions-primary">
+               <button class="button btn-small btn-proloop-cart add-to-cart btn-addcart-view" onclick="HRT.All.addCartProdItem('1109941418')" type="submit">
+                <svg height="18" viewbox="0 0 22 22" width="18" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M15.95 6H19.7V17.875C19.7 18.7344 19.3875 19.4635 18.7625 20.0625C18.1635 20.6875 17.4344 21 16.575 21H5.325C4.46563 21 3.72344 20.6875 3.09844 20.0625C2.49948 19.4635 2.2 18.7344 2.2 17.875V6H5.95C5.95 4.61979 6.43177 3.44792 7.39531 2.48438C8.3849 1.49479 9.56979 1 10.95 1C12.3302 1 13.5021 1.49479 14.4656 2.48438C15.4552 3.44792 15.95 4.61979 15.95 6ZM13.1375 3.8125C12.5385 3.1875 11.8094 2.875 10.95 2.875C10.0906 2.875 9.34844 3.1875 8.72344 3.8125C8.12448 4.41146 7.825 5.14062 7.825 6H14.075C14.075 5.14062 13.7625 4.41146 13.1375 3.8125ZM17.825 17.875V7.875H15.95V9.4375C15.95 9.69792 15.8589 9.91927 15.6766 10.1016C15.4943 10.2839 15.2729 10.375 15.0125 10.375C14.7521 10.375 14.5307 10.2839 14.3484 10.1016C14.1661 9.91927 14.075 9.69792 14.075 9.4375V7.875H7.825V9.4375C7.825 9.69792 7.73385 9.91927 7.55156 10.1016C7.36927 10.2839 7.14792 10.375 6.8875 10.375C6.62708 10.375 6.40573 10.2839 6.22344 10.1016C6.04115 9.91927 5.95 9.69792 5.95 9.4375V7.875H4.075V17.875C4.075 18.2135 4.19219 18.5 4.42656 18.7344C4.68698 18.9948 4.98646 19.125 5.325 19.125H16.575C16.9135 19.125 17.2 18.9948 17.4344 18.7344C17.6948 18.5 17.825 18.2135 17.825 17.875Z">
+                 </path>
+                </svg>
+                <span class="btnadd">
                  Thêm vào giỏ
                 </span>
+               </button>
+              </div>
+              <div class="actions-boxqty d-flex">
+               <div class="actions-wrapqty d-flex">
+                <button class="qty-btn proloop-minus" onclick="HRT.All.minusQtyProdItem('1109941418')">
+                 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
+                  <rect height="1" width="18" x="1" y="9">
+                  </rect>
+                 </svg>
+                </button>
+                <input class="proloop-value" name="proloop-quantity" readonly="" type="text" value=""/>
+                <button class="qty-btn proloop-plus" onclick="HRT.All.plusQtyProdItem('1109941418')">
+                 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
+                  <rect height="17" width="1" x="9" y="1">
+                  </rect>
+                  <rect height="1" width="17" x="1" y="9">
+                  </rect>
+                 </svg>
                 </button>
                </div>
-               <div class="actions-boxqty d-flex">
-                <div class="actions-wrapqty d-flex">
-                 <button class="qty-btn proloop-minus" onclick="HRT.All.minusQtyProdItem('1109941418')">
-                  <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
-                   <rect height="1" width="18" x="1" y="9">
-                   </rect>
-                  </svg>
-                 </button>
-                 <input class="proloop-value" name="proloop-quantity" readonly="" type="text" value=""/>
-                 <button class="qty-btn proloop-plus" onclick="HRT.All.plusQtyProdItem('1109941418')">
-                  <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
-                   <rect height="17" width="1" x="9" y="1">
-                   </rect>
-                   <rect height="1" width="17" x="1" y="9">
-                   </rect>
-                  </svg>
-                 </button>
-                </div>
-               </div>
               </div>
-              <div class="proloop-actions__quickview">
-               <button class="icon-quickview tooltip-cs" data-handle="/products/ultra-boost" title="Xem nhanh">
-                <svg height="22" viewbox="0 0 577.029 577.029" width="22" xmlns="http://www.w3.org/2000/svg">
+             </div>
+             <div class="proloop-actions__quickview">
+              <button class="icon-quickview tooltip-cs" data-handle="/products/ultra-boost" title="Xem nhanh">
+               <svg height="22" viewbox="0 0 577.029 577.029" width="22" xmlns="http://www.w3.org/2000/svg">
+                <g>
                  <g>
-                  <g>
-                   <path d="M288.514,148.629c73.746,0,136.162,33.616,175.539,61.821c46.652,33.415,70.66,65.737,76.885,78.065
+                  <path d="M288.514,148.629c73.746,0,136.162,33.616,175.539,61.821c46.652,33.415,70.66,65.737,76.885,78.065
                           c-6.232,12.327-30.232,44.649-76.885,78.065c-39.377,28.204-101.793,61.82-175.539,61.82c-73.746,0-136.161-33.616-175.539-61.82
                           c-46.661-33.416-70.66-65.738-76.894-78.065c6.234-12.328,30.233-44.65,76.885-78.065
                           C152.353,182.245,214.768,148.629,288.514,148.629 M288.514,113.657C129.176,113.657,0,253.543,0,288.515
@@ -750,29 +592,29 @@
                           s104.914-46.976,104.914-104.914C393.428,230.576,346.453,183.601,288.514,183.601z M260.266,288.515
                           c-24.515,0-44.388-19.873-44.388-44.388c0-24.515,19.873-44.387,44.388-44.387c24.515,0,44.388,19.873,44.388,44.387
                           C304.654,268.642,284.781,288.515,260.266,288.515z">
-                   </path>
-                  </g>
+                  </path>
                  </g>
-                </svg>
-                <span class="tooltip-hover">
+                </g>
+               </svg>
+               <span class="tooltip-hover">
                 Xem nhanh
                </span>
-               </button>
-              </div>
+              </button>
              </div>
             </div>
            </div>
-           <div class="proloop-detail">
-            <h3 class="proloop-title">
-             <a data-handle="/products/ultra-boost" href="/products/ultra-boost">
-              Ultra Boost
-             </a>
-            </h3>
-            <p class="proloop-price">
+          </div>
+          <div class="proloop-detail">
+           <h3 class="proloop-title">
+            <a data-handle="/products/ultra-boost" href="/products/ultra-boost">
+             Ultra Boost
+            </a>
+           </h3>
+           <p class="proloop-price">
             <span class="price">
              4,700,000₫
             </span>
-             <span class="addtocart-mb d-sm-block d-lg-none">
+            <span class="addtocart-mb d-sm-block d-lg-none">
              <a class="icon-addtocart" name="add-to-cart" onclick="HRT.All.addCartProdItem('1109941418')">
               <svg height="18" viewbox="0 0 22 22" width="18" xmlns="http://www.w3.org/2000/svg">
                <path d="M15.95 6H19.7V17.875C19.7 18.7344 19.3875 19.4635 18.7625 20.0625C18.1635 20.6875 17.4344 21 16.575 21H5.325C4.46563 21 3.72344 20.6875 3.09844 20.0625C2.49948 19.4635 2.2 18.7344 2.2 17.875V6H5.95C5.95 4.61979 6.43177 3.44792 7.39531 2.48438C8.3849 1.49479 9.56979 1 10.95 1C12.3302 1 13.5021 1.49479 14.4656 2.48438C15.4552 3.44792 15.95 4.61979 15.95 6ZM13.1375 3.8125C12.5385 3.1875 11.8094 2.875 10.95 2.875C10.0906 2.875 9.34844 3.1875 8.72344 3.8125C8.12448 4.41146 7.825 5.14062 7.825 6H14.075C14.075 5.14062 13.7625 4.41146 13.1375 3.8125ZM17.825 17.875V7.875H15.95V9.4375C15.95 9.69792 15.8589 9.91927 15.6766 10.1016C15.4943 10.2839 15.2729 10.375 15.0125 10.375C14.7521 10.375 14.5307 10.2839 14.3484 10.1016C14.1661 9.91927 14.075 9.69792 14.075 9.4375V7.875H7.825V9.4375C7.825 9.69792 7.73385 9.91927 7.55156 10.1016C7.36927 10.2839 7.14792 10.375 6.8875 10.375C6.62708 10.375 6.40573 10.2839 6.22344 10.1016C6.04115 9.91927 5.95 9.69792 5.95 9.4375V7.875H4.075V17.875C4.075 18.2135 4.19219 18.5 4.42656 18.7344C4.68698 18.9948 4.98646 19.125 5.325 19.125H16.575C16.9135 19.125 17.2 18.9948 17.4344 18.7344C17.6948 18.5 17.825 18.2135 17.825 17.875Z">
@@ -780,350 +622,65 @@
               </svg>
              </a>
             </span>
-            </p>
-           </div>
+           </p>
           </div>
          </div>
-         <div class="col-lg-cus5 col-lg-3 col-md-6 col-6 product-loop" data-id="1109941415">
-          <div class="product-inner" data-proid="1048690142" id="collection_loop_3">
-           <div class="proloop-image">
-            <div class="proloop-image__inner">
-             <div class="lazy-img lazy-img__prod">
-              <picture>
-               <source data-srcset="//product.hstatic.net/200000758017/product/140016_01_5fc1c7ae638d4d87af851cb9a13a41fc_e17c0725d63e438fa116e8d91e36837f_large.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <source data-srcset="//product.hstatic.net/200000758017/product/140016_01_5fc1c7ae638d4d87af851cb9a13a41fc_e17c0725d63e438fa116e8d91e36837f_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <img alt=" Sản phẩm tặng 3 " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/140016_01_5fc1c7ae638d4d87af851cb9a13a41fc_e17c0725d63e438fa116e8d91e36837f_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-              </picture>
-             </div>
+        </div>
+        <div class="col-lg-cus5 col-lg-3 col-md-6 col-6 product-loop" data-id="1109941415">
+         <div class="product-inner" data-proid="1048690142" id="collection_loop_3">
+          <div class="proloop-image">
+           <div class="proloop-image__inner">
+            <div class="lazy-img lazy-img__prod">
+             <picture>
+              <source data-srcset="//product.hstatic.net/200000758017/product/140016_01_5fc1c7ae638d4d87af851cb9a13a41fc_e17c0725d63e438fa116e8d91e36837f_large.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <source data-srcset="//product.hstatic.net/200000758017/product/140016_01_5fc1c7ae638d4d87af851cb9a13a41fc_e17c0725d63e438fa116e8d91e36837f_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <img alt=" Sản phẩm tặng 3 " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/140016_01_5fc1c7ae638d4d87af851cb9a13a41fc_e17c0725d63e438fa116e8d91e36837f_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+             </picture>
             </div>
-            <div class="proloop-image__position">
-             <div class="gift product_gift_label d-none" data-id="1048690142">
-              <img alt="icon quà tặng" class="lazyload" data-src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png" src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"/>
-             </div>
-             <a class="proloop-link quickview-product" data-handle="/products/san-pham-tang-3" href="/products/san-pham-tang-3" title="Sản phẩm tặng 3">
-             </a>
+           </div>
+           <div class="proloop-image__position">
+            <div class="gift product_gift_label d-none" data-id="1048690142">
+             <img alt="icon quà tặng" class="lazyload" data-src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png" src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"/>
             </div>
-            <div class="proloop-actions" data-vrid="1109941415">
-             <div class="proloop-actions__inner">
-              <div class="proloop-actions__cart">
-               <div class="actions-primary">
-                <a class="button btn-proloop-cart disabled" href="/products/san-pham-tang-3" title="Sản phẩm tặng 3">
+            <a class="proloop-link quickview-product" data-handle="/products/san-pham-tang-3" href="/products/san-pham-tang-3" title="Sản phẩm tặng 3">
+            </a>
+           </div>
+           <div class="proloop-actions" data-vrid="1109941415">
+            <div class="proloop-actions__inner">
+             <div class="proloop-actions__cart">
+              <div class="actions-primary">
+               <a class="button btn-proloop-cart disabled" href="/products/san-pham-tang-3" title="Sản phẩm tặng 3">
                 <span>
                  Hàng tặng
                 </span>
-                </a>
-               </div>
-               <div class="actions-boxqty d-flex">
-                <div class="actions-wrapqty d-flex">
-                 <button class="qty-btn proloop-minus" onclick="HRT.All.minusQtyProdItem('1109941415')">
-                  <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
-                   <rect height="1" width="18" x="1" y="9">
-                   </rect>
-                  </svg>
-                 </button>
-                 <input class="proloop-value" name="proloop-quantity" readonly="" type="text" value=""/>
-                 <button class="qty-btn proloop-plus" onclick="HRT.All.plusQtyProdItem('1109941415')">
-                  <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
-                   <rect height="17" width="1" x="9" y="1">
-                   </rect>
-                   <rect height="1" width="17" x="1" y="9">
-                   </rect>
-                  </svg>
-                 </button>
-                </div>
-               </div>
+               </a>
               </div>
-              <div class="proloop-actions__quickview">
-               <button class="icon-quickview tooltip-cs" data-handle="/products/san-pham-tang-3" title="Xem nhanh">
-                <svg height="22" viewbox="0 0 577.029 577.029" width="22" xmlns="http://www.w3.org/2000/svg">
-                 <g>
-                  <g>
-                   <path d="M288.514,148.629c73.746,0,136.162,33.616,175.539,61.821c46.652,33.415,70.66,65.737,76.885,78.065
-                          c-6.232,12.327-30.232,44.649-76.885,78.065c-39.377,28.204-101.793,61.82-175.539,61.82c-73.746,0-136.161-33.616-175.539-61.82
-                          c-46.661-33.416-70.66-65.738-76.894-78.065c6.234-12.328,30.233-44.65,76.885-78.065
-                          C152.353,182.245,214.768,148.629,288.514,148.629 M288.514,113.657C129.176,113.657,0,253.543,0,288.515
-                          s129.176,174.857,288.514,174.857c159.339,0,288.515-139.886,288.515-174.857S447.854,113.657,288.514,113.657L288.514,113.657z
-                          M288.514,183.601c-57.939,0-104.914,46.975-104.914,104.914c0,57.938,46.975,104.914,104.914,104.914
-                          s104.914-46.976,104.914-104.914C393.428,230.576,346.453,183.601,288.514,183.601z M260.266,288.515
-                          c-24.515,0-44.388-19.873-44.388-44.388c0-24.515,19.873-44.387,44.388-44.387c24.515,0,44.388,19.873,44.388,44.387
-                          C304.654,268.642,284.781,288.515,260.266,288.515z">
-                   </path>
-                  </g>
-                 </g>
-                </svg>
-                <span class="tooltip-hover">
-                Xem nhanh
-               </span>
-               </button>
-              </div>
-             </div>
-            </div>
-           </div>
-           <div class="proloop-detail">
-            <h3 class="proloop-title">
-             <a data-handle="/products/san-pham-tang-3" href="/products/san-pham-tang-3">
-              Sản phẩm tặng 3
-             </a>
-            </h3>
-            <p class="proloop-price">
-             <a class="price">
-              Liên hệ
-             </a>
-            </p>
-           </div>
-          </div>
-         </div>
-         <div class="col-lg-cus5 col-lg-3 col-md-6 col-6 product-loop" data-id="1109941411">
-          <div class="product-inner" data-proid="1048690138" id="collection_loop_4">
-           <div class="proloop-image">
-            <div class="proloop-image__inner">
-             <div class="lazy-img lazy-img__prod">
-              <picture>
-               <source data-srcset="//product.hstatic.net/200000758017/product/139922_01_793cd1128324417ab4c36dd84ecd7e08_05da46f87ac44b62934e7d7664012cb8_large.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <source data-srcset="//product.hstatic.net/200000758017/product/139922_01_793cd1128324417ab4c36dd84ecd7e08_05da46f87ac44b62934e7d7664012cb8_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <img alt=" Sản phẩm tặng 2 " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/139922_01_793cd1128324417ab4c36dd84ecd7e08_05da46f87ac44b62934e7d7664012cb8_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-              </picture>
-             </div>
-            </div>
-            <div class="proloop-image__position">
-             <div class="gift product_gift_label d-none" data-id="1048690138">
-              <img alt="icon quà tặng" class="lazyload" data-src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png" src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"/>
-             </div>
-             <a class="proloop-link quickview-product" data-handle="/products/san-pham-tang-2" href="/products/san-pham-tang-2" title="Sản phẩm tặng 2">
-             </a>
-            </div>
-            <div class="proloop-actions" data-vrid="1109941411">
-             <div class="proloop-actions__inner">
-              <div class="proloop-actions__cart">
-               <div class="actions-primary">
-                <a class="button btn-proloop-cart disabled" href="/products/san-pham-tang-2" title="Sản phẩm tặng 2">
-                <span>
-                 Hàng tặng
-                </span>
-                </a>
-               </div>
-               <div class="actions-boxqty d-flex">
-                <div class="actions-wrapqty d-flex">
-                 <button class="qty-btn proloop-minus" onclick="HRT.All.minusQtyProdItem('1109941411')">
-                  <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
-                   <rect height="1" width="18" x="1" y="9">
-                   </rect>
-                  </svg>
-                 </button>
-                 <input class="proloop-value" name="proloop-quantity" readonly="" type="text" value=""/>
-                 <button class="qty-btn proloop-plus" onclick="HRT.All.plusQtyProdItem('1109941411')">
-                  <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
-                   <rect height="17" width="1" x="9" y="1">
-                   </rect>
-                   <rect height="1" width="17" x="1" y="9">
-                   </rect>
-                  </svg>
-                 </button>
-                </div>
-               </div>
-              </div>
-              <div class="proloop-actions__quickview">
-               <button class="icon-quickview tooltip-cs" data-handle="/products/san-pham-tang-2" title="Xem nhanh">
-                <svg height="22" viewbox="0 0 577.029 577.029" width="22" xmlns="http://www.w3.org/2000/svg">
-                 <g>
-                  <g>
-                   <path d="M288.514,148.629c73.746,0,136.162,33.616,175.539,61.821c46.652,33.415,70.66,65.737,76.885,78.065
-                          c-6.232,12.327-30.232,44.649-76.885,78.065c-39.377,28.204-101.793,61.82-175.539,61.82c-73.746,0-136.161-33.616-175.539-61.82
-                          c-46.661-33.416-70.66-65.738-76.894-78.065c6.234-12.328,30.233-44.65,76.885-78.065
-                          C152.353,182.245,214.768,148.629,288.514,148.629 M288.514,113.657C129.176,113.657,0,253.543,0,288.515
-                          s129.176,174.857,288.514,174.857c159.339,0,288.515-139.886,288.515-174.857S447.854,113.657,288.514,113.657L288.514,113.657z
-                          M288.514,183.601c-57.939,0-104.914,46.975-104.914,104.914c0,57.938,46.975,104.914,104.914,104.914
-                          s104.914-46.976,104.914-104.914C393.428,230.576,346.453,183.601,288.514,183.601z M260.266,288.515
-                          c-24.515,0-44.388-19.873-44.388-44.388c0-24.515,19.873-44.387,44.388-44.387c24.515,0,44.388,19.873,44.388,44.387
-                          C304.654,268.642,284.781,288.515,260.266,288.515z">
-                   </path>
-                  </g>
-                 </g>
-                </svg>
-                <span class="tooltip-hover">
-                Xem nhanh
-               </span>
-               </button>
-              </div>
-             </div>
-            </div>
-           </div>
-           <div class="proloop-detail">
-            <h3 class="proloop-title">
-             <a data-handle="/products/san-pham-tang-2" href="/products/san-pham-tang-2">
-              Sản phẩm tặng 2
-             </a>
-            </h3>
-            <p class="proloop-price">
-             <a class="price">
-              Liên hệ
-             </a>
-            </p>
-           </div>
-          </div>
-         </div>
-         <div class="col-lg-cus5 col-lg-3 col-md-6 col-6 product-loop" data-id="1109941406">
-          <div class="product-inner" data-proid="1048690135" id="collection_loop_5">
-           <div class="proloop-image">
-            <div class="proloop-image__inner">
-             <div class="lazy-img lazy-img__prod first-image">
-              <picture>
-               <source data-srcset="//product.hstatic.net/200000758017/product/052077_01_51fedbca346042cebbc158b812bc05ef_abb0af57a7db42df8bb719579bf3b360_large.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <source data-srcset="//product.hstatic.net/200000758017/product/052077_01_51fedbca346042cebbc158b812bc05ef_abb0af57a7db42df8bb719579bf3b360_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <img alt=" Sản phẩm tặng 1 " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/052077_01_51fedbca346042cebbc158b812bc05ef_abb0af57a7db42df8bb719579bf3b360_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-              </picture>
-             </div>
-             <div class="lazy-img lazy-img__prod second-image hovered-img d-none d-lg-block">
-              <picture>
-               <source data-srcset="//product.hstatic.net/200000758017/product/air-huarache-run-white-white-052856_2_399f09f84f264ae3a159d571a99e4687_8f57e28d19f84b8eae5d26a2d5f12f29_thumb.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <source data-srcset="//product.hstatic.net/200000758017/product/air-huarache-run-white-white-052856_2_399f09f84f264ae3a159d571a99e4687_8f57e28d19f84b8eae5d26a2d5f12f29_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <img alt=" Sản phẩm tặng 1 " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/air-huarache-run-white-white-052856_2_399f09f84f264ae3a159d571a99e4687_8f57e28d19f84b8eae5d26a2d5f12f29_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-              </picture>
-             </div>
-            </div>
-            <div class="proloop-image__position">
-             <div class="gift product_gift_label d-none" data-id="1048690135">
-              <img alt="icon quà tặng" class="lazyload" data-src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png" src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"/>
-             </div>
-             <a class="proloop-link quickview-product" data-handle="/products/san-pham-tang-1" href="/products/san-pham-tang-1" title="Sản phẩm tặng 1">
-             </a>
-            </div>
-            <div class="proloop-actions" data-vrid="1109941406">
-             <div class="proloop-actions__inner">
-              <div class="proloop-actions__cart">
-               <div class="actions-primary">
-                <a class="button btn-proloop-cart disabled" href="/products/san-pham-tang-1" title="Sản phẩm tặng 1">
-                <span>
-                 Hàng tặng
-                </span>
-                </a>
-               </div>
-               <div class="actions-boxqty d-flex">
-                <div class="actions-wrapqty d-flex">
-                 <button class="qty-btn proloop-minus" onclick="HRT.All.minusQtyProdItem('1109941406')">
-                  <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
-                   <rect height="1" width="18" x="1" y="9">
-                   </rect>
-                  </svg>
-                 </button>
-                 <input class="proloop-value" name="proloop-quantity" readonly="" type="text" value=""/>
-                 <button class="qty-btn proloop-plus" onclick="HRT.All.plusQtyProdItem('1109941406')">
-                  <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
-                   <rect height="17" width="1" x="9" y="1">
-                   </rect>
-                   <rect height="1" width="17" x="1" y="9">
-                   </rect>
-                  </svg>
-                 </button>
-                </div>
-               </div>
-              </div>
-              <div class="proloop-actions__quickview">
-               <button class="icon-quickview tooltip-cs" data-handle="/products/san-pham-tang-1" title="Xem nhanh">
-                <svg height="22" viewbox="0 0 577.029 577.029" width="22" xmlns="http://www.w3.org/2000/svg">
-                 <g>
-                  <g>
-                   <path d="M288.514,148.629c73.746,0,136.162,33.616,175.539,61.821c46.652,33.415,70.66,65.737,76.885,78.065
-                          c-6.232,12.327-30.232,44.649-76.885,78.065c-39.377,28.204-101.793,61.82-175.539,61.82c-73.746,0-136.161-33.616-175.539-61.82
-                          c-46.661-33.416-70.66-65.738-76.894-78.065c6.234-12.328,30.233-44.65,76.885-78.065
-                          C152.353,182.245,214.768,148.629,288.514,148.629 M288.514,113.657C129.176,113.657,0,253.543,0,288.515
-                          s129.176,174.857,288.514,174.857c159.339,0,288.515-139.886,288.515-174.857S447.854,113.657,288.514,113.657L288.514,113.657z
-                          M288.514,183.601c-57.939,0-104.914,46.975-104.914,104.914c0,57.938,46.975,104.914,104.914,104.914
-                          s104.914-46.976,104.914-104.914C393.428,230.576,346.453,183.601,288.514,183.601z M260.266,288.515
-                          c-24.515,0-44.388-19.873-44.388-44.388c0-24.515,19.873-44.387,44.388-44.387c24.515,0,44.388,19.873,44.388,44.387
-                          C304.654,268.642,284.781,288.515,260.266,288.515z">
-                   </path>
-                  </g>
-                 </g>
-                </svg>
-                <span class="tooltip-hover">
-                Xem nhanh
-               </span>
-               </button>
-              </div>
-             </div>
-            </div>
-           </div>
-           <div class="proloop-detail">
-            <h3 class="proloop-title">
-             <a data-handle="/products/san-pham-tang-1" href="/products/san-pham-tang-1">
-              Sản phẩm tặng 1
-             </a>
-            </h3>
-            <p class="proloop-price">
-             <a class="price">
-              Liên hệ
-             </a>
-            </p>
-           </div>
-          </div>
-         </div>
-         <div class="col-lg-cus5 col-lg-3 col-md-6 col-6 product-loop" data-id="1109941395">
-          <div class="product-inner" data-proid="1048690128" id="collection_loop_6">
-           <div class="proloop-image">
-            <div class="proloop-image__inner">
-             <div class="lazy-img lazy-img__prod first-image">
-              <picture>
-               <source data-srcset="//product.hstatic.net/200000758017/product/141873_01_e9e9eeb3f03944ceb83eee52b804b41e_330073a65f714f589c55d7907a728111_large.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <source data-srcset="//product.hstatic.net/200000758017/product/141873_01_e9e9eeb3f03944ceb83eee52b804b41e_330073a65f714f589c55d7907a728111_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <img alt=" Nike Wmns Air Huarache City Move " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/141873_01_e9e9eeb3f03944ceb83eee52b804b41e_330073a65f714f589c55d7907a728111_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-              </picture>
-             </div>
-             <div class="lazy-img lazy-img__prod second-image hovered-img d-none d-lg-block">
-              <picture>
-               <source data-srcset="//product.hstatic.net/200000758017/product/141873_02_1aac934c7b5945a2a48ea2fc7e2323c4_e72e8672413349cb9e6cb6f2a853c92e_thumb.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <source data-srcset="//product.hstatic.net/200000758017/product/141873_02_1aac934c7b5945a2a48ea2fc7e2323c4_e72e8672413349cb9e6cb6f2a853c92e_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <img alt=" Nike Wmns Air Huarache City Move " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/141873_02_1aac934c7b5945a2a48ea2fc7e2323c4_e72e8672413349cb9e6cb6f2a853c92e_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-              </picture>
-             </div>
-            </div>
-            <div class="proloop-image__position">
-             <div class="gift product_gift_label d-none" data-id="1048690128">
-              <img alt="icon quà tặng" class="lazyload" data-src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png" src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"/>
-             </div>
-             <a class="proloop-link quickview-product" data-handle="/products/nike-wmns-air-huarache-city-move" href="/products/nike-wmns-air-huarache-city-move" title="Nike Wmns Air Huarache City Move">
-             </a>
-            </div>
-            <div class="proloop-actions" data-vrid="1109941395">
-             <div class="proloop-actions__inner">
-              <div class="proloop-actions__cart">
-               <div class="actions-primary">
-                <button class="button btn-small btn-proloop-cart add-to-cart btn-addcart-view" onclick="HRT.All.addCartProdItem('1109941395')" type="submit">
-                 <svg height="18" viewbox="0 0 22 22" width="18" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M15.95 6H19.7V17.875C19.7 18.7344 19.3875 19.4635 18.7625 20.0625C18.1635 20.6875 17.4344 21 16.575 21H5.325C4.46563 21 3.72344 20.6875 3.09844 20.0625C2.49948 19.4635 2.2 18.7344 2.2 17.875V6H5.95C5.95 4.61979 6.43177 3.44792 7.39531 2.48438C8.3849 1.49479 9.56979 1 10.95 1C12.3302 1 13.5021 1.49479 14.4656 2.48438C15.4552 3.44792 15.95 4.61979 15.95 6ZM13.1375 3.8125C12.5385 3.1875 11.8094 2.875 10.95 2.875C10.0906 2.875 9.34844 3.1875 8.72344 3.8125C8.12448 4.41146 7.825 5.14062 7.825 6H14.075C14.075 5.14062 13.7625 4.41146 13.1375 3.8125ZM17.825 17.875V7.875H15.95V9.4375C15.95 9.69792 15.8589 9.91927 15.6766 10.1016C15.4943 10.2839 15.2729 10.375 15.0125 10.375C14.7521 10.375 14.5307 10.2839 14.3484 10.1016C14.1661 9.91927 14.075 9.69792 14.075 9.4375V7.875H7.825V9.4375C7.825 9.69792 7.73385 9.91927 7.55156 10.1016C7.36927 10.2839 7.14792 10.375 6.8875 10.375C6.62708 10.375 6.40573 10.2839 6.22344 10.1016C6.04115 9.91927 5.95 9.69792 5.95 9.4375V7.875H4.075V17.875C4.075 18.2135 4.19219 18.5 4.42656 18.7344C4.68698 18.9948 4.98646 19.125 5.325 19.125H16.575C16.9135 19.125 17.2 18.9948 17.4344 18.7344C17.6948 18.5 17.825 18.2135 17.825 17.875Z">
-                  </path>
+              <div class="actions-boxqty d-flex">
+               <div class="actions-wrapqty d-flex">
+                <button class="qty-btn proloop-minus" onclick="HRT.All.minusQtyProdItem('1109941415')">
+                 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
+                  <rect height="1" width="18" x="1" y="9">
+                  </rect>
                  </svg>
-                 <span class="btnadd">
-                 Thêm vào giỏ
-                </span>
+                </button>
+                <input class="proloop-value" name="proloop-quantity" readonly="" type="text" value=""/>
+                <button class="qty-btn proloop-plus" onclick="HRT.All.plusQtyProdItem('1109941415')">
+                 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
+                  <rect height="17" width="1" x="9" y="1">
+                  </rect>
+                  <rect height="1" width="17" x="1" y="9">
+                  </rect>
+                 </svg>
                 </button>
                </div>
-               <div class="actions-boxqty d-flex">
-                <div class="actions-wrapqty d-flex">
-                 <button class="qty-btn proloop-minus" onclick="HRT.All.minusQtyProdItem('1109941395')">
-                  <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
-                   <rect height="1" width="18" x="1" y="9">
-                   </rect>
-                  </svg>
-                 </button>
-                 <input class="proloop-value" name="proloop-quantity" readonly="" type="text" value=""/>
-                 <button class="qty-btn proloop-plus" onclick="HRT.All.plusQtyProdItem('1109941395')">
-                  <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
-                   <rect height="17" width="1" x="9" y="1">
-                   </rect>
-                   <rect height="1" width="17" x="1" y="9">
-                   </rect>
-                  </svg>
-                 </button>
-                </div>
-               </div>
               </div>
-              <div class="proloop-actions__quickview">
-               <button class="icon-quickview tooltip-cs" data-handle="/products/nike-wmns-air-huarache-city-move" title="Xem nhanh">
-                <svg height="22" viewbox="0 0 577.029 577.029" width="22" xmlns="http://www.w3.org/2000/svg">
+             </div>
+             <div class="proloop-actions__quickview">
+              <button class="icon-quickview tooltip-cs" data-handle="/products/san-pham-tang-3" title="Xem nhanh">
+               <svg height="22" viewbox="0 0 577.029 577.029" width="22" xmlns="http://www.w3.org/2000/svg">
+                <g>
                  <g>
-                  <g>
-                   <path d="M288.514,148.629c73.746,0,136.162,33.616,175.539,61.821c46.652,33.415,70.66,65.737,76.885,78.065
+                  <path d="M288.514,148.629c73.746,0,136.162,33.616,175.539,61.821c46.652,33.415,70.66,65.737,76.885,78.065
                           c-6.232,12.327-30.232,44.649-76.885,78.065c-39.377,28.204-101.793,61.82-175.539,61.82c-73.746,0-136.161-33.616-175.539-61.82
                           c-46.661-33.416-70.66-65.738-76.894-78.065c6.234-12.328,30.233-44.65,76.885-78.065
                           C152.353,182.245,214.768,148.629,288.514,148.629 M288.514,113.657C129.176,113.657,0,253.543,0,288.515
@@ -1132,29 +689,314 @@
                           s104.914-46.976,104.914-104.914C393.428,230.576,346.453,183.601,288.514,183.601z M260.266,288.515
                           c-24.515,0-44.388-19.873-44.388-44.388c0-24.515,19.873-44.387,44.388-44.387c24.515,0,44.388,19.873,44.388,44.387
                           C304.654,268.642,284.781,288.515,260.266,288.515z">
-                   </path>
-                  </g>
+                  </path>
                  </g>
-                </svg>
-                <span class="tooltip-hover">
+                </g>
+               </svg>
+               <span class="tooltip-hover">
                 Xem nhanh
                </span>
-               </button>
-              </div>
+              </button>
              </div>
             </div>
            </div>
-           <div class="proloop-detail">
-            <h3 class="proloop-title">
-             <a data-handle="/products/nike-wmns-air-huarache-city-move" href="/products/nike-wmns-air-huarache-city-move">
-              Nike Wmns Air Huarache City Move
-             </a>
-            </h3>
-            <p class="proloop-price">
+          </div>
+          <div class="proloop-detail">
+           <h3 class="proloop-title">
+            <a data-handle="/products/san-pham-tang-3" href="/products/san-pham-tang-3">
+             Sản phẩm tặng 3
+            </a>
+           </h3>
+           <p class="proloop-price">
+            <a class="price">
+             Liên hệ
+            </a>
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-cus5 col-lg-3 col-md-6 col-6 product-loop" data-id="1109941411">
+         <div class="product-inner" data-proid="1048690138" id="collection_loop_4">
+          <div class="proloop-image">
+           <div class="proloop-image__inner">
+            <div class="lazy-img lazy-img__prod">
+             <picture>
+              <source data-srcset="//product.hstatic.net/200000758017/product/139922_01_793cd1128324417ab4c36dd84ecd7e08_05da46f87ac44b62934e7d7664012cb8_large.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <source data-srcset="//product.hstatic.net/200000758017/product/139922_01_793cd1128324417ab4c36dd84ecd7e08_05da46f87ac44b62934e7d7664012cb8_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <img alt=" Sản phẩm tặng 2 " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/139922_01_793cd1128324417ab4c36dd84ecd7e08_05da46f87ac44b62934e7d7664012cb8_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+             </picture>
+            </div>
+           </div>
+           <div class="proloop-image__position">
+            <div class="gift product_gift_label d-none" data-id="1048690138">
+             <img alt="icon quà tặng" class="lazyload" data-src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png" src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"/>
+            </div>
+            <a class="proloop-link quickview-product" data-handle="/products/san-pham-tang-2" href="/products/san-pham-tang-2" title="Sản phẩm tặng 2">
+            </a>
+           </div>
+           <div class="proloop-actions" data-vrid="1109941411">
+            <div class="proloop-actions__inner">
+             <div class="proloop-actions__cart">
+              <div class="actions-primary">
+               <a class="button btn-proloop-cart disabled" href="/products/san-pham-tang-2" title="Sản phẩm tặng 2">
+                <span>
+                 Hàng tặng
+                </span>
+               </a>
+              </div>
+              <div class="actions-boxqty d-flex">
+               <div class="actions-wrapqty d-flex">
+                <button class="qty-btn proloop-minus" onclick="HRT.All.minusQtyProdItem('1109941411')">
+                 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
+                  <rect height="1" width="18" x="1" y="9">
+                  </rect>
+                 </svg>
+                </button>
+                <input class="proloop-value" name="proloop-quantity" readonly="" type="text" value=""/>
+                <button class="qty-btn proloop-plus" onclick="HRT.All.plusQtyProdItem('1109941411')">
+                 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
+                  <rect height="17" width="1" x="9" y="1">
+                  </rect>
+                  <rect height="1" width="17" x="1" y="9">
+                  </rect>
+                 </svg>
+                </button>
+               </div>
+              </div>
+             </div>
+             <div class="proloop-actions__quickview">
+              <button class="icon-quickview tooltip-cs" data-handle="/products/san-pham-tang-2" title="Xem nhanh">
+               <svg height="22" viewbox="0 0 577.029 577.029" width="22" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                 <g>
+                  <path d="M288.514,148.629c73.746,0,136.162,33.616,175.539,61.821c46.652,33.415,70.66,65.737,76.885,78.065
+                          c-6.232,12.327-30.232,44.649-76.885,78.065c-39.377,28.204-101.793,61.82-175.539,61.82c-73.746,0-136.161-33.616-175.539-61.82
+                          c-46.661-33.416-70.66-65.738-76.894-78.065c6.234-12.328,30.233-44.65,76.885-78.065
+                          C152.353,182.245,214.768,148.629,288.514,148.629 M288.514,113.657C129.176,113.657,0,253.543,0,288.515
+                          s129.176,174.857,288.514,174.857c159.339,0,288.515-139.886,288.515-174.857S447.854,113.657,288.514,113.657L288.514,113.657z
+                          M288.514,183.601c-57.939,0-104.914,46.975-104.914,104.914c0,57.938,46.975,104.914,104.914,104.914
+                          s104.914-46.976,104.914-104.914C393.428,230.576,346.453,183.601,288.514,183.601z M260.266,288.515
+                          c-24.515,0-44.388-19.873-44.388-44.388c0-24.515,19.873-44.387,44.388-44.387c24.515,0,44.388,19.873,44.388,44.387
+                          C304.654,268.642,284.781,288.515,260.266,288.515z">
+                  </path>
+                 </g>
+                </g>
+               </svg>
+               <span class="tooltip-hover">
+                Xem nhanh
+               </span>
+              </button>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="proloop-detail">
+           <h3 class="proloop-title">
+            <a data-handle="/products/san-pham-tang-2" href="/products/san-pham-tang-2">
+             Sản phẩm tặng 2
+            </a>
+           </h3>
+           <p class="proloop-price">
+            <a class="price">
+             Liên hệ
+            </a>
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-cus5 col-lg-3 col-md-6 col-6 product-loop" data-id="1109941406">
+         <div class="product-inner" data-proid="1048690135" id="collection_loop_5">
+          <div class="proloop-image">
+           <div class="proloop-image__inner">
+            <div class="lazy-img lazy-img__prod first-image">
+             <picture>
+              <source data-srcset="//product.hstatic.net/200000758017/product/052077_01_51fedbca346042cebbc158b812bc05ef_abb0af57a7db42df8bb719579bf3b360_large.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <source data-srcset="//product.hstatic.net/200000758017/product/052077_01_51fedbca346042cebbc158b812bc05ef_abb0af57a7db42df8bb719579bf3b360_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <img alt=" Sản phẩm tặng 1 " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/052077_01_51fedbca346042cebbc158b812bc05ef_abb0af57a7db42df8bb719579bf3b360_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+             </picture>
+            </div>
+            <div class="lazy-img lazy-img__prod second-image hovered-img d-none d-lg-block">
+             <picture>
+              <source data-srcset="//product.hstatic.net/200000758017/product/air-huarache-run-white-white-052856_2_399f09f84f264ae3a159d571a99e4687_8f57e28d19f84b8eae5d26a2d5f12f29_thumb.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <source data-srcset="//product.hstatic.net/200000758017/product/air-huarache-run-white-white-052856_2_399f09f84f264ae3a159d571a99e4687_8f57e28d19f84b8eae5d26a2d5f12f29_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <img alt=" Sản phẩm tặng 1 " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/air-huarache-run-white-white-052856_2_399f09f84f264ae3a159d571a99e4687_8f57e28d19f84b8eae5d26a2d5f12f29_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+             </picture>
+            </div>
+           </div>
+           <div class="proloop-image__position">
+            <div class="gift product_gift_label d-none" data-id="1048690135">
+             <img alt="icon quà tặng" class="lazyload" data-src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png" src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"/>
+            </div>
+            <a class="proloop-link quickview-product" data-handle="/products/san-pham-tang-1" href="/products/san-pham-tang-1" title="Sản phẩm tặng 1">
+            </a>
+           </div>
+           <div class="proloop-actions" data-vrid="1109941406">
+            <div class="proloop-actions__inner">
+             <div class="proloop-actions__cart">
+              <div class="actions-primary">
+               <a class="button btn-proloop-cart disabled" href="/products/san-pham-tang-1" title="Sản phẩm tặng 1">
+                <span>
+                 Hàng tặng
+                </span>
+               </a>
+              </div>
+              <div class="actions-boxqty d-flex">
+               <div class="actions-wrapqty d-flex">
+                <button class="qty-btn proloop-minus" onclick="HRT.All.minusQtyProdItem('1109941406')">
+                 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
+                  <rect height="1" width="18" x="1" y="9">
+                  </rect>
+                 </svg>
+                </button>
+                <input class="proloop-value" name="proloop-quantity" readonly="" type="text" value=""/>
+                <button class="qty-btn proloop-plus" onclick="HRT.All.plusQtyProdItem('1109941406')">
+                 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
+                  <rect height="17" width="1" x="9" y="1">
+                  </rect>
+                  <rect height="1" width="17" x="1" y="9">
+                  </rect>
+                 </svg>
+                </button>
+               </div>
+              </div>
+             </div>
+             <div class="proloop-actions__quickview">
+              <button class="icon-quickview tooltip-cs" data-handle="/products/san-pham-tang-1" title="Xem nhanh">
+               <svg height="22" viewbox="0 0 577.029 577.029" width="22" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                 <g>
+                  <path d="M288.514,148.629c73.746,0,136.162,33.616,175.539,61.821c46.652,33.415,70.66,65.737,76.885,78.065
+                          c-6.232,12.327-30.232,44.649-76.885,78.065c-39.377,28.204-101.793,61.82-175.539,61.82c-73.746,0-136.161-33.616-175.539-61.82
+                          c-46.661-33.416-70.66-65.738-76.894-78.065c6.234-12.328,30.233-44.65,76.885-78.065
+                          C152.353,182.245,214.768,148.629,288.514,148.629 M288.514,113.657C129.176,113.657,0,253.543,0,288.515
+                          s129.176,174.857,288.514,174.857c159.339,0,288.515-139.886,288.515-174.857S447.854,113.657,288.514,113.657L288.514,113.657z
+                          M288.514,183.601c-57.939,0-104.914,46.975-104.914,104.914c0,57.938,46.975,104.914,104.914,104.914
+                          s104.914-46.976,104.914-104.914C393.428,230.576,346.453,183.601,288.514,183.601z M260.266,288.515
+                          c-24.515,0-44.388-19.873-44.388-44.388c0-24.515,19.873-44.387,44.388-44.387c24.515,0,44.388,19.873,44.388,44.387
+                          C304.654,268.642,284.781,288.515,260.266,288.515z">
+                  </path>
+                 </g>
+                </g>
+               </svg>
+               <span class="tooltip-hover">
+                Xem nhanh
+               </span>
+              </button>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="proloop-detail">
+           <h3 class="proloop-title">
+            <a data-handle="/products/san-pham-tang-1" href="/products/san-pham-tang-1">
+             Sản phẩm tặng 1
+            </a>
+           </h3>
+           <p class="proloop-price">
+            <a class="price">
+             Liên hệ
+            </a>
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="col-lg-cus5 col-lg-3 col-md-6 col-6 product-loop" data-id="1109941395">
+         <div class="product-inner" data-proid="1048690128" id="collection_loop_6">
+          <div class="proloop-image">
+           <div class="proloop-image__inner">
+            <div class="lazy-img lazy-img__prod first-image">
+             <picture>
+              <source data-srcset="//product.hstatic.net/200000758017/product/141873_01_e9e9eeb3f03944ceb83eee52b804b41e_330073a65f714f589c55d7907a728111_large.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <source data-srcset="//product.hstatic.net/200000758017/product/141873_01_e9e9eeb3f03944ceb83eee52b804b41e_330073a65f714f589c55d7907a728111_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <img alt=" Nike Wmns Air Huarache City Move " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/141873_01_e9e9eeb3f03944ceb83eee52b804b41e_330073a65f714f589c55d7907a728111_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+             </picture>
+            </div>
+            <div class="lazy-img lazy-img__prod second-image hovered-img d-none d-lg-block">
+             <picture>
+              <source data-srcset="//product.hstatic.net/200000758017/product/141873_02_1aac934c7b5945a2a48ea2fc7e2323c4_e72e8672413349cb9e6cb6f2a853c92e_thumb.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <source data-srcset="//product.hstatic.net/200000758017/product/141873_02_1aac934c7b5945a2a48ea2fc7e2323c4_e72e8672413349cb9e6cb6f2a853c92e_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <img alt=" Nike Wmns Air Huarache City Move " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/141873_02_1aac934c7b5945a2a48ea2fc7e2323c4_e72e8672413349cb9e6cb6f2a853c92e_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+             </picture>
+            </div>
+           </div>
+           <div class="proloop-image__position">
+            <div class="gift product_gift_label d-none" data-id="1048690128">
+             <img alt="icon quà tặng" class="lazyload" data-src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png" src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"/>
+            </div>
+            <a class="proloop-link quickview-product" data-handle="/products/nike-wmns-air-huarache-city-move" href="/products/nike-wmns-air-huarache-city-move" title="Nike Wmns Air Huarache City Move">
+            </a>
+           </div>
+           <div class="proloop-actions" data-vrid="1109941395">
+            <div class="proloop-actions__inner">
+             <div class="proloop-actions__cart">
+              <div class="actions-primary">
+               <button class="button btn-small btn-proloop-cart add-to-cart btn-addcart-view" onclick="HRT.All.addCartProdItem('1109941395')" type="submit">
+                <svg height="18" viewbox="0 0 22 22" width="18" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M15.95 6H19.7V17.875C19.7 18.7344 19.3875 19.4635 18.7625 20.0625C18.1635 20.6875 17.4344 21 16.575 21H5.325C4.46563 21 3.72344 20.6875 3.09844 20.0625C2.49948 19.4635 2.2 18.7344 2.2 17.875V6H5.95C5.95 4.61979 6.43177 3.44792 7.39531 2.48438C8.3849 1.49479 9.56979 1 10.95 1C12.3302 1 13.5021 1.49479 14.4656 2.48438C15.4552 3.44792 15.95 4.61979 15.95 6ZM13.1375 3.8125C12.5385 3.1875 11.8094 2.875 10.95 2.875C10.0906 2.875 9.34844 3.1875 8.72344 3.8125C8.12448 4.41146 7.825 5.14062 7.825 6H14.075C14.075 5.14062 13.7625 4.41146 13.1375 3.8125ZM17.825 17.875V7.875H15.95V9.4375C15.95 9.69792 15.8589 9.91927 15.6766 10.1016C15.4943 10.2839 15.2729 10.375 15.0125 10.375C14.7521 10.375 14.5307 10.2839 14.3484 10.1016C14.1661 9.91927 14.075 9.69792 14.075 9.4375V7.875H7.825V9.4375C7.825 9.69792 7.73385 9.91927 7.55156 10.1016C7.36927 10.2839 7.14792 10.375 6.8875 10.375C6.62708 10.375 6.40573 10.2839 6.22344 10.1016C6.04115 9.91927 5.95 9.69792 5.95 9.4375V7.875H4.075V17.875C4.075 18.2135 4.19219 18.5 4.42656 18.7344C4.68698 18.9948 4.98646 19.125 5.325 19.125H16.575C16.9135 19.125 17.2 18.9948 17.4344 18.7344C17.6948 18.5 17.825 18.2135 17.825 17.875Z">
+                 </path>
+                </svg>
+                <span class="btnadd">
+                 Thêm vào giỏ
+                </span>
+               </button>
+              </div>
+              <div class="actions-boxqty d-flex">
+               <div class="actions-wrapqty d-flex">
+                <button class="qty-btn proloop-minus" onclick="HRT.All.minusQtyProdItem('1109941395')">
+                 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
+                  <rect height="1" width="18" x="1" y="9">
+                  </rect>
+                 </svg>
+                </button>
+                <input class="proloop-value" name="proloop-quantity" readonly="" type="text" value=""/>
+                <button class="qty-btn proloop-plus" onclick="HRT.All.plusQtyProdItem('1109941395')">
+                 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
+                  <rect height="17" width="1" x="9" y="1">
+                  </rect>
+                  <rect height="1" width="17" x="1" y="9">
+                  </rect>
+                 </svg>
+                </button>
+               </div>
+              </div>
+             </div>
+             <div class="proloop-actions__quickview">
+              <button class="icon-quickview tooltip-cs" data-handle="/products/nike-wmns-air-huarache-city-move" title="Xem nhanh">
+               <svg height="22" viewbox="0 0 577.029 577.029" width="22" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                 <g>
+                  <path d="M288.514,148.629c73.746,0,136.162,33.616,175.539,61.821c46.652,33.415,70.66,65.737,76.885,78.065
+                          c-6.232,12.327-30.232,44.649-76.885,78.065c-39.377,28.204-101.793,61.82-175.539,61.82c-73.746,0-136.161-33.616-175.539-61.82
+                          c-46.661-33.416-70.66-65.738-76.894-78.065c6.234-12.328,30.233-44.65,76.885-78.065
+                          C152.353,182.245,214.768,148.629,288.514,148.629 M288.514,113.657C129.176,113.657,0,253.543,0,288.515
+                          s129.176,174.857,288.514,174.857c159.339,0,288.515-139.886,288.515-174.857S447.854,113.657,288.514,113.657L288.514,113.657z
+                          M288.514,183.601c-57.939,0-104.914,46.975-104.914,104.914c0,57.938,46.975,104.914,104.914,104.914
+                          s104.914-46.976,104.914-104.914C393.428,230.576,346.453,183.601,288.514,183.601z M260.266,288.515
+                          c-24.515,0-44.388-19.873-44.388-44.388c0-24.515,19.873-44.387,44.388-44.387c24.515,0,44.388,19.873,44.388,44.387
+                          C304.654,268.642,284.781,288.515,260.266,288.515z">
+                  </path>
+                 </g>
+                </g>
+               </svg>
+               <span class="tooltip-hover">
+                Xem nhanh
+               </span>
+              </button>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="proloop-detail">
+           <h3 class="proloop-title">
+            <a data-handle="/products/nike-wmns-air-huarache-city-move" href="/products/nike-wmns-air-huarache-city-move">
+             Nike Wmns Air Huarache City Move
+            </a>
+           </h3>
+           <p class="proloop-price">
             <span class="price">
              5,200,000₫
             </span>
-             <span class="addtocart-mb d-sm-block d-lg-none">
+            <span class="addtocart-mb d-sm-block d-lg-none">
              <a class="icon-addtocart" name="add-to-cart" onclick="HRT.All.addCartProdItem('1109941395')">
               <svg height="18" viewbox="0 0 22 22" width="18" xmlns="http://www.w3.org/2000/svg">
                <path d="M15.95 6H19.7V17.875C19.7 18.7344 19.3875 19.4635 18.7625 20.0625C18.1635 20.6875 17.4344 21 16.575 21H5.325C4.46563 21 3.72344 20.6875 3.09844 20.0625C2.49948 19.4635 2.2 18.7344 2.2 17.875V6H5.95C5.95 4.61979 6.43177 3.44792 7.39531 2.48438C8.3849 1.49479 9.56979 1 10.95 1C12.3302 1 13.5021 1.49479 14.4656 2.48438C15.4552 3.44792 15.95 4.61979 15.95 6ZM13.1375 3.8125C12.5385 3.1875 11.8094 2.875 10.95 2.875C10.0906 2.875 9.34844 3.1875 8.72344 3.8125C8.12448 4.41146 7.825 5.14062 7.825 6H14.075C14.075 5.14062 13.7625 4.41146 13.1375 3.8125ZM17.825 17.875V7.875H15.95V9.4375C15.95 9.69792 15.8589 9.91927 15.6766 10.1016C15.4943 10.2839 15.2729 10.375 15.0125 10.375C14.7521 10.375 14.5307 10.2839 14.3484 10.1016C14.1661 9.91927 14.075 9.69792 14.075 9.4375V7.875H7.825V9.4375C7.825 9.69792 7.73385 9.91927 7.55156 10.1016C7.36927 10.2839 7.14792 10.375 6.8875 10.375C6.62708 10.375 6.40573 10.2839 6.22344 10.1016C6.04115 9.91927 5.95 9.69792 5.95 9.4375V7.875H4.075V17.875C4.075 18.2135 4.19219 18.5 4.42656 18.7344C4.68698 18.9948 4.98646 19.125 5.325 19.125H16.575C16.9135 19.125 17.2 18.9948 17.4344 18.7344C17.6948 18.5 17.825 18.2135 17.825 17.875Z">
@@ -1162,76 +1004,76 @@
               </svg>
              </a>
             </span>
-            </p>
-           </div>
+           </p>
           </div>
          </div>
-         <div class="col-lg-cus5 col-lg-3 col-md-6 col-6 product-loop" data-id="1109941377">
-          <div class="product-inner" data-proid="1048690117" id="collection_loop_7">
-           <div class="proloop-image">
-            <div class="proloop-image__inner">
-             <div class="lazy-img lazy-img__prod first-image">
-              <picture>
-               <source data-srcset="//product.hstatic.net/200000758017/product/air-huarache-run-white-white-052856_1_b8e1fd1f714a4b46b08ecd3f79c1e815_da1073ae2a2449378fc959679e6fba30_large.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <source data-srcset="//product.hstatic.net/200000758017/product/air-huarache-run-white-white-052856_1_b8e1fd1f714a4b46b08ecd3f79c1e815_da1073ae2a2449378fc959679e6fba30_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <img alt=" Nike W's Air Huarache Run &quot;Triple White&quot; " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/air-huarache-run-white-white-052856_1_b8e1fd1f714a4b46b08ecd3f79c1e815_da1073ae2a2449378fc959679e6fba30_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-              </picture>
-             </div>
-             <div class="lazy-img lazy-img__prod second-image hovered-img d-none d-lg-block">
-              <picture>
-               <source data-srcset="//product.hstatic.net/200000758017/product/air-huarache-run-white-white-052856_2_f6578c9cd73a4d4384a409b0f3649efd_ddbf5ec02d77471b99b8dd42593aefc6_thumb.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <source data-srcset="//product.hstatic.net/200000758017/product/air-huarache-run-white-white-052856_2_f6578c9cd73a4d4384a409b0f3649efd_ddbf5ec02d77471b99b8dd42593aefc6_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <img alt=" Nike W's Air Huarache Run &quot;Triple White&quot; " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/air-huarache-run-white-white-052856_2_f6578c9cd73a4d4384a409b0f3649efd_ddbf5ec02d77471b99b8dd42593aefc6_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-              </picture>
-             </div>
+        </div>
+        <div class="col-lg-cus5 col-lg-3 col-md-6 col-6 product-loop" data-id="1109941377">
+         <div class="product-inner" data-proid="1048690117" id="collection_loop_7">
+          <div class="proloop-image">
+           <div class="proloop-image__inner">
+            <div class="lazy-img lazy-img__prod first-image">
+             <picture>
+              <source data-srcset="//product.hstatic.net/200000758017/product/air-huarache-run-white-white-052856_1_b8e1fd1f714a4b46b08ecd3f79c1e815_da1073ae2a2449378fc959679e6fba30_large.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <source data-srcset="//product.hstatic.net/200000758017/product/air-huarache-run-white-white-052856_1_b8e1fd1f714a4b46b08ecd3f79c1e815_da1073ae2a2449378fc959679e6fba30_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <img alt=" Nike W's Air Huarache Run &quot;Triple White&quot; " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/air-huarache-run-white-white-052856_1_b8e1fd1f714a4b46b08ecd3f79c1e815_da1073ae2a2449378fc959679e6fba30_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+             </picture>
             </div>
-            <div class="proloop-image__position">
-             <div class="gift product_gift_label d-none" data-id="1048690117">
-              <img alt="icon quà tặng" class="lazyload" data-src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png" src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"/>
-             </div>
-             <a class="proloop-link quickview-product" data-handle="/products/nike-w-s-air-huarache-run-triple-white" href="/products/nike-w-s-air-huarache-run-triple-white" title="Nike W's Air Huarache Run " triple="" white""="">
-             </a>
+            <div class="lazy-img lazy-img__prod second-image hovered-img d-none d-lg-block">
+             <picture>
+              <source data-srcset="//product.hstatic.net/200000758017/product/air-huarache-run-white-white-052856_2_f6578c9cd73a4d4384a409b0f3649efd_ddbf5ec02d77471b99b8dd42593aefc6_thumb.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <source data-srcset="//product.hstatic.net/200000758017/product/air-huarache-run-white-white-052856_2_f6578c9cd73a4d4384a409b0f3649efd_ddbf5ec02d77471b99b8dd42593aefc6_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <img alt=" Nike W's Air Huarache Run &quot;Triple White&quot; " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/air-huarache-run-white-white-052856_2_f6578c9cd73a4d4384a409b0f3649efd_ddbf5ec02d77471b99b8dd42593aefc6_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+             </picture>
             </div>
-            <div class="proloop-actions" data-vrid="1109941377">
-             <div class="proloop-actions__inner">
-              <div class="proloop-actions__cart">
-               <div class="actions-primary">
-                <button class="button btn-small btn-proloop-cart add-to-cart btn-addcart-view" onclick="HRT.All.addCartProdItem('1109941377')" type="submit">
-                 <svg height="18" viewbox="0 0 22 22" width="18" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M15.95 6H19.7V17.875C19.7 18.7344 19.3875 19.4635 18.7625 20.0625C18.1635 20.6875 17.4344 21 16.575 21H5.325C4.46563 21 3.72344 20.6875 3.09844 20.0625C2.49948 19.4635 2.2 18.7344 2.2 17.875V6H5.95C5.95 4.61979 6.43177 3.44792 7.39531 2.48438C8.3849 1.49479 9.56979 1 10.95 1C12.3302 1 13.5021 1.49479 14.4656 2.48438C15.4552 3.44792 15.95 4.61979 15.95 6ZM13.1375 3.8125C12.5385 3.1875 11.8094 2.875 10.95 2.875C10.0906 2.875 9.34844 3.1875 8.72344 3.8125C8.12448 4.41146 7.825 5.14062 7.825 6H14.075C14.075 5.14062 13.7625 4.41146 13.1375 3.8125ZM17.825 17.875V7.875H15.95V9.4375C15.95 9.69792 15.8589 9.91927 15.6766 10.1016C15.4943 10.2839 15.2729 10.375 15.0125 10.375C14.7521 10.375 14.5307 10.2839 14.3484 10.1016C14.1661 9.91927 14.075 9.69792 14.075 9.4375V7.875H7.825V9.4375C7.825 9.69792 7.73385 9.91927 7.55156 10.1016C7.36927 10.2839 7.14792 10.375 6.8875 10.375C6.62708 10.375 6.40573 10.2839 6.22344 10.1016C6.04115 9.91927 5.95 9.69792 5.95 9.4375V7.875H4.075V17.875C4.075 18.2135 4.19219 18.5 4.42656 18.7344C4.68698 18.9948 4.98646 19.125 5.325 19.125H16.575C16.9135 19.125 17.2 18.9948 17.4344 18.7344C17.6948 18.5 17.825 18.2135 17.825 17.875Z">
-                  </path>
-                 </svg>
-                 <span class="btnadd">
+           </div>
+           <div class="proloop-image__position">
+            <div class="gift product_gift_label d-none" data-id="1048690117">
+             <img alt="icon quà tặng" class="lazyload" data-src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png" src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"/>
+            </div>
+            <a class="proloop-link quickview-product" data-handle="/products/nike-w-s-air-huarache-run-triple-white" href="/products/nike-w-s-air-huarache-run-triple-white" title="Nike W's Air Huarache Run " triple="" white""="">
+            </a>
+           </div>
+           <div class="proloop-actions" data-vrid="1109941377">
+            <div class="proloop-actions__inner">
+             <div class="proloop-actions__cart">
+              <div class="actions-primary">
+               <button class="button btn-small btn-proloop-cart add-to-cart btn-addcart-view" onclick="HRT.All.addCartProdItem('1109941377')" type="submit">
+                <svg height="18" viewbox="0 0 22 22" width="18" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M15.95 6H19.7V17.875C19.7 18.7344 19.3875 19.4635 18.7625 20.0625C18.1635 20.6875 17.4344 21 16.575 21H5.325C4.46563 21 3.72344 20.6875 3.09844 20.0625C2.49948 19.4635 2.2 18.7344 2.2 17.875V6H5.95C5.95 4.61979 6.43177 3.44792 7.39531 2.48438C8.3849 1.49479 9.56979 1 10.95 1C12.3302 1 13.5021 1.49479 14.4656 2.48438C15.4552 3.44792 15.95 4.61979 15.95 6ZM13.1375 3.8125C12.5385 3.1875 11.8094 2.875 10.95 2.875C10.0906 2.875 9.34844 3.1875 8.72344 3.8125C8.12448 4.41146 7.825 5.14062 7.825 6H14.075C14.075 5.14062 13.7625 4.41146 13.1375 3.8125ZM17.825 17.875V7.875H15.95V9.4375C15.95 9.69792 15.8589 9.91927 15.6766 10.1016C15.4943 10.2839 15.2729 10.375 15.0125 10.375C14.7521 10.375 14.5307 10.2839 14.3484 10.1016C14.1661 9.91927 14.075 9.69792 14.075 9.4375V7.875H7.825V9.4375C7.825 9.69792 7.73385 9.91927 7.55156 10.1016C7.36927 10.2839 7.14792 10.375 6.8875 10.375C6.62708 10.375 6.40573 10.2839 6.22344 10.1016C6.04115 9.91927 5.95 9.69792 5.95 9.4375V7.875H4.075V17.875C4.075 18.2135 4.19219 18.5 4.42656 18.7344C4.68698 18.9948 4.98646 19.125 5.325 19.125H16.575C16.9135 19.125 17.2 18.9948 17.4344 18.7344C17.6948 18.5 17.825 18.2135 17.825 17.875Z">
+                 </path>
+                </svg>
+                <span class="btnadd">
                  Thêm vào giỏ
                 </span>
+               </button>
+              </div>
+              <div class="actions-boxqty d-flex">
+               <div class="actions-wrapqty d-flex">
+                <button class="qty-btn proloop-minus" onclick="HRT.All.minusQtyProdItem('1109941377')">
+                 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
+                  <rect height="1" width="18" x="1" y="9">
+                  </rect>
+                 </svg>
+                </button>
+                <input class="proloop-value" name="proloop-quantity" readonly="" type="text" value=""/>
+                <button class="qty-btn proloop-plus" onclick="HRT.All.plusQtyProdItem('1109941377')">
+                 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
+                  <rect height="17" width="1" x="9" y="1">
+                  </rect>
+                  <rect height="1" width="17" x="1" y="9">
+                  </rect>
+                 </svg>
                 </button>
                </div>
-               <div class="actions-boxqty d-flex">
-                <div class="actions-wrapqty d-flex">
-                 <button class="qty-btn proloop-minus" onclick="HRT.All.minusQtyProdItem('1109941377')">
-                  <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
-                   <rect height="1" width="18" x="1" y="9">
-                   </rect>
-                  </svg>
-                 </button>
-                 <input class="proloop-value" name="proloop-quantity" readonly="" type="text" value=""/>
-                 <button class="qty-btn proloop-plus" onclick="HRT.All.plusQtyProdItem('1109941377')">
-                  <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
-                   <rect height="17" width="1" x="9" y="1">
-                   </rect>
-                   <rect height="1" width="17" x="1" y="9">
-                   </rect>
-                  </svg>
-                 </button>
-                </div>
-               </div>
               </div>
-              <div class="proloop-actions__quickview">
-               <button class="icon-quickview tooltip-cs" data-handle="/products/nike-w-s-air-huarache-run-triple-white" title="Xem nhanh">
-                <svg height="22" viewbox="0 0 577.029 577.029" width="22" xmlns="http://www.w3.org/2000/svg">
+             </div>
+             <div class="proloop-actions__quickview">
+              <button class="icon-quickview tooltip-cs" data-handle="/products/nike-w-s-air-huarache-run-triple-white" title="Xem nhanh">
+               <svg height="22" viewbox="0 0 577.029 577.029" width="22" xmlns="http://www.w3.org/2000/svg">
+                <g>
                  <g>
-                  <g>
-                   <path d="M288.514,148.629c73.746,0,136.162,33.616,175.539,61.821c46.652,33.415,70.66,65.737,76.885,78.065
+                  <path d="M288.514,148.629c73.746,0,136.162,33.616,175.539,61.821c46.652,33.415,70.66,65.737,76.885,78.065
                           c-6.232,12.327-30.232,44.649-76.885,78.065c-39.377,28.204-101.793,61.82-175.539,61.82c-73.746,0-136.161-33.616-175.539-61.82
                           c-46.661-33.416-70.66-65.738-76.894-78.065c6.234-12.328,30.233-44.65,76.885-78.065
                           C152.353,182.245,214.768,148.629,288.514,148.629 M288.514,113.657C129.176,113.657,0,253.543,0,288.515
@@ -1240,29 +1082,29 @@
                           s104.914-46.976,104.914-104.914C393.428,230.576,346.453,183.601,288.514,183.601z M260.266,288.515
                           c-24.515,0-44.388-19.873-44.388-44.388c0-24.515,19.873-44.387,44.388-44.387c24.515,0,44.388,19.873,44.388,44.387
                           C304.654,268.642,284.781,288.515,260.266,288.515z">
-                   </path>
-                  </g>
+                  </path>
                  </g>
-                </svg>
-                <span class="tooltip-hover">
+                </g>
+               </svg>
+               <span class="tooltip-hover">
                 Xem nhanh
                </span>
-               </button>
-              </div>
+              </button>
              </div>
             </div>
            </div>
-           <div class="proloop-detail">
-            <h3 class="proloop-title">
-             <a data-handle="/products/nike-w-s-air-huarache-run-triple-white" href="/products/nike-w-s-air-huarache-run-triple-white">
-              Nike W's Air Huarache Run "Triple White"
-             </a>
-            </h3>
-            <p class="proloop-price">
+          </div>
+          <div class="proloop-detail">
+           <h3 class="proloop-title">
+            <a data-handle="/products/nike-w-s-air-huarache-run-triple-white" href="/products/nike-w-s-air-huarache-run-triple-white">
+             Nike W's Air Huarache Run "Triple White"
+            </a>
+           </h3>
+           <p class="proloop-price">
             <span class="price">
              7,300,000₫
             </span>
-             <span class="addtocart-mb d-sm-block d-lg-none">
+            <span class="addtocart-mb d-sm-block d-lg-none">
              <a class="icon-addtocart" name="add-to-cart" onclick="HRT.All.addCartProdItem('1109941377')">
               <svg height="18" viewbox="0 0 22 22" width="18" xmlns="http://www.w3.org/2000/svg">
                <path d="M15.95 6H19.7V17.875C19.7 18.7344 19.3875 19.4635 18.7625 20.0625C18.1635 20.6875 17.4344 21 16.575 21H5.325C4.46563 21 3.72344 20.6875 3.09844 20.0625C2.49948 19.4635 2.2 18.7344 2.2 17.875V6H5.95C5.95 4.61979 6.43177 3.44792 7.39531 2.48438C8.3849 1.49479 9.56979 1 10.95 1C12.3302 1 13.5021 1.49479 14.4656 2.48438C15.4552 3.44792 15.95 4.61979 15.95 6ZM13.1375 3.8125C12.5385 3.1875 11.8094 2.875 10.95 2.875C10.0906 2.875 9.34844 3.1875 8.72344 3.8125C8.12448 4.41146 7.825 5.14062 7.825 6H14.075C14.075 5.14062 13.7625 4.41146 13.1375 3.8125ZM17.825 17.875V7.875H15.95V9.4375C15.95 9.69792 15.8589 9.91927 15.6766 10.1016C15.4943 10.2839 15.2729 10.375 15.0125 10.375C14.7521 10.375 14.5307 10.2839 14.3484 10.1016C14.1661 9.91927 14.075 9.69792 14.075 9.4375V7.875H7.825V9.4375C7.825 9.69792 7.73385 9.91927 7.55156 10.1016C7.36927 10.2839 7.14792 10.375 6.8875 10.375C6.62708 10.375 6.40573 10.2839 6.22344 10.1016C6.04115 9.91927 5.95 9.69792 5.95 9.4375V7.875H4.075V17.875C4.075 18.2135 4.19219 18.5 4.42656 18.7344C4.68698 18.9948 4.98646 19.125 5.325 19.125H16.575C16.9135 19.125 17.2 18.9948 17.4344 18.7344C17.6948 18.5 17.825 18.2135 17.825 17.875Z">
@@ -1270,76 +1112,76 @@
               </svg>
              </a>
             </span>
-            </p>
-           </div>
+           </p>
           </div>
          </div>
-         <div class="col-lg-cus5 col-lg-3 col-md-6 col-6 product-loop" data-id="1109941367">
-          <div class="product-inner" data-proid="1048690110" id="collection_loop_8">
-           <div class="proloop-image">
-            <div class="proloop-image__inner">
-             <div class="lazy-img lazy-img__prod first-image">
-              <picture>
-               <source data-srcset="//product.hstatic.net/200000758017/product/806032_01_89d6d278c4984b6aaad829e8feb08ff8_d3b6ce41187e4dfb9bf824defec334af_large.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <source data-srcset="//product.hstatic.net/200000758017/product/806032_01_89d6d278c4984b6aaad829e8feb08ff8_d3b6ce41187e4dfb9bf824defec334af_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <img alt=" Nike Air Max 97 Premium " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/806032_01_89d6d278c4984b6aaad829e8feb08ff8_d3b6ce41187e4dfb9bf824defec334af_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-              </picture>
-             </div>
-             <div class="lazy-img lazy-img__prod second-image hovered-img d-none d-lg-block">
-              <picture>
-               <source data-srcset="//product.hstatic.net/200000758017/product/806032_02_93f10da814884f8e85dbff9d9e4ac81f_f4d5b6d1574e49eba98226b9dd7d17b7_thumb.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <source data-srcset="//product.hstatic.net/200000758017/product/806032_02_93f10da814884f8e85dbff9d9e4ac81f_f4d5b6d1574e49eba98226b9dd7d17b7_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               <img alt=" Nike Air Max 97 Premium " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/806032_02_93f10da814884f8e85dbff9d9e4ac81f_f4d5b6d1574e49eba98226b9dd7d17b7_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-              </picture>
-             </div>
+        </div>
+        <div class="col-lg-cus5 col-lg-3 col-md-6 col-6 product-loop" data-id="1109941367">
+         <div class="product-inner" data-proid="1048690110" id="collection_loop_8">
+          <div class="proloop-image">
+           <div class="proloop-image__inner">
+            <div class="lazy-img lazy-img__prod first-image">
+             <picture>
+              <source data-srcset="//product.hstatic.net/200000758017/product/806032_01_89d6d278c4984b6aaad829e8feb08ff8_d3b6ce41187e4dfb9bf824defec334af_large.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <source data-srcset="//product.hstatic.net/200000758017/product/806032_01_89d6d278c4984b6aaad829e8feb08ff8_d3b6ce41187e4dfb9bf824defec334af_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <img alt=" Nike Air Max 97 Premium " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/806032_01_89d6d278c4984b6aaad829e8feb08ff8_d3b6ce41187e4dfb9bf824defec334af_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+             </picture>
             </div>
-            <div class="proloop-image__position">
-             <div class="gift product_gift_label d-none" data-id="1048690110">
-              <img alt="icon quà tặng" class="lazyload" data-src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png" src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"/>
-             </div>
-             <a class="proloop-link quickview-product" data-handle="/products/nike-air-max-97-premium" href="/products/nike-air-max-97-premium" title="Nike Air Max 97 Premium">
-             </a>
+            <div class="lazy-img lazy-img__prod second-image hovered-img d-none d-lg-block">
+             <picture>
+              <source data-srcset="//product.hstatic.net/200000758017/product/806032_02_93f10da814884f8e85dbff9d9e4ac81f_f4d5b6d1574e49eba98226b9dd7d17b7_thumb.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <source data-srcset="//product.hstatic.net/200000758017/product/806032_02_93f10da814884f8e85dbff9d9e4ac81f_f4d5b6d1574e49eba98226b9dd7d17b7_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <img alt=" Nike Air Max 97 Premium " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/806032_02_93f10da814884f8e85dbff9d9e4ac81f_f4d5b6d1574e49eba98226b9dd7d17b7_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+             </picture>
             </div>
-            <div class="proloop-actions" data-vrid="1109941367">
-             <div class="proloop-actions__inner">
-              <div class="proloop-actions__cart">
-               <div class="actions-primary">
-                <button class="button btn-small btn-proloop-cart add-to-cart btn-addcart-view" onclick="HRT.All.addCartProdItem('1109941367')" type="submit">
-                 <svg height="18" viewbox="0 0 22 22" width="18" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M15.95 6H19.7V17.875C19.7 18.7344 19.3875 19.4635 18.7625 20.0625C18.1635 20.6875 17.4344 21 16.575 21H5.325C4.46563 21 3.72344 20.6875 3.09844 20.0625C2.49948 19.4635 2.2 18.7344 2.2 17.875V6H5.95C5.95 4.61979 6.43177 3.44792 7.39531 2.48438C8.3849 1.49479 9.56979 1 10.95 1C12.3302 1 13.5021 1.49479 14.4656 2.48438C15.4552 3.44792 15.95 4.61979 15.95 6ZM13.1375 3.8125C12.5385 3.1875 11.8094 2.875 10.95 2.875C10.0906 2.875 9.34844 3.1875 8.72344 3.8125C8.12448 4.41146 7.825 5.14062 7.825 6H14.075C14.075 5.14062 13.7625 4.41146 13.1375 3.8125ZM17.825 17.875V7.875H15.95V9.4375C15.95 9.69792 15.8589 9.91927 15.6766 10.1016C15.4943 10.2839 15.2729 10.375 15.0125 10.375C14.7521 10.375 14.5307 10.2839 14.3484 10.1016C14.1661 9.91927 14.075 9.69792 14.075 9.4375V7.875H7.825V9.4375C7.825 9.69792 7.73385 9.91927 7.55156 10.1016C7.36927 10.2839 7.14792 10.375 6.8875 10.375C6.62708 10.375 6.40573 10.2839 6.22344 10.1016C6.04115 9.91927 5.95 9.69792 5.95 9.4375V7.875H4.075V17.875C4.075 18.2135 4.19219 18.5 4.42656 18.7344C4.68698 18.9948 4.98646 19.125 5.325 19.125H16.575C16.9135 19.125 17.2 18.9948 17.4344 18.7344C17.6948 18.5 17.825 18.2135 17.825 17.875Z">
-                  </path>
-                 </svg>
-                 <span class="btnadd">
+           </div>
+           <div class="proloop-image__position">
+            <div class="gift product_gift_label d-none" data-id="1048690110">
+             <img alt="icon quà tặng" class="lazyload" data-src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png" src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"/>
+            </div>
+            <a class="proloop-link quickview-product" data-handle="/products/nike-air-max-97-premium" href="/products/nike-air-max-97-premium" title="Nike Air Max 97 Premium">
+            </a>
+           </div>
+           <div class="proloop-actions" data-vrid="1109941367">
+            <div class="proloop-actions__inner">
+             <div class="proloop-actions__cart">
+              <div class="actions-primary">
+               <button class="button btn-small btn-proloop-cart add-to-cart btn-addcart-view" onclick="HRT.All.addCartProdItem('1109941367')" type="submit">
+                <svg height="18" viewbox="0 0 22 22" width="18" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M15.95 6H19.7V17.875C19.7 18.7344 19.3875 19.4635 18.7625 20.0625C18.1635 20.6875 17.4344 21 16.575 21H5.325C4.46563 21 3.72344 20.6875 3.09844 20.0625C2.49948 19.4635 2.2 18.7344 2.2 17.875V6H5.95C5.95 4.61979 6.43177 3.44792 7.39531 2.48438C8.3849 1.49479 9.56979 1 10.95 1C12.3302 1 13.5021 1.49479 14.4656 2.48438C15.4552 3.44792 15.95 4.61979 15.95 6ZM13.1375 3.8125C12.5385 3.1875 11.8094 2.875 10.95 2.875C10.0906 2.875 9.34844 3.1875 8.72344 3.8125C8.12448 4.41146 7.825 5.14062 7.825 6H14.075C14.075 5.14062 13.7625 4.41146 13.1375 3.8125ZM17.825 17.875V7.875H15.95V9.4375C15.95 9.69792 15.8589 9.91927 15.6766 10.1016C15.4943 10.2839 15.2729 10.375 15.0125 10.375C14.7521 10.375 14.5307 10.2839 14.3484 10.1016C14.1661 9.91927 14.075 9.69792 14.075 9.4375V7.875H7.825V9.4375C7.825 9.69792 7.73385 9.91927 7.55156 10.1016C7.36927 10.2839 7.14792 10.375 6.8875 10.375C6.62708 10.375 6.40573 10.2839 6.22344 10.1016C6.04115 9.91927 5.95 9.69792 5.95 9.4375V7.875H4.075V17.875C4.075 18.2135 4.19219 18.5 4.42656 18.7344C4.68698 18.9948 4.98646 19.125 5.325 19.125H16.575C16.9135 19.125 17.2 18.9948 17.4344 18.7344C17.6948 18.5 17.825 18.2135 17.825 17.875Z">
+                 </path>
+                </svg>
+                <span class="btnadd">
                  Thêm vào giỏ
                 </span>
+               </button>
+              </div>
+              <div class="actions-boxqty d-flex">
+               <div class="actions-wrapqty d-flex">
+                <button class="qty-btn proloop-minus" onclick="HRT.All.minusQtyProdItem('1109941367')">
+                 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
+                  <rect height="1" width="18" x="1" y="9">
+                  </rect>
+                 </svg>
+                </button>
+                <input class="proloop-value" name="proloop-quantity" readonly="" type="text" value=""/>
+                <button class="qty-btn proloop-plus" onclick="HRT.All.plusQtyProdItem('1109941367')">
+                 <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
+                  <rect height="17" width="1" x="9" y="1">
+                  </rect>
+                  <rect height="1" width="17" x="1" y="9">
+                  </rect>
+                 </svg>
                 </button>
                </div>
-               <div class="actions-boxqty d-flex">
-                <div class="actions-wrapqty d-flex">
-                 <button class="qty-btn proloop-minus" onclick="HRT.All.minusQtyProdItem('1109941367')">
-                  <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
-                   <rect height="1" width="18" x="1" y="9">
-                   </rect>
-                  </svg>
-                 </button>
-                 <input class="proloop-value" name="proloop-quantity" readonly="" type="text" value=""/>
-                 <button class="qty-btn proloop-plus" onclick="HRT.All.plusQtyProdItem('1109941367')">
-                  <svg height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
-                   <rect height="17" width="1" x="9" y="1">
-                   </rect>
-                   <rect height="1" width="17" x="1" y="9">
-                   </rect>
-                  </svg>
-                 </button>
-                </div>
-               </div>
               </div>
-              <div class="proloop-actions__quickview">
-               <button class="icon-quickview tooltip-cs" data-handle="/products/nike-air-max-97-premium" title="Xem nhanh">
-                <svg height="22" viewbox="0 0 577.029 577.029" width="22" xmlns="http://www.w3.org/2000/svg">
+             </div>
+             <div class="proloop-actions__quickview">
+              <button class="icon-quickview tooltip-cs" data-handle="/products/nike-air-max-97-premium" title="Xem nhanh">
+               <svg height="22" viewbox="0 0 577.029 577.029" width="22" xmlns="http://www.w3.org/2000/svg">
+                <g>
                  <g>
-                  <g>
-                   <path d="M288.514,148.629c73.746,0,136.162,33.616,175.539,61.821c46.652,33.415,70.66,65.737,76.885,78.065
+                  <path d="M288.514,148.629c73.746,0,136.162,33.616,175.539,61.821c46.652,33.415,70.66,65.737,76.885,78.065
                           c-6.232,12.327-30.232,44.649-76.885,78.065c-39.377,28.204-101.793,61.82-175.539,61.82c-73.746,0-136.161-33.616-175.539-61.82
                           c-46.661-33.416-70.66-65.738-76.894-78.065c6.234-12.328,30.233-44.65,76.885-78.065
                           C152.353,182.245,214.768,148.629,288.514,148.629 M288.514,113.657C129.176,113.657,0,253.543,0,288.515
@@ -1348,29 +1190,29 @@
                           s104.914-46.976,104.914-104.914C393.428,230.576,346.453,183.601,288.514,183.601z M260.266,288.515
                           c-24.515,0-44.388-19.873-44.388-44.388c0-24.515,19.873-44.387,44.388-44.387c24.515,0,44.388,19.873,44.388,44.387
                           C304.654,268.642,284.781,288.515,260.266,288.515z">
-                   </path>
-                  </g>
+                  </path>
                  </g>
-                </svg>
-                <span class="tooltip-hover">
+                </g>
+               </svg>
+               <span class="tooltip-hover">
                 Xem nhanh
                </span>
-               </button>
-              </div>
+              </button>
              </div>
             </div>
            </div>
-           <div class="proloop-detail">
-            <h3 class="proloop-title">
-             <a data-handle="/products/nike-air-max-97-premium" href="/products/nike-air-max-97-premium">
-              Nike Air Max 97 Premium
-             </a>
-            </h3>
-            <p class="proloop-price">
+          </div>
+          <div class="proloop-detail">
+           <h3 class="proloop-title">
+            <a data-handle="/products/nike-air-max-97-premium" href="/products/nike-air-max-97-premium">
+             Nike Air Max 97 Premium
+            </a>
+           </h3>
+           <p class="proloop-price">
             <span class="price">
              8,000,000₫
             </span>
-             <span class="addtocart-mb d-sm-block d-lg-none">
+            <span class="addtocart-mb d-sm-block d-lg-none">
              <a class="icon-addtocart" name="add-to-cart" onclick="HRT.All.addCartProdItem('1109941367')">
               <svg height="18" viewbox="0 0 22 22" width="18" xmlns="http://www.w3.org/2000/svg">
                <path d="M15.95 6H19.7V17.875C19.7 18.7344 19.3875 19.4635 18.7625 20.0625C18.1635 20.6875 17.4344 21 16.575 21H5.325C4.46563 21 3.72344 20.6875 3.09844 20.0625C2.49948 19.4635 2.2 18.7344 2.2 17.875V6H5.95C5.95 4.61979 6.43177 3.44792 7.39531 2.48438C8.3849 1.49479 9.56979 1 10.95 1C12.3302 1 13.5021 1.49479 14.4656 2.48438C15.4552 3.44792 15.95 4.61979 15.95 6ZM13.1375 3.8125C12.5385 3.1875 11.8094 2.875 10.95 2.875C10.0906 2.875 9.34844 3.1875 8.72344 3.8125C8.12448 4.41146 7.825 5.14062 7.825 6H14.075C14.075 5.14062 13.7625 4.41146 13.1375 3.8125ZM17.825 17.875V7.875H15.95V9.4375C15.95 9.69792 15.8589 9.91927 15.6766 10.1016C15.4943 10.2839 15.2729 10.375 15.0125 10.375C14.7521 10.375 14.5307 10.2839 14.3484 10.1016C14.1661 9.91927 14.075 9.69792 14.075 9.4375V7.875H7.825V9.4375C7.825 9.69792 7.73385 9.91927 7.55156 10.1016C7.36927 10.2839 7.14792 10.375 6.8875 10.375C6.62708 10.375 6.40573 10.2839 6.22344 10.1016C6.04115 9.91927 5.95 9.69792 5.95 9.4375V7.875H4.075V17.875C4.075 18.2135 4.19219 18.5 4.42656 18.7344C4.68698 18.9948 4.98646 19.125 5.325 19.125H16.575C16.9135 19.125 17.2 18.9948 17.4344 18.7344C17.6948 18.5 17.825 18.2135 17.825 17.875Z">
@@ -1378,26 +1220,25 @@
               </svg>
              </a>
             </span>
-            </p>
-           </div>
+           </p>
           </div>
          </div>
         </div>
-        <div class="toolbar-pagi">
-         <div class="ajax-pagi">
-          <div class="d-flex align-items-center justify-content-center pagination">
-           <a aria-label="pagination-item-1" class="pagination--items active-page" data-link="1" href="javascript:void(0)" name="pagination-item-1">
-            1
-           </a>
-           <a aria-label="pagination-item-2" class="pagination--items" data-link="2" href="/collections/all?page=2" name="pagination-item-2">
-            2
-           </a>
-           <a aria-label="pagination-item-3" class="pagination--items" data-link="3" href="/collections/all?page=3" name="pagination-item-3">
-            3
-           </a>
-           <a aria-label="pagination-next" class="next-page pagination--items" data-link="p" href="/collections/all?page=2" name="paginate-next">
-           </a>
-          </div>
+       </div>
+       <div class="toolbar-pagi">
+        <div class="ajax-pagi">
+         <div class="d-flex align-items-center justify-content-center pagination">
+          <a aria-label="pagination-item-1" class="pagination--items active-page" data-link="1" href="javascript:void(0)" name="pagination-item-1">
+           1
+          </a>
+          <a aria-label="pagination-item-2" class="pagination--items" data-link="2" href="/collections/all?page=2" name="pagination-item-2">
+           2
+          </a>
+          <a aria-label="pagination-item-3" class="pagination--items" data-link="3" href="/collections/all?page=3" name="pagination-item-3">
+           3
+          </a>
+          <a aria-label="pagination-next" class="next-page pagination--items" data-link="p" href="/collections/all?page=2" name="paginate-next">
+          </a>
          </div>
         </div>
        </div>
@@ -1405,7 +1246,7 @@
      </div>
     </div>
    </div>
-   <input class="d-none" id="coll-handle" type="text" value=""/>
-  </main>
- </div>
+  </div>
+
+ </main>
 {%endblock %}
