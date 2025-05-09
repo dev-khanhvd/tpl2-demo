@@ -145,47 +145,179 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!--<div class="expanded-message">Giỏ hàng của bạn đang trống</div>	-->
-                                    <div class="expanded-content">
-                                        <div class="expanded-info">
-                                            <div class="info-image">
-                                                <img alt="Giỏ hàng của bạn đang trống" class="lazyload"
-                                                     data-src="//theme.hstatic.net/200000758017/1001229453/14/cart_banner_image.jpg?v=22"
-                                                     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                                    <div class="list-pageform-cart">
+                                        <form action="/cart" method="post" id="cartformpage">
+                                            <div class="cart-row">
+                                                <div class="table-cart">
+                                                    <div class="media-heading">
+                                                        <div class="media-left--title">Sản phẩm</div>
+                                                        <div class="media-left--price">Đơn giá</div>
+                                                        <div class="media-left--quantity">Số lượng</div>
+                                                        <div class="media-left--total">Tổng cộng</div>
+                                                        <div class="media-left--remove"></div>
+                                                    </div>
+
+                                                    <div class="cart_item">
+                                                        <div class="media-line-item line-item" data-line="1" data-variant-id="1109941130" data-product-id="1048689956">
+                                                            <div class="media-left">
+                                                                <div class="item-img">
+                                                                    <a href="/products/adidas-nmd-r1">
+                                                                        <img src="  //product.hstatic.net/200000758017/product/805476_01_164da92dedd34ce39222c194ab983bc3_4c82ce6f414f4ad2bb73c1e970ffa63b_medium.jpg" alt="Adidas Nmd R1">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="media-right">
+                                                                <div class="item-info">
+                                                                    <h3 class="item--title"><a href="/products/adidas-nmd-r1">Adidas Nmd R1</a></h3>
+
+
+                                                                    <p class="item-variant item-variant-edit cart-variant-edit" data-edit="/products/adidas-nmd-r1?variant=1109941130">
+                                                                        <span>Cam / 35</span>
+                                                                    </p>
+
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="media-price">
+
+                                                                <div class="item-price">
+                                                                    <p>
+                                                                        <span>3,500,000₫</span>
+
+                                                                    </p>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="media-quantity">
+                                                                <div class="item-qty">
+                                                                    <div class="qty quantity-partent qty-click clearfix">
+                                                                        <i class="fa-light fa-minus qtyminus qty-btn"></i>
+                                                                        <input type="text" size="4" name="updates[]" min="1" oriprice="350000000" line="1" productid="1048689956" variantid="1109941130" id="updates_1109941130" data-price="350000000" value="1" readonly="" class="tc line-item-qty item-quantity">
+                                                                        <i class="fa-light fa-plus qtyplus qty-btn"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="media-total">
+
+                                                                <div class="item-total-price">
+                                                                    <div class="price">
+                                                                        <span class="line-item-total">3,500,000₫</span>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="media-remove">
+
+                                                                <div class="item-remove">
+                                                                    <a href="javascript:void(0)" onclick="HRT.Cart.removeItemCart(this,'/cart/change?line=1&amp;quantity=0')" class="cart">Xóa</a>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="media-line-item line-item" data-line="1" data-variant-id="1109941130" data-product-id="1048689956">
+                                                            <div class="media-left">
+                                                                <div class="item-img">
+                                                                    <a href="/products/adidas-nmd-r1">
+                                                                        <img src="  //product.hstatic.net/200000758017/product/805476_01_164da92dedd34ce39222c194ab983bc3_4c82ce6f414f4ad2bb73c1e970ffa63b_medium.jpg" alt="Adidas Nmd R1">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="media-right">
+                                                                <div class="item-info">
+                                                                    <h3 class="item--title"><a href="/products/adidas-nmd-r1">Adidas Nmd R1</a></h3>
+
+
+                                                                    <p class="item-variant item-variant-edit cart-variant-edit" data-edit="/products/adidas-nmd-r1?variant=1109941130">
+                                                                        <span>Cam / 35</span>
+                                                                    </p>
+
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="media-price">
+
+                                                                <div class="item-price">
+                                                                    <p>
+                                                                        <span>3,500,000₫</span>
+
+                                                                    </p>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="media-quantity">
+                                                                <div class="item-qty">
+                                                                    <div class="qty quantity-partent qty-click clearfix">
+                                                                        <button type="button" class="qtyminus qty-btn">
+                                                                            <svg enable-background="new 0 0 10 10" viewBox="0 0 10 10" x="0" y="0"><polygon points="4.5 4.5 3.5 4.5 0 4.5 0 5.5 3.5 5.5 4.5 5.5 10 5.5 10 4.5"></polygon></svg>
+                                                                        </button>
+                                                                        <input type="text" size="4" name="updates[]" min="1" oriprice="350000000" line="1" productid="1048689956" variantid="1109941130" id="updates_1109941130" data-price="350000000" value="1" readonly="" class="tc line-item-qty item-quantity">
+                                                                        <button type="button" class="qtyplus qty-btn">
+                                                                            <svg enable-background="new 0 0 10 10" viewBox="0 0 10 10" x="0" y="0"><polygon points="10 4.5 5.5 4.5 5.5 0 4.5 0 4.5 4.5 0 4.5 0 5.5 4.5 5.5 4.5 10 5.5 10 5.5 5.5 10 5.5"></polygon></svg>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="media-total">
+
+                                                                <div class="item-total-price">
+                                                                    <div class="price">
+                                                                        <span class="line-item-total">3,500,000₫</span>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="media-remove">
+
+                                                                <div class="item-remove">
+                                                                    <a href="javascript:void(0)" onclick="HRT.Cart.removeItemCart(this,'/cart/change?line=1&amp;quantity=0')" class="cart">Xóa</a>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="info-text">
-                                                <p class="text1">
-                                                    Chưa có sản phẩm trong giỏ hàng...
-                                                </p>
-                                                <p class="text2">
-                                                    Bạn có thể quay về
-                                                    <a href="https://flyfeet.myharavan.com">
-                                                        trang chủ
-                                                    </a>
-                                                    hoặc nhập từ khoá sản phẩm bạn cần tìm ở đây:
-                                                </p>
+                                            <div class="cart-row">
+                                                <div class="order-noted-block">
+                                                    <div class="container-pd15">
+                                                        <div class="checkout-buttons clearfix">
+                                                            <label for="note" class="note-label">Ghi chú đơn hàng</label>
+                                                            <textarea class="form-control" id="note" name="note" rows="5"></textarea>
+                                                        </div>
+                                                        <button type="submit" id="checkout" class="btn-checkout button d-none " name="checkout" value="">Thanh toán</button>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="search-field">
-                                                <form action="/search" class="search-page">
-                                                    <input name="type" type="hidden" value="product"/>
-                                                    <input aria-label="Tìm kiếm sản phẩm" class="search_box" name="q"
-                                                           placeholder="Tìm kiếm sản phẩm..." type="text"/>
-                                                    <button class="btn-search btn" type="submit">
-                                                        <svg class="svg search" style="enable-background:new 0 0 24 27;"
-                                                             version="1.1" viewbox="0 0 24 27" x="0px"
-                                                             xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-                                                             xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
-               <path d="M10,2C4.5,2,0,6.5,0,12s4.5,10,10,10s10-4.5,10-10S15.5,2,10,2z M10,19c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S13.9,19,10,19z">
-               </path>
-                                                            <rect height="8"
-                                                                  transform="matrix(0.7071 -0.7071 0.7071 0.7071 -9.2844 19.5856)"
-                                                                  width="4" x="17" y="17">
-                                                            </rect>
-              </svg>
-                                                    </button>
-                                                </form>
+                                            <div class="cart-row">
+                                                <div class="order-invoice-block">
+                                                    <div class="checkbox">
+                                                        <input type="hidden" name="attributes[invoice]" id="re-checkbox-bill" value="no">
+                                                        <input type="checkbox" id="checkbox-bill" value="yes" name="regular-checkbox" class="regular-checkbox">
+                                                        <label for="checkbox-bill" class="box"></label>
+                                                        <label for="checkbox-bill" class="title">Xuất hoá đơn cho đơn hàng</label>
+                                                    </div>
+
+                                                    <div class="bill-field">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control val-f check_change" name="attributes[bill_order_company]" value="" placeholder="Tên công ty...">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="number" pattern=".{10,}" onkeydown="return HRT.Module.FilterInput(event)" onpaste="HRT.Module.handlePaste(event)" class="form-control val-f val-n check_change" name="attributes[bill_order_tax_code]" value="" placeholder="Mã số thuế...">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="email" class="form-control val-f val-mail check_change" name="attributes[bill_email]" value="" placeholder="Email...">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control val-f check_change" name="attributes[bill_order_address]" value="" placeholder="Địa chỉ công ty...">
+                                                        </div>
+                                                        <div class="form-btn">
+                                                            <a href="javascript:void();" class="button btndark btn-save">Lưu thông tin</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </form>
                                     </div>
                                 </div>
                                 <div class="collectionCart-detail">
