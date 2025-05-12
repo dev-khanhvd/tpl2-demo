@@ -1,0 +1,92 @@
+{% extends "layout/layout" %}
+{% block meta %}
+    {{ headTitle(album.name).setSeparator(' - ').setAutoEscape(false)|raw }}
+    <meta name="keywords" content="{{ album.metaKeywords ?: album.name }}">
+    <meta name="description" content="{{ album.metaDescription ?: album.Name }}">
+    <meta property="og:title" content="{{ album.metaTitle ?: album.Name }}">
+    <meta property="og:url" content="{{ album.viewLink }}">
+    <meta property="og:image" content="{{ album.imageUri }}">
+    <meta property="og:type" content="category">
+    <link rel="canonical" href="{{ album.canonicalLink }}">
+{% endblock %}
+{% block body %}
+    <div class="sidebar-main">
+        <div class="sitenav-wrapper sitenav-left sitenav-menu js-ajax-menu" id="js-sitenav-menu">
+            <div class="sitenav-inner">
+                <div class="sitenav-header">
+                    <p class="sitenav-header__title">
+                        Danh mục
+                    </p>
+                    <a class="sitenav-header__btn btn-sitenav-close" name="button-close">
+                        <svg role="presentation" viewbox="0 0 19 19">
+                            <path d="M9.1923882 8.39339828l7.7781745-7.7781746 1.4142136 1.41421357-7.7781746 7.77817459 7.7781746 7.77817456L16.9705627 19l-7.7781745-7.7781746L1.41421356 19 0 17.5857864l7.7781746-7.77817456L0 2.02943725 1.41421356.61522369 9.1923882 8.39339828z" fill-rule="evenodd">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="sitenav-content">
+                    <div class="menu-mobile--wrap ajax-render-mainmenu">
+                    </div>
+                </div>
+                <div class="sitenav-footer">
+                    <div class="mobile-menu__section mobile-menu__section--loose">
+                        <p class="mobile-menu__section-title">
+                            Bạn cần hỗ trợ?
+                        </p>
+                        <div class="mobile-menu__help-wrapper">
+                            <svg class="icon icon--bi-phone" role="presentation" viewbox="0 0 24 24">
+                                <g fill="none" fill-rule="evenodd" stroke-linecap="square" stroke-width="2">
+                                    <path d="M17 15l-3 3-8-8 3-3-5-5-3 3c0 9.941 8.059 18 18 18l3-3-5-5z" stroke="#001e62">
+                                    </path>
+                                    <path d="M14 1c4.971 0 9 4.029 9 9m-9-5c2.761 0 5 2.239 5 5" stroke="#001e62">
+                                    </path>
+                                </g>
+                            </svg>
+                            <a href="tel:1900636000" rel="nofollow">
+                                1900.636.000
+                            </a>
+                        </div>
+                        <div class="mobile-menu__help-wrapper">
+                            <svg class="icon icon--bi-email" role="presentation" viewbox="0 0 22 22">
+                                <g fill="none" fill-rule="evenodd">
+                                    <path d="M.916667 10.08333367l3.66666667-2.65833334v4.65849997zm20.1666667 0L17.416667 7.42500033v4.65849997z" stroke="#001e62">
+                                    </path>
+                                    <path d="M4.58333367 7.42500033L.916667 10.08333367V21.0833337h20.1666667V10.08333367L17.416667 7.42500033" stroke="#001e62" stroke-width="2">
+                                    </path>
+                                    <path d="M4.58333367 12.1000003V.916667H17.416667v11.1833333m-16.5-2.01666663L21.0833337 21.0833337m0-11.00000003L11.0000003 15.5833337" stroke="#001e62" stroke-width="2">
+                                    </path>
+                                    <path d="M8.25000033 5.50000033h5.49999997M8.25000033 9.166667h5.49999997" stroke="#001e62" stroke-linecap="square" stroke-width="2">
+                                    </path>
+                                </g>
+                            </svg>
+                            <a href="mailto:hi@modefashion.com" rel="nofollow">
+                                hi@modefashion.com
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sitenav-wrapper sitenav-right sitenav-notify js-ajax-notify" id="js-sitenav-notify">
+            <div class="sitenav-inner">
+                <div class="sitenav-header">
+                    <p class="sitenav-header__title">
+                        Thông báo
+                    </p>
+                    <a class="sitenav-header__btn btn-sitenav-close" name="button-close">
+                        <svg role="presentation" viewbox="0 0 19 19">
+                            <path d="M9.1923882 8.39339828l7.7781745-7.7781746 1.4142136 1.41421357-7.7781746 7.77817459 7.7781746 7.77817456L16.9705627 19l-7.7781745-7.7781746L1.41421356 19 0 17.5857864l7.7781746-7.77817456L0 2.02943725 1.41421356.61522369 9.1923882 8.39339828z" fill-rule="evenodd">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="sitenav-content">
+                    <div class="notify-content ajax-render-notify">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sitenav-mask" id="sitenav-mask">
+        </div>
+    </div>
+{% endblock %}
