@@ -225,7 +225,7 @@
      </div>
      <div class="section-content">
       <div class="banner-special">
-       {% set banner_home = getCurrentBannerByCode('BANNER_HOME', {'limit': 1}) %}
+       {% set banner_home = getCurrentBannerByCode('BANNER_HOT', {'limit': 1}) %}
 {% if banner_home is not empty %}
     {% for c in banner_home %}
        <a aria-label="{{ c.name }}" href="{{ c.viewLink }}" title="{{ c.name }}">
@@ -239,8 +239,8 @@
 {% endif %}
       </div>
       <div class="collection-special list-product-hot">
-       {% set homeProduct = searchProducts({'limit': 4, 'showHot': 1, 'showHome': 1, 'showNew': 1}) %}
-{% if homeProduct is not empty %}
+       {% set homeProduct = searchProducts({'limit': 4, 'showHot': 1}) %}
+       {% if homeProduct is not empty %}
        <div class="row">
         {% for n in homeProduct %}
         <div class="col-lg-cus5 col-lg-3 col-md-6 col-6 product-loop" data-id="{{ n.id }}">
@@ -321,7 +321,7 @@
        SHOP BY CATEGORY
       </h4>
      </div>
-     <div class="section-content">
+     <div class="section-content list-category">
       <div class="item-home-category">
        <div class="media-category">
         <img alt="Chạy bộ" src="//theme.hstatic.net/200000758017/1001229453/14/img_item_home_category_1.jpg?v=22"/>
