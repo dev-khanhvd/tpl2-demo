@@ -225,13 +225,18 @@
      </div>
      <div class="section-content">
       <div class="banner-special">
-       <a aria-label="Banner 1" href="/collections/all" title="Banner 1">
+       {% set banner_home = getCurrentBannerByCode('BANNER_HOME', {'limit': 1}) %}
+{% if banner_home is not empty %}
+    {% for c in banner_home %}
+       <a aria-label="{{ c.name }}" href="{{ c.viewLink }}" title="{{ c.name }}">
         <picture>
-         <source media="(min-width:992px)" srcset="//theme.hstatic.net/200000758017/1001229453/14/img_desktop_home_banner_special.jpg?v=22"/>
-         <source media="(max-width:991px)" srcset="//theme.hstatic.net/200000758017/1001229453/14/img_mobile_home_banner_special.jpg?v=22"/>
-         <img alt="Banner 1" src="//theme.hstatic.net/200000758017/1001229453/14/img_desktop_home_banner_special.jpg?v=22"/>
+         <source media="(min-width:992px)" srcset="{{ c.imageSrc }}?v=22"/>
+         <source media="(max-width:991px)" srcset="{{ c.imageSrc }}?v=22"/>
+         <img alt="{{ c.name }}" src="{{ c.imageSrc }}?v=22"/>
         </picture>
        </a>
+       {% endfor %}
+{% endif %}
       </div>
       <div class="collection-special list-product-hot">
        {% set homeProduct = searchProducts({'limit': 4, 'showHot': 1, 'showHome': 1, 'showNew': 1}) %}
