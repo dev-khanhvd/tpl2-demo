@@ -166,7 +166,7 @@
       </h4>
      </div>
      <div class="section-content banner-album">
-      {% set banner_home = getCurrentBannerByCode('BANNER_HOME', {'limit': 2}) %}
+      {% set banner_home = getCurrentBannerByCode('BANNER_', {'limit': 2}) %}
 {% if banner_home is not empty %}
     {% for c in banner_home %}
       <div class="column-banner">
@@ -174,9 +174,9 @@
         <div class="column-banner-inner-flex">
          <a aria-label="{{ c.name }}" href="{{ c.viewLink }}" title="{{ c.name }}">
           <picture>
-           <source media="(min-width:992px)" srcset="{{ c.imageSrc }}?v=22"/>
-           <source media="(max-width:991px)" srcset="{{ c.imageSrc }}?v=22"/>
-           <img alt="{{ c.name }}" src="{{ c.imageSrc }}?v=22"/>
+           <source media="(min-width:992px)" srcset="{{ c.imageSrc }}"/>
+           <source media="(max-width:991px)" srcset="{{ c.imageSrc }}"/>
+           <img alt="{{ c.name }}" src="{{ c.imageSrc }}"/>
           </picture>
          </a>
         </div>
@@ -196,7 +196,7 @@
        NỔI BẬT TRONG THÁNG
       </h4>
      </div>
-     <div class="section-content">
+     <div class="section-content banner-hot">
       <div class="item-three-banner">
        <a aria-label="Banner 1" href="/collections/all" title="Banner 1">
         <picture>
