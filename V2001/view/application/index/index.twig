@@ -166,7 +166,7 @@
       </h4>
      </div>
      <div class="section-content banner-album">
-      {% set banner_home = getCurrentBannerByCode('BANNER_', {'limit': 2}) %}
+      {% set banner_home = getCurrentBannerByCode('BANNER_ALBUM', {'limit': 2}) %}
 {% if banner_home is not empty %}
     {% for c in banner_home %}
       <div class="column-banner">
@@ -197,7 +197,7 @@
       </h4>
      </div>
      <div class="section-content banner-hot">
-      {% set banner_home = getCurrentBannerByCode('BANNER_HOME', {'limit': 3}) %}
+      {% set banner_home = getCurrentBannerByCode('BANNER_HOT', {'limit': 3}) %}
 {% if banner_home is not empty %}
     {% for c in banner_home %}
       <div class="item-three-banner">
@@ -217,7 +217,7 @@
   </section>
   <section class="section-home-special-collection">
    <div class="container">
-    <div class="wrapper-home-special-collection">
+    <div class="wrapper-home-special-collection list-product-category">
      <div class="section-heading">
       <h4>
        GIÀY THỂ THAO
