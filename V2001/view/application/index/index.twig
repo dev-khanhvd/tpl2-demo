@@ -197,33 +197,20 @@
       </h4>
      </div>
      <div class="section-content banner-hot">
+      {% set banner_home = getCurrentBannerByCode('BANNER_HOME', {'limit': 3}) %}
+{% if banner_home is not empty %}
+    {% for c in banner_home %}
       <div class="item-three-banner">
-       <a aria-label="Banner 1" href="/collections/all" title="Banner 1">
+       <a aria-label="{{ c.name }}" href="{{ c.viewLink }}" title="{{ c.name }}">
         <picture>
-         <source media="(min-width:992px)" srcset="//theme.hstatic.net/200000758017/1001229453/14/banner_dk_home_three_banner_1.jpg?v=22"/>
-         <source media="(max-width:991px)" srcset="//theme.hstatic.net/200000758017/1001229453/14/banner_mb_home_three_banner_1.jpg?v=22"/>
-         <img alt="Banner 1" src="//theme.hstatic.net/200000758017/1001229453/14/banner_dk_home_three_banner_1.jpg?v=22"/>
+         <source media="(min-width:992px)" srcset="{{ c.imageSrc }}"/>
+         <source media="(max-width:991px)" srcset="{{ c.imageSrc }}"/>
+         <img alt="{{ c.name }}" src="{{ c.imageSrc }}"/>
         </picture>
        </a>
       </div>
-      <div class="item-three-banner">
-       <a aria-label="Banner 2" href="/collections/all" title="Banner 2">
-        <picture>
-         <source media="(min-width:992px)" srcset="//theme.hstatic.net/200000758017/1001229453/14/banner_dk_home_three_banner_2.jpg?v=22"/>
-         <source media="(max-width:991px)" srcset="//theme.hstatic.net/200000758017/1001229453/14/banner_mb_home_three_banner_2.jpg?v=22"/>
-         <img alt="Banner 2" src="//theme.hstatic.net/200000758017/1001229453/14/banner_dk_home_three_banner_2.jpg?v=22"/>
-        </picture>
-       </a>
-      </div>
-      <div class="item-three-banner">
-       <a aria-label="Banner 3" href="/collections/all" title="Banner 3">
-        <picture>
-         <source media="(min-width:992px)" srcset="//theme.hstatic.net/200000758017/1001229453/14/banner_dk_home_three_banner_3.jpg?v=22"/>
-         <source media="(max-width:991px)" srcset="//theme.hstatic.net/200000758017/1001229453/14/banner_mb_home_three_banner_3.jpg?v=22"/>
-         <img alt="Banner 3" src="//theme.hstatic.net/200000758017/1001229453/14/banner_dk_home_three_banner_3.jpg?v=22"/>
-        </picture>
-       </a>
-      </div>
+      {% endfor %}
+{% endif %}
      </div>
     </div>
    </div>
