@@ -322,78 +322,33 @@
       </h4>
      </div>
      <div class="section-content list-category">
+      {% set category = getCategories() %}
+{% if category is not empty %}
+    {% for c in category %}
       <div class="item-home-category">
        <div class="media-category">
-        <img alt="Chạy bộ" src="//theme.hstatic.net/200000758017/1001229453/14/img_item_home_category_1.jpg?v=22"/>
+        <img alt="{{ c.name }}" src="{{ c.imageUri }}"/>
        </div>
        <div class="info-category">
         <h4>
-         Chạy bộ
+         {{ c.name }}
         </h4>
         <div class="link-category">
-         <a class="button" href="/collections/all" title="Chạy bộ">
-          Cho Nam
+         <a class="button" href="{{ c.viewLink }}" title="{{ c.name }}">
+          {{ c.name }}
          </a>
-         <a class="button" href="/collections/all" title="Chạy bộ">
-          Cho Nữ
+         {% if c.childs %}
+                        {% for c1 in c.childs %}
+         <a class="button" href="{{ c1.viewLink }}" title="{{ c1.name }}">
+          {{ c1.name }}
          </a>
+         {% endfor %}
+                    {% endif %}
         </div>
        </div>
       </div>
-      <div class="item-home-category">
-       <div class="media-category">
-        <img alt="Chạy địa hình" src="//theme.hstatic.net/200000758017/1001229453/14/img_item_home_category_2.jpg?v=22"/>
-       </div>
-       <div class="info-category">
-        <h4>
-         Chạy địa hình
-        </h4>
-        <div class="link-category">
-         <a class="button" href="/collections/all" title="Chạy địa hình">
-          Cho Nam
-         </a>
-         <a class="button" href="/collections/all" title="Chạy địa hình">
-          Cho Nữ
-         </a>
-        </div>
-       </div>
-      </div>
-      <div class="item-home-category">
-       <div class="media-category">
-        <img alt="Cầu lông" src="//theme.hstatic.net/200000758017/1001229453/14/img_item_home_category_3.jpg?v=22"/>
-       </div>
-       <div class="info-category">
-        <h4>
-         Cầu lông
-        </h4>
-        <div class="link-category">
-         <a class="button" href="/collections/all" title="Cầu lông">
-          Cho Nam
-         </a>
-         <a class="button" href="/collections/all" title="Cầu lông">
-          Cho Nữ
-         </a>
-        </div>
-       </div>
-      </div>
-      <div class="item-home-category">
-       <div class="media-category">
-        <img alt="Thể thao" src="//theme.hstatic.net/200000758017/1001229453/14/img_item_home_category_4.jpg?v=22"/>
-       </div>
-       <div class="info-category">
-        <h4>
-         Thể thao
-        </h4>
-        <div class="link-category">
-         <a class="button" href="/collections/all" title="Thể thao">
-          Quần áo
-         </a>
-         <a class="button" href="/collections/all" title="Thể thao">
-          Phụ kiện
-         </a>
-        </div>
-       </div>
-      </div>
+      {% endfor %}
+{% endif %}
      </div>
     </div>
    </div>
