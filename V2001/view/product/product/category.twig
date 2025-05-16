@@ -71,25 +71,22 @@
                 <span>
                 </span>
                 {% set child = category.childs %}
-    {% if child is not empty %}
-        {% for c in child %}
-                <a class="" href="{{ c.viewLink }}" target="_self" title="{{ c.name }}">
-                 {{ c.name }}
-                </a>
-                {% endfor %}
-    {% else %}
-        {% set category = getCategories() %}
-        {% if category is not empty %}
-            {% for c in category %}
-                <a class="" href="{{ c.viewLink }}" target="_self" title="{{ c.name }}">
-                 {{ c.name }}
-                </a>
-                {% endfor %}
-        {% endif %}
-    {% endif %}
-                <a class="" href="/search" target="_self" title="Tìm kiếm">
-                 Tìm kiếm
-                </a>
+                {% if child is not empty %}
+                 {% for c in child %}
+                  <a class="" href="{{ c.viewLink }}" target="_self" title="{{ c.name }}">
+                   {{ c.name }}
+                  </a>
+                 {% endfor %}
+                {% else %}
+                 {% set category = getCategories() %}
+                 {% if category is not empty %}
+                  {% for c in category %}
+                   <a class="" href="{{ c.viewLink }}" target="_self" title="{{ c.name }}">
+                    {{ c.name }}
+                   </a>
+                  {% endfor %}
+                 {% endif %}
+                {% endif %}
                </li>
               </ul>
              </div>
@@ -106,7 +103,7 @@
              </span>
             </div>
             <div class="filter_group-content filter-brand" style="display: none;">
-             <ul class="checkbox-list">
+             <ul class="checkbox-list checkbox-brand">
               <li>
                <input data-vendor="(vendor:product contains Khác)" id="data-brand-p1" name="brand-filter" type="checkbox" value="Khác"/>
                <label for="data-brand-p1">
