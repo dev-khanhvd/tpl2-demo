@@ -1,0 +1,41 @@
+<ul class="menuList-main">
+    <li class="active">
+        <a href="/" title="Trang chủ">Trang chủ</a>
+    </li>
+    {% set categories = getCategories() %}
+    {% if categories is not empty %}
+        {% for category in categories %}
+            <li class="has-submenu">
+                <a href="{{ category.viewLink }}" title="{{ category.name }}">{{ category.name }}
+                    <span>
+                        <svg height="22" viewbox="0 0 128 128" width="22" xmlns="http://www.w3.org/2000/svg">
+                            <g>
+                                <path d="m44 108c-1.023 0-2.047-.391-2.828-1.172-1.563-1.563-1.563-4.094 0-5.656l37.172-37.172-37.172-37.172c-1.563-1.563-1.563-4.094 0-5.656s4.094-1.563 5.656 0l40 40c1.563 1.563 1.563 4.094 0 5.656l-40 40c-.781.781-1.805 1.172-2.828 1.172z" data-original="currentColor" fill="currentColor"></path>
+                            </g>
+                        </svg>
+                    </span>
+                </a>
+                {% if category.childs is not empty %}
+                    <ul class="menuList-submain">
+                        <div class="container">
+                            {% for child in category.childs %}
+                                <li class="has-submenu">
+                                    <a href="{{ child.viewLink }}" title="{{ child.name }}">{{ child.name }}</a>
+                                    {% if child.childs is not empty %}
+                                        <ul class="menuList-submain">
+                                            {% for subChild in child.childs %}
+                                                <li>
+                                                    <a href="{{ subChild.viewLink }}" title="{{ subChild.name }}">{{ subChild.name }}</a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </li>
+                            {% endfor %}
+                        </div>
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+    {% endif %}
+</ul>
