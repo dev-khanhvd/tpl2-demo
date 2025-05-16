@@ -73,18 +73,18 @@
                 {% set child = category.childs %}
                 {% if child is not empty %}
                  {% for c in child %}
-                  <a class="" href="{{ c.viewLink }}" target="_self" title="{{ c.name }}">
-                   {{ c.name }}
-                  </a>
-                 {% endfor %}
+                <a class="" href="{{ c.viewLink }}" target="_self" title="{{ c.name }}">
+                 {{ c.name }}
+                </a>
+                {% endfor %}
                 {% else %}
                  {% set category = getCategories() %}
                  {% if category is not empty %}
                   {% for c in category %}
-                   <a class="" href="{{ c.viewLink }}" target="_self" title="{{ c.name }}">
-                    {{ c.name }}
-                   </a>
-                  {% endfor %}
+                <a class="" href="{{ c.viewLink }}" target="_self" title="{{ c.name }}">
+                 {{ c.name }}
+                </a>
+                {% endfor %}
                  {% endif %}
                 {% endif %}
                </li>
@@ -104,12 +104,31 @@
             </div>
             <div class="filter_group-content filter-brand" style="display: none;">
              <ul class="checkbox-list checkbox-brand">
-              <li>
-               <input data-vendor="(vendor:product contains Khác)" id="data-brand-p1" name="brand-filter" type="checkbox" value="Khác"/>
-               <label for="data-brand-p1">
-                Khác
-               </label>
-              </li>
+              {% set l_brand = loadListBrands({'categoryId': category.id}) %}
+{% set prBrand = getParam('brand') %}
+{% if prBrand %}
+    {% set prBrand = prBrand|split(',') %}
+{% endif %}
+
+{% if l_brand %}
+              <ul>
+               {% for b in l_brand %}
+               <li>
+                {% if prBrand is defined and b.id in prBrand %}
+                <input checked="" data-vendor="(vendor:product contains {{ b.name|raw }})" id="data-brand-{{ b.id }}" name="brand-filter" type="checkbox" value="{{ removeFilter('brand', b.id) }}"/>
+                <label for="data-brand-{{ b.id }}">
+                 {{ b.name|raw }}
+                </label>
+                {% else %}
+                <input data-vendor="(vendor:product contains {{ b.name|raw }})" id="data-brand-{{ b.id }}" name="brand-filter" type="checkbox" value="{{ category.viewLink ~ '?brand=' ~ b.id }}"/>
+                <label for="data-brand-{{ b.id }}">
+                 {{ b.name|raw }}
+                </label>
+                {% endif %}
+               </li>
+               {% endfor %}
+              </ul>
+              {% endif %}
              </ul>
             </div>
            </div>
