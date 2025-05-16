@@ -477,86 +477,105 @@
        </div>
       </div>
       <div class="row list-product-row listProductFilter">
-       <div class="col-lg-cus5 col-lg-3 col-md-6 col-6 product-loop" data-id="1109941428">
-        <div class="product-inner" data-proid="1048690150" id="collection_loop_1">
-         <div class="proloop-image">
-          <div class="proloop-image__inner">
-           <div class="lazy-img lazy-img__prod first-image">
-            <picture>
-             <source data-srcset="//product.hstatic.net/200000758017/product/untitled-1_4a8c65ba9ede42c29e64daad0bf0fcba_bc5852f702b14ec3af00902c72b836ac_large.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-             <source data-srcset="//product.hstatic.net/200000758017/product/untitled-1_4a8c65ba9ede42c29e64daad0bf0fcba_bc5852f702b14ec3af00902c72b836ac_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-             <img alt=" ZX 930 X EQT NEVER MADE PACK " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/untitled-1_4a8c65ba9ede42c29e64daad0bf0fcba_bc5852f702b14ec3af00902c72b836ac_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-            </picture>
+       {% if paginator.currentModels %}
+       <div class="row">
+        {% for p in paginator.currentModels %}
+        <div class="col-lg-cus5 col-lg-3 col-md-6 col-6 product-loop" data-id="{{ p.id }}">
+         <div class="product-inner" data-proid="{{ p.id }}" id="collection_loop_{{ loop.index }}">
+          <div class="proloop-image">
+           <div class="proloop-image__inner">
+            <div class="lazy-img lazy-img__prod first-image">
+             <picture>
+              <source data-srcset="{{ p.thumbnailUri }}" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <source data-srcset="{{ p.thumbnailUri }}" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <img alt="{{ p.name }}" class="lazyload img-loop" data-src="{{ p.thumbnailUri }}" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+             </picture>
+            </div>
+            <div class="lazy-img lazy-img__prod second-image hovered-img d-none d-lg-block">
+             <picture>
+              <source data-srcset="{{ p.thumbnailUri }}" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <source data-srcset="{{ p.thumbnailUri }}" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <img alt="{{ p.name }}" class="lazyload img-loop" data-src="{{ p.thumbnailUri }}" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+             </picture>
+            </div>
            </div>
-           <div class="lazy-img lazy-img__prod second-image hovered-img d-none d-lg-block">
-            <picture>
-             <source data-srcset="//product.hstatic.net/200000758017/product/805853_01_a860ebc1547f451d89dea37a883305bd_24427e2aeaaf4af7bce63856263c3448_thumb.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-             <source data-srcset="//product.hstatic.net/200000758017/product/805853_01_a860ebc1547f451d89dea37a883305bd_24427e2aeaaf4af7bce63856263c3448_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-             <img alt=" ZX 930 X EQT NEVER MADE PACK " class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/805853_01_a860ebc1547f451d89dea37a883305bd_24427e2aeaaf4af7bce63856263c3448_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-            </picture>
+           <div class="proloop-image__position">
+            <div class="gift product_gift_label d-none" data-id="{{ p.id }}">
+             <img alt="icon quà tặng" class="lazyload" data-src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png" src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"/>
+            </div>
+            <a class="proloop-link quickview-product" data-handle="{{ p.viewLink }}" href="{{ p.viewLink }}" title="{{ p.name }}">
+            </a>
            </div>
-          </div>
-          <div class="proloop-image__position">
-           <div class="gift product_gift_label d-none" data-id="1048690150">
-            <img alt="icon quà tặng" class="lazyload" data-src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png" src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"/>
-           </div>
-           <a class="proloop-link quickview-product" data-handle="/products/zx-930-x-eqt-never-made-pack" href="/products/zx-930-x-eqt-never-made-pack" title="ZX 930 X EQT NEVER MADE PACK">
-           </a>
-          </div>
-          <div class="proloop-actions" data-vrid="1109941428">
-           <div class="proloop-actions__inner">
-            <div class="proloop-actions__cart">
-             <div class="actions-primary">
-              <button class="button btn-small btn-proloop-cart add-to-cart btn-addcart-view" onclick="HRT.All.addCartProdItem('1109941428')" type="submit">
-               <i class="fa-light fa-bag-shopping">
-               </i>
-               <span class="btnadd">
+           <div class="proloop-actions" data-vrid="{{ p.id }}">
+            <div class="proloop-actions__inner">
+             <div class="proloop-actions__cart">
+              <div class="actions-primary">
+               <button class="button btn-small btn-proloop-cart add-to-cart btn-addcart-view" onclick="HRT.All.addCartProdItem('{{ p.id }}')" type="submit">
+                <i class="fa-light fa-bag-shopping">
+                </i>
+                <span class="btnadd">
                  Thêm vào giỏ
                 </span>
-              </button>
-             </div>
-             <div class="actions-boxqty d-flex">
-              <div class="actions-wrapqty d-flex">
-               <button class="qty-btn proloop-minus" onclick="HRT.All.minusQtyProdItem('1109941428')">
-                <i class="fa-regular fa-minus"></i>
-               </button>
-               <input class="proloop-value" name="proloop-quantity" readonly="" type="text" value=""/>
-               <button class="qty-btn proloop-plus" onclick="HRT.All.plusQtyProdItem('1109941428')">
-                <i class="fa-regular fa-plus"></i>
                </button>
               </div>
+              <div class="actions-boxqty d-flex">
+               <div class="actions-wrapqty d-flex">
+                <button class="qty-btn proloop-minus" onclick="HRT.All.minusQtyProdItem('{{ p.id }}')">
+                 <i class="fa-regular fa-minus">
+                 </i>
+                </button>
+                <input class="proloop-value" name="proloop-quantity" readonly="" type="text" value=""/>
+                <button class="qty-btn proloop-plus" onclick="HRT.All.plusQtyProdItem('{{ p.id }}')">
+                 <i class="fa-regular fa-plus">
+                 </i>
+                </button>
+               </div>
+              </div>
              </div>
-            </div>
-            <div class="proloop-actions__quickview">
-             <button class="icon-quickview tooltip-cs" data-handle="/products/zx-930-x-eqt-never-made-pack" title="Xem nhanh">
-              <i class="fa-solid fa-eye"></i>
-              <span class="tooltip-hover">
+             <div class="proloop-actions__quickview">
+              <button class="icon-quickview tooltip-cs" data-handle="{{ p.viewLink }}" title="Xem nhanh">
+               <i class="fa-solid fa-eye">
+               </i>
+               <span class="tooltip-hover">
                 Xem nhanh
                </span>
-             </button>
+              </button>
+             </div>
             </div>
            </div>
           </div>
-         </div>
-         <div class="proloop-detail">
-          <h3 class="proloop-title">
-           <a data-handle="/products/zx-930-x-eqt-never-made-pack" href="/products/zx-930-x-eqt-never-made-pack">
-            ZX 930 X EQT NEVER MADE PACK
-           </a>
-          </h3>
-          <p class="proloop-price">
+          <div class="proloop-detail">
+           <h3 class="proloop-title">
+            <a data-handle="{{ p.viewLink }}" href="{{ p.viewLink }}">
+             {{ p.name }}
+            </a>
+           </h3>
+           <p class="proloop-price">
             <span class="price">
-             4,000,000₫
+             {% if p.calcDiscountPercent > 0 %}
+                                    {{ p.priceAfterDiscount | number_format(0) }}₫
+             <span class="old-price">
+              {{ p.price | number_format(0) }}₫
+             </span>
+             {% elseif p.contactPrice or (p.price == 0) %}
+                                    Liên hệ
+                                {% else %}
+                                    {{ p.price | number_format(0) }}₫
+                                {% endif %}
             </span>
-           <span class="addtocart-mb d-sm-block d-lg-none">
-             <a class="icon-addtocart" name="add-to-cart" onclick="HRT.All.addCartProdItem('1109941428')">
-               <i class="fa-light fa-bag-shopping"></i>
+            <span class="addtocart-mb d-sm-block d-lg-none">
+             <a class="icon-addtocart" name="add-to-cart" onclick="HRT.All.addCartProdItem('{{ p.id }}')">
+              <i class="fa-light fa-bag-shopping">
+              </i>
              </a>
-           </span>
-          </p>
+            </span>
+           </p>
+          </div>
          </div>
         </div>
+        {% endfor %}
        </div>
+       {% endif %}
       </div>
       <div class="toolbar-pagi">
        <div class="ajax-pagi">
