@@ -70,43 +70,25 @@
                <li class="">
                 <span>
                 </span>
+                {% set child = category.childs %}
+    {% if child is not empty %}
+        {% for c in child %}
+                <a class="" href="{{ c.viewLink }}" target="_self" title="{{ c.name }}">
+                 {{ c.name }}
+                </a>
+                {% endfor %}
+    {% else %}
+        {% set category = getCategories() %}
+        {% if category is not empty %}
+            {% for c in category %}
+                <a class="" href="{{ c.viewLink }}" target="_self" title="{{ c.name }}">
+                 {{ c.name }}
+                </a>
+                {% endfor %}
+        {% endif %}
+    {% endif %}
                 <a class="" href="/search" target="_self" title="Tìm kiếm">
                  Tìm kiếm
-                </a>
-               </li>
-               <li class="">
-                <span>
-                </span>
-                <a class="" href="/pages/about-us" target="_self" title="Giới thiệu">
-                 Giới thiệu
-                </a>
-               </li>
-               <li class="">
-                <span>
-                </span>
-                <a class="" href="/pages/chinh-sach-doi-tra" target="_self" title="Chính sách đổi trả">
-                 Chính sách đổi trả
-                </a>
-               </li>
-               <li class="">
-                <span>
-                </span>
-                <a class="" href="/pages/chinh-sach-bao-mat" target="_self" title="Chính sách bảo mật">
-                 Chính sách bảo mật
-                </a>
-               </li>
-               <li class="">
-                <span>
-                </span>
-                <a class="" href="/pages/dieu-khoan-dich-vu" target="_self" title="Điều khoản dịch vụ">
-                 Điều khoản dịch vụ
-                </a>
-               </li>
-               <li class="">
-                <span>
-                </span>
-                <a class="" href="/pages/lien-he" target="_self" title="Liên hệ">
-                 Liên hệ
                 </a>
                </li>
               </ul>
