@@ -10,176 +10,17 @@
 {%endblock %}
 
 {%block body %}
-  {% set wishlist = jsonDecode(getCookies('WISHLIST_STORE_PRODUCT')) %}
-                            {% set ivt = 0 %}
-                            {% if product.inventory().calcAvailable() > 0 %}
-                                {% set ivt = product.inventory().calcAvailable() %}
-                            {% elseif product.available > 0 %}
-                                {% set ivt = product.available %}
-                            {% endif %}
-                            {% set variableAttributes = product.variableAttributes %}
-                            {% set flag = 0 %}
-<div class="mainBody-theme-container mainBody-modalshow mainBody-product layoutProduct_scroll">
- <div class="topbar">
-  <div class="container">
-   <div class="topbar-wrap">
-    <div class="topbar-left">
-     <div class="topbar-left__text">
-      <a href="/">
-       Nhãn hàng của chúng tôi
-      </a>
-     </div>
-     <div class="topbar-left__logo">
-      <div class="wrap-logo">
-       <a href="https://flyfeet.myharavan.com">
-        FlyFeet
-       </a>
-      </div>
-     </div>
-    </div>
-    <div class="topbar-right">
-     <ul class="topbar-right__list">
-      <li>
-       <a href="/pages/lien-he">
-        Liên hệ
-       </a>
-      </li>
-      <li>
-       <a href="/pages/danh-sach-cua-hang">
-        Danh sách cửa hàng
-       </a>
-      </li>
-      <li class="header-action-item header-action_account">
-       <div class="header-action_text">
-        <button aria-label="Tài khoản" class="header-action__link header-action_clicked" id="site-account-handle" title="Tài khoản">
-         Tài khoản
-        </button>
-        <span class="box-triangle">
-         <svg role="presentation" viewbox="0 0 20 9">
-          <path d="M.47108938 9c.2694725-.26871321.57077721-.56867841.90388257-.89986354C3.12384116 6.36134886 5.74788116 3.76338565 9.2467995.30653888c.4145057-.4095171 1.0844277-.40860098 1.4977971.00205122L19.4935156 9H.47108938z" fill="#ffffff">
-          </path>
-         </svg>
-        </span>
-       </div>
-       <div class="header-action_dropdown">
-        <div class="header-dropdown_content">
-         <div class="site_account sitenav-account" id="siteNav-account">
-          <div class="site_account_panel_list">
-           <div class="site_account_panel site_account_default is-selected" id="header-login-panel">
-            <div class="sitenav-content__title">
-             <p class="txt-title">
-              Đăng nhập tài khoản
-             </p>
-             <p class="txt-subtitle">
-              Nhập email và mật khẩu của bạn:
-             </p>
-            </div>
-            <div class="sitenav-content__block">
-             <form accept-charset="UTF-8" action="/account/login" id="customer_login" method="post">
-              <input name="form_type" type="hidden" value="customer_login"/>
-              <input name="utf8" type="hidden" value="✓"/>
-              <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt_dUCh4qJ_OqaDQ0rZCG7H6_WmBaXFnfUaUWmfm1U8A2IcTma4vNYc5KZsXGfhtm9eTW2LHR-rX7J_EtMCjUcGZQgLnSb1yQ-2GNzkTn_buoVU5khlQ05ErMpZ4IOjNeII"/>
-              <div class="form__input-wrapper form__input-wrapper--labelled">
-               <input class="form__field form__field--text" id="login-customer[email]" name="customer[email]" required="required" type="email"/>
-               <label class="form__floating-label" for="login-customer[email]">
-                Email
-               </label>
-              </div>
-              <div class="form__input-wrapper form__input-wrapper--labelled">
-               <input autocomplete="current-password" class="form__field form__field--text" id="login-customer[password]" name="customer[password]" required="required" type="password"/>
-               <label class="form__floating-label" for="login-customer[password]">
-                Mật khẩu
-               </label>
-               <div class="sitebox-recaptcha">
-                This site is protected by reCAPTCHA and the Google
-                <a href="https://policies.google.com/privacy" rel="noreferrer" target="_blank">
-                 Privacy Policy
-                </a>
-                and
-                <a href="https://policies.google.com/terms" rel="noreferrer" target="_blank">
-                 Terms of Service
-                </a>
-                apply.
-               </div>
-              </div>
-              <button class="form__submit button dark" id="form_submit-login" type="submit">
-               Đăng nhập
-              </button>
-             </form>
-             <div class="site_account_secondary-action">
-              <p>
-               Khách hàng mới?
-               <a class="link" href="/account/register">
-                Tạo tài khoản
-               </a>
-              </p>
-              <p>
-               Quên mật khẩu?
-               <button aria-controls="header-recover-panel" class="js-link link">
-                Khôi phục mật khẩu
-               </button>
-              </p>
-             </div>
-            </div>
-           </div>
-           <div class="site_account_panel site_account_sliding" id="header-recover-panel">
-            <div class="sitenav-content__title">
-             <p class="txt-title">
-              Khôi phục mật khẩu
-             </p>
-             <p class="txt-subtitle">
-              Nhập email của bạn:
-             </p>
-            </div>
-            <div class="sitenav-content__block">
-             <form accept-charset="UTF-8" action="/account/recover" method="post">
-              <input name="form_type" type="hidden" value="recover_customer_password"/>
-              <input name="utf8" type="hidden" value="✓"/>
-              <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt_dUCh4qJ_OqaDQ0rZCG7H6_WmBaXFnfUaUWmfm1U8A2IcTma4vNYc5KZsXGfhtm9eTW2LHR-rX7J_EtMCjUcGZQgLnSb1yQ-2GNzkTn_buoVU5khlQ05ErMpZ4IOjNeII"/>
-              <div class="form__input-wrapper form__input-wrapper--labelled">
-               <input class="form__field form__field--text" id="recover-customer[recover_email]" name="email" required="required" type="email"/>
-               <label class="form__floating-label" for="recover-customer[recover_email]">
-                Email
-               </label>
-               <div class="sitebox-recaptcha">
-                This site is protected by reCAPTCHA and the Google
-                <a href="https://policies.google.com/privacy" rel="noreferrer" target="_blank">
-                 Privacy Policy
-                </a>
-                and
-                <a href="https://policies.google.com/terms" rel="noreferrer" target="_blank">
-                 Terms of Service
-                </a>
-                apply.
-               </div>
-              </div>
-              <button class="form__submit button" id="form_submit-recover" type="submit">
-               Khôi phục
-              </button>
-             </form>
-             <div class="site_account_secondary-action">
-              <p>
-               Bạn đã nhớ mật khẩu?
-               <button aria-controls="header-login-panel" class="js-link link">
-                Trở về đăng nhập
-               </button>
-              </p>
-             </div>
-            </div>
-           </div>
-          </div>
-         </div>
-        </div>
-       </div>
-      </li>
-     </ul>
-    </div>
-   </div>
-  </div>
- </div>
+ {% set wishlist = jsonDecode(getCookies('WISHLIST_STORE_PRODUCT')) %}
+ {% set ivt = 0 %}
+ {% if product.inventory().calcAvailable() > 0 %}
+  {% set ivt = product.inventory().calcAvailable() %}
+ {% elseif product.available > 0 %}
+  {% set ivt = product.available %}
+ {% endif %}
+ {% set variableAttributes = product.variableAttributes %}
+ {% set flag = 0 %}
+
  <main class="mainWrapper--content">
-  <!-- size -->
-  <!-- end_size -->
   <div class="layout-productDetail layout-pageProduct">
    <div class="breadcrumb-shop">
     <div class="container">
@@ -676,7 +517,7 @@ nếu sản phẩm lỗi
              Chọn 1 trong các loại quà tặng
             </p>
            </div>
-           <div america""="" data-id="1048689951" data-title="Adidas EQT Cushion ADV " id="buyxgety-product-list" north="">
+           <div data-id="1048689951" data-title="Adidas EQT Cushion ADV " id="buyxgety-product-list" north="">
             <div class="buyxgety_content clearfix">
              <div class="buyxgety_lists">
              </div>
@@ -1123,7 +964,7 @@ nếu sản phẩm lỗi
                <div class="gift product_gift_label d-none" data-id="1048690049">
                 <img alt="icon quà tặng" class="lazyload" data-src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png" src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"/>
                </div>
-               <a class="proloop-link quickview-product" data-handle="/products/hien-dai-va-thoi-trang-khi-dien-item-moi-cua-nike-mau-sac-la-mat-chat-lieu-thoang-mat-nhe-nhang-phu-hop-voi-nhung-chang-trai-yeu-phong-cach-sports-chat-lieu-cao-cap-eva-pu-cushlon-phylon-ben-chong-bam-ban-de" href="/products/hien-dai-va-thoi-trang-khi-dien-item-moi-cua-nike-mau-sac-la-mat-chat-lieu-thoang-mat-nhe-nhang-phu-hop-voi-nhung-chang-trai-yeu-phong-cach-sports-chat-lieu-cao-cap-eva-pu-cushlon-phylon-ben-chong-bam-ban-de" off="" title="The 10: Nike Air Presto " white""="">
+               <a class="proloop-link quickview-product" data-handle="/products/hien-dai-va-thoi-trang-khi-dien-item-moi-cua-nike-mau-sac-la-mat-chat-lieu-thoang-mat-nhe-nhang-phu-hop-voi-nhung-chang-trai-yeu-phong-cach-sports-chat-lieu-cao-cap-eva-pu-cushlon-phylon-ben-chong-bam-ban-de" href="/products/hien-dai-va-thoi-trang-khi-dien-item-moi-cua-nike-mau-sac-la-mat-chat-lieu-thoang-mat-nhe-nhang-phu-hop-voi-nhung-chang-trai-yeu-phong-cach-sports-chat-lieu-cao-cap-eva-pu-cushlon-phylon-ben-chong-bam-ban-de" off="" title="The 10: Nike Air Presto ">
                </a>
               </div>
               <div class="proloop-actions" data-vrid="1109941264">
@@ -1233,7 +1074,7 @@ nếu sản phẩm lỗi
                <div class="gift product_gift_label d-none" data-id="1048690117">
                 <img alt="icon quà tặng" class="lazyload" data-src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png" src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"/>
                </div>
-               <a class="proloop-link quickview-product" data-handle="/products/nike-w-s-air-huarache-run-triple-white" href="/products/nike-w-s-air-huarache-run-triple-white" title="Nike W's Air Huarache Run " triple="" white""="">
+               <a class="proloop-link quickview-product" data-handle="/products/nike-w-s-air-huarache-run-triple-white" href="/products/nike-w-s-air-huarache-run-triple-white" title="Nike W's Air Huarache Run " triple="">
                </a>
               </div>
               <div class="proloop-actions" data-vrid="1109941377">
@@ -1343,7 +1184,7 @@ nếu sản phẩm lỗi
                <div class="gift product_gift_label d-none" data-id="1048690036">
                 <img alt="icon quà tặng" class="lazyload" data-src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png" src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"/>
                </div>
-               <a class="proloop-link quickview-product" data-handle="/products/adidas-yeezy-boost-700-wave-runner" href="/products/adidas-yeezy-boost-700-wave-runner" runner""="" title="Adidas Yeezy Boost 700 " wave="">
+               <a class="proloop-link quickview-product" data-handle="/products/adidas-yeezy-boost-700-wave-runner" href="/products/adidas-yeezy-boost-700-wave-runner" title="Adidas Yeezy Boost 700 " wave="">
                </a>
               </div>
               <div class="proloop-actions" data-vrid="1109941242">
@@ -1563,7 +1404,7 @@ nếu sản phẩm lỗi
                <div class="gift product_gift_label d-none" data-id="1048690025">
                 <img alt="icon quà tặng" class="lazyload" data-src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png" src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"/>
                </div>
-               <a class="proloop-link quickview-product" data-handle="/products/adidas-yeezy-boost-350-v2-zebra" href="/products/adidas-yeezy-boost-350-v2-zebra" title="Adidas Yeezy boost 350 v2 " zebra""="">
+               <a class="proloop-link quickview-product" data-handle="/products/adidas-yeezy-boost-350-v2-zebra" href="/products/adidas-yeezy-boost-350-v2-zebra" title="Adidas Yeezy boost 350 v2 ">
                </a>
               </div>
               <div class="proloop-actions" data-vrid="1109941224">
@@ -1673,7 +1514,7 @@ nếu sản phẩm lỗi
                <div class="gift product_gift_label d-none" data-id="1048690099">
                 <img alt="icon quà tặng" class="lazyload" data-src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png" src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"/>
                </div>
-               <a class="proloop-link quickview-product" data-handle="/products/nike-air-max-97-oa-jl-london-summer-of-love" href="/products/nike-air-max-97-oa-jl-london-summer-of-love" london="" love""="" of="" summer="" title="Nike Air Max 97 Oa Jl ">
+               <a class="proloop-link quickview-product" data-handle="/products/nike-air-max-97-oa-jl-london-summer-of-love" href="/products/nike-air-max-97-oa-jl-london-summer-of-love" london="" of="" summer="" title="Nike Air Max 97 Oa Jl ">
                </a>
               </div>
               <div class="proloop-actions" data-vrid="1109941351">
@@ -1783,7 +1624,7 @@ nếu sản phẩm lỗi
                <div class="gift product_gift_label d-none" data-id="1048689967">
                 <img alt="icon quà tặng" class="lazyload" data-src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png" src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"/>
                </div>
-               <a class="proloop-link quickview-product" data-handle="/products/adidas-nmd-r1-molded-stripes" href="/products/adidas-nmd-r1-molded-stripes" molded="" stripes""="" title="Adidas NMD_R1 ">
+               <a class="proloop-link quickview-product" data-handle="/products/adidas-nmd-r1-molded-stripes" href="/products/adidas-nmd-r1-molded-stripes" molded="" title="Adidas NMD_R1 ">
                </a>
               </div>
               <div class="proloop-actions" data-vrid="1109941144">
@@ -2219,7 +2060,7 @@ nếu sản phẩm lỗi
   </div>
   <!-- JS PRODUCT -->
  </main>
-</div>
+
 <div class="sitenav-overlay" id="sitenav-overlay">
 </div>
 <div class="list-coupon--hover d-none">
