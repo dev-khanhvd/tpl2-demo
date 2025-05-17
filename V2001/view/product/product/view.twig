@@ -31,8 +31,7 @@
          Trang chủ
         </span>
        </a>
-       <meta content="1" itemprop="position">
-       </meta>
+       <meta content="1" itemprop="position"/>
       </li>
       <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
        <a href="https://flyfeet.myharavan.com/collections/onsale" itemprop="item" target="_self">
@@ -40,8 +39,7 @@
          Sản phẩm khuyến mãi
         </span>
        </a>
-       <meta content="2" itemprop="position">
-       </meta>
+       <meta content="2" itemprop="position"/>
       </li>
       <li class="active" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
        <span content="https://flyfeet.myharavan.com/products/adidas-eqt-cushion-adv-north-america" itemprop="item">
@@ -49,8 +47,7 @@
          Adidas EQT Cushion ADV "North America"
         </strong>
        </span>
-       <meta content="3" itemprop="position">
-       </meta>
+       <meta content="3" itemprop="position"/>
       </li>
      </ol>
     </div>
@@ -92,80 +89,29 @@
         </div>
         <div class="product-gallery__thumb swiper" id="slideThumb">
          <div class="swiper-wrapper">
-          <div class="product-thumb swiper-slide" data-image="//product.hstatic.net/200000758017/product/801740_1_e4adfa6d09b7468a8c9fb21bf8e02bd4_01765f98fc7e4802bd80ec1118d55cfd_compact.jpg">
+          {% if product.images %}
+        {% for i in product.images %}
+          <div class="product-thumb swiper-slide" data-image="{{ i.thumbnailUri }}">
            <div class="product-thumb__link boxlazy-img">
             <div class="boxlazy-img__insert lazy-img__prod">
              <span class="boxlazy-img__aspect">
-              <img alt=' Adidas EQT Cushion ADV "North America" ' class="product-thumb__photo" src="//product.hstatic.net/200000758017/product/801740_1_e4adfa6d09b7468a8c9fb21bf8e02bd4_01765f98fc7e4802bd80ec1118d55cfd_compact.jpg"/>
+              <img alt="{{ product.name }}" class="product-thumb__photo" src="{{ i.thumbnailUri }}"/>
              </span>
             </div>
            </div>
           </div>
-          <div class="product-thumb swiper-slide" data-image="//product.hstatic.net/200000758017/product/801740_2_b78b6dace1e2471facefc02d3aa6f9da_b6b3fdab4f1a46f195de4737100c2762_compact.jpg">
+          {% endfor %}
+    {% else %}
+          <div class="product-thumb swiper-slide" data-image="{{ product.imageUri }}">
            <div class="product-thumb__link boxlazy-img">
             <div class="boxlazy-img__insert lazy-img__prod">
              <span class="boxlazy-img__aspect">
-              <img alt=' Adidas EQT Cushion ADV "North America" ' class="product-thumb__photo" src="//product.hstatic.net/200000758017/product/801740_2_b78b6dace1e2471facefc02d3aa6f9da_b6b3fdab4f1a46f195de4737100c2762_compact.jpg"/>
+              <img alt="{{ product.name }}" class="product-thumb__photo" src="{{ product.imageUri }}"/>
              </span>
             </div>
            </div>
           </div>
-          <div class="product-thumb swiper-slide" data-image="//product.hstatic.net/200000758017/product/801740_3_1abe518578db43cdaf7d9a952564e156_82b2c78f37e3468a8e56e0a170e62a71_compact.jpg">
-           <div class="product-thumb__link boxlazy-img">
-            <div class="boxlazy-img__insert lazy-img__prod">
-             <span class="boxlazy-img__aspect">
-              <img alt=' Adidas EQT Cushion ADV "North America" ' class="product-thumb__photo" src="//product.hstatic.net/200000758017/product/801740_3_1abe518578db43cdaf7d9a952564e156_82b2c78f37e3468a8e56e0a170e62a71_compact.jpg"/>
-             </span>
-            </div>
-           </div>
-          </div>
-          <div class="product-thumb swiper-slide" data-image="//product.hstatic.net/200000758017/product/801740_4_6fb0a9165c614f86bfd31ce908d6ef55_e189d23f845f4f31b4821c2d21a39d1c_compact.jpg">
-           <div class="product-thumb__link boxlazy-img">
-            <div class="boxlazy-img__insert lazy-img__prod">
-             <span class="boxlazy-img__aspect">
-              <img alt=' Adidas EQT Cushion ADV "North America" ' class="product-thumb__photo" src="//product.hstatic.net/200000758017/product/801740_4_6fb0a9165c614f86bfd31ce908d6ef55_e189d23f845f4f31b4821c2d21a39d1c_compact.jpg"/>
-             </span>
-            </div>
-           </div>
-          </div>
-         </div>
-         <div class="swiper-nav swiper-nav-thumb">
-          <span class="swiper-button swiper-prev swiper-thumb-prev">
-           <svg height="22" style="transform: rotate(180deg);" viewbox="0 0 511.993 511.993" width="22" xmlns="http://www.w3.org/2000/svg">
-            <g>
-             <g>
-              <g>
-               <path d="M487.292,235.408H20.59c-11.372,0-20.59,9.224-20.59,20.59c0,11.366,9.217,20.59,20.59,20.59h466.702 c11.372,0,20.59-9.217,20.59-20.59C507.882,244.625,498.665,235.408,487.292,235.408z">
-               </path>
-              </g>
-             </g>
-             <g>
-              <g>
-               <path d="M505.96,241.434L304.187,39.653c-8.044-8.037-21.07-8.037-29.114,0c-8.044,8.044-8.044,21.084,0,29.121l187.216,187.223 L275.073,443.221c-8.044,8.037-8.044,21.077,0,29.114c4.022,4.022,9.286,6.033,14.557,6.033s10.535-2.011,14.557-6.033	l201.773-201.78C514.004,262.511,514.004,249.47,505.96,241.434z">
-               </path>
-              </g>
-             </g>
-            </g>
-           </svg>
-          </span>
-          <span class="swiper-button swiper-next swiper-thumb-next">
-           <svg height="22" viewbox="0 0 511.993 511.993" width="22" xmlns="http://www.w3.org/2000/svg">
-            <g>
-             <g>
-              <g>
-               <path d="M487.292,235.408H20.59c-11.372,0-20.59,9.224-20.59,20.59c0,11.366,9.217,20.59,20.59,20.59h466.702 c11.372,0,20.59-9.217,20.59-20.59C507.882,244.625,498.665,235.408,487.292,235.408z">
-               </path>
-              </g>
-             </g>
-             <g>
-              <g>
-               <path d="M505.96,241.434L304.187,39.653c-8.044-8.037-21.07-8.037-29.114,0c-8.044,8.044-8.044,21.084,0,29.121l187.216,187.223 L275.073,443.221c-8.044,8.037-8.044,21.077,0,29.114c4.022,4.022,9.286,6.033,14.557,6.033s10.535-2.011,14.557-6.033	l201.773-201.78C514.004,262.511,514.004,249.47,505.96,241.434z">
-               </path>
-              </g>
-             </g>
-            </g>
-           </svg>
-          </span>
+          {% endif %}
          </div>
         </div>
        </div>
