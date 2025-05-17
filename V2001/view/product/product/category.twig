@@ -105,12 +105,12 @@
             <div class="filter_group-content filter-brand" style="display: none;">
              <ul class="checkbox-list checkbox-brand">
               {% set l_brand = loadListBrands({'categoryId': category.id}) %}
-{% set prBrand = getParam('brand') %}
-{% if prBrand %}
-    {% set prBrand = prBrand|split(',') %}
-{% endif %}
+                 {% set prBrand = getParam('brand') %}
+                 {% if prBrand %}
+                     {% set prBrand = prBrand|split(',') %}
+                 {% endif %}
 
-{% if l_brand %}
+                 {% if l_brand %}
               <ul>
                {% for b in l_brand %}
                <li>
@@ -162,83 +162,11 @@
              </span>
             </div>
             <div class="filter_group-content filter-color" style="display: none;">
-             <ul class="checkbox-list clearfix">
-              <li>
+             <ul class="checkbox-list clearfix filter-attr">
+               <li>
                <input data-color="(variant:product contains Đỏ)" id="data-color-p1" name="color-filter" type="checkbox" value="Đỏ"/>
                <label for="data-color-p1" style="background-color: #ff0000">
                 Đỏ
-               </label>
-              </li>
-              <li>
-               <input data-color="(variant:product contains Vàng)" id="data-color-p2" name="color-filter" type="checkbox" value="Vàng"/>
-               <label for="data-color-p2" style="background-color: #ffff05">
-                Vàng
-               </label>
-              </li>
-              <li>
-               <input data-color="(variant:product contains Cam)" id="data-color-p3" name="color-filter" type="checkbox" value="Cam"/>
-               <label for="data-color-p3" style="background-color: #f5b505">
-                Cam
-               </label>
-              </li>
-              <li>
-               <input data-color="(variant:product contains Xanh dương)" id="data-color-p4" name="color-filter" type="checkbox" value="Xanh dương"/>
-               <label for="data-color-p4" style="background-color: #5100ff">
-                Xanh dương
-               </label>
-              </li>
-              <li>
-               <input data-color="(variant:product contains Xanh lá)" id="data-color-p5" name="color-filter" type="checkbox" value="Xanh lá"/>
-               <label for="data-color-p5" style="background-color: #3cfa08">
-                Xanh lá
-               </label>
-              </li>
-              <li>
-               <input data-color="(variant:product contains Nâu)" id="data-color-p6" name="color-filter" type="checkbox" value="Nâu"/>
-               <label for="data-color-p6" style="background-color: #753a3a">
-                Nâu
-               </label>
-              </li>
-              <li>
-               <input data-color="(variant:product contains Xám)" id="data-color-p7" name="color-filter" type="checkbox" value="Xám"/>
-               <label for="data-color-p7" style="background-color: #cccaca">
-                Xám
-               </label>
-              </li>
-              <li>
-               <input data-color="(variant:product contains Tím)" id="data-color-p8" name="color-filter" type="checkbox" value="Tím"/>
-               <label for="data-color-p8" style="background-color: #b5129a">
-                Tím
-               </label>
-              </li>
-              <li>
-               <input data-color="(variant:product contains Hồng)" id="data-color-p9" name="color-filter" type="checkbox" value="Hồng"/>
-               <label for="data-color-p9" style="background-color: #db999b">
-                Hồng
-               </label>
-              </li>
-              <li>
-               <input data-color="(variant:product contains Trắng)" id="data-color-p10" name="color-filter" type="checkbox" value="Trắng"/>
-               <label for="data-color-p10" style="background-color: #ffffff">
-                Trắng
-               </label>
-              </li>
-              <li>
-               <input data-color="(variant:product contains Xanh nhạt)" id="data-color-p11" name="color-filter" type="checkbox" value="Xanh nhạt"/>
-               <label for="data-color-p11" style="background-color: #E0FFFF">
-                Xanh nhạt
-               </label>
-              </li>
-              <li>
-               <input data-color="(variant:product contains Đen)" id="data-color-p12" name="color-filter" type="checkbox" value="Đen"/>
-               <label for="data-color-p12" style="background-color: #000000">
-                Đen
-               </label>
-              </li>
-              <li>
-               <input data-color="(variant:product contains Xanh biển)" id="data-color-p13" name="color-filter" type="checkbox" value="Xanh biển"/>
-               <label for="data-color-p13" style="background-color: #E6E6FA">
-                Xanh biển
                </label>
               </li>
              </ul>
@@ -255,72 +183,16 @@
             </div>
             <div class="filter_group-content filter-size" style="display: none;">
              <ul class="checkbox-list">
-              <li>
+               <li>
                <input data-size="(variant:product=S)" id="data-size-p1" name="size-filter" type="checkbox" value="S"/>
                <label for="data-size-p1">
                 S
-               </label>
-              </li>
-              <li>
-               <input data-size="(variant:product=M)" id="data-size-p2" name="size-filter" type="checkbox" value="M"/>
-               <label for="data-size-p2">
-                M
-               </label>
-              </li>
-              <li>
-               <input data-size="(variant:product=L)" id="data-size-p3" name="size-filter" type="checkbox" value="L"/>
-               <label for="data-size-p3">
-                L
-               </label>
-              </li>
-              <li>
-               <input data-size="(variant:product=XL)" id="data-size-p4" name="size-filter" type="checkbox" value="XL"/>
-               <label for="data-size-p4">
-                XL
-               </label>
-              </li>
-              <li>
-               <input data-size="(variant:product=XXL)" id="data-size-p5" name="size-filter" type="checkbox" value="XXL"/>
-               <label for="data-size-p5">
-                XXL
-               </label>
-              </li>
-              <li>
-               <input data-size="(variant:product=36)" id="data-size-p6" name="size-filter" type="checkbox" value="36"/>
-               <label for="data-size-p6">
-                36
-               </label>
-              </li>
-              <li>
-               <input data-size="(variant:product=37)" id="data-size-p7" name="size-filter" type="checkbox" value="37"/>
-               <label for="data-size-p7">
-                37
-               </label>
-              </li>
-              <li>
-               <input data-size="(variant:product=38)" id="data-size-p8" name="size-filter" type="checkbox" value="38"/>
-               <label for="data-size-p8">
-                38
-               </label>
-              </li>
-              <li>
-               <input data-size="(variant:product=39)" id="data-size-p9" name="size-filter" type="checkbox" value="39"/>
-               <label for="data-size-p9">
-                39
                </label>
               </li>
              </ul>
             </div>
            </div>
           </div>
-         </div>
-         <div class="filter-footer">
-          <button class="btn-filter btn-filter-clear" id="clear-btn-filter">
-           Hủy
-          </button>
-          <button class="btn-filter btn-filter-apply" id="apply-btn-filter">
-           Áp dụng
-          </button>
          </div>
         </div>
        </div>
