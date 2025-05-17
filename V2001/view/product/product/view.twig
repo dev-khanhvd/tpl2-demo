@@ -170,26 +170,45 @@
                <div class="swatch clearfix is-color color_attr_wrap" id="variant-swatch-0">
                 <div class="pro-title">
                  Màu sắc:
-                 <strong></strong>
+                 <strong>
+                 </strong>
                 </div>
                 <div class="select-swap color_attr_item">
-                 <div class="n-sd swatch-element color trang">
-                  <input class="variant-0" id="swatch-0-trang" type="radio" value="Trắng"/>
-                  <label for="swatch-0-trang">
-                   <span>
-                    Trắng
-                   </span>
-                  </label>
+                 {% set color = variableAttributes['color'] %}
+{% if color is not null and color is not empty %}
+    {% set valuesColor = color.childValues %}
+    {% set numbC = (valuesColor | length) %}
+    {% if valuesColor is not null and numbC > 0 %}
+        {% set flag = flag + 1 %}
+                 <div class="req _colorSelect" column="{{ color.column }}">
+                  {% for attrValue in valuesColor %}
+                {% set arrColor = [] %}
+                {% set arrColor = arrColor | merge({ (color.column): attrValue.id }) %}
+                {% set img = getAttrValueImage(arrColor, false, {'return': 'image', 'product': product}) %}
+                {% set pIdsAttrStr = getAttrValueImage(arrColor, true, {'product': product}) | json_encode() %}
+                {% set pIdsAttrStr = pIdsAttrStr | replace({'[': '', ']': ''}) %}
+                  <div class="n-sd swatch-element color {{ attrValue.name | lower }}">
+                   <input class="variant-{{ loop.index0 }}" id="swatch-{{ loop.index0 }}-{{ attrValue.name | lower }}" type="radio" value="{{ attrValue.name }}"/>
+                   <label for="swatch-{{ loop.index0 }}-{{ attrValue.name | lower }}">
+                    <span>
+                     {{ attrValue.name }}
+                    </span>
+                   </label>
+                  </div>
+                  {% endfor %}
                  </div>
+                 {% endif %}
+{% endif %}
                 </div>
                </div>
                <div class="swatch clearfix size_attr_wrap" id="variant-swatch-1">
                 <div class="pro-title">
                  Kích thước:
-                 <strong></strong>
+                 <strong>
+                 </strong>
                 </div>
                 <div class="select-swap size_attr_item">
-                 <div class="n-sd swatch-element ">
+                 <div class="n-sd swatch-element">
                   <input class="variant-1" id="swatch-1-35" type="radio" value="35"/>
                   <label for="swatch-1-35">
                    <span>
