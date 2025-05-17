@@ -165,46 +165,41 @@
              </div>
             </div>
             <div class="product-variants">
-             <form action="/cart/add" class="attr_item" id="add-item-form" method="post">
+             <form action="/cart/add" id="add-item-form" method="post">
               <div class="select-swatch">
-               <div class="swatch clearfix color_attr_item is-color" data-option="option1" data-option-index="0" id="variant-swatch-0">
-                {% set color = variableAttributes['color'] %}
-{% if color is not null and color is not empty %}
-    {% set valuesColor = color.childValues %}
-    {% set numbC = (valuesColor | length) %}
-    {% if valuesColor is not null and numbC > 0 %}
-        {% set flag = flag + 1 %}
-                <div class="req _colorSelect" column="{{ color.column }}">
-                 {% for attrValue in valuesColor %}
-                {% set arrColor = [] %}
-                {% set arrColor = arrColor | merge({ (color.column): attrValue.id }) %}
-                {% set img = getAttrValueImage(arrColor, false, {'return': 'image', 'product': product}) %}
-                {% set pIdsAttrStr = getAttrValueImage(arrColor, true, {'product': product}) | json_encode() %}
-                {% set pIdsAttrStr = pIdsAttrStr | replace({'[': '', ']': ''}) %}
-                 <a class="_pSelect {{ (numbC == 1) ? 'active' : '' }}" data-id="{{ attrValue.id }}" data-psid="{{ pIdsAttrStr }}" data-src="{{ img }}">
-                  {{ attrValue.name }}
-                 </a>
-                 {% endfor %}
+               <div class="swatch clearfix is-color color_attr_wrap" data-option="option1" data-option-index="0" id="variant-swatch-0">
+                <div class="pro-title">
+                 Màu sắc:
+                 <strong>
+                 </strong>
                 </div>
-                {% endif %}
-{% endif %}
+                <div class="select-swap color_attr_item">
+                 <div class="n-sd swatch-element color trang" data-value="Trắng">
+                  <input checked="" class="variant-0" data-vhandle="trang" id="swatch-0-trang" name="option1" type="radio" value="Trắng"/>
+                  <label class="trang" for="swatch-0-trang">
+                   <span>
+                    Trắng
+                   </span>
+                  </label>
+                 </div>
+                </div>
                </div>
-               <div class="swatch clearfix size_attr_item" data-option="option2" data-option-index="1" id="variant-swatch-1">
-                {% set size = variableAttributes['size'] %}
-{% if size is not null and size is not empty %}
-    {% set valuesSize = size.childValues %}
-    {% set numbS = (valuesSize | length) %}
-    {% if valuesSize is not null and numbS > 0 %}
-        {% set flag = flag + 1 %}
-                <div class="req _sizeSelect" data-column="{{ size.column }}">
-                 {% for attrValueC in valuesSize %}
-                 <a class="{{ (numbS == 1) ? 'active' : '' }}" data-id="{{ attrValueC.id }}">
-                  {{ attrValueC.name }}
-                 </a>
-                 {% endfor %}
+               <div class="swatch clearfix size_attr_wrap" data-option="option2" data-option-index="1" id="variant-swatch-1">
+                <div class="pro-title">
+                 Kích thước:
+                 <strong>
+                 </strong>
                 </div>
-                {% endif %}
-{% endif %}
+                <div class="select-swap size_attr_item">
+                 <div class="n-sd swatch-element " data-value="35">
+                  <input checked="" class="variant-1" data-vhandle="35" id="swatch-1-35" name="option2" type="radio" value="35"/>
+                  <label for="swatch-1-35">
+                   <span>
+                    35
+                   </span>
+                  </label>
+                 </div>
+                </div>
                </div>
               </div>
              </form>
