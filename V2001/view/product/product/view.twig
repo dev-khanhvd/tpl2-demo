@@ -208,14 +208,26 @@
                  </strong>
                 </div>
                 <div class="select-swap size_attr_item">
-                 <div class="n-sd swatch-element" data-value="35">
-                  <input checked="" class="variant-1" data-vhandle="35" id="swatch-1-35" name="option2" type="radio" value="35"/>
-                  <label for="swatch-1-35">
-                   <span>
-                    35
-                   </span>
-                  </label>
+                 {% set size = variableAttributes['size'] %}
+{% if size is not empty %}
+    {% set valuesSize = size.childValues %}
+    {% set numbS = (valuesSize | length) %}
+    {% if valuesSize is not null and numbS > 0 %}
+        {% set flag = flag + 1 %}
+                 <div class="req _sizeSelect" data-column="{{ size.column }}">
+                  {% for attrValueC in valuesSize %}
+                  <div class="n-sd swatch-element" data-value="{{ attrValueC.id }}">
+                   <input %}="" checked="" class="variant-{{ loop.index }}" data-vhandle="{{ attrValueC.id }}" endif="" id="swatch-{{ loop.index }}-{{ attrValueC.id }}" if="" loop.index="1" name="option2" type="radio" value="{{ attrValueC.id }}" {%=""/>
+                   <label for="swatch-{{ loop.index }}-{{ attrValueC.id }}">
+                    <span>
+                     {{ attrValueC.name }}
+                    </span>
+                   </label>
+                  </div>
+                  {% endfor %}
                  </div>
+                 {% endif %}
+{% endif %}
                 </div>
                </div>
               </div>
