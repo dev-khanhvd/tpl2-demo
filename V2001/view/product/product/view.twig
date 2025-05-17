@@ -918,92 +918,91 @@ nếu sản phẩm lỗi
       <div class="block-content">
        <div class="list-product-slide swiper" id="slideViewed">
         <div class="swiper-wrapper slideViewed">
+         {% set lastProduct = getHistory({'limit': 8}) %}
+    {% if lastProduct is not empty %}
+        {% for ls in lastProduct %}
          <div class="swiper-slide">
-          <div class="product-loop product-loop-slide" data-id="1109941264">
-           <div class="product-inner" data-proid="1048690049" id="listProdRelated_loop_1">
+          <div class="product-loop product-loop-slide" data-id="{{ ls.id }}">
+           <div class="product-inner" data-proid="{{ ls.id }}">
             <div class="proloop-image">
              <div class="proloop-image__inner">
               <div class="lazy-img lazy-img__prod first-image">
                <picture>
-                <source data-srcset="//product.hstatic.net/200000758017/product/804113_01_8afb9ba886124873bee6e0b3085b0208_0b9d6390eac44c1ab65cebf2d58bf7f8_large.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-                <source data-srcset="//product.hstatic.net/200000758017/product/804113_01_8afb9ba886124873bee6e0b3085b0208_0b9d6390eac44c1ab65cebf2d58bf7f8_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-                <img alt=' The 10: Nike Air Presto "Off White" ' class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/804113_01_8afb9ba886124873bee6e0b3085b0208_0b9d6390eac44c1ab65cebf2d58bf7f8_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+                <source data-srcset="{{ ls.thumbnailUri }}" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+                <source data-srcset="{{ ls.thumbnailUri }}" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+                <img alt="{{ ls.name }}" class="lazyload img-loop" data-src="{{ ls.thumbnailUri }}" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
                </picture>
               </div>
               <div class="lazy-img lazy-img__prod second-image hovered-img d-none d-lg-block">
                <picture>
-                <source data-srcset="//product.hstatic.net/200000758017/product/804113_02_18fd176e1b014f4b91167909d84cfb5b_ae453c9f9e124c84b81b790f57c60a05_thumb.jpg" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-                <source data-srcset="//product.hstatic.net/200000758017/product/804113_02_18fd176e1b014f4b91167909d84cfb5b_ae453c9f9e124c84b81b790f57c60a05_large.jpg" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-                <img alt=' The 10: Nike Air Presto "Off White" ' class="lazyload img-loop" data-src="//product.hstatic.net/200000758017/product/804113_02_18fd176e1b014f4b91167909d84cfb5b_ae453c9f9e124c84b81b790f57c60a05_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+                <source data-srcset="{{ ls.thumbnailUri }}" media="(max-width:767px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+                <source data-srcset="{{ ls.thumbnailUri }}" media="(min-width:768px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+                <img alt="{{ ls.name }}" class="lazyload img-loop" data-src="{{ ls.thumbnailUri }}" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
                </picture>
               </div>
              </div>
              <div class="proloop-image__position">
-              <div class="gift product_gift_label d-none" data-id="1048690049">
-               <img alt="icon quà tặng" class="lazyload" data-src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png" src="https://shopfront-cdn.tekoapis.com/cart/gift-filled.png"/>
-              </div>
-              <a class="proloop-link quickview-product" data-handle="/products/hien-dai-va-thoi-trang-khi-dien-item-moi-cua-nike-mau-sac-la-mat-chat-lieu-thoang-mat-nhe-nhang-phu-hop-voi-nhung-chang-trai-yeu-phong-cach-sports-chat-lieu-cao-cap-eva-pu-cushlon-phylon-ben-chong-bam-ban-de" href="/products/hien-dai-va-thoi-trang-khi-dien-item-moi-cua-nike-mau-sac-la-mat-chat-lieu-thoang-mat-nhe-nhang-phu-hop-voi-nhung-chang-trai-yeu-phong-cach-sports-chat-lieu-cao-cap-eva-pu-cushlon-phylon-ben-chong-bam-ban-de" off="" title="The 10: Nike Air Presto ">
+              <a class="proloop-link quickview-product" data-handle="{{ ls.viewLink }}" href="{{ ls.viewLink }}" title="{{ ls.name }}">
               </a>
              </div>
-             <div class="proloop-actions" data-vrid="1109941264">
-              <div class="proloop-actions__inner">
-               <div class="proloop-actions__cart">
-                <div class="actions-primary">
-                 <button class="button btn-small btn-proloop-cart add-to-cart btn-addcart-view" onclick="HRT.All.addCartProdItem('1109941264')" type="submit">
-                  <i class="fa-light fa-bag-shopping">
-                  </i>
-                  <span class="btnadd">
-                   Thêm vào giỏ
-                  </span>
-                 </button>
-                </div>
-                <div class="actions-boxqty d-flex">
-                 <div class="actions-wrapqty d-flex">
-                  <button class="qty-btn proloop-minus" onclick="HRT.All.minusQtyProdItem('1109941264')">
-                   <i class="fa-regular fa-minus">
-                   </i>
-                  </button>
-                  <input class="proloop-value" name="proloop-quantity" readonly="" type="text" value=""/>
-                  <button class="qty-btn proloop-plus" onclick="HRT.All.plusQtyProdItem('1109941264')">
-                   <i class="fa-regular fa-plus">
-                   </i>
-                  </button>
-                 </div>
-                </div>
-               </div>
-               <div class="proloop-actions__quickview">
-                <button class="icon-quickview tooltip-cs" data-handle="/products/hien-dai-va-thoi-trang-khi-dien-item-moi-cua-nike-mau-sac-la-mat-chat-lieu-thoang-mat-nhe-nhang-phu-hop-voi-nhung-chang-trai-yeu-phong-cach-sports-chat-lieu-cao-cap-eva-pu-cushlon-phylon-ben-chong-bam-ban-de" title="Xem nhanh">
-                 <i class="fa-solid fa-eye">
+            </div>
+            <div class="proloop-actions" data-vrid="{{ ls.id }}">
+             <div class="proloop-actions__inner">
+              <div class="proloop-actions__cart">
+               <div class="actions-primary">
+                <button class="button btn-small btn-proloop-cart add-to-cart btn-addcart-view" onclick="HRT.All.addCartProdItem('{{ ls.id }}')" type="submit">
+                 <i class="fa-light fa-bag-shopping">
                  </i>
-                 <span class="tooltip-hover">
-                  Xem nhanh
+                 <span class="btnadd">
+                  Thêm vào giỏ
                  </span>
                 </button>
                </div>
               </div>
+              <div class="proloop-actions__quickview">
+               <button class="icon-quickview tooltip-cs" data-handle="{{ ls.viewLink }}" title="Xem nhanh">
+               </button>
+              </div>
              </div>
             </div>
-            <div class="proloop-detail">
-             <h3 class="proloop-title">
-              <a data-handle="/products/hien-dai-va-thoi-trang-khi-dien-item-moi-cua-nike-mau-sac-la-mat-chat-lieu-thoang-mat-nhe-nhang-phu-hop-voi-nhung-chang-trai-yeu-phong-cach-sports-chat-lieu-cao-cap-eva-pu-cushlon-phylon-ben-chong-bam-ban-de" href="/products/hien-dai-va-thoi-trang-khi-dien-item-moi-cua-nike-mau-sac-la-mat-chat-lieu-thoang-mat-nhe-nhang-phu-hop-voi-nhung-chang-trai-yeu-phong-cach-sports-chat-lieu-cao-cap-eva-pu-cushlon-phylon-ben-chong-bam-ban-de">
-               The 10: Nike Air Presto "Off White"
-              </a>
+            <div class="product-info">
+             <h3>
+              {{ ls.name }}
              </h3>
-             <p class="proloop-price">
-              <span class="price">
-               8,000,000₫
-              </span>
-              <span class="addtocart-mb d-sm-block d-lg-none">
-               <a class="icon-addtocart" name="add-to-cart" onclick="HRT.All.addCartProdItem('1109941264')">
-                <i class="fa-light fa-bag-shopping">
-                </i>
-               </a>
-              </span>
-             </p>
+             {% if ls.calcDiscountPercent > 0 %}
+             <span class="discount">
+              {{ ls.calcDiscountPercent }}%
+             </span>
+             {% endif %}
+                            {% if ls.contactPrice or (ls.price == 0) %}
+             <span class="price">
+              Liên hệ
+             </span>
+             {% elseif ls.priceAfterDiscount > 0 %}
+             <span class="price">
+              {{ ls.priceAfterDiscount | number_format(0) }}₫
+              <del>
+               {{ ls.price | number_format(0) }}₫
+              </del>
+             </span>
+             {% elseif ls.oldPrice > 0 %}
+             <span class="price">
+              {{ ls.price | number_format(0) }}₫
+              <del>
+               {{ ls.oldPrice | number_format(0) }}₫
+              </del>
+             </span>
+             {% else %}
+             <span class="price">
+              {{ ls.price | number_format(0) }}₫
+             </span>
+             {% endif %}
             </div>
            </div>
           </div>
          </div>
+         {% endfor %}
+    {% endif %}
         </div>
        </div>
       </div>
