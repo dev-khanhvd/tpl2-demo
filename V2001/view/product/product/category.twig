@@ -155,23 +155,37 @@
           </div>
           <!-- ./filter color -->
           <div class="filter_group filter-attr-wrap">
+           {% set allAttr = getAllAttributes({'categoryId': category.id}) %}
+{% if allAttr %}
+    {% for attr in allAttr %}
+        {% if attr.values is not null %}
+            {% set column = attr.column %}
            <div class="filter_group_block">
             <div class="filter_group-subtitle action-group">
-             <span>
-              Màu sắc
+             <span data-column="{{ column }}" data-id="{{ attr.id }}">
+              {{ attr.name | raw }}
              </span>
             </div>
             <div class="filter_group-content filter-color" style="display: none;">
              <ul class="checkbox-list clearfix filter-attr">
-               <li>
-               <input data-color="(variant:product contains Đỏ)" id="data-color-p1" name="color-filter" type="checkbox" value="Đỏ"/>
-               <label for="data-color-p1" style="background-color: #ff0000">
-                Đỏ
+              {% for cl in attr.values %}
+              <li>
+               {% if cl.id in attrColumnValues[column] %}
+               <input checked="" type="checkbox" value="{{ removeFilter(column, cl.id) }}"/>
+               {% else %}
+               <input type="checkbox" value="{{ addFilter(column, cl.id, 2) }}"/>
+               {% endif %}
+               <label for="data-color-p{{ cl.id }}" style="background-color: #ff0000">
+                {{ cl.name | raw }}
                </label>
               </li>
+              {% endfor %}
              </ul>
             </div>
            </div>
+           {% endif %}
+    {% endfor %}
+{% endif %}
           </div>
           <!-- ./filter size -->
           <div class="filter_group">
@@ -183,7 +197,7 @@
             </div>
             <div class="filter_group-content filter-size" style="display: none;">
              <ul class="checkbox-list">
-               <li>
+              <li>
                <input data-size="(variant:product=S)" id="data-size-p1" name="size-filter" type="checkbox" value="S"/>
                <label for="data-size-p1">
                 S
