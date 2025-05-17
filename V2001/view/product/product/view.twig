@@ -175,11 +175,11 @@
                 </div>
                 <div class="select-swap color_attr_item">
                  {% set color = variableAttributes['color'] %}
-{% if color is not null and color is not empty %}
-    {% set valuesColor = color.childValues %}
-    {% set numbC = (valuesColor | length) %}
-    {% if valuesColor is not null and numbC > 0 %}
-        {% set flag = flag + 1 %}
+                 {% if color is not null and color is not empty %}
+                     {% set valuesColor = color.childValues %}
+                     {% set numbC = (valuesColor | length) %}
+                     {% if valuesColor is not null and numbC > 0 %}
+                     {% set flag = flag + 1 %}
                  <div class="req _colorSelect" column="{{ color.column }}">
                   {% for attrValue in valuesColor %}
                 {% set arrColor = [] %}
@@ -198,36 +198,23 @@
                   {% endfor %}
                  </div>
                  {% endif %}
-{% endif %}
+                {% endif %}
                 </div>
                </div>
                <div class="swatch clearfix size_attr_wrap" id="variant-swatch-1">
                 <div class="pro-title">
                  Kích thước:
-                 <strong>
-                 </strong>
+                 <strong></strong>
                 </div>
                 <div class="select-swap size_attr_item">
-                 {% set size = variableAttributes['size'] %}
-{% if size is not null and size is not empty %}
-    {% set valuesSize = size.childValues %}
-    {% set numbS = (valuesSize | length) %}
-    {% if valuesSize is not null and numbS > 0 %}
-        {% set flag = flag + 1 %}
-                 <div class="req _sizeSelect" data-column="{{ size.column }}">
-                  {% for attrValueC in valuesSize %}
-                  <div class="n-sd swatch-element">
-                   <input %}="" checked="" class="variant-{{ loop.index }}" endif="" id="swatch-{{ loop.index }}-{{ attrValueC.id }}" if="" loop.index="1" type="radio" value="{{ attrValueC.id }}" {%=""/>
-                   <label for="swatch-{{ loop.index }}-{{ attrValueC.id }}">
-                    <span>
-                     {{ attrValueC.name }}
-                    </span>
-                   </label>
-                  </div>
-                  {% endfor %}
+                 <div class="n-sd swatch-element ">
+                  <input class="variant-1" id="swatch-1-35" type="radio" value="35"/>
+                  <label for="swatch-1-35">
+                   <span>
+                    35
+                   </span>
+                  </label>
                  </div>
-                 {% endif %}
-{% endif %}
                 </div>
                </div>
               </div>
