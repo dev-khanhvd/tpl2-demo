@@ -209,15 +209,15 @@
                 </div>
                 <div class="select-swap size_attr_item">
                  {% set size = variableAttributes['size'] %}
-{% if size is not empty %}
-    {% set valuesSize = size.childValues %}
-    {% set numbS = (valuesSize | length) %}
-    {% if valuesSize is not null and numbS > 0 %}
-        {% set flag = flag + 1 %}
+                 {% if size is not empty %}
+                     {% set valuesSize = size.childValues %}
+                     {% set numbS = (valuesSize | length) %}
+                     {% if valuesSize is not null and numbS > 0 %}
+                         {% set flag = flag + 1 %}
                  <div class="req _sizeSelect" data-column="{{ size.column }}">
                   {% for attrValueC in valuesSize %}
                   <div class="n-sd swatch-element">
-                   <input %}="" checked="" class="variant-{{ loop.index }}" endif="" id="swatch-{{ loop.index }}-{{ attrValueC.id }}" if="" loop.index="1" type="radio" value="{{ attrValueC.id }}" {%=""/>
+                   <input class="variant-{{ loop.index }}" id="swatch-{{ loop.index }}-{{ attrValueC.id }}" type="radio" value="{{ attrValueC.id }}"/>
                    <label for="swatch-{{ loop.index }}-{{ attrValueC.id }}">
                     <span>
                      {{ attrValueC.name }}
@@ -227,7 +227,7 @@
                   {% endfor %}
                  </div>
                  {% endif %}
-{% endif %}
+                 {% endif %}
                 </div>
                </div>
               </div>
