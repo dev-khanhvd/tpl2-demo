@@ -1,541 +1,511 @@
 {%extends "layout/layout" %}
 {%block meta %}
 {{ headTitle(news.title | striptags).setSeparator(' - ').setAutoEscape(false)|raw }}
-<meta name="keywords" content="{{ news.metaKeywords?:news.name }}">
-<meta name="description" content="{{ news.metaDescription?:news.name }}">
-<meta property="og:title" content="{{ news.metaTitle?:news.name }}">
-<meta property="og:url" content="{{ news.canonicalLink }}">
-<meta property="og:image" content="{{ news.pictureUri }}">
-<link rel="canonical" href="{{ news.canonicalLink }}">
+<meta content="{{ news.metaKeywords?:news.name }}" name="keywords"/>
+<meta content="{{ news.metaDescription?:news.name }}" name="description"/>
+<meta content="{{ news.metaTitle?:news.name }}" property="og:title"/>
+<meta content="{{ news.canonicalLink }}" property="og:url"/>
+<meta content="{{ news.pictureUri }}" property="og:image"/>
+<link href="{{ news.canonicalLink }}" rel="canonical"/>
 {%endblock %}
 
 {%block body %}
-
 <main class="mainWrapper--content">
-  <div class="layout-article" id="article">
-   <div class="breadcrumb-shop">
-    <div class="container">
-     <div class="breadcrumb-list blog-breadcrumb">
-      <ol class="breadcrumb breadcrumb-arrows" itemscope="" itemtype="http://schema.org/BreadcrumbList">
-       <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-        <a href="/" itemprop="item" target="_self">
-         <span itemprop="name">
-          Trang chủ
-         </span>
-        </a>
-        <meta content="1" itemprop="position"/>
-       </li>
-       <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-        <a href="https://flyfeet.myharavan.com/blogs/news" itemprop="item">
-         <span itemprop="name">
-          Tin tức
-         </span>
-        </a>
-        <meta content="2" itemprop="position"/>
-       </li>
-       <li class="active" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-        <span content="https://flyfeet.myharavan.com/blogs/news/tips-phoi-do-voi-boots-nam-them-lich-lam-fashion" itemprop="item">
-         <strong itemprop="name">
-          Tips phối đồ với boots nam thêm lịch lãm, fashion
-         </strong>
+ <div class="layout-article" id="article">
+  <div class="breadcrumb-shop">
+   <div class="container">
+    <div class="breadcrumb-list blog-breadcrumb">
+     <ol class="breadcrumb breadcrumb-arrows" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+       <a href="/" itemprop="item" target="_self">
+        <span itemprop="name">
+         Trang chủ
         </span>
-        <meta content="3" itemprop="position"/>
-       </li>
-      </ol>
-     </div>
+       </a>
+       <meta content="1" itemprop="position">
+       </meta>
+      </li>
+      <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+       <a href="https://flyfeet.myharavan.com/blogs/news" itemprop="item">
+        <span itemprop="name">
+         Tin tức
+        </span>
+       </a>
+       <meta content="2" itemprop="position">
+       </meta>
+      </li>
+      <li class="active" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+       <span content="https://flyfeet.myharavan.com/blogs/news/tips-phoi-do-voi-boots-nam-them-lich-lam-fashion" itemprop="item">
+        <strong itemprop="name">
+         Tips phối đồ với boots nam thêm lịch lãm, fashion
+        </strong>
+       </span>
+       <meta content="3" itemprop="position">
+       </meta>
+      </li>
+     </ol>
     </div>
    </div>
-   <div class="container">
-    <div class="row">
-     <div class="col-lg-9 col-md-12 col-12 column-left mg-page">
-      <div class="row">
-       <div class="col-lg-12 col-md-12 col-12 wrapper-content">
-        <div class="article-content">
-         <div class="heading">
-          <h1 class="title">
-           Tips phối đồ với boots nam thêm lịch lãm, fashion
-          </h1>
-          <div class="meta-post">
-           <span class="author">
-            bởi: FlyFeet
-           </span>
-           <span class="date">
-            <time datetime="29 Tháng 03, 2024" pubdate="">
-             29 Tháng 03, 2024
-            </time>
-           </span>
-          </div>
-         </div>
-         <div class="wrapper-content">
-          <div class="article-image">
-           <img alt="Tips phối đồ với boots nam thêm lịch lãm, fashion" src="https://file.hstatic.net/200000758017/article/screen_shot_2023-03-16_at_14.13.34_43835fe883bd4e65a7a40c97935afae2_f0dedce2d29044dca288fdbd27f1d864.png"/>
-          </div>
-          <div class="article-body article-table-contents typeList-style">
-           <h2 id="1-phoi-do-voi-boot-nam-nen-mac-voi-ao-gi">
-            Phối đồ với boot nam nên mặc với áo gì?
-           </h2>
-           <p>
-           </p>
-           <p>
-            Boot đã có nhưng kết hợp với áo gì cũng khiến các anh chàng có gu thêm phần băn khoăn. Kiểu áo cũng là một yếu tố giúp set đồ của bạn thêm phần hoàn hảo. Một số gợi ý dưới đây sẽ giúp chàng thêm phần đẹp và trẻ trung hơn.
-           </p>
-           <p>
-           </p>
-           <h3 id="11-cach-phoi-do-voi-boots-ao-phong-cho-su-nang-dong-cool-ngau">
-            Cách phối đồ với boots, áo phông cho sự năng động, cool ngầu
-           </h3>
-           <p>
-           </p>
-           <p>
-            Những chiếc áo phông được xem là những chiếc áo “bảo bối” không thể thiếu trong tủ đồ của bất cứ chàng trai, cô gái nào. Sự tiện lợi, có thể phối với nhiều trang phục khác nhau đây chính là “vũ khí” giúp chàng có thể diện được ở bất cứ hoàn cảnh nào.
-           </p>
-           <p>
-            Đừng quá bó buộc những chiếc áo phông chỉ được phối với giày thể thao những đôi boot nam cũng là lựa chọn không tồi cho cách phối đồ với boots nam mà chàng cần chú ý. Đảm bảo giữ được sự trẻ trung, khỏe khoắn nên những đôi boot cổ cao, cổ thấp hoặc cổ lửng cũng đều giúp bạn thêm phần đẹp hơn.
-           </p>
-           <p>
-           </p>
-           <h3 id="12-phoi-do-voi-boot-cao-co-ao-polo-lich-su-hon-khi-di-lam">
-            Phối đồ với boot cao cổ, áo polo lịch sự hơn khi đi làm
-           </h3>
-           <p>
-           </p>
-           <p>
-            Một sự lựa chọn khác trong cách phối đồ với boot nam mà zoom fashion muốn gửi đến chính là những chiếc áo polo. Sự kết hợp hài hòa tuy không mới nhưng đây chính là cách mix đồ không bao giờ lỗi mốt hay bị già trước tuổi.
-           </p>
-           <p>
-           </p>
-           <h3 id="13-phoi-do-voi-boot-co-ngan-ao-so-mi-outfit-tuyet-dep-khong-nen-bo-qua">
-            Phối đồ với boot cổ ngắn, áo sơ mi - Outfit tuyệt đẹp không nên bỏ qua
-           </h3>
-           <p>
-            Nếu đang không biết phối đồ với boot nam thế nào thì những chiếc áo sơ mi chính là gợi ý mà các bạn không nên bỏ qua với những anh chàng yêu thích sự thanh lịch. Bộ đôi hoàn hảo khi kết hợp cùng giày boots sẽ giúp các chàng tăng lên được sự năng động. Nếu muốn trang phục có thêm điểm nhấn thì những chiếc túi xách đơn giản cũng là cách mix thời trang cho chàng.
-           </p>
-           <p>
-           </p>
-           <h2 id="2-phoi-do-voi-boots-nam-nen-mac-voi-quan-gi">
-            Phối đồ với boots nam nên mặc với quần gì?
-           </h2>
-           <p>
-           </p>
-           <p>
-            Việc phối cùng loại quần gì cũng khiến nhiều bạn nam phải đắn đo rất nhiều. Với những gợi ý dưới đây sẽ giúp bạn giải quyết những thắc mắc.
-           </p>
-           <p>
-           </p>
-           <h3 id="21-cach-phoi-do-voi-boot-co-ngan-quan-jean-rach-noi-loan">
-            Cách phối đồ với boot cổ ngắn, quần jean rách nổi loạn
-           </h3>
-           <p>
-           </p>
-           <p>
-            Sự năng động, nổi loạn là tất cả những gì set đồ này đem lại cho các bạn nam. Tuy nhiên, đối với những anh chàng công sở thì việc diện trang phục này là điều không phù hợp đâu nhé!
-           </p>
-           <h3 id="22-cach-phoi-do-voi-boot-co-cao-quan-kaki-di-lam">
-            Cách phối đồ với boot cổ cao, quần kaki đi làm
-           </h3>
-           <p>
-           </p>
-           <p>
-            Hôm nay không biết nên mặc gì thì set đồ với quần kaki cùng boot chính là sự lựa chọn phù hợp nhất đem lại sự lịch sự và nam tính. Với những chiếc quần kaki màu sắc và kiểu dáng phù hợp sẽ giúp các chàng X2 sự tự tin lên rất nhiều.
-           </p>
-           <p>
-           </p>
-           <h3 id="23-phoi-do-voi-boots-nam-quan-baggy-thoi-trang">
-            Phối đồ với boots nam, quần baggy thời trang
-           </h3>
-           <p>
-           </p>
-           <p>
-            Thử ngay cách kết hợp với giày boot nam cùng quần baggy để sở hữu ngay bộ trang phục siêu Hàn Quốc này nhé! Đây chính là bộ trang phục giúp các anh chàng thêm phần tự tin giống như những anh chàng đang ở bìa tạp chí.
-           </p>
-          </div>
-          <div class="article-nav">
-           <div class="row">
-            <div class="col-lg-8 col-md-12 col-12 articleToolbar-title">
-             <p>
-              Đang xem:
-              <span>
-               Tips phối đồ với boots nam thêm lịch lãm, fashion
-              </span>
-             </p>
-            </div>
-            <div class="col-lg-4 col-md-12 col-12 articleToolbar-navigation">
-             <div class="articleToolbar--nav">
-              <span>
-               <svg class="arrow-left" role="presentation" viewbox="0 0 11 18">
-                <path d="M9.5 1.5L1.5 9l8 7.5" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="square" stroke-width="2">
-                </path>
-               </svg>
-               <a href="/blogs/news/qua-tang-tri-an-voucher-giam-100k-khi-mua-hang" title="">
-                Bài trước
-               </a>
-              </span>
-              <span class="separator">
-              </span>
-              <span>
-               <a href="/blogs/news/bai-viet-mau" title="">
-                Bài sau
-               </a>
-               <svg class="arrow-right" role="presentation" viewbox="0 0 11 18">
-                <path d="M1.5 1.5l8 7.5-8 7.5" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="square" stroke-width="2">
-                </path>
-               </svg>
-              </span>
-             </div>
-            </div>
-           </div>
-          </div>
-         </div>
-        </div>
-       </div>
-       <div class="col-lg-12 col-md-12 col-12 wrapper-related">
-        <div class="article-related">
-         <div class="heading">
-          <span class="title-related">
-           Bài viết liên quan
+  </div>
+  <div class="container">
+   <div class="row">
+    <div class="col-lg-9 col-md-12 col-12 column-left mg-page">
+     <div class="row">
+      <div class="col-lg-12 col-md-12 col-12 wrapper-content">
+       <div class="article-content">
+        <div class="heading">
+         <h1 class="title">
+          Tips phối đồ với boots nam thêm lịch lãm, fashion
+         </h1>
+         <div class="meta-post">
+          <span class="author">
+           bởi: FlyFeet
+          </span>
+          <span class="date">
+           <time datetime="29 Tháng 03, 2024" pubdate="">
+            29 Tháng 03, 2024
+           </time>
           </span>
          </div>
-         <div class="list-article-slide swiper" id="slideBlogsRelated">
-          <div class="swiper-wrapper slideBlogsRelated">
-           <div class="swiper-slide">
-            <article class="article-loop">
-             <div class="article-inner">
-              <div class="article-image">
-               <a class="blog-post-thumbnail" href="/blogs/news/cach-phoi-do-nam-mua-dong-cuc-thoi-trang-va-trendy" rel="nofollow" title="Cách phối đồ nam mùa đông cực thời trang và trendy">
-                <img alt="Cách phối đồ nam mùa đông cực thời trang và trendy" class="lazyload" data-src="//file.hstatic.net/200000758017/article/screen_shot_2023-03-16_at_14.12.49_96333cee87974842854736c973c70bdb_3e6588bdcc0f4564882f3819b89fcd1e_1024x1024.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-               </a>
-              </div>
-              <div class="article-detail">
-               <div class="article-title">
-                <h3 class="post-title">
-                 <a href="/blogs/news/cach-phoi-do-nam-mua-dong-cuc-thoi-trang-va-trendy" title="Cách phối đồ nam mùa đông cực thời trang và trendy">
-                  Cách phối đồ nam mùa đông cực thời trang và trendy
-                 </a>
-                </h3>
-               </div>
-               <p class="entry-content">
-                Bật mí tip phối đồ nam mùa đông chuẩn stylist hiện nay Thời nay, biết cách ăn mặc là điều vô cùng quan trọng đối với bất cứ ai, dù là nam hay nữ. Nó sẽ...
-               </p>
-               <div class="article-post-meta">
-                <span class="date">
-                 <time datetime="29 Tháng 03, 2024" pubdate="">
-                  29 Tháng 03, 2024
-                 </time>
-                </span>
-               </div>
-              </div>
-             </div>
-            </article>
+        </div>
+        <div class="wrapper-content">
+         <div class="article-image">
+          <img alt="Tips phối đồ với boots nam thêm lịch lãm, fashion" src="https://file.hstatic.net/200000758017/article/screen_shot_2023-03-16_at_14.13.34_43835fe883bd4e65a7a40c97935afae2_f0dedce2d29044dca288fdbd27f1d864.png"/>
+         </div>
+         <div class="article-body article-table-contents typeList-style">
+          <h2 id="1-phoi-do-voi-boot-nam-nen-mac-voi-ao-gi">
+           Phối đồ với boot nam nên mặc với áo gì?
+          </h2>
+          <p>
+          </p>
+          <p>
+           Boot đã có nhưng kết hợp với áo gì cũng khiến các anh chàng có gu thêm phần băn khoăn. Kiểu áo cũng là một yếu tố giúp set đồ của bạn thêm phần hoàn hảo. Một số gợi ý dưới đây sẽ giúp chàng thêm phần đẹp và trẻ trung hơn.
+          </p>
+          <p>
+          </p>
+          <h3 id="11-cach-phoi-do-voi-boots-ao-phong-cho-su-nang-dong-cool-ngau">
+           Cách phối đồ với boots, áo phông cho sự năng động, cool ngầu
+          </h3>
+          <p>
+          </p>
+          <p>
+           Những chiếc áo phông được xem là những chiếc áo “bảo bối” không thể thiếu trong tủ đồ của bất cứ chàng trai, cô gái nào. Sự tiện lợi, có thể phối với nhiều trang phục khác nhau đây chính là “vũ khí” giúp chàng có thể diện được ở bất cứ hoàn cảnh nào.
+          </p>
+          <p>
+           Đừng quá bó buộc những chiếc áo phông chỉ được phối với giày thể thao những đôi boot nam cũng là lựa chọn không tồi cho cách phối đồ với boots nam mà chàng cần chú ý. Đảm bảo giữ được sự trẻ trung, khỏe khoắn nên những đôi boot cổ cao, cổ thấp hoặc cổ lửng cũng đều giúp bạn thêm phần đẹp hơn.
+          </p>
+          <p>
+          </p>
+          <h3 id="12-phoi-do-voi-boot-cao-co-ao-polo-lich-su-hon-khi-di-lam">
+           Phối đồ với boot cao cổ, áo polo lịch sự hơn khi đi làm
+          </h3>
+          <p>
+          </p>
+          <p>
+           Một sự lựa chọn khác trong cách phối đồ với boot nam mà zoom fashion muốn gửi đến chính là những chiếc áo polo. Sự kết hợp hài hòa tuy không mới nhưng đây chính là cách mix đồ không bao giờ lỗi mốt hay bị già trước tuổi.
+          </p>
+          <p>
+          </p>
+          <h3 id="13-phoi-do-voi-boot-co-ngan-ao-so-mi-outfit-tuyet-dep-khong-nen-bo-qua">
+           Phối đồ với boot cổ ngắn, áo sơ mi - Outfit tuyệt đẹp không nên bỏ qua
+          </h3>
+          <p>
+           Nếu đang không biết phối đồ với boot nam thế nào thì những chiếc áo sơ mi chính là gợi ý mà các bạn không nên bỏ qua với những anh chàng yêu thích sự thanh lịch. Bộ đôi hoàn hảo khi kết hợp cùng giày boots sẽ giúp các chàng tăng lên được sự năng động. Nếu muốn trang phục có thêm điểm nhấn thì những chiếc túi xách đơn giản cũng là cách mix thời trang cho chàng.
+          </p>
+          <p>
+          </p>
+          <h2 id="2-phoi-do-voi-boots-nam-nen-mac-voi-quan-gi">
+           Phối đồ với boots nam nên mặc với quần gì?
+          </h2>
+          <p>
+          </p>
+          <p>
+           Việc phối cùng loại quần gì cũng khiến nhiều bạn nam phải đắn đo rất nhiều. Với những gợi ý dưới đây sẽ giúp bạn giải quyết những thắc mắc.
+          </p>
+          <p>
+          </p>
+          <h3 id="21-cach-phoi-do-voi-boot-co-ngan-quan-jean-rach-noi-loan">
+           Cách phối đồ với boot cổ ngắn, quần jean rách nổi loạn
+          </h3>
+          <p>
+          </p>
+          <p>
+           Sự năng động, nổi loạn là tất cả những gì set đồ này đem lại cho các bạn nam. Tuy nhiên, đối với những anh chàng công sở thì việc diện trang phục này là điều không phù hợp đâu nhé!
+          </p>
+          <h3 id="22-cach-phoi-do-voi-boot-co-cao-quan-kaki-di-lam">
+           Cách phối đồ với boot cổ cao, quần kaki đi làm
+          </h3>
+          <p>
+          </p>
+          <p>
+           Hôm nay không biết nên mặc gì thì set đồ với quần kaki cùng boot chính là sự lựa chọn phù hợp nhất đem lại sự lịch sự và nam tính. Với những chiếc quần kaki màu sắc và kiểu dáng phù hợp sẽ giúp các chàng X2 sự tự tin lên rất nhiều.
+          </p>
+          <p>
+          </p>
+          <h3 id="23-phoi-do-voi-boots-nam-quan-baggy-thoi-trang">
+           Phối đồ với boots nam, quần baggy thời trang
+          </h3>
+          <p>
+          </p>
+          <p>
+           Thử ngay cách kết hợp với giày boot nam cùng quần baggy để sở hữu ngay bộ trang phục siêu Hàn Quốc này nhé! Đây chính là bộ trang phục giúp các anh chàng thêm phần tự tin giống như những anh chàng đang ở bìa tạp chí.
+          </p>
+         </div>
+         <div class="article-nav">
+          <div class="row">
+           <div class="col-lg-8 col-md-12 col-12 articleToolbar-title">
+            <p>
+             Đang xem:
+             <span>
+              Tips phối đồ với boots nam thêm lịch lãm, fashion
+             </span>
+            </p>
+           </div>
+           <div class="col-lg-4 col-md-12 col-12 articleToolbar-navigation">
+            <div class="articleToolbar--nav">
+             <span>
+              <svg class="arrow-left" role="presentation" viewbox="0 0 11 18">
+               <path d="M9.5 1.5L1.5 9l8 7.5" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="square" stroke-width="2">
+               </path>
+              </svg>
+              <a href="/blogs/news/qua-tang-tri-an-voucher-giam-100k-khi-mua-hang" title="">
+               Bài trước
+              </a>
+             </span>
+             <span class="separator">
+             </span>
+             <span>
+              <a href="/blogs/news/bai-viet-mau" title="">
+               Bài sau
+              </a>
+              <svg class="arrow-right" role="presentation" viewbox="0 0 11 18">
+               <path d="M1.5 1.5l8 7.5-8 7.5" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="square" stroke-width="2">
+               </path>
+              </svg>
+             </span>
+            </div>
            </div>
           </div>
          </div>
         </div>
        </div>
       </div>
-     </div>
-     <div class="col-lg-3 col-md-12 col-12 column-right mg-page">
-      <aside class="sidebar-blogs blogs-sticky">
-       <!-- Bai viet moi nhat -->
-       <div class="group-sidebox">
-        <div class="sidebox-title">
-         <h3 class="htitle">
-          Bài viết mới nhất
-         </h3>
+      <div class="col-lg-12 col-md-12 col-12 wrapper-related">
+       <div class="article-related">
+        <div class="heading">
+         <span class="title-related">
+          Bài viết liên quan
+         </span>
         </div>
-        <div class="sidebox-content sidebox-content-togged">
-         <div class="list-blogs">
-          <div class="item-article">
-           <div class="item-article__image">
-            <a href="/blogs/news/cach-phoi-do-nam-mua-dong-cuc-thoi-trang-va-trendy">
-             <img alt="Cách phối đồ nam mùa đông cực thời trang và trendy" class="lazyload" data-src="//file.hstatic.net/200000758017/article/screen_shot_2023-03-16_at_14.12.49_96333cee87974842854736c973c70bdb_3e6588bdcc0f4564882f3819b89fcd1e_compact.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+        <div class="list-article-slide swiper" id="slideBlogsRelated">
+         {'success': False, 'message': 'No matching logic found.'}
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="col-lg-3 col-md-12 col-12 column-right mg-page">
+     <aside class="sidebar-blogs blogs-sticky">
+      <!-- Bai viet moi nhat -->
+      <div class="group-sidebox">
+       <div class="sidebox-title">
+        <h3 class="htitle">
+         Bài viết mới nhất
+        </h3>
+       </div>
+       <div class="sidebox-content sidebox-content-togged">
+        <div class="list-blogs">
+         <div class="item-article">
+          <div class="item-article__image">
+           <a href="/blogs/news/cach-phoi-do-nam-mua-dong-cuc-thoi-trang-va-trendy">
+            <img alt="Cách phối đồ nam mùa đông cực thời trang và trendy" class="lazyload" data-src="//file.hstatic.net/200000758017/article/screen_shot_2023-03-16_at_14.12.49_96333cee87974842854736c973c70bdb_3e6588bdcc0f4564882f3819b89fcd1e_compact.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+           </a>
+          </div>
+          <div class="item-article__detail">
+           <h3 class="title">
+            <a class="link" href="/blogs/news/cach-phoi-do-nam-mua-dong-cuc-thoi-trang-va-trendy">
+             Cách phối đồ nam mùa đông cực thời trang và trendy
             </a>
-           </div>
-           <div class="item-article__detail">
-            <h3 class="title">
-             <a class="link" href="/blogs/news/cach-phoi-do-nam-mua-dong-cuc-thoi-trang-va-trendy">
-              Cách phối đồ nam mùa đông cực thời trang và trendy
-             </a>
-            </h3>
-            <p class="meta-post">
-             <span class="cate">
-              Tin tức
-             </span>
-             <span class="date">
-              - 29.03.2024
-             </span>
-            </p>
-           </div>
+           </h3>
+           <p class="meta-post">
+            <span class="cate">
+             Tin tức
+            </span>
+            <span class="date">
+             - 29.03.2024
+            </span>
+           </p>
           </div>
          </div>
         </div>
        </div>
-       <!-- Menu bai viet -->
-       <div class="group-sidebox">
-        <div class="sidebox-title">
-         <h3 class="htitle">
-          Danh mục bài viết
-         </h3>
-        </div>
-        <div class="sidebox-content sidebox-content-togged">
-         <ul class="menuList-links">
-          <li class="">
-           <a href="/" title="Trang chủ">
-            <span>
-             Trang chủ
-            </span>
-           </a>
-          </li>
-          <li class="has-submenu level0">
-           <a href="/collections/all" title="Nam">
-            Nam
-            <span class="icon-plus-submenu plus-nClick1">
-            </span>
-           </a>
-           <ul class="submenu-links">
-            <li class="has-submenu level1">
-             <a href="/">
-              Giày nam
-              <span class="icon-plus-submenu plus-nClick2">
-              </span>
-             </a>
-             <ul class="submenu-links">
-              <li class="">
-               <a href="/" title="Giày chạy bộ">
-                Giày chạy bộ
-               </a>
-              </li>
-              <li class="">
-               <a href="/" title="Giày bóng rổ">
-                Giày bóng rổ
-               </a>
-              </li>
-              <li class="">
-               <a href="/" title="Giày cầu lông">
-                Giày cầu lông
-               </a>
-              </li>
-              <li class="">
-               <a href="/" title="Giày dạo phố">
-                Giày dạo phố
-               </a>
-              </li>
-             </ul>
-            </li>
-            <li class="has-submenu level1">
-             <a href="/">
-              Áo nam
-              <span class="icon-plus-submenu plus-nClick2">
-              </span>
-             </a>
-             <ul class="submenu-links">
-              <li class="">
-               <a href="/collections/all" title="Áo chạy bộ">
-                Áo chạy bộ
-               </a>
-              </li>
-              <li class="">
-               <a href="/" title="Áo khoác">
-                Áo khoác
-               </a>
-              </li>
-             </ul>
-            </li>
-            <li class="has-submenu level1">
-             <a href="/collections/all">
-              Quần nam
-              <span class="icon-plus-submenu plus-nClick2">
-              </span>
-             </a>
-             <ul class="submenu-links">
-              <li class="">
-               <a href="/collections/all" title="Quần short">
-                Quần short
-               </a>
-              </li>
-              <li class="">
-               <a href="/collections/all" title="Quần dài">
-                Quần dài
-               </a>
-              </li>
-             </ul>
-            </li>
-           </ul>
-          </li>
-          <li class="has-submenu level0">
-           <a href="/collections/all" title="Nữ">
-            Nữ
-            <span class="icon-plus-submenu plus-nClick1">
-            </span>
-           </a>
-           <ul class="submenu-links">
-            <li class="has-submenu level1">
-             <a href="/">
-              Giày nữ
-              <span class="icon-plus-submenu plus-nClick2">
-              </span>
-             </a>
-             <ul class="submenu-links">
-              <li class="">
-               <a href="/collections/all" title="Giày chạy bộ">
-                Giày chạy bộ
-               </a>
-              </li>
-              <li class="">
-               <a href="/collections/all" title="Giày công sở">
-                Giày công sở
-               </a>
-              </li>
-              <li class="">
-               <a href="/collections/all" title="Giày dạo phố">
-                Giày dạo phố
-               </a>
-              </li>
-             </ul>
-            </li>
-            <li class="has-submenu level1">
-             <a href="/collections/all">
-              Áo nữ
-              <span class="icon-plus-submenu plus-nClick2">
-              </span>
-             </a>
-             <ul class="submenu-links">
-              <li class="">
-               <a href="/collections/all" title="Áo thể thao">
-                Áo thể thao
-               </a>
-              </li>
-              <li class="">
-               <a href="/collections/all" title="Áo khoác">
-                Áo khoác
-               </a>
-              </li>
-             </ul>
-            </li>
-            <li class="has-submenu level1">
-             <a href="/collections/all">
-              Quần nữ
-              <span class="icon-plus-submenu plus-nClick2">
-              </span>
-             </a>
-             <ul class="submenu-links">
-              <li class="">
-               <a href="/collections/all" title="Quần short">
-                Quần short
-               </a>
-              </li>
-              <li class="">
-               <a href="/collections/all" title="Quần dài">
-                Quần dài
-               </a>
-              </li>
-             </ul>
-            </li>
-            <li>
-             <a href="/collections/all" title="Phụ kiện nữ">
-              Phụ kiện nữ
-             </a>
-            </li>
-           </ul>
-          </li>
-          <li class="">
-           <a href="/collections/all" title="Phụ kiện">
-            <span>
-             Phụ kiện
-            </span>
-           </a>
-          </li>
-          <li class="has-submenu level0">
-           <a href="/collections/all" title="Sản phẩm">
-            Sản phẩm
-            <span class="icon-plus-submenu plus-nClick1">
-            </span>
-           </a>
-           <ul class="submenu-links">
-            <li>
-             <a href="https://flyfeet.myharavan.com/products/adidas-eqt-cushion-adv-north-america?view=style-01" title="Kiểu hiển thị 1">
-              Kiểu hiển thị 1
-             </a>
-            </li>
-            <li>
-             <a href="https://flyfeet.myharavan.com/products/adidas-eqt-cushion-adv-north-america?view=style-02" title="Kiểu hiển thị 2">
-              Kiểu hiển thị 2
-             </a>
-            </li>
-            <li>
-             <a href="https://flyfeet.myharavan.com/products/adidas-eqt-cushion-adv-north-america?view=style-03" title="Kiểu hiển thị 3">
-              Kiểu hiển thị 3
-             </a>
-            </li>
-           </ul>
-          </li>
-          <li class="">
-           <a href="/pages/san-pham-khuyen-mai" title="Khuyến mãi">
-            <span>
-             Khuyến mãi
-            </span>
-           </a>
-          </li>
-          <li class="has-submenu level0">
-           <a href="/blogs/news" title="Blog">
-            Blog
-            <span class="icon-plus-submenu plus-nClick1">
-            </span>
-           </a>
-           <ul class="submenu-links">
-            <li>
-             <a href="/" title="Blog banner 1">
-              Blog banner 1
-             </a>
-            </li>
-            <li>
-             <a href="/" title="Blog banner 2">
-              Blog banner 2
-             </a>
-            </li>
-            <li>
-             <a href="/" title="Blog banner 3">
-              Blog banner 3
-             </a>
-            </li>
-            <li>
-             <a href="/" title="Blog banner 4">
-              Blog banner 4
-             </a>
-            </li>
-            <li>
-             <a href="/" title="Blog banner 5">
-              Blog banner 5
-             </a>
-            </li>
-            <li>
-             <a href="/" title="Blog banner 6">
-              Blog banner 6
-             </a>
-            </li>
-           </ul>
-          </li>
-          <li class="">
-           <a href="/pages/about-us" title="Giới thiệu">
-            <span>
-             Giới thiệu
-            </span>
-           </a>
-          </li>
-          <li class="">
-           <a href="/pages/lien-he" title="Liên hệ">
-            <span>
-             Liên hệ
-            </span>
-           </a>
-          </li>
-         </ul>
-        </div>
+      </div>
+      <!-- Menu bai viet -->
+      <div class="group-sidebox">
+       <div class="sidebox-title">
+        <h3 class="htitle">
+         Danh mục bài viết
+        </h3>
        </div>
-      </aside>
-     </div>
+       <div class="sidebox-content sidebox-content-togged">
+        <ul class="menuList-links">
+         <li class="">
+          <a href="/" title="Trang chủ">
+           <span>
+            Trang chủ
+           </span>
+          </a>
+         </li>
+         <li class="has-submenu level0">
+          <a href="/collections/all" title="Nam">
+           Nam
+           <span class="icon-plus-submenu plus-nClick1">
+           </span>
+          </a>
+          <ul class="submenu-links">
+           <li class="has-submenu level1">
+            <a href="/">
+             Giày nam
+             <span class="icon-plus-submenu plus-nClick2">
+             </span>
+            </a>
+            <ul class="submenu-links">
+             <li class="">
+              <a href="/" title="Giày chạy bộ">
+               Giày chạy bộ
+              </a>
+             </li>
+             <li class="">
+              <a href="/" title="Giày bóng rổ">
+               Giày bóng rổ
+              </a>
+             </li>
+             <li class="">
+              <a href="/" title="Giày cầu lông">
+               Giày cầu lông
+              </a>
+             </li>
+             <li class="">
+              <a href="/" title="Giày dạo phố">
+               Giày dạo phố
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li class="has-submenu level1">
+            <a href="/">
+             Áo nam
+             <span class="icon-plus-submenu plus-nClick2">
+             </span>
+            </a>
+            <ul class="submenu-links">
+             <li class="">
+              <a href="/collections/all" title="Áo chạy bộ">
+               Áo chạy bộ
+              </a>
+             </li>
+             <li class="">
+              <a href="/" title="Áo khoác">
+               Áo khoác
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li class="has-submenu level1">
+            <a href="/collections/all">
+             Quần nam
+             <span class="icon-plus-submenu plus-nClick2">
+             </span>
+            </a>
+            <ul class="submenu-links">
+             <li class="">
+              <a href="/collections/all" title="Quần short">
+               Quần short
+              </a>
+             </li>
+             <li class="">
+              <a href="/collections/all" title="Quần dài">
+               Quần dài
+              </a>
+             </li>
+            </ul>
+           </li>
+          </ul>
+         </li>
+         <li class="has-submenu level0">
+          <a href="/collections/all" title="Nữ">
+           Nữ
+           <span class="icon-plus-submenu plus-nClick1">
+           </span>
+          </a>
+          <ul class="submenu-links">
+           <li class="has-submenu level1">
+            <a href="/">
+             Giày nữ
+             <span class="icon-plus-submenu plus-nClick2">
+             </span>
+            </a>
+            <ul class="submenu-links">
+             <li class="">
+              <a href="/collections/all" title="Giày chạy bộ">
+               Giày chạy bộ
+              </a>
+             </li>
+             <li class="">
+              <a href="/collections/all" title="Giày công sở">
+               Giày công sở
+              </a>
+             </li>
+             <li class="">
+              <a href="/collections/all" title="Giày dạo phố">
+               Giày dạo phố
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li class="has-submenu level1">
+            <a href="/collections/all">
+             Áo nữ
+             <span class="icon-plus-submenu plus-nClick2">
+             </span>
+            </a>
+            <ul class="submenu-links">
+             <li class="">
+              <a href="/collections/all" title="Áo thể thao">
+               Áo thể thao
+              </a>
+             </li>
+             <li class="">
+              <a href="/collections/all" title="Áo khoác">
+               Áo khoác
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li class="has-submenu level1">
+            <a href="/collections/all">
+             Quần nữ
+             <span class="icon-plus-submenu plus-nClick2">
+             </span>
+            </a>
+            <ul class="submenu-links">
+             <li class="">
+              <a href="/collections/all" title="Quần short">
+               Quần short
+              </a>
+             </li>
+             <li class="">
+              <a href="/collections/all" title="Quần dài">
+               Quần dài
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li>
+            <a href="/collections/all" title="Phụ kiện nữ">
+             Phụ kiện nữ
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="">
+          <a href="/collections/all" title="Phụ kiện">
+           <span>
+            Phụ kiện
+           </span>
+          </a>
+         </li>
+         <li class="has-submenu level0">
+          <a href="/collections/all" title="Sản phẩm">
+           Sản phẩm
+           <span class="icon-plus-submenu plus-nClick1">
+           </span>
+          </a>
+          <ul class="submenu-links">
+           <li>
+            <a href="https://flyfeet.myharavan.com/products/adidas-eqt-cushion-adv-north-america?view=style-01" title="Kiểu hiển thị 1">
+             Kiểu hiển thị 1
+            </a>
+           </li>
+           <li>
+            <a href="https://flyfeet.myharavan.com/products/adidas-eqt-cushion-adv-north-america?view=style-02" title="Kiểu hiển thị 2">
+             Kiểu hiển thị 2
+            </a>
+           </li>
+           <li>
+            <a href="https://flyfeet.myharavan.com/products/adidas-eqt-cushion-adv-north-america?view=style-03" title="Kiểu hiển thị 3">
+             Kiểu hiển thị 3
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="">
+          <a href="/pages/san-pham-khuyen-mai" title="Khuyến mãi">
+           <span>
+            Khuyến mãi
+           </span>
+          </a>
+         </li>
+         <li class="has-submenu level0">
+          <a href="/blogs/news" title="Blog">
+           Blog
+           <span class="icon-plus-submenu plus-nClick1">
+           </span>
+          </a>
+          <ul class="submenu-links">
+           <li>
+            <a href="/" title="Blog banner 1">
+             Blog banner 1
+            </a>
+           </li>
+           <li>
+            <a href="/" title="Blog banner 2">
+             Blog banner 2
+            </a>
+           </li>
+           <li>
+            <a href="/" title="Blog banner 3">
+             Blog banner 3
+            </a>
+           </li>
+           <li>
+            <a href="/" title="Blog banner 4">
+             Blog banner 4
+            </a>
+           </li>
+           <li>
+            <a href="/" title="Blog banner 5">
+             Blog banner 5
+            </a>
+           </li>
+           <li>
+            <a href="/" title="Blog banner 6">
+             Blog banner 6
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="">
+          <a href="/pages/about-us" title="Giới thiệu">
+           <span>
+            Giới thiệu
+           </span>
+          </a>
+         </li>
+         <li class="">
+          <a href="/pages/lien-he" title="Liên hệ">
+           <span>
+            Liên hệ
+           </span>
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </aside>
     </div>
    </div>
   </div>
- </main>
-
+ </div>
+</main>
 {%endblock %}
