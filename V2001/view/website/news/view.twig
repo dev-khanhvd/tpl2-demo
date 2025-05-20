@@ -22,8 +22,7 @@
          Trang chủ
         </span>
        </a>
-       <meta content="1" itemprop="position">
-       </meta>
+       <meta content="1" itemprop="position"/>
       </li>
       <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
        <a href="https://flyfeet.myharavan.com/blogs/news" itemprop="item">
@@ -31,8 +30,7 @@
          Tin tức
         </span>
        </a>
-       <meta content="2" itemprop="position">
-       </meta>
+       <meta content="2" itemprop="position"/>
       </li>
       <li class="active" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
        <span content="https://flyfeet.myharavan.com/blogs/news/tips-phoi-do-voi-boots-nam-them-lich-lam-fashion" itemprop="item">
@@ -40,8 +38,7 @@
          Tips phối đồ với boots nam thêm lịch lãm, fashion
         </strong>
        </span>
-       <meta content="3" itemprop="position">
-       </meta>
+       <meta content="3" itemprop="position"/>
       </li>
      </ol>
     </div>
@@ -198,96 +195,43 @@
          </span>
         </div>
         <div class="list-article-slide swiper" id="slideBlogsRelated">
+         {% set relatedNews = searchNewsByCategory(category.id, {'limit': 4, 'excludedIds': news.id}) %}
+{% if relatedNews is not empty %}
+    {% for n in relatedNews %}
+        {% set time = n.createdDateTime|split(' ') %}
+        {% set date = time[0]|split('-') %}
          <div class="swiper-slide">
           <article class="article-loop">
            <div class="article-inner">
             <div class="article-image">
-             <a class="blog-post-thumbnail" href="/blogs/news/qua-tang-tri-an-voucher-giam-100k-khi-mua-hang" rel="nofollow" title="🔥 Quà tặng tri ân: Voucher giảm 100K khi mua hàng">
-              <img alt="🔥 Quà tặng tri ân: Voucher giảm 100K khi mua hàng" class="lazyload" data-src="//file.hstatic.net/200000758017/article/screen_shot_2023-03-16_at_14.14.54_41e161db6cfb41d587e22b606ef685ca_76d046ad7a0f41428546b3cd80dcc5fb_grande.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+             <a class="blog-post-thumbnail" href="{{ n.viewLink }}" rel="nofollow" title="{{ n.title }}">
+              <img alt="{{ n.title }}" class="lazyload" data-src="{{ n.imageUri }}" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAA SUVORK5CYII="/>
              </a>
             </div>
             <div class="article-detail">
              <div class="article-title">
               <h3 class="post-title">
-               <a href="/blogs/news/qua-tang-tri-an-voucher-giam-100k-khi-mua-hang" title="🔥 Quà tặng tri ân: Voucher giảm 100K khi mua hàng">
-                🔥 Quà tặng tri ân: Voucher giảm 100K khi mua hàng
+               <a href="{{ n.viewLink }}" title="{{ n.title }}">
+                {{ n.title | raw }}
                </a>
               </h3>
              </div>
              <p class="entry-content">
-              Để cảm ơn tình cảm yêu mến của các cô gái trong thời gian qua, một lời cảm ơn chưa bao giờ là đủ. Vì vậy, chẳng có lý do gì mà Mode Fashion không...
+              {{ n.intro(true) | raw }}
              </p>
              <div class="article-post-meta">
-                <span class="date">
-                 <time datetime="29 Tháng 03, 2024" pubdate="">
-                  29 Tháng 03, 2024
-                 </time>
-                </span>
+              <span class="date">
+               <time datetime="{{ date[2] }}-{{ date[1] }}-{{ date[0] }}" pubdate="">
+                {{ date[2] }}/{{ date[1] }}/{{ date[0] }}
+               </time>
+              </span>
              </div>
             </div>
            </div>
           </article>
          </div>
-         <div class="swiper-slide">
-          <article class="article-loop">
-           <div class="article-inner">
-            <div class="article-image">
-             <a class="blog-post-thumbnail" href="/blogs/news/tips-phoi-do-voi-boots-nam-them-lich-lam-fashion" rel="nofollow" title="Tips phối đồ với boots nam thêm lịch lãm, fashion">
-              <img alt="Tips phối đồ với boots nam thêm lịch lãm, fashion" class="lazyload" data-src="//file.hstatic.net/200000758017/article/screen_shot_2023-03-16_at_14.13.34_43835fe883bd4e65a7a40c97935afae2_f0dedce2d29044dca288fdbd27f1d864_grande.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-             </a>
-            </div>
-            <div class="article-detail">
-             <div class="article-title">
-              <h3 class="post-title">
-               <a href="/blogs/news/tips-phoi-do-voi-boots-nam-them-lich-lam-fashion" title="Tips phối đồ với boots nam thêm lịch lãm, fashion">
-                Tips phối đồ với boots nam thêm lịch lãm, fashion
-               </a>
-              </h3>
-             </div>
-             <p class="entry-content">
-              Phối đồ với boot nam nên mặc với áo gì? Boot đã có nhưng kết hợp với áo gì cũng khiến các anh chàng có gu thêm phần băn khoăn. Kiểu áo cũng là một yếu...
-             </p>
-             <div class="article-post-meta">
-                <span class="date">
-                 <time datetime="29 Tháng 03, 2024" pubdate="">
-                  29 Tháng 03, 2024
-                 </time>
-                </span>
-             </div>
-            </div>
-           </div>
-          </article>
-         </div>
-         <div class="swiper-slide">
-          <article class="article-loop">
-           <div class="article-inner">
-            <div class="article-image">
-             <a class="blog-post-thumbnail" href="/blogs/news/bai-viet-mau" rel="nofollow" title="Bài viết mẫu">
-              <img alt="Bài viết mẫu" class="lazyload" data-src="//theme.hstatic.net/200000758017/1001229453/14/no-image-blog.jpg?v=22" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-             </a>
-            </div>
-            <div class="article-detail">
-             <div class="article-title">
-              <h3 class="post-title">
-               <a href="/blogs/news/bai-viet-mau" title="Bài viết mẫu">
-                Bài viết mẫu
-               </a>
-              </h3>
-             </div>
-             <p class="entry-content">
-              Đây là trang blog của cửa hàng. Bạn có thể dùng blog để quảng bá sản phẩm mới, chia sẻ trải nghiệm của khách hàng, các mẹo mua hàng hoặc bất kì điều gì bạn...
-             </p>
-             <div class="article-post-meta">
-                <span class="date">
-                 <time datetime="27 Tháng 07, 2023" pubdate="">
-                  27 Tháng 07, 2023
-                 </time>
-                </span>
-             </div>
-            </div>
-           </div>
-          </article>
-         </div>
+         {% endfor %}
+{% endif %}
         </div>
        </div>
       </div>
