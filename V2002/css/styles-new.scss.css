@@ -127,8 +127,6 @@ button[disabled] {
     padding: 5px 0;
     background: var(--bgheader); }
     @media only screen and (min-width: 992px) {
-      #header #site-header-center.has-suggest-list {
-        padding-bottom: 20px; }
         #header #site-header-center.has-suggest-list .list-key-search {
           position: absolute;
           font-size: 13px;
@@ -359,7 +357,7 @@ button[disabled] {
         color: var(--colorshop);
         font-weight: 400; }
   #header .group-icon-cart-account .list-inline-item {
-    padding-left: 10px; }
+    padding-left: 5px; }
     #header .group-icon-cart-account .list-inline-item .button-icon {
       border: none;
       background: none;
