@@ -1,0 +1,160 @@
+/*============================================================================
+8. SWATCH VARIANT
+==============================================================================*/
+.swatch .header {
+  min-width: 100%; }
+
+.swatch input {
+  top: 0;
+  left: 0;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer; }
+
+@media (max-width: 991px) {
+  .swatch {
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* Track */
+    /* Handle */
+    /* Handle on hover */ }
+    .swatch::-webkit-scrollbar {
+      width: 2px;
+      height: 0px;
+      border-radius: 3px; }
+    .swatch::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      width: 80%; }
+    .swatch::-webkit-scrollbar-thumb {
+      background: var(--mainColor); }
+    .swatch::-webkit-scrollbar-thumb:hover {
+      background: var(--mainColor); } }
+
+@media (max-width: 991px) {
+  .scroll_info .info {
+    margin-right: -10%; }
+  .fade_mb {
+    margin-left: calc(-10% - 8px); }
+    .fade_mb .swatch {
+      padding-left: calc(10% + 8px); }
+  .fade_mb:after {
+    content: '';
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, white 100%); }
+  .fade_mb:before {
+    content: '';
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+    z-index: 1; } }
+
+.swatch-element > label, .swatch-element > .dlabel, .list_pr_tag .b_pr .item a {
+  height: 40px !important;
+  background-color: #fff;
+  font-size: 14px !important;
+  line-height: 37px;
+  white-space: nowrap;
+  transition: all 0.4s ease;
+  border-radius: .25rem;
+  border: 2px solid #e1e1e1 !important; }
+  .swatch-element > label:before, .swatch-element > .dlabel:before, .list_pr_tag .b_pr .item a:before {
+    display: block;
+    content: attr(title);
+    font-weight: bold;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden; }
+
+.color.swatch-element label {
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: .25rem;
+  min-width: 30px !important;
+  height: 30px !important; }
+
+.swatch input:checked + label,
+.swatch .swatch-element:hover label {
+  border: 2px solid var(--mainColor) !important;
+  font-weight: 600;
+  color: var(--mainColor); }
+
+.swatch .color input:checked + label {
+  background: initial;
+  border-color: initial;
+  color: #000; }
+
+.swatch .color.swatch-element label {
+  border: none !important;
+  box-shadow: none; }
+
+.swatch .color.swatch-element:hover .dlabel {
+  border: 2px solid var(--mainColor) !important;
+  color: var(--mainColor); }
+
+.swatch .color input:checked + .dlabel {
+  border: 2px solid var(--mainColor) !important;
+  color: var(--mainColor); }
+
+.swatch .color input:checked + label {
+  position: relative; }
+  .swatch .color input:checked + label:after {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0; }
+
+.swatch .swatch-element {
+  -webkit-transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
+  margin-bottom: 10px !important;
+  font-weight: 400; }
+
+/* Image with the cross in it */
+.swatch .swatch-element.soldout {
+  pointer-events: none; }
+  .swatch .swatch-element.soldout .dlabel {
+    cursor: not-allowed;
+    background-color: #f7f7f7;
+    opacity: .6; }
+  .swatch .swatch-element.soldout label {
+    background-color: #f7f7f7;
+    opacity: .6; }
+
+.swatch.error code {
+  font-family: monospace; }
+
+label[for] {
+  cursor: pointer; }
+
+.product-variation__tick {
+  width: 1rem;
+  height: 1rem;
+  overflow: hidden;
+  right: 0;
+  bottom: 0;
+  display: none;
+  pointer-events: none; }
+  .product-variation__tick::before {
+    border: 1rem solid transparent;
+    border-bottom-color: transparent;
+    border-bottom-color: var(--mainColor);
+    content: '';
+    position: absolute;
+    right: -1rem;
+    bottom: 0; }
+  .product-variation__tick > .icon-tick-bold {
+    position: absolute;
+    right: 2px;
+    bottom: 1px;
+    fill: #fff;
+    font-size: 0.5rem;
+    width: 1em;
+    height: 1em; }
