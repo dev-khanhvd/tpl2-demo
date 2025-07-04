@@ -1,0 +1,977 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(translate('Danh sách sản phẩm')).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ getKeyContentValue('META_KEYWORDS') }}">
+<meta name="description" content="{{ getKeyContentValue('META_DESCRIPTION') }}">
+<meta property="og:title" content="{{ getKeyContentValue('META_TITLE') }}">
+<meta property="og:url" content="{{ getCurrentUrl() }}">
+<meta property="og:image" content="{{ getBusinessLogo() }}">
+<link rel="canonical" href="{{ getCurrentUrl() }}">
+{%endblock %}
+
+{%block body %}
+
+<section class="bread-crumb panel-title">
+ <div class="container">
+  <div class="row">
+   <div class="col-xs-12">
+    <ul class="breadcrumb" itemscope="" itemtype="https://schema.org/BreadcrumbList">
+     <li class="home" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+      <a href="/" itemprop="item" title="Trang chủ">
+       <span itemprop="name">
+        Trang chủ
+       </span>
+       <meta content="1" itemprop="position"/>
+      </a>
+      <span>
+       <i class="fa fa-angle-right">
+       </i>
+      </span>
+     </li>
+     <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+      <strong itemprop="name">
+       Tất cả sản phẩm
+      </strong>
+      <meta content="2" itemprop="position"/>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</section>
+<div class="pd-30">
+ <div class="container">
+  <div class="row">
+   <section class="main_container collection col-md-9 col-md-push-3">
+    <h1 class="hidden title-head margin-top-0">
+     Tất cả sản phẩm
+    </h1>
+    <div class="category-gallery">
+     <div class="image pd-bt30">
+      <picture>
+       <source media="(min-width: 992px)" srcset="//bizweb.dktcdn.net/thumb/2048x2048/100/279/655/themes/617267/assets/cat-banner-1.jpg?1705895334162"/>
+       <source media="(min-width: 569px)" srcset="//bizweb.dktcdn.net/thumb/1024x1024/100/279/655/themes/617267/assets/cat-banner-1.jpg?1705895334162"/>
+       <source media="(min-width: 560px)" srcset="//bizweb.dktcdn.net/thumb/2048x2048/100/279/655/themes/617267/assets/cat-banner-1.jpg?1705895334162"/>
+       <source media="(min-width: 480px)" srcset="//bizweb.dktcdn.net/thumb/large/100/279/655/themes/617267/assets/cat-banner-1.jpg?1705895334162"/>
+       <img alt="Tất cả sản phẩm" class="img-responsive center-block" src="//bizweb.dktcdn.net/thumb/large/100/279/655/themes/617267/assets/cat-banner-1.jpg?1705895334162"/>
+      </picture>
+     </div>
+     <div class="collections_des_and_menu">
+      <div class="collections_des_and_menu-content">
+       Chúng tôi dành những điều đặc biệt nhất và sẽ thay bạn gửi lời yêu thương, mang tình yêu của đôi bạn đến chung vui trong ngày trọng đại ấy.
+Một tiệc cưới lãng mạn in ấu ký niệm, một buổi tiệc chiêu đãi trọng thể ghi dấu thành công sẽ được Trung tâm hội nghị &amp; tiệc cưới Ant Wedding đồng hành và mang lại những khoảnh khắc đẹp
+      </div>
+     </div>
+    </div>
+    <div class="category-products products product-collections-all">
+     <div class="sortPagiBar">
+      <div class="row">
+       <div class="col-xs-7 col-sm-7">
+        <div class="view-mode">
+         <a data-view="grid" href="javascript:;">
+          <label class="btn button-view-mode view-mode-grid active">
+           <i aria-hidden="true" class="fa fa-th">
+           </i>
+          </label>
+          <span>
+           Lưới
+          </span>
+         </a>
+         <a data-view="list" href="javascript:;" onclick="switchView('list')">
+          <label class="btn button-view-mode view-mode-list">
+           <i aria-hidden="true" class="fa fa-th-list">
+           </i>
+          </label>
+          <span>
+           Danh sách
+          </span>
+         </a>
+        </div>
+       </div>
+       <div class="col-xs-5 col-sm-5 text-xs-left text-sm-right">
+        <div id="sort-by">
+         <label class="left hidden-xs hidden">
+          Sắp xếp:
+         </label>
+         <ul>
+          <li>
+           <span>
+            Thứ tự
+           </span>
+           <ul>
+            <li>
+             <a href="javascript:;" onclick="sortby('alpha-asc')">
+              A → Z
+             </a>
+            </li>
+            <li>
+             <a href="javascript:;" onclick="sortby('alpha-desc')">
+              Z → A
+             </a>
+            </li>
+            <li>
+             <a href="javascript:;" onclick="sortby('price-asc')">
+              Giá tăng dần
+             </a>
+            </li>
+            <li>
+             <a href="javascript:;" onclick="sortby('price-desc')">
+              Giá giảm dần
+             </a>
+            </li>
+            <li>
+             <a href="javascript:;" onclick="sortby('created-desc')">
+              Hàng mới nhất
+             </a>
+            </li>
+            <li>
+             <a href="javascript:;" onclick="sortby('created-asc')">
+              Hàng cũ nhất
+             </a>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+     <section class="products-view products-view-grid">
+      <div class="row">
+       <div class="col-xs-6 col-sm-4 col-lg-4 col-100p">
+        <div class="product-box">
+         <div class="product-thumbnail">
+          <a href="/ao-cuoi-baby-ant-10" title="Áo cưới Baby Ant 10">
+           <img alt="Áo cưới Baby Ant 10" class="img-responsive center-block" src="//bizweb.dktcdn.net/thumb/large/100/279/655/products/home2-img3-d5a43948-3cb3-4d88-bcc9-c5042bc4ff94-659031ca-c8b4-4638-9281-413c969768f1.jpg?v=1515730646677"/>
+          </a>
+          <div class="panel-product-rating">
+          </div>
+          <div class="product-action clearfix">
+           <form action="/cart/add" class="variants form-nut-grid" data-id="product-actions-9630875" enctype="multipart/form-data" method="post">
+            <div class="action-item">
+             <input name="variantId" type="hidden" value="15365935"/>
+             <button class="btn-square btn-buy btn-cart btn btn-gray left-to add_to_cart" title="Cho vào giỏ hàng">
+              <i aria-hidden="true" class="fa fa-shopping-basket">
+              </i>
+             </button>
+            </div>
+           </form>
+          </div>
+         </div>
+         <div class="product-info a-center">
+          <h3 class="product-name">
+           <a href="/ao-cuoi-baby-ant-10" title="Áo cưới Baby Ant 10">
+            Áo cưới Baby Ant 10
+           </a>
+          </h3>
+          <div class="price-box clearfix">
+           <div class="special-price">
+            <span class="price product-price">
+             2.300.000₫
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="col-xs-6 col-sm-4 col-lg-4 col-100p">
+        <div class="product-box">
+         <div class="product-thumbnail">
+          <div class="sale-flash">
+           SALE
+          </div>
+          <a href="/san-pham-nhieu-variant-ca-3-variants-het-hang" title="Sản phẩm nhiều variant, cả 3 variants hết hàng">
+           <img alt="Sản phẩm nhiều variant, cả 3 variants hết hàng" class="img-responsive center-block" src="//bizweb.dktcdn.net/thumb/large/100/279/655/products/display-featured-link-img-1-773b06f1-2a9c-457a-b5a7-d20c9381218a.jpg?v=1516111735670"/>
+          </a>
+          <div class="panel-product-rating">
+          </div>
+          <div class="product-action clearfix">
+           <form action="/cart/add" class="variants form-nut-grid" data-id="product-actions-9599942" enctype="multipart/form-data" method="post">
+            <div class="action-item">
+             <input class="hidden" name="variantId" type="hidden" value="15313240"/>
+             <button class="btn-square btn-cart btn btn-gray left-to" data-toggle="tooltip" onclick="window.location.href='/san-pham-nhieu-variant-ca-3-variants-het-hang'" title="Chọn sản phẩm" type="button">
+              <i aria-hidden="true" class="fa fa-share">
+              </i>
+             </button>
+            </div>
+           </form>
+          </div>
+         </div>
+         <div class="product-info a-center">
+          <h3 class="product-name">
+           <a href="/san-pham-nhieu-variant-ca-3-variants-het-hang" title="Sản phẩm nhiều variant, cả 3 variants hết hàng">
+            Sản phẩm nhiều variant, cả 3 variants hết hàng
+           </a>
+          </h3>
+          <div class="price-box clearfix">
+           <div class="special-price">
+            <span class="price product-price">
+             90.000₫
+            </span>
+           </div>
+           <div class="old-price">
+            <span class="price product-price-old">
+             130.000₫
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="col-xs-6 col-sm-4 col-lg-4 col-100p">
+        <div class="product-box">
+         <div class="product-thumbnail">
+          <a href="/ao-cuoi-baby-ant-09" title="Áo cưới Baby Ant 09">
+           <img alt="Áo cưới Baby Ant 09" class="img-responsive center-block" src="//bizweb.dktcdn.net/thumb/large/100/279/655/products/home2-img3-d5a43948-3cb3-4d88-bcc9-c5042bc4ff94.jpg?v=1515246331507"/>
+          </a>
+          <div class="panel-product-rating">
+          </div>
+          <div class="product-action clearfix">
+           <form action="/cart/add" class="variants form-nut-grid" data-id="product-actions-9581166" enctype="multipart/form-data" method="post">
+            <div class="action-item">
+             <input name="variantId" type="hidden" value="15278791"/>
+             <button class="btn-square btn-buy btn-cart btn btn-gray left-to add_to_cart" title="Cho vào giỏ hàng">
+              <i aria-hidden="true" class="fa fa-shopping-basket">
+              </i>
+             </button>
+            </div>
+           </form>
+          </div>
+         </div>
+         <div class="product-info a-center">
+          <h3 class="product-name">
+           <a href="/ao-cuoi-baby-ant-09" title="Áo cưới Baby Ant 09">
+            Áo cưới Baby Ant 09
+           </a>
+          </h3>
+          <div class="price-box clearfix">
+           <div class="special-price">
+            <span class="price product-price">
+             2.300.000₫
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="col-xs-6 col-sm-4 col-lg-4 col-100p">
+        <div class="product-box">
+         <div class="product-thumbnail">
+          <div class="sale-flash">
+           SALE
+          </div>
+          <a href="/ao-cuoi-baby-ant-08" title="Áo cưới Baby Ant 08">
+           <img alt="Áo cưới Baby Ant 08" class="img-responsive center-block" src="//bizweb.dktcdn.net/thumb/large/100/279/655/products/home2-img2-67a8b52f-5ea6-40f2-814a-3823fa8964aa.jpg?v=1515246294160"/>
+          </a>
+          <div class="panel-product-rating">
+          </div>
+          <div class="product-action clearfix">
+           <form action="/cart/add" class="variants form-nut-grid" data-id="product-actions-9581164" enctype="multipart/form-data" method="post">
+            <div class="action-item">
+             <input name="variantId" type="hidden" value="15278789"/>
+             <button class="btn-square btn-buy btn-cart btn btn-gray left-to add_to_cart" title="Cho vào giỏ hàng">
+              <i aria-hidden="true" class="fa fa-shopping-basket">
+              </i>
+             </button>
+            </div>
+           </form>
+          </div>
+         </div>
+         <div class="product-info a-center">
+          <h3 class="product-name">
+           <a href="/ao-cuoi-baby-ant-08" title="Áo cưới Baby Ant 08">
+            Áo cưới Baby Ant 08
+           </a>
+          </h3>
+          <div class="price-box clearfix">
+           <div class="special-price">
+            <span class="price product-price">
+             1.700.000₫
+            </span>
+           </div>
+           <div class="old-price">
+            <span class="price product-price-old">
+             2.000.000₫
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="col-xs-6 col-sm-4 col-lg-4 col-100p">
+        <div class="product-box">
+         <div class="product-thumbnail">
+          <a href="/ao-cuoi-baby-ant-07" title="Áo cưới Baby Ant 07">
+           <img alt="Áo cưới Baby Ant 07" class="img-responsive center-block" src="//bizweb.dktcdn.net/thumb/large/100/279/655/products/home2-img1.jpg?v=1515246264677"/>
+          </a>
+          <div class="panel-product-rating">
+          </div>
+          <div class="product-action clearfix">
+           <form action="/cart/add" class="variants form-nut-grid" data-id="product-actions-9581143" enctype="multipart/form-data" method="post">
+            <div class="action-item">
+             <input name="variantId" type="hidden" value="15278763"/>
+             <button class="btn-square btn-buy btn-cart btn btn-gray left-to add_to_cart" title="Cho vào giỏ hàng">
+              <i aria-hidden="true" class="fa fa-shopping-basket">
+              </i>
+             </button>
+            </div>
+           </form>
+          </div>
+         </div>
+         <div class="product-info a-center">
+          <h3 class="product-name">
+           <a href="/ao-cuoi-baby-ant-07" title="Áo cưới Baby Ant 07">
+            Áo cưới Baby Ant 07
+           </a>
+          </h3>
+          <div class="price-box clearfix">
+           <div class="special-price">
+            <span class="price product-price">
+             2.400.000₫
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="col-xs-6 col-sm-4 col-lg-4 col-100p">
+        <div class="product-box">
+         <div class="product-thumbnail">
+          <a href="/ao-cuoi-baby-ant-06" title="Áo cưới Baby Ant 06">
+           <img alt="Áo cưới Baby Ant 06" class="img-responsive center-block" src="//bizweb.dktcdn.net/thumb/large/100/279/655/products/shop-img6-f55ed975-83a9-43da-bdd2-b4b4f434aaff.jpg?v=1515246175247"/>
+          </a>
+          <div class="panel-product-rating">
+          </div>
+          <div class="product-action clearfix">
+           <form action="/cart/add" class="variants form-nut-grid" data-id="product-actions-9581108" enctype="multipart/form-data" method="post">
+            <div class="action-item">
+             <input name="variantId" type="hidden" value="15278724"/>
+             <button class="btn-square btn-buy btn-cart btn btn-gray left-to add_to_cart" title="Cho vào giỏ hàng">
+              <i aria-hidden="true" class="fa fa-shopping-basket">
+              </i>
+             </button>
+            </div>
+           </form>
+          </div>
+         </div>
+         <div class="product-info a-center">
+          <h3 class="product-name">
+           <a href="/ao-cuoi-baby-ant-06" title="Áo cưới Baby Ant 06">
+            Áo cưới Baby Ant 06
+           </a>
+          </h3>
+          <div class="price-box clearfix">
+           <div class="special-price">
+            <span class="price product-price">
+             3.000.000₫
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="col-xs-6 col-sm-4 col-lg-4 col-100p">
+        <div class="product-box">
+         <div class="product-thumbnail">
+          <a href="/ao-cuoi-baby-ant-05" title="Áo cưới Baby Ant 05">
+           <img alt="Áo cưới Baby Ant 05" class="img-responsive center-block" src="//bizweb.dktcdn.net/thumb/large/100/279/655/products/shop-img5-97b362b5-b20a-4ae0-a28d-c3d5c9f9cf7a.jpg?v=1515246138217"/>
+          </a>
+          <div class="panel-product-rating">
+          </div>
+          <div class="product-action clearfix">
+           <form action="/cart/add" class="variants form-nut-grid" data-id="product-actions-9581079" enctype="multipart/form-data" method="post">
+            <div class="action-item">
+             <input name="variantId" type="hidden" value="15278690"/>
+             <button class="btn-square btn-buy btn-cart btn btn-gray left-to add_to_cart" title="Cho vào giỏ hàng">
+              <i aria-hidden="true" class="fa fa-shopping-basket">
+              </i>
+             </button>
+            </div>
+           </form>
+          </div>
+         </div>
+         <div class="product-info a-center">
+          <h3 class="product-name">
+           <a href="/ao-cuoi-baby-ant-05" title="Áo cưới Baby Ant 05">
+            Áo cưới Baby Ant 05
+           </a>
+          </h3>
+          <div class="price-box clearfix">
+           <div class="special-price">
+            <span class="price product-price">
+             2.300.000₫
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="col-xs-6 col-sm-4 col-lg-4 col-100p">
+        <div class="product-box">
+         <div class="product-thumbnail">
+          <a href="/ao-cuoi-baby-ant-04" title="Áo cưới Baby Ant 04">
+           <img alt="Áo cưới Baby Ant 04" class="img-responsive center-block" src="//bizweb.dktcdn.net/thumb/large/100/279/655/products/shop-img4-ae94e22d-b377-4867-9721-0a12c8a26997.jpg?v=1515246070720"/>
+          </a>
+          <div class="panel-product-rating">
+          </div>
+          <div class="product-action clearfix">
+           <form action="/cart/add" class="variants form-nut-grid" data-id="product-actions-9581078" enctype="multipart/form-data" method="post">
+            <div class="action-item">
+             <button class="btn-square btn-cart btn btn-gray left-to" data-toggle="tooltip" onclick="window.location.href='/ao-cuoi-baby-ant-04'" title="Chi tiết" type="button">
+              <i aria-hidden="true" class="fa fa-share">
+              </i>
+             </button>
+            </div>
+           </form>
+          </div>
+         </div>
+         <div class="product-info a-center">
+          <h3 class="product-name">
+           <a href="/ao-cuoi-baby-ant-04" title="Áo cưới Baby Ant 04">
+            Áo cưới Baby Ant 04
+           </a>
+          </h3>
+          <div class="price-box clearfix">
+           <div class="special-price clearfix">
+            <span class="price product-price">
+             Liên hệ
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="col-xs-6 col-sm-4 col-lg-4 col-100p">
+        <div class="product-box">
+         <div class="product-thumbnail">
+          <a href="/ao-cuoi-baby-ant-03" title="Áo cưới Baby Ant 03">
+           <img alt="Áo cưới Baby Ant 03" class="img-responsive center-block" src="//bizweb.dktcdn.net/thumb/large/100/279/655/products/shop-img3-fd413bcb-5987-4f12-aa67-522fa1bcad67.jpg?v=1515246031470"/>
+          </a>
+          <div class="panel-product-rating">
+          </div>
+          <div class="product-action clearfix">
+           <form action="/cart/add" class="variants form-nut-grid" data-id="product-actions-9581073" enctype="multipart/form-data" method="post">
+            <div class="action-item">
+             <input name="variantId" type="hidden" value="15278684"/>
+             <button class="btn-square btn-buy btn-cart btn btn-gray left-to add_to_cart" title="Cho vào giỏ hàng">
+              <i aria-hidden="true" class="fa fa-shopping-basket">
+              </i>
+             </button>
+            </div>
+           </form>
+          </div>
+         </div>
+         <div class="product-info a-center">
+          <h3 class="product-name">
+           <a href="/ao-cuoi-baby-ant-03" title="Áo cưới Baby Ant 03">
+            Áo cưới Baby Ant 03
+           </a>
+          </h3>
+          <div class="price-box clearfix">
+           <div class="special-price">
+            <span class="price product-price">
+             1.400.000₫
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="col-xs-6 col-sm-4 col-lg-4 col-100p">
+        <div class="product-box">
+         <div class="product-thumbnail">
+          <div class="sale-flash">
+           SALE
+          </div>
+          <a href="/ao-cuoi-baby-ant-02" title="Áo cưới Baby Ant 02">
+           <img alt="Áo cưới Baby Ant 02" class="img-responsive center-block" src="//bizweb.dktcdn.net/thumb/large/100/279/655/products/shop-img2-cdf356db-43f6-452a-bf1e-3909fedbc2a3.jpg?v=1515246000663"/>
+          </a>
+          <div class="panel-product-rating">
+          </div>
+          <div class="product-action clearfix">
+           <form action="/cart/add" class="variants form-nut-grid" data-id="product-actions-9581055" enctype="multipart/form-data" method="post">
+            <div class="action-item">
+             <input name="variantId" type="hidden" value="15278650"/>
+             <button class="btn-square btn-buy btn-cart btn btn-gray left-to add_to_cart" title="Cho vào giỏ hàng">
+              <i aria-hidden="true" class="fa fa-shopping-basket">
+              </i>
+             </button>
+            </div>
+           </form>
+          </div>
+         </div>
+         <div class="product-info a-center">
+          <h3 class="product-name">
+           <a href="/ao-cuoi-baby-ant-02" title="Áo cưới Baby Ant 02">
+            Áo cưới Baby Ant 02
+           </a>
+          </h3>
+          <div class="price-box clearfix">
+           <div class="special-price">
+            <span class="price product-price">
+             2.000.000₫
+            </span>
+           </div>
+           <div class="old-price">
+            <span class="price product-price-old">
+             2.500.000₫
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="col-xs-6 col-sm-4 col-lg-4 col-100p">
+        <div class="product-box">
+         <div class="product-thumbnail">
+          <a href="/ao-cuoi-baby-ant-01" title="Áo cưới Baby Ant 01">
+           <img alt="Áo cưới Baby Ant 01" class="img-responsive center-block" src="//bizweb.dktcdn.net/thumb/large/100/279/655/products/shop-img1.jpg?v=1515245924807"/>
+          </a>
+          <div class="panel-product-rating">
+          </div>
+          <div class="product-action clearfix">
+           <form action="/cart/add" class="variants form-nut-grid" data-id="product-actions-9581051" enctype="multipart/form-data" method="post">
+            <div class="action-item">
+             <input name="variantId" type="hidden" value="15278646"/>
+             <button class="btn-square btn-buy btn-cart btn btn-gray left-to add_to_cart" title="Cho vào giỏ hàng">
+              <i aria-hidden="true" class="fa fa-shopping-basket">
+              </i>
+             </button>
+            </div>
+           </form>
+          </div>
+         </div>
+         <div class="product-info a-center">
+          <h3 class="product-name">
+           <a href="/ao-cuoi-baby-ant-01" title="Áo cưới Baby Ant 01">
+            Áo cưới Baby Ant 01
+           </a>
+          </h3>
+          <div class="price-box clearfix">
+           <div class="special-price">
+            <span class="price product-price">
+             1.500.000₫
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="col-xs-6 col-sm-4 col-lg-4 col-100p">
+        <div class="product-box">
+         <div class="product-thumbnail">
+          <a href="/anh-cuoi-ha-long" title="Ảnh cưới Hạ Long">
+           <img alt="Ảnh cưới Hạ Long" class="img-responsive center-block" src="//bizweb.dktcdn.net/thumb/large/100/279/655/products/20-resize.jpg?v=1515244392260"/>
+          </a>
+          <div class="panel-product-rating">
+          </div>
+          <div class="product-action clearfix">
+           <form action="/cart/add" class="variants form-nut-grid" data-id="product-actions-9580951" enctype="multipart/form-data" method="post">
+            <div class="action-item">
+             <button class="btn-square btn-cart btn btn-gray left-to" data-toggle="tooltip" onclick="window.location.href='/anh-cuoi-ha-long'" title="Chi tiết" type="button">
+              <i aria-hidden="true" class="fa fa-share">
+              </i>
+             </button>
+            </div>
+           </form>
+          </div>
+         </div>
+         <div class="product-info a-center">
+          <h3 class="product-name">
+           <a href="/anh-cuoi-ha-long" title="Ảnh cưới Hạ Long">
+            Ảnh cưới Hạ Long
+           </a>
+          </h3>
+          <div class="price-box clearfix">
+           <div class="special-price clearfix">
+            <span class="price product-price">
+             Liên hệ
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="text-xs-right">
+       <nav>
+        <ul class="pagination clearfix">
+         <li class="page-item disabled">
+          <a class="page-link" href="#">
+           «
+          </a>
+         </li>
+         <li class="active page-item disabled">
+          <a class="page-link" href="javascript:;">
+           1
+          </a>
+         </li>
+         <li class="page-item">
+          <a class="page-link" href="javascript:;" onclick="doSearch(2)">
+           2
+          </a>
+         </li>
+         <li class="page-item">
+          <a class="page-link" href="javascript:;" onclick="doSearch(2)">
+           »
+          </a>
+         </li>
+        </ul>
+       </nav>
+      </div>
+     </section>
+    </div>
+   </section>
+   <aside class="dqdt-sidebar sidebar left left-content col-md-3 col-md-pull-9">
+    <aside class="aside-item collection-category">
+     <div class="aside-title">
+      <h3 class="title-head margin-top-0">
+       <span>
+        <i class="icon ion-ios-list-outline">
+        </i>
+        Danh mục
+       </span>
+      </h3>
+     </div>
+     <div class="aside-content">
+      <nav class="nav-category navbar-toggleable-md">
+       <ul class="nav navbar-pills">
+        <li class="nav-item">
+         <a class="nav-link" href="/">
+          Trang chủ
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="/dich-vu-cuoi">
+          Dịch vụ cưới
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="/album-cuoi">
+          Album
+         </a>
+        </li>
+        <li class="nav-item active">
+         <a class="nav-link" href="/collections/all">
+          Áo cưới
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="/tin-tuc">
+          Kinh nghiệm cưới
+         </a>
+         <i class="fa fa-angle-down">
+         </i>
+         <ul class="dropdown-menu">
+          <li class="nav-item">
+           <a class="nav-link" href="/">
+            Hoa cưới
+           </a>
+          </li>
+          <li class="nav-item">
+           <a class="nav-link" href="/">
+            Bánh cưới
+           </a>
+          </li>
+          <li class="nav-item">
+           <a class="nav-link" href="/">
+            Nhạc đám cưới
+           </a>
+          </li>
+          <li class="nav-item">
+           <a class="nav-link" href="/">
+            Tóc cưới
+           </a>
+          </li>
+          <li class="nav-item">
+           <a class="nav-link" href="/">
+            Quà cảm ơn
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="/lien-he">
+          Liên hệ
+         </a>
+        </li>
+       </ul>
+      </nav>
+     </div>
+    </aside>
+    <div class="aside-filter">
+     <div class="filter-container">
+      <div class="filter-container__selected-filter" style="display: none;">
+       <div class="filter-container__selected-filter-header clearfix">
+        <span class="filter-container__selected-filter-header-title">
+         <i class="fa fa-arrow-left hidden-sm-up">
+         </i>
+         Bạn chọn
+        </span>
+        <a class="filter-container__clear-all" href="javascript:void(0)" onclick="clearAllFiltered()">
+         Bỏ hết
+         <i class="fa fa-angle-right">
+         </i>
+        </a>
+       </div>
+       <div class="filter-container__selected-filter-list">
+        <ul>
+        </ul>
+       </div>
+      </div>
+     </div>
+     <link href="//bizweb.dktcdn.net/100/279/655/themes/617267/assets/jquery-ui.min.css?1705895334162" media="all" rel="stylesheet" type="text/css"/>
+     <aside class="aside-item filter-price">
+      <div class="aside-title">
+       <h2 class="title-head margin-top-0">
+        <span>
+         <i class="ion-ios-pricetags">
+         </i>
+         Khoảng giá
+        </span>
+       </h2>
+      </div>
+      <div class="aside-content filter-group">
+       <div id="slider">
+       </div>
+       <div id="start">
+        <input value="0"/>
+       </div>
+       <div id="stop">
+        <input value="10000000"/>
+       </div>
+       <a href="javascript:;" id="old-value">
+       </a>
+       <a class="btn btn-gray" data-value="(&gt;-1 AND &lt;10000001)" href="javascript:;" id="filter-value" onclick="_toggleFilterdqdt(this);">
+        Lọc giá
+       </a>
+      </div>
+     </aside>
+     <aside class="aside-item filter-vendor">
+      <div class="aside-title">
+       <h2 class="title-head margin-top-0">
+        <span>
+         <i class="ion-ios-rose">
+         </i>
+         Thương hiệu
+        </span>
+       </h2>
+      </div>
+      <div class="aside-content filter-group">
+       <ul>
+        <li class="filter-item filter-item--check-box filter-item--green">
+         <span>
+          <label for="filter-ant-wedding">
+           <input data-field="vendor" data-group="Hãng" data-operator="OR" data-text="Ant Wedding" id="filter-ant-wedding" onchange="toggleFilter(this)" type="checkbox" value="(Ant Wedding)"/>
+           <i class="fa">
+           </i>
+           Ant Wedding
+          </label>
+         </span>
+        </li>
+        <li class="filter-item filter-item--check-box filter-item--green">
+         <span>
+          <label for="filter-ha-long">
+           <input data-field="vendor" data-group="Hãng" data-operator="OR" data-text="Hạ Long" id="filter-ha-long" onchange="toggleFilter(this)" type="checkbox" value="(Hạ Long)"/>
+           <i class="fa">
+           </i>
+           Hạ Long
+          </label>
+         </span>
+        </li>
+        <li class="filter-item filter-item--check-box filter-item--green">
+         <span>
+          <label for="filter-quang-ninh">
+           <input data-field="vendor" data-group="Hãng" data-operator="OR" data-text="Quảng Ninh" id="filter-quang-ninh" onchange="toggleFilter(this)" type="checkbox" value="(Quảng Ninh)"/>
+           <i class="fa">
+           </i>
+           Quảng Ninh
+          </label>
+         </span>
+        </li>
+        <li class="filter-item filter-item--check-box filter-item--green">
+         <span>
+          <label for="filter-nha-trang">
+           <input data-field="vendor" data-group="Hãng" data-operator="OR" data-text="Nha Trang" id="filter-nha-trang" onchange="toggleFilter(this)" type="checkbox" value="(Nha Trang)"/>
+           <i class="fa">
+           </i>
+           Nha Trang
+          </label>
+         </span>
+        </li>
+        <li class="filter-item filter-item--check-box filter-item--green">
+         <span>
+          <label for="filter-ninh-binh">
+           <input data-field="vendor" data-group="Hãng" data-operator="OR" data-text="Ninh Bình" id="filter-ninh-binh" onchange="toggleFilter(this)" type="checkbox" value="(Ninh Bình)"/>
+           <i class="fa">
+           </i>
+           Ninh Bình
+          </label>
+         </span>
+        </li>
+        <li class="filter-item filter-item--check-box filter-item--green">
+         <span>
+          <label for="filter-da-nang">
+           <input data-field="vendor" data-group="Hãng" data-operator="OR" data-text="Đà Nẵng" id="filter-da-nang" onchange="toggleFilter(this)" type="checkbox" value="(Đà Nẵng)"/>
+           <i class="fa">
+           </i>
+           Đà Nẵng
+          </label>
+         </span>
+        </li>
+        <li class="filter-item filter-item--check-box filter-item--green">
+         <span>
+          <label for="filter-ha-noi">
+           <input data-field="vendor" data-group="Hãng" data-operator="OR" data-text="Hà Nội" id="filter-ha-noi" onchange="toggleFilter(this)" type="checkbox" value="(Hà Nội)"/>
+           <i class="fa">
+           </i>
+           Hà Nội
+          </label>
+         </span>
+        </li>
+       </ul>
+      </div>
+     </aside>
+    </div>
+    <aside class="aside-item banner">
+     <div class="aside-title">
+      <h3 class="title-head margin-top-0">
+       <span>
+        <i class="ion-ios-pulse-strong">
+        </i>
+        Khuyến mãi hot
+       </span>
+      </h3>
+     </div>
+     <div class="aside-content">
+      <a href="#">
+       <img alt="banner" class="banner-img img-responsive center-block" src="//bizweb.dktcdn.net/100/279/655/themes/617267/assets/aside_banner.png?1705895334162"/>
+      </a>
+     </div>
+    </aside>
+   </aside>
+   <div class="open-filters hidden-lg hidden-md" id="open-filters">
+    <i aria-hidden="true" class="fa fa-filter">
+    </i>
+   </div>
+  </div>
+ </div>
+</div>
+<link href="//bizweb.dktcdn.net/100/279/655/themes/617267/assets/bpr-products-module.css?1705895334162" media="all" rel="stylesheet" type="text/css"/>
+<div class="sapo-product-reviews-module">
+</div>
+<link as="script" href="//bizweb.dktcdn.net/assets/themes_support/api.jquery.js" rel="preload"/>
+<link as="script" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js" rel="preload"/>
+<link as="script" href="//bizweb.dktcdn.net/100/279/655/themes/617267/assets/main.js?1705895334162" rel="preload"/>
+<div class="mobile-success-notification">
+</div>
+<div class="popup-sapo">
+ <div class="icon">
+  <svg height="1em" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+   <path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z">
+   </path>
+  </svg>
+ </div>
+ <div class="content">
+  <div class="title">
+   Tích hợp sẵn các ứng dụng
+  </div>
+  <ul>
+   <li>
+    <svg height="1em" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+     <path d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z">
+     </path>
+    </svg>
+    <a href="https://apps.sapo.vn/danh-gia-san-pham-v2" target="_blank" title="Đánh giá sản phẩm">
+     Đánh giá sản phẩm
+    </a>
+   </li>
+   <li>
+    <svg height="1em" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+     <path d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z">
+     </path>
+    </svg>
+    <a href="https://apps.sapo.vn/mua-x-tang-y-v2" target="_blank" title="Mua X tặng Y">
+     Mua X tặng Y
+    </a>
+   </li>
+   <li>
+    <svg height="1em" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+     <path d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z">
+     </path>
+    </svg>
+    <a href="https://apps.sapo.vn/quan-ly-affiliate-v2" target="_blank" title="Ứng dụng Affiliate">
+     Ứng dụng Affiliate
+    </a>
+   </li>
+   <li>
+    <svg height="1em" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+     <path d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z">
+     </path>
+    </svg>
+    <a href="https://apps.sapo.vn/ae-da-ngon-ngu" target="_blank" title="Đa ngôn ngữ">
+     Đa ngôn ngữ
+    </a>
+   </li>
+   <li>
+    <svg height="1em" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+     <path d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z">
+     </path>
+    </svg>
+    <a href="https://m.me/sapo.vn" target="_blank" title="Chatlive Facebook">
+     Chatlive Facebook
+    </a>
+   </li>
+  </ul>
+  <div class="ghichu">
+   Lưu ý với các ứng dụng trả phí bạn cần cài đặt và mua ứng dụng này trên App store Sapo để sử dụng ngay
+  </div>
+  <a class="close-popup-sapo" href="javascript:;" title="Đóng">
+   <svg style="enable-background:new 0 0 512.001 512.001;" version="1.1" viewbox="0 0 512.001 512.001" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+    <g>
+     <g>
+      <path d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717    L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859    c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287    l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285    L284.286,256.002z">
+      </path>
+     </g>
+    </g>
+   </svg>
+  </a>
+ </div>
+</div>
+<a class="wolf-chat-plugin" href="https://m.me/sapo.vn" target="_blank">
+ <div style="margin-left: -2px; margin-right: 6px;">
+  <div style="display: flex; align-items: center;">
+   <svg fill="none" height="24" viewbox="0 0 24 24" width="24">
+    <path clip-rule="evenodd" d="M0.75 11.9125C0.75 5.6422 5.66254 1 12 1C18.3375 1 23.25 5.6422 23.25 11.9125C23.25 18.1828 18.3375 22.825 12 22.825C10.8617 22.825 9.76958 22.6746 8.74346 22.3925C8.544 22.3376 8.33188 22.3532 8.1426 22.4368L5.90964 23.4224C5.32554 23.6803 4.66618 23.2648 4.64661 22.6267L4.58535 20.6253C4.57781 20.3789 4.46689 20.1483 4.28312 19.9839C2.09415 18.0264 0.75 15.1923 0.75 11.9125ZM8.54913 9.86084L5.24444 15.1038C4.92731 15.6069 5.54578 16.1739 6.01957 15.8144L9.56934 13.1204C9.80947 12.9381 10.1413 12.9371 10.3824 13.118L13.0109 15.0893C13.7996 15.6809 14.9252 15.4732 15.451 14.6392L18.7556 9.39616C19.0727 8.893 18.4543 8.326 17.9805 8.68555L14.4307 11.3796C14.1906 11.5618 13.8587 11.5628 13.6176 11.3819L10.9892 9.41061C10.2005 8.81909 9.07479 9.02676 8.54913 9.86084Z" fill="white" fill-rule="evenodd">
+    </path>
+   </svg>
+  </div>
+ </div>
+ <div style='color: white; display: flex; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; font-size: 17px; font-style: normal; font-weight: 600; line-height: 22px; user-select: none; white-space: nowrap;'>
+  Chat
+ </div>
+</a>
+<style>
+ .popup-sapo{position:fixed;bottom:80px;left:17px;margin:0;z-index:30;top:auto !important}
+	.popup-sapo .icon{position:relative;z-index:4;height:48px;width:48px;text-align:center;border-radius:50%;border:1px solid #ffffff;cursor:pointer;background:#e84996;box-shadow:0 4px 8px rgba(0,0,0,0.15);box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;animation:pulse 2s infinite;animation:pulse 2s infinite;cursor:pointer}
+	.popup-sapo .icon svg{fill:#ffffff;width:20px;height:20px;transition:opacity 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;transition:opacity 0.35s ease-in-out, transform 0.35s ease-in-out;transition:opacity 0.35s ease-in-out, transform 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;animation:iconSkew 1s infinite ease-out;min-height:-webkit-fill-available}
+	.popup-sapo .content{background:#e84996;color:#fff;padding:20px 10px 40px;border-radius:10px;width:300px;position:absolute;bottom:27px;left:20px;box-shadow:0 4px 20px rgba(0,0,0,0.2);-webkit-transform-origin:100% bottom;transform-origin:0 bottom;transform:scale(0);-webkit-transform:scale(0);-moz-transform:scale(0);-ms-transform:scale(0);-o-transform:scale(0);transition:-webkit-transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);transition:transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);transition:transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1),-webkit-transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);-webkit-transition:transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1)}
+	@media (max-width: 500px){
+		.popup-sapo .content{width:250px}
+	}
+	.popup-sapo .content .title{font-size:14px;font-weight:500;margin-bottom:12px;margin-top:8px;color: #fff;}
+	.popup-sapo .content .close-popup-sapo{position:absolute;right:10px;top:5px;cursor:pointer}
+	.popup-sapo .content .close-popup-sapo svg{width:15px;height:15px}
+	.popup-sapo .content .close-popup-sapo svg path{fill:#fff}
+	.popup-sapo .content ul{margin-bottom:20px}
+	.popup-sapo .content ul li{margin-bottom:10px}
+	.popup-sapo .content ul li svg{margin-right:10px}
+	.popup-sapo .content ul li svg path{fill:#fff}
+	.popup-sapo .content ul li a{color:#fff}
+	.popup-sapo .content ul li a:hover{color:#fff;text-decoration: underline;}
+	.popup-sapo .content .ghichu{font-style:italic;font-size:14px}
+	.popup-sapo.active .content{-ms-transition-delay:0.1s;-webkit-transition-delay:0.15s;transition-delay:0.1s;transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);-o-transform:scale(1)}
+	.wolf-chat-plugin{bottom: 30px; z-index: 99; background-color: rgb(10, 124, 255);align-items: center;border-radius: 60px;display: flex;height: 44px;padding: 0px 16px;position: fixed;width: fit-content;right: 0px;top: auto !important;}
+</style>
+
+{%endblock %}
