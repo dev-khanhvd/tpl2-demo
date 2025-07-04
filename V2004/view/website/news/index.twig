@@ -1,0 +1,2152 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(translate('Danh sách bài viết')).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ getKeyContentValue('META_KEYWORDS') }}">
+<meta name="description" content="{{ getKeyContentValue('META_DESCRIPTION') }}">
+<meta property="og:title" content="{{ getKeyContentValue('META_TITLE') }}">
+<meta property="og:url" content="{{ getCurrentUrl() }}">
+<meta property="og:image" content="{{ getBusinessLogo() }}">
+<link rel="canonical" href="{{ getCurrentUrl() }}">
+{%endblock %}
+
+{%block body %}
+
+Google Tag Manager (noscript)
+<noscript>
+ <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-KPG4NLB" style="display:none;visibility:hidden" width="0">
+ </iframe>
+</noscript>
+End Google Tag Manager (noscript)
+<div class="main-body layoutProduct_scroll">
+ <div class="scroller">
+  <div class="scroller-inner">
+   <div class="ega-header header navbar-fixed-top">
+    <div class="container-fluid desktop">
+     <div class="row">
+      <a class="col-sm-2 navbar-brand" href="/">
+       <img alt="Vài Thứ Hay" decoding="async" fetchpriority="low" height="66" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/logo_medium.png?v=7362" width="240"/>
+       <div class="text-pro">
+       </div>
+      </a>
+      <div class="col-sm-6">
+       <ul class="nav navbar-nav">
+        <li class="top">
+         <a href="/" title="Trang chủ">
+          Trang chủ
+         </a>
+        </li>
+        <li class="top dropdown">
+         <a class="dropdown-toggle" href="#" onclick="return false;">
+          Khám phá
+          <i class="fa fa-lg fa-angle-down">
+          </i>
+         </a>
+         <div class="col-sm-12">
+          <div class="static-content" id="menu-discover">
+           <div class="container">
+            <h3 class="title">
+             Khám phá theo chủ đề
+            </h3>
+           </div>
+           <div class="menu-discover-container" style=" position: relative; z-index: 2; ">
+            <div class="container">
+             <div class="menu-discover-body">
+              <div class="category-left">
+               <div class="category-list">
+                <a class="category-item active" data-menu="all" href="/collections/all" target="_blank">
+                 <img class="category-icon" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/hd_category_icon_first_small.png?v=7362"/>
+                 <span class="category-tooltip">
+                  Tất cả sản phẩm
+                 </span>
+                </a>
+                <a class="category-item" data-menu="154c8a70-89ca-4960-8616-eae7fd74880a" href="/collections/onsale" target="_blank">
+                 <img class="category-icon" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/hd_category_icon_1_small.png?v=7362"/>
+                 <span class="category-tooltip">
+                  Sản phẩm khuyến mãi
+                 </span>
+                </a>
+                <a class="category-item" data-menu="2fdf5bd2-208c-4f76-8c27-5105ed4e2003" href="/collections/san-pham-moi" target="_blank">
+                 <img class="category-icon" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/hd_category_icon_2_small.png?v=7362"/>
+                 <span class="category-tooltip">
+                  Sản phẩm mới
+                 </span>
+                </a>
+                <a class="category-item" data-menu="7484777f-2467-423b-b430-3ca2979524eb" href="/collections/preorder-collection" target="_blank">
+                 <img class="category-icon" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/hd_category_icon_3_small.png?v=7362"/>
+                 <span class="category-tooltip">
+                  Các chiến dịch đặt hàng trước PRE-ORDER
+                 </span>
+                </a>
+                <div class="category-item more-btn">
+                 <img class="category-icon" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/hd_category_icon_last_small.png?v=7362"/>
+                 <span class="category-tooltip">
+                  Xem thêm
+                 </span>
+                </div>
+               </div>
+              </div>
+              <div class="category-right">
+               <div class="menu-list all show">
+                <a class="AMa" href="/collections/setup-goc-lam-viec" target="_blank">
+                 <div class="AMc">
+                  <div class="vth-thumb thumb A0b vth-thumb thumb ratio-3-2">
+                   <div class="content">
+                    <img alt="Setup Góc Làm Việc" decoding="async" fetchpriority="low" height="320" loading="lazy" src="//file.hstatic.net/1000069970/collection/son09582_a184e45a54ee475d9fc51fc424d0de0e_large.jpg" width="480"/>
+                    <div class="A0a">
+                     <div class="A0c">
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <h5 class="AMe">
+                   SET UP KHÔNG GIAN GÓC LÀM VIỆC
+                  </h5>
+                 </div>
+                </a>
+                <a class="AMa" href="/collections/ban-phim-hay" target="_blank">
+                 <div class="AMc">
+                  <div class="vth-thumb thumb A0b vth-thumb thumb ratio-3-2">
+                   <div class="content">
+                    <img alt="Bàn phím hay" decoding="async" fetchpriority="low" height="320" loading="lazy" src="//file.hstatic.net/1000069970/collection/thiet_ke_chua_co_ten__2__1b49337d200946d08ee2993045bbb203_large.png" width="480"/>
+                    <div class="A0a">
+                     <div class="A0c">
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <h5 class="AMe">
+                   BÀN PHÍM HAY
+                  </h5>
+                 </div>
+                </a>
+                <a class="AMa" href="/collections/flash-sale-san-pham-hot" target="_blank">
+                 <div class="AMc">
+                  <div class="vth-thumb thumb A0b vth-thumb thumb ratio-3-2">
+                   <div class="content">
+                    <img alt="Du Lịch Dã Ngoại" decoding="async" fetchpriority="low" height="320" loading="lazy" src="//file.hstatic.net/1000069970/collection/20240801-113333_408d293fe0964529a4d3c14958b0f30b_large.jpeg" width="480"/>
+                    <div class="A0a">
+                     <div class="A0c">
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <h5 class="AMe">
+                   Khơi nguồn cảm hứng, bật tung hiệu suất
+                  </h5>
+                 </div>
+                </a>
+                <a class="AMa" href="/collections/gravastar-collection-chien-binh-khong-gian" target="_blank">
+                 <div class="AMc">
+                  <div class="vth-thumb thumb A0b vth-thumb thumb ratio-3-2">
+                   <div class="content">
+                    <img alt="Loa - Tai Nghe" decoding="async" fetchpriority="low" height="320" loading="lazy" src="//file.hstatic.net/1000069970/collection/gravastar_collection_af12333a90a34df0b3f30914520f092b_large.png" width="480"/>
+                    <div class="A0a">
+                     <div class="A0c">
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <h5 class="AMe">
+                   Collection Gravastar -Những chiến binh không gian
+                  </h5>
+                 </div>
+                </a>
+                <a class="AMa" href="/collections/san-pham-moi-la-nhat-hien-tai" target="_blank">
+                 <div class="AMc">
+                  <div class="vth-thumb thumb A0b vth-thumb thumb ratio-3-2">
+                   <div class="content">
+                    <img alt="Sản phẩm độc đáo nhất" decoding="async" fetchpriority="low" height="320" loading="lazy" src="//file.hstatic.net/1000069970/collection/vth-050_f0657890f9234e798f6f8bb8f0f1a38f_large.jpg" width="480"/>
+                    <div class="A0a">
+                     <div class="A0c">
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <h5 class="AMe">
+                   Sản phẩm độc đáo nhất trên thị trường
+                  </h5>
+                 </div>
+                </a>
+                <a class="AMa" href="/collections/cong-nghe-tien-ich-co-san" target="_blank">
+                 <div class="AMc">
+                  <div class="vth-thumb thumb A0b vth-thumb thumb ratio-3-2">
+                   <div class="content">
+                    <img alt="Sản phẩm HOT" decoding="async" fetchpriority="low" height="320" loading="lazy" src="//file.hstatic.net/1000069970/collection/123_39bb10e736d242e4b1a0a35d608f5c72_large.jpg" width="480"/>
+                    <div class="A0a">
+                     <div class="A0c">
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <h5 class="AMe">
+                   Công nghệ Thiết yếu - Có sẵn giao ngay
+                  </h5>
+                 </div>
+                </a>
+                <a class="AMa" href="/collections/san-pham-cong-nghe-diy-lap-rap-dac-biet" target="_blank">
+                 <div class="AMc">
+                  <div class="vth-thumb thumb A0b vth-thumb thumb ratio-3-2">
+                   <div class="content">
+                    <img alt="Sản phẩm DIY Steampunk" decoding="async" fetchpriority="low" height="320" loading="lazy" src="//file.hstatic.net/1000069970/collection/white2_8c5962d90a9049cfbd10513344994245_large.png" width="480"/>
+                    <div class="A0a">
+                     <div class="A0c">
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <h5 class="AMe">
+                   Sản phẩm DIY Steampunk
+                  </h5>
+                 </div>
+                </a>
+                <a class="AMa" href="/collections/nid-light" target="_blank">
+                 <div class="AMc">
+                  <div class="vth-thumb thumb A0b vth-thumb thumb ratio-3-2">
+                   <div class="content">
+                    <img alt="Đèn tràn trí NID LIGHT" decoding="async" fetchpriority="low" height="320" loading="lazy" src="//file.hstatic.net/1000069970/collection/4_copy_4eca127c007e48de8a7ab3bbd1c4754a_large.jpg" width="480"/>
+                    <div class="A0a">
+                     <div class="A0c">
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <h5 class="AMe">
+                   Đèn trang trí NID Light
+                  </h5>
+                 </div>
+                </a>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="container menu-discover-sale" style=" position: relative; z-index: 2; ">
+            <h3 class="title">
+            </h3>
+            <div class="sale-list">
+             <div>
+              <a class="sale-item" href="https://shope.ee/10TWvlHQWI" target="_blank">
+               <img class="sale-icon" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/hd_category_sale_icon_1_grande.png?v=7362"/>
+              </a>
+             </div>
+             <div>
+              <a class="sale-item" href="https://www.lazada.vn/shop/vaithuhay-store" target="_blank">
+               <img class="sale-icon" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/hd_category_sale_icon_3_grande.png?v=7362"/>
+              </a>
+             </div>
+            </div>
+           </div>
+           <div class="container menu-discover-blog" style=" position: relative; z-index: 2; ">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+             <h3 class="title">
+              GÓC VAITHUHAY
+             </h3>
+             <a class="more-btn" href="https://vaithuhay.com/blogs/news" target="_blank">
+              Xem tất cả
+              <i aria-hidden="true" class="fa fa-caret-right">
+              </i>
+             </a>
+            </div>
+            <div class="blog-list">
+             <div class="item">
+              <a class="item" href="/blogs/setup-decor/pre-order-la-gi" style=" text-decoration: none; " target="_blank">
+               <div class="articles-img">
+                <img decoding="async" fetchpriority="low" loading="lazy" srcset="//file.hstatic.net/1000069970/article/pre-order-la-gi-moi-dieu-can-biet-ve-pre-order_b22ae22812ed4333bb07146c5f156217_compact.jpg 767w, https://file.hstatic.net/1000069970/article/pre-order-la-gi-moi-dieu-can-biet-ve-pre-order_b22ae22812ed4333bb07146c5f156217.jpg"/>
+               </div>
+               <div class="article-des">
+                <h5 class="title" style=" height: 42px; ">
+                 Pre order là gì? Mọi điều cần biết về pre order
+                </h5>
+               </div>
+              </a>
+             </div>
+             <div class="item">
+              <a class="item" href="/blogs/setup-decor/livestream-ban-hang" style=" text-decoration: none; " target="_blank">
+               <div class="articles-img">
+                <img decoding="async" fetchpriority="low" loading="lazy" srcset="//file.hstatic.net/1000069970/article/bi-kip-live-stream-ban-hang_4fa4513f3d96436f859a495e2bc312cb_compact.png 767w, https://file.hstatic.net/1000069970/article/bi-kip-live-stream-ban-hang_4fa4513f3d96436f859a495e2bc312cb.png"/>
+               </div>
+               <div class="article-des">
+                <h5 class="title" style=" height: 42px; ">
+                 Cách livestream bán hàng của dân chuyên
+                </h5>
+               </div>
+              </a>
+             </div>
+             <div class="item">
+              <a class="item" href="/blogs/setup-decor/top-5-mau-dong-ho-trang-tri-ban-lam-viec" style=" text-decoration: none; " target="_blank">
+               <div class="articles-img">
+                <img decoding="async" fetchpriority="low" loading="lazy" srcset="//file.hstatic.net/1000069970/article/5-mau-dong-ho-de-ban-giup-tang-cam-hung-sang-tao_f0c31564117b4b86832a68ec65f31a09_compact.jpg 767w, https://file.hstatic.net/1000069970/article/5-mau-dong-ho-de-ban-giup-tang-cam-hung-sang-tao_f0c31564117b4b86832a68ec65f31a09.jpg"/>
+               </div>
+               <div class="article-des">
+                <h5 class="title" style=" height: 42px; ">
+                 5 mẫu đồng hồ để bàn sáng tạo giúp tăng cảm hứng làm việc
+                </h5>
+               </div>
+              </a>
+             </div>
+             <div class="item">
+              <a class="item" href="/blogs/setup-decor/tong-hop-nhung-bo-ban-phim-va-chuot-gia-phai-chang-danh-cho-designer" style=" text-decoration: none; " target="_blank">
+               <div class="articles-img">
+                <img decoding="async" fetchpriority="low" loading="lazy" srcset="//file.hstatic.net/1000069970/article/tong-hop-nhung-bo-ban-phim-chuot-phai-chang-danh-cho-design_69d2459670874f238d1c555f8310024f_compact.jpg 767w, https://file.hstatic.net/1000069970/article/tong-hop-nhung-bo-ban-phim-chuot-phai-chang-danh-cho-design_69d2459670874f238d1c555f8310024f.jpg"/>
+               </div>
+               <div class="article-des">
+                <h5 class="title" style=" height: 42px; ">
+                 Tổng hợp những bộ bàn phím và chuột giá phải chăng dành cho designer
+                </h5>
+               </div>
+              </a>
+             </div>
+             <div class="item">
+              <a class="item" href="/blogs/setup-decor/huong-dan-su-dung-va-bao-quan-ban-nang-ha-chieu-cao" style=" text-decoration: none; " target="_blank">
+               <div class="articles-img">
+                <img decoding="async" fetchpriority="low" loading="lazy" srcset="//file.hstatic.net/1000069970/article/huong-dan-su-dung-va-bao-quan-ban-nang-ha-chieu-cao_fe80568ad0074ab2a03db9308256a0ff_compact.jpg 767w, https://file.hstatic.net/1000069970/article/huong-dan-su-dung-va-bao-quan-ban-nang-ha-chieu-cao_fe80568ad0074ab2a03db9308256a0ff.jpg"/>
+               </div>
+               <div class="article-des">
+                <h5 class="title" style=" height: 42px; ">
+                 Hướng dẫn sử dụng và bảo quản bàn nâng hạ chiều cao
+                </h5>
+               </div>
+              </a>
+             </div>
+             <div class="item">
+              <a class="item" href="/blogs/setup-decor/top-10-mon-do-cong-nghe-thong-minh-tao-cam-hung-lam-viec" style=" text-decoration: none; " target="_blank">
+               <div class="articles-img">
+                <img decoding="async" fetchpriority="low" loading="lazy" srcset="//file.hstatic.net/1000069970/article/top-10-mon-do-cong-nghe-thong-minh-tao-cam-hug-lam-viec-cho-designer_f4cd3ca816b545bb81e49ae26f030f0c_compact.jpg 767w, https://file.hstatic.net/1000069970/article/top-10-mon-do-cong-nghe-thong-minh-tao-cam-hug-lam-viec-cho-designer_f4cd3ca816b545bb81e49ae26f030f0c.jpg"/>
+               </div>
+               <div class="article-des">
+                <h5 class="title" style=" height: 42px; ">
+                 Top 10 món đồ công nghệ thông minh tạo cảm hứng làm việc cho designer
+                </h5>
+               </div>
+              </a>
+             </div>
+             <div class="item">
+              <a class="item" href="/blogs/setup-decor/cach-setup-phong-livestream" style=" text-decoration: none; " target="_blank">
+               <div class="articles-img">
+                <img decoding="async" fetchpriority="low" loading="lazy" srcset="//file.hstatic.net/1000069970/article/cach-setup-phong-livestream-de-ban-hang-livestream-game_76062ecd6bab486c90d8b12d684be96d_compact.jpg 767w, https://file.hstatic.net/1000069970/article/cach-setup-phong-livestream-de-ban-hang-livestream-game_76062ecd6bab486c90d8b12d684be96d.jpg"/>
+               </div>
+               <div class="article-des">
+                <h5 class="title" style=" height: 42px; ">
+                 Cách setup phòng livestream để bán hàng, livestream game
+                </h5>
+               </div>
+              </a>
+             </div>
+             <div class="item">
+              <a class="item" href="/blogs/setup-decor/dau-co-tay-nhung-khong-sung-nguyen-nhan-cach-khac-phuc" style=" text-decoration: none; " target="_blank">
+               <div class="articles-img">
+                <img decoding="async" fetchpriority="low" loading="lazy" srcset="//file.hstatic.net/1000069970/article/dau-co-tay-nhung-khong-sung-la-bi-gi-nguyen-nhan-cach-khac-phuc_5e4d1eec513b4b778b4d3112c7f98b40_compact.jpg 767w, https://file.hstatic.net/1000069970/article/dau-co-tay-nhung-khong-sung-la-bi-gi-nguyen-nhan-cach-khac-phuc_5e4d1eec513b4b778b4d3112c7f98b40.jpg"/>
+               </div>
+               <div class="article-des">
+                <h5 class="title" style=" height: 42px; ">
+                 Đau cổ tay nhưng không sưng là bị gì? Nguyên nhân, cách khắc phục
+                </h5>
+               </div>
+              </a>
+             </div>
+            </div>
+           </div>
+           <div class="overload-menu" style=" position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1;">
+           </div>
+          </div>
+         </div>
+        </li>
+        <li class="top ega-has-submenu">
+         <a class="dropdown-toggle" href="#" onclick="return false;">
+          Tìm hiểu thêm
+          <i class="fa fa-lg fa-angle-down">
+          </i>
+         </a>
+         <div class="ega-submenu-content">
+          <ul>
+           <li class="ega-submenu-item">
+            <a href="/pages/gioi-thieu-vaithuhay" target="_blank">
+             Về Vaithuhay
+            </a>
+           </li>
+           <li class="ega-submenu-item">
+            <a href="https://partner.vaithuhay.com" target="_blank">
+             Bán hàng liên kết (Affiliate)
+            </a>
+           </li>
+           <li class="ega-submenu-item">
+            <a href="https://tuyendung.vaithuhay.com" target="_blank">
+             Tìm đồng đội - tuyển dụng
+            </a>
+           </li>
+           <li class="ega-submenu-item">
+            <a href="https://vaithuhay.com/collections/coming-soon" target="_blank">
+             Showcase
+            </a>
+           </li>
+           <li class="ega-submenu-item">
+            <a href="https://quatanghay.com" target="_blank">
+             Quà tặng hay
+            </a>
+           </li>
+           <li class="ega-submenu-item">
+            <a href="https://www.facebook.com/groups/gocvaithuhay" target="_blank">
+             Cộng đồng Hayer
+            </a>
+           </li>
+           <li class="ega-submenu-item has-end-level">
+            <a href="/">
+             Các chính sách quan trọng
+             <img decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/ega-vth-caret-down.svg?v=7362"/>
+            </a>
+            <div class="ega-submenu-content">
+             <ul>
+              <li class="ega-submenu-item">
+               <a href="https://vaithuhay.com/blogs/news/chuong-trinh-thanh-vien-loyalty-tai-vaithuhay">
+                Membership/Loyalty
+               </a>
+              </li>
+              <li class="ega-submenu-item">
+               <a href="https://vaithuhay.com/blogs/news/chinh-sach-pre-order-tai-vaithuhay">
+                Chính sách đặt hàng trước
+               </a>
+              </li>
+              <li class="ega-submenu-item">
+               <a href="/pages/chinh-sach-doi-tra-bao-hanh-va-boi-hoan-san-pham">
+                Chính sách bảo hành/đổi trả
+               </a>
+              </li>
+             </ul>
+            </div>
+           </li>
+          </ul>
+         </div>
+        </li>
+        <li class="top ega-has-submenu">
+         <a class="dropdown-toggle" href="#" onclick="return false;">
+          Bài viết
+          <i class="fa fa-lg fa-angle-down">
+          </i>
+         </a>
+         <div class="ega-submenu-content">
+          <ul>
+           <li class="ega-submenu-item">
+            <a href="/blogs/setup-decor" target="_blank">
+             Setup Decor
+            </a>
+           </li>
+           <li class="ega-submenu-item">
+            <a href="/blogs/cong-nghe" target="_blank">
+             Công Nghệ
+            </a>
+           </li>
+          </ul>
+         </div>
+        </li>
+       </ul>
+      </div>
+      <style>
+       .AIc {display: none;}
+      </style>
+      <div class="col-sm-4">
+       <ul class="nav navbar-nav navbar-right">
+        <li>
+         <div class="AIb ega-search-wrap">
+          <form action="/search" class="navbar-form ega-header-search">
+           <div class="input-group add-on">
+            <input name="type" type="hidden" value="product"/>
+            <input autocomplete="off" class="form-control" data-search-id="search-desktop" id="search" maxlength="40" name="q" onclick="onClickSearch(event)" onkeyup="searchText(event)" placeholder="Tìm sản phẩm" required=""/>
+            <div class="input-group-btn">
+             <div class="btn">
+              <svg aria-hidden="true" class="svg-inline--fa fa-search fa-w-16" data-icon="search" data-prefix="fas" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+               <path class="" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" fill="currentColor">
+               </path>
+              </svg>
+             </div>
+            </div>
+           </div>
+          </form>
+          <div class="AIc" id="search-desktop">
+           <div class="search-index">
+            <div class="search-tags">
+             <a href="https://vaithuhay.com/collections/upgen-phu-kien-setup-toi-gian">
+              <span>
+               #
+              </span>
+              #UPGEN
+             </a>
+             <a href="https://shope.ee/10TWvlHQWI">
+              <span>
+               #
+              </span>
+              #ShopeeMall
+             </a>
+             <a href="https://www.lazada.vn/shop/vaithuhay-store">
+              <span>
+               #
+              </span>
+              #LazadaMall
+             </a>
+             <a href="https://vaithuhay.com/collections/setup-goc-lam-viec">
+              <span>
+               #
+              </span>
+              #GócLàmViệc
+             </a>
+             <a href="https://vaithuhay.com/collections/nid-light">
+              <span>
+               #
+              </span>
+              #ĐènRGB
+             </a>
+             <a href="https://vaithuhay.com/collections/preorder-collection">
+              <span>
+               #
+              </span>
+              #PreOrder
+             </a>
+             <a href="https://vaithuhay.com/collections/san-pham-sang-tao">
+              <span>
+               #
+              </span>
+              #SángTạo
+             </a>
+             <a href="https://vaithuhay.com/collections/onsale">
+              <span>
+               #
+              </span>
+              #NO RESTOCK
+             </a>
+             <a href="https://vaithuhay.com/collections/san-pham-moi">
+              <span>
+               #
+              </span>
+              #Sản Phẩm Mới
+             </a>
+            </div>
+            <div class="search-content" style="display: none;">
+            </div>
+           </div>
+          </div>
+         </div>
+        </li>
+        <li class="ega-cart-icon header-cart">
+         <a class="AKc ega-cart-icon" href="/cart">
+          <img alt="Giỏ hàng" decoding="async" fetchpriority="low" height="64" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/vth-cart.png?v=7362" width="64"/>
+          <span class="AKe">
+           0
+          </span>
+         </a>
+         <div class="cart-hover-empty hidden-xs">
+          <div class="cart-empty-wrapper" data-cart="0">
+           <h3 class="title">
+            Giỏ hàng rỗng
+           </h3>
+           <div class="cart-des">
+            Hổng lẻ hổng ưng
+           </div>
+           <img alt="Linh vật" class="img-linhvat" decoding="async" fetchpriority="low" height="168" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/lv-xinloi.png?v=7362" width="76"/>
+          </div>
+          <div class="popup-coupon-wrapper">
+           <div class="popup-coupon-head">
+            Mã giảm giá đang được áp dụng
+           </div>
+           <div class="coupon-cart coupon-customer free-gifts">
+           </div>
+           <div class="popup-desc">
+            <a class="redirect-cart" href="/cart">
+             <span class="ic-cart">
+              <svg fill="none" height="13" viewbox="0 0 13 13" width="13" xmlns="http://www.w3.org/2000/svg">
+               <path d="M4.58172 13C5.16754 13 5.64244 12.5048 5.64244 11.8939C5.64244 11.2831 5.16754 10.7879 4.58172 10.7879C3.9959 10.7879 3.521 11.2831 3.521 11.8939C3.521 12.5048 3.9959 13 4.58172 13Z" fill="white">
+               </path>
+               <path d="M10.0976 13C10.6834 13 11.1583 12.5048 11.1583 11.8939C11.1583 11.2831 10.6834 10.7879 10.0976 10.7879C9.51177 10.7879 9.03687 11.2831 9.03687 11.8939C9.03687 12.5048 9.51177 13 10.0976 13Z" fill="white">
+               </path>
+               <path d="M12.8981 1.6698C12.8586 1.61627 12.8078 1.57288 12.7497 1.54297C12.6916 1.51306 12.6277 1.49743 12.5629 1.49726H2.76183L2.5709 0.864611C2.54992 0.796682 2.5135 0.735052 2.46474 0.684977C2.41598 0.634903 2.35633 0.597872 2.29087 0.577042L0.551281 0.0196005C0.497791 0.00246137 0.441588 -0.00352434 0.38588 0.00198525C0.330171 0.00749484 0.276049 0.0243917 0.226604 0.0517112C0.126744 0.106885 0.0519939 0.201164 0.018798 0.313806C-0.0143979 0.426448 -0.00332045 0.548227 0.0495934 0.652352C0.102507 0.756478 0.192923 0.834421 0.30095 0.869035L1.82415 1.35569L3.76739 7.75742L3.0758 8.35025L3.02064 8.40777C2.84961 8.61427 2.75271 8.87632 2.74652 9.1491C2.74033 9.42187 2.82523 9.68842 2.9867 9.90313C3.10234 10.0498 3.2493 10.1662 3.4158 10.243C3.58231 10.3198 3.76374 10.3549 3.94559 10.3455H11.027C11.1395 10.3455 11.2474 10.2989 11.327 10.216C11.4066 10.133 11.4513 10.0205 11.4513 9.90313C11.4513 9.78579 11.4066 9.67326 11.327 9.59029C11.2474 9.50732 11.1395 9.46071 11.027 9.46071H3.87771C3.82885 9.45897 3.78125 9.44412 3.7395 9.4176C3.69775 9.39108 3.66327 9.35377 3.63938 9.3093C3.6155 9.26482 3.60301 9.21467 3.60314 9.1637C3.60327 9.11272 3.616 9.06264 3.64011 9.0183L4.66264 8.13347H11.2094C11.3063 8.13641 11.4013 8.10466 11.4785 8.04348C11.5557 7.9823 11.6105 7.8954 11.6337 7.79724L12.9914 2.04586C13.0043 1.9799 13.0026 1.91174 12.9865 1.84658C12.9703 1.78141 12.9401 1.72095 12.8981 1.6698Z" fill="white">
+               </path>
+              </svg>
+             </span>
+             <span>
+              Vào giỏ hàng ngay
+             </span>
+            </a>
+           </div>
+          </div>
+         </div>
+         <div class="popover bottom popup-addCart">
+          <div class="arrow">
+          </div>
+          <div class="popover-content AJe" style="padding: 10px 25px;">
+           <p>
+            <span class="popover-icon-check">
+             <img decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/vth-icon-check.svg?v=7362"/>
+            </span>
+            <span>
+             Thêm vào giỏ hàng thành công
+            </span>
+           </p>
+           <a href="/cart">
+            Xem giỏ hàng &amp; Ưu đãi
+           </a>
+          </div>
+          <div class="vth-icon-character">
+           <img decoding="async" fetchpriority="low" loading="lazy/" src="//theme.hstatic.net/1000069970/1001119059/14/vth-icon-addcart_medium.png?v=7362"/>
+          </div>
+         </div>
+        </li>
+        <li class="customer-hv">
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+    <div class="ega-mobile-header AZe mobile d-flex justify-content-between align-items-center">
+     <div class="AZg ega-toggle-mb" onclick="showMenuMobile()" style="transform: scale(1);">
+      <div class="menu-toggle-btn">
+       <span class="cls">
+       </span>
+       <span>
+       </span>
+       <span class="cls">
+       </span>
+       <strong>
+        4
+       </strong>
+      </div>
+     </div>
+     <a class="AZf navbar-brand" href="/" style="transform: scale(1);">
+      <img alt="Vài Thứ Hay" class="logo" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/logo_medium.png?v=7362"/>
+      <img alt="Vài Thứ Hay" class="logo-white" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/logo-white_medium.png?v=7362"/>
+      <div class="text-pro">
+      </div>
+     </a>
+     <div class="ega-header-icons">
+      <span class="ega-mb-search">
+       <img alt="Tìm kiếm" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/vth-icon-search.png?v=7362"/>
+      </span>
+      <div class="ega-header__logout">
+       <a href="/account/logout">
+        <img alt="Đăng xuất" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/logout.png?v=7362"/>
+       </a>
+      </div>
+      <a class="ega-mb-cart cart Xa" href="/cart">
+       <img alt="Giỏ hàng" class="cart-icon" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/vth-cart.png?v=7362"/>
+       <img alt="Giỏ hàng" class="cart-icon-white" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/vth-cart-white.png?v=7362"/>
+       <span class="Xb AKe" style="transform: translateX(0%) translateY(0%);">
+        0
+       </span>
+      </a>
+     </div>
+     <div class="popover bottom popup-addCart">
+      <div class="arrow">
+      </div>
+      <div class="popover-content AJe" style="padding: 10px 25px;">
+       <p>
+        <span class="popover-icon-check">
+         <img decoding="async" fetchpriority="low" loading="lazy/" src="//theme.hstatic.net/1000069970/1001119059/14/vth-icon-check.svg?v=7362"/>
+        </span>
+        <span>
+         Thêm vào giỏ hàng thành công
+        </span>
+       </p>
+       <a href="/cart">
+        Xem giỏ hàng &amp; Ưu đãi
+       </a>
+      </div>
+      <div class="vth-icon-character">
+       <img decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/vth-icon-addcart_medium.png?v=7362"/>
+      </div>
+     </div>
+    </div>
+    <div class="ega-mb-sidebar static-content mobile-panel animated">
+     <div class="menu-mb__content">
+      <div class="menu-mb__account text-center">
+      </div>
+      <div class="discovery">
+       <nav class="discovery__list">
+        <div class="discovery__item">
+         <a href="/collections/setup-goc-lam-viec" target="_blank">
+          <img alt="Vài Thứ Hay - Setup Góc Làm Việc" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/menu_mb_discovery_icon_1_thumb.png?v=7362 767w, data:image/jpg;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+          <span>
+           Setup Góc Làm Việc
+          </span>
+         </a>
+        </div>
+        <div class="discovery__item">
+         <a href="/collections/ban-phim-hay" target="_blank">
+          <img alt="Vài Thứ Hay - Bàn phím hay" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/menu_mb_discovery_icon_2_thumb.png?v=7362 767w, data:image/jpg;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+          <span>
+           Bàn phím hay
+          </span>
+         </a>
+        </div>
+        <div class="discovery__item">
+         <span class="badge" style="color: ; background-color: #DE0B19">
+          New
+         </span>
+         <a href="/collections/flash-sale-san-pham-hot" target="_blank">
+          <img alt="Vài Thứ Hay - Du Lịch Dã Ngoại" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/menu_mb_discovery_icon_3_thumb.png?v=7362 767w, data:image/jpg;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+          <span>
+           Du Lịch Dã Ngoại
+          </span>
+         </a>
+        </div>
+        <div class="discovery__item">
+         <span class="badge" style="color: ; background-color: #DE0B19">
+          New
+         </span>
+         <a href="/collections/gravastar-collection-chien-binh-khong-gian" target="_blank">
+          <img alt="Vài Thứ Hay - Loa - Tai Nghe" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/menu_mb_discovery_icon_4_thumb.png?v=7362 767w, data:image/jpg;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+          <span>
+           Loa - Tai Nghe
+          </span>
+         </a>
+        </div>
+        <div class="discovery__item">
+         <a href="/collections/san-pham-moi-la-nhat-hien-tai" target="_blank">
+          <img alt="Vài Thứ Hay - Sản phẩm độc đáo nhất" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/menu_mb_discovery_icon_5_thumb.png?v=7362 767w, data:image/jpg;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+          <span>
+           Sản phẩm độc đáo nhất
+          </span>
+         </a>
+        </div>
+        <div class="discovery__item">
+         <a href="/collections/cong-nghe-tien-ich-co-san" target="_blank">
+          <img alt="Vài Thứ Hay - Sản phẩm HOT" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/menu_mb_discovery_icon_6_thumb.png?v=7362 767w, data:image/jpg;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+          <span>
+           Sản phẩm HOT
+          </span>
+         </a>
+        </div>
+        <div class="discovery__item">
+         <a href="/collections/san-pham-cong-nghe-diy-lap-rap-dac-biet" target="_blank">
+          <img alt="Vài Thứ Hay - Sản phẩm DIY Steampunk" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/menu_mb_discovery_icon_7_thumb.png?v=7362 767w, data:image/jpg;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+          <span>
+           Sản phẩm DIY Steampunk
+          </span>
+         </a>
+        </div>
+        <div class="discovery__item">
+         <a href="/collections/nid-light" target="_blank">
+          <img alt="Vài Thứ Hay - Đèn tràn trí NID LIGHT" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/menu_mb_discovery_icon_8_thumb.png?v=7362 767w, data:image/jpg;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+          <span>
+           Đèn tràn trí NID LIGHT
+          </span>
+         </a>
+        </div>
+       </nav>
+      </div>
+     </div>
+     <nav class="menu-mb__nav">
+      <div class="menu-mb__nav-item">
+       <span class="badge" style="color: ; background-color: #868686">
+        Coming soon
+       </span>
+       <a href="https://vaithuhay.com/collections/coming-soon" target="_blank">
+        <span>
+         <img alt="Vài Thứ Hay" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/menu_mb_main_icon_1.png?v=7362"/>
+        </span>
+        Showcase
+       </a>
+      </div>
+      <div class="menu-mb__nav-item">
+       <span class="badge" style="color: ; background-color: #868686">
+        Coming soon
+       </span>
+       <a href="https://showcase-dev.vaithuhay.com/manage/create-post/step1" target="_blank">
+        <span>
+         <img alt="Vài Thứ Hay" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/menu_mb_main_icon_2.png?v=7362"/>
+        </span>
+        Hợp tác phát triển sản phẩm
+       </a>
+      </div>
+      <div class="menu-mb__nav-item">
+       <a href="http://partner.vaithuhay.com" target="_blank">
+        <span>
+         <img alt="Vài Thứ Hay" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/menu_mb_main_icon_3.png?v=7362"/>
+        </span>
+        Tiếp thị liên kết - Affiliate
+       </a>
+      </div>
+      <div class="menu-mb__nav-item">
+       <a href="https://www.facebook.com/groups/gocvaithuhay" target="_blank">
+        <span>
+         <img alt="Vài Thứ Hay" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/menu_mb_main_icon_4.png?v=7362"/>
+        </span>
+        Cộng đồng Hay-er
+       </a>
+      </div>
+      <div class="menu-mb__nav-item">
+       <a href="http://tuyendung.vaithuhay.com" target="_blank">
+        <span>
+         <img alt="Vài Thứ Hay" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/menu_mb_main_icon_5.png?v=7362"/>
+        </span>
+        Tìm đồng đội
+       </a>
+      </div>
+      <div class="menu-mb__nav-item">
+       <a href="https://quatanghay.com" target="_blank">
+        <span>
+         <img alt="Vài Thứ Hay" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/menu_mb_main_icon_6.png?v=7362"/>
+        </span>
+        Quà tặng doanh nghiệp
+       </a>
+      </div>
+      <div class="menu-mb__nav-item">
+       <a href="/blogs/brand-story" target="_blank">
+        <span>
+         <img alt="Vài Thứ Hay" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/menu_mb_main_icon_7.png?v=7362"/>
+        </span>
+        Tin tức
+       </a>
+      </div>
+      <div class="menu-mb__nav-item">
+       <a href="/pages/kiem-tra-hanh-trinh-don-hang" target="_blank">
+        <span>
+         <img alt="Vài Thứ Hay" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/menu_mb_main_icon_8.png?v=7362"/>
+        </span>
+        Kiểm tra đơn hàng
+       </a>
+      </div>
+      <div class="menu-mb__nav-item">
+       <a href="/" target="_blank">
+        <span>
+         <img alt="Vài Thứ Hay" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/menu_mb_main_icon_9.png?v=7362"/>
+        </span>
+        Giới thiệu thương hiệu hay
+       </a>
+      </div>
+      <div class="menu-mb__bottom text-center animated">
+       <div class="menu-mb__slogan text-center" style="background-image: url(//theme.hstatic.net/1000069970/1001119059/14/menu-bottom-bg.png?v=7362);">
+        <img alt="Vài Thứ Hay" class="menu-mb__slogan-logo" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/menu_mb_logo_compact.png?v=7362"/>
+        <p>
+         Không đơn thuần chỉ bán hàng, chúng tôi còn đem đến nhiều hơn thế, tìm hiểu ngay
+        </p>
+        <div class="menu-mb__bottom-group">
+         <a class="ega-btn ega-btn--default" href="/pages/gioi-thieu-vaithuhay">
+          Tìm hiểu thêm
+          <span>
+           <i class="fa fa-caret-right">
+           </i>
+          </span>
+         </a>
+         <a class="ega-btn ega-btn--default menu-mb__feedback-btn" href="tel:02871015808">
+          <span>
+           !
+          </span>
+          Khiếu nại dịch vụ
+         </a>
+        </div>
+       </div>
+      </div>
+     </nav>
+    </div>
+   </div>
+   <div class="static-content" id="login_social">
+    <div class="container" style=" position: relative; z-index: 2; ">
+     <div class="ega-page-login text-center">
+      <div class="login-box">
+       <div class="login-popup login-box-body" id="login">
+        <form accept-charset="UTF-8" action="/account/login" id="customer_login" method="post">
+         <input name="form_type" type="hidden" value="customer_login"/>
+         <input name="utf8" type="hidden" value="✓"/>
+         <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt-TCO4VOsUR3Nfgr2G7x1FGvmPdXBFBZCgt1Yxkg1kWx5o0Q_6guywZ-au-iyDKUh42yj-ZHlUfDqIkrKWUoZ08sCaKFvbfS7Teqllw-Ai-GvtvsH8XARS-ZOQwBn5ZZpk"/>
+         <div class="text-center">
+          <h2 class="ega-login-title">
+           ĐĂNG NHẬP
+          </h2>
+         </div>
+         <div class="ega-form-input">
+          <input id="customer_email" name="customer[email]" placeholder="Email/ Số Điện Thoại:" required=""/>
+         </div>
+         <div class="ega-form-input">
+          <input id="customer_password" name="customer[password]" placeholder="Mật khẩu:" required="" size="16" type="password"/>
+         </div>
+         <div class="action_account_custommer text-center">
+          <div class="action_bottom action-login button dark">
+           <input class="btn btn-signin" type="submit" value="Đăng nhập"/>
+          </div>
+          <div class="action_bottom action-register button dark">
+           <a href="/account/register">
+            Đăng ký
+           </a>
+          </div>
+         </div>
+        </form>
+       </div>
+       <div id="recover-password" style="display:none;">
+        <div class="recover-heading text-center">
+         <h2 class="ega-login-title">
+          TÌM MẬT KHẨU
+         </h2>
+         <span>
+          Nhập Email đã đăng ký tài khoản tại Vài Thứ Hay &lt; br&gt;
+							Hệ thống sẽ gửi mail đến để xác nhận tài khoản của bạn
+         </span>
+        </div>
+        <form accept-charset="UTF-8" action="/account/recover" method="post">
+         <input name="form_type" type="hidden" value="recover_customer_password"/>
+         <input name="utf8" type="hidden" value="✓"/>
+         <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt-TCO4VOsUR3Nfgr2G7x1FGvmPdXBFBZCgt1Yxkg1kWx5o0Q_6guywZ-au-iyDKUh42yj-ZHlUfDqIkrKWUoZ08sCaKFvbfS7Teqllw-Ai-GvtvsH8XARS-ZOQwBn5ZZpk"/>
+         <div class="form-signup" style="color: red;">
+         </div>
+         <div class="ega-form-input">
+          <label>
+           Địa chỉ Email:
+          </label>
+          <input id="customer_email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" required="" type="email"/>
+         </div>
+         <div class="action_account_custommer text-center">
+          <div class="action_bottom action-login button dark">
+           <input class="btn btn-signin" type="submit" value="Xác nhận"/>
+          </div>
+          <div class="action_bottom action-register button dark">
+           <a href="#" onclick="hideRecoverPasswordForm();return false;">
+            Trở về
+           </a>
+          </div>
+         </div>
+        </form>
+       </div>
+       <hr/>
+       <a href="#" id="ega-forgot-pass" onclick="showRecoverPasswordForm();return false;">
+        Quên mật khẩu
+       </a>
+       <span class="social-login-title">
+        Đăng nhập nhanh với tài khoản mạng xã hội
+       </span>
+       <div class="social-btn-wrap">
+        <button class="btn btn-fb btn-signin" id="btn-facebook-login">
+         <i class="fa fa-facebook">
+         </i>
+        </button>
+        <button class="btn btn-google-plus" id="btn-google-login">
+         <i class="fa fa-google">
+         </i>
+        </button>
+       </div>
+      </div>
+     </div>
+     <div class="fb-login-button" data-auto-logout-link="false" data-button-type="login_with" data-layout="default" data-size="medium" data-use-continue-as="false" data-width="" style="display:none">
+     </div>
+    </div>
+    <div onclick="hideSocial()" style=" position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; ">
+    </div>
+   </div>
+   <style>
+    #login_social .action_bottom  { padding-bottom: 10px; }
+   </style>
+   <style>
+    #login_social .large_form {max-width: 425px;width: 100%;margin: auto;display: flex;padding-bottom: 10px;}#login_social .large_form label {width: 80px;}#login_social .large_form input {width: calc(100% - 80px);color: #000;}#login_social .action_bottom {padding-bottom: 10px;}
+   </style>
+   <main class="">
+    <div class="ega-overlay">
+     <div class="search-form-wrap">
+      <form action="/search" class="form search-form">
+       <div class="input-group add-on" style="width:100%">
+        <input name="type" type="hidden" value="product"/>
+        <input autocomplete="off" class="form-control" id="search_mobile" maxlength="40" name="q" onkeyup="searchTextMobile(event)" placeholder="Tìm sản phẩm" required=""/>
+        <div class="input-group-btn" onclick='$("#search").val("")'>
+         <div class="btn" onclick="closeSearch()">
+          <i class="fa fa-search">
+          </i>
+         </div>
+        </div>
+       </div>
+      </form>
+      <div class="search-tags">
+       <a href="https://vaithuhay.com/collections/upgen-phu-kien-setup-toi-gian">
+        #UPGEN
+       </a>
+       <a href="https://shope.ee/10TWvlHQWI">
+        #ShopeeMall
+       </a>
+       <a href="https://www.lazada.vn/shop/vaithuhay-store">
+        #LazadaMall
+       </a>
+       <a href="https://vaithuhay.com/collections/setup-goc-lam-viec">
+        #GócLàmViệc
+       </a>
+       <a href="https://vaithuhay.com/collections/nid-light">
+        #ĐènRGB
+       </a>
+       <a href="https://vaithuhay.com/collections/preorder-collection">
+        #PreOrder
+       </a>
+       <a href="https://vaithuhay.com/collections/san-pham-sang-tao">
+        #SángTạo
+       </a>
+       <a href="https://vaithuhay.com/collections/onsale">
+        #NO RESTOCK
+       </a>
+       <a href="https://vaithuhay.com/collections/san-pham-moi">
+        #Sản Phẩm Mới
+       </a>
+      </div>
+      <div class="ega-mb-search-res We search-index">
+       <div class="search-list-we search-content">
+       </div>
+      </div>
+     </div>
+    </div>
+    <div id="primary">
+     <main id="main" role="main">
+      <div class="blog">
+       <div class="headlines">
+        <div class="container">
+         <div class="title-outer text-center">
+          <h1 class="headlines-title">
+           News - Tin tức
+          </h1>
+         </div>
+         <div class="product-loop headline-posts">
+          <div class="headline-post">
+           <div class="content">
+            <div class="inner">
+             <img alt="Điện thoại màn hình E-ink Kingrow K1 có chức năng bảo vệ mắt" decoding="sync" fetchpriority="high" loading="eager" src="//file.hstatic.net/1000069970/article/dien-thoai-man-hinh-e-ink-kingrow-k1__3__d4dd888acc664a3dad23233b127cae59_large.png"/>
+            </div>
+           </div>
+           <div class="content">
+            <a class="headline-detail" href="/blogs/news/dien-thoai-man-hinh-e-ink-kingrow-k1">
+             <h4 class="post-title">
+              Điện thoại màn hình E-ink Kingrow K1 có chức năng bảo vệ mắt
+             </h4>
+            </a>
+           </div>
+          </div>
+          <div class="headline-post">
+           <div class="content">
+            <div class="inner">
+             <img alt="Ốp lưng điện thoại EYE Smartcase - Biến iPhone thành Android" decoding="sync" fetchpriority="high" loading="eager" src="//file.hstatic.net/1000069970/article/3_large.jpg"/>
+            </div>
+           </div>
+           <div class="content">
+            <a class="headline-detail" href="/blogs/news/op-lung-eye">
+             <h4 class="post-title">
+              Ốp lưng điện thoại EYE Smartcase - Biến iPhone thành Android
+             </h4>
+            </a>
+           </div>
+          </div>
+          <div class="headline-post">
+           <div class="content">
+            <div class="inner">
+             <img alt="Tính năng thông minh của máy tính bảng màn hình E-Ink E-PAD" decoding="sync" fetchpriority="high" loading="eager" src="//file.hstatic.net/1000069970/article/e_pad_may_tinh_bang_android_e_ink3_fd92e8450922408dbf9bb7ce83662ad9_large.jpg"/>
+            </div>
+           </div>
+           <div class="content">
+            <a class="headline-detail" href="/blogs/news/e-pad-may-tinh-bang-android-e-ink">
+             <h4 class="post-title">
+              Tính năng thông minh của máy tính bảng màn hình E-Ink E-PAD
+             </h4>
+            </a>
+           </div>
+          </div>
+          <div class="headline-post">
+           <div class="content">
+            <div class="inner">
+             <img alt="Review Robot hút bụi lau nhà Narwal đáng mua" decoding="sync" fetchpriority="high" loading="eager" src="//file.hstatic.net/1000069970/article/narwal1_a353728f8eab4e70970f64d9fb75145e_large.jpg"/>
+            </div>
+           </div>
+           <div class="content">
+            <a class="headline-detail" href="/blogs/news/narwal-cay-lau-nha-va-may-hut-bui-tu-lam-sach-dau-tien-tren-the-gioi">
+             <h4 class="post-title">
+              Review Robot hút bụi lau nhà Narwal đáng mua
+             </h4>
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="container" style="position: relative;">
+        <div id="main-list">
+        </div>
+        <div class="row gutter-40">
+         <div class="col-sm-12 post-list">
+          <!-- <div class="sort-form">
+							<div>
+								<span class="mr-3">Sắp xếp bởi</span>
+								<div class="sort-selector Oa" style="min-width: 180px; height: 40px;">
+									<div class="overlay-selector Ob Og hidden-list">
+										<div class="Oc custom-select">
+											<select class="collection-op">
+												<option value="/blogs/news?sort_by=created-descending" >Mới</option>
+												<option value="/blogs/news?sort_by=title-ascending" >A-Z</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div> 
+						</div>-->
+          <div class="row">
+           <div class="col-md-4">
+            <div class="article-loop">
+             <div class="img">
+              <a href="/blogs/news/dien-thoai-man-hinh-e-ink-kingrow-k1">
+               <img alt="Điện thoại màn hình E-ink Kingrow K1 có chức năng bảo vệ mắt" decoding="async" fetchpriority="low" height="480" loading="lazy" src="//file.hstatic.net/1000069970/article/dien-thoai-man-hinh-e-ink-kingrow-k1__3__d4dd888acc664a3dad23233b127cae59_grande.png" width="480"/>
+              </a>
+             </div>
+             <div class="description">
+              <a href="/blogs/news/dien-thoai-man-hinh-e-ink-kingrow-k1">
+               <h4 class="title">
+                Điện thoại màn hình E-ink Kingrow K1 có chức năng bảo vệ mắt
+               </h4>
+              </a>
+              <p>
+               Viết bởi
+               <strong>
+                Trần Nhạt
+               </strong>
+               vào lúc
+               <time datetime="2024-05-27" pubdate="">
+                27.05.2024
+               </time>
+              </p>
+             </div>
+            </div>
+           </div>
+           <div class="col-md-4">
+            <div class="article-loop">
+             <div class="img">
+              <a href="/blogs/news/op-lung-eye">
+               <img alt="Ốp lưng điện thoại EYE Smartcase - Biến iPhone thành Android" decoding="async" fetchpriority="low" height="480" loading="lazy" src="//file.hstatic.net/1000069970/article/3_grande.jpg" width="480"/>
+              </a>
+             </div>
+             <div class="description">
+              <a href="/blogs/news/op-lung-eye">
+               <h4 class="title">
+                Ốp lưng điện thoại EYE Smartcase - Biến iPhone thành Android
+               </h4>
+              </a>
+              <p>
+               Viết bởi
+               <strong>
+                Quốc Anh KAI
+               </strong>
+               vào lúc
+               <time datetime="2024-05-27" pubdate="">
+                27.05.2024
+               </time>
+              </p>
+             </div>
+            </div>
+           </div>
+           <div class="col-md-4">
+            <div class="article-loop">
+             <div class="img">
+              <a href="/blogs/news/e-pad-may-tinh-bang-android-e-ink">
+               <img alt="Tính năng thông minh của máy tính bảng màn hình E-Ink E-PAD" decoding="async" fetchpriority="low" height="480" loading="lazy" src="//file.hstatic.net/1000069970/article/e_pad_may_tinh_bang_android_e_ink3_fd92e8450922408dbf9bb7ce83662ad9_grande.jpg" width="480"/>
+              </a>
+             </div>
+             <div class="description">
+              <a href="/blogs/news/e-pad-may-tinh-bang-android-e-ink">
+               <h4 class="title">
+                Tính năng thông minh của máy tính bảng màn hình E-Ink E-PAD
+               </h4>
+              </a>
+              <p>
+               Viết bởi
+               <strong>
+                Team Marketing
+               </strong>
+               vào lúc
+               <time datetime="2024-05-24" pubdate="">
+                24.05.2024
+               </time>
+              </p>
+             </div>
+            </div>
+           </div>
+           <div class="col-md-4">
+            <div class="article-loop">
+             <div class="img">
+              <a href="/blogs/news/narwal-cay-lau-nha-va-may-hut-bui-tu-lam-sach-dau-tien-tren-the-gioi">
+               <img alt="Review Robot hút bụi lau nhà Narwal đáng mua" decoding="async" fetchpriority="low" height="480" loading="lazy" src="//file.hstatic.net/1000069970/article/narwal1_a353728f8eab4e70970f64d9fb75145e_grande.jpg" width="480"/>
+              </a>
+             </div>
+             <div class="description">
+              <a href="/blogs/news/narwal-cay-lau-nha-va-may-hut-bui-tu-lam-sach-dau-tien-tren-the-gioi">
+               <h4 class="title">
+                Review Robot hút bụi lau nhà Narwal đáng mua
+               </h4>
+              </a>
+              <p>
+               Viết bởi
+               <strong>
+                Trần Nhạt
+               </strong>
+               vào lúc
+               <time datetime="2024-05-22" pubdate="">
+                22.05.2024
+               </time>
+              </p>
+             </div>
+            </div>
+           </div>
+           <div class="col-md-4">
+            <div class="article-loop">
+             <div class="img">
+              <a href="/blogs/news/cach-bao-quan-giay-da">
+               <img alt="Mách bạn cách bảo quản giày da an toàn và hiệu quả" decoding="async" fetchpriority="low" height="480" loading="lazy" src="//file.hstatic.net/1000069970/article/xit-chong-tham-cho-giay_ff893b7842a7446884327fdcfdfafe0d_grande.jpg" width="480"/>
+              </a>
+             </div>
+             <div class="description">
+              <a href="/blogs/news/cach-bao-quan-giay-da">
+               <h4 class="title">
+                Mách bạn cách bảo quản giày da an toàn và hiệu quả
+               </h4>
+              </a>
+              <p>
+               Viết bởi
+               <strong>
+                Thùy Linh
+               </strong>
+               vào lúc
+               <time datetime="2024-05-22" pubdate="">
+                22.05.2024
+               </time>
+              </p>
+             </div>
+            </div>
+           </div>
+           <div class="col-md-4">
+            <div class="article-loop">
+             <div class="img">
+              <a href="/blogs/news/xuc-xac-da-quang-den-led-chat-nhat-qua-dat">
+               <img alt="Lộ diện xúc xắc dạ quang đèn LED chất nhất quả đất" decoding="async" fetchpriority="low" height="480" loading="lazy" src="//file.hstatic.net/1000069970/article/2_3707fe29830f4ea9b47499adb0cdace3_grande.jpg" width="480"/>
+              </a>
+             </div>
+             <div class="description">
+              <a href="/blogs/news/xuc-xac-da-quang-den-led-chat-nhat-qua-dat">
+               <h4 class="title">
+                Lộ diện xúc xắc dạ quang đèn LED chất nhất quả đất
+               </h4>
+              </a>
+              <p>
+               Viết bởi
+               <strong>
+                Quốc Anh KAI
+               </strong>
+               vào lúc
+               <time datetime="2024-05-21" pubdate="">
+                21.05.2024
+               </time>
+              </p>
+             </div>
+            </div>
+           </div>
+           <div class="col-md-4">
+            <div class="article-loop">
+             <div class="img">
+              <a href="/blogs/news/bao-ve-giay-ngay-mua-that-de-dang">
+               <img alt="Bảo vệ giày dép bằng bọc giày đi mưa cho ngày mưa dễ dàng" decoding="async" fetchpriority="low" height="480" loading="lazy" src="//file.hstatic.net/1000069970/article/sneakers_grande.jpg" width="480"/>
+              </a>
+             </div>
+             <div class="description">
+              <a href="/blogs/news/bao-ve-giay-ngay-mua-that-de-dang">
+               <h4 class="title">
+                Bảo vệ giày dép bằng bọc giày đi mưa cho ngày mưa dễ dàng
+               </h4>
+              </a>
+              <p>
+               Viết bởi
+               <strong>
+                Admin Vaithuhay
+               </strong>
+               vào lúc
+               <time datetime="2024-05-21" pubdate="">
+                21.05.2024
+               </time>
+              </p>
+             </div>
+            </div>
+           </div>
+           <div class="col-md-4">
+            <div class="article-loop">
+             <div class="img">
+              <a href="/blogs/news/may-phien-dich-vormor">
+               <img alt="Máy phiên dịch Vormor - Bỏ túi 53 ngôn ngữ và 50 phương ngữ" decoding="async" fetchpriority="low" height="480" loading="lazy" src="//file.hstatic.net/1000069970/article/vormor3_6b4194cfe74f42ae92f210f10386ff50_grande.jpg" width="480"/>
+              </a>
+             </div>
+             <div class="description">
+              <a href="/blogs/news/may-phien-dich-vormor">
+               <h4 class="title">
+                Máy phiên dịch Vormor - Bỏ túi 53 ngôn ngữ và 50 phương ngữ
+               </h4>
+              </a>
+              <p>
+               Viết bởi
+               <strong>
+                Trần Nhạt
+               </strong>
+               vào lúc
+               <time datetime="2024-05-20" pubdate="">
+                20.05.2024
+               </time>
+              </p>
+             </div>
+            </div>
+           </div>
+           <div class="col-md-4">
+            <div class="article-loop">
+             <div class="img">
+              <a href="/blogs/news/travis">
+               <img alt="Travis - Thiết bị phiên dịch bỏ túi hỗ trợ 80 ngôn ngữ" decoding="async" fetchpriority="low" height="480" loading="lazy" src="//file.hstatic.net/1000069970/article/2.0_a5776c3c1068453bbe57642ad78d1a46_grande.jpg" width="480"/>
+              </a>
+             </div>
+             <div class="description">
+              <a href="/blogs/news/travis">
+               <h4 class="title">
+                Travis - Thiết bị phiên dịch bỏ túi hỗ trợ 80 ngôn ngữ
+               </h4>
+              </a>
+              <p>
+               Viết bởi
+               <strong>
+                Marketing Team
+               </strong>
+               vào lúc
+               <time datetime="2024-05-20" pubdate="">
+                20.05.2024
+               </time>
+              </p>
+             </div>
+            </div>
+           </div>
+           <div class="col-md-4">
+            <div class="article-loop">
+             <div class="img">
+              <a href="/blogs/news/gosun-chill-may-lam-mat-lanh-do-uong">
+               <img alt="Máy làm mát đồ uống GoSun Chill bằng năng lượng mặt trời tiện lợi" decoding="async" fetchpriority="low" height="480" loading="lazy" src="//file.hstatic.net/1000069970/article/gosun-chill1_0614af5d84bc42eda40acf1a4901aa5b_grande.jpg" width="480"/>
+              </a>
+             </div>
+             <div class="description">
+              <a href="/blogs/news/gosun-chill-may-lam-mat-lanh-do-uong">
+               <h4 class="title">
+                Máy làm mát đồ uống GoSun Chill bằng năng lượng mặt trời tiện lợi
+               </h4>
+              </a>
+              <p>
+               Viết bởi
+               <strong>
+                Trần Nhạt
+               </strong>
+               vào lúc
+               <time datetime="2024-05-17" pubdate="">
+                17.05.2024
+               </time>
+              </p>
+             </div>
+            </div>
+           </div>
+           <div class="col-md-4">
+            <div class="article-loop">
+             <div class="img">
+              <a href="/blogs/news/mu-bao-hiem-gap-morpher">
+               <img alt="Mũ bảo hiểm gấp gọn MORPHER - Người bạn đồng hành an toàn" decoding="async" fetchpriority="low" height="480" loading="lazy" src="//file.hstatic.net/1000069970/article/8_1f307fadb8ab491f992d1ae4a57c07b5_grande.jpg" width="480"/>
+              </a>
+             </div>
+             <div class="description">
+              <a href="/blogs/news/mu-bao-hiem-gap-morpher">
+               <h4 class="title">
+                Mũ bảo hiểm gấp gọn MORPHER - Người bạn đồng hành an toàn
+               </h4>
+              </a>
+              <p>
+               Viết bởi
+               <strong>
+                Quốc Anh KAI
+               </strong>
+               vào lúc
+               <time datetime="2024-05-17" pubdate="">
+                17.05.2024
+               </time>
+              </p>
+             </div>
+            </div>
+           </div>
+           <div class="col-md-4">
+            <div class="article-loop">
+             <div class="img">
+              <a href="/blogs/news/dung-cu-can-trang-bi-khi-lan-bien">
+               <img alt="Tổng hợp các thiết bị và dụng cụ cần trang bị khi lặn biển" decoding="async" fetchpriority="low" height="480" loading="lazy" src="//file.hstatic.net/1000069970/article/scorkl-ocean_grande.jpg" width="480"/>
+              </a>
+             </div>
+             <div class="description">
+              <a href="/blogs/news/dung-cu-can-trang-bi-khi-lan-bien">
+               <h4 class="title">
+                Tổng hợp các thiết bị và dụng cụ cần trang bị khi lặn biển
+               </h4>
+              </a>
+              <p>
+               Viết bởi
+               <strong>
+                Admin Vaithuhay
+               </strong>
+               vào lúc
+               <time datetime="2024-05-17" pubdate="">
+                17.05.2024
+               </time>
+              </p>
+             </div>
+            </div>
+           </div>
+           <div class="col-md-12 indicator" style="text-align: center;">
+            <a title="Trang trước">
+             <div class="btn btn-white prev no-text disabled">
+              <i class="fa fa-chevron-left">
+              </i>
+             </div>
+            </a>
+            <div class="btn btn-white no-text index">
+             1
+            </div>
+            <a href="/blogs/news?page=2" title="Trang 2">
+             <div class="btn btn-white no-text index">
+              2
+             </div>
+            </a>
+            <a href="/blogs/news?page=3" title="Trang 3">
+             <div class="btn btn-white no-text index">
+              3
+             </div>
+            </a>
+            <div class="btn btn-white no-text index">
+             …
+            </div>
+            <a href="/blogs/news?page=38" title="Trang 38">
+             <div class="btn btn-white no-text index">
+              38
+             </div>
+            </a>
+            <a href="/blogs/news?page=2" title="Trang sau">
+             <div class="btn btn-white next no-text">
+              <i class="fa fa-chevron-right">
+              </i>
+             </div>
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </main>
+    </div>
+   </main>
+   <div class="back-to-top hidden">
+    <a aria-label="Về đầu trang" href="#" onclick="return!1">
+     <div class="btt-back">
+      <span class="btt-label-back">
+       back to top
+      </span>
+      <span class="btt-icon-back">
+       <i class="fa fa-long-arrow-up">
+       </i>
+      </span>
+     </div>
+    </a>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="static-content inventory_addcart" id="inventory_popup" style="display: none;">
+ <div class="container" style="position: relative; z-index: 2;">
+  <div class="row">
+   <div class="ega-inventory-content col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1" style="color: #000; background: #fff; padding: 20px;">
+    <div class="ega-inventory-head text-center">
+     <div class="ega-icon-stockout">
+      <img fetchpriority="low" height="28" src="//theme.hstatic.net/1000069970/1001119059/14/vth-icon-outstock.png?v=7362" width="28"/>
+     </div>
+     <h4 class="AHc">
+      Sản phẩm này không có hàng sẵn
+     </h4>
+    </div>
+    <div class="continue-buy-body">
+     <div class="sub-title">
+      Nhưng có mã
+      <b>
+       Giảm 5%
+      </b>
+      cho khách hàng đặt hàng trước và chờ hàng chút xíu thôi
+     </div>
+     <p class="title-dukien">
+      <img src="https://file.hstatic.net/1000269366/file/ezgif-5-8da15b243e_9b82af2f401e4266911b7c105df7bfe7.gif"/>
+      <span>
+       Dự kiến ngày nhận hàng
+      </span>
+     </p>
+     <strong class="time-shipping">
+      Khoảng 3 ngày
+     </strong>
+     <p class="content-ship">
+      (Khoảng
+      <b>
+       15 ngày
+      </b>
+      kể từ khi đặt hàng)
+     </p>
+     <div class="wrap-box-btn-footer">
+      <div class="group-code-continue">
+       <span class="codepax">
+        DATTRUOC
+       </span>
+       <button class="clone-coupon" data-code="DATTRUOC" type="button">
+        Sao chép
+       </button>
+      </div>
+      <div class="btn-continue">
+       <button class="buy-now-continue" onclick="addCartInventory()" type="button">
+        Tiếp tục đặt
+       </button>
+      </div>
+     </div>
+    </div>
+    <div class="vth-icon-character">
+     <img fetchpriority="low" height="135" src="//theme.hstatic.net/1000069970/1001119059/14/vth-icon-shopping.png?v=7362" width="135"/>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="hide-inventory" onclick="hideInventory()">
+ </div>
+</div>
+<style>
+ #inventory_popup .hide-inventory{position:absolute;top:0;left:0;right:0;bottom:0;z-index:1}#inventory_popup .AHc,.media-heading{font-weight:600;color:#666!important}#inventory_popup .AHe>div{position:absolute;text-align:center;text-transform:uppercase;color:#fff;background-color:#e02417;border-radius:50%;font-size:12px}#inventory_popup .AHe{display:inline-block;position:relative;margin:0 5px;overflow:visible!important}#inventory_popup .AHe,.AHe>div{height:60px;width:60px}#inventory_popup .flex-center{display:flex;align-items:center;justify-content:center}#inventory_popup .AHe>div:before{position:absolute;top:2px;left:2px;height:calc(100% - 4px);width:calc(100% - 4px);content:"";visibility:visible;border-radius:50%;border:1px dashed #fff}#inventory_popup .btn-theme-red{background-color:#e02417;color:#fff}
+</style>
+<style>
+ #inventory_popup .sub-title {
+		border: 1px dashed #ffe066;
+		padding: 10px;
+		font-size: 15px;
+		border-radius: 6px;
+		margin-bottom: 15px;
+		text-align: center;
+	}
+	#inventory_popup .title-dukien {
+		display: flex;
+		font-size: 15px;
+		justify-content: center;
+		align-items: center;
+	}
+	#inventory_popup .title-dukien img {
+		width: 35px;
+		height: 35px;
+	}
+	#inventory_popup .title-dukien span {
+		margin-left: 5px;
+		position: relative;
+		top: 4px;
+	}
+	#inventory_popup .time-shipping {
+		font-size: 20px;
+		color: #FF0000;
+	}
+	#inventory_popup .wrap-box-btn-footer {
+		margin-top: 15px;
+	}
+	#inventory_popup .wrap-box-btn-footer.continue .group-code-continue {
+		display: none;
+	}
+	#inventory_popup .form-content .wrap-box-btn-footer .group-code-continue .codepax {
+		border-radius: 8px 0 0 8px;
+		border: 1px dashed #A4A4A4;
+		border-right: none;
+		padding: 4px 20px;
+		right: -2px;
+		position: relative;
+	}
+	#inventory_popup .wrap-box-btn-footer .group-code-continue span, #inventory_popup .wrap-box-btn-footer .group-code-continue button {
+		font-size: 23px;
+		font-weight: 700;
+	}
+	#inventory_popup .wrap-box-btn-footer .group-code-continue .clone-coupon {
+		background: #FFDE50;
+		color: #000;
+		border: none;
+		padding: 6px 20px;
+		border-radius: 8px; line-height: normal;
+	}
+	#inventory_popup .wrap-box-btn-footer.continue .btn-continue {
+		display: inline-block;
+		min-width: 300px;
+	}
+	#inventory_popup .wrap-box-btn-footer .btn-continue {
+		display: none;
+	}
+	#inventory_popup .wrap-box-btn-footer .group-code-continue {
+		display: inline-block;
+	}
+	#inventory_popup .wrap-box-btn-footer .group-code-continue .codepax {
+		border-radius: 8px 0 0 8px;
+		border: 1px dashed #A4A4A4;
+		border-right: none;
+		padding: 4px 20px;
+		right: -2px;
+		position: relative;
+	}
+	.content-ship {
+		font-weight: 700;
+		margin: 10px 0;
+		font-size: 16px;
+	}
+	.content-ship b {
+		color: red;
+	}
+	#inventory_popup .wrap-box-btn-footer .btn-continue button {
+		width: 100%;
+		background: #FFDE50;
+		color: #000;
+		border: none; line-height: normal;
+		padding: 6px 20px;   
+		border-radius: 8px;
+		font-size: 23px;
+		font-weight: 700;
+		border: 1px solid transparent;
+	}#inventory_popup .sub-title b {
+		color: red;
+	}
+</style>
+<div class="static-content" id="inventory_wholesale">
+</div>
+<style>
+ #inventory_wholesale .hide-wholesale {position: absolute;top: 0;left: 0;right: 0;bottom: 0;z-index: 1;}#inventory_wholesale .AHc, .media-heading {font-weight: 600;color: #666!important;}#inventory_wholesale .AHe>div {position: absolute;text-align: center;text-transform: uppercase;color: #fff;background-color: #e02417;border-radius: 50%;font-size: 12px;}#inventory_wholesale .AHe {display: inline-block;position: relative;margin: 0 5px;overflow: visible!important;}#inventory_wholesale .AHe, .AHe>div {height: 60px;width: 60px;}#inventory_wholesale .flex-center {display: flex;align-items: center;justify-content: center;}#inventory_wholesale .AHe>div:before {position: absolute;top: 2px;left: 2px;height: calc(100% - 4px);width: calc(100% - 4px);content: "";visibility: visible;border-radius: 50%;border: 1px dashed #fff;}#inventory_wholesale .btn-theme-red {background-color: #e02417;color: #fff }#inventory_wholesale .modal-title {text-transform: uppercase;font-size: 16px;line-height: 25.888px;font-weight: 700;display: inline-block;color: #000;}#inventory_wholesale .modal-header {border-bottom: none;}#inventory_wholesale .product-variants {margin: 0px;}#inventory_wholesale .product-variants p {color: #000;}#inventory_wholesale li {width: 12.5%;flex-basis: 12.5%;}#inventory_wholesale .container {max-width: 600px;margin: auto;}
+</style>
+<style>
+ .AIc {position: absolute;top: 60px;right: 0;display: none;}.AIc.show-search {display: block;}.AIc .search-index {width: 521px;background: #fff;box-shadow: 0 5px 12px 0 rgba(0,0,0,.35);padding: 20px 22px 10px!important;padding-bottom: 8px;border-radius: 24px;}.AIc .search-content {margin-top: 5px;padding-top: 12px;border-top: 1px solid #DBDBDB;}.AIc .search-results {margin-top: 14px;}.AIc .page-search {margin-left: -8px;margin-right: -8px;}.AIc a {height: 74px;line-height: inherit !important;display: block;padding: 6px 8px !important;border-top: none !important;}.search-content .AIe {float: left;margin-right: 10px;width: 62px;height: 62px;}.search-content img {width: 100%;}.AIa .AIf {font-weight: 600;margin-top: 3px;font-size: 15px;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;margin-bottom: 2px;}.AIa>a:hover {background-color: #f0f0f0;border-left-color: #e02417;}.search-index .btn {border-radius: 30px;margin-right: 5px;background-color: #E7E7E7;line-height: 26px;padding-inline: 20px;font-size: 15px;font-weight: 600;}.search-index .btn.is-actived {background-color: #FFDE50;}.search-index .mt-1 {margin-top: 5px;}.search-tags {display: flex;flex-wrap: wrap;width: 100%;}.search-tags a {height: auto;line-height: 26px!important;border-radius: 30px;background: #E7E7E7;margin-right: 7px;margin-bottom: 10px;color: #000;font-size: 15px;padding: 4px 15px 4px 4px!important;border: none;display: block;}.search-tags a span {display: inline-block;width: 30px;height: 30px;background-color: #EDEDED;text-align: center;line-height: 28px;margin-right: 6px;border: 0.25px solid #C2C2C2;border-radius: 100%;}.indicator {margin-block: 15px;}.indicator .btn {width: 40px;height: 40px;padding: 0;line-height: 40px;font-size: 20px;}.indicator .btn.prev, .indicator .btn.next {width: 58px;font-size: 26px;}.indicator .btn.prev span, .indicator .btn.next span {width: 0;height: 0;border-style: solid;display: inline-block;}.indicator .btn.prev span {border-width: 8px 15px 8px 0;border-color: transparent #000 transparent transparent;}.indicator .btn.next span {border-width: 8px 0 8px 15px;border-color: transparent transparent transparent #000;}.indicator .btn.index.disabled {background-color: #FFDE50;opacity: 1;}.page-search.search-hot a {height: auto;line-height: 60px!important;font-size: 15px;font-weight: 600;padding-block: 8px!important;}.page-search.search-hot a:hover {background-color: transparent;text-decoration: underline;}.page-search.search-hot a span {display: inline-block;width: 62px;height: 62px;background-color: var(--primary-gray);border: 1px solid #C2C2C2;border-radius: 50%;text-align: center;line-height: 60px;font-size: 40px;font-weight: normal;vertical-align: top;margin-right: 10px;}@media (max-width: 991px) {.search-index .btn {line-height: 22px;font-size: 13px;}.indicator .btn {height: 28px;line-height: 28px;width: 28px;padding: 0;}.indicator .btn.prev, .indicator .btn.next {width: 42px;font-size: 18px;}.indicator .btn.prev span {border-width: 7px 10px 7px 0;margin-top: 9px;}.indicator .btn.next span {border-width: 7px 0 7px 10px;margin-top: 9px;}}
+</style>
+<div data-ega-role="scrolltotop" id="ega-scroll-top">
+ <span class="fa fa-arrow-up">
+ </span>
+</div>
+<a class="fixed-mess hidden" href="https://m.me/vaithuhayofficial" rel="nofollow" target="_blank">
+ <img alt="Chat với chúng tôi qua Messenger" class="img-fluid" height="60" loading="lazy" src="//theme.hstatic.net/200000695155/1001252332/14/addthis-messenger.svg" width="60"/>
+ <span class="fixed-mess-tooltip">
+  Chat với chúng tôi qua Messenger
+ </span>
+</a>
+<noscript>
+ <img height="1" src="https://www.facebook.com/tr?id=1363517467518534&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/>
+</noscript>
+<style>
+ .ssm-overlay{position:fixed;top:0;right:0;bottom:0;left:0;background-color:rgba(0,0,0,.2);display:none;z-index:1}.is-navOpen{overflow:hidden}@media(max-width:767px){#ega-newfea{height:100%;width:100%;left:0;top:0;overflow-y:auto;overflow-x:visible;transform:translate(-100%,0)}#ega-newfea img{display:none}#ega-newfea.ssm-nav-visible img{display:initial}}
+</style>
+<div id="ega-newfea">
+ <div class="newfea-content">
+  <div class="newfea-close ssm-toggle-nav">
+   <span class="newfea-close-caret">
+   </span>
+  </div>
+  <div class="newfea-body">
+   <div class="collection__tags search-tags">
+    <a href="/pages/gioi-thieu-vaithuhay">
+     #VàiThứHay
+    </a>
+    <a href="https://vaithuhay.com/collections/onsale">
+     #NORESTOCK
+    </a>
+    <a href="https://shope.ee/10TWvlHQWI">
+     #ShopeeMall
+    </a>
+    <a href="https://www.lazada.vn/shop/vaithuhay-store">
+     #LazMall
+    </a>
+    <a href="https://tiki.vn/cua-hang/digihome">
+     #Tiki
+    </a>
+    <a href="https://vaithuhay.com/collections/preorder-collection">
+     #Groupbuy
+    </a>
+    <a href="/collections/setup-goc-lam-viec">
+     #SetupDecor
+    </a>
+    <a href="/collections/san-pham-moi">
+     #SảnPhẩmHOT
+    </a>
+    <a href="https://vaithuhay.com/collections/nid-light">
+     #ĐènRGB
+    </a>
+    <a href="https://vaithuhay.com/collections/loa-va-tai-nghe-hay-hay/">
+     #LoaLạLạ
+    </a>
+   </div>
+   <div class="newfea-coll ega-section-coll">
+    <div class="ARe ega-coll-contain">
+     <div class="row">
+      <div class="col-md-6 col-12">
+       <a class="ega-coll-item" href="https://vaithuhay.com/collections/phu-kien-cho-nha-thong-minh">
+        <div class="ega-coll-box">
+         <div class="ega-coll-img">
+          <img alt="Vài Thứ Hay" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/feacoll_1_img_medium.png?v=7362"/>
+         </div>
+         <div class="ega-coll-info">
+          <div class="ega-info-content">
+           <h3>
+            SẢN PHẨM
+            <br/>
+            TRANG TRÍ NHÀ CỬA
+           </h3>
+           <div class="ega-coll-desc">
+            Tổng hợp những sản phẩm công nghệ giúp ngôi nhà của bạn trở thành không gian mang cảm hứng sáng tạo bất tận.
+           </div>
+           <div class="btn btn-white ega-btn">
+            <span>
+             KHÁM PHÁ THÊM
+            </span>
+            <div class="ega-arrow">
+             <i aria-hidden="true" class="fas fa-arrow-right">
+             </i>
+            </div>
+           </div>
+          </div>
+          <div class="ega-seemore-mb">
+           <div class="ega-rotate-text">
+            <i class="fa fa-caret-up">
+            </i>
+            <span>
+             XEM THÊM
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </a>
+      </div>
+      <div class="col-md-6 col-12">
+       <a class="ega-coll-item" href="https://vaithuhay.com/collections/phukiendulich">
+        <div class="ega-coll-box">
+         <div class="ega-coll-img">
+          <img alt="Vài Thứ Hay" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/feacoll_2_img_medium.png?v=7362"/>
+         </div>
+         <div class="ega-coll-info">
+          <div class="ega-info-content">
+           <h3>
+            SẢN PHẨM
+            <br/>
+            DU LỊCH DÃ NGOẠI
+           </h3>
+           <div class="ega-coll-desc">
+            Những sản phẩm sẽ giúp chuyến du lịch của bạn tiện lợi và dễ dàng hơn rất nhiều, trở thành trải nghiệm không thể nào quên được.
+           </div>
+           <div class="btn btn-white ega-btn">
+            <span>
+             KHÁM PHÁ THÊM
+            </span>
+            <div class="ega-arrow">
+             <i aria-hidden="true" class="fas fa-arrow-right">
+             </i>
+            </div>
+           </div>
+          </div>
+          <div class="ega-seemore-mb">
+           <div class="ega-rotate-text">
+            <i class="fa fa-caret-up">
+            </i>
+            <span>
+             XEM THÊM
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </a>
+      </div>
+      <div class="col-md-6 col-12">
+       <a class="ega-coll-item" href="https://vaithuhay.com/collections/nid-light">
+        <div class="ega-coll-box">
+         <div class="ega-coll-img">
+          <img alt="Vài Thứ Hay" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/feacoll_3_img_medium.png?v=7362"/>
+         </div>
+         <div class="ega-coll-info">
+          <div class="ega-info-content">
+           <h3>
+            NID VIETNAM
+            <br/>
+            TRANG TRÍ SÁNG TẠO
+           </h3>
+           <div class="ega-coll-desc">
+            NID Vietnam là thương hiệu đèn trang trí sáng tạo cho không gian nhà cửa, văn phòng và cửa hàng trở nên độc đáo và đầy cảm hứng.
+           </div>
+           <div class="btn btn-white ega-btn">
+            <span>
+             KHÁM PHÁ THÊM
+            </span>
+            <div class="ega-arrow">
+             <i aria-hidden="true" class="fas fa-arrow-right">
+             </i>
+            </div>
+           </div>
+          </div>
+          <div class="ega-seemore-mb">
+           <div class="ega-rotate-text">
+            <i class="fa fa-caret-up">
+            </i>
+            <span>
+             XEM THÊM
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </a>
+      </div>
+      <div class="col-md-6 col-12">
+       <a class="ega-coll-item" href="https://vaithuhay.com/collections/setup-goc-lam-viec">
+        <div class="ega-coll-box">
+         <div class="ega-coll-img">
+          <img alt="Vài Thứ Hay" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/feacoll_4_img_medium.png?v=7362"/>
+         </div>
+         <div class="ega-coll-info">
+          <div class="ega-info-content">
+           <h3>
+            GÓC SETUP
+            <br/>
+            BÀN LÀM VIỆC
+           </h3>
+           <div class="ega-coll-desc">
+            Mùa WorkFromHome kéo dài mà lại thiếu cảm hứng làm việc. Đã đến lúc nhấn nút refresh cho không gian làm việc của bạn rồi đấy!
+           </div>
+           <div class="btn btn-white ega-btn">
+            <span>
+             KHÁM PHÁ THÊM
+            </span>
+            <div class="ega-arrow">
+             <i aria-hidden="true" class="fas fa-arrow-right">
+             </i>
+            </div>
+           </div>
+          </div>
+          <div class="ega-seemore-mb">
+           <div class="ega-rotate-text">
+            <i class="fa fa-caret-up">
+            </i>
+            <span>
+             XEM THÊM
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </a>
+      </div>
+      <div class="col-md-6 col-12">
+       <a class="ega-coll-item" href="https://vaithuhay.com/collections/chinh-hang-gia-tot/">
+        <div class="ega-coll-box">
+         <div class="ega-coll-img">
+          <img alt="Vài Thứ Hay" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/feacoll_5_img_medium.png?v=7362"/>
+         </div>
+         <div class="ega-coll-info">
+          <div class="ega-info-content">
+           <h3>
+            PHỤ KIỆN
+            <br/>
+            CÔNG NGHỆ MAC
+           </h3>
+           <div class="ega-coll-desc">
+            Trang bị tăng cường cho các thiết bị công nghệ Macbook, Ipad,... để nâng cao hiệu suất làm việc.
+           </div>
+           <div class="btn btn-white ega-btn">
+            <span>
+             KHÁM PHÁ THÊM
+            </span>
+            <div class="ega-arrow">
+             <i aria-hidden="true" class="fas fa-arrow-right">
+             </i>
+            </div>
+           </div>
+          </div>
+          <div class="ega-seemore-mb">
+           <div class="ega-rotate-text">
+            <i class="fa fa-caret-up">
+            </i>
+            <span>
+             XEM THÊM
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </a>
+      </div>
+      <div class="col-md-6 col-12">
+       <a class="ega-coll-item" href="https://vaithuhay.com/collections/thoi-trang-an-mac-doc-dao/">
+        <div class="ega-coll-box">
+         <div class="ega-coll-img">
+          <img alt="Vài Thứ Hay" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/feacoll_6_img_medium.png?v=7362"/>
+         </div>
+         <div class="ega-coll-info">
+          <div class="ega-info-content">
+           <h3>
+            PHỤ KIỆN THỜI TRANG CÔNG NGHỆ
+           </h3>
+           <div class="ega-coll-desc">
+            Những phụ kiện như balo, túi xách, túi đeo chéo,... vừa tiện dụng, vừa công nghệ lại vừa hợp thời trang.
+           </div>
+           <div class="btn btn-white ega-btn">
+            <span>
+             KHÁM PHÁ THÊM
+            </span>
+            <div class="ega-arrow">
+             <i aria-hidden="true" class="fas fa-arrow-right">
+             </i>
+            </div>
+           </div>
+          </div>
+          <div class="ega-seemore-mb">
+           <div class="ega-rotate-text">
+            <i class="fa fa-caret-up">
+            </i>
+            <span>
+             XEM THÊM
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </a>
+      </div>
+      <div class="col-md-6 col-12">
+       <a class="ega-coll-item" href="https://vaithuhay.com/collections/designnest-chinh-hang/">
+        <div class="ega-coll-box">
+         <div class="ega-coll-img">
+          <img alt="Vài Thứ Hay" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/feacoll_7_img_medium.png?v=7362"/>
+         </div>
+         <div class="ega-coll-info">
+          <div class="ega-info-content">
+           <h3>
+            DESIGNNEST
+           </h3>
+           <div class="ega-coll-desc">
+            Các sản phẩm được Vaithuhay phân phối chính hãng từ platform gây quỹ cộng đồng Designnest với những thiết kế sáng tạo.
+           </div>
+           <div class="btn btn-white ega-btn">
+            <span>
+             KHÁM PHÁ THÊM
+            </span>
+            <div class="ega-arrow">
+             <i aria-hidden="true" class="fas fa-arrow-right">
+             </i>
+            </div>
+           </div>
+          </div>
+          <div class="ega-seemore-mb">
+           <div class="ega-rotate-text">
+            <i class="fa fa-caret-up">
+            </i>
+            <span>
+             XEM THÊM
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </a>
+      </div>
+      <div class="col-md-6 col-12">
+       <a class="ega-coll-item" href="https://vaithuhay.com/collections/genz-tiktok-choice">
+        <div class="ega-coll-box">
+         <div class="ega-coll-img">
+          <img alt="Vài Thứ Hay" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/feacoll_8_img_medium.png?v=7362"/>
+         </div>
+         <div class="ega-coll-info">
+          <div class="ega-info-content">
+           <h3>
+            Tiktok Trending
+           </h3>
+           <div class="ega-coll-desc">
+            GenZ và những ý tưởng hay ho độc lạ và hữu ích cho cuộc sống của bạn. Lướt nhanh và khám phá những thứ lạ hay ho.
+           </div>
+           <div class="btn btn-white ega-btn">
+            <span>
+             KHÁM PHÁ THÊM
+            </span>
+            <div class="ega-arrow">
+             <i aria-hidden="true" class="fas fa-arrow-right">
+             </i>
+            </div>
+           </div>
+          </div>
+          <div class="ega-seemore-mb">
+           <div class="ega-rotate-text">
+            <i class="fa fa-caret-up">
+            </i>
+            <span>
+             XEM THÊM
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="newfea-hotcoll">
+    <div class="hotcoll-body">
+     <div class="hotcoll-title">
+      HOT COLLECTION
+     </div>
+     <div class="hotcoll-grid">
+      <a class="hotcoll-item" href="/collections/tatcasanpham">
+       <div class="hotcoll-icon">
+        <img alt="Vài Thứ Hay" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/fea_hot_icon_1.png?v=7362"/>
+       </div>
+       <div class="hotcoll-name">
+        TẤT CẢ SẢN PHẨM
+       </div>
+      </a>
+      <a class="hotcoll-item" href="/collections/onsale">
+       <div class="hotcoll-icon">
+        <img alt="Vài Thứ Hay" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/fea_hot_icon_2.png?v=7362"/>
+       </div>
+       <div class="hotcoll-name">
+        XẢ KHO NÈ
+       </div>
+      </a>
+      <a class="hotcoll-item" href="https://shope.ee/10TWvlHQWI">
+       <div class="hotcoll-icon">
+        <img alt="Vài Thứ Hay" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/fea_hot_icon_3.png?v=7362"/>
+       </div>
+       <div class="hotcoll-name">
+        SHOPEE MALL
+       </div>
+      </a>
+      <a class="hotcoll-item" href="https://www.lazada.vn/shop/vaithuhay-store">
+       <div class="hotcoll-icon">
+        <img alt="Vài Thứ Hay" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/fea_hot_icon_4.png?v=7362"/>
+       </div>
+       <div class="hotcoll-name">
+        LAZADA MALL
+       </div>
+      </a>
+      <a class="hotcoll-item" href="/collections/preorder-collection">
+       <div class="hotcoll-icon">
+        <img alt="Vài Thứ Hay" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/fea_hot_icon_5.png?v=7362"/>
+       </div>
+       <div class="hotcoll-name">
+        PRE-ORDER CAMP
+       </div>
+      </a>
+      <a class="hotcoll-item" href="/collections/ban-phim-hay">
+       <div class="hotcoll-icon">
+        <img alt="Vài Thứ Hay" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/fea_hot_icon_6.png?v=7362"/>
+       </div>
+       <div class="hotcoll-name">
+        TIKTOK TREND
+       </div>
+      </a>
+      <a class="hotcoll-item" href="/collections/cong-nghe-tien-ich-co-san">
+       <div class="hotcoll-icon">
+        <img alt="Vài Thứ Hay" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/fea_hot_icon_7.png?v=7362"/>
+       </div>
+       <div class="hotcoll-name">
+        Sản phẩm HOT
+       </div>
+      </a>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<a class="toogle-discovery-btn ssm-toggle-nav" href="#">
+ <img alt="Vài Thứ Hay" class="toogle-discovery-btn-desktop" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/menu-icon.png?v=7362"/>
+ <img alt="Vài Thứ Hay" class="toogle-discovery-btn-mobile" decoding="async" fetchpriority="low" loading="lazy" src="//theme.hstatic.net/1000069970/1001119059/14/menu-icon-mb.png?v=7362"/>
+</a>
+<div class="static-content modal-ss-blog" id="cmsoon-success-modal">
+ <div class="container" style=" position: relative; z-index: 3; ">
+  <div class="text-center">
+   <div class="success-modal-cms">
+    <button class="hide-successmodal" onclick="hidesuccessmodal()">
+     <img loading="lazy" src="https://file.hstatic.net/1000269366/file/close_155e1c7ff2fb48d0b0cc6455ebe0f70d.svg"/>
+    </button>
+    <div class="image">
+     <img src="https://file.hstatic.net/1000269366/file/success_8ce54bca9d494b86b6abcd8214d9507d.png"/>
+    </div>
+    <div class="content">
+     <div class="head-title">
+      <span>
+       <img src="https://file.hstatic.net/1000269366/file/success_icon_component_d541dc7a3ccc4ba183430ead081c89c9.svg"/>
+      </span>
+      <p>
+       Đã đăng ký thành công
+      </p>
+     </div>
+     <div class="info-countdown text-center">
+      <p>
+       <img alt="Dự kiến ra mắt" src="https://file.hstatic.net/1000269366/file/___icon__calendar__a7b57c81100b4e4aad6001a644a3f03c.png"/>
+       <span>
+        Dự kiến ra mắt:
+       </span>
+      </p>
+      <div class="group-time">
+       <p class="time">
+        0 Giờ
+       </p>
+       <time class="time-cms">
+        15/12/2023
+       </time>
+      </div>
+     </div>
+     <div class="detail-thanks">
+      Cảm ơn Sếp!
+      <br/>
+      Sếp sẽ được ưu tiên thông báo sớm nhất về thời gian ra mắt sản phẩm và được giữ quyền lợi mua với mức giá Tiên Phong.
+      <br/>
+      Chia sẻ sản phẩm này với người có cùng sở thích với Sếp nhé! Vì số lượng người đăng ký sẽ giúp Vaithuhay xác định tiềm năng sản phẩm, mở bán sớm và có động lực deal giá tốt hơn cho Sếp.
+     </div>
+     <div class="view-detail-pro text-center">
+      <a href="#">
+       Xem chi tiết sản phẩm
+      </a>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="success-modal-hide" style=" position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 2; ">
+ </div>
+</div>
+<div class="static-content modal-ss-blog" id="showcase-success-modal">
+ <div class="container" style=" position: relative; z-index: 3; ">
+  <div class="text-center">
+   <div class="success-modal-cms">
+    <button class="hide-successmodal" onclick="hideshowcasemodal()">
+     <img loading="lazy" src="https://file.hstatic.net/1000269366/file/close_155e1c7ff2fb48d0b0cc6455ebe0f70d.svg"/>
+    </button>
+    <div class="content">
+     <div class="head-title">
+      <img src="https://file.hstatic.net/1000069970/file/icon-success.png"/>
+      <h3>
+       ĐĂNG KÝ THÀNH CÔNG
+      </h3>
+     </div>
+     <div class="detail-thanks">
+      Cảm ơn Sếp!
+      <br/>
+      Sếp sẽ được ưu tiên thông báo sớm nhất về thời gian ra mắt sản phẩm và được giữ quyền lợi mua với mức giá Tiên Phong. 
+            Chia sẻ sản phẩm này với người có cùng sở thích với Sếp nhé! Vì số lượng người đăng ký sẽ giúp Vaithuhay xác định tiềm năng sản phẩm, mở bán sớm và có động lực deal giá tốt hơn cho Sếp.
+     </div>
+     <div class="coupon-onmodal">
+      <div class="modalcoupon-name">
+       <strong>
+        Voucher 5%
+       </strong>
+       lên đến 500.000
+      </div>
+      <div class="modalcoupon-text">
+       Nhập mã
+      </div>
+      <div class="modalcoupon-code">
+       VTH 0890983784
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="success-modal-hide" style=" position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 2; ">
+ </div>
+</div>
+<div id="tooltip-new">
+</div>
+<div id="tooltip-cms">
+</div>
+
+{%endblock %}
