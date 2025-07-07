@@ -1,0 +1,1694 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(product.name).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ product.metaKeywords?:product.name }}">
+<meta name="description" content="{{ product.metaDescription?:product.name }}">
+<meta property="og:title" content="{{ product.metaTitle?:product.name }}">
+<meta property="og:url" content="{{ product.canonicalLink }}">
+<meta property="og:image" content="{{ product.imageUri }}">
+<link rel="canonical" href="{{ product.canonicalLink }}">
+{%endblock %}
+
+{%block body %}
+  {% set wishlist = jsonDecode(getCookies('WISHLIST_STORE_PRODUCT')) %}
+                            {% set ivt = 0 %}
+                            {% if product.inventory().calcAvailable() > 0 %}
+                                {% set ivt = product.inventory().calcAvailable() %}
+                            {% elseif product.available > 0 %}
+                                {% set ivt = product.available %}
+                            {% endif %}
+                            {% set variableAttributes = product.variableAttributes %}
+                            {% set flag = 0 %}
+<div class="mainBody-theme-container mainBody-modalshow mainBody-product layoutProduct_scroll">
+ <div class="mainHeader--height">
+ </div>
+ <main class="wrapperMain_content">
+  <!-- end_size -->
+  <div class="style_04 layout-productDetail layout-pageProduct">
+   <div class="breadcrumb-shop">
+    <div class="container">
+     <div class="breadcrumb-list">
+      <ol class="breadcrumb breadcrumb-arrows" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+       <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+        <a href="/" itemprop="item" target="_self">
+         <span itemprop="name">
+          Trang chủ
+         </span>
+        </a>
+        <meta content="1" itemprop="position"/>
+       </li>
+       <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+        <a href="https://epic-travels.myharavan.com/collections/tour" itemprop="item" target="_self">
+         <span itemprop="name">
+          Tour
+         </span>
+        </a>
+        <meta content="2" itemprop="position"/>
+       </li>
+       <li class="active" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+        <span content="https://epic-travels.myharavan.com/products/tay-au-phap-duc-thuy-si-y-nui-tuyet-titlis-trai-nghiem-tau-cao-toc-tgv" itemprop="item">
+         <strong itemprop="name">
+          Tây Âu: Pháp - Đức - Thụy Sĩ - Ý: Núi tuyết Titlis, trải nghiệm tàu cao tốc TGV
+         </strong>
+        </span>
+        <meta content="3" itemprop="position"/>
+       </li>
+      </ol>
+     </div>
+    </div>
+   </div>
+   <section class="productDetail-information">
+    <div class="container">
+     <div class="productDetail--main">
+      <div class="product-heading">
+       <h1>
+        Tây Âu: Pháp - Đức - Thụy Sĩ - Ý: Núi tuyết Titlis, trải nghiệm tàu cao tốc TGV
+       </h1>
+       <div class="heading-action">
+        <div class="group-status">
+         <div class="pro-vendor">
+          <a href="/collections/vendors?q=paris" title="Show vendor">
+           Paris
+          </a>
+         </div>
+         <div class="pro-soldout">
+          0 Booked
+         </div>
+        </div>
+        <div class="pro-share">
+         <div class="share-title">
+          <i class="fa fa-share-alt">
+          </i>
+          Chia sẻ
+         </div>
+         <div class="list-icon">
+          <a aria-label="facebook" class="tooltip-cs share-facebook" href="//www.facebook.com/sharer/sharer.php?u=https://epic-travels.myharavan.com/products/tay-au-phap-duc-thuy-si-y-nui-tuyet-titlis-trai-nghiem-tau-cao-toc-tgv" target="_blank">
+           <svg height="22" viewbox="0 0 512 512" width="22" xmlns="http://www.w3.org/2000/svg">
+            <g>
+             <g>
+              <path d="m512 256c0 127.78-93.62 233.69-216 252.89v-178.89h59.65l11.35-74h-71v-48.02c0-20.25 9.92-39.98 41.72-39.98h32.28v-63s-29.3-5-57.31-5c-58.47 0-96.69 35.44-96.69 99.6v56.4h-65v74h65v178.89c-122.38-19.2-216-125.11-216-252.89 0-141.38 114.62-256 256-256s256 114.62 256 256z" data-original="#1877f2" fill="#1877f2">
+              </path>
+              <path d="m355.65 330 11.35-74h-71v-48.021c0-20.245 9.918-39.979 41.719-39.979h32.281v-63s-29.296-5-57.305-5c-58.476 0-96.695 35.44-96.695 99.6v56.4h-65v74h65v178.889c13.034 2.045 26.392 3.111 40 3.111s26.966-1.066 40-3.111v-178.889z" data-original="#ffffff" fill="#ffffff">
+              </path>
+             </g>
+            </g>
+           </svg>
+           <span class="tooltip-hover">
+            Facebook
+           </span>
+          </a>
+          <a aria-label="messenger" class="tooltip-cs share-messenger" href="https://m.me/108520260558644" rel="noreferrer" target="_blank">
+           <svg height="22" viewbox="0 0 28 28" width="22" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" fill-rule="evenodd">
+             <g>
+              <g>
+               <g>
+                <g>
+                 <g>
+                  <g transform="translate(-293.000000, -708.000000) translate(180.000000, 144.000000) translate(16.000000, 16.000000) translate(0.000000, 548.000000) translate(61.000000, 0.000000) translate(36.000000, 0.000000)">
+                   <circle cx="14" cy="14" fill="#0084FF" r="14">
+                   </circle>
+                   <path d="M14.848 15.928l-1.771-1.9-3.457 1.9 3.802-4.061 1.815 1.9 3.414-1.9-3.803 4.061zM14.157 7.2c-3.842 0-6.957 2.902-6.957 6.481 0 2.04 1.012 3.86 2.593 5.048V21.2l2.368-1.308c.632.176 1.302.271 1.996.271 3.842 0 6.957-2.902 6.957-6.482S17.999 7.2 14.157 7.2z" fill="#FFF">
+                   </path>
+                  </g>
+                 </g>
+                </g>
+               </g>
+              </g>
+             </g>
+            </g>
+           </svg>
+           <span class="tooltip-hover">
+            Messenger
+           </span>
+          </a>
+          <a aria-label="twitter" class="tooltip-cs share-twitter" href="https://twitter.com/intent/tweet?text=optional%20promo%20text%20https://epic-travels.myharavan.com/products/tay-au-phap-duc-thuy-si-y-nui-tuyet-titlis-trai-nghiem-tau-cao-toc-tgv" target="_blank">
+           <svg height="22" viewbox="0 0 291.319 291.319" width="22" xmlns="http://www.w3.org/2000/svg">
+            <g>
+             <g>
+              <path class="hovered-path" d="M145.659,0c80.45,0,145.66,65.219,145.66,145.66c0,80.45-65.21,145.659-145.66,145.659 S0,226.109,0,145.66C0,65.219,65.21,0,145.659,0z" data-original="#26a6d1" fill="#26a6d1" style="">
+              </path>
+              <path d="M236.724,98.129c-6.363,2.749-13.21,4.597-20.392,5.435c7.338-4.27,12.964-11.016,15.613-19.072 c-6.864,3.96-14.457,6.828-22.55,8.366c-6.473-6.691-15.695-10.87-25.909-10.87c-19.591,0-35.486,15.413-35.486,34.439 c0,2.704,0.31,5.335,0.919,7.857c-29.496-1.438-55.66-15.158-73.157-35.996c-3.059,5.089-4.807,10.997-4.807,17.315 c0,11.944,6.263,22.504,15.786,28.668c-5.826-0.182-11.289-1.721-16.086-4.315v0.437c0,16.696,12.235,30.616,28.476,33.784 c-2.977,0.783-6.109,1.211-9.35,1.211c-2.285,0-4.506-0.209-6.673-0.619c4.515,13.692,17.625,23.651,33.165,23.925	c-12.153,9.249-27.457,14.748-44.089,14.748c-2.868,0-5.69-0.164-8.476-0.482c15.722,9.777,34.367,15.485,54.422,15.485 c65.292,0,100.997-52.51,100.997-98.029l-0.1-4.461C225.945,111.111,231.963,105.048,236.724,98.129z" data-original="#ffffff" fill="#ffffff" style="">
+              </path>
+             </g>
+            </g>
+           </svg>
+           <span class="tooltip-hover">
+            Twitter
+           </span>
+          </a>
+          <a aria-label="pinterest" class="tooltip-cs share-pinterest" href="//pinterest.com/pin/create/link/?url=https://epic-travels.myharavan.com&amp;media=https://product.hstatic.net/200000871401/product/1_5f31a97ddb2344569dfaf80b3a15feca.jpg&amp;description=Tây Âu: Pháp - Đức - Thụy Sĩ - Ý: Núi tuyết Titlis, trải nghiệm tàu cao tốc TGV" target="_blank">
+           <svg height="22" viewbox="0 0 112.198 112.198" width="22" xmlns="http://www.w3.org/2000/svg">
+            <g>
+             <g>
+              <circle cx="56.099" cy="56.1" data-original="#cb2027" fill="#cb2027" r="56.098">
+              </circle>
+              <g>
+               <path class="" d="M60.627,75.122c-4.241-0.328-6.023-2.431-9.349-4.45c-1.828,9.591-4.062,18.785-10.679,23.588 c-2.045-14.496,2.998-25.384,5.34-36.941c-3.992-6.72,0.48-20.246,8.9-16.913c10.363,4.098-8.972,24.987,4.008,27.596 c13.551,2.724,19.083-23.513,10.679-32.047c-12.142-12.321-35.343-0.28-32.49,17.358c0.695,4.312,5.151,5.621,1.78,11.571 c-7.771-1.721-10.089-7.85-9.791-16.021c0.481-13.375,12.018-22.74,23.59-24.036c14.635-1.638,28.371,5.374,30.267,19.14 C85.015,59.504,76.275,76.33,60.627,75.122L60.627,75.122z" data-original="#f1f2f2" fill="#f1f2f2" style="">
+               </path>
+              </g>
+             </g>
+            </g>
+           </svg>
+           <span class="tooltip-hover">
+            Pinterest
+           </span>
+          </a>
+          <a class="tooltip-cs share-link-js" data-url="https://epic-travels.myharavan.com/products/tay-au-phap-duc-thuy-si-y-nui-tuyet-titlis-trai-nghiem-tau-cao-toc-tgv" name="copy-link">
+           <svg height="22" viewbox="0 0 496.158 496.158" width="22" xmlns="http://www.w3.org/2000/svg">
+            <g>
+             <path class="" d="M0,248.085C0,111.064,111.07,0.003,248.076,0.003c137.012,0,248.082,111.061,248.082,248.082 c0,137.002-111.07,248.07-248.082,248.07C111.07,496.155,0,385.087,0,248.085z" data-original="#25b7d3" fill="#25b7d3" style="">
+             </path>
+             <g>
+              <path class="" d="M394.463,151.309l-49.615-49.614c-10.727-10.728-28.119-10.726-38.844,0l-76.631,76.63 c-10.726,10.728-10.727,28.119-0.001,38.847l49.615,49.614c10.727,10.727,28.119,10.726,38.845-0.002l76.631-76.63 C405.188,179.429,405.189,162.036,394.463,151.309z M312.59,235.423c-6.289,6.288-16.484,6.289-22.772,0.001l-29.084-29.084 c-6.288-6.288-6.287-16.483,0.001-22.772l50.511-50.511c6.287-6.287,16.482-6.288,22.771,0l29.084,29.085	c6.288,6.287,6.287,16.482,0,22.77L312.59,235.423z" data-original="#ffffff" fill="#ffffff" style="">
+              </path>
+              <path class="" d="M266.786,278.986l-49.614-49.614c-10.727-10.727-28.119-10.726-38.845,0l-76.631,76.632 c-10.726,10.726-10.727,28.118,0,38.844l49.615,49.615c10.726,10.727,28.119,10.725,38.844,0l76.632-76.633 C277.511,307.105,277.513,289.713,266.786,278.986z M184.912,363.1c-6.288,6.288-16.482,6.29-22.771,0.001l-29.084-29.084 c-6.289-6.288-6.288-16.483,0-22.771l50.512-50.512c6.287-6.287,16.482-6.288,22.771,0l29.084,29.084 c6.288,6.289,6.287,16.484,0,22.771L184.912,363.1z" data-original="#ffffff" fill="#ffffff" style="">
+              </path>
+             </g>
+             <path d="M306.907,191.673l-2.42-2.421c-7.742-7.743-20.34-7.743-28.083,0l-87.151,87.151 c-7.742,7.742-7.742,20.34,0,28.082l2.42,2.421c7.742,7.741,20.34,7.741,28.083,0l87.151-87.152 C314.649,212.013,314.649,199.414,306.907,191.673z" data-original="#48a1af" fill="#48a1af" style="">
+             </path>
+             <path class="" d="M215.398,302.548c-5.348,5.348-14.02,5.349-19.368,0.001l-2.421-2.421 c-5.348-5.348-5.348-14.02,0-19.367l87.152-87.152c5.348-5.349,14.019-5.348,19.368,0.002l2.42,2.42 c5.347,5.348,5.349,14.019,0,19.366L215.398,302.548z" data-original="#ffffff" fill="#ffffff" style="">
+             </path>
+             <g>
+             </g>
+            </g>
+           </svg>
+           <span class="tooltip-hover">
+            Sao chép url
+           </span>
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="productDetail--gallery">
+       <div class="product-container-gallery">
+        <div class="wrapbox-gallery">
+         <div class="wrapbox-image">
+          <div class="productGallery_slider">
+           <div class="productList-slider productCarousel-slider" id="productCarousel-slider">
+            <div class="product-gallery boxlazy-img gallery-item" data-image="//product.hstatic.net/200000871401/product/1_5f31a97ddb2344569dfaf80b3a15feca_master.jpg">
+             <div class="boxlazy-img__insert lazy-img__prod">
+              <span class="boxlazy-img__aspect">
+               <a class="product-gallery__item" data-fancybox="gallery" href="//product.hstatic.net/200000871401/product/1_5f31a97ddb2344569dfaf80b3a15feca_master.jpg">
+                <img alt=" Tây Âu: Pháp - Đức - Thụy Sĩ - Ý: Núi tuyết Titlis, trải nghiệm tàu cao tốc TGV " src="//product.hstatic.net/200000871401/product/1_5f31a97ddb2344569dfaf80b3a15feca_master.jpg"/>
+               </a>
+              </span>
+             </div>
+            </div>
+            <div class="product-gallery boxlazy-img gallery-item" data-image="//product.hstatic.net/200000871401/product/2_6206588d4ece4029a2ad34d49321ed0c_master.jpg">
+             <div class="boxlazy-img__insert lazy-img__prod">
+              <span class="boxlazy-img__aspect">
+               <a class="product-gallery__item" data-fancybox="gallery" href="//product.hstatic.net/200000871401/product/2_6206588d4ece4029a2ad34d49321ed0c_master.jpg">
+                <img alt=" Tây Âu: Pháp - Đức - Thụy Sĩ - Ý: Núi tuyết Titlis, trải nghiệm tàu cao tốc TGV " src="//product.hstatic.net/200000871401/product/2_6206588d4ece4029a2ad34d49321ed0c_master.jpg"/>
+               </a>
+              </span>
+             </div>
+            </div>
+            <div class="product-gallery boxlazy-img gallery-item" data-image="//product.hstatic.net/200000871401/product/3_e7430a00a65b4cd8945ef931f0a2b860_master.jpg">
+             <div class="boxlazy-img__insert lazy-img__prod">
+              <span class="boxlazy-img__aspect">
+               <a class="product-gallery__item" data-fancybox="gallery" href="//product.hstatic.net/200000871401/product/3_e7430a00a65b4cd8945ef931f0a2b860_master.jpg">
+                <img alt=" Tây Âu: Pháp - Đức - Thụy Sĩ - Ý: Núi tuyết Titlis, trải nghiệm tàu cao tốc TGV " src="//product.hstatic.net/200000871401/product/3_e7430a00a65b4cd8945ef931f0a2b860_master.jpg"/>
+               </a>
+              </span>
+             </div>
+            </div>
+            <div class="product-gallery boxlazy-img gallery-item" data-image="//product.hstatic.net/200000871401/product/4_93d9b295109742a0bb3278d1e59a71a3_master.jpg">
+             <div class="boxlazy-img__insert lazy-img__prod">
+              <span class="boxlazy-img__aspect">
+               <a class="product-gallery__item" data-fancybox="gallery" href="//product.hstatic.net/200000871401/product/4_93d9b295109742a0bb3278d1e59a71a3_master.jpg">
+                <img alt=" Tây Âu: Pháp - Đức - Thụy Sĩ - Ý: Núi tuyết Titlis, trải nghiệm tàu cao tốc TGV " src="//product.hstatic.net/200000871401/product/4_93d9b295109742a0bb3278d1e59a71a3_master.jpg"/>
+               </a>
+              </span>
+             </div>
+            </div>
+            <div class="product-gallery boxlazy-img gallery-item" data-image="//product.hstatic.net/200000871401/product/5_8378e34d7f9c456eb978edbd213ad5bd_master.jpg">
+             <div class="boxlazy-img__insert lazy-img__prod">
+              <span class="boxlazy-img__aspect">
+               <a class="product-gallery__item" data-fancybox="gallery" href="//product.hstatic.net/200000871401/product/5_8378e34d7f9c456eb978edbd213ad5bd_master.jpg">
+                <img alt=" Tây Âu: Pháp - Đức - Thụy Sĩ - Ý: Núi tuyết Titlis, trải nghiệm tàu cao tốc TGV " src="//product.hstatic.net/200000871401/product/5_8378e34d7f9c456eb978edbd213ad5bd_master.jpg"/>
+               </a>
+              </span>
+             </div>
+            </div>
+            <div class="product-gallery boxlazy-img gallery-item" data-image="//product.hstatic.net/200000871401/product/6_ba5a15d4d32f4ba1bc0b84ecf8a8ad09_master.jpg">
+             <div class="boxlazy-img__insert lazy-img__prod">
+              <span class="boxlazy-img__aspect">
+               <a class="product-gallery__item" data-fancybox="gallery" href="//product.hstatic.net/200000871401/product/6_ba5a15d4d32f4ba1bc0b84ecf8a8ad09_master.jpg">
+                <img alt=" Tây Âu: Pháp - Đức - Thụy Sĩ - Ý: Núi tuyết Titlis, trải nghiệm tàu cao tốc TGV " src="//product.hstatic.net/200000871401/product/6_ba5a15d4d32f4ba1bc0b84ecf8a8ad09_master.jpg"/>
+               </a>
+              </span>
+             </div>
+            </div>
+           </div>
+           <div class="icon-gallery">
+            <svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+             <path d="M19.125 4.125H4.875C4.46079 4.125 4.125 4.46079 4.125 4.875V19.125C4.125 19.5392 4.46079 19.875 4.875 19.875H19.125C19.5392 19.875 19.875 19.5392 19.875 19.125V4.875C19.875 4.46079 19.5392 4.125 19.125 4.125Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+             </path>
+             <path d="M12 4.125V19.875" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+             </path>
+             <path d="M19.875 12H4.125" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+             </path>
+            </svg>
+            <span>
+             Gallery
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="productDetail--content">
+       <div class="wrapbox-inner">
+        <div class="d-flex flex-wrap">
+         <div class="col-lg-8 col-md-12 col-12 p-0 wrapbox-left">
+          <div class="wrapbox-detail">
+           <div class="content-desc">
+            <div class="productDetail--box box-detail-description mg-top">
+             <div class="product-description">
+              <div class="box-title">
+               <h2>
+                Mô tả tour
+               </h2>
+              </div>
+              <div class="description-content expandable-toggle opened">
+               <div class="description-productdetail unreset">
+                <h3 id="day-00">
+                 Ngày 1 - TP. HỒ CHÍ MINH - PARIS
+                </h3>
+                <p>
+                 Trưởng đoàn đón Quý khách tại điểm hẹn sân bay Tân Sơn Nhất. Đoàn làm thủ tục lên chuyến bay tới
+                 <strong>
+                  “Kinh đô ánh sáng” Paris
+                 </strong>
+                 – thủ đô nước Pháp. (Chuyến bay quá cảnh tùy theo hàng không).
+                </p>
+                <h3 id="day-01">
+                 Ngày 2 - PARIS (Ăn tối)
+                </h3>
+                <p>
+                 Đến nơi, Trưởng đoàn hỗ trợ Quý khách làm thủ tục nhập cảnh. Xe đón đoàn đến
+                 <strong>
+                  Tháp Montparnasse -
+                 </strong>
+                 ngắm nhìn toàn cảnh Paris từ tầng 56 của toà nhà và thưởng thức nghệ thuật quy hoạch đô thị đầy ấn tượng. Đoàn chụp hình lưu niệm tại những điểm đến nổi tiếng của thành phố như:
+                 <strong>
+                  Bảo tàng Louvre, Cổng Khải Hoàn Môn, Đại lộ Champs Élysées
+                 </strong>
+                 . Ăn tối và nhận phòng khách sạn nghỉ ngơi.
+                </p>
+                <p>
+                 Khoảng cách cung đường tham khảo:
+                 <br/>
+                 <em>
+                  Sân bay Paris – trung tâm Paris (~ 39 km)
+                 </em>
+                 <br/>
+                </p>
+                <h3 id="day-02">
+                 Ngày 3 - PARIS (Ăn ba bữa)
+                </h3>
+                <p>
+                 Ăn sáng tại khách sạn. Đoàn tiếp tục hành trình khám phá thành phố, tham quan
+                 <strong>
+                  Nhà hát Opera Garnier
+                 </strong>
+                 – từng là Cung điện Garnier, được cải tạo thành Nhà hát với gần 2000 chỗ ngồi, là nơi trình diễn những vở ballet và cũng là bối cảnh cho tiểu thuyết nổi tiếng Bóng ma Nhà hát;
+                 <strong>
+                  Bảo tàng nước hoa Fragonard
+                 </strong>
+                 – được xây dựng trên nền của một nhà hát cổ, sau đó được nâng cấp trong suốt 2 năm để trở thành nơi trình diễn lịch sử độc đáo cũng như quy trình, kỹ thuật chế tạo các loại nước hoa.
+                </p>
+                <p>
+                 Buổi trưa, Quý khách trải nghiệm ẩm thực tại
+                 <strong>
+                  Nhà hàng Madame Brasserie
+                 </strong>
+                 toạ lạc trên
+                 <strong>
+                  tháp Eiffel
+                 </strong>
+                 và chiêm ngưỡng quang cảnh trung tâm Paris với những biểu tượng đặc trưng từ trên cao. Buổi chiều, đoàn trải nghiệm
+                 <strong>
+                  du thuyền dọc dòng sông Seine
+                 </strong>
+                 thơ mộng, thưởng thức vẻ đẹp của thành phố trong ánh hoàng hôn. Ăn tối và về khách sạn nghỉ ngơi.
+                </p>
+                <h3 id="day-03">
+                 Ngày 4 - PARIS - STRASBOURG – TITISEE - ZURICH (Ăn ba bữa)
+                </h3>
+                <p>
+                 Ăn sáng và trả phòng khách sạn. Đoàn khởi hành tới thành phố Strasbourg - thành phố của lễ hội Giáng sinh nằm ở biên giới của Pháp - Đức bằng tàu cao tốc TGV. Tới Strasbourg, xe đón đoàn đi Titisee – thị trấn nằm phía Tây Nam của Đức giữa lòng Rừng Đen - Black Forest, một địa danh nổi tiếng với những
+                 <strong>
+                  cửa hàng đồng hồ Cuckoo
+                 </strong>
+                 . Buổi chiều, Quý khách tới Schaffhausen – một thành phố thuộc Thụy Sỹ, giáp với biên giới nước Đức để chiêm ngưỡng vẻ đẹp hùng vĩ của
+                 <strong>
+                  thác nước Rhine Falls
+                 </strong>
+                 – thác nuớc lớn nhất của Châu Âu. Sau đó đoàn tiếp tục tới thành phố Zurich chụp hình bên ngoài nhà
+                 <strong>
+                  thờ Fraumünster và khu phố cổ
+                 </strong>
+                 . Ăn tối và nhận phòng khách sạn.
+                </p>
+                <h3 id="day-04">
+                 Ngày 5 - ZURICH – NÚI TITLIS - LUCERNE (Ăn ba bữa)
+                </h3>
+                <p>
+                 Ăn sáng và trả phòng khách sạn. Buổi sáng, đoàn tham quan
+                 <strong>
+                  núi Titlis
+                 </strong>
+                 bằng xe cáp treo để chiêm ngưỡng vẻ đẹp hùng vĩ được tuyết bao phủ của dãy núi Alps. Buổi chiều, đoàn về thành phố Lucerne tham quan chụp hình:
+                 <strong>
+                  tượng đài Lion Monument
+                 </strong>
+                 - tác phẩm điêu khắc tưởng nhớ hơn 800 người lính Thụy Sĩ đã xả thân để bảo vệ vua nước Pháp Louis XVI trong cuộc Cách mạng 1789. Tham quan
+                 <strong>
+                  cầu Chapel
+                 </strong>
+                 , từ đây Quý khách có thể nhìn thấy nhà thờ Jesuit. Quý khách tự do mua sắm quà lưu niệm tại trung tâm đồng hồ
+                 <strong>
+                  Bucherer
+                 </strong>
+                 . Ăn tối và nhận phòng khách sạn.
+                </p>
+                <h3 id="day-05">
+                 Ngày 6 - LUCERNE - MILAN - VENICE (Ăn ba bữa)
+                </h3>
+                <p>
+                 Ăn sáng và trả phòng khách sạn. Đoàn khởi hành đến thành phố Milan- Kinh đô thời trang của thế giới. Đoàn chụp hình bên ngoài
+                 <strong>
+                  Lâu đài Sforza, nhà thờ Duomo, nhà hát La Scala, Galleria Vittorio Emanuele
+                 </strong>
+                 . Buổi chiều, xe đưa đoàn đến Venice, ăn tối và nhận phòng khách sạn.
+                </p>
+                <h3 id="day-06">
+                 Ngày 7 - VENICE - PISA/ LUCCA (Ăn ba bữa)
+                </h3>
+                <p>
+                 Ăn sáng và trả phòng khách sạn. Đoàn khởi hành tham quan đảo Venice - thành phố nổi trên biển:
+                 <strong>
+                  quảng trường và nhà thờ thánh Marco, xưởng thủy tinh Murano,
+                 </strong>
+                 chụp hình bên ngoài
+                 <strong>
+                  Dinh tổng trấn
+                 </strong>
+                 . Quý khách có cơ hội trải nghiệm
+                 <strong>
+                  đi thuyền độc mộc
+                 </strong>
+                 - phương tiện vận chuyển đặc trưng của đảo Venice (chi phí tự túc). Buổi chiều đoàn khởi hành tới thành phố Pisa hoặc Lucca, ăn tối và nhận phòng khách sạn nghỉ ngơi.
+                </p>
+                <h3 id="day-07">
+                 Ngày 8 - LUCCA/PISA - ROME (Ăn ba bữa)
+                </h3>
+                <p>
+                 Ăn sáng và trả phòng khách sạn. Đoàn khởi hành tham quan chụp hình bên ngoài quần thể
+                 <strong>
+                  Tòa thánh Pisa, quảng trường và tháp nghiêng Pisa
+                 </strong>
+                 – được UNESCO công nhận là di sản thế giới. Xe đưa Quý khách đi dùng bữa trưa với ẩm thực địa phương
+                 <strong>
+                  Florentine Steak
+                 </strong>
+                 . Tự do mua sắm với các nhãn hàng nổi tiếng của Ý tại
+                 <strong>
+                  The Mall Luxury Outlets
+                 </strong>
+                 . Xe đưa đoàn đến Rome – thủ đô cổ kính của nước Ý. Ăn tối và nhận phòng khách sạn nghỉ ngơi.
+                </p>
+                <p>
+                 <em>
+                  Khoảng cách cung đường tham khảo:
+                  <br/>
+                  Pisa – The Mall Luxury Outlet (~ 131 km)
+                  <br/>
+                  Outlet – Rome (~ 252 km)
+                 </em>
+                 <br/>
+                </p>
+                <h3 id="day-08">
+                 Ngày 9 - ROME (Ăn ba bữa)
+                </h3>
+                <p>
+                 Ăn sáng tại khách sạn. Buổi sáng, đoàn tham quan
+                 <strong>
+                  Bảo Tàng Vatican
+                 </strong>
+                 là một trong những bảo tàng lớn nhất trên thế giới. Nơi đây trưng bày nhiều tác phẩm nghệ thuật quý giá từ các bộ sưu tập lớn được Giáo hội Công giáo La Mã tạo dựng trong suốt nhiều thế kỷ. Trong khu vực bảo tàng, nổi tiếng nhất là công trình
+                 <strong>
+                  Nguyện Đường Sistine
+                 </strong>
+                 đây cũng là nơi các Hồng Y họp bầu Giáo Hoàng mới và là địa điểm diễn ra những cuộc họp thượng đỉnh giữa Ðức Giáo Hoàng với các vị nguyên thủ quốc gia. Quý khách tham quan Vatican với
+                 <strong>
+                  Vương Cung Thánh Đường Thánh Peter
+                 </strong>
+                 - là nơi thiêng liêng nhất ở Vatican, điểm thu hút tín đồ và du khách từ khắp thế giới. Tọa lạc trên nơi an táng Thánh Peter, thánh đường to lớn và nguy nga nhất thế giới này có mái vòm cao 136m do chính Michelangelo thiết kế, chứa hàng trăm tác phẩm nghệ thuật vô giá. Buổi chiều, đoàn tham quan chụp hình bên ngoài
+                 <strong>
+                  Đấu trường La Mã Colosseum
+                 </strong>
+                 nơi được sử dụng cho các võ sĩ giác đấu và nô lệ để thi đấu và trình diễn cho công chúng thời La Mã cổ đại và đây cũng được xem là một trong những biểu tượng kiến trúc La Mã đẹp nhất còn sót lại. Quý khách mua sắm tại
+                 <strong>
+                  Castel Romano Designer Outlet
+                 </strong>
+                 – một trong những khu phức hợp mua sắm thuộc tập đoàn Mc Arthurglen với vô số các nhãn hiệu nổi tiếng thế giới ( nếu thời gian cho phép) .Đoàn ăn tối và về khách sạn nghỉ ngơi.
+                </p>
+                <h3 id="day-09">
+                 Ngày 10 - ROME - TP. HỒ CHÍ MINH (Ăn sáng, ăn trưa)
+                </h3>
+                <p>
+                 Ăn sáng và trả phòng khách sạn. Quý khách khởi hành tham quan
+                 <strong>
+                  quảng trường Navona
+                 </strong>
+                 , tham quan chụp hình bên ngoài
+                 <strong>
+                  đền Pantheon
+                 </strong>
+                 – “ngôi đền của các vị thần” được xây dựng vào những năm 118-126 dưới triều vua Hadrianus La Mã. Sau đó, đoàn ghé thăm
+                 <strong>
+                  Đài phun nước Trevi
+                 </strong>
+                 . Đây là công trình kiến trúc theo phong cách Baroque và là một trong những đài phun nước nổi tiếng nhất thế giới, từng được xuất hiện trong những bộ phim kinh điển như La Dolce Vita, Three Coins in the Fountain và Eat Pray Love. Buổi chiều, đoàn tự do tham quan mua sắm quà lưu niệm cho đến giờ hẹn ra sân bay trở về Việt Nam. (Chuyến bay quá cảnh tùy hàng không).
+                </p>
+                <h3 id="day-010">
+                 Ngày 11 - TP.HỒ CHÍ MINH
+                </h3>
+                <p>
+                 Tại sân bay Tân Sơn Nhất, Trưởng đoàn chào tạm biệt Quý khách, kết thúc chuyến tham quan.
+                </p>
+                <p>
+                 <em>
+                  <strong>
+                   *** Chương trình có thể điều chỉnh thay đổi tùy theo tình hình dịch vụ cụ thể ***
+                  </strong>
+                 </em>
+                </p>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-lg-4 col-md-12 col-12 wrapbox-right" id="form-booking-pro">
+          <div class="wrapbox-detail">
+           <div class="product-price" id="price-preview">
+            <span class="pro-title">
+             Giá từ:
+            </span>
+            <div class="pro-price">
+             <div class="percent-price">
+              <span class="price">
+               117,990,000₫
+               <span class="person">
+                /người
+               </span>
+              </span>
+             </div>
+            </div>
+           </div>
+           <div class="product-hrvpmo hrvpmo-minimum">
+            <div class="hrv-pmo-coupon" data-hrvpmo-layout="minimum">
+            </div>
+            <div class="hrv-pmo-discount" data-hrvpmo-layout="minimum">
+            </div>
+           </div>
+           <div class="product-variants hidden" style="display:none">
+            <form action="/cart/add" class="variants clearfix" id="add-item-form" method="post">
+             <div class="select clearfix" style="display:none">
+              <select id="product-select" name="id" style="display:none;">
+               <option value="1122824492">
+                Default Title - 117,990,000₫
+               </option>
+              </select>
+             </div>
+             <div class="select-swatch clearfix">
+             </div>
+            </form>
+           </div>
+           <div class="form-booking">
+            <form action="https://docs.google.com/forms/u/2/d/e/1FAIpQLSetfSQ_VIVFA3ZReTlhBT4uLPAt7atrZL-DcCYpU25tlgSqWg/formResponse" data-shop="Epic Travels" id="formbooking">
+             <div class="contact-form">
+              <div class="row">
+               <div class="col-sm-12 col-xs-12">
+                <div class="input-group">
+                 <input aria-describedby="basic-addon1" class="form-control" data-valid="full_name" id="full_name" name="entry.1412489703" placeholder="Họ và tên" required="" type="text"/>
+                </div>
+                <p class="full_name-validation field-error">
+                </p>
+               </div>
+               <div class="col-sm-12 col-xs-12">
+                <div class="input-group">
+                 <input aria-describedby="basic-addon1" class="form-control" data-valid="your_phone" id="your_phone" name="entry.40035874" pattern="[0-9]{10,12}" placeholder="Số điện thoại" required="" type="text"/>
+                </div>
+                <p class="your_phone-validation field-error">
+                </p>
+               </div>
+               <div class="col-sm-12 col-xs-12">
+                <div class="input-group">
+                 <input aria-describedby="basic-addon1" class="form-control" data-valid="your_email" id="your_email" name="entry.1786973664" placeholder="Email" required="" type="text"/>
+                </div>
+                <p class="your_email-validation field-error">
+                </p>
+               </div>
+               <div class="col-sm-12 col-xs-12">
+                <div class="input-group">
+                 <label for="your_date">
+                  Ngày khởi hành
+                 </label>
+                 <input aria-describedby="basic-addon1" class="form-control" data-valid="your_date" id="your_date" name="" placeholder="Ngày khởi hành" required="" type="date"/>
+                </div>
+               </div>
+               <div class="col-sm-12 col-xs-12">
+                <div class="pro-qty">
+                 <label>
+                  Số khách:
+                 </label>
+                 <input class="quantity-input" id="quantity" max="999" min="1" name="entry.1758096698" type="number" value="1"/>
+                </div>
+                <p class="quantity-validation field-error">
+                </p>
+               </div>
+               <input id="link_pro" name="entry.609479242" type="hidden" value="https://epic-travels.myharavan.com/products/tay-au-phap-duc-thuy-si-y-nui-tuyet-titlis-trai-nghiem-tau-cao-toc-tgv"/>
+               <div class="col-sm-12 col-xs-12">
+                <div class="pro-total">
+                 <label>
+                  Tổng cộng:
+                 </label>
+                 <div class="pro-num-total" data-price="11799000000">
+                  117,990,000₫
+                 </div>
+                </div>
+               </div>
+               <div class="col-sm-12 col-xs-12">
+                <div class="addcart-area">
+                 <button class="add-to-cartProduct button dark btn-addtocart addtocart-modal" id="add-to-cart" name="add" type="button">
+                  ĐẶT TOUR NGAY
+                 </button>
+                </div>
+               </div>
+              </div>
+             </div>
+            </form>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- related -->
+   <section class="productDetail-related">
+    <div class="container">
+     <div class="productRelated-title">
+      <h2>
+       Tham khảo tour liên quan
+      </h2>
+     </div>
+     <div class="productRelated-content">
+      <div class="listProduct-related listProduct-row owlCarousel-dfex owl-carousel owlCarousel-style" id="owlProduct-related">
+       <div class="product-loop-mobile">
+        <div class="product-loop" data-id="1122826254">
+         <div class="product-inner" data-proid="1054499219" id="listProdRelated_loop_1">
+          <div class="proloop-image">
+           <div class="pro-sale">
+            <span>
+             -8% Off
+            </span>
+           </div>
+           <div class="product--image">
+            <div class="lazy-img">
+             <picture>
+              <source data-srcset="//product.hstatic.net/200000871401/product/4_2c36da8bb9c8457e90711549ac9092e3_large.jpg" media="(max-width: 480px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <source data-srcset="//product.hstatic.net/200000871401/product/4_2c36da8bb9c8457e90711549ac9092e3_large.jpg" media="(min-width: 481px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <img alt=" Thái Lan: Bangkok - Pattaya (Thành cổ Muang Boran, chợ nổi Bốn Miền, tặng Show Cá heo " class="lazyload img-loop" data-src="//product.hstatic.net/200000871401/product/4_2c36da8bb9c8457e90711549ac9092e3_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+             </picture>
+            </div>
+           </div>
+          </div>
+          <div class="proloop-detail">
+           <p class="proloop--vendor">
+            <svg class="badge-icon" fill="none" height="12" viewbox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg">
+             <path d="M5.99994 6.71503C6.86151 6.71503 7.55994 6.0166 7.55994 5.15503C7.55994 4.29347 6.86151 3.59503 5.99994 3.59503C5.13838 3.59503 4.43994 4.29347 4.43994 5.15503C4.43994 6.0166 5.13838 6.71503 5.99994 6.71503Z" stroke="currentColor" stroke-opacity="0.99">
+             </path>
+             <path d="M1.8101 4.24506C2.7951 -0.0849378 9.2101 -0.0799377 10.1901 4.25006C10.7651 6.79006 9.1851 8.94006 7.8001 10.2701C6.7951 11.2401 5.2051 11.2401 4.1951 10.2701C2.8151 8.94006 1.2351 6.78506 1.8101 4.24506Z" stroke="currentColor" stroke-opacity="0.99">
+             </path>
+            </svg>
+            <a href="/collections/vendors?q=thailand" title="Show vendor">
+             Thailand
+            </a>
+           </p>
+           <h3 class="proloop--title">
+            <a href="/products/thai-lan-bangkok-pattaya-thanh-co-muang-boran-cho-noi-bon-mien-tang-show-ca-heo">
+             Thái Lan: Bangkok - Pattaya (Thành cổ Muang Boran, chợ nổi Bốn Miền, tặng Show Cá heo
+            </a>
+           </h3>
+           <div class="list-info">
+            <div class="price-loop">
+             <span class="info-title">
+              Giá từ
+             </span>
+             <p class="proloop--price on-sale">
+              <span class="price">
+               10,900,000₫
+              </span>
+              <span class="person">
+               /người
+              </span>
+              <span class="price-del">
+               11,900,000₫
+               <span class="person">
+                /người
+               </span>
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="product-loop-mobile">
+        <div class="product-loop" data-id="1122825106">
+         <div class="product-inner" data-proid="1054498747" id="listProdRelated_loop_2">
+          <div class="proloop-image">
+           <div class="pro-featured">
+            <span>
+             Nổi bật
+            </span>
+           </div>
+           <div class="product--image">
+            <div class="lazy-img">
+             <picture>
+              <source data-srcset="//product.hstatic.net/200000871401/product/2_6013ace9212a41dfa6ce1e1a41987475_large.jpg" media="(max-width: 480px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <source data-srcset="//product.hstatic.net/200000871401/product/2_6013ace9212a41dfa6ce1e1a41987475_large.jpg" media="(min-width: 481px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <img alt=" Bắc Âu: Na Uy - Thụy Điển - Đan Mạch (Chiêm ngưỡng thiên nhiên hùng vĩ của vùng Bắc Âu) " class="lazyload img-loop" data-src="//product.hstatic.net/200000871401/product/2_6013ace9212a41dfa6ce1e1a41987475_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+             </picture>
+            </div>
+           </div>
+          </div>
+          <div class="proloop-detail">
+           <p class="proloop--vendor">
+            <svg class="badge-icon" fill="none" height="12" viewbox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg">
+             <path d="M5.99994 6.71503C6.86151 6.71503 7.55994 6.0166 7.55994 5.15503C7.55994 4.29347 6.86151 3.59503 5.99994 3.59503C5.13838 3.59503 4.43994 4.29347 4.43994 5.15503C4.43994 6.0166 5.13838 6.71503 5.99994 6.71503Z" stroke="currentColor" stroke-opacity="0.99">
+             </path>
+             <path d="M1.8101 4.24506C2.7951 -0.0849378 9.2101 -0.0799377 10.1901 4.25006C10.7651 6.79006 9.1851 8.94006 7.8001 10.2701C6.7951 11.2401 5.2051 11.2401 4.1951 10.2701C2.8151 8.94006 1.2351 6.78506 1.8101 4.24506Z" stroke="currentColor" stroke-opacity="0.99">
+             </path>
+            </svg>
+            <a href="/collections/vendors?q=london" title="Show vendor">
+             London
+            </a>
+           </p>
+           <h3 class="proloop--title">
+            <a href="/products/bac-au-na-uy-thuy-dien-dan-mach-chiem-nguong-thien-nhien-hung-vi-cua-vung-bac-au">
+             Bắc Âu: Na Uy - Thụy Điển - Đan Mạch (Chiêm ngưỡng thiên nhiên hùng vĩ của vùng Bắc Âu)
+            </a>
+           </h3>
+           <div class="list-info">
+            <div class="price-loop">
+             <span class="info-title">
+              Giá từ
+             </span>
+             <p class="proloop--price">
+              <span class="price">
+               99,000,000₫
+              </span>
+              <span class="person">
+               /người
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="product-loop-mobile">
+        <div class="product-loop" data-id="1122824512">
+         <div class="product-inner" data-proid="1054498512" id="listProdRelated_loop_3">
+          <div class="proloop-image">
+           <div class="pro-sale">
+            <span>
+             -12% Off
+            </span>
+           </div>
+           <div class="pro-featured">
+            <span>
+             Nổi bật
+            </span>
+           </div>
+           <div class="product--image">
+            <div class="lazy-img">
+             <picture>
+              <source data-srcset="//product.hstatic.net/200000871401/product/2_81fcbfdd830045d1818cd16853dc63fb_large.jpg" media="(max-width: 480px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <source data-srcset="//product.hstatic.net/200000871401/product/2_81fcbfdd830045d1818cd16853dc63fb_large.jpg" media="(min-width: 481px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <img alt=" Nam Âu: Pháp - Monaco - Tây Ban Nha - Bồ Đào Nha (Mùa hoa Lavender) " class="lazyload img-loop" data-src="//product.hstatic.net/200000871401/product/2_81fcbfdd830045d1818cd16853dc63fb_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+             </picture>
+            </div>
+           </div>
+          </div>
+          <div class="proloop-detail">
+           <p class="proloop--vendor">
+            <svg class="badge-icon" fill="none" height="12" viewbox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg">
+             <path d="M5.99994 6.71503C6.86151 6.71503 7.55994 6.0166 7.55994 5.15503C7.55994 4.29347 6.86151 3.59503 5.99994 3.59503C5.13838 3.59503 4.43994 4.29347 4.43994 5.15503C4.43994 6.0166 5.13838 6.71503 5.99994 6.71503Z" stroke="currentColor" stroke-opacity="0.99">
+             </path>
+             <path d="M1.8101 4.24506C2.7951 -0.0849378 9.2101 -0.0799377 10.1901 4.25006C10.7651 6.79006 9.1851 8.94006 7.8001 10.2701C6.7951 11.2401 5.2051 11.2401 4.1951 10.2701C2.8151 8.94006 1.2351 6.78506 1.8101 4.24506Z" stroke="currentColor" stroke-opacity="0.99">
+             </path>
+            </svg>
+            <a href="/collections/vendors?q=italy" title="Show vendor">
+             Italy
+            </a>
+           </p>
+           <h3 class="proloop--title">
+            <a href="/products/nam-au-phap-monaco-tay-ban-nha-bo-dao-nha-mua-hoa-lavender">
+             Nam Âu: Pháp - Monaco - Tây Ban Nha - Bồ Đào Nha (Mùa hoa Lavender)
+            </a>
+           </h3>
+           <div class="list-info">
+            <div class="price-loop">
+             <span class="info-title">
+              Giá từ
+             </span>
+             <p class="proloop--price on-sale">
+              <span class="price">
+               109,000,000₫
+              </span>
+              <span class="person">
+               /người
+              </span>
+              <span class="price-del">
+               124,000,000₫
+               <span class="person">
+                /người
+               </span>
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="product-loop-mobile">
+        <div class="product-loop" data-id="1122824219">
+         <div class="product-inner" data-proid="1054498348" id="listProdRelated_loop_4">
+          <div class="proloop-image">
+           <div class="pro-sale">
+            <span>
+             -6% Off
+            </span>
+           </div>
+           <div class="pro-featured">
+            <span>
+             Nổi bật
+            </span>
+           </div>
+           <div class="product--image">
+            <div class="lazy-img">
+             <picture>
+              <source data-srcset="//product.hstatic.net/200000871401/product/6_3dbb1fc2b9c647a896fbcc1ac366d81b_large.jpg" media="(max-width: 480px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <source data-srcset="//product.hstatic.net/200000871401/product/6_3dbb1fc2b9c647a896fbcc1ac366d81b_large.jpg" media="(min-width: 481px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <img alt=" Đà Nẵng - Phố cổ Hội An - KDL Bà Nà - Cầu Vàng - Vườn Tượng Apec - Cầu Tình yêu " class="lazyload img-loop" data-src="//product.hstatic.net/200000871401/product/6_3dbb1fc2b9c647a896fbcc1ac366d81b_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+             </picture>
+            </div>
+           </div>
+          </div>
+          <div class="proloop-detail">
+           <p class="proloop--vendor">
+            <svg class="badge-icon" fill="none" height="12" viewbox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg">
+             <path d="M5.99994 6.71503C6.86151 6.71503 7.55994 6.0166 7.55994 5.15503C7.55994 4.29347 6.86151 3.59503 5.99994 3.59503C5.13838 3.59503 4.43994 4.29347 4.43994 5.15503C4.43994 6.0166 5.13838 6.71503 5.99994 6.71503Z" stroke="currentColor" stroke-opacity="0.99">
+             </path>
+             <path d="M1.8101 4.24506C2.7951 -0.0849378 9.2101 -0.0799377 10.1901 4.25006C10.7651 6.79006 9.1851 8.94006 7.8001 10.2701C6.7951 11.2401 5.2051 11.2401 4.1951 10.2701C2.8151 8.94006 1.2351 6.78506 1.8101 4.24506Z" stroke="currentColor" stroke-opacity="0.99">
+             </path>
+            </svg>
+            <a href="/collections/vendors?q=da-nang" title="Show vendor">
+             Đà Nẵng
+            </a>
+           </p>
+           <h3 class="proloop--title">
+            <a href="/products/da-nang-pho-co-hoi-an-kdl-ba-na-cau-vang-vuon-tuong-apec-cau-tinh-yeu">
+             Đà Nẵng - Phố cổ Hội An - KDL Bà Nà - Cầu Vàng - Vườn Tượng Apec - Cầu Tình yêu
+            </a>
+           </h3>
+           <div class="list-info">
+            <div class="price-loop">
+             <span class="info-title">
+              Giá từ
+             </span>
+             <p class="proloop--price on-sale">
+              <span class="price">
+               4,690,000₫
+              </span>
+              <span class="person">
+               /người
+              </span>
+              <span class="price-del">
+               4,980,000₫
+               <span class="person">
+                /người
+               </span>
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="product-loop-mobile">
+        <div class="product-loop" data-id="1122823447">
+         <div class="product-inner" data-proid="1054497898" id="listProdRelated_loop_5">
+          <div class="proloop-image">
+           <div class="pro-sale">
+            <span>
+             -12% Off
+            </span>
+           </div>
+           <div class="pro-featured">
+            <span>
+             Nổi bật
+            </span>
+           </div>
+           <div class="product--image">
+            <div class="lazy-img">
+             <picture>
+              <source data-srcset="//product.hstatic.net/200000871401/product/4_b08c7614beec41c8a946ed580f8aeadc_large.jpg" media="(max-width: 480px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <source data-srcset="//product.hstatic.net/200000871401/product/4_b08c7614beec41c8a946ed580f8aeadc_large.jpg" media="(min-width: 481px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <img alt=" Nha Trang - Phú Yên: Khu Du Lịch Dốc Lết - Gành Đá Dĩa - Mũi Điện " class="lazyload img-loop" data-src="//product.hstatic.net/200000871401/product/4_b08c7614beec41c8a946ed580f8aeadc_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+             </picture>
+            </div>
+           </div>
+          </div>
+          <div class="proloop-detail">
+           <p class="proloop--vendor">
+            <svg class="badge-icon" fill="none" height="12" viewbox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg">
+             <path d="M5.99994 6.71503C6.86151 6.71503 7.55994 6.0166 7.55994 5.15503C7.55994 4.29347 6.86151 3.59503 5.99994 3.59503C5.13838 3.59503 4.43994 4.29347 4.43994 5.15503C4.43994 6.0166 5.13838 6.71503 5.99994 6.71503Z" stroke="currentColor" stroke-opacity="0.99">
+             </path>
+             <path d="M1.8101 4.24506C2.7951 -0.0849378 9.2101 -0.0799377 10.1901 4.25006C10.7651 6.79006 9.1851 8.94006 7.8001 10.2701C6.7951 11.2401 5.2051 11.2401 4.1951 10.2701C2.8151 8.94006 1.2351 6.78506 1.8101 4.24506Z" stroke="currentColor" stroke-opacity="0.99">
+             </path>
+            </svg>
+            <a href="/collections/vendors?q=ho-chi-minh" title="Show vendor">
+             Hồ Chí Minh
+            </a>
+           </p>
+           <h3 class="proloop--title">
+            <a href="/products/nha-trang-phu-yen-khu-du-lich-doc-let-ganh-da-dia-mui-dien">
+             Nha Trang - Phú Yên: Khu Du Lịch Dốc Lết - Gành Đá Dĩa - Mũi Điện
+            </a>
+           </h3>
+           <div class="list-info">
+            <div class="price-loop">
+             <span class="info-title">
+              Giá từ
+             </span>
+             <p class="proloop--price on-sale">
+              <span class="price">
+               5,290,000₫
+              </span>
+              <span class="person">
+               /người
+              </span>
+              <span class="price-del">
+               5,990,000₫
+               <span class="person">
+                /người
+               </span>
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="product-loop-mobile">
+        <div class="product-loop" data-id="1122826082">
+         <div class="product-inner" data-proid="1054499142" id="listProdRelated_loop_6">
+          <div class="proloop-image">
+           <div class="pro-sale">
+            <span>
+             -10% Off
+            </span>
+           </div>
+           <div class="product--image">
+            <div class="lazy-img">
+             <picture>
+              <source data-srcset="//product.hstatic.net/200000871401/product/2_0ba7f5bca57946c2ab805875bc7228b7_large.jpg" media="(max-width: 480px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <source data-srcset="//product.hstatic.net/200000871401/product/2_0ba7f5bca57946c2ab805875bc7228b7_large.jpg" media="(min-width: 481px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <img alt=" Thái Lan: Bangkok (Vườn lan Nong Nooch, tặng Show Colosseum và Buffet tại BaiYoke Sky) " class="lazyload img-loop" data-src="//product.hstatic.net/200000871401/product/2_0ba7f5bca57946c2ab805875bc7228b7_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+             </picture>
+            </div>
+           </div>
+          </div>
+          <div class="proloop-detail">
+           <p class="proloop--vendor">
+            <svg class="badge-icon" fill="none" height="12" viewbox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg">
+             <path d="M5.99994 6.71503C6.86151 6.71503 7.55994 6.0166 7.55994 5.15503C7.55994 4.29347 6.86151 3.59503 5.99994 3.59503C5.13838 3.59503 4.43994 4.29347 4.43994 5.15503C4.43994 6.0166 5.13838 6.71503 5.99994 6.71503Z" stroke="currentColor" stroke-opacity="0.99">
+             </path>
+             <path d="M1.8101 4.24506C2.7951 -0.0849378 9.2101 -0.0799377 10.1901 4.25006C10.7651 6.79006 9.1851 8.94006 7.8001 10.2701C6.7951 11.2401 5.2051 11.2401 4.1951 10.2701C2.8151 8.94006 1.2351 6.78506 1.8101 4.24506Z" stroke="currentColor" stroke-opacity="0.99">
+             </path>
+            </svg>
+            <a href="/collections/vendors?q=ha-noi" title="Show vendor">
+             Hà Nội
+            </a>
+           </p>
+           <h3 class="proloop--title">
+            <a href="/products/thai-lan-bangkok-vuon-lan-nong-nooch-tang-show-colosseum-va-buffet-tai-baiyoke-sky">
+             Thái Lan: Bangkok (Vườn lan Nong Nooch, tặng Show Colosseum và Buffet tại BaiYoke Sky)
+            </a>
+           </h3>
+           <div class="list-info">
+            <div class="price-loop">
+             <span class="info-title">
+              Giá từ
+             </span>
+             <p class="proloop--price on-sale">
+              <span class="price">
+               6,450,000₫
+              </span>
+              <span class="person">
+               /người
+              </span>
+              <span class="price-del">
+               7,200,000₫
+               <span class="person">
+                /người
+               </span>
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="product-loop-mobile">
+        <div class="product-loop" data-id="1122825164">
+         <div class="product-inner" data-proid="1054498773" id="listProdRelated_loop_7">
+          <div class="proloop-image">
+           <div class="pro-sale">
+            <span>
+             -6% Off
+            </span>
+           </div>
+           <div class="pro-featured">
+            <span>
+             Nổi bật
+            </span>
+           </div>
+           <div class="product--image">
+            <div class="lazy-img">
+             <picture>
+              <source data-srcset="//product.hstatic.net/200000871401/product/6_0290a2f1d58b4bf99d5f42e33fa12c59_large.jpg" media="(max-width: 480px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <source data-srcset="//product.hstatic.net/200000871401/product/6_0290a2f1d58b4bf99d5f42e33fa12c59_large.jpg" media="(min-width: 481px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <img alt=" Bắc Âu: Đan Mạch - Iceland - Na Uy (Chương trình mới) " class="lazyload img-loop" data-src="//product.hstatic.net/200000871401/product/6_0290a2f1d58b4bf99d5f42e33fa12c59_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+             </picture>
+            </div>
+           </div>
+          </div>
+          <div class="proloop-detail">
+           <p class="proloop--vendor">
+            <svg class="badge-icon" fill="none" height="12" viewbox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg">
+             <path d="M5.99994 6.71503C6.86151 6.71503 7.55994 6.0166 7.55994 5.15503C7.55994 4.29347 6.86151 3.59503 5.99994 3.59503C5.13838 3.59503 4.43994 4.29347 4.43994 5.15503C4.43994 6.0166 5.13838 6.71503 5.99994 6.71503Z" stroke="currentColor" stroke-opacity="0.99">
+             </path>
+             <path d="M1.8101 4.24506C2.7951 -0.0849378 9.2101 -0.0799377 10.1901 4.25006C10.7651 6.79006 9.1851 8.94006 7.8001 10.2701C6.7951 11.2401 5.2051 11.2401 4.1951 10.2701C2.8151 8.94006 1.2351 6.78506 1.8101 4.24506Z" stroke="currentColor" stroke-opacity="0.99">
+             </path>
+            </svg>
+            <a href="/collections/vendors?q=paris" title="Show vendor">
+             Paris
+            </a>
+           </p>
+           <h3 class="proloop--title">
+            <a href="/products/bac-au-dan-mach-iceland-na-uy-chuong-trinh-moi">
+             Bắc Âu: Đan Mạch - Iceland - Na Uy (Chương trình mới)
+            </a>
+           </h3>
+           <div class="list-info">
+            <div class="price-loop">
+             <span class="info-title">
+              Giá từ
+             </span>
+             <p class="proloop--price on-sale">
+              <span class="price">
+               88,000,000₫
+              </span>
+              <span class="person">
+               /người
+              </span>
+              <span class="price-del">
+               94,000,000₫
+               <span class="person">
+                /người
+               </span>
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="product-loop-mobile">
+        <div class="product-loop" data-id="1122825084">
+         <div class="product-inner" data-proid="1054498733" id="listProdRelated_loop_8">
+          <div class="proloop-image">
+           <div class="pro-sale">
+            <span>
+             -7% Off
+            </span>
+           </div>
+           <div class="pro-featured">
+            <span>
+             Nổi bật
+            </span>
+           </div>
+           <div class="product--image">
+            <div class="lazy-img">
+             <picture>
+              <source data-srcset="//product.hstatic.net/200000871401/product/1_e556b3af935041bdb2ca29b0c307d497_large.jpg" media="(max-width: 480px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <source data-srcset="//product.hstatic.net/200000871401/product/1_e556b3af935041bdb2ca29b0c307d497_large.jpg" media="(min-width: 481px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+              <img alt=" Bắc Âu: Thụy Điển - Phần Lan - Na Uy - Đan Mạch (Thưởng thức trà chiều phong cách châu Âu) " class="lazyload img-loop" data-src="//product.hstatic.net/200000871401/product/1_e556b3af935041bdb2ca29b0c307d497_small.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+             </picture>
+            </div>
+           </div>
+          </div>
+          <div class="proloop-detail">
+           <p class="proloop--vendor">
+            <svg class="badge-icon" fill="none" height="12" viewbox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg">
+             <path d="M5.99994 6.71503C6.86151 6.71503 7.55994 6.0166 7.55994 5.15503C7.55994 4.29347 6.86151 3.59503 5.99994 3.59503C5.13838 3.59503 4.43994 4.29347 4.43994 5.15503C4.43994 6.0166 5.13838 6.71503 5.99994 6.71503Z" stroke="currentColor" stroke-opacity="0.99">
+             </path>
+             <path d="M1.8101 4.24506C2.7951 -0.0849378 9.2101 -0.0799377 10.1901 4.25006C10.7651 6.79006 9.1851 8.94006 7.8001 10.2701C6.7951 11.2401 5.2051 11.2401 4.1951 10.2701C2.8151 8.94006 1.2351 6.78506 1.8101 4.24506Z" stroke="currentColor" stroke-opacity="0.99">
+             </path>
+            </svg>
+            <a href="/collections/vendors?q=italy" title="Show vendor">
+             Italy
+            </a>
+           </p>
+           <h3 class="proloop--title">
+            <a href="/products/bac-au-thuy-dien-phan-lan-na-uy-dan-mach-thuong-thuc-tra-chieu-phong-cach-chau-au">
+             Bắc Âu: Thụy Điển - Phần Lan - Na Uy - Đan Mạch (Thưởng thức trà chiều phong cách châu Âu)
+            </a>
+           </h3>
+           <div class="list-info">
+            <div class="price-loop">
+             <span class="info-title">
+              Giá từ
+             </span>
+             <p class="proloop--price on-sale">
+              <span class="price">
+               129,000,000₫
+              </span>
+              <span class="person">
+               /người
+              </span>
+              <span class="price-del">
+               138,000,000₫
+               <span class="person">
+                /người
+               </span>
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- viewed -->
+   <div class="productDetail-recently-viewed">
+    <div class="container">
+     <div class="productViewed-title text-center">
+      <h2>
+       Các tour bạn đã xem
+      </h2>
+     </div>
+     <div class="productViewed-content">
+      <div class="listProduct-viewed listProduct-row owlCarousel-dfex owl-carousel owlCarousel-style" id="listViewed">
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- genneral -->
+   <div class="sidebar-action-bottom">
+    <div class="container">
+     <div class="action-bottom">
+      <div class="product-price">
+       <span class="pro-title">
+        Giá từ:
+       </span>
+       <div class="pro-price">
+        <div class="percent-price">
+         <span class="price">
+          117,990,000₫
+          <span class="person">
+           /người
+          </span>
+         </span>
+        </div>
+       </div>
+      </div>
+      <div class="action-bottom-btn">
+       <a class="button" href="#form-booking-pro">
+        Đặt tour ngay
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="modal fade modal-contactform-pr" id="modal-preorder-contact" role="dialog">
+   <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+     <div class="modal-header">
+      <button class="btn btn-close-preorder" data-dismiss="modal" type="button">
+       ×
+      </button>
+      <h4 class="modal-title">
+       ĐĂNG KÍ NHẬN THÔNG TIN KHI CÓ HÀNG
+      </h4>
+     </div>
+     <div class="modal-body content_product_form content_product_form-contact">
+      <div class="contact_form_pr">
+       <form accept-charset="UTF-8" action="/contact" class="contact-form" method="post">
+        <input name="form_type" type="hidden" value="contact"/>
+        <input name="utf8" type="hidden" value="✓"/>
+        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt9v3LGbSv3xt410j0YO3iqLcYhTmMCcxb3ZIR-6M0qfXPmdpDr7zugattFn5nYuTwow9WrxHcjnHTlLqTGVWHCNss5Wn4Swtl82Do0ZjVg3hu3EDrguqaOUGcDBPdOtg6Q"/>
+        <div class="row">
+         <div class="col-sm-12 col-xs-12 col-12">
+          <div class="input-group">
+           <input aria-describedby="basic-addon1" class="form-control" name="contact[name]" placeholder="Họ và tên" required="required" type="text"/>
+          </div>
+          <div class="input-group">
+           <input aria-describedby="basic-addon1" class="form-control" name="contact[email]" pattern="^(.)+@[A-Za-z0-9]([A-Za-z0-9.\-]*[A-Za-z0-9])?\.[A-Za-z]{1,13}$" placeholder="Địa chỉ email" required="required" type="text"/>
+          </div>
+          <div class="input-group">
+           <input aria-describedby="basic-addon1" class="form-control" name="contact[phone]" pattern="[0-9]{10,12}" placeholder="Số điện thoại" required="required" type="text"/>
+          </div>
+          <div class="input-group">
+           <textarea class="product-body-val" cols="50" name="content" placeholder="Nội dung" rows="4" value=""></textarea>
+           <input class="detailPr" name="contact[body]" product-name="Tây Âu: Pháp - Đức - Thụy Sĩ - Ý: Núi tuyết Titlis, trải nghiệm tàu cao tốc TGV" type="hidden"/>
+          </div>
+         </div>
+         <div class="col-sm-12 col-xs-12 col-12 text-center">
+          <div class="alert alert-success alert-preorder" id="preorder-form-alert">
+          </div>
+          <div class="sitebox-recaptcha">
+           This site is protected by reCAPTCHA and the Google
+           <a href="https://policies.google.com/privacy" rel="nofollow noreferrer" target="_blank">
+            Privacy Policy
+           </a>
+           and
+           <a href="https://policies.google.com/terms" rel="nofollow noreferrer" target="_blank">
+            Terms of Service
+           </a>
+           apply.
+          </div>
+          <button class="button btnred cta-submitform btn-submit-contact-pr" type="submit">
+           Đăng ký nhận thông tin
+          </button>
+         </div>
+        </div>
+        <input id="fbee9a9429f441e4959ad394891ec6bf" name="g-recaptcha-response" type="hidden"/>
+        <noscript data-src="https://www.google.com/recaptcha/api.js?render=6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s">
+        </noscript>
+        <noscript>
+         let recaptchaElm=document.getElementById('fbee9a9429f441e4959ad394891ec6bf');let recaptchaForm=recaptchaElm.parentNode;recaptchaForm.addEventListener("submit",function(formEvent){if(!recaptchaElm.value){formEvent.preventDefault();grecaptcha.ready(function(){grecaptcha.execute('6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s',{action:'submit'}).then(function(token){recaptchaElm.value=token;recaptchaForm.requestSubmit(formEvent.submitter)})})}})
+        </noscript>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="d-none">
+  </div>
+  <div class="modal-coupon--backdrop">
+  </div>
+  <!-- JS PRODUCT -->
+ </main>
+ <div class="sitenav-overlay" id="sitenav-overlay">
+ </div>
+ <div class="fixed-mess box-item box-chatmsg">
+  <a aria-label="messenger" class="svgico" href="https://m.me/284739884730730" rel="noreferrer" target="_blank">
+   <svg fill="none" height="44" viewbox="0 0 44 44" width="44" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="22" cy="22" fill="url(#paint10_linear)" r="22">
+    </circle>
+    <path clip-rule="evenodd" d="M22.0026 7.70215C14.1041 7.70215 7.70117 13.6308 7.70117 20.9442C7.70117 25.1115 9.78083 28.8286 13.0309 31.256V36.305L17.9004 33.6325C19.2 33.9922 20.5767 34.1863 22.0026 34.1863C29.9011 34.1863 36.304 28.2576 36.304 20.9442C36.304 13.6308 29.9011 7.70215 22.0026 7.70215ZM23.4221 25.5314L19.7801 21.6471L12.6738 25.5314L20.4908 17.2331L24.2216 21.1174L31.239 17.2331L23.4221 25.5314Z" fill="white" fill-rule="evenodd">
+    </path>
+    <defs>
+     <lineargradient gradientunits="userSpaceOnUse" id="paint10_linear" x1="21.6426" x2="21.6426" y1="43.3555" y2="0.428639">
+      <stop offset="50%" stop-color="#2CB7FF">
+      </stop>
+      <stop offset="100%" stop-color="#2CB7FF">
+      </stop>
+     </lineargradient>
+    </defs>
+   </svg>
+  </a>
+ </div>
+ <div class="sidebar-main">
+  <div class="sitenav-wrapper sitenav-right sitenav-cart cart-empty">
+   <div class="sitenav-inner">
+    <div class="sitenav-header">
+     <p class="sitenav-header__title">
+      Giỏ hàng
+     </p>
+     <a class="sitenav-header__btn btn-sitenav-close" name="button-close">
+      <svg role="presentation" viewbox="0 0 19 19">
+       <path d="M9.1923882 8.39339828l7.7781745-7.7781746 1.4142136 1.41421357-7.7781746 7.77817459 7.7781746 7.77817456L16.9705627 19l-7.7781745-7.7781746L1.41421356 19 0 17.5857864l7.7781746-7.77817456L0 2.02943725 1.41421356.61522369 9.1923882 8.39339828z" fill-rule="evenodd">
+       </path>
+      </svg>
+     </a>
+    </div>
+    <div class="sitenav-content">
+     <div class="cart-view">
+      <div class="cart-view-scroll">
+       <div class="table-clone-cart" id="clone-item-cart">
+        <div class="mini-cart__item d-none">
+         <div class="mini-cart__left">
+          <a class="mnc-link" href="#" title="">
+           <img alt="" src=""/>
+          </a>
+         </div>
+         <div class="mini-cart__right">
+          <p class="mini-cart__title">
+           <a class="mnc-title mnc-link" href="#" title="">
+           </a>
+           <span class="mnc-variant">
+           </span>
+          </p>
+          <div class="mini-cart__quantity">
+           <button class="qty-btn mnc-minus">
+            <svg enable-background="new 0 0 10 10" viewbox="0 0 10 10" x="0" y="0">
+             <polygon points="4.5 4.5 3.5 4.5 0 4.5 0 5.5 3.5 5.5 4.5 5.5 10 5.5 10 4.5">
+             </polygon>
+            </svg>
+           </button>
+           <input class="qty-value" name="mnc-quantity" readonly="" type="text" value=""/>
+           <button class="qty-btn mnc-plus">
+            <svg enable-background="new 0 0 10 10" viewbox="0 0 10 10" x="0" y="0">
+             <polygon points="10 4.5 5.5 4.5 5.5 0 4.5 0 4.5 4.5 0 4.5 0 5.5 4.5 5.5 4.5 10 5.5 10 5.5 5.5 10 5.5">
+             </polygon>
+            </svg>
+           </button>
+          </div>
+          <div class="mini-cart__price">
+           <span class="mnc-price">
+            0₫
+           </span>
+           <del class="mnc-ori-price">
+           </del>
+          </div>
+          <div class="mini-cart__remove">
+          </div>
+         </div>
+        </div>
+       </div>
+       <div id="cart-view">
+        <div class="mini-cart__empty">
+         <div class="svgico-mini-cart">
+          <img alt="Giỏ hàng của bạn đang trống" class="lazyload" data-src="//theme.hstatic.net/200000871401/1001342583/14/cart_banner_image.jpg?v=45" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+          <p>
+           Chưa có sản phẩm trong giỏ hàng...
+          </p>
+          <div class="action-link-empty">
+           <a class="linkreturn" href="/collections/tour">
+            Trở về trang sản phẩm
+           </a>
+           <a class="linkcoupon" name="link-copuon">
+            Khuyến mãi dành cho bạn
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="sitenav-footer">
+     <div class="cart-view-total">
+      <div class="total-price">
+       <div class="mnc-total text-left">
+        TỔNG TIỀN:
+       </div>
+       <div class="mnc-total text-right" id="total-view-cart">
+        0₫
+       </div>
+      </div>
+      <div class="total-actions">
+       <div class="summary-alert alert alert-danger" style="display:block">
+        Giỏ hàng của bạn hiện chưa đạt mức tối thiểu để thanh toán.
+       </div>
+       <div class="action-btn">
+        <a class="linktocheckout button disabled" href="/checkout">
+         Thanh toán
+        </a>
+       </div>
+       <div class="action-link">
+        <a class="linktocart" href="/cart">
+         Xem giỏ hàng
+        </a>
+        <a class="linkcoupon" name="link-copuon">
+         Khuyến mãi dành cho bạn
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="sidebar-overlay">
+   </div>
+  </div>
+ </div>
+ <!-- Check -->
+ <!-- module -->
+ <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade modal-addThis modal-contactform" id="addthis-modalContact" role="dialog" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+   <div class="modal-content">
+    <div class="modal-header">
+     <h4 class="modal-title" id="exampleModalLabel">
+      Để lại lời nhắn cho chúng tôi
+     </h4>
+     <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+      <span aria-hidden="true">
+       <svg viewbox="0 0 512.001 512.001" xmlns="http://www.w3.org/2000/svg">
+        <g>
+         <path d="M294.111,256.001L504.109,46.003c10.523-10.524,10.523-27.586,0-38.109c-10.524-10.524-27.587-10.524-38.11,0L256,217.892    L46.002,7.894c-10.524-10.524-27.586-10.524-38.109,0s-10.524,27.586,0,38.109l209.998,209.998L7.893,465.999    c-10.524,10.524-10.524,27.586,0,38.109c10.524,10.524,27.586,10.523,38.109,0L256,294.11l209.997,209.998    c10.524,10.524,27.587,10.523,38.11,0c10.523-10.524,10.523-27.586,0-38.109L294.111,256.001z">
+         </path>
+        </g>
+       </svg>
+      </span>
+     </button>
+    </div>
+    <div class="modal-body body-popupform">
+     <form accept-charset="UTF-8" action="/contact" class="contact-form" method="post">
+      <input name="form_type" type="hidden" value="contact"/>
+      <input name="utf8" type="hidden" value="✓"/>
+      <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt9v3LGbSv3xt410j0YO3iqLcYhTmMCcxb3ZIR-6M0qfXPmdpDr7zugattFn5nYuTwow9WrxHcjnHTlLqTGVWHCNss5Wn4Swtl82Do0ZjVg3hu3EDrguqaOUGcDBPdOtg6Q"/>
+      <div class="row">
+       <div class="col-12">
+        <div class="input-group mb-3">
+         <input aria-label="Tên của bạn" class="form-control" id="yourname" name="contact[name]" placeholder="Tên của bạn" required="" type="text"/>
+        </div>
+       </div>
+       <div class="col-12">
+        <div class="input-group mb-3">
+         <input aria-label="Email của bạn" class="form-control" id="youremail" name="contact[email]" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email của bạn" required="" type="email"/>
+        </div>
+       </div>
+       <div class="col-12">
+        <div class="input-group mb-3">
+         <input aria-label="Số điện thoại của bạn" class="form-control" id="yourphone" maxlength="18" name="contact[phone]" pattern="\+?\(?\d{2,4}\)?[\d\s-]{3,}" placeholder="Số điện thoại của bạn" required="" type="text"/>
+        </div>
+       </div>
+       <div class="col-12">
+        <div class="input-group mb-3">
+         <textarea aria-label="Nội dung" class="form-control" id="yourinfor" name="contact[body]" placeholder="Nội dung" required="" rows="3"></textarea>
+        </div>
+       </div>
+       <div class="col-12">
+        <div class="sitebox-recaptcha mb-3">
+         This site is protected by reCAPTCHA and the Google
+         <a href="https://policies.google.com/privacy" rel="noreferrer" target="_blank">
+          Privacy Policy
+         </a>
+         and
+         <a href="https://policies.google.com/terms" rel="noreferrer" target="_blank">
+          Terms of Service
+         </a>
+         apply.
+        </div>
+       </div>
+       <div class="col-12 text-center">
+        <button class="btnSubmit-modal cta-submitform button">
+         Gửi cho chúng tôi
+        </button>
+       </div>
+      </div>
+      <input id="625ca26fb4684c36ab91e5681a8065ad" name="g-recaptcha-response" type="hidden"/>
+      <noscript data-src="https://www.google.com/recaptcha/api.js?render=6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s">
+      </noscript>
+      <noscript>
+       let recaptchaElm=document.getElementById('625ca26fb4684c36ab91e5681a8065ad');let recaptchaForm=recaptchaElm.parentNode;recaptchaForm.addEventListener("submit",function(formEvent){if(!recaptchaElm.value){formEvent.preventDefault();grecaptcha.ready(function(){grecaptcha.execute('6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s',{action:'submit'}).then(function(token){recaptchaElm.value=token;recaptchaForm.requestSubmit(formEvent.submitter)})})}})
+      </noscript>
+     </form>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="addThis_contact toolbar-mobile-1 addThis_product_scroll">
+  <div class="addThis_contact__dialog addThis_listSharing addThis_listSharing_group">
+   <div class="addThis_contact__lists">
+    <button class="addThis_close" data-dismiss="modal" type="button">
+     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g fill-rule="evenodd" stroke="none" stroke-width="1">
+       <g transform="translate(-1341.000000, -90.000000)">
+        <g transform="translate(1341.000000, 90.000000)">
+         <polygon points="19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12">
+         </polygon>
+        </g>
+       </g>
+      </g>
+     </svg>
+    </button>
+    <ul class="addThis_listing">
+     <li class="addThis_item">
+      <a aria-label="phone" class="addThis_item--icon cta-clicktocall" href="tel:1900636099" rel="noopener">
+       <svg fill="none" viewbox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="22" cy="22" fill="url(#paint2_linear)" r="22">
+        </circle>
+        <path clip-rule="evenodd" d="M14.0087 9.35552C14.1581 9.40663 14.3885 9.52591 14.5208 9.61114C15.3315 10.148 17.5888 13.0324 18.3271 14.4726C18.7495 15.2949 18.8903 15.9041 18.758 16.3558C18.6214 16.8415 18.3953 17.0971 17.384 17.9109C16.9786 18.239 16.5988 18.5756 16.5391 18.6651C16.3855 18.8866 16.2617 19.3212 16.2617 19.628C16.266 20.3395 16.7269 21.6305 17.3328 22.6232C17.8021 23.3944 18.6428 24.3828 19.4749 25.1413C20.452 26.0361 21.314 26.6453 22.2869 27.1268C23.5372 27.7488 24.301 27.9064 24.86 27.6466C25.0008 27.5826 25.1501 27.4974 25.1971 27.4591C25.2397 27.4208 25.5683 27.0202 25.9268 26.5772C26.618 25.7079 26.7759 25.5674 27.2496 25.4055C27.8513 25.201 28.4657 25.2563 29.0844 25.5716C29.5538 25.8145 30.5779 26.4493 31.2393 26.9095C32.1098 27.5187 33.9703 29.0355 34.2221 29.3381C34.6658 29.8834 34.7427 30.5821 34.4439 31.3534C34.1281 32.1671 32.8992 33.6925 32.0415 34.3444C31.2649 34.9323 30.7145 35.1581 29.9891 35.1922C29.3917 35.222 29.1442 35.1709 28.3804 34.8556C22.3893 32.3887 17.6059 28.7075 13.8081 23.65C11.8239 21.0084 10.3134 18.2688 9.28067 15.427C8.67905 13.7696 8.64921 13.0495 9.14413 12.2017C9.35753 11.8438 10.2664 10.9575 10.9278 10.4633C12.0288 9.64524 12.5365 9.34273 12.9419 9.25754C13.2193 9.19787 13.7014 9.24473 14.0087 9.35552Z" fill="white" fill-rule="evenodd">
+        </path>
+        <defs>
+         <lineargradient gradientunits="userSpaceOnUse" id="paint2_linear" x1="22" x2="22.1219" y1="-7.26346e-09" y2="40.5458">
+          <stop offset="50%" stop-color="#e8434c">
+          </stop>
+          <stop offset="100%" stop-color="#d61114">
+          </stop>
+         </lineargradient>
+        </defs>
+       </svg>
+       <span class="tooltip-text">
+        Gọi ngay cho chúng tôi
+       </span>
+      </a>
+     </li>
+     <li class="addThis_item addThis_item__fbchat">
+      <a aria-label="messenger" class="addThis_item--icon cta-chatmessager" href="https://m.me/284739884730730" rel="noopener" target="_blank">
+       <svg cursor="pointer" height="60px" viewbox="0 0 60 60" width="60px">
+        <svg height="60px" width="60px" x="0" y="0">
+         <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+          <g>
+           <circle cx="30" cy="30" fill="#0A7CFF" r="30">
+           </circle>
+           <svg x="10" y="10">
+            <g fill="#FFFFFF" transform="translate(0.000000, -10.000000)">
+             <g id="logo" transform="translate(0.000000, 10.000000)">
+              <path d="M20,0 C31.2666,0 40,8.2528 40,19.4 C40,30.5472 31.2666,38.8 20,38.8 C17.9763,38.8 16.0348,38.5327 14.2106,38.0311 C13.856,37.9335 13.4789,37.9612 13.1424,38.1098 L9.1727,39.8621 C8.1343,40.3205 6.9621,39.5819 6.9273,38.4474 L6.8184,34.8894 C6.805,34.4513 6.6078,34.0414 6.2811,33.7492 C2.3896,30.2691 0,25.2307 0,19.4 C0,8.2528 8.7334,0 20,0 Z M7.99009,25.07344 C7.42629,25.96794 8.52579,26.97594 9.36809,26.33674 L15.67879,21.54734 C16.10569,21.22334 16.69559,21.22164 17.12429,21.54314 L21.79709,25.04774 C23.19919,26.09944 25.20039,25.73014 26.13499,24.24744 L32.00999,14.92654 C32.57369,14.03204 31.47419,13.02404 30.63189,13.66324 L24.32119,18.45264 C23.89429,18.77664 23.30439,18.77834 22.87569,18.45674 L18.20299,14.95224 C16.80079,13.90064 14.79959,14.26984 13.86509,15.75264 L7.99009,25.07344 Z">
+              </path>
+             </g>
+            </g>
+           </svg>
+          </g>
+         </g>
+        </svg>
+       </svg>
+       <span class="tooltip-text">
+        Chat với Epic Travels
+       </span>
+      </a>
+     </li>
+     <li class="addThis_item">
+      <a aria-label="zalo" class="addThis_item--icon cta-chatzalo" href="https://zalo.me/0901866099" rel="noopener" target="_blank">
+       <svg fill="none" viewbox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="22" cy="22" fill="url(#paint4_linear)" r="22">
+        </circle>
+        <g clip-path="url(#clip0)">
+         <path clip-rule="evenodd" d="M15.274 34.0907C15.7773 34.0856 16.2805 34.0804 16.783 34.0804C16.7806 34.0636 16.7769 34.0479 16.7722 34.0333C16.777 34.0477 16.7808 34.0632 16.7832 34.0798C16.8978 34.0798 17.0124 34.0854 17.127 34.0965H25.4058C26.0934 34.0965 26.7809 34.0977 27.4684 34.0989C28.8434 34.1014 30.2185 34.1039 31.5935 34.0965H31.6222C33.5357 34.0798 35.0712 32.5722 35.0597 30.7209V27.4784C35.0597 27.4582 35.0612 27.4333 35.0628 27.4071C35.0676 27.3257 35.0731 27.2325 35.0368 27.2345C34.9337 27.2401 34.7711 27.2757 34.7138 27.3311C34.2744 27.6145 33.8483 27.924 33.4222 28.2335C32.57 28.8525 31.7179 29.4715 30.7592 29.8817C27.0284 31.0993 23.7287 31.157 20.2265 30.3385C20.0349 30.271 19.9436 30.2786 19.7816 30.292C19.6773 30.3007 19.5436 30.3118 19.3347 30.3068C19.3093 30.3077 19.2829 30.3085 19.2554 30.3093C18.9099 30.3197 18.4083 30.3348 17.8088 30.6877C16.4051 31.1034 14.5013 31.157 13.5175 31.0147C13.522 31.0245 13.5247 31.0329 13.5269 31.0407C13.5236 31.0341 13.5204 31.0275 13.5173 31.0208C13.5036 31.0059 13.4864 30.9927 13.4696 30.98C13.4163 30.9393 13.3684 30.9028 13.46 30.8268C13.4867 30.8102 13.5135 30.7929 13.5402 30.7757C13.5937 30.7412 13.6472 30.7067 13.7006 30.6771C14.4512 30.206 15.1559 29.6905 15.6199 28.9311C16.2508 28.1911 15.9584 27.9025 15.4009 27.3524L15.3799 27.3317C12.6639 24.6504 11.8647 21.8054 12.148 17.9785C12.486 15.8778 13.4829 14.0708 14.921 12.4967C15.7918 11.5433 16.8288 10.7729 17.9632 10.1299C17.9796 10.1198 17.9987 10.1116 18.0182 10.1032C18.0736 10.0793 18.1324 10.0541 18.1408 9.98023C18.1475 9.92191 18.0507 9.90264 18.0163 9.90264C17.3698 9.90264 16.7316 9.89705 16.0964 9.89148C14.8346 9.88043 13.5845 9.86947 12.3041 9.90265C10.465 9.95254 8.78889 11.1779 8.81925 13.3614C8.82689 17.2194 8.82435 21.0749 8.8218 24.9296C8.82053 26.8567 8.81925 28.7835 8.81925 30.7104C8.81925 32.5007 10.2344 34.0028 12.085 34.0749C13.1465 34.1125 14.2107 34.1016 15.274 34.0907ZM13.5888 31.1403C13.5935 31.1467 13.5983 31.153 13.6032 31.1594C13.7036 31.2455 13.8031 31.3325 13.9021 31.4202C13.8063 31.3312 13.7072 31.2423 13.6035 31.1533C13.5982 31.1487 13.5933 31.1444 13.5888 31.1403ZM16.5336 33.8108C16.4979 33.7885 16.4634 33.7649 16.4337 33.7362C16.4311 33.7358 16.4283 33.7352 16.4254 33.7345C16.4281 33.7371 16.4308 33.7397 16.4335 33.7423C16.4632 33.7683 16.4978 33.79 16.5336 33.8108Z" fill="white" fill-rule="evenodd">
+         </path>
+         <path d="M17.6768 21.6754C18.5419 21.6754 19.3555 21.6698 20.1633 21.6754C20.6159 21.6809 20.8623 21.8638 20.9081 22.213C20.9597 22.6509 20.6961 22.9447 20.2034 22.9502C19.2753 22.9613 18.3528 22.9558 17.4247 22.9558C17.1554 22.9558 16.8919 22.9669 16.6226 22.9502C16.2903 22.9336 15.9637 22.8671 15.8033 22.5345C15.6429 22.2019 15.7575 21.9026 15.9752 21.631C16.8575 20.5447 17.7455 19.4527 18.6336 18.3663C18.6851 18.2998 18.7367 18.2333 18.7883 18.1723C18.731 18.0781 18.6508 18.1224 18.582 18.1169C17.9633 18.1114 17.3388 18.1169 16.72 18.1114C16.5768 18.1114 16.4335 18.0947 16.296 18.067C15.9695 17.995 15.7689 17.679 15.8434 17.3686C15.895 17.158 16.0669 16.9862 16.2846 16.9363C16.4221 16.903 16.5653 16.8864 16.7085 16.8864C17.7284 16.8809 18.7539 16.8809 19.7737 16.8864C19.9571 16.8809 20.1347 16.903 20.3123 16.9474C20.7019 17.0749 20.868 17.4241 20.7133 17.7899C20.5758 18.1058 20.3581 18.3774 20.1404 18.649C19.3899 19.5747 18.6393 20.4948 17.8888 21.4093C17.8258 21.4814 17.7685 21.5534 17.6768 21.6754Z" fill="white">
+         </path>
+         <path d="M24.3229 18.7604C24.4604 18.5886 24.6036 18.4279 24.8385 18.3835C25.2911 18.2948 25.7151 18.5775 25.7208 19.021C25.738 20.1295 25.7323 21.2381 25.7208 22.3467C25.7208 22.6349 25.526 22.8899 25.2453 22.973C24.9588 23.0783 24.6322 22.9952 24.4432 22.7568C24.3458 22.6404 24.3057 22.6183 24.1682 22.7236C23.6468 23.1338 23.0567 23.2058 22.4207 23.0063C21.4009 22.6848 20.9827 21.9143 20.8681 20.9776C20.7478 19.9632 21.0973 19.0986 22.0369 18.5664C22.816 18.1175 23.6067 18.1563 24.3229 18.7604ZM22.2947 20.7836C22.3061 21.0275 22.3863 21.2603 22.5353 21.4543C22.8447 21.8534 23.4348 21.9365 23.8531 21.6372C23.9218 21.5873 23.9848 21.5263 24.0421 21.4543C24.363 21.033 24.363 20.3402 24.0421 19.9189C23.8817 19.7027 23.6296 19.5752 23.3603 19.5697C22.7301 19.5309 22.289 20.002 22.2947 20.7836ZM28.2933 20.8168C28.2474 19.3923 29.2157 18.3281 30.5907 18.2893C32.0517 18.245 33.1174 19.1928 33.1632 20.5785C33.209 21.9808 32.321 22.973 30.9517 23.106C29.4563 23.2502 28.2704 22.2026 28.2933 20.8168ZM29.7313 20.6838C29.7199 20.961 29.8058 21.2326 29.9777 21.4598C30.2928 21.8589 30.8829 21.9365 31.2955 21.6261C31.3585 21.5818 31.41 21.5263 31.4616 21.4709C31.7939 21.0496 31.7939 20.3402 31.4673 19.9189C31.3069 19.7083 31.0548 19.5752 30.7855 19.5697C30.1668 19.5364 29.7313 19.991 29.7313 20.6838ZM27.7891 19.7138C27.7891 20.573 27.7948 21.4321 27.7891 22.2912C27.7948 22.6848 27.474 23.0118 27.0672 23.0229C26.9985 23.0229 26.924 23.0174 26.8552 23.0007C26.5688 22.9287 26.351 22.6349 26.351 22.2857V17.8791C26.351 17.6186 26.3453 17.3636 26.351 17.1031C26.3568 16.6763 26.6375 16.3992 27.0615 16.3992C27.4969 16.3936 27.7891 16.6708 27.7891 17.1142C27.7948 17.9789 27.7891 18.8491 27.7891 19.7138Z" fill="white">
+         </path>
+         <path d="M22.2947 20.7828C22.289 20.0013 22.7302 19.5302 23.3547 19.5634C23.6239 19.5745 23.876 19.702 24.0364 19.9181C24.3573 20.3339 24.3573 21.0322 24.0364 21.4535C23.7271 21.8526 23.1369 21.9357 22.7187 21.6364C22.65 21.5865 22.5869 21.5255 22.5296 21.4535C22.3864 21.2595 22.3062 21.0267 22.2947 20.7828ZM29.7314 20.683C29.7314 19.9957 30.1668 19.5357 30.7856 19.569C31.0549 19.5745 31.307 19.7075 31.4674 19.9181C31.794 20.3394 31.794 21.0544 31.4617 21.4701C31.1408 21.8636 30.545 21.9302 30.1382 21.6198C30.0752 21.5754 30.0236 21.52 29.9778 21.459C29.8059 21.2318 29.7257 20.9602 29.7314 20.683Z" fill="#0068FF">
+         </path>
+        </g>
+        <defs>
+         <lineargradient gradientunits="userSpaceOnUse" id="paint4_linear" x1="22" x2="22" y1="0" y2="44">
+          <stop offset="50%" stop-color="#3985f7">
+          </stop>
+          <stop offset="100%" stop-color="#1272e8">
+          </stop>
+         </lineargradient>
+         <clippath id="clip0">
+          <rect fill="white" height="24.2" transform="translate(8.78906 9.90234)" width="26.3641">
+          </rect>
+         </clippath>
+        </defs>
+       </svg>
+       <span class="tooltip-text">
+        Chat với chúng tôi qua Zalo
+       </span>
+      </a>
+     </li>
+     <li class="addThis_item">
+      <a aria-label="email" class="addThis_item--icon" data-target="#addthis-modalContact" data-toggle="modal" name="email">
+       <svg fill="none" viewbox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="22" cy="22" fill="url(#paint1_linear)" r="22">
+        </circle>
+        <path clip-rule="evenodd" d="M11.4589 11.6667H32.5414C33.1621 11.6667 33.6993 11.8861 34.153 12.3245C34.6062 12.7634 34.8332 13.2904 34.8332 13.9064C34.8332 14.6435 34.599 15.3481 34.1319 16.0197C33.6639 16.6914 33.0816 17.2655 32.3846 17.7413C30.0672 19.3131 28.3185 20.4998 27.1311 21.3061C26.4785 21.7489 25.9931 22.0787 25.6817 22.2905C25.6355 22.3222 25.5634 22.3723 25.4675 22.4396C25.3643 22.5117 25.2337 22.6037 25.0729 22.7174C24.7625 22.9368 24.5048 23.114 24.2994 23.2495C24.0938 23.3846 23.8457 23.5363 23.5545 23.7043C23.2631 23.8724 22.9887 23.9983 22.7309 24.0823C22.4731 24.1661 22.2344 24.2082 22.0148 24.2082H22.0006H21.9863C21.7667 24.2082 21.5281 24.1661 21.2702 24.0823C21.0125 23.9983 20.7378 23.8721 20.4466 23.7043C20.1552 23.5363 19.9068 23.385 19.7017 23.2495C19.4964 23.114 19.2386 22.9368 18.9284 22.7174C18.7672 22.6037 18.6366 22.5118 18.5334 22.4393L18.5233 22.4323C18.4325 22.3688 18.3638 22.3208 18.3195 22.2905C17.9197 22.0157 17.4354 21.6846 16.8739 21.3022C16.2152 20.8532 15.4486 20.3329 14.5671 19.7359C12.9342 18.6303 11.9554 17.9654 11.6308 17.7413C11.0388 17.3494 10.4802 16.8107 9.95513 16.1248C9.43011 15.4387 9.16748 14.8018 9.16748 14.214C9.16748 13.4864 9.36539 12.8796 9.76184 12.3944C10.158 11.9095 10.7234 11.6667 11.4589 11.6667ZM33.4002 19.2392C31.4494 20.5296 29.7913 21.6405 28.4258 22.5725L34.8324 28.8337V18.0213C34.4217 18.4695 33.9443 18.8752 33.4002 19.2392ZM9.1665 18.0214C9.58659 18.4788 10.0691 18.8848 10.6132 19.2393C12.6414 20.5863 14.2935 21.6952 15.5757 22.5701L9.1665 28.8335V18.0214ZM34.0421 30.8208C33.6172 31.1883 33.1173 31.3745 32.5403 31.3745H11.4578C10.8809 31.3745 10.3807 31.1883 9.95575 30.8208L17.2287 23.7122C17.4107 23.8399 17.5789 23.9592 17.7306 24.0679C18.2751 24.4597 18.7165 24.7654 19.0556 24.9845C19.3944 25.2041 19.8455 25.4279 20.4091 25.6564C20.9726 25.8853 21.4976 25.9993 21.9847 25.9993H21.9989H22.0132C22.5002 25.9993 23.0253 25.8852 23.5888 25.6564C24.152 25.4279 24.6032 25.2041 24.9423 24.9845C25.2814 24.7654 25.7231 24.4597 26.2672 24.0679C26.427 23.955 26.5961 23.8362 26.7705 23.7141L34.0421 30.8208Z" fill="white" fill-rule="evenodd">
+        </path>
+        <defs>
+         <lineargradient gradientunits="userSpaceOnUse" id="paint1_linear" x1="22" x2="22" y1="0" y2="44">
+          <stop offset="50%" stop-color="#70f3ff">
+          </stop>
+          <stop offset="100%" stop-color="#00dcf0">
+          </stop>
+         </lineargradient>
+        </defs>
+       </svg>
+       <span class="tooltip-text">
+        Đăng kí thông tin và để lại lời nhắn
+       </span>
+      </a>
+     </li>
+     <li class="addThis_item">
+      <a aria-label="Liên hệ" class="addThis_item--icon cta-submitform" href="/pages/lien-he">
+       <svg fill="none" height="44" viewbox="0 0 44 44" width="44" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="22" cy="22" fill="url(#paint5_linear)" r="22">
+        </circle>
+        <path d="M22 10C17.0374 10 13 13.7367 13 18.3297C13 24.0297 21.0541 32.3978 21.397 32.7512C21.7191 33.0832 22.2815 33.0826 22.603 32.7512C22.9459 32.3978 31 24.0297 31 18.3297C30.9999 13.7367 26.9626 10 22 10ZM22 22.5206C19.5032 22.5206 17.4719 20.6406 17.4719 18.3297C17.4719 16.0188 19.5032 14.1388 22 14.1388C24.4968 14.1388 26.528 16.0189 26.528 18.3297C26.528 20.6406 24.4968 22.5206 22 22.5206Z" fill="white">
+        </path>
+        <defs>
+         <lineargradient gradientunits="userSpaceOnUse" id="paint5_linear" x1="22" x2="22" y1="0" y2="44">
+          <stop offset="50%" stop-color="#fecf72">
+          </stop>
+          <stop offset="100%" stop-color="#ef9f00">
+          </stop>
+         </lineargradient>
+        </defs>
+       </svg>
+       <span class="tooltip-text">
+        Xem địa chỉ Epic Travels
+       </span>
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div class="addThis_contact__icons">
+   <div class="box-item box-contact">
+    <div class="svgico">
+     <svg viewbox="0 0 34 35" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4.35522 31V25.416H5.41122V30.064H7.61122V31H4.35522ZM8.97509 26.216C8.76176 26.216 8.60709 26.168 8.51109 26.072C8.42043 25.976 8.37509 25.8533 8.37509 25.704V25.544C8.37509 25.3947 8.42043 25.272 8.51109 25.176C8.60709 25.08 8.76176 25.032 8.97509 25.032C9.18309 25.032 9.33509 25.08 9.43109 25.176C9.52709 25.272 9.57509 25.3947 9.57509 25.544V25.704C9.57509 25.8533 9.52709 25.976 9.43109 26.072C9.33509 26.168 9.18309 26.216 8.97509 26.216ZM8.46309 26.824H9.48709V31H8.46309V26.824ZM12.834 24.712L13.842 25.944L13.33 26.344L12.37 25.424L11.41 26.344L10.898 25.944L11.906 24.712H12.834ZM12.362 31.096C12.0527 31.096 11.7754 31.0453 11.53 30.944C11.29 30.8373 11.0847 30.6907 10.914 30.504C10.7487 30.312 10.6207 30.0827 10.53 29.816C10.4394 29.544 10.394 29.24 10.394 28.904C10.394 28.5733 10.4367 28.2747 10.522 28.008C10.6127 27.7413 10.7407 27.5147 10.906 27.328C11.0714 27.136 11.274 26.9893 11.514 26.888C11.754 26.7813 12.026 26.728 12.33 26.728C12.6554 26.728 12.938 26.784 13.178 26.896C13.418 27.008 13.6154 27.16 13.77 27.352C13.9247 27.544 14.0394 27.768 14.114 28.024C14.194 28.2747 14.234 28.544 14.234 28.832V29.168H11.458V29.272C11.458 29.576 11.5434 29.8213 11.714 30.008C11.8847 30.1893 12.138 30.28 12.474 30.28C12.73 30.28 12.938 30.2267 13.098 30.12C13.2634 30.0133 13.41 29.8773 13.538 29.712L14.09 30.328C13.9194 30.568 13.6847 30.7573 13.386 30.896C13.0927 31.0293 12.7514 31.096 12.362 31.096ZM12.346 27.496C12.074 27.496 11.858 27.5867 11.698 27.768C11.538 27.9493 11.458 28.184 11.458 28.472V28.536H13.17V28.464C13.17 28.176 13.098 27.944 12.954 27.768C12.8154 27.5867 12.6127 27.496 12.346 27.496ZM15.135 31V26.824H16.159V27.52H16.199C16.2843 27.296 16.4176 27.1093 16.599 26.96C16.7856 26.8053 17.0416 26.728 17.367 26.728C17.799 26.728 18.1296 26.8693 18.359 27.152C18.5883 27.4347 18.703 27.8373 18.703 28.36V31H17.679V28.464C17.679 28.1653 17.6256 27.9413 17.519 27.792C17.4123 27.6427 17.2363 27.568 16.991 27.568C16.8843 27.568 16.7803 27.584 16.679 27.616C16.583 27.6427 16.495 27.6853 16.415 27.744C16.3403 27.7973 16.279 27.8667 16.231 27.952C16.183 28.032 16.159 28.128 16.159 28.24V31H15.135ZM21.7287 25.08H22.7527V27.52H22.7927C22.8781 27.296 23.0114 27.1093 23.1927 26.96C23.3794 26.8053 23.6354 26.728 23.9607 26.728C24.3927 26.728 24.7234 26.8693 24.9527 27.152C25.1821 27.4347 25.2967 27.8373 25.2967 28.36V31H24.2727V28.464C24.2727 28.1653 24.2194 27.9413 24.1127 27.792C24.0061 27.6427 23.8301 27.568 23.5847 27.568C23.4781 27.568 23.3741 27.584 23.2727 27.616C23.1767 27.6427 23.0887 27.6853 23.0087 27.744C22.9341 27.7973 22.8727 27.8667 22.8247 27.952C22.7767 28.032 22.7527 28.128 22.7527 28.24V31H21.7287V25.08ZM28.5918 24.712L29.5998 25.944L29.0878 26.344L28.1278 25.424L27.1678 26.344L26.6558 25.944L27.6638 24.712H28.5918ZM28.1198 31.096C27.8105 31.096 27.5332 31.0453 27.2878 30.944C27.0478 30.8373 26.8425 30.6907 26.6718 30.504C26.5065 30.312 26.3785 30.0827 26.2878 29.816C26.1972 29.544 26.1518 29.24 26.1518 28.904C26.1518 28.5733 26.1945 28.2747 26.2798 28.008C26.3705 27.7413 26.4985 27.5147 26.6638 27.328C26.8292 27.136 27.0318 26.9893 27.2718 26.888C27.5118 26.7813 27.7838 26.728 28.0878 26.728C28.4132 26.728 28.6958 26.784 28.9358 26.896C29.1758 27.008 29.3732 27.16 29.5278 27.352C29.6825 27.544 29.7972 27.768 29.8718 28.024C29.9518 28.2747 29.9918 28.544 29.9918 28.832V29.168H27.2158V29.272C27.2158 29.576 27.3012 29.8213 27.4718 30.008C27.6425 30.1893 27.8958 30.28 28.2318 30.28C28.4878 30.28 28.6958 30.2267 28.8558 30.12C29.0212 30.0133 29.1678 29.8773 29.2958 29.712L29.8478 30.328C29.6772 30.568 29.4425 30.7573 29.1438 30.896C28.8505 31.0293 28.5092 31.096 28.1198 31.096ZM28.1038 27.496C27.8318 27.496 27.6158 27.5867 27.4558 27.768C27.2958 27.9493 27.2158 28.184 27.2158 28.472V28.536H28.9278V28.464C28.9278 28.176 28.8558 27.944 28.7118 27.768C28.5732 27.5867 28.3705 27.496 28.1038 27.496ZM28.1038 32.552C27.8958 32.552 27.7465 32.5067 27.6558 32.416C27.5705 32.3307 27.5278 32.2213 27.5278 32.088V31.912C27.5278 31.7787 27.5705 31.6667 27.6558 31.576C27.7465 31.4907 27.8958 31.448 28.1038 31.448C28.3118 31.448 28.4585 31.4907 28.5438 31.576C28.6345 31.6667 28.6798 31.7787 28.6798 31.912V32.088C28.6798 32.2213 28.6345 32.3307 28.5438 32.416C28.4585 32.5067 28.3118 32.552 28.1038 32.552Z">
+      </path>
+      <path d="M27.2212 0H10.7532C9.76511 0 8.97461 0.834345 8.97461 1.82643V12.334C8.97461 13.3487 9.78701 14.1604 10.7532 14.1604H22.1051L24.6741 16.8211C24.7839 16.9338 24.9157 17.0015 25.0693 17.0015C25.3768 17.0015 25.6402 16.7535 25.6402 16.4153V14.1604H27.2212C28.2092 14.1604 28.9997 13.3261 28.9997 12.334V1.82643C28.9997 0.811779 28.1873 0 27.2212 0ZM13.2783 9.04195C12.378 9.04195 11.6315 8.2753 11.6315 7.35077C11.6315 6.42631 12.378 5.65966 13.2783 5.65966C14.1785 5.65966 14.925 6.42631 14.925 7.35077C14.925 8.2753 14.2005 9.04195 13.2783 9.04195ZM19.0531 9.04195C18.1528 9.04195 17.4062 8.2753 17.4062 7.35077C17.4062 6.42631 18.1528 5.65966 19.0531 5.65966C19.9533 5.65966 20.6998 6.42631 20.6998 7.35077C20.6998 8.2753 19.9533 9.04195 19.0531 9.04195ZM24.8059 9.04195C23.9056 9.04195 23.1591 8.2753 23.1591 7.35077C23.1591 6.42631 23.9056 5.65966 24.8059 5.65966C25.7061 5.65966 26.4526 6.42631 26.4526 7.35077C26.4526 8.2753 25.7061 9.04195 24.8059 9.04195Z">
+      </path>
+      <path d="M7.9649 12.3782V8.79297H6.16437C5.52762 8.79297 5.00066 9.33418 5.00066 9.98807V16.8878C4.97869 17.5868 5.50564 18.128 6.16437 18.128H7.19637V19.6162C7.19637 19.8192 7.37202 19.9995 7.56964 19.9995C7.67944 19.9995 7.76727 19.9544 7.83312 19.8868L9.52385 18.1505H16.9894C17.6261 18.1505 18.1531 17.6094 18.1531 16.9555V15.2418H10.7535C9.2165 15.2418 7.9649 13.9566 7.9649 12.3782Z">
+      </path>
+     </svg>
+     <span class="svgico--close">
+      <svg role="presentation" viewbox="0 0 19 19">
+       <path d="M9.1923882 8.39339828l7.7781745-7.7781746 1.4142136 1.41421357-7.7781746 7.77817459 7.7781746 7.77817456L16.9705627 19l-7.7781745-7.7781746L1.41421356 19 0 17.5857864l7.7781746-7.77817456L0 2.02943725 1.41421356.61522369 9.1923882 8.39339828z" fill-rule="evenodd">
+       </path>
+      </svg>
+     </span>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="actionToolbar_mobile toolbar_style_1 actionToolbar-product">
+  <div class="toolbar-wrapper d-flex align-items-center justify-content-around">
+   <div class="toolbar-item toolbar-home">
+    <a class="toolbar-item__btn" href="https://epic-travels.myharavan.com">
+     <span class="toolbar-item__icon">
+      <img alt="Trang chủ" class="lazyload" src="//theme.hstatic.net/200000871401/1001342583/14/sidebar_icon_home_img.jpg?v=45"/>
+     </span>
+     <span class="toolbar-item__label">
+      Trang chủ
+     </span>
+    </a>
+   </div>
+   <div class="toolbar-item toolbar-nav">
+    <a class="toolbar-item__btn toolbarMenuClick" name="toolbar-nav">
+     <span class="toolbar-item__icon">
+      <img alt="Danh mục" class="lazyload" src="//theme.hstatic.net/200000871401/1001342583/14/sidebar_icon_cate_img.jpg?v=45"/>
+     </span>
+     <span class="toolbar-item__label">
+      Danh mục
+     </span>
+    </a>
+   </div>
+   <div class="toolbar-item toolbar-contact">
+    <a class="toolbar-item__btn toolbarContactClick" name="toolbar-contact">
+     <span class="toolbar-item__icon">
+      <img alt="Tư vấn" class="lazyload" src="//theme.hstatic.net/200000871401/1001342583/14/sidebar_icon_suport_img.jpg?v=45"/>
+     </span>
+     <span class="toolbar-item__label">
+      Tư vấn
+     </span>
+    </a>
+   </div>
+   <div class="toolbar-item toolbar-notify">
+    <a class="toolbar-item__btn toolbarNotifyClick" name="toolbar-notify">
+     <span class="toolbar-item__icon">
+      <img alt="Thông báo" class="lazyload" src="//theme.hstatic.net/200000871401/1001342583/14/sidebar_icon_noti_img.jpg?v=45"/>
+      <span class="count">
+      </span>
+     </span>
+     <span class="toolbar-item__label">
+      Thông báo
+     </span>
+    </a>
+   </div>
+   <div class="toolbar-item toolbar-cart">
+    <a class="toolbar-item__btn toolbarCartClick" name="toolbar-cart">
+     <span class="toolbar-item__icon">
+      <img alt="Giỏ hàng" class="lazyload" src="//theme.hstatic.net/200000871401/1001342583/14/sidebar_icon_cart_img.jpg?v=45"/>
+      <span class="count">
+       0
+      </span>
+     </span>
+     <span class="toolbar-item__label">
+      Giỏ hàng
+     </span>
+    </a>
+   </div>
+  </div>
+ </div>
+ <!-- SCRIPT PRODUCT -->
+ <!-- SCRIPT THEME -->
+ <!-- POPUP LOAD -->
+ <!--END *** POPUP LOAD =====================-->
+ <div aria-hidden="true" class="modal fade modalForm-success" id="mymodal_success" role="dialog" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+   <div class="modal-content">
+    <div class="modal-body text-center">
+     <svg height="50" viewbox="0 0 50 50" width="50" x="0px" xmlns="http://www.w3.org/2000/svg" y="0px">
+      <path d="M 25 2 C 12.317 2 2 12.317 2 25 C 2 37.683 12.317 48 25 48 C 37.683 48 48 37.683 48 25 C 48 20.44 46.660281 16.189328 44.363281 12.611328 L 42.994141 14.228516 C 44.889141 17.382516 46 21.06 46 25 C 46 36.579 36.579 46 25 46 C 13.421 46 4 36.579 4 25 C 4 13.421 13.421 4 25 4 C 30.443 4 35.393906 6.0997656 39.128906 9.5097656 L 40.4375 7.9648438 C 36.3525 4.2598437 30.935 2 25 2 z M 43.236328 7.7539062 L 23.914062 30.554688 L 15.78125 22.96875 L 14.417969 24.431641 L 24.083984 33.447266 L 44.763672 9.046875 L 43.236328 7.7539062 z">
+      </path>
+     </svg>
+     <p>
+      Cảm ơn bạn đã để lại thông tin!
+      <br/>
+      Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.
+     </p>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+
+{%endblock %}
