@@ -1,0 +1,1704 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(newsCategory.name).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ newsCategory.metaKeywords?:newsCategory.name }}">
+<meta name="description" content="{{ newsCategory.metaDescription?:newsCategory.name }}">
+<meta property="og:title" content="{{ newsCategory.metaTitle?:newsCategory.name }}">
+<meta property="og:url" content="{{ newsCategory.canonicalLink }}">
+<meta property="og:image" content="{{ newsCategory.imgUri }}">
+<link rel="canonical" href="{{ newsCategory.canonicalLink }}">
+{%endblock %}
+
+{%block body %}
+
+<div class="main-layout">
+ <div id="blog">
+  <div class="breadcrumb-shop">
+   <div class="breadcrumb-wrap container container-xl">
+    <ol class="breadcrumb">
+     <li class="breadcrumb-item">
+      <a href="/">
+       Trang chủ
+      </a>
+     </li>
+     <li class="breadcrumb-item active">
+      <span>
+       Blog - Tin tức
+      </span>
+     </li>
+    </ol>
+   </div>
+  </div>
+  <div class="blogMain">
+   <div class="container">
+    <div class="blogMainContent">
+     <div class="blogBody">
+      <div class="blogListArticle">
+       <!-- Begin: Nội dung blog -->
+       <article class="article-item">
+        <div class="article-item-top">
+         <a href="/blogs/news/danh-sach-dai-ly-chinh-thuc-tham-gia-nous-party-2025" rel="nofollow" title="DANH SÁCH ĐẠI LÝ CHÍNH THỨC THAM GIA NOUS PARTY 2025">
+          <img alt="DANH SÁCH ĐẠI LÝ CHÍNH THỨC THAM GIA NOUS PARTY 2025" class="lazyload img-fluid" data-src="//file.hstatic.net/200000692427/article/nu_party_blog_danh_sach_4622c40fe9b548469d953aade04d6205_grande.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+          <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 48 48" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+           <g>
+            <g id="_x32_-Magnifying_Glass" xmlns="http://www.w3.org/2000/svg">
+             <path class="" d="m40.8994141 39.4853516-7.8127441-7.8127441c2.3978882-2.734375 3.7209473-6.1942749 3.7209473-9.8649902 0-4.0068359-1.5605469-7.7734375-4.3935547-10.6064453s-6.5996094-4.3935547-10.6064453-4.3935547-7.7734375 1.5605469-10.6064453 4.3935547-4.3935547 6.5996094-4.3935547 10.6064453 1.5605469 7.7734375 4.3935547 10.6064453 6.5996094 4.3935547 10.6064453 4.3935547c3.6707153 0 7.1306152-1.3230591 9.8649902-3.7209473l7.8127441 7.8127441c.1953125.1953125.4511719.2929688.7070313.2929688s.5117188-.0976563.7070313-.2929688c.3906249-.390625.3906249-1.0234375-.0000001-1.4140625zm-28.2841797-8.4853516c-2.4550781-2.4555664-3.8076172-5.7202148-3.8076172-9.1923828s1.3525391-6.7368164 3.8076172-9.1923828c2.4555664-2.4550781 5.7202148-3.8076172 9.1923828-3.8076172s6.7368164 1.3525391 9.1923828 3.8076172c2.4550781 2.4555664 3.8076172 5.7202148 3.8076172 9.1923828s-1.3525391 6.7368164-3.8076172 9.1923828c-2.4555664 2.4550781-5.7202148 3.8076172-9.1923828 3.8076172s-6.7368164-1.3525391-9.1923828-3.8076172z" data-original="#ffffff" fill="#ffffff" style="">
+             </path>
+            </g>
+           </g>
+          </svg>
+         </a>
+        </div>
+        <div class="article-item-bottom">
+         <div class="flex-between">
+          <span class="article-item-bottom-date">
+           <svg class="" height="64" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="64" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+            <g>
+             <g id="Calendar" xmlns="http://www.w3.org/2000/svg">
+              <path class="" d="M57,8H52V6a4,4,0,0,0-8,0V8H36V6a4,4,0,0,0-8,0V8H20V6a4,4,0,0,0-8,0V8H7a5,5,0,0,0-5,5V53a5,5,0,0,0,5,5H35a1,1,0,0,0,0-2H7a3.009,3.009,0,0,1-3-3V22H60V39a1,1,0,0,0,2,0V13A5,5,0,0,0,57,8ZM46,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM30,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM14,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM60,20H4V13a3.009,3.009,0,0,1,3-3h5v2a4,4,0,0,0,8,0V10h8v2a4,4,0,0,0,8,0V10h8v2a4,4,0,0,0,8,0V10h5a3.009,3.009,0,0,1,3,3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M30,29a2,2,0,0,0-2-2H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V29h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M18,29a2,2,0,0,0-2-2H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V29h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M52,34a2,2,0,0,0,2-2V29a2,2,0,0,0-2-2H48a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2Zm-4-5h4v3H48Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M30,38a2,2,0,0,0-2-2H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V38h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M18,38a2,2,0,0,0-2-2H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V38h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M28,45H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V47A2,2,0,0,0,28,45Zm-4,5V47h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M36,34h4a2,2,0,0,0,2-2V29a2,2,0,0,0-2-2H36a2,2,0,0,0-2,2v3A2,2,0,0,0,36,34Zm0-5h4v3H36Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M34,41a2,2,0,0,0,2,2,1,1,0,0,0,0-2V38h4a1,1,0,0,0,0-2H36a2,2,0,0,0-2,2Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M16,45H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V47A2,2,0,0,0,16,45Zm-4,5V47h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M49,36A13,13,0,1,0,62,49,13.015,13.015,0,0,0,49,36Zm0,24A11,11,0,1,1,60,49,11.013,11.013,0,0,1,49,60Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M54.778,44.808,47,52.586,43.465,49.05a1,1,0,0,0-1.414,1.414l4.242,4.243a1,1,0,0,0,1.414,0l8.485-8.485a1,1,0,0,0-1.414-1.414Z" data-original="#000000" fill="#000000" style="">
+              </path>
+             </g>
+            </g>
+           </svg>
+           17 Thg 6 2025
+          </span>
+         </div>
+         <h3 class="article-item-bottom-name">
+          <a href="/blogs/news/danh-sach-dai-ly-chinh-thuc-tham-gia-nous-party-2025" title="DANH SÁCH ĐẠI LÝ CHÍNH THỨC THAM GIA NOUS PARTY 2025">
+           DANH SÁCH ĐẠI LÝ CHÍNH THỨC THAM GIA NOUS PARTY 2025
+          </a>
+         </h3>
+         <p class="article-item-bottom-des">
+          Sự kiện thường niên chỉ diễn ra một lần duy nhất trong năm, là dịp lý tưởng để ba mẹ “săn” những sản phẩm chất lượng với mức giá cực kỳ ưu đãi. Đặc biệt, Nous Party 2025 mang ý nghĩa...
+         </p>
+         <p>
+          <a class="index-viewmore" href="/blogs/news/danh-sach-dai-ly-chinh-thuc-tham-gia-nous-party-2025">
+           Xem thêm
+           <i class="lni lni-arrow-right">
+           </i>
+          </a>
+         </p>
+        </div>
+       </article>
+       <article class="article-item">
+        <div class="article-item-top">
+         <a href="/blogs/news/nous-10th-birthday-party-dai-tiec-mua-sam-lon-nhat-trong-nam" rel="nofollow" title="🎉Nous 10th Birthday Party – Đại Tiệc Mua Sắm Lớn Nhất Trong Năm!">
+          <img alt="🎉Nous 10th Birthday Party – Đại Tiệc Mua Sắm Lớn Nhất Trong Năm!" class="lazyload img-fluid" data-src="//file.hstatic.net/200000692427/article/thiet_ke_chua_co_ten__3__ff2e9a38148847b49bd51011f5514b9a_grande.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+          <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 48 48" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+           <g>
+            <g id="_x32_-Magnifying_Glass" xmlns="http://www.w3.org/2000/svg">
+             <path class="" d="m40.8994141 39.4853516-7.8127441-7.8127441c2.3978882-2.734375 3.7209473-6.1942749 3.7209473-9.8649902 0-4.0068359-1.5605469-7.7734375-4.3935547-10.6064453s-6.5996094-4.3935547-10.6064453-4.3935547-7.7734375 1.5605469-10.6064453 4.3935547-4.3935547 6.5996094-4.3935547 10.6064453 1.5605469 7.7734375 4.3935547 10.6064453 6.5996094 4.3935547 10.6064453 4.3935547c3.6707153 0 7.1306152-1.3230591 9.8649902-3.7209473l7.8127441 7.8127441c.1953125.1953125.4511719.2929688.7070313.2929688s.5117188-.0976563.7070313-.2929688c.3906249-.390625.3906249-1.0234375-.0000001-1.4140625zm-28.2841797-8.4853516c-2.4550781-2.4555664-3.8076172-5.7202148-3.8076172-9.1923828s1.3525391-6.7368164 3.8076172-9.1923828c2.4555664-2.4550781 5.7202148-3.8076172 9.1923828-3.8076172s6.7368164 1.3525391 9.1923828 3.8076172c2.4550781 2.4555664 3.8076172 5.7202148 3.8076172 9.1923828s-1.3525391 6.7368164-3.8076172 9.1923828c-2.4555664 2.4550781-5.7202148 3.8076172-9.1923828 3.8076172s-6.7368164-1.3525391-9.1923828-3.8076172z" data-original="#ffffff" fill="#ffffff" style="">
+             </path>
+            </g>
+           </g>
+          </svg>
+         </a>
+        </div>
+        <div class="article-item-bottom">
+         <div class="flex-between">
+          <span class="article-item-bottom-date">
+           <svg class="" height="64" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="64" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+            <g>
+             <g id="Calendar" xmlns="http://www.w3.org/2000/svg">
+              <path class="" d="M57,8H52V6a4,4,0,0,0-8,0V8H36V6a4,4,0,0,0-8,0V8H20V6a4,4,0,0,0-8,0V8H7a5,5,0,0,0-5,5V53a5,5,0,0,0,5,5H35a1,1,0,0,0,0-2H7a3.009,3.009,0,0,1-3-3V22H60V39a1,1,0,0,0,2,0V13A5,5,0,0,0,57,8ZM46,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM30,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM14,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM60,20H4V13a3.009,3.009,0,0,1,3-3h5v2a4,4,0,0,0,8,0V10h8v2a4,4,0,0,0,8,0V10h8v2a4,4,0,0,0,8,0V10h5a3.009,3.009,0,0,1,3,3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M30,29a2,2,0,0,0-2-2H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V29h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M18,29a2,2,0,0,0-2-2H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V29h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M52,34a2,2,0,0,0,2-2V29a2,2,0,0,0-2-2H48a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2Zm-4-5h4v3H48Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M30,38a2,2,0,0,0-2-2H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V38h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M18,38a2,2,0,0,0-2-2H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V38h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M28,45H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V47A2,2,0,0,0,28,45Zm-4,5V47h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M36,34h4a2,2,0,0,0,2-2V29a2,2,0,0,0-2-2H36a2,2,0,0,0-2,2v3A2,2,0,0,0,36,34Zm0-5h4v3H36Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M34,41a2,2,0,0,0,2,2,1,1,0,0,0,0-2V38h4a1,1,0,0,0,0-2H36a2,2,0,0,0-2,2Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M16,45H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V47A2,2,0,0,0,16,45Zm-4,5V47h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M49,36A13,13,0,1,0,62,49,13.015,13.015,0,0,0,49,36Zm0,24A11,11,0,1,1,60,49,11.013,11.013,0,0,1,49,60Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M54.778,44.808,47,52.586,43.465,49.05a1,1,0,0,0-1.414,1.414l4.242,4.243a1,1,0,0,0,1.414,0l8.485-8.485a1,1,0,0,0-1.414-1.414Z" data-original="#000000" fill="#000000" style="">
+              </path>
+             </g>
+            </g>
+           </svg>
+           13 Thg 6 2025
+          </span>
+         </div>
+         <h3 class="article-item-bottom-name">
+          <a href="/blogs/news/nous-10th-birthday-party-dai-tiec-mua-sam-lon-nhat-trong-nam" title="🎉Nous 10th Birthday Party – Đại Tiệc Mua Sắm Lớn Nhất Trong Năm!">
+           🎉Nous 10th Birthday Party – Đại Tiệc Mua Sắm Lớn Nhất Trong Năm!
+          </a>
+         </h3>
+         <p class="article-item-bottom-des">
+          🎂 Nous Party là sự kiện thường niên nhằm tri ân tới các khách hàng đã ủng hộ và lựa chọn Nous đồng hành chăm sóc và nâng niu các em bé. Nous Birthday Party 2025 chính là dịp đặc...
+         </p>
+         <p>
+          <a class="index-viewmore" href="/blogs/news/nous-10th-birthday-party-dai-tiec-mua-sam-lon-nhat-trong-nam">
+           Xem thêm
+           <i class="lni lni-arrow-right">
+           </i>
+          </a>
+         </p>
+        </div>
+       </article>
+       <article class="article-item">
+        <div class="article-item-top">
+         <a href="/blogs/news/thoi-trang-nous-mom-deal-he-mem-mai-cho-me" rel="nofollow" title="Thời trang Nous Mom – Deal hè mềm mại cho mẹ">
+          <img alt="Thời trang Nous Mom – Deal hè mềm mại cho mẹ" class="lazyload img-fluid" data-src="//file.hstatic.net/200000692427/article/nous_mom_2805_anh_1_196805a171774d1a8357c226a46e6e8a_grande.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+          <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 48 48" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+           <g>
+            <g id="_x32_-Magnifying_Glass" xmlns="http://www.w3.org/2000/svg">
+             <path class="" d="m40.8994141 39.4853516-7.8127441-7.8127441c2.3978882-2.734375 3.7209473-6.1942749 3.7209473-9.8649902 0-4.0068359-1.5605469-7.7734375-4.3935547-10.6064453s-6.5996094-4.3935547-10.6064453-4.3935547-7.7734375 1.5605469-10.6064453 4.3935547-4.3935547 6.5996094-4.3935547 10.6064453 1.5605469 7.7734375 4.3935547 10.6064453 6.5996094 4.3935547 10.6064453 4.3935547c3.6707153 0 7.1306152-1.3230591 9.8649902-3.7209473l7.8127441 7.8127441c.1953125.1953125.4511719.2929688.7070313.2929688s.5117188-.0976563.7070313-.2929688c.3906249-.390625.3906249-1.0234375-.0000001-1.4140625zm-28.2841797-8.4853516c-2.4550781-2.4555664-3.8076172-5.7202148-3.8076172-9.1923828s1.3525391-6.7368164 3.8076172-9.1923828c2.4555664-2.4550781 5.7202148-3.8076172 9.1923828-3.8076172s6.7368164 1.3525391 9.1923828 3.8076172c2.4550781 2.4555664 3.8076172 5.7202148 3.8076172 9.1923828s-1.3525391 6.7368164-3.8076172 9.1923828c-2.4555664 2.4550781-5.7202148 3.8076172-9.1923828 3.8076172s-6.7368164-1.3525391-9.1923828-3.8076172z" data-original="#ffffff" fill="#ffffff" style="">
+             </path>
+            </g>
+           </g>
+          </svg>
+         </a>
+        </div>
+        <div class="article-item-bottom">
+         <div class="flex-between">
+          <span class="article-item-bottom-date">
+           <svg class="" height="64" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="64" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+            <g>
+             <g id="Calendar" xmlns="http://www.w3.org/2000/svg">
+              <path class="" d="M57,8H52V6a4,4,0,0,0-8,0V8H36V6a4,4,0,0,0-8,0V8H20V6a4,4,0,0,0-8,0V8H7a5,5,0,0,0-5,5V53a5,5,0,0,0,5,5H35a1,1,0,0,0,0-2H7a3.009,3.009,0,0,1-3-3V22H60V39a1,1,0,0,0,2,0V13A5,5,0,0,0,57,8ZM46,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM30,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM14,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM60,20H4V13a3.009,3.009,0,0,1,3-3h5v2a4,4,0,0,0,8,0V10h8v2a4,4,0,0,0,8,0V10h8v2a4,4,0,0,0,8,0V10h5a3.009,3.009,0,0,1,3,3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M30,29a2,2,0,0,0-2-2H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V29h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M18,29a2,2,0,0,0-2-2H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V29h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M52,34a2,2,0,0,0,2-2V29a2,2,0,0,0-2-2H48a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2Zm-4-5h4v3H48Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M30,38a2,2,0,0,0-2-2H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V38h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M18,38a2,2,0,0,0-2-2H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V38h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M28,45H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V47A2,2,0,0,0,28,45Zm-4,5V47h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M36,34h4a2,2,0,0,0,2-2V29a2,2,0,0,0-2-2H36a2,2,0,0,0-2,2v3A2,2,0,0,0,36,34Zm0-5h4v3H36Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M34,41a2,2,0,0,0,2,2,1,1,0,0,0,0-2V38h4a1,1,0,0,0,0-2H36a2,2,0,0,0-2,2Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M16,45H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V47A2,2,0,0,0,16,45Zm-4,5V47h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M49,36A13,13,0,1,0,62,49,13.015,13.015,0,0,0,49,36Zm0,24A11,11,0,1,1,60,49,11.013,11.013,0,0,1,49,60Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M54.778,44.808,47,52.586,43.465,49.05a1,1,0,0,0-1.414,1.414l4.242,4.243a1,1,0,0,0,1.414,0l8.485-8.485a1,1,0,0,0-1.414-1.414Z" data-original="#000000" fill="#000000" style="">
+              </path>
+             </g>
+            </g>
+           </svg>
+           02 Thg 6 2025
+          </span>
+         </div>
+         <h3 class="article-item-bottom-name">
+          <a href="/blogs/news/thoi-trang-nous-mom-deal-he-mem-mai-cho-me" title="Thời trang Nous Mom – Deal hè mềm mại cho mẹ">
+           Thời trang Nous Mom – Deal hè mềm mại cho mẹ
+          </a>
+         </h3>
+         <p class="article-item-bottom-des">
+          Dù ở nhà chăm con hay trong những phút giây thư giãn, mẹ luôn xứng đáng được chăm sóc dịu dàng trong những trang phục đẹp và thoải mái. BST Nous Mom Homewear được thiết kế với chất liệu mềm...
+         </p>
+         <p>
+          <a class="index-viewmore" href="/blogs/news/thoi-trang-nous-mom-deal-he-mem-mai-cho-me">
+           Xem thêm
+           <i class="lni lni-arrow-right">
+           </i>
+          </a>
+         </p>
+        </div>
+       </article>
+       <article class="article-item">
+        <div class="article-item-top">
+         <a href="/blogs/news/hai-trinh-dieu-ky-cung-nous-basic" rel="nofollow" title="Hải trình diệu kỳ cùng Nous">
+          <img alt="Hải trình diệu kỳ cùng Nous" class="lazyload img-fluid" data-src="//file.hstatic.net/200000692427/article/490749072_999331609041845_4161611446001790613_n_df65c94adac14e12b8b5c7e956b3d953_grande.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+          <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 48 48" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+           <g>
+            <g id="_x32_-Magnifying_Glass" xmlns="http://www.w3.org/2000/svg">
+             <path class="" d="m40.8994141 39.4853516-7.8127441-7.8127441c2.3978882-2.734375 3.7209473-6.1942749 3.7209473-9.8649902 0-4.0068359-1.5605469-7.7734375-4.3935547-10.6064453s-6.5996094-4.3935547-10.6064453-4.3935547-7.7734375 1.5605469-10.6064453 4.3935547-4.3935547 6.5996094-4.3935547 10.6064453 1.5605469 7.7734375 4.3935547 10.6064453 6.5996094 4.3935547 10.6064453 4.3935547c3.6707153 0 7.1306152-1.3230591 9.8649902-3.7209473l7.8127441 7.8127441c.1953125.1953125.4511719.2929688.7070313.2929688s.5117188-.0976563.7070313-.2929688c.3906249-.390625.3906249-1.0234375-.0000001-1.4140625zm-28.2841797-8.4853516c-2.4550781-2.4555664-3.8076172-5.7202148-3.8076172-9.1923828s1.3525391-6.7368164 3.8076172-9.1923828c2.4555664-2.4550781 5.7202148-3.8076172 9.1923828-3.8076172s6.7368164 1.3525391 9.1923828 3.8076172c2.4550781 2.4555664 3.8076172 5.7202148 3.8076172 9.1923828s-1.3525391 6.7368164-3.8076172 9.1923828c-2.4555664 2.4550781-5.7202148 3.8076172-9.1923828 3.8076172s-6.7368164-1.3525391-9.1923828-3.8076172z" data-original="#ffffff" fill="#ffffff" style="">
+             </path>
+            </g>
+           </g>
+          </svg>
+         </a>
+        </div>
+        <div class="article-item-bottom">
+         <div class="flex-between">
+          <span class="article-item-bottom-date">
+           <svg class="" height="64" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="64" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+            <g>
+             <g id="Calendar" xmlns="http://www.w3.org/2000/svg">
+              <path class="" d="M57,8H52V6a4,4,0,0,0-8,0V8H36V6a4,4,0,0,0-8,0V8H20V6a4,4,0,0,0-8,0V8H7a5,5,0,0,0-5,5V53a5,5,0,0,0,5,5H35a1,1,0,0,0,0-2H7a3.009,3.009,0,0,1-3-3V22H60V39a1,1,0,0,0,2,0V13A5,5,0,0,0,57,8ZM46,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM30,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM14,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM60,20H4V13a3.009,3.009,0,0,1,3-3h5v2a4,4,0,0,0,8,0V10h8v2a4,4,0,0,0,8,0V10h8v2a4,4,0,0,0,8,0V10h5a3.009,3.009,0,0,1,3,3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M30,29a2,2,0,0,0-2-2H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V29h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M18,29a2,2,0,0,0-2-2H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V29h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M52,34a2,2,0,0,0,2-2V29a2,2,0,0,0-2-2H48a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2Zm-4-5h4v3H48Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M30,38a2,2,0,0,0-2-2H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V38h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M18,38a2,2,0,0,0-2-2H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V38h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M28,45H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V47A2,2,0,0,0,28,45Zm-4,5V47h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M36,34h4a2,2,0,0,0,2-2V29a2,2,0,0,0-2-2H36a2,2,0,0,0-2,2v3A2,2,0,0,0,36,34Zm0-5h4v3H36Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M34,41a2,2,0,0,0,2,2,1,1,0,0,0,0-2V38h4a1,1,0,0,0,0-2H36a2,2,0,0,0-2,2Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M16,45H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V47A2,2,0,0,0,16,45Zm-4,5V47h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M49,36A13,13,0,1,0,62,49,13.015,13.015,0,0,0,49,36Zm0,24A11,11,0,1,1,60,49,11.013,11.013,0,0,1,49,60Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M54.778,44.808,47,52.586,43.465,49.05a1,1,0,0,0-1.414,1.414l4.242,4.243a1,1,0,0,0,1.414,0l8.485-8.485a1,1,0,0,0-1.414-1.414Z" data-original="#000000" fill="#000000" style="">
+              </path>
+             </g>
+            </g>
+           </svg>
+           02 Thg 5 2025
+          </span>
+         </div>
+         <h3 class="article-item-bottom-name">
+          <a href="/blogs/news/hai-trinh-dieu-ky-cung-nous-basic" title="Hải trình diệu kỳ cùng Nous">
+           Hải trình diệu kỳ cùng Nous
+          </a>
+         </h3>
+         <p class="article-item-bottom-des">
+          Chào đón mùa hè đầu tiên ngập tràn ánh nắng, Nous ra mắt Bộ sưu tập Tháng 4 “Đảo rì rào” – bản hoà tấu dịu dàng từ sóng biển, gió nhẹ và tiếng cười trong veo của bé yêu.Hơi...
+         </p>
+         <p>
+          <a class="index-viewmore" href="/blogs/news/hai-trinh-dieu-ky-cung-nous-basic">
+           Xem thêm
+           <i class="lni lni-arrow-right">
+           </i>
+          </a>
+         </p>
+        </div>
+       </article>
+       <article class="article-item">
+        <div class="article-item-top">
+         <a href="/blogs/news/dao-ri-rao-nhung-lan-song-nho-mang-ten-ky-uc-dau-doi" ký="" làn="" mang="" nhỏ="" những="" rel="nofollow" rào"="" rì="" sóng="" title="" tên="" đảo="" đầu="" đời"="" ức="" –="">
+          <img alt="" class="lazyload img-fluid" data-src="//file.hstatic.net/200000692427/article/thiet_ke_chua_co_ten__1__984ea77d71964577949a369ae2c26cb4_grande.png" ký="" làn="" mang="" nhỏ="" những="" rào"="" rì="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" sóng="" tên="" đảo="" đầu="" đời"="" ức="" –=""/>
+          <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 48 48" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+           <g>
+            <g id="_x32_-Magnifying_Glass" xmlns="http://www.w3.org/2000/svg">
+             <path class="" d="m40.8994141 39.4853516-7.8127441-7.8127441c2.3978882-2.734375 3.7209473-6.1942749 3.7209473-9.8649902 0-4.0068359-1.5605469-7.7734375-4.3935547-10.6064453s-6.5996094-4.3935547-10.6064453-4.3935547-7.7734375 1.5605469-10.6064453 4.3935547-4.3935547 6.5996094-4.3935547 10.6064453 1.5605469 7.7734375 4.3935547 10.6064453 6.5996094 4.3935547 10.6064453 4.3935547c3.6707153 0 7.1306152-1.3230591 9.8649902-3.7209473l7.8127441 7.8127441c.1953125.1953125.4511719.2929688.7070313.2929688s.5117188-.0976563.7070313-.2929688c.3906249-.390625.3906249-1.0234375-.0000001-1.4140625zm-28.2841797-8.4853516c-2.4550781-2.4555664-3.8076172-5.7202148-3.8076172-9.1923828s1.3525391-6.7368164 3.8076172-9.1923828c2.4555664-2.4550781 5.7202148-3.8076172 9.1923828-3.8076172s6.7368164 1.3525391 9.1923828 3.8076172c2.4550781 2.4555664 3.8076172 5.7202148 3.8076172 9.1923828s-1.3525391 6.7368164-3.8076172 9.1923828c-2.4555664 2.4550781-5.7202148 3.8076172-9.1923828 3.8076172s-6.7368164-1.3525391-9.1923828-3.8076172z" data-original="#ffffff" fill="#ffffff" style="">
+             </path>
+            </g>
+           </g>
+          </svg>
+         </a>
+        </div>
+        <div class="article-item-bottom">
+         <div class="flex-between">
+          <span class="article-item-bottom-date">
+           <svg class="" height="64" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="64" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+            <g>
+             <g id="Calendar" xmlns="http://www.w3.org/2000/svg">
+              <path class="" d="M57,8H52V6a4,4,0,0,0-8,0V8H36V6a4,4,0,0,0-8,0V8H20V6a4,4,0,0,0-8,0V8H7a5,5,0,0,0-5,5V53a5,5,0,0,0,5,5H35a1,1,0,0,0,0-2H7a3.009,3.009,0,0,1-3-3V22H60V39a1,1,0,0,0,2,0V13A5,5,0,0,0,57,8ZM46,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM30,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM14,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM60,20H4V13a3.009,3.009,0,0,1,3-3h5v2a4,4,0,0,0,8,0V10h8v2a4,4,0,0,0,8,0V10h8v2a4,4,0,0,0,8,0V10h5a3.009,3.009,0,0,1,3,3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M30,29a2,2,0,0,0-2-2H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V29h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M18,29a2,2,0,0,0-2-2H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V29h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M52,34a2,2,0,0,0,2-2V29a2,2,0,0,0-2-2H48a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2Zm-4-5h4v3H48Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M30,38a2,2,0,0,0-2-2H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V38h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M18,38a2,2,0,0,0-2-2H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V38h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M28,45H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V47A2,2,0,0,0,28,45Zm-4,5V47h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M36,34h4a2,2,0,0,0,2-2V29a2,2,0,0,0-2-2H36a2,2,0,0,0-2,2v3A2,2,0,0,0,36,34Zm0-5h4v3H36Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M34,41a2,2,0,0,0,2,2,1,1,0,0,0,0-2V38h4a1,1,0,0,0,0-2H36a2,2,0,0,0-2,2Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M16,45H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V47A2,2,0,0,0,16,45Zm-4,5V47h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M49,36A13,13,0,1,0,62,49,13.015,13.015,0,0,0,49,36Zm0,24A11,11,0,1,1,60,49,11.013,11.013,0,0,1,49,60Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M54.778,44.808,47,52.586,43.465,49.05a1,1,0,0,0-1.414,1.414l4.242,4.243a1,1,0,0,0,1.414,0l8.485-8.485a1,1,0,0,0-1.414-1.414Z" data-original="#000000" fill="#000000" style="">
+              </path>
+             </g>
+            </g>
+           </svg>
+           24 Thg 4 2025
+          </span>
+         </div>
+         <h3 class="article-item-bottom-name">
+          <a href="/blogs/news/dao-ri-rao-nhung-lan-song-nho-mang-ten-ky-uc-dau-doi" ký="" làn="" mang="" nhỏ="" những="" rào"="" rì="" sóng="" title="" tên="" đảo="" đầu="" đời"="" ức="" –="">
+           "Đảo rì rào" – Những làn sóng nhỏ mang tên ký ức đầu đời
+          </a>
+         </h3>
+         <p class="article-item-bottom-des">
+          Tháng Tư về cùng những cơn gió đầu mùa mang theo hương mặn nhẹ của biển khơi. Đó cũng là khi Nous ra mắt “Đảo rì rào” – bộ sưu tập gợi lên một mùa hè đầy thơ và ánh...
+         </p>
+         <p>
+          <a class="index-viewmore" href="/blogs/news/dao-ri-rao-nhung-lan-song-nho-mang-ten-ky-uc-dau-doi">
+           Xem thêm
+           <i class="lni lni-arrow-right">
+           </i>
+          </a>
+         </p>
+        </div>
+       </article>
+       <article class="article-item">
+        <div class="article-item-top">
+         <a href="/blogs/news/danh-sach-dai-ly-chinh-thuc-ban-bst-nuel-gift-haus" rel="nofollow" title="DANH SÁCH ĐẠI LÝ CHÍNH THỨC BÁN BST “NUEL GIFT HAUS”">
+          <img alt="DANH SÁCH ĐẠI LÝ CHÍNH THỨC BÁN BST “NUEL GIFT HAUS”" class="lazyload img-fluid" data-src="//file.hstatic.net/200000692427/article/dia_chi_nuel_web_8ba81ed905a44bdeafe88c3c45bf2708_grande.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+          <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 48 48" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+           <g>
+            <g id="_x32_-Magnifying_Glass" xmlns="http://www.w3.org/2000/svg">
+             <path class="" d="m40.8994141 39.4853516-7.8127441-7.8127441c2.3978882-2.734375 3.7209473-6.1942749 3.7209473-9.8649902 0-4.0068359-1.5605469-7.7734375-4.3935547-10.6064453s-6.5996094-4.3935547-10.6064453-4.3935547-7.7734375 1.5605469-10.6064453 4.3935547-4.3935547 6.5996094-4.3935547 10.6064453 1.5605469 7.7734375 4.3935547 10.6064453 6.5996094 4.3935547 10.6064453 4.3935547c3.6707153 0 7.1306152-1.3230591 9.8649902-3.7209473l7.8127441 7.8127441c.1953125.1953125.4511719.2929688.7070313.2929688s.5117188-.0976563.7070313-.2929688c.3906249-.390625.3906249-1.0234375-.0000001-1.4140625zm-28.2841797-8.4853516c-2.4550781-2.4555664-3.8076172-5.7202148-3.8076172-9.1923828s1.3525391-6.7368164 3.8076172-9.1923828c2.4555664-2.4550781 5.7202148-3.8076172 9.1923828-3.8076172s6.7368164 1.3525391 9.1923828 3.8076172c2.4550781 2.4555664 3.8076172 5.7202148 3.8076172 9.1923828s-1.3525391 6.7368164-3.8076172 9.1923828c-2.4555664 2.4550781-5.7202148 3.8076172-9.1923828 3.8076172s-6.7368164-1.3525391-9.1923828-3.8076172z" data-original="#ffffff" fill="#ffffff" style="">
+             </path>
+            </g>
+           </g>
+          </svg>
+         </a>
+        </div>
+        <div class="article-item-bottom">
+         <div class="flex-between">
+          <span class="article-item-bottom-date">
+           <svg class="" height="64" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="64" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+            <g>
+             <g id="Calendar" xmlns="http://www.w3.org/2000/svg">
+              <path class="" d="M57,8H52V6a4,4,0,0,0-8,0V8H36V6a4,4,0,0,0-8,0V8H20V6a4,4,0,0,0-8,0V8H7a5,5,0,0,0-5,5V53a5,5,0,0,0,5,5H35a1,1,0,0,0,0-2H7a3.009,3.009,0,0,1-3-3V22H60V39a1,1,0,0,0,2,0V13A5,5,0,0,0,57,8ZM46,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM30,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM14,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM60,20H4V13a3.009,3.009,0,0,1,3-3h5v2a4,4,0,0,0,8,0V10h8v2a4,4,0,0,0,8,0V10h8v2a4,4,0,0,0,8,0V10h5a3.009,3.009,0,0,1,3,3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M30,29a2,2,0,0,0-2-2H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V29h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M18,29a2,2,0,0,0-2-2H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V29h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M52,34a2,2,0,0,0,2-2V29a2,2,0,0,0-2-2H48a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2Zm-4-5h4v3H48Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M30,38a2,2,0,0,0-2-2H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V38h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M18,38a2,2,0,0,0-2-2H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V38h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M28,45H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V47A2,2,0,0,0,28,45Zm-4,5V47h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M36,34h4a2,2,0,0,0,2-2V29a2,2,0,0,0-2-2H36a2,2,0,0,0-2,2v3A2,2,0,0,0,36,34Zm0-5h4v3H36Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M34,41a2,2,0,0,0,2,2,1,1,0,0,0,0-2V38h4a1,1,0,0,0,0-2H36a2,2,0,0,0-2,2Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M16,45H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V47A2,2,0,0,0,16,45Zm-4,5V47h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M49,36A13,13,0,1,0,62,49,13.015,13.015,0,0,0,49,36Zm0,24A11,11,0,1,1,60,49,11.013,11.013,0,0,1,49,60Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M54.778,44.808,47,52.586,43.465,49.05a1,1,0,0,0-1.414,1.414l4.242,4.243a1,1,0,0,0,1.414,0l8.485-8.485a1,1,0,0,0-1.414-1.414Z" data-original="#000000" fill="#000000" style="">
+              </path>
+             </g>
+            </g>
+           </svg>
+           04 Thg 12 2024
+          </span>
+         </div>
+         <h3 class="article-item-bottom-name">
+          <a href="/blogs/news/danh-sach-dai-ly-chinh-thuc-ban-bst-nuel-gift-haus" title="DANH SÁCH ĐẠI LÝ CHÍNH THỨC BÁN BST “NUEL GIFT HAUS”">
+           DANH SÁCH ĐẠI LÝ CHÍNH THỨC BÁN BST “NUEL GIFT HAUS”
+          </a>
+         </h3>
+         <p class="article-item-bottom-des">
+          Gửi ba mẹ thân thương của Nous! Giáng sinh ấm áp lại về, hãy cùng Nous tận hưởng trọn vẹn tươi vui của mùa lễ hội với những thiết kế êm ái trong BST “Nuel Gift Haus”Rất nhiều sản phẩm...
+         </p>
+         <p>
+          <a class="index-viewmore" href="/blogs/news/danh-sach-dai-ly-chinh-thuc-ban-bst-nuel-gift-haus">
+           Xem thêm
+           <i class="lni lni-arrow-right">
+           </i>
+          </a>
+         </p>
+        </div>
+       </article>
+       <article class="article-item">
+        <div class="article-item-top">
+         <a href="/blogs/news/sam-do-di-sinh-nous-tang-be-qua" rel="nofollow" title="SẮM ĐỒ ĐI SINH, NOUS TẶNG BÉ QUÀ">
+          <img alt="SẮM ĐỒ ĐI SINH, NOUS TẶNG BÉ QUÀ" class="lazyload img-fluid" data-src="//file.hstatic.net/200000692427/article/1_trieu_nb_800x534_5a3760033e0c4694af53e4ec7d8a21c5_grande.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+          <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 48 48" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+           <g>
+            <g id="_x32_-Magnifying_Glass" xmlns="http://www.w3.org/2000/svg">
+             <path class="" d="m40.8994141 39.4853516-7.8127441-7.8127441c2.3978882-2.734375 3.7209473-6.1942749 3.7209473-9.8649902 0-4.0068359-1.5605469-7.7734375-4.3935547-10.6064453s-6.5996094-4.3935547-10.6064453-4.3935547-7.7734375 1.5605469-10.6064453 4.3935547-4.3935547 6.5996094-4.3935547 10.6064453 1.5605469 7.7734375 4.3935547 10.6064453 6.5996094 4.3935547 10.6064453 4.3935547c3.6707153 0 7.1306152-1.3230591 9.8649902-3.7209473l7.8127441 7.8127441c.1953125.1953125.4511719.2929688.7070313.2929688s.5117188-.0976563.7070313-.2929688c.3906249-.390625.3906249-1.0234375-.0000001-1.4140625zm-28.2841797-8.4853516c-2.4550781-2.4555664-3.8076172-5.7202148-3.8076172-9.1923828s1.3525391-6.7368164 3.8076172-9.1923828c2.4555664-2.4550781 5.7202148-3.8076172 9.1923828-3.8076172s6.7368164 1.3525391 9.1923828 3.8076172c2.4550781 2.4555664 3.8076172 5.7202148 3.8076172 9.1923828s-1.3525391 6.7368164-3.8076172 9.1923828c-2.4555664 2.4550781-5.7202148 3.8076172-9.1923828 3.8076172s-6.7368164-1.3525391-9.1923828-3.8076172z" data-original="#ffffff" fill="#ffffff" style="">
+             </path>
+            </g>
+           </g>
+          </svg>
+         </a>
+        </div>
+        <div class="article-item-bottom">
+         <div class="flex-between">
+          <span class="article-item-bottom-date">
+           <svg class="" height="64" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="64" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+            <g>
+             <g id="Calendar" xmlns="http://www.w3.org/2000/svg">
+              <path class="" d="M57,8H52V6a4,4,0,0,0-8,0V8H36V6a4,4,0,0,0-8,0V8H20V6a4,4,0,0,0-8,0V8H7a5,5,0,0,0-5,5V53a5,5,0,0,0,5,5H35a1,1,0,0,0,0-2H7a3.009,3.009,0,0,1-3-3V22H60V39a1,1,0,0,0,2,0V13A5,5,0,0,0,57,8ZM46,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM30,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM14,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM60,20H4V13a3.009,3.009,0,0,1,3-3h5v2a4,4,0,0,0,8,0V10h8v2a4,4,0,0,0,8,0V10h8v2a4,4,0,0,0,8,0V10h5a3.009,3.009,0,0,1,3,3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M30,29a2,2,0,0,0-2-2H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V29h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M18,29a2,2,0,0,0-2-2H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V29h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M52,34a2,2,0,0,0,2-2V29a2,2,0,0,0-2-2H48a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2Zm-4-5h4v3H48Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M30,38a2,2,0,0,0-2-2H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V38h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M18,38a2,2,0,0,0-2-2H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V38h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M28,45H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V47A2,2,0,0,0,28,45Zm-4,5V47h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M36,34h4a2,2,0,0,0,2-2V29a2,2,0,0,0-2-2H36a2,2,0,0,0-2,2v3A2,2,0,0,0,36,34Zm0-5h4v3H36Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M34,41a2,2,0,0,0,2,2,1,1,0,0,0,0-2V38h4a1,1,0,0,0,0-2H36a2,2,0,0,0-2,2Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M16,45H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V47A2,2,0,0,0,16,45Zm-4,5V47h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M49,36A13,13,0,1,0,62,49,13.015,13.015,0,0,0,49,36Zm0,24A11,11,0,1,1,60,49,11.013,11.013,0,0,1,49,60Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M54.778,44.808,47,52.586,43.465,49.05a1,1,0,0,0-1.414,1.414l4.242,4.243a1,1,0,0,0,1.414,0l8.485-8.485a1,1,0,0,0-1.414-1.414Z" data-original="#000000" fill="#000000" style="">
+              </path>
+             </g>
+            </g>
+           </svg>
+           03 Thg 12 2024
+          </span>
+         </div>
+         <h3 class="article-item-bottom-name">
+          <a href="/blogs/news/sam-do-di-sinh-nous-tang-be-qua" title="SẮM ĐỒ ĐI SINH, NOUS TẶNG BÉ QUÀ">
+           SẮM ĐỒ ĐI SINH, NOUS TẶNG BÉ QUÀ
+          </a>
+         </h3>
+         <p class="article-item-bottom-des">
+          Yêu bé từ thuở lọt lòng, Nous cùng mẹ nâng niu thiên thần nhỏ trong chất liệu mềm mại, êm ái và an toàn tuyệt vời với làn da nhạy cảm non nớt.💗 Với mỗi hóa đơn mẹ mua sắm...
+         </p>
+         <p>
+          <a class="index-viewmore" href="/blogs/news/sam-do-di-sinh-nous-tang-be-qua">
+           Xem thêm
+           <i class="lni lni-arrow-right">
+           </i>
+          </a>
+         </p>
+        </div>
+       </article>
+       <article class="article-item">
+        <div class="article-item-top">
+         <a href="/blogs/news/ra-mat-nous-store-mo-hinh-ban-le-thoi-trang-cho-tre" rel="nofollow" title="Ra mắt Nous Store - Mô hình bán lẻ thời trang cho trẻ sơ sinh và trẻ nhỏ ĐẦU TIÊN">
+          <img alt="Ra mắt Nous Store - Mô hình bán lẻ thời trang cho trẻ sơ sinh và trẻ nhỏ ĐẦU TIÊN" class="lazyload img-fluid" data-src="//file.hstatic.net/200000692427/article/anh_thumb_3aac4e2507074d4ca10178bbad99f8be_grande.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+          <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 48 48" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+           <g>
+            <g id="_x32_-Magnifying_Glass" xmlns="http://www.w3.org/2000/svg">
+             <path class="" d="m40.8994141 39.4853516-7.8127441-7.8127441c2.3978882-2.734375 3.7209473-6.1942749 3.7209473-9.8649902 0-4.0068359-1.5605469-7.7734375-4.3935547-10.6064453s-6.5996094-4.3935547-10.6064453-4.3935547-7.7734375 1.5605469-10.6064453 4.3935547-4.3935547 6.5996094-4.3935547 10.6064453 1.5605469 7.7734375 4.3935547 10.6064453 6.5996094 4.3935547 10.6064453 4.3935547c3.6707153 0 7.1306152-1.3230591 9.8649902-3.7209473l7.8127441 7.8127441c.1953125.1953125.4511719.2929688.7070313.2929688s.5117188-.0976563.7070313-.2929688c.3906249-.390625.3906249-1.0234375-.0000001-1.4140625zm-28.2841797-8.4853516c-2.4550781-2.4555664-3.8076172-5.7202148-3.8076172-9.1923828s1.3525391-6.7368164 3.8076172-9.1923828c2.4555664-2.4550781 5.7202148-3.8076172 9.1923828-3.8076172s6.7368164 1.3525391 9.1923828 3.8076172c2.4550781 2.4555664 3.8076172 5.7202148 3.8076172 9.1923828s-1.3525391 6.7368164-3.8076172 9.1923828c-2.4555664 2.4550781-5.7202148 3.8076172-9.1923828 3.8076172s-6.7368164-1.3525391-9.1923828-3.8076172z" data-original="#ffffff" fill="#ffffff" style="">
+             </path>
+            </g>
+           </g>
+          </svg>
+         </a>
+        </div>
+        <div class="article-item-bottom">
+         <div class="flex-between">
+          <span class="article-item-bottom-date">
+           <svg class="" height="64" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="64" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+            <g>
+             <g id="Calendar" xmlns="http://www.w3.org/2000/svg">
+              <path class="" d="M57,8H52V6a4,4,0,0,0-8,0V8H36V6a4,4,0,0,0-8,0V8H20V6a4,4,0,0,0-8,0V8H7a5,5,0,0,0-5,5V53a5,5,0,0,0,5,5H35a1,1,0,0,0,0-2H7a3.009,3.009,0,0,1-3-3V22H60V39a1,1,0,0,0,2,0V13A5,5,0,0,0,57,8ZM46,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM30,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM14,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM60,20H4V13a3.009,3.009,0,0,1,3-3h5v2a4,4,0,0,0,8,0V10h8v2a4,4,0,0,0,8,0V10h8v2a4,4,0,0,0,8,0V10h5a3.009,3.009,0,0,1,3,3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M30,29a2,2,0,0,0-2-2H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V29h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M18,29a2,2,0,0,0-2-2H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V29h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M52,34a2,2,0,0,0,2-2V29a2,2,0,0,0-2-2H48a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2Zm-4-5h4v3H48Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M30,38a2,2,0,0,0-2-2H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V38h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M18,38a2,2,0,0,0-2-2H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V38h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M28,45H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V47A2,2,0,0,0,28,45Zm-4,5V47h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M36,34h4a2,2,0,0,0,2-2V29a2,2,0,0,0-2-2H36a2,2,0,0,0-2,2v3A2,2,0,0,0,36,34Zm0-5h4v3H36Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M34,41a2,2,0,0,0,2,2,1,1,0,0,0,0-2V38h4a1,1,0,0,0,0-2H36a2,2,0,0,0-2,2Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M16,45H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V47A2,2,0,0,0,16,45Zm-4,5V47h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M49,36A13,13,0,1,0,62,49,13.015,13.015,0,0,0,49,36Zm0,24A11,11,0,1,1,60,49,11.013,11.013,0,0,1,49,60Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M54.778,44.808,47,52.586,43.465,49.05a1,1,0,0,0-1.414,1.414l4.242,4.243a1,1,0,0,0,1.414,0l8.485-8.485a1,1,0,0,0-1.414-1.414Z" data-original="#000000" fill="#000000" style="">
+              </path>
+             </g>
+            </g>
+           </svg>
+           06 Thg 11 2024
+          </span>
+         </div>
+         <h3 class="article-item-bottom-name">
+          <a href="/blogs/news/ra-mat-nous-store-mo-hinh-ban-le-thoi-trang-cho-tre" title="Ra mắt Nous Store - Mô hình bán lẻ thời trang cho trẻ sơ sinh và trẻ nhỏ ĐẦU TIÊN">
+           Ra mắt Nous Store - Mô hình bán lẻ thời trang cho trẻ sơ sinh và trẻ nhỏ ĐẦU TIÊN
+          </a>
+         </h3>
+         <p class="article-item-bottom-des">
+          Tiếp nối sự thành công của 2 cửa hàng flagship Nous House Mạc Thị Bưởi và Nous House Quang Trung, Nous giới thiệu đến mẹ cửa hàng bán lẻ thời trang cho trẻ sơ sinh và trẻ nhỏ đầu tiên...
+         </p>
+         <p>
+          <a class="index-viewmore" href="/blogs/news/ra-mat-nous-store-mo-hinh-ban-le-thoi-trang-cho-tre">
+           Xem thêm
+           <i class="lni lni-arrow-right">
+           </i>
+          </a>
+         </p>
+        </div>
+       </article>
+       <article class="article-item">
+        <div class="article-item-top">
+         <a href="/blogs/news/nhin-lai-khoanh-khac-dang-nho-tai-vietbaby-fair-ha-noi" rel="nofollow" title="Nhìn lại khoảnh khắc đáng nhớ tại Vietbaby Fair Hà Nội">
+          <img alt="Nhìn lại khoảnh khắc đáng nhớ tại Vietbaby Fair Hà Nội" class="lazyload img-fluid" data-src="//file.hstatic.net/200000692427/article/anh_thumb_22dba98e7b9742c3b188f7944f2f0ec8_grande.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+          <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 48 48" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+           <g>
+            <g id="_x32_-Magnifying_Glass" xmlns="http://www.w3.org/2000/svg">
+             <path class="" d="m40.8994141 39.4853516-7.8127441-7.8127441c2.3978882-2.734375 3.7209473-6.1942749 3.7209473-9.8649902 0-4.0068359-1.5605469-7.7734375-4.3935547-10.6064453s-6.5996094-4.3935547-10.6064453-4.3935547-7.7734375 1.5605469-10.6064453 4.3935547-4.3935547 6.5996094-4.3935547 10.6064453 1.5605469 7.7734375 4.3935547 10.6064453 6.5996094 4.3935547 10.6064453 4.3935547c3.6707153 0 7.1306152-1.3230591 9.8649902-3.7209473l7.8127441 7.8127441c.1953125.1953125.4511719.2929688.7070313.2929688s.5117188-.0976563.7070313-.2929688c.3906249-.390625.3906249-1.0234375-.0000001-1.4140625zm-28.2841797-8.4853516c-2.4550781-2.4555664-3.8076172-5.7202148-3.8076172-9.1923828s1.3525391-6.7368164 3.8076172-9.1923828c2.4555664-2.4550781 5.7202148-3.8076172 9.1923828-3.8076172s6.7368164 1.3525391 9.1923828 3.8076172c2.4550781 2.4555664 3.8076172 5.7202148 3.8076172 9.1923828s-1.3525391 6.7368164-3.8076172 9.1923828c-2.4555664 2.4550781-5.7202148 3.8076172-9.1923828 3.8076172s-6.7368164-1.3525391-9.1923828-3.8076172z" data-original="#ffffff" fill="#ffffff" style="">
+             </path>
+            </g>
+           </g>
+          </svg>
+         </a>
+        </div>
+        <div class="article-item-bottom">
+         <div class="flex-between">
+          <span class="article-item-bottom-date">
+           <svg class="" height="64" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="64" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+            <g>
+             <g id="Calendar" xmlns="http://www.w3.org/2000/svg">
+              <path class="" d="M57,8H52V6a4,4,0,0,0-8,0V8H36V6a4,4,0,0,0-8,0V8H20V6a4,4,0,0,0-8,0V8H7a5,5,0,0,0-5,5V53a5,5,0,0,0,5,5H35a1,1,0,0,0,0-2H7a3.009,3.009,0,0,1-3-3V22H60V39a1,1,0,0,0,2,0V13A5,5,0,0,0,57,8ZM46,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM30,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM14,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM60,20H4V13a3.009,3.009,0,0,1,3-3h5v2a4,4,0,0,0,8,0V10h8v2a4,4,0,0,0,8,0V10h8v2a4,4,0,0,0,8,0V10h5a3.009,3.009,0,0,1,3,3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M30,29a2,2,0,0,0-2-2H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V29h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M18,29a2,2,0,0,0-2-2H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V29h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M52,34a2,2,0,0,0,2-2V29a2,2,0,0,0-2-2H48a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2Zm-4-5h4v3H48Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M30,38a2,2,0,0,0-2-2H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V38h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M18,38a2,2,0,0,0-2-2H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V38h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M28,45H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V47A2,2,0,0,0,28,45Zm-4,5V47h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M36,34h4a2,2,0,0,0,2-2V29a2,2,0,0,0-2-2H36a2,2,0,0,0-2,2v3A2,2,0,0,0,36,34Zm0-5h4v3H36Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M34,41a2,2,0,0,0,2,2,1,1,0,0,0,0-2V38h4a1,1,0,0,0,0-2H36a2,2,0,0,0-2,2Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M16,45H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V47A2,2,0,0,0,16,45Zm-4,5V47h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M49,36A13,13,0,1,0,62,49,13.015,13.015,0,0,0,49,36Zm0,24A11,11,0,1,1,60,49,11.013,11.013,0,0,1,49,60Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M54.778,44.808,47,52.586,43.465,49.05a1,1,0,0,0-1.414,1.414l4.242,4.243a1,1,0,0,0,1.414,0l8.485-8.485a1,1,0,0,0-1.414-1.414Z" data-original="#000000" fill="#000000" style="">
+              </path>
+             </g>
+            </g>
+           </svg>
+           30 Thg 10 2024
+          </span>
+         </div>
+         <h3 class="article-item-bottom-name">
+          <a href="/blogs/news/nhin-lai-khoanh-khac-dang-nho-tai-vietbaby-fair-ha-noi" title="Nhìn lại khoảnh khắc đáng nhớ tại Vietbaby Fair Hà Nội">
+           Nhìn lại khoảnh khắc đáng nhớ tại Vietbaby Fair Hà Nội
+          </a>
+         </h3>
+         <p class="article-item-bottom-des">
+          Ngày 26/09-28/09/2024 vừa qua, Nous đã có mặt tại Triển lãm Quốc tế Sản phẩm và Dịch vụ cho Mẹ bầu, Mẹ và Trẻ em - VIETBABY FAIR 2024 tại Trung tâm Triển lãm Quốc tế I.C.E Hà Nội, 91...
+         </p>
+         <p>
+          <a class="index-viewmore" href="/blogs/news/nhin-lai-khoanh-khac-dang-nho-tai-vietbaby-fair-ha-noi">
+           Xem thêm
+           <i class="lni lni-arrow-right">
+           </i>
+          </a>
+         </p>
+        </div>
+       </article>
+       <article class="article-item">
+        <div class="article-item-top">
+         <a href="/blogs/news/danh-sach-dai-ly-chinh-thuc-tham-gia-nous-party-2024" rel="nofollow" title="DANH SÁCH ĐẠI LÝ CHÍNH THỨC THAM GIA NOUS PARTY 2024">
+          <img alt="DANH SÁCH ĐẠI LÝ CHÍNH THỨC THAM GIA NOUS PARTY 2024" class="lazyload img-fluid" data-src="//file.hstatic.net/200000692427/article/danh_sach_dai_ly_800x534_17c9042ec25b4ce7a97bb381e7148417_grande.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+          <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 48 48" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+           <g>
+            <g id="_x32_-Magnifying_Glass" xmlns="http://www.w3.org/2000/svg">
+             <path class="" d="m40.8994141 39.4853516-7.8127441-7.8127441c2.3978882-2.734375 3.7209473-6.1942749 3.7209473-9.8649902 0-4.0068359-1.5605469-7.7734375-4.3935547-10.6064453s-6.5996094-4.3935547-10.6064453-4.3935547-7.7734375 1.5605469-10.6064453 4.3935547-4.3935547 6.5996094-4.3935547 10.6064453 1.5605469 7.7734375 4.3935547 10.6064453 6.5996094 4.3935547 10.6064453 4.3935547c3.6707153 0 7.1306152-1.3230591 9.8649902-3.7209473l7.8127441 7.8127441c.1953125.1953125.4511719.2929688.7070313.2929688s.5117188-.0976563.7070313-.2929688c.3906249-.390625.3906249-1.0234375-.0000001-1.4140625zm-28.2841797-8.4853516c-2.4550781-2.4555664-3.8076172-5.7202148-3.8076172-9.1923828s1.3525391-6.7368164 3.8076172-9.1923828c2.4555664-2.4550781 5.7202148-3.8076172 9.1923828-3.8076172s6.7368164 1.3525391 9.1923828 3.8076172c2.4550781 2.4555664 3.8076172 5.7202148 3.8076172 9.1923828s-1.3525391 6.7368164-3.8076172 9.1923828c-2.4555664 2.4550781-5.7202148 3.8076172-9.1923828 3.8076172s-6.7368164-1.3525391-9.1923828-3.8076172z" data-original="#ffffff" fill="#ffffff" style="">
+             </path>
+            </g>
+           </g>
+          </svg>
+         </a>
+        </div>
+        <div class="article-item-bottom">
+         <div class="flex-between">
+          <span class="article-item-bottom-date">
+           <svg class="" height="64" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="64" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+            <g>
+             <g id="Calendar" xmlns="http://www.w3.org/2000/svg">
+              <path class="" d="M57,8H52V6a4,4,0,0,0-8,0V8H36V6a4,4,0,0,0-8,0V8H20V6a4,4,0,0,0-8,0V8H7a5,5,0,0,0-5,5V53a5,5,0,0,0,5,5H35a1,1,0,0,0,0-2H7a3.009,3.009,0,0,1-3-3V22H60V39a1,1,0,0,0,2,0V13A5,5,0,0,0,57,8ZM46,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM30,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM14,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM60,20H4V13a3.009,3.009,0,0,1,3-3h5v2a4,4,0,0,0,8,0V10h8v2a4,4,0,0,0,8,0V10h8v2a4,4,0,0,0,8,0V10h5a3.009,3.009,0,0,1,3,3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M30,29a2,2,0,0,0-2-2H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V29h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M18,29a2,2,0,0,0-2-2H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V29h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M52,34a2,2,0,0,0,2-2V29a2,2,0,0,0-2-2H48a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2Zm-4-5h4v3H48Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M30,38a2,2,0,0,0-2-2H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V38h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M18,38a2,2,0,0,0-2-2H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V38h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M28,45H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V47A2,2,0,0,0,28,45Zm-4,5V47h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M36,34h4a2,2,0,0,0,2-2V29a2,2,0,0,0-2-2H36a2,2,0,0,0-2,2v3A2,2,0,0,0,36,34Zm0-5h4v3H36Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M34,41a2,2,0,0,0,2,2,1,1,0,0,0,0-2V38h4a1,1,0,0,0,0-2H36a2,2,0,0,0-2,2Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M16,45H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V47A2,2,0,0,0,16,45Zm-4,5V47h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M49,36A13,13,0,1,0,62,49,13.015,13.015,0,0,0,49,36Zm0,24A11,11,0,1,1,60,49,11.013,11.013,0,0,1,49,60Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M54.778,44.808,47,52.586,43.465,49.05a1,1,0,0,0-1.414,1.414l4.242,4.243a1,1,0,0,0,1.414,0l8.485-8.485a1,1,0,0,0-1.414-1.414Z" data-original="#000000" fill="#000000" style="">
+              </path>
+             </g>
+            </g>
+           </svg>
+           16 Thg 6 2024
+          </span>
+         </div>
+         <h3 class="article-item-bottom-name">
+          <a href="/blogs/news/danh-sach-dai-ly-chinh-thuc-tham-gia-nous-party-2024" title="DANH SÁCH ĐẠI LÝ CHÍNH THỨC THAM GIA NOUS PARTY 2024">
+           DANH SÁCH ĐẠI LÝ CHÍNH THỨC THAM GIA NOUS PARTY 2024
+          </a>
+         </h3>
+         <p class="article-item-bottom-des">
+          [...]
+         </p>
+         <p>
+          <a class="index-viewmore" href="/blogs/news/danh-sach-dai-ly-chinh-thuc-tham-gia-nous-party-2024">
+           Xem thêm
+           <i class="lni lni-arrow-right">
+           </i>
+          </a>
+         </p>
+        </div>
+       </article>
+       <article class="article-item">
+        <div class="article-item-top">
+         <a href="/blogs/news/danh-sach-dai-ly-tham-gia-livestream-nous-party-2024" rel="nofollow" title="DANH SÁCH ĐẠI LÝ THAM GIA LIVESTREAM NOUS PARTY 2024">
+          <img alt="DANH SÁCH ĐẠI LÝ THAM GIA LIVESTREAM NOUS PARTY 2024" class="lazyload img-fluid" data-src="//file.hstatic.net/200000692427/article/thong_bao_livestream_800x534_f6397cdaa5db4f56b3040b72d4117dfa_grande.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+          <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 48 48" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+           <g>
+            <g id="_x32_-Magnifying_Glass" xmlns="http://www.w3.org/2000/svg">
+             <path class="" d="m40.8994141 39.4853516-7.8127441-7.8127441c2.3978882-2.734375 3.7209473-6.1942749 3.7209473-9.8649902 0-4.0068359-1.5605469-7.7734375-4.3935547-10.6064453s-6.5996094-4.3935547-10.6064453-4.3935547-7.7734375 1.5605469-10.6064453 4.3935547-4.3935547 6.5996094-4.3935547 10.6064453 1.5605469 7.7734375 4.3935547 10.6064453 6.5996094 4.3935547 10.6064453 4.3935547c3.6707153 0 7.1306152-1.3230591 9.8649902-3.7209473l7.8127441 7.8127441c.1953125.1953125.4511719.2929688.7070313.2929688s.5117188-.0976563.7070313-.2929688c.3906249-.390625.3906249-1.0234375-.0000001-1.4140625zm-28.2841797-8.4853516c-2.4550781-2.4555664-3.8076172-5.7202148-3.8076172-9.1923828s1.3525391-6.7368164 3.8076172-9.1923828c2.4555664-2.4550781 5.7202148-3.8076172 9.1923828-3.8076172s6.7368164 1.3525391 9.1923828 3.8076172c2.4550781 2.4555664 3.8076172 5.7202148 3.8076172 9.1923828s-1.3525391 6.7368164-3.8076172 9.1923828c-2.4555664 2.4550781-5.7202148 3.8076172-9.1923828 3.8076172s-6.7368164-1.3525391-9.1923828-3.8076172z" data-original="#ffffff" fill="#ffffff" style="">
+             </path>
+            </g>
+           </g>
+          </svg>
+         </a>
+        </div>
+        <div class="article-item-bottom">
+         <div class="flex-between">
+          <span class="article-item-bottom-date">
+           <svg class="" height="64" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="64" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+            <g>
+             <g id="Calendar" xmlns="http://www.w3.org/2000/svg">
+              <path class="" d="M57,8H52V6a4,4,0,0,0-8,0V8H36V6a4,4,0,0,0-8,0V8H20V6a4,4,0,0,0-8,0V8H7a5,5,0,0,0-5,5V53a5,5,0,0,0,5,5H35a1,1,0,0,0,0-2H7a3.009,3.009,0,0,1-3-3V22H60V39a1,1,0,0,0,2,0V13A5,5,0,0,0,57,8ZM46,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM30,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM14,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM60,20H4V13a3.009,3.009,0,0,1,3-3h5v2a4,4,0,0,0,8,0V10h8v2a4,4,0,0,0,8,0V10h8v2a4,4,0,0,0,8,0V10h5a3.009,3.009,0,0,1,3,3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M30,29a2,2,0,0,0-2-2H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V29h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M18,29a2,2,0,0,0-2-2H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V29h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M52,34a2,2,0,0,0,2-2V29a2,2,0,0,0-2-2H48a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2Zm-4-5h4v3H48Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M30,38a2,2,0,0,0-2-2H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V38h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M18,38a2,2,0,0,0-2-2H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V38h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M28,45H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V47A2,2,0,0,0,28,45Zm-4,5V47h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M36,34h4a2,2,0,0,0,2-2V29a2,2,0,0,0-2-2H36a2,2,0,0,0-2,2v3A2,2,0,0,0,36,34Zm0-5h4v3H36Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M34,41a2,2,0,0,0,2,2,1,1,0,0,0,0-2V38h4a1,1,0,0,0,0-2H36a2,2,0,0,0-2,2Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M16,45H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V47A2,2,0,0,0,16,45Zm-4,5V47h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M49,36A13,13,0,1,0,62,49,13.015,13.015,0,0,0,49,36Zm0,24A11,11,0,1,1,60,49,11.013,11.013,0,0,1,49,60Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M54.778,44.808,47,52.586,43.465,49.05a1,1,0,0,0-1.414,1.414l4.242,4.243a1,1,0,0,0,1.414,0l8.485-8.485a1,1,0,0,0-1.414-1.414Z" data-original="#000000" fill="#000000" style="">
+              </path>
+             </g>
+            </g>
+           </svg>
+           14 Thg 6 2024
+          </span>
+         </div>
+         <h3 class="article-item-bottom-name">
+          <a href="/blogs/news/danh-sach-dai-ly-tham-gia-livestream-nous-party-2024" title="DANH SÁCH ĐẠI LÝ THAM GIA LIVESTREAM NOUS PARTY 2024">
+           DANH SÁCH ĐẠI LÝ THAM GIA LIVESTREAM NOUS PARTY 2024
+          </a>
+         </h3>
+         <p class="article-item-bottom-des">
+          Mẹ Nous đã sẵn sàng hòa cùng sức nóng của Nous Party 2024 chưa nè? Và để tận hưởng trọn vẹn niềm vui mua sắm tuyệt vời này, mẹ có thể theo dõi những phiên #LIVESTREAM từ những Đại lý...
+         </p>
+         <p>
+          <a class="index-viewmore" href="/blogs/news/danh-sach-dai-ly-tham-gia-livestream-nous-party-2024">
+           Xem thêm
+           <i class="lni lni-arrow-right">
+           </i>
+          </a>
+         </p>
+        </div>
+       </article>
+       <article class="article-item">
+        <div class="article-item-top">
+         <a href="/blogs/news/sieu-tiec-mua-sam-nous-party-2024" rel="nofollow" title="SIÊU TIỆC MUA SẮM NOUS PARTY 2024">
+          <img alt="SIÊU TIỆC MUA SẮM NOUS PARTY 2024" class="lazyload img-fluid" data-src="//file.hstatic.net/200000692427/article/post_nous_party_2024_1440x450_800x534_3837350eff43445a918301cc58bb566a_grande.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+          <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 48 48" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+           <g>
+            <g id="_x32_-Magnifying_Glass" xmlns="http://www.w3.org/2000/svg">
+             <path class="" d="m40.8994141 39.4853516-7.8127441-7.8127441c2.3978882-2.734375 3.7209473-6.1942749 3.7209473-9.8649902 0-4.0068359-1.5605469-7.7734375-4.3935547-10.6064453s-6.5996094-4.3935547-10.6064453-4.3935547-7.7734375 1.5605469-10.6064453 4.3935547-4.3935547 6.5996094-4.3935547 10.6064453 1.5605469 7.7734375 4.3935547 10.6064453 6.5996094 4.3935547 10.6064453 4.3935547c3.6707153 0 7.1306152-1.3230591 9.8649902-3.7209473l7.8127441 7.8127441c.1953125.1953125.4511719.2929688.7070313.2929688s.5117188-.0976563.7070313-.2929688c.3906249-.390625.3906249-1.0234375-.0000001-1.4140625zm-28.2841797-8.4853516c-2.4550781-2.4555664-3.8076172-5.7202148-3.8076172-9.1923828s1.3525391-6.7368164 3.8076172-9.1923828c2.4555664-2.4550781 5.7202148-3.8076172 9.1923828-3.8076172s6.7368164 1.3525391 9.1923828 3.8076172c2.4550781 2.4555664 3.8076172 5.7202148 3.8076172 9.1923828s-1.3525391 6.7368164-3.8076172 9.1923828c-2.4555664 2.4550781-5.7202148 3.8076172-9.1923828 3.8076172s-6.7368164-1.3525391-9.1923828-3.8076172z" data-original="#ffffff" fill="#ffffff" style="">
+             </path>
+            </g>
+           </g>
+          </svg>
+         </a>
+        </div>
+        <div class="article-item-bottom">
+         <div class="flex-between">
+          <span class="article-item-bottom-date">
+           <svg class="" height="64" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="64" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+            <g>
+             <g id="Calendar" xmlns="http://www.w3.org/2000/svg">
+              <path class="" d="M57,8H52V6a4,4,0,0,0-8,0V8H36V6a4,4,0,0,0-8,0V8H20V6a4,4,0,0,0-8,0V8H7a5,5,0,0,0-5,5V53a5,5,0,0,0,5,5H35a1,1,0,0,0,0-2H7a3.009,3.009,0,0,1-3-3V22H60V39a1,1,0,0,0,2,0V13A5,5,0,0,0,57,8ZM46,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM30,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM14,6a2,2,0,0,1,4,0v6a2,2,0,0,1-4,0ZM60,20H4V13a3.009,3.009,0,0,1,3-3h5v2a4,4,0,0,0,8,0V10h8v2a4,4,0,0,0,8,0V10h8v2a4,4,0,0,0,8,0V10h5a3.009,3.009,0,0,1,3,3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M30,29a2,2,0,0,0-2-2H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V29h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M18,29a2,2,0,0,0-2-2H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V29h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M52,34a2,2,0,0,0,2-2V29a2,2,0,0,0-2-2H48a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2Zm-4-5h4v3H48Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M30,38a2,2,0,0,0-2-2H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V38h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M18,38a2,2,0,0,0-2-2H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2Zm-6,3V38h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M28,45H24a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V47A2,2,0,0,0,28,45Zm-4,5V47h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M36,34h4a2,2,0,0,0,2-2V29a2,2,0,0,0-2-2H36a2,2,0,0,0-2,2v3A2,2,0,0,0,36,34Zm0-5h4v3H36Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M34,41a2,2,0,0,0,2,2,1,1,0,0,0,0-2V38h4a1,1,0,0,0,0-2H36a2,2,0,0,0-2,2Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M16,45H12a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V47A2,2,0,0,0,16,45Zm-4,5V47h4v3Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M49,36A13,13,0,1,0,62,49,13.015,13.015,0,0,0,49,36Zm0,24A11,11,0,1,1,60,49,11.013,11.013,0,0,1,49,60Z" data-original="#000000" fill="#000000" style="">
+              </path>
+              <path class="" d="M54.778,44.808,47,52.586,43.465,49.05a1,1,0,0,0-1.414,1.414l4.242,4.243a1,1,0,0,0,1.414,0l8.485-8.485a1,1,0,0,0-1.414-1.414Z" data-original="#000000" fill="#000000" style="">
+              </path>
+             </g>
+            </g>
+           </svg>
+           14 Thg 6 2024
+          </span>
+         </div>
+         <h3 class="article-item-bottom-name">
+          <a href="/blogs/news/sieu-tiec-mua-sam-nous-party-2024" title="SIÊU TIỆC MUA SẮM NOUS PARTY 2024">
+           SIÊU TIỆC MUA SẮM NOUS PARTY 2024
+          </a>
+         </h3>
+         <p class="article-item-bottom-des">
+          Ba mẹ ơi, Nous Party đã chính thức quay lại rồi nè! Hãy sẵn sàng nhập tiệc mua sắm cực hời cùng Nous nha!Nous Party là đại tiệc ưu đãi thường niên, diễn ra một lần trong năm. Ba me...
+         </p>
+         <p>
+          <a class="index-viewmore" href="/blogs/news/sieu-tiec-mua-sam-nous-party-2024">
+           Xem thêm
+           <i class="lni lni-arrow-right">
+           </i>
+          </a>
+         </p>
+        </div>
+       </article>
+      </div>
+      <div class="text-center">
+       <div class="clearfix" id="pagination">
+        <span class="current">
+         1
+        </span>
+        <a href="/blogs/news?page=2">
+         2
+        </a>
+        <a href="/blogs/news?page=3">
+         3
+        </a>
+        <a href="/blogs/news?page=2">
+         <i class="lni lni-chevron-right">
+         </i>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="cart-sidebar">
+ <div class="cart-sidebar-top">
+  <h2>
+   Giỏ hàng
+  </h2>
+  <button class="f-button" type="button">
+   <svg class="Icon Icon--close" height="15" role="presentation" viewbox="0 0 16 14" width="15">
+    <path d="M15 0L1 14m14 0L1 0" fill="none" fill-rule="evenodd" stroke="currentColor">
+    </path>
+   </svg>
+  </button>
+  <div class="addFree" free-price="39900000" free-size="3">
+   <div class="addFree-bar">
+    <div class="addFree-bar-main">
+     <span>
+     </span>
+    </div>
+   </div>
+   <div class="addFree-note">
+    Mua thêm
+    <span>
+    </span>
+    để được Freeship
+   </div>
+  </div>
+ </div>
+ <div class="cart-sidebar-mid">
+  <div class="cart-sidebar-mid--render">
+   <div class="cart-sidebar-mid-yes">
+   </div>
+   <div class="cart-sidebar-mid-no">
+    Giỏ hàng của bạn còn trống
+   </div>
+  </div>
+ </div>
+ <div class="cart-sidebar-bot">
+  <div class="cart-sidebot-new-flex">
+   <button class="f-button cart-sidebar-bot-note" type="button">
+    Thêm ghi chú
+   </button>
+   <a class="button-flex-detail" href="/cart">
+    Xem chi tiết giỏ hàng
+   </a>
+  </div>
+  <p>
+   Phí ship &amp; thuế được tính ở Trang Thanh Toán
+  </p>
+  <a class="add-to-cartProduct button dark btn-addtocart" href="/cart">
+   <span>
+    Thanh toán
+   </span>
+   <span>
+   </span>
+   <span>
+    0₫
+   </span>
+  </a>
+ </div>
+ <div class="cart-sidebar-note">
+  <span>
+   Thêm ghi chú
+  </span>
+  <a class="close-note" href="javascript:void(0);">
+   <svg class="Icon Icon--close" height="15" role="presentation" viewbox="0 0 16 14" width="15">
+    <path d="M15 0L1 14m14 0L1 0" fill="none" fill-rule="evenodd" stroke="currentColor">
+    </path>
+   </svg>
+  </a>
+  <textarea placeholder="Chúng tôi có thể giúp gì cho bạn?" type="text"></textarea>
+  <a class="save-note" href="javascript:void(0);">
+   Lưu
+  </a>
+ </div>
+</div>
+<div aria-hidden="true" aria-labelledby="accountModal" class="modal fade" id="accountModal" role="dialog" tabindex="-1">
+ <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+  <div class="modal-content">
+   <div class="modal-body">
+    <div class="row">
+     <div class="col-lg-3 col-md-3">
+      <div class="modalLogo">
+       <a href="https://www.nous.vn">
+        <img alt="noûs" class="lazyload img-fluid" data-src="//theme.hstatic.net/200000692427/1001117622/14/logo.png?v=5689" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+       </a>
+      </div>
+      <div aria-orientation="vertical" class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
+       <a class="nav-link active">
+        Đăng nhập
+       </a>
+       <a class="nav-link" href="/account/register">
+        Đăng ký
+       </a>
+      </div>
+     </div>
+     <div class="col-lg-9 col-md-9">
+      <div class="tab-content" id="v-pills-tabContent">
+       <div class="tab-pane fade show active" id="modalLogin">
+        <h5 class="text-center">
+         ĐĂNG NHẬP VỚI MẬT KHẨU
+        </h5>
+        <div class="login-form-body">
+         <form accept-charset="UTF-8" action="/account/login" id="customer_login" method="post">
+          <input name="form_type" type="hidden" value="customer_login"/>
+          <input name="utf8" type="hidden" value="✓"/>
+          <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt8_g4IouqoW8GXVfoh--WRhmcdVMaCEqRzK803fT8iFMD5FasqzHio3Me0i8V3gq6vpXxMtbIjOUaqAoJCMGGMJrrygJeeo-0h1ip7BnEl2f4TtB6pi9Cb5fbtOi27g-Fw"/>
+          <div class="form-group">
+           <label for="login_phone_pass">
+            Số điện thoại
+           </label>
+           <a class="login-change" data-target="modalLoginOTP" id="loginTabOTP">
+            Đăng nhập với OTP
+           </a>
+           <input class="form-control" id="login_phone_pass" name="customer[phonenumber]" required="" type="text"/>
+           <p class="error d-none" id="login_phone_err">
+           </p>
+          </div>
+          <div class="form-group">
+           <label for="login_pass">
+            Mật khẩu
+           </label>
+           <div class="password-wrapper">
+            <span class="btn-show-pass">
+             <i class="lni lni-eye">
+             </i>
+            </span>
+            <input class="form-control" id="login_pass" name="customer[password]" required="" type="password"/>
+           </div>
+           <p class="error d-none" id="login_pass_err">
+           </p>
+          </div>
+          <div class="form-group login-pass-btn">
+           <p class="error" id="err_login_pass">
+           </p>
+           <button class="btn btn-primary hoverOpacity" id="login-password" type="submit">
+            ĐĂNG NHẬP
+           </button>
+          </div>
+          <a class="forgot-pass login-change" data-target="modalForgot">
+           Quên mật khẩu?
+          </a>
+         </form>
+        </div>
+       </div>
+       <div class="tab-pane fade" id="modalLoginOTP">
+        <h5 class="text-center">
+         ĐĂNG NHẬP VỚI OTP
+        </h5>
+        <div class="login-form-body">
+         <form id="form_otp">
+          <div class="form-group">
+           <label for="login_phone">
+            Số điện thoại
+           </label>
+           <a class="login-change" data-target="modalLogin" id="loginTabPass">
+            Đăng nhập với mật khẩu
+           </a>
+           <input class="form-control" id="login_phone" name="customer[phonenumber]" required="" type="text"/>
+           <button id="get_otp_login" type="button">
+            Gửi OTP
+           </button>
+          </div>
+          <div class="form-group d-none">
+           <label for="otp_code">
+            Mã OTP
+           </label>
+           <input class="form-control disabled" disabled="" id="otp_code" name="otp_code" placeholder="OTP Code" type="text"/>
+          </div>
+          <p class="note d-none">
+           Bạn chưa nhận được mã ?
+          </p>
+          <p class="note bold disabled d-none">
+           <span id="mask_click">
+            Gửi lại mã
+           </span>
+           <span id="countdown">
+           </span>
+          </p>
+          <div class="form-group login-otp-btn login-btn d-none">
+           <button class="btn btn-primary hoverOpacity" id="login-otp" type="submit">
+            ĐĂNG NHẬP
+           </button>
+          </div>
+         </form>
+        </div>
+       </div>
+       <div class="tab-pane fade" id="modalForgot">
+        <h5 class="text-center">
+         Đặt lại mật khẩu
+        </h5>
+        <form accept-charset="UTF-8" id="form_forgot">
+         <div class="form-group">
+          <label for="phone_forgot">
+           Số điện thoại
+          </label>
+          <input class="form-control" id="phone_forgot" name="phone_forgot" required="" type="text"/>
+          <button id="get_otp_reset" type="button">
+           Gửi OTP
+          </button>
+          <span class="error">
+          </span>
+         </div>
+         <div class="form-group group-otp-forgot d-none">
+          <label for="otp_forgot">
+           OTP
+          </label>
+          <input class="form-control" id="otp_forgot" name="otp_forgot" required="" type="text"/>
+          <span class="error">
+          </span>
+         </div>
+         <p class="d-none countdown-forgot">
+          <span id="countdown-forgot-otp">
+          </span>
+         </p>
+         <div class="form-group forgot-otp-btn d-none">
+          <button class="btn btn-primary hoverOpacity" id="btn-confirm-forgot" type="submit">
+           Tiếp tục
+          </button>
+         </div>
+        </form>
+        <form accept-charset="UTF-8" class="d-none" id="form_reset">
+         <div class="form-group">
+          <label for="new_pass">
+           New Password
+          </label>
+          <div class="password-wrapper">
+           <span class="btn-show-pass">
+            <i class="lni lni-eye">
+            </i>
+           </span>
+           <input class="form-control" id="new_pass" name="new_pass" required="" type="password"/>
+          </div>
+          <span class="error">
+          </span>
+         </div>
+         <div class="form-group">
+          <label for="confirm_new_pass">
+           Confirm New Password
+          </label>
+          <div class="password-wrapper">
+           <span class="btn-show-pass">
+            <i class="lni lni-eye">
+            </i>
+           </span>
+           <input class="form-control" id="confirm_new_pass" name="confirm_new_pass" required="" type="password"/>
+          </div>
+          <span class="error">
+          </span>
+         </div>
+         <div class="form-group">
+          <p class="error" id="err_new_pass">
+          </p>
+          <button class="btn btn-primary hoverOpacity" id="change-pass-btn" type="submit">
+           Tiếp tục
+          </button>
+         </div>
+        </form>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <a class="closeModal" href="javascript:void(0);">
+    <i class="lni lni-close">
+    </i>
+   </a>
+  </div>
+ </div>
+</div>
+<div aria-hidden="true" aria-labelledby="exampleModalCenterTitle" class="modal fade" id="quickviewModal" role="dialog" tabindex="-1">
+ <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+  <div class="modal-content">
+   <div class="modal-header modal-paramlink d-md-block d-lg-none">
+   </div>
+   <div class="modal-body">
+   </div>
+   <a aria-label="Close" class="closeModal" data-dismiss="modal" href="javascript:void(0);">
+    <i class="lni lni-close">
+    </i>
+   </a>
+  </div>
+ </div>
+</div>
+<div class="modal-wishlist">
+ <div class="modal-wishlist-header">
+  <div class="container">
+   <h3>
+    Danh mục sản phẩm yêu thích
+   </h3>
+   <button class="btn">
+    <i class="lni lni-close">
+    </i>
+   </button>
+  </div>
+ </div>
+ <div class="container">
+  <div class="modal-wishlist-body">
+  </div>
+ </div>
+</div>
+<div class="modal-compare">
+ <div class="modal-compare-header">
+  <div class="container">
+   <h3>
+    Danh mục sản phẩm so sánh
+   </h3>
+   <button class="btn">
+    <i class="lni lni-close">
+    </i>
+   </button>
+  </div>
+ </div>
+ <div class="container">
+  <div class="modal-compare-body">
+  </div>
+ </div>
+</div>
+<div aria-hidden="true" aria-labelledby="dealerModal" class="modal fade" id="dealerModal" role="dialog" tabindex="-1">
+ <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+  <div class="modal-content">
+   <div class="modal-body">
+    <div class="modal_dealer">
+     <div class="modal_dealer_content">
+      <p class="modal_dealer_img">
+       <img alt="" height="" src="https://file.hstatic.net/200000692427/file/icon_dealer_17b22440d3464345a8c161fdd5abb60d.png" width=""/>
+      </p>
+      <div class="modal_dealer_title">
+       <h3>
+        Cảm ơn bạn đã để lại thông tin
+       </h3>
+       <span>
+        Nous sẽ liên hệ với bạn trong thời gian sớm nhất
+       </span>
+      </div>
+      <div class="modal_dealer_btn">
+       <a href="https://www.nous.vn/">
+        <button>
+         Quay về trang chủ
+        </button>
+       </a>
+      </div>
+      <div class="modal_dealer_social">
+       <span>
+        <a href="#">
+         <img alt="facebook icon" height="24" src="https://file.hstatic.net/200000692427/file/facebook-icon_a7916179d9db4ade9a01f142a35ec80c.svg" width="24"/>
+        </a>
+       </span>
+       <span>
+        <a href="#">
+         <img alt="zalo icon" height="24" src="https://file.hstatic.net/200000692427/file/zalo-icon_308482bd4fad4e919709de6d62b41a8d.svg" width="24"/>
+        </a>
+       </span>
+       <span>
+        <a href="#">
+         <img alt="facebook icon" height="24" src="https://file.hstatic.net/200000692427/file/facebook-icon_a7916179d9db4ade9a01f142a35ec80c.svg" width="24"/>
+        </a>
+       </span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="support-online d-block d-sm-none">
+ <div class="support-content">
+  <a class="call-now" href="tel:0936233836" rel="nofollow">
+   <img alt="Icon-phone" class="img-fluid" src="https://file.hstatic.net/200000259495/file/phone-call_3538cf2424ef49b4ac7433a866b3bdba.svg"/>
+  </a>
+  <a class="facebook" href="https://www.messenger.com/t/1501004003558186" target="_blank">
+   <img alt="Icon-Mess" class="img-fluid" src="https://file.hstatic.net/200000259495/file/messager_208d7389c4ac46b5a01afad457684cd6.svg"/>
+  </a>
+  <a class="zalo" href="http://zalo.me/0936233836" target="_blank">
+   <img alt="Icon-Zalo" class="img-fluid" src="https://file.hstatic.net/200000259495/file/zalo_d9dc3417eb744b91a44643f29b8c7161.svg"/>
+  </a>
+ </div>
+ <a class="btn-support d-none">
+  <img alt="Icon-phone" class="img-fluid" src="https://file.hstatic.net/200000306687/file/customer-support__1__8028e2612b924710931628c123157613.png" width="20"/>
+ </a>
+</div>
+<div class="back-to-top">
+ <img alt="back-to-top" src="https://file.hstatic.net/200000295028/file/up-arrow_29fc517a2b0b4a89a35dcd7084064fb7.svg"/>
+</div>
+<style>
+ @media(max-width: 991px){
+		footer.footer { padding-bottom: 50px; }
+	}
+</style>
+<div class="fMobar">
+ <div class="fMobar-wrap">
+  <ul>
+   <li>
+    <a class="" href="/">
+     <img alt="Home" src="//theme.hstatic.net/200000692427/1001117622/14/fMobar_item_image_1.png?v=5689"/>
+     <span>
+      Home
+     </span>
+    </a>
+   </li>
+   <li>
+    <a class="trigger-menu" href="javscript:void(0);">
+     <img alt="Menu" src="//theme.hstatic.net/200000692427/1001117622/14/fMobar_item_image_2.png?v=5689"/>
+     <span>
+      Menu
+     </span>
+    </a>
+   </li>
+   <li>
+    <a class="" href="/account">
+     <img alt="Tài khoản" src="//theme.hstatic.net/200000692427/1001117622/14/fMobar_item_image_3.png?v=5689"/>
+     <span>
+      Tài khoản
+     </span>
+    </a>
+   </li>
+   <li>
+    <a class="trigger-support" href="javscript:void(0);">
+     <img alt="Chat" src="//theme.hstatic.net/200000692427/1001117622/14/fMobar_item_image_4.png?v=5689"/>
+     <span>
+      Chat
+     </span>
+    </a>
+   </li>
+   <li class="cart">
+    <a class="trigger-cart" href="javscript:void(0);">
+     <span class="icon">
+      <span class="cart-count count">
+       3
+      </span>
+      <svg class="" height="64" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 512 512" width="64" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+       <g>
+        <g xmlns="http://www.w3.org/2000/svg">
+         <g>
+          <path class="" d="m490.535 170.005h-100.868l-94.33-98.898c-10.349-10.849-27.594-11.258-38.445-.909-.306.292-.602.592-.892.895-.29-.303-.585-.602-.892-.895-10.85-10.348-28.096-9.941-38.445.909l-94.33 98.897h-45.444c-4.143 0-7.5 3.358-7.5 7.5s3.357 7.5 7.5 7.5h31.137l-.763.8s0 0-.001 0c-8.127 8.522-9.616 20.988-4.626 30.961-8.654 0-70.969 0-81.171 0-3.564 0-6.465-2.9-6.465-6.465v-18.83c0-3.565 2.9-6.465 6.465-6.465h20.216c4.143 0 7.5-3.358 7.5-7.5s-3.357-7.5-7.5-7.5h-20.216c-11.836 0-21.465 9.629-21.465 21.465v18.831c0 11.836 9.629 21.465 21.465 21.465h10.905l35.348 182.978c3.869 20.026 21.48 34.562 41.877 34.562h293.197c20.396 0 38.008-14.535 41.878-34.562l2.407-12.463c.785-4.067-1.875-8.001-5.942-8.786-4.064-.786-8 1.875-8.786 5.941l-2.407 12.463c-2.508 12.983-13.927 22.407-27.149 22.407h-293.198c-13.224 0-24.641-9.423-27.148-22.406l-34.8-180.135h417.092l-25.681 132.936c-.785 4.067 1.875 8 5.941 8.786 4.102.792 8.007-1.908 8.787-5.941l26.23-135.781h10.518c11.836 0 21.465-9.629 21.465-21.465v-18.83c.001-11.836-9.628-21.465-21.464-21.465zm-234.535-61.344 58.51 61.344h-117.021zm-137.476 104.734c-4.865-4.64-5.048-12.373-.407-17.238h-.001l109.4-114.697c4.641-4.865 12.374-5.048 17.238-.408 4.75 4.53 5.134 12.283.408 17.238l-109.4 114.697c-4.641 4.866-12.374 5.048-17.238.408zm34.364 3.37 30.294-31.761h145.636l30.294 31.761zm240.588-3.37c-4.865 4.64-12.599 4.456-17.238-.407l-109.401-114.698c-4.731-4.96-4.336-12.713.408-17.238 4.863-4.641 12.597-4.457 17.238.407l109.399 114.697c4.641 4.866 4.459 12.599-.406 17.239zm103.524-3.094c0 3.565-2.9 6.465-6.465 6.465-10.195 0-71.218 0-81.171 0 4.991-9.972 3.502-22.439-4.627-30.961l-.763-.8h86.561c3.564 0 6.465 2.9 6.465 6.465z" data-original="#000" fill="#000" style="">
+          </path>
+          <path class="" d="m151.595 269.496c-12.254 2.157-20.425 13.817-18.269 26.074l15.771 89.569c2.16 12.269 13.805 20.429 26.074 18.268 12.253-2.157 20.423-13.82 18.267-26.074l-15.77-89.569c-2.155-12.246-13.818-20.425-26.073-18.268zm20.975 119.138c-4.102.723-7.98-1.996-8.7-6.095l-15.77-89.569c-.721-4.087 2.004-7.981 6.095-8.701 4.072-.719 7.981 1.999 8.7 6.095l15.77 89.57c.72 4.086-2.004 7.98-6.095 8.7z" data-original="#000" fill="#000" style="">
+          </path>
+          <path class="" d="m233.488 291.667v89.569c0 12.413 10.099 22.512 22.512 22.512s22.512-10.099 22.512-22.512v-89.569c0-12.413-10.099-22.512-22.512-22.512s-22.512 10.099-22.512 22.512zm30.024 0v89.569c0 4.142-3.37 7.512-7.512 7.512s-7.512-3.37-7.512-7.512v-89.569c0-4.142 3.37-7.512 7.512-7.512s7.512 3.37 7.512 7.512z" data-original="#000" fill="#000" style="">
+          </path>
+          <path class="" d="m360.404 269.495c-12.214-2.148-23.921 6.045-26.072 18.268l-15.77 89.57c-2.156 12.251 6.009 23.916 18.27 26.075 12.295 2.162 23.916-6.023 26.071-18.268l15.771-89.569c2.156-12.255-6.011-23.917-18.27-26.076zm3.496 23.475-15.771 89.569c-.719 4.09-4.587 6.818-8.699 6.096-4.088-.72-6.816-4.611-6.095-8.701l15.77-89.57c.714-4.058 4.595-6.813 8.7-6.095 4.089.72 6.817 4.61 6.095 8.701z" data-original="#000" fill="#000" style="">
+          </path>
+         </g>
+        </g>
+       </g>
+      </svg>
+     </span>
+     <span>
+      Giỏ hàng
+     </span>
+    </a>
+   </li>
+  </ul>
+ </div>
+</div>
+<div class="sale-popup">
+</div>
+<div class="newMenu">
+ <div class="menu-mobile">
+  <div class="menu-mobile-wrap">
+   <div class="menu-mobile-list">
+    <ul>
+     <li>
+      <div class="menu-mobile-item-head">
+       <a href="/pages/about-us-2">
+        Giới thiệu Nous
+       </a>
+      </div>
+     </li>
+     <li>
+      <div class="menu-mobile-item-head">
+       <a href="/collections/thoi-trang-so-sinh">
+        Thời trang sơ sinh
+       </a>
+       <button class="active">
+        <i class="lni lni-plus">
+        </i>
+       </button>
+      </div>
+      <ul style="display: block;">
+       <li>
+        <div class="menu-mobile-item-head">
+         <a href="/collections/tre-so-sinh-0-3-thang">
+          Sơ sinh 0-3 tháng
+         </a>
+         <button>
+          <i class="lni lni-plus">
+          </i>
+         </button>
+        </div>
+        <ul>
+         <li>
+          <a href="/collections/tre-so-sinh-bo-lien-coc">
+           Bộ liền
+          </a>
+         </li>
+         <li>
+          <a href="/collections/bo-dai-tay">
+           Bộ dài
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li>
+        <div class="menu-mobile-item-head">
+         <a href="/collections/be-3-24-thang">
+          Bé 3-24 tháng
+         </a>
+         <button>
+          <i class="lni lni-plus">
+          </i>
+         </button>
+        </div>
+        <ul>
+         <li>
+          <a href="/collections/be-3-24-thang-ao-khoac-ngoai">
+           Áo khoác
+          </a>
+         </li>
+         <li>
+          <a href="/collections/be-3-24-thang-bo-lien">
+           Bộ liền
+          </a>
+         </li>
+         <li>
+          <a href="/collections/be-3-24-thang-bo-coc-tay">
+           Bộ cộc tay
+          </a>
+         </li>
+         <li>
+          <a href="/collections/be-3-24-thang-bo-dai-tay">
+           Bộ dài tay
+          </a>
+         </li>
+         <li>
+          <a href="/collections/be-3-24-thang-bo-yem">
+           Bộ quần yếm
+          </a>
+         </li>
+         <li>
+          <a href="/collections/be-3-24-thang-vay">
+           Váy
+          </a>
+         </li>
+         <li>
+          <a href="/collections/be-3-24-thang-quan">
+           Quần
+          </a>
+         </li>
+         <li>
+          <a href="/collections/be-3-24-thang-set-qua-tang">
+           Set quà tặng
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li>
+        <div class="menu-mobile-item-head">
+         <a href="/collections/phu-kien-cho-tre-so-sinh">
+          Phụ kiện
+         </a>
+         <button>
+          <i class="lni lni-plus">
+          </i>
+         </button>
+        </div>
+        <ul>
+         <li>
+          <a href="/collections/phu-kien-cho-be-set-phu-kien">
+           Set phụ kiện
+          </a>
+         </li>
+         <li>
+          <a href="/collections/phu-kien-cho-be-mu">
+           Mũ
+          </a>
+         </li>
+         <li>
+          <a href="/collections/phu-kien-bao-tay-bao-chan">
+           Bao tay bao chân
+          </a>
+         </li>
+         <li>
+          <a href="/collections/phu-kien-cho-be-yem">
+           Yếm
+          </a>
+         </li>
+         <li>
+          <a href="/collections/phu-kien-cho-be-goi">
+           Gối
+          </a>
+         </li>
+         <li>
+          <a href="/collections/phu-kien-khan">
+           Khăn sữa
+          </a>
+         </li>
+         <li>
+          <a href="/collections/phu-kien-cho-be-khan-da-nang-khan-tam">
+           Khăn đa năng
+          </a>
+         </li>
+         <li>
+          <a href="/collections/phu-kien-cho-be-giay">
+           Giày
+          </a>
+         </li>
+         <li>
+          <a href="/collections/chan-u-cho-be">
+           Chăn ủ
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li>
+        <a href="/collections/tre-so-sinh-set-qua-tang">
+         Set quà tặng
+        </a>
+       </li>
+       <li>
+        <div class="menu-mobile-item-head">
+         <a href="/collections/hang-moi">
+          Bộ sưu tập
+         </a>
+         <button>
+          <i class="lni lni-plus">
+          </i>
+         </button>
+        </div>
+        <ul>
+         <li>
+          <a href="/collections/bo-suu-tap-christmas-wonderland-2023">
+           Christmas wonderland 2023
+          </a>
+         </li>
+         <li>
+          <a href="/collections/hang-moi">
+           Mới ra mắt
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <div class="menu-mobile-item-head">
+       <a href="/collections/tre-em-2-6-tuoi">
+        Thời trang cho trẻ 2-6Y
+       </a>
+       <button class="active">
+        <i class="lni lni-plus">
+        </i>
+       </button>
+      </div>
+      <ul style="display: block;">
+       <li>
+        <div class="menu-mobile-item-head">
+         <a href="/collections/be-trai">
+          Bé trai 2 - 6 tuổi
+         </a>
+         <button>
+          <i class="lni lni-plus">
+          </i>
+         </button>
+        </div>
+        <ul>
+         <li>
+          <a href="/collections/be-trai-ao-khoac-ngoai">
+           Áo khoác
+          </a>
+         </li>
+         <li>
+          <a href="/collections/be-trai-bo-coc">
+           Bộ cộc
+          </a>
+         </li>
+         <li>
+          <a href="/collections/be-trai-bo-dai-tay">
+           Bộ dài tay
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li>
+        <div class="menu-mobile-item-head">
+         <a href="/collections/be-gai">
+          Bé gái 2 - 6 tuổi
+         </a>
+         <button>
+          <i class="lni lni-plus">
+          </i>
+         </button>
+        </div>
+        <ul>
+         <li>
+          <a href="/collections/be-gai-ao-khoac-ngoai">
+           Áo khoác
+          </a>
+         </li>
+         <li>
+          <a href="/collections/be-gai-bo-coc">
+           Bộ cộc
+          </a>
+         </li>
+         <li>
+          <a href="/collections/be-gai-bo-dai-tay">
+           Bộ dài tay
+          </a>
+         </li>
+         <li>
+          <a href="/collections/vay">
+           Váy
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li>
+        <div class="menu-mobile-item-head">
+         <a href="/collections/hang-moi">
+          Bộ sưu tập
+         </a>
+         <button>
+          <i class="lni lni-plus">
+          </i>
+         </button>
+        </div>
+        <ul>
+         <li>
+          <a href="/collections/bo-suu-tap-christmas-wonderland-2023">
+           Christmas wonderland 2023
+          </a>
+         </li>
+         <li>
+          <a href="/collections/hang-moi">
+           Mới ra mắt
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <div class="menu-mobile-item-head">
+       <a href="/">
+        Bộ sưu tập
+       </a>
+       <button class="">
+        <i class="lni lni-plus">
+        </i>
+       </button>
+      </div>
+      <ul>
+       <li>
+        <a href="/collections/bo-suu-tap-christmas-wonderland-2023">
+         Bộ sưu tập Christmas wonderland 2023
+        </a>
+       </li>
+       <li>
+        <a href="/pages/bo-suu-tap">
+         Bộ sưu tập Mama Bear's Hug
+        </a>
+       </li>
+       <li>
+        <a href="/collections/hang-moi">
+         Bộ sưu tập mới
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <div class="menu-mobile-item-head">
+       <a href="/account/login">
+        Đăng nhập
+       </a>
+      </div>
+     </li>
+     <li>
+      <div class="menu-mobile-item-head">
+       <a href="/account/register">
+        Đăng ký
+       </a>
+      </div>
+     </li>
+    </ul>
+   </div>
+   <div class="footer-mobile-wrap">
+    <div class="footer-mobile-newletter">
+     <p>
+      Nhận bản tin mới nhất và khám phá bộ sưu tập của chúng tôi.
+     </p>
+     <form accept-charset="UTF-8" action="/account/contact" class="contact-form" method="post">
+      <input name="form_type" type="hidden" value="customer"/>
+      <input name="utf8" type="hidden" value="✓"/>
+      <input class="contact_tagsw" name="contact[tags]" type="hidden" value="khách hàng tiềm năng, bản tin"/>
+      <div class="footer-mobile-newletter-wrap">
+       <input name="contact[email]" placeholder="Nhập email của bạn..." required="" type="email" value="">
+        <button class="f1gen-btn" type="submit">
+         <span>
+          Đăng ký
+         </span>
+        </button>
+       </input>
+      </div>
+      <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt8_g4IouqoW8GXVfoh--WRhmcdVMaCEqRzK803fT8iFMD5FasqzHio3Me0i8V3gq6vpXxMtbIjOUaqAoJCMGGMJrrygJeeo-0h1ip7BnEl2f4TtB6pi9Cb5fbtOi27g-Fw"/>
+      <input id="fe0b220e17634e5f838603bc300994a6" name="g-recaptcha-response" type="hidden"/>
+      <noscript data-src="https://www.google.com/recaptcha/api.js?render=6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s">
+      </noscript>
+      <noscript>
+       let recaptchaElm=document.getElementById('fe0b220e17634e5f838603bc300994a6');let recaptchaForm=recaptchaElm.parentNode;recaptchaForm.addEventListener("submit",function(formEvent){if(!recaptchaElm.value){formEvent.preventDefault();grecaptcha.ready(function(){grecaptcha.execute('6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s',{action:'submit'}).then(function(token){recaptchaElm.value=token;recaptchaForm.requestSubmit(formEvent.submitter)})})}})
+      </noscript>
+     </form>
+    </div>
+    <div class="footer-mobile-contact">
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="popup-clipboard">
+ <div class="main-box">
+  <div class="main-box--title">
+  </div>
+  <div class="main-box--content">
+   <div class="alert-box">
+    <span>
+    </span>
+   </div>
+  </div>
+ </div>
+</div>
+<link href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" rel="stylesheet"/>
+<a class="overplay-all" href="javascript:void(0);">
+</a>
+Google Tag Manager (noscript)
+<noscript>
+ <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PW6NPTV" style="display:none;visibility:hidden" width="0">
+ </iframe>
+</noscript>
+End Google Tag Manager (noscript)
+
+{%endblock %}
