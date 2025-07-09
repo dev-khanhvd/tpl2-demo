@@ -1,0 +1,2242 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(product.name).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ product.metaKeywords?:product.name }}">
+<meta name="description" content="{{ product.metaDescription?:product.name }}">
+<meta property="og:title" content="{{ product.metaTitle?:product.name }}">
+<meta property="og:url" content="{{ product.canonicalLink }}">
+<meta property="og:image" content="{{ product.imageUri }}">
+<link rel="canonical" href="{{ product.canonicalLink }}">
+{%endblock %}
+
+{%block body %}
+  {% set wishlist = jsonDecode(getCookies('WISHLIST_STORE_PRODUCT')) %}
+                            {% set ivt = 0 %}
+                            {% if product.inventory().calcAvailable() > 0 %}
+                                {% set ivt = product.inventory().calcAvailable() %}
+                            {% elseif product.available > 0 %}
+                                {% set ivt = product.available %}
+                            {% endif %}
+                            {% set variableAttributes = product.variableAttributes %}
+                            {% set flag = 0 %}
+<div class="mainBody-theme-container">
+ <main class="body-main">
+  <div class="product-layout">
+   <div class="productdetail-wrapper">
+    <div class="productdetail-inner">
+     <div class="container">
+      <div class="breadcrumb-wrapper">
+       <div class="breadcrumb-list">
+        <ol class="breadcrumb breadcrumb-arrows" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+         <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+          <a href="/" itemprop="item" target="_self">
+           <span itemprop="name">
+            Trang chủ
+           </span>
+          </a>
+          <meta content="1" itemprop="position"/>
+         </li>
+         <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+          <a href="https://pandora.norbreeze.vn/collections/uu-dai-cung-pandora-mua-2-tang-1-lam-dieu-ban-thich-chon-dieu-ban-yeu" itemprop="item" target="_self">
+           <span itemprop="name">
+            LÀM ĐIỀU BẠN THÍCH - CHỌN ĐIỀU BẠN YÊU
+           </span>
+          </a>
+          <meta content="2" itemprop="position"/>
+         </li>
+         <li class="active" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+          <span content="https://pandora.norbreeze.vn/products/bo-ve-sinh-trang-suc-pandora" itemprop="item">
+           <strong itemprop="name">
+            Bộ Vệ Sinh Trang Sức Pandora
+           </strong>
+          </span>
+          <meta content="3" itemprop="position"/>
+         </li>
+        </ol>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="productdetail-inner">
+     <div class="container">
+      <div class="productdetail-row">
+       <div class="productdetail-left productdetail-gallery">
+        <div class="pr-detail--sider">
+         <div class="pr-gallery swiper swiper-dots" id="pr-gallery">
+          <div class="swiper-wrapper">
+           <div class="pr-gallery--item no-img--loading">
+            <div class="aspect-ratio">
+            </div>
+           </div>
+           <div class="pr-gallery--item no-img--loading">
+            <div class="aspect-ratio">
+            </div>
+           </div>
+           <div class="pr-gallery--item no-img--loading">
+            <div class="aspect-ratio">
+            </div>
+           </div>
+           <div class="pr-gallery--item no-img--loading">
+            <div class="aspect-ratio">
+            </div>
+           </div>
+           <div class="pr-gallery--item no-img--loading">
+            <div class="aspect-ratio">
+            </div>
+           </div>
+           <div class="pr-gallery--item no-img--loading">
+            <div class="aspect-ratio">
+            </div>
+           </div>
+           <div class="pr-gallery--item no-img--loading">
+            <div class="aspect-ratio">
+            </div>
+           </div>
+           <div class="pr-gallery--item no-img--loading">
+            <div class="aspect-ratio">
+            </div>
+           </div>
+          </div>
+          <div class="swiper-pagination">
+          </div>
+          <div class="swiper-button-prev">
+          </div>
+          <div class="swiper-button-next">
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="productdetail-right productdetail-info">
+        <div class="pr-infos">
+         <div class="pr-infos--head">
+          <div class="pr-labels d-none">
+           <span class="badge">
+           </span>
+          </div>
+          <h1>
+           Bộ Vệ Sinh Trang Sức Pandora
+          </h1>
+          <div class="pr-price" id="pr-price">
+           <span class="reduced" content="590000" itemprop="price">
+            590,000₫
+           </span>
+           <del class="d-none">
+            0₫
+           </del>
+           <span class="badge d-none">
+           </span>
+          </div>
+          <div class="pr-sku d-none">
+           <span>
+            1122905639
+           </span>
+          </div>
+          <div class="pr-reviews">
+           <!-- <div class="pr-reviews--star">
+										<div class="star-rate">
+											<span class="ic-star"></span>
+											<span class="ic-star"></span>
+											<span class="ic-star"></span>
+											<span class="ic-star"></span>
+											<span class="ic-star"></span>
+										</div>
+										<div class="star-rate star-fill" data-rate="" style="width: 0%;">
+											<span class="ic-star-fill"></span>
+											<span class="ic-star-fill"></span>
+											<span class="ic-star-fill"></span>
+											<span class="ic-star-fill"></span>
+											<span class="ic-star-fill"></span>
+										</div>
+									</div> -->
+           <!-- <div class="pr-reviews--number"><span class="number-rate">0.5</span><span class="number-rv">(0)</span></div>
+									<div class="pr-reviews--btn"><a href="#customers-rating" class="js-scroll">Viết đánh giá</a></div> -->
+           <div class="hrv-crv-container" data-hrvcrv-layout="star" data-hrvcrv-style="detail" data-product-id="1054532269">
+           </div>
+          </div>
+         </div>
+         <div class="pr-infos--options">
+          <input id="product-select" type="hidden" value=""/>
+          <div class="select-swatch">
+           <div class="swatch swatch-metal" id="variant-swatch-1">
+            <div class="swatch-header metal">
+             <span class="title">
+              <span>
+               Chất liệu:
+              </span>
+              <span>
+              </span>
+             </span>
+            </div>
+            <div class="select-swap select-swap--metal" data-index="1" data-option="option1">
+             <div class="swatch-element no-img--loading">
+              <label class="aspect-ratio">
+              </label>
+             </div>
+             <div class="swatch-element no-img--loading">
+              <label class="aspect-ratio">
+              </label>
+             </div>
+             <div class="swatch-element no-img--loading">
+              <label class="aspect-ratio">
+              </label>
+             </div>
+             <div class="swatch-element no-img--loading">
+              <label class="aspect-ratio">
+              </label>
+             </div>
+            </div>
+           </div>
+           <div class="swatch swatch-size" id="variant-swatch-2">
+            <div class="swatch-header size">
+             <span class="title">
+              <span>
+               Chọn kích thước
+              </span>
+             </span>
+             <a class="btn-sizeguide js-scroll d-none" href="#accordion-sizeguide" id="btn-sizeguide">
+              Hướng dẫn chọn size
+             </a>
+            </div>
+            <div class="select-swap select-swap--size" data-index="2" data-option="option2">
+             <div class="swatch-element no-img--loading">
+              <label class="aspect-ratio">
+              </label>
+             </div>
+             <div class="swatch-element no-img--loading">
+              <label class="aspect-ratio">
+              </label>
+             </div>
+             <div class="swatch-element no-img--loading">
+              <label class="aspect-ratio">
+              </label>
+             </div>
+             <div class="swatch-element no-img--loading">
+              <label class="aspect-ratio">
+              </label>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="pr-quantity d-none">
+         <div class="pr-quantity--wrapper">
+          <button class="btn-minus">
+           <svg fill="none" height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 10H14" stroke="#D0D0D0" stroke-linecap="square" stroke-linejoin="round">
+            </path>
+           </svg>
+          </button>
+          <input class="input-quantity" max="" type="text" value="1"/>
+          <button class="btn-plus">
+           <svg fill="none" height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 5V15" stroke="black" stroke-linecap="square" stroke-linejoin="round">
+            </path>
+            <path d="M5 10H15" stroke="black" stroke-linecap="square" stroke-linejoin="round">
+            </path>
+           </svg>
+          </button>
+         </div>
+        </div>
+        <div class="noti_inventory d-none">
+         Chỉ còn
+         <span>
+          400
+         </span>
+         sản phẩm
+        </div>
+        <div class="pr-controls">
+         <!-- engraving -->
+         <!-- engraving -->
+         <button class="btn btn-primary btn-store d-none" id="btn-findsore" type="button">
+          <span>
+           Tìm cửa hàng
+          </span>
+         </button>
+         <button class="btn btn-primary btn-buynow" id="btn-buynow" type="button">
+          <span>
+           Mua ngay
+          </span>
+         </button>
+         <button class="btn btn-secondary add-cart" id="btn-addtocart" type="button">
+          <span>
+           Thêm vào giỏ
+          </span>
+         </button>
+         <div class="pr-buttons">
+          <button class="pr-button-wishlist js-wishlist" data-handle="bo-ve-sinh-trang-suc-pandora" data-id="1054532269" data-price="590000" data-title="Bộ Vệ Sinh Trang Sức Pandora" data-type="wishlist" type="button">
+           <svg class="ic-heart filled" fill="none" height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.546 10.801c.107.117.22.23.336.337l8.047 8.047a.1.1 0 00.142 0l8.047-8.048a5.72 5.72 0 00.336-.336l.03-.03v-.003l.01-.01c.22-.244.419-.507.595-.786A5.925 5.925 0 0020 6.8C20 3.597 17.493 1 14.4 1a5.471 5.471 0 00-3.717 1.462 5.755 5.755 0 00-.602.646.103.103 0 01-.162 0 5.75 5.75 0 00-.602-.646A5.471 5.471 0 005.6 1C2.507 1 0 3.597 0 6.8c0 1.17.335 2.26.91 3.172.177.28.377.543.597.786l.009.01v.002l.03.031z" fill="#27251F">
+            </path>
+           </svg>
+           <svg class="ic-heart" fill="none" height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+            <path clip-rule="evenodd" d="M17.426 10.415l.015-.014c.096-.088.188-.18.277-.277l.014-.015.01-.012A4.893 4.893 0 0019 6.8C19 4.116 16.908 2 14.4 2c-1.451 0-2.755.702-3.604 1.818l-.716.94a.1.1 0 01-.16 0l-.716-.94C8.354 2.702 7.051 2 5.6 2 3.092 2 1 4.116 1 6.8c0 1.282.48 2.44 1.257 3.297l.013.014.012.013c.089.096.181.19.277.278l.016.014 7.354 7.354a.1.1 0 00.142 0l7.355-7.354zm-7.355 8.77a.1.1 0 01-.142 0l-8.047-8.047a5.763 5.763 0 01-.336-.337l-.03-.03v-.002l-.01-.011a5.802 5.802 0 01-.595-.786A5.922 5.922 0 010 6.8C0 3.597 2.507 1 5.6 1a5.47 5.47 0 013.717 1.462c.216.199.418.415.602.646.041.052.12.052.162 0 .184-.231.386-.447.602-.646A5.471 5.471 0 0114.4 1C17.493 1 20 3.597 20 6.8c0 1.17-.335 2.26-.91 3.172-.177.28-.377.542-.596.786l-.01.01v.003l-.03.03a5.72 5.72 0 01-.336.336l-8.047 8.048z" fill="#27251F" fill-rule="evenodd" xmlns="http://www.w3.org/2000/svg">
+            </path>
+           </svg>
+           <span>
+            Lưu vào danh mục yêu thích
+           </span>
+          </button>
+          <button class="pr-button-giftpacking js-giftpacking" type="button">
+           <svg height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="2254.154">
+            <g>
+             <path clip-rule="evenodd" d="M1 6.1a.1.1 0 01.1-.1h17.8a.1.1 0 01.1.1v3.8a.1.1 0 01-.1.1H1.1a.1.1 0 01-.1-.1V6.1zm8.5 5a.1.1 0 00-.1-.1H2.1a.1.1 0 00-.1.1v7.8a.1.1 0 00.1.1h7.3a.1.1 0 00.1-.1v-7.8zm1 8.9H1.1a.1.1 0 01-.1-.1v-8.8a.1.1 0 00-.1-.1H.1a.1.1 0 01-.1-.1V5.1A.1.1 0 01.1 5h1.53c.087 0 .134-.104.08-.172a2.927 2.927 0 01-.432-2.816C1.987.087 4.4-.548 5.966.781l1.859 1.575c.074.063.195-.01.186-.107C7.894 1.109 8.757 0 10 0c1.258 0 2.126 1.135 1.985 2.288-.012.1.113.176.189.111L14.128.714c1.567-1.35 3.98-.705 4.688 1.253a3.017 3.017 0 01-.431 2.862c-.052.068-.005.171.081.171H19.9a.1.1 0 01.1.1v5.8a.1.1 0 01-.1.1h-.8a.1.1 0 00-.1.1v8.8a.1.1 0 01-.1.1h-8.4zm.1-1a.1.1 0 01-.1-.1v-7.8a.1.1 0 01.1-.1h7.3a.1.1 0 01.1.1v7.8a.1.1 0 01-.1.1h-7.3zM9.155 4.976a.079.079 0 00.05-.139L5.32 1.543a1.958 1.958 0 00-3.103.814 1.95 1.95 0 001.837 2.621l5.101-.002zm1.749-.162a.1.1 0 000 .152l.01.008a.1.1 0 00.065.024L16.04 5c1.34 0 2.315-1.367 1.835-2.693-.474-1.31-2.067-1.72-3.095-.835l-3.877 3.342zm-.99-.934a.1.1 0 00.172 0l.764-1.3C11.275 1.858 10.743 1 10 1s-1.275.858-.85 1.58l.764 1.3z" fill="#27251F" fill-rule="evenodd">
+             </path>
+            </g>
+           </svg>
+           <span>
+            Gói quà tặng
+            <span>
+             Xem chi tiết
+            </span>
+           </span>
+          </button>
+         </div>
+        </div>
+        <div class="pr-description">
+         <div class="list-accordion">
+          <div class="accordion-item description-accordian">
+           <div class="accordion-heading">
+            <h3>
+             Chi tiết sản phẩm
+            </h3>
+           </div>
+           <div class="accordion-content">
+            <div class="content-box">
+             <div>
+              - Dung dịch tẩy rửa nhẹ nhàng được Pandora chấp thuận cho mọi loại kim loại
+             </div>
+             <div>
+              - Một bàn chải mềm
+             </div>
+             <div>
+              - Một khay xử lý để giữ trang sức của bạn khi làm sạch.
+             </div>
+             <div>
+              - Hướng dẫn sử dụng
+             </div>
+             <div>
+              Dung dịch an toàn cho việc sử dụng hàng ngày và để làm sạch bụi bẩn, vi khuẩn. Cũng có một miếng vải đánh bóng hai mặt: mặt trắng dành cho bạc và vàng 14k, mặt hồng dành cho kim loại mạ vàng hồng 14k
+             </div>
+             <div>
+              <strong>
+               Mã sản phẩm
+              </strong>
+              : A002_C
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="accordion-item sizeguide-accordian d-none" id="accordion-sizeguide">
+           <div class="accordion-heading">
+            <h3>
+             Hướng dẫn chọn size
+            </h3>
+           </div>
+           <div class="accordion-content">
+            <div class="content-box">
+            </div>
+           </div>
+          </div>
+          <div class="accordion-item policy-accordian">
+           <div class="accordion-heading">
+            <h3>
+             Chính sách giao hàng &amp; đổi trả
+            </h3>
+           </div>
+           <div class="accordion-content">
+            <div class="content-box">
+             <p>
+              <strong>
+               Chính Sách Miễn Phí Vận Chuyển
+              </strong>
+             </p>
+             <p>
+              Pandora rất vui thông báo rằng chính sách miễn phí vận chuyển đã được áp dụng cho tất cả các đơn hàng trên Website của chúng tôi. Hy vọng rằng việc cung cấp dịch vụ miễn phí vận chuyển là một phần quan trọng của cam kết mang lại trải nghiệm mua sắm tốt nhất cho khách hàng.
+             </p>
+             <p>
+              <em>
+               <strong>
+                Ưu đãi miễn phí vận chuyển:
+               </strong>
+              </em>
+             </p>
+             <ul>
+              <li>
+               <p>
+                Miễn phí vận chuyển cho tất cả các đơn hàng.
+               </p>
+              </li>
+              <li>
+               <p>
+                Áp dụng cho tất cả các sản phẩm trên Website và Fanpage
+               </p>
+              </li>
+              <li>
+               <p>
+                Miễn phí vận chuyển được áp dụng cho tất cả đơn hàng trên toàn quốc.
+               </p>
+              </li>
+             </ul>
+             <p>
+              Chúng tôi cam kết đảm bảo rằng tất cả các đơn hàng sẽ được xử lý và vận chuyển một cách nhanh chóng và chuyên nghiệp. Với chính sách Miễn phí vận chuyển của chúng tôi, bạn có thể yên tâm mua sắm mà không cần lo lắng về phí vận chuyển.
+             </p>
+             <p>
+              Hãy khám phá bộ sưu tập sản phẩm của chúng tôi ngay hôm nay và tận hưởng trải nghiệm mua sắm thuận tiện và tiết kiệm cùng với dịch vụ Miễn phí vận chuyển
+             </p>
+             <p>
+              Nếu bạn có bất kỳ câu hỏi nào, vui lòng liên hệ với chúng tôi qua email hoặc số điện thoại được cung cấp trên trang web. Đội ngũ hỗ trợ của chúng tôi luôn sẵn lòng để giúp đỡ bạn.
+             </p>
+             <p>
+              Xin chân thành cảm ơn bạn đã lựa chọn mua sắm tại chúng tôi!
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="list-accordion-mb d-sm-none">
+          <ul>
+           <li class="active">
+            Chi tiết sản phẩm
+           </li>
+           <li>
+            Hướng dẫn chọn size
+           </li>
+           <li>
+            Chính sách giao hàng &amp; đổi trả
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <section class="section section-collection section-similar">
+    <div class="container">
+     <div class="section-wrapper">
+      <div class="s-heading text-center">
+       <h2>
+        Sản phẩm cùng loại
+       </h2>
+      </div>
+      <div class="s-content">
+       <div class="slider-collection swiper-style" id="list-similar-products">
+        <div class="swiper">
+         <div class="list-products swiper-wrapper" data-view="4">
+          <div class="swiper-slide">
+           <div class="product-loading">
+            <div class="product-block loading-mask">
+             <div class="product-image loading-mask--image">
+              <div class="mask-line lazy-img">
+              </div>
+             </div>
+             <div class="product-detail loading-mask--detail">
+              <div class="mask-line">
+              </div>
+              <div class="mask-line">
+              </div>
+              <div class="mask-line">
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="swiper-slide">
+           <div class="product-loading">
+            <div class="product-block loading-mask">
+             <div class="product-image loading-mask--image">
+              <div class="mask-line lazy-img">
+              </div>
+             </div>
+             <div class="product-detail loading-mask--detail">
+              <div class="mask-line">
+              </div>
+              <div class="mask-line">
+              </div>
+              <div class="mask-line">
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="swiper-slide">
+           <div class="product-loading">
+            <div class="product-block loading-mask">
+             <div class="product-image loading-mask--image">
+              <div class="mask-line lazy-img">
+              </div>
+             </div>
+             <div class="product-detail loading-mask--detail">
+              <div class="mask-line">
+              </div>
+              <div class="mask-line">
+              </div>
+              <div class="mask-line">
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="swiper-slide">
+           <div class="product-loading">
+            <div class="product-block loading-mask">
+             <div class="product-image loading-mask--image">
+              <div class="mask-line lazy-img">
+              </div>
+             </div>
+             <div class="product-detail loading-mask--detail">
+              <div class="mask-line">
+              </div>
+              <div class="mask-line">
+              </div>
+              <div class="mask-line">
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="swiper-pagination">
+        </div>
+        <div class="swiper-button-prev">
+        </div>
+        <div class="swiper-button-next">
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section section-collection section-foryou">
+    <div class="container">
+     <div class="section-wrapper">
+      <div class="s-heading text-center">
+       <h2>
+        Gợi ý bộ trang sức dành cho bạn
+       </h2>
+      </div>
+      <div class="s-content">
+       <div class="slider-collection swiper-style" data-handle="/collections/goi-y-bo-trang-suc-phoi-san-nam-moi-2025" data-id="1004209852" data-title="COMBO QUÀ TẶNG" id="list-foryou-products">
+        <div class="swiper">
+         <div class="list-products swiper-wrapper" data-view="4">
+          <div class="swiper-slide">
+           <div class="product-loading">
+            <div class="product-block loading-mask">
+             <div class="product-image loading-mask--image">
+              <div class="mask-line lazy-img">
+              </div>
+             </div>
+             <div class="product-detail loading-mask--detail">
+              <div class="mask-line">
+              </div>
+              <div class="mask-line">
+              </div>
+              <div class="mask-line">
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="swiper-slide">
+           <div class="product-loading">
+            <div class="product-block loading-mask">
+             <div class="product-image loading-mask--image">
+              <div class="mask-line lazy-img">
+              </div>
+             </div>
+             <div class="product-detail loading-mask--detail">
+              <div class="mask-line">
+              </div>
+              <div class="mask-line">
+              </div>
+              <div class="mask-line">
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="swiper-slide">
+           <div class="product-loading">
+            <div class="product-block loading-mask">
+             <div class="product-image loading-mask--image">
+              <div class="mask-line lazy-img">
+              </div>
+             </div>
+             <div class="product-detail loading-mask--detail">
+              <div class="mask-line">
+              </div>
+              <div class="mask-line">
+              </div>
+              <div class="mask-line">
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="swiper-slide">
+           <div class="product-loading">
+            <div class="product-block loading-mask">
+             <div class="product-image loading-mask--image">
+              <div class="mask-line lazy-img">
+              </div>
+             </div>
+             <div class="product-detail loading-mask--detail">
+              <div class="mask-line">
+              </div>
+              <div class="mask-line">
+              </div>
+              <div class="mask-line">
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="swiper-pagination">
+        </div>
+        <div class="swiper-button-prev">
+        </div>
+        <div class="swiper-button-next">
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section section-reviews" id="customers-rating">
+    <div class="container">
+     <div class="section-wrapper product-ratings w-9">
+      <div class="s-heading">
+       <h2>
+        Đánh giá &amp; Nhận xét
+       </h2>
+      </div>
+      <div class="s-content">
+       <div class="hrv-crv-wrapper hrv-crv-container" data-hrvcrv-layout="listing">
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- <section class="section section-reviews" id="customers-rating">
+		<div class="container">
+			<div class="section-wrapper product-ratings">
+				<div class="s-heading">
+					<h2>Đánh giá & Nhận xét</h2>
+					<div class="product-reviews--btn">
+						<a href="javascript:void(0);" class="btn-reviews--edit btn"><span>Viết đánh giá</span></a>
+					</div>
+				</div>	
+				<div class="s-content">
+					<div class="product-rating--wrapper">
+						<div class="product-reviews--header">
+							<div class="product-reviews--left">
+								<div class="product-reviews--number"><span>0/5</span></div>
+								<div class="product-reviews--star">
+									<div class="star-rate">
+										<span class="ic-star"></span>
+										<span class="ic-star"></span>
+										<span class="ic-star"></span>
+										<span class="ic-star"></span>
+										<span class="ic-star"></span>
+									</div>
+									<div class="star-rate star-fill" data-rate="" style="width: 0%;">
+										<span class="ic-star-fill"></span>
+										<span class="ic-star-fill"></span>
+										<span class="ic-star-fill"></span>
+										<span class="ic-star-fill"></span>
+										<span class="ic-star-fill"></span>
+									</div>
+								</div>
+								<div class="product-reviews--total">
+									<span><strong>0</strong> đánh giá & nhận xét</span>
+								</div>
+							</div>
+							<div class="product-reviews--right">
+								<div class="product-reviews--process">
+									<div data-star="5" class="items-process">
+										<span class="isNumber">5</span>
+										<span class="isProcess">
+											<span class="isLoad"></span>
+											<span class="isBG"></span>
+										</span>
+										<span class="isCount">0 đánh giá</span>
+									</div>
+									<div data-star="4" class="items-process">
+										<span class="isNumber">4</span>
+										<span class="isProcess">
+											<span class="isLoad"></span>
+											<span class="isBG"></span>
+										</span>
+										<span class="isCount">0 đánh giá</span>
+									</div>
+									<div data-star="3" class="items-process">
+										<span class="isNumber">3</span>
+										<span class="isProcess">
+											<span class="isLoad"></span>
+											<span class="isBG"></span>
+										</span>
+										<span class="isCount">0 đánh giá</span>
+									</div>
+									<div data-star="2" class="items-process">
+										<span class="isNumber">2</span>
+										<span class="isProcess">
+											<span class="isLoad"></span>
+											<span class="isBG"></span>
+										</span>
+										<span class="isCount">0 đánh giá</span>
+									</div>
+									<div data-star="1" class="items-process">
+										<span class="isNumber">1</span>
+										<span class="isProcess">
+											<span class="isLoad"></span>
+											<span class="isBG"></span>
+										</span>
+										<span class="isCount">0 đánh giá</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="product-reviews--body d-none">
+							<div class="product-reviews--status d-none"></div>
+							<div class="product-reviews--render"></div>
+							<div class="product-reviews--pagi"></div>
+						</div>
+						<div class="product-reviews--footer d-none">
+							<a href="javascript:void(0);" class="btn-reviews--more btn btn-secondary">Xem thêm <strong>0</strong> đánh giá</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section> -->
+   <section class="section section-collection section-viewed">
+    <div class="container">
+     <div class="section-wrapper">
+      <div class="s-heading text-center">
+       <h2>
+        Sản phẩm đã xem
+       </h2>
+      </div>
+      <div class="s-content">
+       <div class="slider-collection swiper-style" id="list-viewed-products">
+        <div class="swiper">
+         <div class="list-products swiper-wrapper" data-view="4">
+          <div class="swiper-slide">
+           <div class="product-loading">
+            <div class="product-block loading-mask">
+             <div class="product-image loading-mask--image">
+              <div class="mask-line lazy-img">
+              </div>
+             </div>
+             <div class="product-detail loading-mask--detail">
+              <div class="mask-line">
+              </div>
+              <div class="mask-line">
+              </div>
+              <div class="mask-line">
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="swiper-slide">
+           <div class="product-loading">
+            <div class="product-block loading-mask">
+             <div class="product-image loading-mask--image">
+              <div class="mask-line lazy-img">
+              </div>
+             </div>
+             <div class="product-detail loading-mask--detail">
+              <div class="mask-line">
+              </div>
+              <div class="mask-line">
+              </div>
+              <div class="mask-line">
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="swiper-slide">
+           <div class="product-loading">
+            <div class="product-block loading-mask">
+             <div class="product-image loading-mask--image">
+              <div class="mask-line lazy-img">
+              </div>
+             </div>
+             <div class="product-detail loading-mask--detail">
+              <div class="mask-line">
+              </div>
+              <div class="mask-line">
+              </div>
+              <div class="mask-line">
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="swiper-slide">
+           <div class="product-loading">
+            <div class="product-block loading-mask">
+             <div class="product-image loading-mask--image">
+              <div class="mask-line lazy-img">
+              </div>
+             </div>
+             <div class="product-detail loading-mask--detail">
+              <div class="mask-line">
+              </div>
+              <div class="mask-line">
+              </div>
+              <div class="mask-line">
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="swiper-pagination">
+        </div>
+        <div class="swiper-button-prev">
+        </div>
+        <div class="swiper-button-next">
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+  </div>
+ </main>
+ <div class="social-contact">
+  <div class="button-social-contact">
+   <button class="btn">
+    Liên hệ
+   </button>
+  </div>
+  <div class="list-social-chat active">
+   <div class="fb-icon">
+    <a aria-label="fb social" href="https://www.messenger.com/t/450846288276998/?utm_source=FB&amp;utm_medium=Mess&amp;utm_campaign=click_messenger_HRV" target="_blank">
+     <svg fill="none" viewbox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="22" cy="22" fill="url(#paint3_linear)" r="22">
+      </circle>
+      <path clip-rule="evenodd" d="M22.0026 7.70215C14.1041 7.70215 7.70117 13.6308 7.70117 20.9442C7.70117 25.1115 9.78083 28.8286 13.0309 31.256V36.305L17.9004 33.6325C19.2 33.9922 20.5767 34.1863 22.0026 34.1863C29.9011 34.1863 36.304 28.2576 36.304 20.9442C36.304 13.6308 29.9011 7.70215 22.0026 7.70215ZM23.4221 25.5314L19.7801 21.6471L12.6738 25.5314L20.4908 17.2331L24.2216 21.1174L31.239 17.2331L23.4221 25.5314Z" fill="white" fill-rule="evenodd">
+      </path>
+      <defs>
+       <lineargradient gradientunits="userSpaceOnUse" id="paint3_linear" x1="21.6426" x2="21.6426" y1="43.3555" y2="0.428639">
+        <stop stop-color="#ffcad4">
+        </stop>
+        <stop offset="1" stop-color="#ffcad4">
+        </stop>
+       </lineargradient>
+      </defs>
+     </svg>
+    </a>
+   </div>
+   <div class="zalo-icon">
+    <a alt="zalo" href="https://zalo.me/752168566862100952?utm_source=ZALO&amp;utm_medium=Zalo&amp;utm_campaign=click_zalobutton_HRV" target="_blank">
+     <svg id="Layer_2_00000063599641603698683780000005733330940780045713_" style="enable-background:new 0 0 1080 1080;" version="1.1" viewbox="0 0 1080 1080" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+      <style type="text/css">
+       .st0{fill:#FFFFFF;stroke:#FFA0C8;stroke-width:14.74;stroke-miterlimit:10;}
+						.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#FFA0C8;}
+						.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+      </style>
+      <circle class="st0" cx="540.5" cy="540.5" r="428">
+      </circle>
+      <path class="st1" d="M540.5,240.5c-178.2,0-322.7,131.6-322.7,294c0,89.6,44,169.8,113.4,223.8l-6.5,87l83.8-42.5  c40.3,16.5,85,25.7,132.1,25.7c178.2,0,322.7-131.6,322.7-294S718.7,240.5,540.5,240.5L540.5,240.5z">
+      </path>
+      <path class="st2" d="M557.9,490.3v-8.6h25.6v120.3h-14.7c-6,0-10.9-4.9-11-10.9c0,0,0,0,0,0c-10.3,7.5-23.1,12-36.9,12  c-34.5,0-62.5-28-62.5-62.5s28-62.5,62.5-62.5C534.8,478.3,547.6,482.7,557.9,490.3C557.9,490.3,557.9,490.3,557.9,490.3  L557.9,490.3z M451.9,443v3.9c0,7.3-1,13.2-5.7,20.2l-0.6,0.6c-1,1.2-3.5,3.9-4.6,5.4l-82.3,103.3h93.2v14.6c0,6.1-4.9,11-11,11  H320.1v-6.9c0-8.5,2.1-12.2,4.8-16.1l87.7-108.6h-88.8V443L451.9,443L451.9,443z M614.6,602.1c-5,0-9.1-4.1-9.1-9.1V443.1h27.4v159  H614.6z M714.1,477.5c34.8,0,62.9,28.2,62.9,62.9s-28.2,62.9-62.9,62.9s-62.9-28.2-62.9-62.9S679.3,477.5,714.1,477.5L714.1,477.5z   M521,577.5c20.3,0,36.8-16.5,36.8-36.8S541.3,504,521,504s-36.8,16.5-36.8,36.7S500.7,577.5,521,577.5z M714.1,577.4  c20.4,0,37-16.6,37-37s-16.6-37-37-37s-37,16.6-37,37S693.6,577.4,714.1,577.4L714.1,577.4z">
+      </path>
+     </svg>
+    </a>
+   </div>
+  </div>
+ </div>
+ <div class="modal fade modal-contact modalBanner" id="contactModal" role="dialog" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+   <div class="modal-content">
+    <div class="modal-wrapper-contact">
+     <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+      <svg aria-label="icon cross" role="img" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+       <path clip-rule="evenodd" d="M9.222 9.922a.1.1 0 010 .142L.08 19.206a.1.1 0 000 .14l.56.572a.1.1 0 00.141 0l9.148-9.147a.1.1 0 01.142 0l9.142 9.142a.1.1 0 00.14 0l.572-.56a.1.1 0 000-.142l-9.147-9.147a.1.1 0 010-.142L19.92.78a.1.1 0 000-.14l-.56-.572a.1.1 0 00-.142 0l-9.147 9.147a.1.1 0 01-.142 0L.787.073a.1.1 0 00-.14 0l-.572.56a.1.1 0 000 .141l9.147 9.148z" fill="#27251F" fill-rule="evenodd">
+       </path>
+      </svg>
+     </button>
+     <a class="linkbanner-modal-contact" href="https://pandora.norbreeze.vn/collections/national-holiday" title="SUMMER SALE PANDORA 50% ƯU ĐÃI HOÀN TIỀN 2.500.000Đ">
+      <img alt="SUMMER SALE PANDORA 50% ƯU ĐÃI HOÀN TIỀN 2.500.000Đ" src="https://file.hstatic.net/200000103143/file/main_banner__3_.jpg"/>
+     </a>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div aria-labelledby="removeProductLineItemModal" aria-modal="true" class="modal fade" data-auto="divCartRemoveProductModal" id="removeProductModal" role="dialog" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+   <div class="modal-content">
+    <div class="modal-header delete-confirmation-header">
+     <h4 class="modal-title" data-auto="lblCartRemoveProductHeader">
+      Xoá sản phẩm
+     </h4>
+     <button aria-label="Close" class="close" data-auto="btnCartRemoveProductClose" data-dismiss="modal" type="button">
+      <svg aria-label="icon cross" role="img" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+       <path clip-rule="evenodd" d="M9.222 9.922a.1.1 0 010 .142L.08 19.206a.1.1 0 000 .14l.56.572a.1.1 0 00.141 0l9.148-9.147a.1.1 0 01.142 0l9.142 9.142a.1.1 0 00.14 0l.572-.56a.1.1 0 000-.142l-9.147-9.147a.1.1 0 010-.142L19.92.78a.1.1 0 000-.14l-.56-.572a.1.1 0 00-.142 0l-9.147 9.147a.1.1 0 01-.142 0L.787.073a.1.1 0 00-.14 0l-.572.56a.1.1 0 000 .141l9.147 9.148z" fill="#27251F" fill-rule="evenodd">
+       </path>
+      </svg>
+     </button>
+    </div>
+    <div class="modal-body delete-confirmation-body" data-auto="lblCartRemoveProductBody">
+     Bạn muốn xoá sản phẩm từ giỏ hàng?
+     <p class="product-to-remove highlight">
+     </p>
+    </div>
+    <div class="modal-footer">
+     <button class="btn btn-secondary order-md-2" data-dismiss="modal" id="btn-delete-confirm" type="button">
+      CÓ, XOÁ
+     </button>
+     <button class="btn btn-outline order-md-1" data-dismiss="modal" id="btn-cancel-confirm" type="button">
+      KHÔNG
+     </button>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="modal fade modal-multistock modal-sidebar" id="multistock" role="dialog" style="background: rgba(0, 0, 0, 0.5);z-index: 999999;">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+   <div class="modal-content">
+    <div class="modal-header">
+     <h4>
+      Tra cứu cửa hàng
+     </h4>
+     <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+      <svg aria-label="icon cross" role="img" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+       <path clip-rule="evenodd" d="M9.222 9.922a.1.1 0 010 .142L.08 19.206a.1.1 0 000 .14l.56.572a.1.1 0 00.141 0l9.148-9.147a.1.1 0 01.142 0l9.142 9.142a.1.1 0 00.14 0l.572-.56a.1.1 0 000-.142l-9.147-9.147a.1.1 0 010-.142L19.92.78a.1.1 0 000-.14l-.56-.572a.1.1 0 00-.142 0l-9.147 9.147a.1.1 0 01-.142 0L.787.073a.1.1 0 00-.14 0l-.572.56a.1.1 0 000 .141l9.147 9.148z" fill="#27251F" fill-rule="evenodd">
+       </path>
+      </svg>
+     </button>
+    </div>
+    <div class="modal-body">
+     <div class="inventory-location-box data clearfix" style="">
+      <div class="inventory-location-ajax product-inventory clearfix">
+       <div class="list-selects">
+        <select class="swatchsize-select" id="swatchSize">
+        </select>
+        <select class="provinceStore-select" id="provinceStore">
+        </select>
+       </div>
+       <ul class="stock-box" id="stock-box">
+       </ul>
+       <p class="no-stock text-center d-none">
+        Hiện không còn cửa hàng nào còn sản phẩm
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div aria-hidden="false" aria-labelledby="myLargeModalLabel" class="modal fade modal-customers-rating" id="customersRatingModal" role="dialog" style="display: none!important;" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-xl">
+   <div class="modal-content">
+    <div class="modal-header">
+     <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+      <svg aria-label="icon cross" role="img" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+       <path clip-rule="evenodd" d="M9.222 9.922a.1.1 0 010 .142L.08 19.206a.1.1 0 000 .14l.56.572a.1.1 0 00.141 0l9.148-9.147a.1.1 0 01.142 0l9.142 9.142a.1.1 0 00.14 0l.572-.56a.1.1 0 000-.142l-9.147-9.147a.1.1 0 010-.142L19.92.78a.1.1 0 000-.14l-.56-.572a.1.1 0 00-.142 0l-9.147 9.147a.1.1 0 01-.142 0L.787.073a.1.1 0 00-.14 0l-.572.56a.1.1 0 000 .141l9.147 9.148z" fill="#27251F" fill-rule="evenodd">
+       </path>
+      </svg>
+     </button>
+    </div>
+    <div class="modal-body">
+     <div class="cr-app">
+      <div class="cr-app--left">
+       <div class="cr-product">
+        <div class="cr-img">
+         <img alt="Test" class="cr-img" data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+        </div>
+        <h4 class="cr-name">
+        </h4>
+       </div>
+      </div>
+      <div class="cr-app--right">
+       <h3>
+        Đánh giá của bạn về:
+        <strong class="cr-name">
+        </strong>
+       </h3>
+       <form class="cr-form" data-gtm-form-interact-id="0">
+        <input name="cr-user--email" type="hidden" value=""/>
+        <input name="cr-user--id" type="hidden" value=""/>
+        <div class="cr-rating">
+         <label>
+          Mức độ đánh giá *
+         </label>
+         <ul class="cr-levels">
+          <li class="" data-rating="1">
+           <input data-gtm-form-interact-field-id="1" id="rate-1" name="rate-level" type="radio" value="1"/>
+           <label for="rate-1">
+            <svg fill="none" height="15" viewbox="0 0 16 15" width="16" xmlns="http://www.w3.org/2000/svg">
+             <path d="M15.1104 6.45681C15.2756 6.33376 15.3981 6.16209 15.4608 5.96588C15.5235 5.76968 15.5232 5.55877 15.46 5.36273C15.3968 5.16669 15.2738 4.99535 15.1083 4.87274C14.9427 4.75013 14.743 4.6824 14.5371 4.67903L10.5371 4.52792C10.5174 4.52657 10.4985 4.51955 10.4828 4.50772C10.467 4.49589 10.455 4.47976 10.4482 4.46126L9.06594 0.727923C8.9965 0.537985 8.87036 0.373975 8.70461 0.258099C8.53887 0.142223 8.34151 0.0800781 8.13928 0.0800781C7.93704 0.0800781 7.73969 0.142223 7.57394 0.258099C7.4082 0.373975 7.28206 0.537985 7.21261 0.727923L5.83483 4.47459C5.82802 4.49309 5.81601 4.50923 5.80024 4.52106C5.78447 4.53288 5.76561 4.5399 5.74594 4.54126L1.74594 4.69237C1.53999 4.69573 1.34026 4.76347 1.17474 4.88608C1.00923 5.00869 0.886238 5.18002 0.823016 5.37606C0.759794 5.5721 0.75951 5.78301 0.822205 5.97922C0.8849 6.17542 1.00743 6.34709 1.17261 6.47015L4.31039 8.93681C4.32609 8.94917 4.33783 8.96586 4.34415 8.98482C4.35047 9.00378 4.35109 9.02417 4.34594 9.04348L3.26594 12.8701C3.20998 13.065 3.2154 13.2724 3.28147 13.4641C3.34754 13.6557 3.47106 13.8224 3.63521 13.9414C3.79936 14.0604 3.99619 14.1259 4.1989 14.1291C4.40162 14.1322 4.60039 14.0728 4.76817 13.959L8.08372 11.7368C8.10005 11.7255 8.11943 11.7195 8.13928 11.7195C8.15913 11.7195 8.1785 11.7255 8.19483 11.7368L11.5104 13.959C11.6759 14.0767 11.874 14.14 12.0771 14.14C12.2802 14.14 12.4782 14.0767 12.6437 13.959C12.8079 13.8412 12.9315 13.6753 12.9976 13.4843C13.0637 13.2933 13.0689 13.0865 13.0126 12.8924L11.9237 9.05237C11.918 9.03309 11.9183 9.0125 11.9246 8.99341C11.931 8.97432 11.9431 8.95766 11.9593 8.9457L15.1104 6.45681Z" fill="#F1E9DA">
+             </path>
+            </svg>
+           </label>
+          </li>
+          <li class="" data-rating="2">
+           <input data-gtm-form-interact-field-id="0" id="rate-2" name="rate-level" type="radio" value="2"/>
+           <label for="rate-2">
+            <svg fill="none" height="15" viewbox="0 0 16 15" width="16" xmlns="http://www.w3.org/2000/svg">
+             <path d="M15.1104 6.45681C15.2756 6.33376 15.3981 6.16209 15.4608 5.96588C15.5235 5.76968 15.5232 5.55877 15.46 5.36273C15.3968 5.16669 15.2738 4.99535 15.1083 4.87274C14.9427 4.75013 14.743 4.6824 14.5371 4.67903L10.5371 4.52792C10.5174 4.52657 10.4985 4.51955 10.4828 4.50772C10.467 4.49589 10.455 4.47976 10.4482 4.46126L9.06594 0.727923C8.9965 0.537985 8.87036 0.373975 8.70461 0.258099C8.53887 0.142223 8.34151 0.0800781 8.13928 0.0800781C7.93704 0.0800781 7.73969 0.142223 7.57394 0.258099C7.4082 0.373975 7.28206 0.537985 7.21261 0.727923L5.83483 4.47459C5.82802 4.49309 5.81601 4.50923 5.80024 4.52106C5.78447 4.53288 5.76561 4.5399 5.74594 4.54126L1.74594 4.69237C1.53999 4.69573 1.34026 4.76347 1.17474 4.88608C1.00923 5.00869 0.886238 5.18002 0.823016 5.37606C0.759794 5.5721 0.75951 5.78301 0.822205 5.97922C0.8849 6.17542 1.00743 6.34709 1.17261 6.47015L4.31039 8.93681C4.32609 8.94917 4.33783 8.96586 4.34415 8.98482C4.35047 9.00378 4.35109 9.02417 4.34594 9.04348L3.26594 12.8701C3.20998 13.065 3.2154 13.2724 3.28147 13.4641C3.34754 13.6557 3.47106 13.8224 3.63521 13.9414C3.79936 14.0604 3.99619 14.1259 4.1989 14.1291C4.40162 14.1322 4.60039 14.0728 4.76817 13.959L8.08372 11.7368C8.10005 11.7255 8.11943 11.7195 8.13928 11.7195C8.15913 11.7195 8.1785 11.7255 8.19483 11.7368L11.5104 13.959C11.6759 14.0767 11.874 14.14 12.0771 14.14C12.2802 14.14 12.4782 14.0767 12.6437 13.959C12.8079 13.8412 12.9315 13.6753 12.9976 13.4843C13.0637 13.2933 13.0689 13.0865 13.0126 12.8924L11.9237 9.05237C11.918 9.03309 11.9183 9.0125 11.9246 8.99341C11.931 8.97432 11.9431 8.95766 11.9593 8.9457L15.1104 6.45681Z" fill="#F1E9DA">
+             </path>
+            </svg>
+           </label>
+          </li>
+          <li class="" data-rating="3">
+           <input id="rate-3" name="rate-level" type="radio" value="3"/>
+           <label for="rate-3">
+            <svg fill="none" height="15" viewbox="0 0 16 15" width="16" xmlns="http://www.w3.org/2000/svg">
+             <path d="M15.1104 6.45681C15.2756 6.33376 15.3981 6.16209 15.4608 5.96588C15.5235 5.76968 15.5232 5.55877 15.46 5.36273C15.3968 5.16669 15.2738 4.99535 15.1083 4.87274C14.9427 4.75013 14.743 4.6824 14.5371 4.67903L10.5371 4.52792C10.5174 4.52657 10.4985 4.51955 10.4828 4.50772C10.467 4.49589 10.455 4.47976 10.4482 4.46126L9.06594 0.727923C8.9965 0.537985 8.87036 0.373975 8.70461 0.258099C8.53887 0.142223 8.34151 0.0800781 8.13928 0.0800781C7.93704 0.0800781 7.73969 0.142223 7.57394 0.258099C7.4082 0.373975 7.28206 0.537985 7.21261 0.727923L5.83483 4.47459C5.82802 4.49309 5.81601 4.50923 5.80024 4.52106C5.78447 4.53288 5.76561 4.5399 5.74594 4.54126L1.74594 4.69237C1.53999 4.69573 1.34026 4.76347 1.17474 4.88608C1.00923 5.00869 0.886238 5.18002 0.823016 5.37606C0.759794 5.5721 0.75951 5.78301 0.822205 5.97922C0.8849 6.17542 1.00743 6.34709 1.17261 6.47015L4.31039 8.93681C4.32609 8.94917 4.33783 8.96586 4.34415 8.98482C4.35047 9.00378 4.35109 9.02417 4.34594 9.04348L3.26594 12.8701C3.20998 13.065 3.2154 13.2724 3.28147 13.4641C3.34754 13.6557 3.47106 13.8224 3.63521 13.9414C3.79936 14.0604 3.99619 14.1259 4.1989 14.1291C4.40162 14.1322 4.60039 14.0728 4.76817 13.959L8.08372 11.7368C8.10005 11.7255 8.11943 11.7195 8.13928 11.7195C8.15913 11.7195 8.1785 11.7255 8.19483 11.7368L11.5104 13.959C11.6759 14.0767 11.874 14.14 12.0771 14.14C12.2802 14.14 12.4782 14.0767 12.6437 13.959C12.8079 13.8412 12.9315 13.6753 12.9976 13.4843C13.0637 13.2933 13.0689 13.0865 13.0126 12.8924L11.9237 9.05237C11.918 9.03309 11.9183 9.0125 11.9246 8.99341C11.931 8.97432 11.9431 8.95766 11.9593 8.9457L15.1104 6.45681Z" fill="#F1E9DA">
+             </path>
+            </svg>
+           </label>
+          </li>
+          <li class="" data-rating="4">
+           <input id="rate-4" name="rate-level" type="radio" value="4"/>
+           <label for="rate-4">
+            <svg fill="none" height="15" viewbox="0 0 16 15" width="16" xmlns="http://www.w3.org/2000/svg">
+             <path d="M15.1104 6.45681C15.2756 6.33376 15.3981 6.16209 15.4608 5.96588C15.5235 5.76968 15.5232 5.55877 15.46 5.36273C15.3968 5.16669 15.2738 4.99535 15.1083 4.87274C14.9427 4.75013 14.743 4.6824 14.5371 4.67903L10.5371 4.52792C10.5174 4.52657 10.4985 4.51955 10.4828 4.50772C10.467 4.49589 10.455 4.47976 10.4482 4.46126L9.06594 0.727923C8.9965 0.537985 8.87036 0.373975 8.70461 0.258099C8.53887 0.142223 8.34151 0.0800781 8.13928 0.0800781C7.93704 0.0800781 7.73969 0.142223 7.57394 0.258099C7.4082 0.373975 7.28206 0.537985 7.21261 0.727923L5.83483 4.47459C5.82802 4.49309 5.81601 4.50923 5.80024 4.52106C5.78447 4.53288 5.76561 4.5399 5.74594 4.54126L1.74594 4.69237C1.53999 4.69573 1.34026 4.76347 1.17474 4.88608C1.00923 5.00869 0.886238 5.18002 0.823016 5.37606C0.759794 5.5721 0.75951 5.78301 0.822205 5.97922C0.8849 6.17542 1.00743 6.34709 1.17261 6.47015L4.31039 8.93681C4.32609 8.94917 4.33783 8.96586 4.34415 8.98482C4.35047 9.00378 4.35109 9.02417 4.34594 9.04348L3.26594 12.8701C3.20998 13.065 3.2154 13.2724 3.28147 13.4641C3.34754 13.6557 3.47106 13.8224 3.63521 13.9414C3.79936 14.0604 3.99619 14.1259 4.1989 14.1291C4.40162 14.1322 4.60039 14.0728 4.76817 13.959L8.08372 11.7368C8.10005 11.7255 8.11943 11.7195 8.13928 11.7195C8.15913 11.7195 8.1785 11.7255 8.19483 11.7368L11.5104 13.959C11.6759 14.0767 11.874 14.14 12.0771 14.14C12.2802 14.14 12.4782 14.0767 12.6437 13.959C12.8079 13.8412 12.9315 13.6753 12.9976 13.4843C13.0637 13.2933 13.0689 13.0865 13.0126 12.8924L11.9237 9.05237C11.918 9.03309 11.9183 9.0125 11.9246 8.99341C11.931 8.97432 11.9431 8.95766 11.9593 8.9457L15.1104 6.45681Z" fill="#F1E9DA">
+             </path>
+            </svg>
+           </label>
+          </li>
+          <li class="" data-rating="5">
+           <input data-gtm-form-interact-field-id="2" id="rate-5" name="rate-level" type="radio" value="5"/>
+           <label for="rate-5">
+            <svg fill="none" height="15" viewbox="0 0 16 15" width="16" xmlns="http://www.w3.org/2000/svg">
+             <path d="M15.1104 6.45681C15.2756 6.33376 15.3981 6.16209 15.4608 5.96588C15.5235 5.76968 15.5232 5.55877 15.46 5.36273C15.3968 5.16669 15.2738 4.99535 15.1083 4.87274C14.9427 4.75013 14.743 4.6824 14.5371 4.67903L10.5371 4.52792C10.5174 4.52657 10.4985 4.51955 10.4828 4.50772C10.467 4.49589 10.455 4.47976 10.4482 4.46126L9.06594 0.727923C8.9965 0.537985 8.87036 0.373975 8.70461 0.258099C8.53887 0.142223 8.34151 0.0800781 8.13928 0.0800781C7.93704 0.0800781 7.73969 0.142223 7.57394 0.258099C7.4082 0.373975 7.28206 0.537985 7.21261 0.727923L5.83483 4.47459C5.82802 4.49309 5.81601 4.50923 5.80024 4.52106C5.78447 4.53288 5.76561 4.5399 5.74594 4.54126L1.74594 4.69237C1.53999 4.69573 1.34026 4.76347 1.17474 4.88608C1.00923 5.00869 0.886238 5.18002 0.823016 5.37606C0.759794 5.5721 0.75951 5.78301 0.822205 5.97922C0.8849 6.17542 1.00743 6.34709 1.17261 6.47015L4.31039 8.93681C4.32609 8.94917 4.33783 8.96586 4.34415 8.98482C4.35047 9.00378 4.35109 9.02417 4.34594 9.04348L3.26594 12.8701C3.20998 13.065 3.2154 13.2724 3.28147 13.4641C3.34754 13.6557 3.47106 13.8224 3.63521 13.9414C3.79936 14.0604 3.99619 14.1259 4.1989 14.1291C4.40162 14.1322 4.60039 14.0728 4.76817 13.959L8.08372 11.7368C8.10005 11.7255 8.11943 11.7195 8.13928 11.7195C8.15913 11.7195 8.1785 11.7255 8.19483 11.7368L11.5104 13.959C11.6759 14.0767 11.874 14.14 12.0771 14.14C12.2802 14.14 12.4782 14.0767 12.6437 13.959C12.8079 13.8412 12.9315 13.6753 12.9976 13.4843C13.0637 13.2933 13.0689 13.0865 13.0126 12.8924L11.9237 9.05237C11.918 9.03309 11.9183 9.0125 11.9246 8.99341C11.931 8.97432 11.9431 8.95766 11.9593 8.9457L15.1104 6.45681Z" fill="#F1E9DA">
+             </path>
+            </svg>
+           </label>
+          </li>
+         </ul>
+         <span class="rate-show">
+          Click vào để review!
+         </span>
+         <span class="rate-success d-none">
+          <svg class="" fill-rule="evenodd" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 21 21" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+           <g>
+            <path class="" d="M10.504 1.318a9.189 9.189 0 0 1 0 18.375 9.189 9.189 0 0 1 0-18.375zM8.596 13.49l-2.25-2.252a.986.986 0 0 1 0-1.392.988.988 0 0 1 1.393 0l1.585 1.587 3.945-3.945a.986.986 0 0 1 1.392 0 .987.987 0 0 1 0 1.392l-4.642 4.642a.987.987 0 0 1-1.423-.032z" data-original="#00ba00" fill="#00ba00" opacity="1">
+            </path>
+           </g>
+          </svg>
+         </span>
+         <span class="rate-error d-none">
+          <span>
+           Vui lòng chọn mức độ đánh giá
+          </span>
+          <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 511.76 511.76" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+           <g>
+            <path class="" d="M436.896 74.869c-99.84-99.819-262.208-99.819-362.048 0-99.797 99.819-99.797 262.229 0 362.048 49.92 49.899 115.477 74.837 181.035 74.837s131.093-24.939 181.013-74.837c99.819-99.818 99.819-262.229 0-362.048zm-75.435 256.448c8.341 8.341 8.341 21.824 0 30.165a21.275 21.275 0 0 1-15.083 6.251 21.277 21.277 0 0 1-15.083-6.251l-75.413-75.435-75.392 75.413a21.348 21.348 0 0 1-15.083 6.251 21.277 21.277 0 0 1-15.083-6.251c-8.341-8.341-8.341-21.845 0-30.165l75.392-75.413-75.413-75.413c-8.341-8.341-8.341-21.845 0-30.165 8.32-8.341 21.824-8.341 30.165 0l75.413 75.413 75.413-75.413c8.341-8.341 21.824-8.341 30.165 0 8.341 8.32 8.341 21.824 0 30.165l-75.413 75.413 75.415 75.435z" data-original="#000000" fill="#d91f46" opacity="1">
+            </path>
+           </g>
+          </svg>
+         </span>
+        </div>
+        <div class="cr-title d-none">
+         <label>
+          Tiêu đề đánh giá
+         </label>
+         <input name="cr-title" placeholder="Ví dụ: Sản phẩm tuyệt vời!" type="text"/>
+         <span class="rate-success d-none">
+          <svg class="" fill-rule="evenodd" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 21 21" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+           <g>
+            <path class="" d="M10.504 1.318a9.189 9.189 0 0 1 0 18.375 9.189 9.189 0 0 1 0-18.375zM8.596 13.49l-2.25-2.252a.986.986 0 0 1 0-1.392.988.988 0 0 1 1.393 0l1.585 1.587 3.945-3.945a.986.986 0 0 1 1.392 0 .987.987 0 0 1 0 1.392l-4.642 4.642a.987.987 0 0 1-1.423-.032z" data-original="#00ba00" fill="#00ba00" opacity="1">
+            </path>
+           </g>
+          </svg>
+         </span>
+         <span class="rate-error d-none">
+          <span>
+           Tiêu đề không được trống
+          </span>
+          <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 511.76 511.76" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+           <g>
+            <path class="" d="M436.896 74.869c-99.84-99.819-262.208-99.819-362.048 0-99.797 99.819-99.797 262.229 0 362.048 49.92 49.899 115.477 74.837 181.035 74.837s131.093-24.939 181.013-74.837c99.819-99.818 99.819-262.229 0-362.048zm-75.435 256.448c8.341 8.341 8.341 21.824 0 30.165a21.275 21.275 0 0 1-15.083 6.251 21.277 21.277 0 0 1-15.083-6.251l-75.413-75.435-75.392 75.413a21.348 21.348 0 0 1-15.083 6.251 21.277 21.277 0 0 1-15.083-6.251c-8.341-8.341-8.341-21.845 0-30.165l75.392-75.413-75.413-75.413c-8.341-8.341-8.341-21.845 0-30.165 8.32-8.341 21.824-8.341 30.165 0l75.413 75.413 75.413-75.413c8.341-8.341 21.824-8.341 30.165 0 8.341 8.32 8.341 21.824 0 30.165l-75.413 75.413 75.415 75.435z" data-original="#000000" fill="#d91f46" opacity="1">
+            </path>
+           </g>
+          </svg>
+         </span>
+        </div>
+        <div class="cr-content">
+         <label>
+          Đánh giá
+         </label>
+         <textarea data-gtm-form-interact-field-id="4" maxlength="1000" name="cr-content" placeholder="Ví dụ: Tôi đã mua sản phẩm cách đây 1 tháng và rất hài lòng về nó ..."></textarea>
+         <ul class="cr-list-default">
+          <span class="">
+           <span>
+            Sản phẩm vừa vặn
+           </span>
+           <img src="https://file.hstatic.net/200000060274/file/close_a8dadb58798949d9b93ff3542bb924cf.png"/>
+          </span>
+          <span class="">
+           <span>
+            Sản phẩm đẹp như ảnh
+           </span>
+           <img src="https://file.hstatic.net/200000060274/file/close_a8dadb58798949d9b93ff3542bb924cf.png"/>
+          </span>
+         </ul>
+         <span class="rate-success d-none">
+          <svg class="" fill-rule="evenodd" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 21 21" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+           <g>
+            <path class="" d="M10.504 1.318a9.189 9.189 0 0 1 0 18.375 9.189 9.189 0 0 1 0-18.375zM8.596 13.49l-2.25-2.252a.986.986 0 0 1 0-1.392.988.988 0 0 1 1.393 0l1.585 1.587 3.945-3.945a.986.986 0 0 1 1.392 0 .987.987 0 0 1 0 1.392l-4.642 4.642a.987.987 0 0 1-1.423-.032z" data-original="#00ba00" fill="#00ba00" opacity="1">
+            </path>
+           </g>
+          </svg>
+         </span>
+         <span class="rate-error d-none">
+          <span>
+           Nội dung phải từ 50 ký tự
+          </span>
+          <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 511.76 511.76" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+           <g>
+            <path class="" d="M436.896 74.869c-99.84-99.819-262.208-99.819-362.048 0-99.797 99.819-99.797 262.229 0 362.048 49.92 49.899 115.477 74.837 181.035 74.837s131.093-24.939 181.013-74.837c99.819-99.818 99.819-262.229 0-362.048zm-75.435 256.448c8.341 8.341 8.341 21.824 0 30.165a21.275 21.275 0 0 1-15.083 6.251 21.277 21.277 0 0 1-15.083-6.251l-75.413-75.435-75.392 75.413a21.348 21.348 0 0 1-15.083 6.251 21.277 21.277 0 0 1-15.083-6.251c-8.341-8.341-8.341-21.845 0-30.165l75.392-75.413-75.413-75.413c-8.341-8.341-8.341-21.845 0-30.165 8.32-8.341 21.824-8.341 30.165 0l75.413 75.413 75.413-75.413c8.341-8.341 21.824-8.341 30.165 0 8.341 8.32 8.341 21.824 0 30.165l-75.413 75.413 75.415 75.435z" data-original="#000000" fill="#d91f46" opacity="1">
+            </path>
+           </g>
+          </svg>
+         </span>
+        </div>
+        <div class="cr-image d-flex flex-wrap">
+         <div class="w-100 d-flex flex-wrap">
+          <label class="cr-preview-img" for="theFiles">
+           <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svgjs="http://svgjs.com/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+            <g>
+             <g data-name="Layer 51" id="Layer_51">
+              <path class="" d="m57.47 38.6a2 2 0 0 0 -2 2v6.83a6.07 6.07 0 0 1 -6.07 6.07h-34.8a6.07 6.07 0 0 1 -6.07-6.07v-6.83a2 2 0 1 0 -4 0v6.83a10.08 10.08 0 0 0 10.07 10.07h34.8a10.08 10.08 0 0 0 10.07-10.07v-6.83a2 2 0 0 0 -2-2z" data-original="#000000" fill="#000000">
+              </path>
+              <path class="" d="m22 21.3 8-8v29.7a2 2 0 0 0 4 0v-29.67l8 8a2 2 0 0 0 2.83-2.83l-11.41-11.41a2.16 2.16 0 0 0 -1-.55 2.06 2.06 0 0 0 -1.81.55l-11.41 11.38a2 2 0 0 0 2.8 2.83z" data-original="#000000" fill="#000000">
+              </path>
+             </g>
+            </g>
+           </svg>
+           <span>
+            Gửi Ảnh
+           </span>
+          </label>
+          <input class="d-none" data-gtm-form-interact-field-id="3" hidden="" id="theFiles" multiple="" type="file"/>
+          <div class="preview-img">
+          </div>
+         </div>
+         <div class="err-img text-danger w-100">
+         </div>
+         <div class="cr-actions">
+          <button class="btn btn-secondary cr-submit">
+           Gửi đánh giá
+          </button>
+         </div>
+        </div>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="modal fade modal-compatibility modal-sidebar" id="compatibilityModal" role="dialog" style="background: rgba(0, 0, 0, 0.5);z-index: 999999;">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+   <div class="modal-content">
+    <div class="modal-header">
+     <h4>
+      TÍNH TƯƠNG THÍCH
+     </h4>
+     <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+      <svg aria-label="icon cross" role="img" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+       <path clip-rule="evenodd" d="M9.222 9.922a.1.1 0 010 .142L.08 19.206a.1.1 0 000 .14l.56.572a.1.1 0 00.141 0l9.148-9.147a.1.1 0 01.142 0l9.142 9.142a.1.1 0 00.14 0l.572-.56a.1.1 0 000-.142l-9.147-9.147a.1.1 0 010-.142L19.92.78a.1.1 0 000-.14l-.56-.572a.1.1 0 00-.142 0l-9.147 9.147a.1.1 0 01-.142 0L.787.073a.1.1 0 00-.14 0l-.572.56a.1.1 0 000 .141l9.147 9.148z" fill="#27251F" fill-rule="evenodd">
+       </path>
+      </svg>
+     </button>
+    </div>
+    <div class="modal-body">
+     <div class="compatibility-content" style="">
+      Vui lòng kiểm tra tính tương thích của sản phẩm trước khi đặt hàng.
+      <div>
+      </div>
+      <div>
+       <p style="text-align: center">
+       </p>
+       <p style="text-align: center">
+        <img src="//file.hstatic.net/200000103143/file/1_f920d08147ab4ce1ac1c2e5299e2fc0e_1024x1024.png"/>
+       </p>
+       <span style="font-size:18px">
+        <strong>
+         Pandora Moments
+        </strong>
+       </span>
+      </div>
+      <div>
+      </div>
+      <div>
+       <span style="font-size:14px">
+        -
+       </span>
+       Vòng tay và các sản phẩm đeo charm có dáng trụ tròn, bao gồm vòng kiềng, vòng dây rắn, vòng dây da và các sản phẩm đeo charm khác.
+      </div>
+      <div>
+       <p>
+        <span style="font-size:13px">
+         - Charm với lỗ xỏ to, bao gồm charm treo, charm bấm, charm xích an toàn.
+        </span>
+       </p>
+       <p style="text-align: center">
+       </p>
+       <p style="text-align: center">
+        <img src="//file.hstatic.net/200000103143/file/2_8ca83571513b4a33ba3e2953edab6a19_1024x1024.png"/>
+       </p>
+       <p>
+        <span style="font-size:18px">
+         <strong>
+          Pandora ME
+         </strong>
+        </span>
+       </p>
+       <p>
+        <span style="font-size:14px">
+         - Vòng tay và vòng cổ mắt xích có mắt nối mở.
+        </span>
+       </p>
+       <p>
+        <span style="font-size:14px">
+         - Charm treo có lỗ xỏ nhỏ có thể đeo vào mắt nối mở.
+        </span>
+       </p>
+       <p>
+        <span style="font-size:14px">
+         - Charm dạng mắt nối thay thế cho mắt xích mặc định.
+        </span>
+       </p>
+       <div>
+        <p style="text-align: center">
+        </p>
+        <p style="text-align: center">
+         <img src="//file.hstatic.net/200000103143/file/3_a30b2cc8b1b84af59e42e126e2470932_1024x1024.png"/>
+        </p>
+        <p>
+         <span style="font-size:18px">
+          <strong>
+           Pandora Reflexions
+          </strong>
+         </span>
+        </p>
+        <p>
+         <span style="font-size:14px">
+          - Vòng tay và dây chuyền dạng dẹp.
+         </span>
+        </p>
+        <p>
+         <span style="font-size:14px">
+          - Charm bấm dạng dẹp
+         </span>
+         .
+        </p>
+       </div>
+       <p style="text-align: center">
+       </p>
+       <p>
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div aria-hidden="false" aria-labelledby="myLargeModalLabel" class="modal fade modal-quickview" id="quickviewProductModal" role="dialog" style="display: none!important;" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-xl">
+   <div class="modal-content">
+    <div class="modal-header">
+     <h4>
+      <a href="/">
+       Xem chi tiết sản phẩm
+      </a>
+     </h4>
+     <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+      <svg aria-label="icon cross" role="img" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+       <path clip-rule="evenodd" d="M9.222 9.922a.1.1 0 010 .142L.08 19.206a.1.1 0 000 .14l.56.572a.1.1 0 00.141 0l9.148-9.147a.1.1 0 01.142 0l9.142 9.142a.1.1 0 00.14 0l.572-.56a.1.1 0 000-.142l-9.147-9.147a.1.1 0 010-.142L19.92.78a.1.1 0 000-.14l-.56-.572a.1.1 0 00-.142 0l-9.147 9.147a.1.1 0 01-.142 0L.787.073a.1.1 0 00-.14 0l-.572.56a.1.1 0 000 .141l9.147 9.148z" fill="#27251F" fill-rule="evenodd">
+       </path>
+      </svg>
+     </button>
+    </div>
+    <div class="modal-body">
+    </div>
+    <div class="modal-footer">
+     <div class="quickviewdetail-footer">
+      <button class="btn btn-secondary add-cart" id="qv-btn-addtocart" type="button">
+       <span>
+        Thêm vào giỏ
+       </span>
+      </button>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="modal fade modal-giftpacking modal-sidebar" id="giftpackingModal" role="dialog" style="background: rgba(0, 0, 0, 0.5);z-index: 999999;">
+  <div class="modal-dialog">
+   <div class="modal-content">
+    <div class="modal-header">
+     <h4>
+      Gift Options
+     </h4>
+     <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+      <svg aria-label="icon cross" role="img" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+       <path clip-rule="evenodd" d="M9.222 9.922a.1.1 0 010 .142L.08 19.206a.1.1 0 000 .14l.56.572a.1.1 0 00.141 0l9.148-9.147a.1.1 0 01.142 0l9.142 9.142a.1.1 0 00.14 0l.572-.56a.1.1 0 000-.142l-9.147-9.147a.1.1 0 010-.142L19.92.78a.1.1 0 000-.14l-.56-.572a.1.1 0 00-.142 0l-9.147 9.147a.1.1 0 01-.142 0L.787.073a.1.1 0 00-.14 0l-.572.56a.1.1 0 000 .141l9.147 9.148z" fill="#27251F" fill-rule="evenodd">
+       </path>
+      </svg>
+     </button>
+    </div>
+    <div class="modal-body">
+     <div class="giftpacking-list" data-handle="/collections/gift-box" data-id="1004234242" data-title="GIFT BOX" id="giftpacking-collection">
+      <div class="list--products-gift data-ajax">
+       <div class="line-loading">
+        <div class="line-block loading-mask">
+         <div class="title loading-mask--title">
+          <div class="mask-line">
+          </div>
+          <div class="mask-line">
+          </div>
+          <div class="mask-line">
+          </div>
+          <div class="mask-line">
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="line-loading">
+        <div class="line-block loading-mask">
+         <div class="title loading-mask--title">
+          <div class="mask-line">
+          </div>
+          <div class="mask-line">
+          </div>
+          <div class="mask-line">
+          </div>
+          <div class="mask-line">
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="line-loading">
+        <div class="line-block loading-mask">
+         <div class="title loading-mask--title">
+          <div class="mask-line">
+          </div>
+          <div class="mask-line">
+          </div>
+          <div class="mask-line">
+          </div>
+          <div class="mask-line">
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="line-loading">
+        <div class="line-block loading-mask">
+         <div class="title loading-mask--title">
+          <div class="mask-line">
+          </div>
+          <div class="mask-line">
+          </div>
+          <div class="mask-line">
+          </div>
+          <div class="mask-line">
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="line-loading">
+        <div class="line-block loading-mask">
+         <div class="title loading-mask--title">
+          <div class="mask-line">
+          </div>
+          <div class="mask-line">
+          </div>
+          <div class="mask-line">
+          </div>
+          <div class="mask-line">
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="content-asset d-none">
+       <p>
+        <u>
+         <strong>
+          All Pandora products come with sustainable or gift packaging.
+         </strong>
+        </u>
+        Make your gift extra special by adding our premium
+        <strong>
+         <a href="https://au.pandora.net/en/luxe-packaging/" target="_blank">
+          Luxe Gift Box
+         </a>
+        </strong>
+        . This luxe packaging also includes gift bag, tissue paper, and gift note, all for $9.95.
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <link href="//theme.hstatic.net/200000103143/1001237438/14/engraving.scss.css?v=9706" media="all" rel="stylesheet" type="text/css"/>
+ <div class="mask-overlay-engraving">
+ </div>
+ <div id="sidebar-engraving-review">
+  <div class="wrap-engraving">
+   <div class="head-sidebar">
+    <div class="title-sidebar">
+     Xem lại bản khắc của bạn
+    </div>
+    <div class="close-sidebar">
+     <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+      <g>
+       <path d="M4.59 59.41a2 2 0 0 0 2.83 0L32 34.83l24.59 24.58a2 2 0 0 0 2.83-2.83L34.83 32 59.41 7.41a2 2 0 0 0-2.83-2.83L32 29.17 7.41 4.59a2 2 0 0 0-2.82 2.82L29.17 32 4.59 56.59a2 2 0 0 0 0 2.82z" data-original="#000000" fill="#000000" opacity="1">
+       </path>
+      </g>
+     </svg>
+    </div>
+   </div>
+   <div class="content-sidebar">
+    <div class="item-review-engraving" data-review="front">
+     <div class="head-review">
+      Mặt trước
+     </div>
+     <div class="style-img-review img-front-review">
+     </div>
+     <div class="style-review-added review-added-front">
+     </div>
+    </div>
+    <div class="item-review-engraving" data-review="back">
+     <div class="head-review">
+      Mặt sau
+     </div>
+     <div class="style-img-review img-back-review">
+     </div>
+     <div class="style-review-added review-added-back">
+     </div>
+    </div>
+   </div>
+   <div class="box-note-preview">
+    <div class="wrap-note-preview">
+     <div class="notify-choose-size">
+      <span class="notification__content">
+       Vui lòng chọn
+      </span>
+     </div>
+     <input name="acept-engraving" required="" type="checkbox" value="true"/>
+     <p>
+      Bằng việc chọn dịch vụ khắc chữ, khách hàng đồng ý không sử dụng bất kỳ ngôn ngữ hoặc hình ảnh nào mang tính xúc phạm, 
+        khiếm nhã hoặc vi phạm quyền sở hữu trí tuệ của bên thứ ba. Chúng tôi có quyền từ chối bất kỳ yêu cầu khắc nào. 
+        Tất cả sản phẩm có khắc chữ là giá bán cuối cùng và không chấp nhận đổi trả.
+     </p>
+    </div>
+    <a href="/pages/chinh-sach-dich-vu-khac-ten-tren-san-pham-trang-suc">
+     Q&amp;A
+    </a>
+   </div>
+   <div class="action-print">
+    <button id="addtocart-engraving">
+     Lưu và thêm vào giỏ hàng
+    </button>
+    <button class="back-engraving">
+     Quay lại
+    </button>
+   </div>
+  </div>
+ </div>
+ <div id="sidebar-engraving">
+  <div id="show-design">
+  </div>
+  <div class="wrap-engraving">
+   <div class="head-sidebar">
+    <div class="title-sidebar">
+     Khắc thông điệp của bạn
+    </div>
+    <div class="close-sidebar">
+     <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+      <g>
+       <path d="M4.59 59.41a2 2 0 0 0 2.83 0L32 34.83l24.59 24.58a2 2 0 0 0 2.83-2.83L34.83 32 59.41 7.41a2 2 0 0 0-2.83-2.83L32 29.17 7.41 4.59a2 2 0 0 0-2.82 2.82L29.17 32 4.59 56.59a2 2 0 0 0 0 2.82z" data-original="#000000" fill="#000000" opacity="1">
+       </path>
+      </g>
+     </svg>
+    </div>
+   </div>
+   <div class="tab-front-back">
+    <div class="item-tab active" data-tab="front">
+     Mặt trước
+    </div>
+    <div class="item-tab" data-tab="back">
+     Mặt sau
+    </div>
+   </div>
+   <div class="alert-danger engraving-one-side-note d-none">
+    <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 512 512" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+     <g>
+      <path class="" d="M256 0C114.497 0 0 114.507 0 256c0 141.503 114.507 256 256 256 141.503 0 256-114.507 256-256C512 114.497 397.493 0 256 0zm0 472c-119.393 0-216-96.615-216-216 0-119.393 96.615-216 216-216 119.393 0 216 96.615 216 216 0 119.393-96.615 216-216 216z" data-original="#000000" fill="#000000" opacity="1">
+      </path>
+      <path class="" d="M256 128.877c-11.046 0-20 8.954-20 20V277.67c0 11.046 8.954 20 20 20s20-8.954 20-20V148.877c0-11.046-8.954-20-20-20z" data-original="#000000" fill="#000000" opacity="1">
+      </path>
+      <circle class="" cx="256" cy="349.16" data-original="#000000" fill="#000000" opacity="1" r="27">
+      </circle>
+     </g>
+    </svg>
+    <div class="content-asset">
+     Thật không may, mặt được chọn không cho phép khắc. Một số thiết kế không cho phép khắc ở cả hai mặt.
+    </div>
+   </div>
+   <div class="type-engraving">
+    <div class="item-type active" data-tab="text">
+     <img alt="Text &amp; Icons" src="https://file.hstatic.net/200000103143/file/textandsymbol.png"/>
+     <span>
+      Thông điệp
+     </span>
+    </div>
+    <div class="item-type" data-tab="image">
+     <img alt="Zodiac" src="https://file.hstatic.net/200000103143/file/constellations.png"/>
+     <span>
+      Biểu tượng
+     </span>
+    </div>
+   </div>
+   <input id="hidden-input" style="position: absolute; opacity: 0; pointer-events: none;" type="text"/>
+   <div class="face-print active" data-face="front" id="canvas-capture-front">
+    <img alt="" id="image-front" src="https://product.hstatic.net/200000103143/product/pngtrpnt_793439c00_v2_rgb_aa6d66b9db664812b1dc9d2b346eaad4_50525c9e0dbd4e1a83f96e0e5f273101_master.png"/>
+    <div class="slider-ranger-size-front">
+     <span>
+      65px
+     </span>
+     <input max="65" min="10" type="range" value="65"/>
+    </div>
+    <div class="draw-icon-text">
+     <div id="canvasContainer-front">
+      <div id="myCanvas-front">
+      </div>
+     </div>
+    </div>
+    <div class="draw-image">
+    </div>
+   </div>
+   <div class="face-print" data-face="back" id="canvas-capture-back">
+    <img alt="" id="image-back" src="https://product.hstatic.net/200000103143/product/pngtrpnt_793439c00_v2_rgb_aa6d66b9db664812b1dc9d2b346eaad4_50525c9e0dbd4e1a83f96e0e5f273101_master.png"/>
+    <div class="slider-ranger-size-back">
+     <span>
+      65px
+     </span>
+     <input max="65" min="10" type="range" value="65"/>
+    </div>
+    <div class="draw-icon-text">
+     <div id="canvasContainer-back">
+      <div id="myCanvas-back">
+      </div>
+     </div>
+    </div>
+    <div class="draw-image">
+    </div>
+   </div>
+   <div id="warningMessage">
+   </div>
+   <div class="group-optional">
+    <div class="group-type group-icon active" data-tab="text">
+     <div class="wrap-small-tab">
+      <button class="btn-tab-type active" data-tab-type="fonts">
+       Phông chữ
+      </button>
+      <button class="btn-tab-type" data-tab-type="icon">
+       Icons
+      </button>
+     </div>
+     <div class="content-small-tab">
+      <div class="item-content-tab active" data-tab-type="fonts">
+       <div class="wrap-input-text d-none">
+        <input class="input-text-front" placeholder="Your text..." type="text"/>
+       </div>
+       <div class="inner-scroll-wrapper js-font-content">
+        <button class="js-font-change active" data-attr-value="OptimaLTProRoman" default-font="true">
+         <span>
+          Aa
+         </span>
+        </button>
+        <button class="js-font-change" data-attr-value="Casual_JennaSuePro" default-font="true">
+         <span>
+          Aa
+         </span>
+        </button>
+        <button class="js-font-change" data-attr-value="TypewriterEliteMTStd" default-font="true">
+         <span>
+          Aa
+         </span>
+        </button>
+        <button class="js-font-change" data-attr-value="Gothic_FRAKTUR" default-font="true">
+         <span>
+          Aa
+         </span>
+        </button>
+        <button class="js-font-change" data-attr-value="Magazine_ROMAN" default-font="true">
+         <span>
+          Aa
+         </span>
+        </button>
+        <button class="js-font-change" data-attr-value="Script_VANESSA" default-font="true">
+         <span>
+          Aa
+         </span>
+        </button>
+       </div>
+      </div>
+      <div class="item-content-tab" data-tab-type="icon">
+       <div class="inner-scroll-symbols js-icons-tabs-carousel">
+        <button class="engraving-symbols-nav trai_tim selected" data-category="trai_tim">
+         <span class="trai_tim">
+          Trái tim
+         </span>
+        </button>
+        <button class="engraving-symbols-nav dip_dac_biet" data-category="dip_dac_biet">
+         <span class="dip_dac_biet">
+          Dịp đặc biệt
+         </span>
+        </button>
+        <button class="engraving-symbols-nav bieu_tuong" data-category="bieu_tuong">
+         <span class="bieu_tuong">
+          Biểu tượng
+         </span>
+        </button>
+        <button class="engraving-symbols-nav dong_vat" data-category="dong_vat">
+         <span class="dong_vat">
+          Động vật
+         </span>
+        </button>
+        <button class="engraving-symbols-nav thien_nhien" data-category="thien_nhien">
+         <span class="thien_nhien">
+          Thiên nhiên
+         </span>
+        </button>
+        <button class="engraving-symbols-nav phong_cach" data-category="phong_cach">
+         <span class="phong_cach">
+          Phong cách
+         </span>
+        </button>
+       </div>
+       <div class="js-icons-vertical-carousel">
+        <div class="engraving-symbols-content-title section-trai_tim">
+         Trái tim
+        </div>
+        <div class="engraving-symbols-content-icons">
+         <button class="btn js-btn-engraving-symbol" data-name="Trái tim" data-svgurl="https://file.hstatic.net/200000103143/file/heart1.png">
+          <span>
+           <img alt="Trái tim" src="https://file.hstatic.net/200000103143/file/heart1.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="Trái tim" data-svgurl="https://file.hstatic.net/200000103143/file/0xea73.png">
+          <span>
+           <img alt="Trái tim" src="https://file.hstatic.net/200000103143/file/0xea73.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="Hoa hồng" data-svgurl="https://file.hstatic.net/200000103143/file/0xea11.png">
+          <span>
+           <img alt="Hoa hồng" src="https://file.hstatic.net/200000103143/file/0xea11.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="XO" data-svgurl="https://file.hstatic.net/200000103143/file/0xea77.png">
+          <span>
+           <img alt="XO" src="https://file.hstatic.net/200000103143/file/0xea77.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="Trái tim" data-svgurl="https://file.hstatic.net/200000103143/file/0xea08.png">
+          <span>
+           <img alt="Trái tim" src="https://file.hstatic.net/200000103143/file/0xea08.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="Trái tim" data-svgurl="https://file.hstatic.net/200000103143/file/0xea07.png">
+          <span>
+           <img alt="Trái tim" src="https://file.hstatic.net/200000103143/file/0xea07.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="Vô cực" data-svgurl="https://file.hstatic.net/200000103143/file/0xea04.png">
+          <span>
+           <img alt="Vô cực" src="https://file.hstatic.net/200000103143/file/0xea04.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="Trái tim lửa" data-svgurl="https://file.hstatic.net/200000103143/file/0xea13.png">
+          <span>
+           <img alt="Trái tim lửa" src="https://file.hstatic.net/200000103143/file/0xea13.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="Đôi môi" data-svgurl="https://file.hstatic.net/200000103143/file/0xea76.png">
+          <span>
+           <img alt="Đôi môi" src="https://file.hstatic.net/200000103143/file/0xea76.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="MOM" data-svgurl="https://file.hstatic.net/200000103143/file/0xea85.png">
+          <span>
+           <img alt="MOM" src="https://file.hstatic.net/200000103143/file/0xea85.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="Bắn tim" data-svgurl="https://file.hstatic.net/200000103143/file/0xea12.png">
+          <span>
+           <img alt="Bắn tim" src="https://file.hstatic.net/200000103143/file/0xea12.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="Trái tim" data-svgurl="https://file.hstatic.net/200000103143/file/0xea75.png">
+          <span>
+           <img alt="Trái tim" src="https://file.hstatic.net/200000103143/file/0xea75.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea78.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea78.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea78.png" src="https://file.hstatic.net/200000103143/file/0xea78.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea74.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea74.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea74.png" src="https://file.hstatic.net/200000103143/file/0xea74.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea03.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea03.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea03.png" src="https://file.hstatic.net/200000103143/file/0xea03.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea09.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea09.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea09.png" src="https://file.hstatic.net/200000103143/file/0xea09.png"/>
+          </span>
+         </button>
+        </div>
+        <div class="engraving-symbols-content-title section-dip_dac_biet">
+         Dịp đặc biệt
+        </div>
+        <div class="engraving-symbols-content-icons">
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea10.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea10.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea10.png" src="https://file.hstatic.net/200000103143/file/0xea10.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea01.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea01.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea01.png" src="https://file.hstatic.net/200000103143/file/0xea01.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea83.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea83.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea83.png" src="https://file.hstatic.net/200000103143/file/0xea83.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea28.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea28.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea28.png" src="https://file.hstatic.net/200000103143/file/0xea28.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea06.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea06.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea06.png" src="https://file.hstatic.net/200000103143/file/0xea06.png"/>
+          </span>
+         </button>
+        </div>
+        <div class="engraving-symbols-content-title section-bieu_tuong">
+         Biểu tượng
+        </div>
+        <div class="engraving-symbols-content-icons">
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea56.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea56.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea56.png" src="https://file.hstatic.net/200000103143/file/0xea56.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea53.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea53.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea53.png" src="https://file.hstatic.net/200000103143/file/0xea53.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea54.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea54.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea54.png" src="https://file.hstatic.net/200000103143/file/0xea54.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea82.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea82.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea82.png" src="https://file.hstatic.net/200000103143/file/0xea82.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xeb04.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xeb04.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xeb04.png" src="https://file.hstatic.net/200000103143/file/0xeb04.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea37.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea37.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea37.png" src="https://file.hstatic.net/200000103143/file/0xea37.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea55.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea55.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea55.png" src="https://file.hstatic.net/200000103143/file/0xea55.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea33.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea33.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea33.png" src="https://file.hstatic.net/200000103143/file/0xea33.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea57.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea57.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea57.png" src="https://file.hstatic.net/200000103143/file/0xea57.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea02.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea02.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea02.png" src="https://file.hstatic.net/200000103143/file/0xea02.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea86.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea86.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea86.png" src="https://file.hstatic.net/200000103143/file/0xea86.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea58.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea58.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea58.png" src="https://file.hstatic.net/200000103143/file/0xea58.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea80.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea80.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea80.png" src="https://file.hstatic.net/200000103143/file/0xea80.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea80.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea80.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea80.png" src="https://file.hstatic.net/200000103143/file/0xea80.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea87.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea87.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea87.png" src="https://file.hstatic.net/200000103143/file/0xea87.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea81.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea81.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea81.png" src="https://file.hstatic.net/200000103143/file/0xea81.png"/>
+          </span>
+         </button>
+        </div>
+        <div class="engraving-symbols-content-title section-dong_vat">
+         Động vật
+        </div>
+        <div class="engraving-symbols-content-icons">
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xeb32.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xeb32.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xeb32.png" src="https://file.hstatic.net/200000103143/file/0xeb32.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea16.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea16.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea16.png" src="https://file.hstatic.net/200000103143/file/0xea16.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea15.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea15.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea15.png" src="https://file.hstatic.net/200000103143/file/0xea15.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea14.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea14.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea14.png" src="https://file.hstatic.net/200000103143/file/0xea14.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xeb16.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xeb16.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xeb16.png" src="https://file.hstatic.net/200000103143/file/0xeb16.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea17.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea17.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea17.png" src="https://file.hstatic.net/200000103143/file/0xea17.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea97.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea97.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea97.png" src="https://file.hstatic.net/200000103143/file/0xea97.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xeb33.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xeb33.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xeb33.png" src="https://file.hstatic.net/200000103143/file/0xeb33.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xeb02.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xeb02.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xeb02.png" src="https://file.hstatic.net/200000103143/file/0xeb02.png"/>
+          </span>
+         </button>
+        </div>
+        <div class="engraving-symbols-content-title section-thien_nhien">
+         Thiên nhiên
+        </div>
+        <div class="engraving-symbols-content-icons">
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xeb03.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xeb03.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xeb03.png" src="https://file.hstatic.net/200000103143/file/0xeb03.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea23.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea23.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea23.png" src="https://file.hstatic.net/200000103143/file/0xea23.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xeb31.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xeb31.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xeb31.png" src="https://file.hstatic.net/200000103143/file/0xeb31.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea24.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea24.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea24.png" src="https://file.hstatic.net/200000103143/file/0xea24.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea19.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea19.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea19.png" src="https://file.hstatic.net/200000103143/file/0xea19.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea27.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea27.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea27.png" src="https://file.hstatic.net/200000103143/file/0xea27.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea22.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea22.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea22.png" src="https://file.hstatic.net/200000103143/file/0xea22.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea26.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea26.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea26.png" src="https://file.hstatic.net/200000103143/file/0xea26.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea21.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea21.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea21.png" src="https://file.hstatic.net/200000103143/file/0xea21.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea20.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea20.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xea20.png" src="https://file.hstatic.net/200000103143/file/0xea20.png"/>
+          </span>
+         </button>
+         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xeb17.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xeb17.png">
+          <span>
+           <img alt="https://file.hstatic.net/200000103143/file/0xeb17.png" src="https://file.hstatic.net/200000103143/file/0xeb17.png"/>
+          </span>
+         </button>
+        </div>
+        <div class="engraving-symbols-content-title section-phong_cach">
+         Phong cách
+        </div>
+        <div class="engraving-symbols-content-icons">
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="group-type group-image" data-tab="image">
+     <div class="swiper swiper-engraving">
+      <div class="swiper-wrapper">
+       <div class="swiper-slide">
+        <div class="item-type-image">
+         <div class="head-type">
+          Cung hoàng đạo
+         </div>
+         <div class="list-icon">
+          <div class="item-icon">
+           <button>
+            <img alt="Kim Ngưu" src="https://file.hstatic.net/200000103143/file/0xea62.svg"/>
+           </button>
+           <label>
+            Kim Ngưu
+           </label>
+          </div>
+          <div class="item-icon">
+           <button>
+            <img alt="Song Tử" src="https://file.hstatic.net/200000103143/file/0xea63.svg"/>
+           </button>
+           <label>
+            Song Tử
+           </label>
+          </div>
+          <div class="item-icon">
+           <button>
+            <img alt="Song Ngư" src="https://file.hstatic.net/200000103143/file/0xea72.svg"/>
+           </button>
+           <label>
+            Song Ngư
+           </label>
+          </div>
+          <div class="item-icon">
+           <button>
+            <img alt="Nhân Mã" src="https://file.hstatic.net/200000103143/file/0xea69.svg"/>
+           </button>
+           <label>
+            Nhân Mã
+           </label>
+          </div>
+          <div class="item-icon">
+           <button>
+            <img alt="Sư Tử" src="https://file.hstatic.net/200000103143/file/0xea65.svg"/>
+           </button>
+           <label>
+            Sư Tử
+           </label>
+          </div>
+          <div class="item-icon">
+           <button>
+            <img alt="Cự Giải" src="https://file.hstatic.net/200000103143/file/0xea64.svg"/>
+           </button>
+           <label>
+            Cự Giải
+           </label>
+          </div>
+          <div class="item-icon">
+           <button>
+            <img alt="Thiên Bình" src="https://file.hstatic.net/200000103143/file/0xea67.svg"/>
+           </button>
+           <label>
+            Thiên Bình
+           </label>
+          </div>
+          <div class="item-icon">
+           <button>
+            <img alt="Ma Kết" src="https://file.hstatic.net/200000103143/file/0xea70.svg"/>
+           </button>
+           <label>
+            Ma Kết
+           </label>
+          </div>
+          <div class="item-icon">
+           <button>
+            <img alt="Xử Nữ" src="https://file.hstatic.net/200000103143/file/0xea66.svg"/>
+           </button>
+           <label>
+            Xử Nữ
+           </label>
+          </div>
+          <div class="item-icon">
+           <button>
+            <img alt="Bọ Cạp" src="https://file.hstatic.net/200000103143/file/0xea68.svg"/>
+           </button>
+           <label>
+            Bọ Cạp
+           </label>
+          </div>
+          <div class="item-icon">
+           <button>
+            <img alt="Bảo Bình" src="https://file.hstatic.net/200000103143/file/0xea71.svg"/>
+           </button>
+           <label>
+            Bảo Bình
+           </label>
+          </div>
+          <div class="item-icon">
+           <button>
+            <img alt="Bạch Dương" src="https://file.hstatic.net/200000103143/file/0xea61.svg"/>
+           </button>
+           <label>
+            Bạch Dương
+           </label>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="swiper-slide">
+        <div class="item-type-image">
+         <div class="head-type">
+          Zodiac Signs
+         </div>
+         <div class="list-icon">
+          <div class="item-icon">
+           <button>
+            <img alt="Kim Ngưu" src="https://file.hstatic.net/200000103143/file/taurus.svg"/>
+           </button>
+           <label>
+            Kim Ngưu
+           </label>
+          </div>
+          <div class="item-icon">
+           <button>
+            <img alt="Song Tử" src="https://file.hstatic.net/200000103143/file/gemini.svg"/>
+           </button>
+           <label>
+            Song Tử
+           </label>
+          </div>
+          <div class="item-icon">
+           <button>
+            <img alt="Sư Tử" src="https://file.hstatic.net/200000103143/file/leo.svg"/>
+           </button>
+           <label>
+            Sư Tử
+           </label>
+          </div>
+          <div class="item-icon">
+           <button>
+            <img alt="Cự Giải" src="https://file.hstatic.net/200000103143/file/cancer.svg"/>
+           </button>
+           <label>
+            Cự Giải
+           </label>
+          </div>
+          <div class="item-icon">
+           <button>
+            <img alt="Song Ngư" src="https://file.hstatic.net/200000103143/file/pisces.svg"/>
+           </button>
+           <label>
+            Song Ngư
+           </label>
+          </div>
+          <div class="item-icon">
+           <button>
+            <img alt="Bọ Cạp" src="https://file.hstatic.net/200000103143/file/scorpio.svg"/>
+           </button>
+           <label>
+            Bọ Cạp
+           </label>
+          </div>
+          <div class="item-icon">
+           <button>
+            <img alt="Bạch Dương" src="https://file.hstatic.net/200000103143/file/aries.svg"/>
+           </button>
+           <label>
+            Bạch Dương
+           </label>
+          </div>
+          <div class="item-icon">
+           <button>
+            <img alt="Ma Kết" src="https://file.hstatic.net/200000103143/file/capricorn.svg"/>
+           </button>
+           <label>
+            Ma Kết
+           </label>
+          </div>
+          <div class="item-icon">
+           <button>
+            <img alt="Thiên Bình" src="https://file.hstatic.net/200000103143/file/libra.svg"/>
+           </button>
+           <label>
+            Thiên Bình
+           </label>
+          </div>
+          <div class="item-icon">
+           <button>
+            <img alt="Nhân Mã" src="https://file.hstatic.net/200000103143/file/sagi.svg"/>
+           </button>
+           <label>
+            Nhân Mã
+           </label>
+          </div>
+          <div class="item-icon">
+           <button>
+            <img alt="Xử Nữ" src="https://file.hstatic.net/200000103143/file/virgo.svg"/>
+           </button>
+           <label>
+            Xử Nữ
+           </label>
+          </div>
+          <div class="item-icon">
+           <button>
+            <img alt="Bảo Bình" src="https://file.hstatic.net/200000103143/file/virgo.svg"/>
+           </button>
+           <label>
+            Bảo Bình
+           </label>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="swiper-style-btn swiper-prev">
+       <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 100 100" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+        <g>
+         <switch>
+          <g>
+           <path d="M34.5 83c-.5 0-1-.2-1.4-.6-.8-.8-.8-2 0-2.8L62.7 50 33.1 20.4c-.8-.8-.8-2 0-2.8s2-.8 2.8 0l31 31c.8.8.8 2 0 2.8l-31 31c-.4.4-.9.6-1.4.6z" data-original="#000000" fill="#000000" opacity="1">
+           </path>
+          </g>
+         </switch>
+        </g>
+       </svg>
+      </div>
+      <div class="swiper-style-btn swiper-next">
+       <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 100 100" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+        <g>
+         <switch>
+          <g>
+           <path d="M34.5 83c-.5 0-1-.2-1.4-.6-.8-.8-.8-2 0-2.8L62.7 50 33.1 20.4c-.8-.8-.8-2 0-2.8s2-.8 2.8 0l31 31c.8.8.8 2 0 2.8l-31 31c-.4.4-.9.6-1.4.6z" data-original="#000000" fill="#000000" opacity="1">
+           </path>
+          </g>
+         </switch>
+        </g>
+       </svg>
+      </div>
+     </div>
+     <div class="swiper-pagination">
+     </div>
+    </div>
+   </div>
+   <div class="action-print">
+    <div class="wrap-at-print">
+     <button id="capture-btn-save">
+      Lưu và xem mẫu
+     </button>
+     <button class="d-none" id="capture-btn-review">
+      Xem mẫu
+     </button>
+    </div>
+    <button class="close-engraving">
+     Huỷ
+    </button>
+   </div>
+  </div>
+ </div>
+</div>
+<div aria-atomic="true" aria-live="assertive" class="toast" data-delay="8000" role="alert">
+ <button aria-label="Close" class="close" data-bs-dismiss="toast" type="button">
+  <svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+   <path d="M18.75 5.25L5.25 18.75" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
+   </path>
+   <path d="M18.75 18.75L5.25 5.25" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
+   </path>
+  </svg>
+ </button>
+ <div class="toast-body">
+ </div>
+</div>
+<div class="mainLoading" id="mainLoading">
+ <div class="underlay">
+ </div>
+ <div class="spinner">
+  <div class="dot1">
+  </div>
+  <div class="dot2">
+  </div>
+ </div>
+</div>
+SCRIPT THEME 
+
+
+
+ Google Tag Manager (noscript)
+<noscript>
+ <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-NGF6FB3" style="display:none;visibility:hidden" width="0">
+ </iframe>
+</noscript>
+End Google Tag Manager (noscript)
+
+{%endblock %}
