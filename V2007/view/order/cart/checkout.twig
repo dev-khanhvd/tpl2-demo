@@ -1,0 +1,308 @@
+{% extends "layout/layoutnull" %}
+{% block meta %}
+    {{ headTitle('Thanh toán').setSeparator(' - ').setAutoEscape(false)|raw }}
+    <meta name="keywords" content="Thanh toán">
+    <meta name="description" content="Thanh toán">
+    <meta property="og:image" content="{{ getBusinessLogo() }}">
+    <meta property="og:title" content="Thanh toán">
+    <meta property="og:url" content="{{ getCurrentUrl() }}">
+    <link rel="canonical" href="{{ getCurrentUrl() }}">
+{% endblock %}
+{% block body %}
+    <div class="address-container">
+        <input type="text" class="search-input" placeholder="Thành phố Hải Phòng, Quận Sơn Trà, Phường Hòa Thuận Tây" value="Thành phố Hải Phòng, Quận Sơn Trà, Phường Hòa Thuận Tây">
+
+        <div class="tabs">
+            <div class="tab active" data-tab="tinh">Tỉnh / TP</div>
+            <div class="tab" data-tab="quan">Quận / Huyện</div>
+            <div class="tab" data-tab="phuong">Phường / Xã</div>
+        </div>
+
+        <div class="dropdown-content" id="dropdown-content">
+            <div class="dropdown-item">Thành phố Hà Nội</div>
+            <div class="dropdown-item">Thành phố Hồ Chí Minh</div>
+            <div class="dropdown-item">Thành phố Đà Nẵng</div>
+            <div class="dropdown-item selected">Thành phố Hải Phòng</div>
+            <div class="dropdown-item">Thành phố Cần Thơ</div>
+        </div>
+    </div>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .address-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid #ff6b9d;
+            border-radius: 12px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            border-color: #ff4081;
+            box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.1);
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #e0e0e0;
+            background: #fafafa;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 16px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 500;
+            color: #666;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab.active {
+            color: #ff6b9d;
+            border-bottom-color: #ff6b9d;
+            background: white;
+        }
+
+        .dropdown-content {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .dropdown-item {
+            padding: 12px 20px;
+            cursor: pointer;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.2s ease;
+            color: #333;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .dropdown-item.selected {
+            background-color: #fff3f7;
+            color: #ff6b9d;
+            border-left: 4px solid #ff6b9d;
+        }
+
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .footer-text {
+            padding: 16px 20px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            background: #f8f9fa;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        /* Custom scrollbar */
+        .dropdown-content::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 3px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+
+        /* Animation */
+        .dropdown-content {
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            const addressData = {
+                tinh: [
+                    'Thành phố Hà Nội',
+                    'Thành phố Hồ Chí Minh',
+                    'Thành phố Đà Nẵng',
+                    'Thành phố Hải Phòng',
+                    'Thành phố Cần Thơ'
+                ],
+                quan: [
+                    'Quận Hải Châu',
+                    'Quận Thanh Khê',
+                    'Quận Sơn Trà',
+                    'Quận Ngũ Hành Sơn',
+                    'Quận Liên Chiểu'
+                ],
+                phuong: [
+                    'Phường Bình Hiên',
+                    'Phường Bình Thuận',
+                    'Phường Hòa Cường Bắc',
+                    'Phường Hòa Cường Nam',
+                    'Phường Hòa Thuận Tây',
+                    'Phường Hòa Thuận Đông',
+                    'Phường Hải Châu I'
+                ]
+            };
+
+            let selectedAddress = {
+                tinh: '',
+                quan: '',
+                phuong: ''
+            };
+
+            $('.tab').click(function() {
+                const tabType = $(this).data('tab');
+
+                // Cập nhật tab active
+                $('.tab').removeClass('active');
+                $(this).addClass('active');
+
+                // Cập nhật nội dung dropdown
+                updateDropdownContent(tabType);
+            });
+
+            $(document).on('click', '.dropdown-item', function() {
+                $('.dropdown-item').removeClass('selected');
+                $(this).addClass('selected');
+
+                const selectedText = $(this).text();
+                const activeTab = $('.tab.active').data('tab');
+
+                // Lưu địa chỉ được chọn
+                selectedAddress[activeTab] = selectedText;
+
+                // Cập nhật input value với chuỗi đầy đủ
+                updateInputValue();
+
+                // Tự động chuyển sang tab tiếp theo
+                autoSwitchTab(activeTab);
+            });
+
+            $('.search-input').on('input', function() {
+                const searchText = $(this).val().toLowerCase();
+                const activeTab = $('.tab.active').data('tab');
+
+                filterDropdownItems(searchText, activeTab);
+            });
+
+            function autoSwitchTab(currentTab) {
+                let nextTab = '';
+
+                switch(currentTab) {
+                    case 'tinh':
+                        nextTab = 'quan';
+                        break;
+                    case 'quan':
+                        nextTab = 'phuong';
+                        break;
+                    case 'phuong':
+                        // Đã chọn xong, không chuyển tab
+                        return;
+                }
+
+                // Delay một chút để user thấy được selection
+                setTimeout(() => {
+                    $('.tab').removeClass('active');
+                    $(`.tab[data-tab="${nextTab}"]`).addClass('active');
+                    updateDropdownContent(nextTab);
+                }, 300);
+            }
+
+            function updateInputValue() {
+                const parts = [];
+
+                if (selectedAddress.tinh) parts.push(selectedAddress.tinh);
+                if (selectedAddress.quan) parts.push(selectedAddress.quan);
+                if (selectedAddress.phuong) parts.push(selectedAddress.phuong);
+
+                $('.search-input').val(parts.join(', '));
+            }
+
+            function updateDropdownContent(tabType) {
+                const items = addressData[tabType];
+                let html = '';
+
+                items.forEach((item, index) => {
+                    const isSelected = (selectedAddress[tabType] === item) ? 'selected' : '';
+                    html += `<div class="dropdown-item ${isSelected}">${item}</div>`;
+                });
+
+                $('#dropdown-content').html(html);
+            }
+
+            function filterDropdownItems(searchText, tabType) {
+                const items = addressData[tabType];
+                let html = '';
+
+                const filteredItems = items.filter(item =>
+                    item.toLowerCase().includes(searchText)
+                );
+
+                filteredItems.forEach(item => {
+                    const isSelected = (selectedAddress[tabType] === item) ? 'selected' : '';
+                    html += `<div class="dropdown-item ${isSelected}">${item}</div>`;
+                });
+
+                $('#dropdown-content').html(html);
+            }
+
+            selectedAddress = {
+                tinh: 'Thành phố Hải Phòng',
+                quan: 'Quận Sơn Trà',
+                phuong: 'Phường Hòa Thuận Tây'
+            };
+            updateInputValue();
+
+            $('.search-input').hover(
+                function() {
+                    $(this).css('border-color', '#ff4081');
+                },
+                function() {
+                    if (!$(this).is(':focus')) {
+                        $(this).css('border-color', '#ff6b9d');
+                    }
+                }
+            );
+        });
+    </script>
+{% endblock %}

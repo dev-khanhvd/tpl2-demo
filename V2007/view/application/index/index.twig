@@ -10,44 +10,28 @@
 {%endblock %}
 
 {%block body %}
-
-<div class="mainBody-theme-container">
  <main class="body-main">
   <section class="section section-flashsale" id="home-flashsale-3">
    <div class="slider-banner swiper-style swiper-style-slider swiper-hover" id="slider-custom-banner">
-    <div class="swiper-wrapper" data-view="1">
-     <div class="swiper-slide" data-index="1">
+    <div class="swiper-wrapper slick-callback" data-allin="1" data-slides-md="1" data-slides-tablet="1" data-slides-xs="1" data-slides-md-scroll="1" data-slides-tablet-scroll="1" data-slides-xs-scroll="1" data-dots="false" data-autoplay="true" data-infinite="true" data-custom-arrows="true" data-fade="true">
+     <div class="swiper-slide">
       <div class="s-banner">
        <div class="banner">
         <a class="aspect-ratio" href="https://pandora.norbreeze.vn/collections/national-holiday">
-         <picture>
-          <source media="(max-width: 960px)" srcset="https://file.hstatic.net/200000103143/file/main_banner__3_.jpg" type="image/jpeg"/>
-          <source media="(min-width: 961px)" srcset="https://file.hstatic.net/200000103143/file/main_banner__3_.jpg" type="image/jpeg"/>
-          <img alt="flashsale" src="https://file.hstatic.net/200000103143/file/main_banner__3_.jpg" title="flashsale"/>
-         </picture>
+         <img alt="flashsale" loading="lazy" src="https://file.hstatic.net/200000103143/file/main_banner__3_.jpg" title="flashsale"/>
         </a>
        </div>
       </div>
      </div>
-     <div class="swiper-slide" data-index="2">
+     <div class="swiper-slide">
       <div class="s-banner">
        <div class="banner">
         <a class="aspect-ratio" href="https://pandora.norbreeze.vn/collections/summer-sale-50">
-         <picture>
-          <source media="(max-width: 960px)" srcset="https://file.hstatic.net/200000103143/file/main_banner__2__b086dabbaa5341f1b61b2fb909366aa4.jpg" type="image/jpeg"/>
-          <source media="(min-width: 961px)" srcset="https://file.hstatic.net/200000103143/file/main_banner__2__b086dabbaa5341f1b61b2fb909366aa4.jpg" type="image/jpeg"/>
-          <img alt="flashsale" src="https://file.hstatic.net/200000103143/file/main_banner__2__b086dabbaa5341f1b61b2fb909366aa4.jpg" title="flashsale"/>
-         </picture>
+         <img alt="flashsale" loading="lazy" src="https://file.hstatic.net/200000103143/file/main_banner__2__b086dabbaa5341f1b61b2fb909366aa4.jpg" title="flashsale"/>
         </a>
        </div>
       </div>
      </div>
-    </div>
-    <div class="swiper-pagination d-none">
-    </div>
-    <div class="swiper-button-prev d-none">
-    </div>
-    <div class="swiper-button-next d-none">
     </div>
    </div>
    <div class="container">
@@ -56,8 +40,8 @@
       <div class="s-tabs">
        <div class="s-tablist has-banner">
         <ul class="tab-nav nav a-loading">
-         <li class="" data-tab="flashsale_tab1">
-          <a data-count="1366" data-handle="/collections/trang-suc" data-id="1002964432" data-title="Tất cả sản phẩm bán chạy 2025" data-toggle="tab" href="#flashsale_tab1">
+         <li>
+          <a href="#flashsale_tab1" class="active">
            <span class="title">
             ĐỪNG BỎ LỠ - SALE ĐẾN 50%
            </span>
@@ -68,89 +52,65 @@
         </ul>
        </div>
        <div class="s-tabpan" id="tabs-ajax">
-        <div class="tab-content fade show active" data-get="true" id="flashsale_tab1" role="tabpanel">
+        <div class="tab-content fade show active" id="flashsale_tab1">
          <div class="slider-collection swiper-style" id="slider-collection-fs-1">
-          <div class="swiper">
-           <div class="list-products swiper-wrapper" data-view="4">
+          <div class="list-products swiper-wrapper slick-callback" data-allin="4" data-slides-md="4" data-slides-tablet="4" data-slides-xs="2" data-slides-md-scroll="2" data-slides-tablet-scroll="2" data-slides-xs-scroll="2" data-dots="false" data-autoplay="false" data-infinite="true" data-custom-arrows="true" data-fade="false">
+           {% for i in 1..8 %}
             <div class="swiper-slide">
-             <div class="product-loop product-loading 1">
-              <div class="product-block loading-mask">
-               <div class="product-image loading-mask--image">
-                <div class="mask-line lazy-img">
+             <div class="product-loop">
+              <div class="product-loop-wrap">
+               <div class="product-loop-head">
+                <div class="product-loop-labels  d-none" data-ctkm="I-DAY">
+
+
+
+
+                </div>
+                <div class="product-loop-img">
+                 <picture class="has-hover">
+                  <source data-srcset="//product.hstatic.net/200000103143/product/5983_6d3e9584264c4c31b2bd551c135e5269_55819f14887348df9b2316e949ecddc8_0b3f934ad06e47c6873c886d026357bd_grande.jpg" srcset="//product.hstatic.net/200000103143/product/5983_6d3e9584264c4c31b2bd551c135e5269_55819f14887348df9b2316e949ecddc8_0b3f934ad06e47c6873c886d026357bd_grande.jpg" media="(min-width: 768px)">
+                  <source data-srcset="//product.hstatic.net/200000103143/product/5983_6d3e9584264c4c31b2bd551c135e5269_55819f14887348df9b2316e949ecddc8_0b3f934ad06e47c6873c886d026357bd_large.jpg" srcset="//product.hstatic.net/200000103143/product/5983_6d3e9584264c4c31b2bd551c135e5269_55819f14887348df9b2316e949ecddc8_0b3f934ad06e47c6873c886d026357bd_large.jpg" media="(max-width: 767px)">
+                  <img class="img-default lazyloaded" src="//product.hstatic.net/200000103143/product/5983_6d3e9584264c4c31b2bd551c135e5269_55819f14887348df9b2316e949ecddc8_0b3f934ad06e47c6873c886d026357bd_grande.jpg" data-src="//product.hstatic.net/200000103143/product/5983_6d3e9584264c4c31b2bd551c135e5269_55819f14887348df9b2316e949ecddc8_0b3f934ad06e47c6873c886d026357bd_grande.jpg" alt="Charm Pandora Moments Bạc Biểu Tượng Cây Gia Đình Ngôi Sao">
+                 </picture>
+                 <div class="product-loop-frame"><img src="https://file.hstatic.net/200000103143/file/frame_ads_cb_700k.png" alt="Chương trình khuyến mãi"></div>
+                </div>
+                <a href="/products/charm-treo-pandora-moments-bieu-tuong-cay-gia-dinh-ngoi-sao" class="product-loop-link"></a>
+                <div class="product-loop-wishlist">
+                 <button type="button" class="btn-wishlist js-wishlist" data-type="wishlist" data-title="Charm Pandora Moments Bạc Biểu Tượng Cây Gia Đình Ngôi Sao" data-handle="charm-treo-pandora-moments-bieu-tuong-cay-gia-dinh-ngoi-sao" data-id="1051085860" data-price="279000000">
+                  <svg class="ic-heart filled" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" width="20" height="20"><path d="M1.546 10.801c.107.117.22.23.336.337l8.047 8.047a.1.1 0 00.142 0l8.047-8.048a5.72 5.72 0 00.336-.336l.03-.03v-.003l.01-.01c.22-.244.419-.507.595-.786A5.925 5.925 0 0020 6.8C20 3.597 17.493 1 14.4 1a5.471 5.471 0 00-3.717 1.462 5.755 5.755 0 00-.602.646.103.103 0 01-.162 0 5.75 5.75 0 00-.602-.646A5.471 5.471 0 005.6 1C2.507 1 0 3.597 0 6.8c0 1.17.335 2.26.91 3.172.177.28.377.543.597.786l.009.01v.002l.03.031z" fill="#27251F"></path></svg>
+                  <svg class="ic-heart" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" width="20" height="20"><path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M17.426 10.415l.015-.014c.096-.088.188-.18.277-.277l.014-.015.01-.012A4.893 4.893 0 0019 6.8C19 4.116 16.908 2 14.4 2c-1.451 0-2.755.702-3.604 1.818l-.716.94a.1.1 0 01-.16 0l-.716-.94C8.354 2.702 7.051 2 5.6 2 3.092 2 1 4.116 1 6.8c0 1.282.48 2.44 1.257 3.297l.013.014.012.013c.089.096.181.19.277.278l.016.014 7.354 7.354a.1.1 0 00.142 0l7.355-7.354zm-7.355 8.77a.1.1 0 01-.142 0l-8.047-8.047a5.763 5.763 0 01-.336-.337l-.03-.03v-.002l-.01-.011a5.802 5.802 0 01-.595-.786A5.922 5.922 0 010 6.8C0 3.597 2.507 1 5.6 1a5.47 5.47 0 013.717 1.462c.216.199.418.415.602.646.041.052.12.052.162 0 .184-.231.386-.447.602-.646A5.471 5.471 0 0114.4 1C17.493 1 20 3.597 20 6.8c0 1.17-.335 2.26-.91 3.172-.177.28-.377.542-.596.786l-.01.01v.003l-.03.03a5.72 5.72 0 01-.336.336l-8.047 8.048z" fill="#27251F"></path></svg>
+                 </button>
+                </div>
+                <div class="product-loop-buttons" data-view="index">
+                 <button aria-label="Xem nhanh" class="product-action quick-view full" data-price="2,790,000₫" data-handle="/products/charm-treo-pandora-moments-bieu-tuong-cay-gia-dinh-ngoi-sao" data-id="1051085860" data-variantid="1114878686">
+                  <span>Xem nhanh</span>
+                  <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Icons" viewBox="0 0 32 32" xml:space="preserve"><style type="text/css">.st0_1{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}.st1_1{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:3;}.st2_1{fill:none;stroke:#000000;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;}.st3_1{fill:none;}</style><path class="st0_1" d="M9,13V7c0-2.2,1.8-4,4-4h0c2.2,0,4,1.8,4,4v6"></path><circle class="st0_1" cx="23" cy="22" r="7"></circle><line class="st0_1" x1="23" y1="19" x2="23" y2="25"></line><line class="st0_1" x1="20" y1="22" x2="26" y2="22"></line><polyline class="st0_1" points="23,29 3,29 5,9 21,9 21.6,15.1 "></polyline><rect y="-144" class="st3_1" width="536" height="680"></rect></svg></span>
+                 </button>
+                 <button aria-label="Thêm vào giỏ" class="product-action add-to-cart disabled" disabled="" data-id="1051085860" data-variantid="1114878686">Thêm vào giỏ</button>
                 </div>
                </div>
-               <div class="product-detail loading-mask--detail">
-                <div class="mask-line">
+               <div class="product-loop-body">
+                <div class="product-proloop-swatch">
+                 <ul class="swatch-list"><li class="swatch-item selected"><span class="bg default" data-option="Bạc" data-handle="charm-treo-pandora-moments-bieu-tuong-cay-gia-dinh-ngoi-sao" style="background-image: url(https://product.hstatic.net/200000103143/product/icon_silver_78bbadfc643741b68803a64449acc3ea.png);" data-image-1-dk="//product.hstatic.net/200000103143/product/5983_6d3e9584264c4c31b2bd551c135e5269_55819f14887348df9b2316e949ecddc8_0b3f934ad06e47c6873c886d026357bd_grande.jpg" data-image-2-dk="//product.hstatic.net/200000103143/product/pngtrpnt_799645c01_v2_rgb_da16de38ec4c4d978a4b541b2316f02e_grande.png" data-image-1-mb="//product.hstatic.net/200000103143/product/5983_6d3e9584264c4c31b2bd551c135e5269_55819f14887348df9b2316e949ecddc8_0b3f934ad06e47c6873c886d026357bd_grande.jpg" data-image-2-mb="//product.hstatic.net/200000103143/product/pngtrpnt_799645c01_v2_rgb_da16de38ec4c4d978a4b541b2316f02e_grande.png">
+														</span>
+                  </li></ul>
                 </div>
-                <div class="mask-line">
+                <div class="product-loop-badges d-none">
+
+
                 </div>
-                <div class="mask-line">
+                <h3 class="product-loop-title"><a href="/products/charm-treo-pandora-moments-bieu-tuong-cay-gia-dinh-ngoi-sao" title="Charm Pandora Moments Bạc Biểu Tượng Cây Gia Đình Ngôi Sao">Charm Pandora Moments Bạc Biểu Tượng Cây Gia Đình Ngôi Sao</a></h3>
+                <div class="hrv-crv-container disabled" data-hrvcrv-layout="star" data-product-id="1051085860"></div>
+                <div class="product-loop-prices">
+                 <b class="normal">2,790,000₫</b>
+                 <del class="d-none">0</del>
+
                 </div>
                </div>
               </div>
              </div>
             </div>
-            <div class="swiper-slide">
-             <div class="product-loop product-loading 2">
-              <div class="product-block loading-mask">
-               <div class="product-image loading-mask--image">
-                <div class="mask-line lazy-img">
-                </div>
-               </div>
-               <div class="product-detail loading-mask--detail">
-                <div class="mask-line">
-                </div>
-                <div class="mask-line">
-                </div>
-                <div class="mask-line">
-                </div>
-               </div>
-              </div>
-             </div>
-            </div>
-            <div class="swiper-slide">
-             <div class="product-loop product-loading 3">
-              <div class="product-block loading-mask">
-               <div class="product-image loading-mask--image">
-                <div class="mask-line lazy-img">
-                </div>
-               </div>
-               <div class="product-detail loading-mask--detail">
-                <div class="mask-line">
-                </div>
-                <div class="mask-line">
-                </div>
-                <div class="mask-line">
-                </div>
-               </div>
-              </div>
-             </div>
-            </div>
-            <div class="swiper-slide">
-             <div class="product-loop product-loading 4">
-              <div class="product-block loading-mask">
-               <div class="product-image loading-mask--image">
-                <div class="mask-line lazy-img">
-                </div>
-               </div>
-               <div class="product-detail loading-mask--detail">
-                <div class="mask-line">
-                </div>
-                <div class="mask-line">
-                </div>
-                <div class="mask-line">
-                </div>
-               </div>
-              </div>
-             </div>
-            </div>
-           </div>
-          </div>
-          <div class="swiper-pagination">
-          </div>
-          <div class="swiper-button-prev">
-          </div>
-          <div class="swiper-button-next">
+           {% endfor %}
           </div>
          </div>
          <div class="viewmore-collection">
@@ -173,11 +133,7 @@
        <div class="box">
         <div class="thumb">
          <a class="aspect-ratio" href="https://pandora.norbreeze.vn/collections/new-collection-bo-suu-tap-trang-suc-moi-nhat">
-          <picture>
-           <source data-srcset="https://file.hstatic.net/200000103143/file/pngtrpnt_793900c01_rgb.png" media="(max-width: 960px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-           <source data-srcset="https://file.hstatic.net/200000103143/file/pngtrpnt_793900c01_rgb.png" media="(min-width: 961px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-           <img alt="Sản phẩm mới" class="lazyload" data-src="https://file.hstatic.net/200000103143/file/pngtrpnt_793900c01_rgb.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" title="Sản phẩm mới"/>
-          </picture>
+          <img alt="Sản phẩm mới" loading="lazy" src="https://file.hstatic.net/200000103143/file/pngtrpnt_793900c01_rgb.png"  title="Sản phẩm mới"/>
          </a>
         </div>
         <div class="title">
@@ -191,11 +147,7 @@
        <div class="box">
         <div class="thumb">
          <a class="aspect-ratio" href="https://pandora.norbreeze.vn/collections/charms">
-          <picture>
-           <source data-srcset="https://file.hstatic.net/200000103143/file/pngtrpnt_763818c01_rgb.png" media="(max-width: 960px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-           <source data-srcset="https://file.hstatic.net/200000103143/file/pngtrpnt_763818c01_rgb.png" media="(min-width: 961px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-           <img alt="Charms " class="lazyload" data-src="https://file.hstatic.net/200000103143/file/pngtrpnt_763818c01_rgb.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" title="Charms "/>
-          </picture>
+          <img alt="Charms " loading="lazy" src="https://file.hstatic.net/200000103143/file/pngtrpnt_763818c01_rgb.png"  title="Charms "/>
          </a>
         </div>
         <div class="title">
@@ -209,11 +161,7 @@
        <div class="box">
         <div class="thumb">
          <a class="aspect-ratio" href="https://pandora.norbreeze.vn/collections/vongtaypandora">
-          <picture>
-           <source data-srcset="https://file.hstatic.net/200000103143/file/pngtrpnt_563829c00_rgb.png" media="(max-width: 960px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-           <source data-srcset="https://file.hstatic.net/200000103143/file/pngtrpnt_563829c00_rgb.png" media="(min-width: 961px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-           <img alt="Vòng tay " class="lazyload" data-src="https://file.hstatic.net/200000103143/file/pngtrpnt_563829c00_rgb.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" title="Vòng tay "/>
-          </picture>
+          <img alt="Vòng tay " loading="lazy" src="https://file.hstatic.net/200000103143/file/pngtrpnt_563829c00_rgb.png"  title="Vòng tay "/>
          </a>
         </div>
         <div class="title">
@@ -227,11 +175,7 @@
        <div class="box">
         <div class="thumb">
          <a class="aspect-ratio" href="https://pandora.norbreeze.vn/collections/nhan-pandora">
-          <picture>
-           <source data-srcset="https://file.hstatic.net/200000103143/file/pngtrpnt_163889c00_rgb.png" media="(max-width: 960px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-           <source data-srcset="https://file.hstatic.net/200000103143/file/pngtrpnt_163889c00_rgb.png" media="(min-width: 961px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-           <img alt="Nhẫn" class="lazyload" data-src="https://file.hstatic.net/200000103143/file/pngtrpnt_163889c00_rgb.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" title="Nhẫn"/>
-          </picture>
+          <img alt="Nhẫn" loading="lazy" src="https://file.hstatic.net/200000103143/file/pngtrpnt_163889c00_rgb.png"  title="Nhẫn"/>
          </a>
         </div>
         <div class="title">
@@ -245,11 +189,7 @@
        <div class="box">
         <div class="thumb">
          <a class="aspect-ratio" href="https://pandora.norbreeze.vn/collections/hoataipandora">
-          <picture>
-           <source data-srcset="https://file.hstatic.net/200000103143/file/pngtrpnt_263874c00_rgb.png" media="(max-width: 960px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-           <source data-srcset="https://file.hstatic.net/200000103143/file/pngtrpnt_263874c00_rgb.png" media="(min-width: 961px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-           <img alt="Hoa tai " class="lazyload" data-src="https://file.hstatic.net/200000103143/file/pngtrpnt_263874c00_rgb.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" title="Hoa tai "/>
-          </picture>
+          <img alt="Hoa tai " loading="lazy" src="https://file.hstatic.net/200000103143/file/pngtrpnt_263874c00_rgb.png"  title="Hoa tai "/>
          </a>
         </div>
         <div class="title">
@@ -263,11 +203,7 @@
        <div class="box">
         <div class="thumb">
          <a class="aspect-ratio" href="https://pandora.norbreeze.vn/collections/day-chuyen-1">
-          <picture>
-           <source data-srcset="https://file.hstatic.net/200000103143/file/pngtrpnt_363883c01_rgb.png" media="(max-width: 960px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-           <source data-srcset="https://file.hstatic.net/200000103143/file/pngtrpnt_363883c01_rgb.png" media="(min-width: 961px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-           <img alt="Dây chuyền " class="lazyload" data-src="https://file.hstatic.net/200000103143/file/pngtrpnt_363883c01_rgb.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" title="Dây chuyền "/>
-          </picture>
+          <img alt="Dây chuyền " loading="lazy" src="https://file.hstatic.net/200000103143/file/pngtrpnt_363883c01_rgb.png"  title="Dây chuyền "/>
          </a>
         </div>
         <div class="title">
@@ -285,57 +221,14 @@
    <div class="container">
     <div class="s-slider">
      <div class="slider-banner swiper" id="slider-banners-home">
-      <div class="list-banner swiper-wrapper">
+      <div class="list-banner swiper-wrapper slick-callback" data-allin="1" data-slides-md="1" data-slides-tablet="1" data-slides-xs="1" data-slides-md-scroll="1" data-slides-tablet-scroll="1" data-slides-xs-scroll="1" data-dots="false" data-autoplay="true" data-infinite="true" data-custom-arrows="false" data-fade="true">
+       {% for t in 1..3 %}
        <div class="swiper-slide">
-        <div class="item-banner">
-         <a aria-label="banner slider" class="aspect-ratio" href="https://pandora.norbreeze.vn/collections/new-collection-bo-suu-tap-trang-suc-moi-nhat" style="--width-img:2880;--height-img:1040;--mb-width-img:500;--mb-height-img:300;" title="Bộ sưu tập mới pandora 2025">
-          <picture>
-           <source media="(max-width: 759px)" srcset="https://file.hstatic.net/200000103143/file/main_banner_mobile_80ff9a34415547db9522f8da3a6a868e.jpg"/>
-           <source media="(min-width: 760px)" srcset="https://file.hstatic.net/200000103143/file/main_banner_50cd9b905e924b8cb28d377f3f8ce27e.jpg"/>
-           <img alt="Bộ sưu tập mới pandora 2025" class="lazyload" height="1" src="https://file.hstatic.net/200000103143/file/main_banner_50cd9b905e924b8cb28d377f3f8ce27e.jpg" width="1"/>
-          </picture>
-         </a>
-        </div>
+        <a href="https://pandora.norbreeze.vn/collections/new-collection-bo-suu-tap-trang-suc-moi-nhat" title="Bộ sưu tập mới pandora 2025">
+         <img alt="Bộ sưu tập mới pandora 2025" loading="lazy" src="https://file.hstatic.net/200000103143/file/main_banner_50cd9b905e924b8cb28d377f3f8ce27e.jpg" width="1"/>
+        </a>
        </div>
-       <div class="swiper-slide">
-        <div class="item-banner">
-         <a aria-label="banner slider" class="aspect-ratio" href="https://pandora.norbreeze.vn/account/register" style="--width-img:2880;--height-img:1040;--mb-width-img:500;--mb-height-img:300;" title="Ưu đãi 10% cho khách hàng đăng ký thành viên lần đầu">
-          <picture>
-           <source data-srcset="https://file.hstatic.net/200000103143/file/1000x600_c279525c8c3b49d1af1433ee1c2f433a.jpg" media="(max-width: 991px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-           <source data-srcset="https://file.hstatic.net/200000103143/file/2880x1040_b746c38c057746c0ab3378487e20a1b3.jpg" media="(min-width: 992px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-           <img alt="Ưu đãi 10% cho khách hàng đăng ký thành viên lần đầu" class="lazyload" data-sizes="auto" data-src="https://file.hstatic.net/200000103143/file/2880x1040_b746c38c057746c0ab3378487e20a1b3.jpg" height="1" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="1"/>
-          </picture>
-         </a>
-        </div>
-       </div>
-       <div class="swiper-slide">
-        <div class="item-banner">
-         <a aria-label="banner slider" class="aspect-ratio" href="https://pandora.norbreeze.vn/collections/pandora-essence-1" style="--width-img:2880;--height-img:1040;--mb-width-img:500;--mb-height-img:300;" title="Khám phá trang sức pandora essence">
-          <picture>
-           <source data-srcset="https://file.hstatic.net/200000103143/file/banner_slider_mb.jpg" media="(max-width: 991px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-           <source data-srcset="https://file.hstatic.net/200000103143/file/banner_slider_desktop.jpg" media="(min-width: 992px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-           <img alt="Khám phá trang sức pandora essence" class="lazyload" data-sizes="auto" data-src="https://file.hstatic.net/200000103143/file/banner_slider_desktop.jpg" height="1" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="1"/>
-          </picture>
-         </a>
-        </div>
-       </div>
-       <div class="swiper-slide">
-        <div class="item-banner">
-         <a aria-label="banner slider" class="aspect-ratio" href="https://pandora.norbreeze.vn/collections/khuyen-mai" style="--width-img:2880;--height-img:1040;--mb-width-img:500;--mb-height-img:300;" title="combo trang suc pandora khuyen mai">
-          <picture>
-           <source data-srcset="https://file.hstatic.net/200000103143/file/banner_mobile__2_.jpg" media="(max-width: 991px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-           <source data-srcset="https://file.hstatic.net/200000103143/file/main_banner__4_.jpg" media="(min-width: 992px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-           <img alt="combo trang suc pandora khuyen mai" class="lazyload" data-sizes="auto" data-src="https://file.hstatic.net/200000103143/file/main_banner__4_.jpg" height="1" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="1"/>
-          </picture>
-         </a>
-        </div>
-       </div>
-      </div>
-      <div class="swiper-button-next">
-      </div>
-      <div class="swiper-button-prev">
-      </div>
-      <div class="swiper-pagination">
+       {% endfor %}
       </div>
      </div>
     </div>
@@ -355,11 +248,7 @@
         <div class="box">
          <div class="thumb" data-aos="fade-up" data-aos-delay="0" data-aos-duration="300" data-aos-easing="ease-in-sine">
           <div class="aspect-ratio">
-           <picture class="">
-            <source data-srcset="https://file.hstatic.net/200000103143/file/block_1_mobile_302d71907d46446984dc72b481857381.jpg" media="(max-width: 735px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-            <source data-srcset="https://file.hstatic.net/200000103143/file/block_1_c25045f657784a5fa1e2ab57970a0800.jpg" media="(min-width: 736px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-            <img alt="Khám Phá Sắc Hè" class="lazyload" data-src="https://file.hstatic.net/200000103143/file/block_1_c25045f657784a5fa1e2ab57970a0800.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-           </picture>
+           <img alt="Khám Phá Sắc Hè" loading="lazy" src="https://file.hstatic.net/200000103143/file/block_1_c25045f657784a5fa1e2ab57970a0800.jpg" />
           </div>
          </div>
          <div class="title" data-aos="fade-up" data-aos-delay="2" data-aos-duration="350" data-aos-easing="ease-in-sine">
@@ -375,11 +264,7 @@
         <div class="box">
          <div class="thumb" data-aos="fade-up" data-aos-delay="0" data-aos-duration="300" data-aos-easing="ease-in-sine">
           <div class="aspect-ratio">
-           <picture class="">
-            <source data-srcset="https://file.hstatic.net/200000103143/file/block_2_mobile_6f5da3200ae94285864239b340ddb6d7.jpg" media="(max-width: 960px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-            <source data-srcset="https://file.hstatic.net/200000103143/file/block_2_9f65d0dbd4b24cb191a1af404e1abcf5.jpg" media="(min-width: 961px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-            <img alt="Tự Do Cá Tính" class="lazyload" data-src="https://file.hstatic.net/200000103143/file/block_2_9f65d0dbd4b24cb191a1af404e1abcf5.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-           </picture>
+           <img alt="Tự Do Cá Tính" loading="lazy" src="https://file.hstatic.net/200000103143/file/block_2_9f65d0dbd4b24cb191a1af404e1abcf5.jpg" />
           </div>
          </div>
          <div class="title" data-aos="fade-up" data-aos-delay="2" data-aos-duration="350" data-aos-easing="ease-in-sine">
@@ -395,11 +280,7 @@
         <div class="box">
          <div class="thumb" data-aos="fade-up" data-aos-delay="0" data-aos-duration="300" data-aos-easing="ease-in-sine">
           <div class="aspect-ratio">
-           <picture class="">
-            <source data-srcset="https://file.hstatic.net/200000103143/file/block_3_mobile_aab659310d874db08a453e9db8a349db.jpg" media="(max-width: 960px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-            <source data-srcset="https://file.hstatic.net/200000103143/file/block_3_fa5199cb668747c6b034e9a51fb1b705.jpg" media="(min-width: 961px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-            <img alt="Bản Sắc Cá Nhân" class="lazyload" data-src="https://file.hstatic.net/200000103143/file/block_3_fa5199cb668747c6b034e9a51fb1b705.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-           </picture>
+           <img alt="Bản Sắc Cá Nhân" loading="lazy" src="https://file.hstatic.net/200000103143/file/block_3_fa5199cb668747c6b034e9a51fb1b705.jpg" />
           </div>
          </div>
          <div class="title" data-aos="fade-up" data-aos-delay="2" data-aos-duration="350" data-aos-easing="ease-in-sine">
@@ -415,11 +296,7 @@
         <div class="box">
          <div class="thumb" data-aos="fade-up" data-aos-delay="0" data-aos-duration="700" data-aos-easing="ease-in-sine">
           <div class="aspect-ratio">
-           <picture class="">
-            <source data-srcset="https://file.hstatic.net/200000103143/file/block_4_mobile_c62c14623c564a12a981e6a324f778a8.jpg" media="(max-width: 960px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-            <source data-srcset="https://file.hstatic.net/200000103143/file/block_4_282758a66ab14a95866354300960b24b.jpg" media="(min-width: 961px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-            <img alt="Lời Thì Thầm Biển Xanh" class="lazyload" data-src="https://file.hstatic.net/200000103143/file/block_4_282758a66ab14a95866354300960b24b.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-           </picture>
+           <img alt="Lời Thì Thầm Biển Xanh" loading="lazy" src="https://file.hstatic.net/200000103143/file/block_4_282758a66ab14a95866354300960b24b.jpg" />
           </div>
          </div>
          <div class="title" data-aos="fade-up" data-aos-delay="2" data-aos-duration="750" data-aos-easing="ease-in-sine">
@@ -435,11 +312,7 @@
         <div class="box">
          <div class="thumb" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-sine">
           <div class="aspect-ratio">
-           <picture class="">
-            <source data-srcset="https://file.hstatic.net/200000103143/file/block_5_mobile_57d465baf9244be0a820b645645f5bb0.jpg" media="(max-width: 960px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-            <source data-srcset="https://file.hstatic.net/200000103143/file/block_5_5c15938e8017444bbf5887dbff0cb44d.jpg" media="(min-width: 961px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-            <img alt="Sự Sáng Tạo Vô Tận" class="lazyload" data-src="https://file.hstatic.net/200000103143/file/block_5_5c15938e8017444bbf5887dbff0cb44d.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-           </picture>
+           <img alt="Sự Sáng Tạo Vô Tận" loading="lazy" src="https://file.hstatic.net/200000103143/file/block_5_5c15938e8017444bbf5887dbff0cb44d.jpg" />
           </div>
          </div>
          <div class="title" data-aos="fade-up" data-aos-delay="2" data-aos-duration="550" data-aos-easing="ease-in-sine">
@@ -455,7 +328,7 @@
         <div class="box">
          <div class="thumb" data-aos="fade-up" data-aos-delay="0" data-aos-duration="800" data-aos-easing="ease-in-sine">
           <div class="aspect-ratio">
-           <video autoplay="" class="" loop="" muted="" playsinline="" style="width: 100%;">
+           <video autoplay=""  loop="" muted="" playsinline="" style="width: 100%;">
             <source src="https://file.hstatic.net/200000103143/file/block_6_1e386e4052d74a1995ec6bfc9e02df03.mp4" type="video/mp4"/>
            </video>
           </div>
@@ -483,106 +356,64 @@
       </h2>
      </div>
      <div class="s-content">
-      <div class="slider-collection swiper-style swiper-hover" data-handle="/collections/khuyen-mai" data-id="1002964211" data-title="***" id="slider-collection-1">
-       <div class="swiper">
-        <div class="list-products swiper-wrapper" data-view="5">
+      <div class="slider-collection swiper-style" id="slider-collection-1">
+       <div class="list-products swiper-wrapper slick-callback" data-allin="5" data-slides-md="5" data-slides-tablet="5" data-slides-xs="2" data-slides-md-scroll="2" data-slides-tablet-scroll="2" data-slides-xs-scroll="2" data-dots="false" data-autoplay="false" data-infinite="true" data-custom-arrows="true" data-fade="false">
+        {% for i in 1..8 %}
          <div class="swiper-slide">
-          <div class="product-loading">
-           <div class="product-block loading-mask">
-            <div class="product-image loading-mask--image">
-             <div class="mask-line lazy-img">
+          <div class="product-loop">
+           <div class="product-loop-wrap">
+            <div class="product-loop-head">
+             <div class="product-loop-labels  d-none" data-ctkm="I-DAY">
+
+
+
+
+             </div>
+             <div class="product-loop-img">
+              <picture class="has-hover">
+               <source data-srcset="//product.hstatic.net/200000103143/product/5983_6d3e9584264c4c31b2bd551c135e5269_55819f14887348df9b2316e949ecddc8_0b3f934ad06e47c6873c886d026357bd_grande.jpg" srcset="//product.hstatic.net/200000103143/product/5983_6d3e9584264c4c31b2bd551c135e5269_55819f14887348df9b2316e949ecddc8_0b3f934ad06e47c6873c886d026357bd_grande.jpg" media="(min-width: 768px)">
+               <source data-srcset="//product.hstatic.net/200000103143/product/5983_6d3e9584264c4c31b2bd551c135e5269_55819f14887348df9b2316e949ecddc8_0b3f934ad06e47c6873c886d026357bd_large.jpg" srcset="//product.hstatic.net/200000103143/product/5983_6d3e9584264c4c31b2bd551c135e5269_55819f14887348df9b2316e949ecddc8_0b3f934ad06e47c6873c886d026357bd_large.jpg" media="(max-width: 767px)">
+               <img class="img-default lazyloaded" src="//product.hstatic.net/200000103143/product/5983_6d3e9584264c4c31b2bd551c135e5269_55819f14887348df9b2316e949ecddc8_0b3f934ad06e47c6873c886d026357bd_grande.jpg" data-src="//product.hstatic.net/200000103143/product/5983_6d3e9584264c4c31b2bd551c135e5269_55819f14887348df9b2316e949ecddc8_0b3f934ad06e47c6873c886d026357bd_grande.jpg" alt="Charm Pandora Moments Bạc Biểu Tượng Cây Gia Đình Ngôi Sao">
+              </picture>
+              <div class="product-loop-frame"><img src="https://file.hstatic.net/200000103143/file/frame_ads_cb_700k.png" alt="Chương trình khuyến mãi"></div>
+             </div>
+             <a href="/products/charm-treo-pandora-moments-bieu-tuong-cay-gia-dinh-ngoi-sao" class="product-loop-link"></a>
+             <div class="product-loop-wishlist">
+              <button type="button" class="btn-wishlist js-wishlist" data-type="wishlist" data-title="Charm Pandora Moments Bạc Biểu Tượng Cây Gia Đình Ngôi Sao" data-handle="charm-treo-pandora-moments-bieu-tuong-cay-gia-dinh-ngoi-sao" data-id="1051085860" data-price="279000000">
+               <svg class="ic-heart filled" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" width="20" height="20"><path d="M1.546 10.801c.107.117.22.23.336.337l8.047 8.047a.1.1 0 00.142 0l8.047-8.048a5.72 5.72 0 00.336-.336l.03-.03v-.003l.01-.01c.22-.244.419-.507.595-.786A5.925 5.925 0 0020 6.8C20 3.597 17.493 1 14.4 1a5.471 5.471 0 00-3.717 1.462 5.755 5.755 0 00-.602.646.103.103 0 01-.162 0 5.75 5.75 0 00-.602-.646A5.471 5.471 0 005.6 1C2.507 1 0 3.597 0 6.8c0 1.17.335 2.26.91 3.172.177.28.377.543.597.786l.009.01v.002l.03.031z" fill="#27251F"></path></svg>
+               <svg class="ic-heart" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" width="20" height="20"><path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M17.426 10.415l.015-.014c.096-.088.188-.18.277-.277l.014-.015.01-.012A4.893 4.893 0 0019 6.8C19 4.116 16.908 2 14.4 2c-1.451 0-2.755.702-3.604 1.818l-.716.94a.1.1 0 01-.16 0l-.716-.94C8.354 2.702 7.051 2 5.6 2 3.092 2 1 4.116 1 6.8c0 1.282.48 2.44 1.257 3.297l.013.014.012.013c.089.096.181.19.277.278l.016.014 7.354 7.354a.1.1 0 00.142 0l7.355-7.354zm-7.355 8.77a.1.1 0 01-.142 0l-8.047-8.047a5.763 5.763 0 01-.336-.337l-.03-.03v-.002l-.01-.011a5.802 5.802 0 01-.595-.786A5.922 5.922 0 010 6.8C0 3.597 2.507 1 5.6 1a5.47 5.47 0 013.717 1.462c.216.199.418.415.602.646.041.052.12.052.162 0 .184-.231.386-.447.602-.646A5.471 5.471 0 0114.4 1C17.493 1 20 3.597 20 6.8c0 1.17-.335 2.26-.91 3.172-.177.28-.377.542-.596.786l-.01.01v.003l-.03.03a5.72 5.72 0 01-.336.336l-8.047 8.048z" fill="#27251F"></path></svg>
+              </button>
+             </div>
+             <div class="product-loop-buttons" data-view="index">
+              <button aria-label="Xem nhanh" class="product-action quick-view full" data-price="2,790,000₫" data-handle="/products/charm-treo-pandora-moments-bieu-tuong-cay-gia-dinh-ngoi-sao" data-id="1051085860" data-variantid="1114878686">
+               <span>Xem nhanh</span>
+               <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Icons" viewBox="0 0 32 32" xml:space="preserve"><style type="text/css">.st0_1{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}.st1_1{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:3;}.st2_1{fill:none;stroke:#000000;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;}.st3_1{fill:none;}</style><path class="st0_1" d="M9,13V7c0-2.2,1.8-4,4-4h0c2.2,0,4,1.8,4,4v6"></path><circle class="st0_1" cx="23" cy="22" r="7"></circle><line class="st0_1" x1="23" y1="19" x2="23" y2="25"></line><line class="st0_1" x1="20" y1="22" x2="26" y2="22"></line><polyline class="st0_1" points="23,29 3,29 5,9 21,9 21.6,15.1 "></polyline><rect y="-144" class="st3_1" width="536" height="680"></rect></svg></span>
+              </button>
+              <button aria-label="Thêm vào giỏ" class="product-action add-to-cart disabled" disabled="" data-id="1051085860" data-variantid="1114878686">Thêm vào giỏ</button>
              </div>
             </div>
-            <div class="product-detail loading-mask--detail">
-             <div class="mask-line">
+            <div class="product-loop-body">
+             <div class="product-proloop-swatch">
+              <ul class="swatch-list"><li class="swatch-item selected"><span class="bg default" data-option="Bạc" data-handle="charm-treo-pandora-moments-bieu-tuong-cay-gia-dinh-ngoi-sao" style="background-image: url(https://product.hstatic.net/200000103143/product/icon_silver_78bbadfc643741b68803a64449acc3ea.png);" data-image-1-dk="//product.hstatic.net/200000103143/product/5983_6d3e9584264c4c31b2bd551c135e5269_55819f14887348df9b2316e949ecddc8_0b3f934ad06e47c6873c886d026357bd_grande.jpg" data-image-2-dk="//product.hstatic.net/200000103143/product/pngtrpnt_799645c01_v2_rgb_da16de38ec4c4d978a4b541b2316f02e_grande.png" data-image-1-mb="//product.hstatic.net/200000103143/product/5983_6d3e9584264c4c31b2bd551c135e5269_55819f14887348df9b2316e949ecddc8_0b3f934ad06e47c6873c886d026357bd_grande.jpg" data-image-2-mb="//product.hstatic.net/200000103143/product/pngtrpnt_799645c01_v2_rgb_da16de38ec4c4d978a4b541b2316f02e_grande.png">
+														</span>
+               </li></ul>
              </div>
-             <div class="mask-line">
+             <div class="product-loop-badges d-none">
+
+
              </div>
-             <div class="mask-line">
+             <h3 class="product-loop-title"><a href="/products/charm-treo-pandora-moments-bieu-tuong-cay-gia-dinh-ngoi-sao" title="Charm Pandora Moments Bạc Biểu Tượng Cây Gia Đình Ngôi Sao">Charm Pandora Moments Bạc Biểu Tượng Cây Gia Đình Ngôi Sao</a></h3>
+             <div class="hrv-crv-container disabled" data-hrvcrv-layout="star" data-product-id="1051085860"></div>
+             <div class="product-loop-prices">
+              <b class="normal">2,790,000₫</b>
+              <del class="d-none">0</del>
+
              </div>
             </div>
            </div>
           </div>
          </div>
-         <div class="swiper-slide">
-          <div class="product-loading">
-           <div class="product-block loading-mask">
-            <div class="product-image loading-mask--image">
-             <div class="mask-line lazy-img">
-             </div>
-            </div>
-            <div class="product-detail loading-mask--detail">
-             <div class="mask-line">
-             </div>
-             <div class="mask-line">
-             </div>
-             <div class="mask-line">
-             </div>
-            </div>
-           </div>
-          </div>
-         </div>
-         <div class="swiper-slide">
-          <div class="product-loading">
-           <div class="product-block loading-mask">
-            <div class="product-image loading-mask--image">
-             <div class="mask-line lazy-img">
-             </div>
-            </div>
-            <div class="product-detail loading-mask--detail">
-             <div class="mask-line">
-             </div>
-             <div class="mask-line">
-             </div>
-             <div class="mask-line">
-             </div>
-            </div>
-           </div>
-          </div>
-         </div>
-         <div class="swiper-slide">
-          <div class="product-loading">
-           <div class="product-block loading-mask">
-            <div class="product-image loading-mask--image">
-             <div class="mask-line lazy-img">
-             </div>
-            </div>
-            <div class="product-detail loading-mask--detail">
-             <div class="mask-line">
-             </div>
-             <div class="mask-line">
-             </div>
-             <div class="mask-line">
-             </div>
-            </div>
-           </div>
-          </div>
-         </div>
-         <div class="swiper-slide">
-          <div class="product-loading">
-           <div class="product-block loading-mask">
-            <div class="product-image loading-mask--image">
-             <div class="mask-line lazy-img">
-             </div>
-            </div>
-            <div class="product-detail loading-mask--detail">
-             <div class="mask-line">
-             </div>
-             <div class="mask-line">
-             </div>
-             <div class="mask-line">
-             </div>
-            </div>
-           </div>
-          </div>
-         </div>
-        </div>
-       </div>
-       <div class="swiper-pagination">
-       </div>
-       <div class="swiper-button-prev">
-       </div>
-       <div class="swiper-button-next">
+        {% endfor %}
        </div>
       </div>
      </div>
@@ -595,7 +426,7 @@
      <div class="feature-box">
       <div class="banner" data-aos="fade-up" data-aos-delay="2" data-aos-duration="400" data-aos-easing="ease-in-sine">
        <a class="aspect-ratio" href="https://pandora.norbreeze.vn/collections/pandora-moments">
-        <video autoplay="" class="" loop="" muted="" playsinline="" style="width: 100%;">
+        <video autoplay=""  loop="" muted="" playsinline="" style="width: 100%;">
          <source src="https://file.hstatic.net/200000103143/file/intro_block.mp4" type="video/mp4"/>
         </video>
        </a>
@@ -706,11 +537,7 @@
         <div class="box" data-aos="fade-up" data-aos-delay="8" data-aos-duration="400" data-aos-easing="ease-in-sine">
          <div class="thumb">
           <a class="aspect-ratio" href="https://pandora.norbreeze.vn/collections/vongtaypandora">
-           <picture>
-            <source data-srcset="https://file.hstatic.net/200000103143/file/block_1_36ef4f8570f7425d82369550d77603a7.jpg" media="(max-width: 960px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-            <source data-srcset="https://file.hstatic.net/200000103143/file/block_1_36ef4f8570f7425d82369550d77603a7.jpg" media="(min-width: 961px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-            <img alt="Mùa Hè Rực Rỡ" class="lazyload" data-src="https://file.hstatic.net/200000103143/file/block_1_36ef4f8570f7425d82369550d77603a7.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-           </picture>
+           <img alt="Mùa Hè Rực Rỡ" loading="lazy" src="https://file.hstatic.net/200000103143/file/block_1_36ef4f8570f7425d82369550d77603a7.jpg" />
           </a>
          </div>
          <div class="detail">
@@ -729,11 +556,7 @@
         <div class="box" data-aos="fade-up" data-aos-delay="8" data-aos-duration="600" data-aos-easing="ease-in-sine">
          <div class="thumb">
           <a class="aspect-ratio" href="https://pandora.norbreeze.vn/collections/pandora-moments">
-           <picture>
-            <source data-srcset="https://file.hstatic.net/200000103143/file/block_3_0490371cc2b7410a90457617ec178b86.jpg" media="(max-width: 960px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-            <source data-srcset="https://file.hstatic.net/200000103143/file/block_3_0490371cc2b7410a90457617ec178b86.jpg" media="(min-width: 961px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-            <img alt="Lời Gọi Biển Khơi" class="lazyload" data-src="https://file.hstatic.net/200000103143/file/block_3_0490371cc2b7410a90457617ec178b86.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-           </picture>
+           <img alt="Lời Gọi Biển Khơi" loading="lazy" src="https://file.hstatic.net/200000103143/file/block_3_0490371cc2b7410a90457617ec178b86.jpg" />
           </a>
          </div>
          <div class="detail">
@@ -752,11 +575,7 @@
         <div class="box" data-aos="fade-up" data-aos-delay="8" data-aos-duration="800" data-aos-easing="ease-in-sine">
          <div class="thumb">
           <a class="aspect-ratio" href="https://pandora.norbreeze.vn/collections/pandora-essence-1">
-           <picture>
-            <source data-srcset="https://file.hstatic.net/200000103143/file/block_2_8b1eefc7ffef4b65a6eef6159c3c4e17.jpg" media="(max-width: 960px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-            <source data-srcset="https://file.hstatic.net/200000103143/file/block_2_8b1eefc7ffef4b65a6eef6159c3c4e17.jpg" media="(min-width: 961px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-            <img alt="Essence" class="lazyload" data-src="https://file.hstatic.net/200000103143/file/block_2_8b1eefc7ffef4b65a6eef6159c3c4e17.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-           </picture>
+           <img alt="Essence" loading="lazy" src="https://file.hstatic.net/200000103143/file/block_2_8b1eefc7ffef4b65a6eef6159c3c4e17.jpg" />
           </a>
          </div>
          <div class="detail">
@@ -775,11 +594,7 @@
         <div class="box" data-aos="fade-up" data-aos-delay="8" data-aos-duration="1000" data-aos-easing="ease-in-sine">
          <div class="thumb">
           <a class="aspect-ratio" href="https://pandora.norbreeze.vn/collections/pandora-timeless">
-           <picture>
-            <source data-srcset="https://file.hstatic.net/200000103143/file/block_4_d67c14b8449f4c078a1a4b3b73128b95.jpg" media="(max-width: 960px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-            <source data-srcset="https://file.hstatic.net/200000103143/file/block_4_d67c14b8449f4c078a1a4b3b73128b95.jpg" media="(min-width: 961px)" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/jpeg"/>
-            <img alt="Vẻ Đẹp Vượt Thời Gian" class="lazyload" data-src="https://file.hstatic.net/200000103143/file/block_4_d67c14b8449f4c078a1a4b3b73128b95.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
-           </picture>
+           <img alt="Vẻ Đẹp Vượt Thời Gian" loading="lazy" src="https://file.hstatic.net/200000103143/file/block_4_d67c14b8449f4c078a1a4b3b73128b95.jpg" />
           </a>
          </div>
          <div class="detail">
@@ -805,7 +620,7 @@
      <div class="s-content">
       <div class="slider-policy swiper-style" id="slider-policy">
        <div class="swiper">
-        <div class="list-policy swiper-wrapper">
+        <div class="list-policy swiper-wrapper slick-callback" data-allin="4" data-slides-md="4" data-slides-tablet="4" data-slides-xs="2" data-slides-md-scroll="2" data-slides-tablet-scroll="2" data-slides-xs-scroll="2" data-dots="false" data-autoplay="false" data-infinite="true" data-custom-arrows="false" data-fade="false">
          <div class="swiper-slide">
           <div class="item-policy">
            <a class="box" href="https://pandora.norbreeze.vn/account/login">
@@ -890,1081 +705,68 @@
      </div>
      <div class="s-content">
       <div class="slider-collection swiper-style" id="list-viewed-products">
-       <div class="swiper">
-        <div class="list-products swiper-wrapper" data-view="4">
+       <div class="list-products swiper-wrapper slick-callback" data-allin="5" data-slides-md="5" data-slides-tablet="5" data-slides-xs="2" data-slides-md-scroll="2" data-slides-tablet-scroll="2" data-slides-xs-scroll="2" data-dots="false" data-autoplay="false" data-infinite="true" data-custom-arrows="true" data-fade="false">
+        {% for i in 1..8 %}
          <div class="swiper-slide">
-          <div class="product-loading">
-           <div class="product-block loading-mask">
-            <div class="product-image loading-mask--image">
-             <div class="mask-line lazy-img">
+          <div class="product-loop">
+           <div class="product-loop-wrap">
+            <div class="product-loop-head">
+             <div class="product-loop-labels  d-none" data-ctkm="I-DAY">
+
+
+
+
+             </div>
+             <div class="product-loop-img">
+              <picture class="has-hover">
+               <source data-srcset="//product.hstatic.net/200000103143/product/5983_6d3e9584264c4c31b2bd551c135e5269_55819f14887348df9b2316e949ecddc8_0b3f934ad06e47c6873c886d026357bd_grande.jpg" srcset="//product.hstatic.net/200000103143/product/5983_6d3e9584264c4c31b2bd551c135e5269_55819f14887348df9b2316e949ecddc8_0b3f934ad06e47c6873c886d026357bd_grande.jpg" media="(min-width: 768px)">
+               <source data-srcset="//product.hstatic.net/200000103143/product/5983_6d3e9584264c4c31b2bd551c135e5269_55819f14887348df9b2316e949ecddc8_0b3f934ad06e47c6873c886d026357bd_large.jpg" srcset="//product.hstatic.net/200000103143/product/5983_6d3e9584264c4c31b2bd551c135e5269_55819f14887348df9b2316e949ecddc8_0b3f934ad06e47c6873c886d026357bd_large.jpg" media="(max-width: 767px)">
+               <img class="img-default lazyloaded" src="//product.hstatic.net/200000103143/product/5983_6d3e9584264c4c31b2bd551c135e5269_55819f14887348df9b2316e949ecddc8_0b3f934ad06e47c6873c886d026357bd_grande.jpg" data-src="//product.hstatic.net/200000103143/product/5983_6d3e9584264c4c31b2bd551c135e5269_55819f14887348df9b2316e949ecddc8_0b3f934ad06e47c6873c886d026357bd_grande.jpg" alt="Charm Pandora Moments Bạc Biểu Tượng Cây Gia Đình Ngôi Sao">
+              </picture>
+              <div class="product-loop-frame"><img src="https://file.hstatic.net/200000103143/file/frame_ads_cb_700k.png" alt="Chương trình khuyến mãi"></div>
+             </div>
+             <a href="/products/charm-treo-pandora-moments-bieu-tuong-cay-gia-dinh-ngoi-sao" class="product-loop-link"></a>
+             <div class="product-loop-wishlist">
+              <button type="button" class="btn-wishlist js-wishlist" data-type="wishlist" data-title="Charm Pandora Moments Bạc Biểu Tượng Cây Gia Đình Ngôi Sao" data-handle="charm-treo-pandora-moments-bieu-tuong-cay-gia-dinh-ngoi-sao" data-id="1051085860" data-price="279000000">
+               <svg class="ic-heart filled" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" width="20" height="20"><path d="M1.546 10.801c.107.117.22.23.336.337l8.047 8.047a.1.1 0 00.142 0l8.047-8.048a5.72 5.72 0 00.336-.336l.03-.03v-.003l.01-.01c.22-.244.419-.507.595-.786A5.925 5.925 0 0020 6.8C20 3.597 17.493 1 14.4 1a5.471 5.471 0 00-3.717 1.462 5.755 5.755 0 00-.602.646.103.103 0 01-.162 0 5.75 5.75 0 00-.602-.646A5.471 5.471 0 005.6 1C2.507 1 0 3.597 0 6.8c0 1.17.335 2.26.91 3.172.177.28.377.543.597.786l.009.01v.002l.03.031z" fill="#27251F"></path></svg>
+               <svg class="ic-heart" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" width="20" height="20"><path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M17.426 10.415l.015-.014c.096-.088.188-.18.277-.277l.014-.015.01-.012A4.893 4.893 0 0019 6.8C19 4.116 16.908 2 14.4 2c-1.451 0-2.755.702-3.604 1.818l-.716.94a.1.1 0 01-.16 0l-.716-.94C8.354 2.702 7.051 2 5.6 2 3.092 2 1 4.116 1 6.8c0 1.282.48 2.44 1.257 3.297l.013.014.012.013c.089.096.181.19.277.278l.016.014 7.354 7.354a.1.1 0 00.142 0l7.355-7.354zm-7.355 8.77a.1.1 0 01-.142 0l-8.047-8.047a5.763 5.763 0 01-.336-.337l-.03-.03v-.002l-.01-.011a5.802 5.802 0 01-.595-.786A5.922 5.922 0 010 6.8C0 3.597 2.507 1 5.6 1a5.47 5.47 0 013.717 1.462c.216.199.418.415.602.646.041.052.12.052.162 0 .184-.231.386-.447.602-.646A5.471 5.471 0 0114.4 1C17.493 1 20 3.597 20 6.8c0 1.17-.335 2.26-.91 3.172-.177.28-.377.542-.596.786l-.01.01v.003l-.03.03a5.72 5.72 0 01-.336.336l-8.047 8.048z" fill="#27251F"></path></svg>
+              </button>
+             </div>
+             <div class="product-loop-buttons" data-view="index">
+              <button aria-label="Xem nhanh" class="product-action quick-view full" data-price="2,790,000₫" data-handle="/products/charm-treo-pandora-moments-bieu-tuong-cay-gia-dinh-ngoi-sao" data-id="1051085860" data-variantid="1114878686">
+               <span>Xem nhanh</span>
+               <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Icons" viewBox="0 0 32 32" xml:space="preserve"><style type="text/css">.st0_1{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}.st1_1{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:3;}.st2_1{fill:none;stroke:#000000;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;}.st3_1{fill:none;}</style><path class="st0_1" d="M9,13V7c0-2.2,1.8-4,4-4h0c2.2,0,4,1.8,4,4v6"></path><circle class="st0_1" cx="23" cy="22" r="7"></circle><line class="st0_1" x1="23" y1="19" x2="23" y2="25"></line><line class="st0_1" x1="20" y1="22" x2="26" y2="22"></line><polyline class="st0_1" points="23,29 3,29 5,9 21,9 21.6,15.1 "></polyline><rect y="-144" class="st3_1" width="536" height="680"></rect></svg></span>
+              </button>
+              <button aria-label="Thêm vào giỏ" class="product-action add-to-cart disabled" disabled="" data-id="1051085860" data-variantid="1114878686">Thêm vào giỏ</button>
              </div>
             </div>
-            <div class="product-detail loading-mask--detail">
-             <div class="mask-line">
+            <div class="product-loop-body">
+             <div class="product-proloop-swatch">
+              <ul class="swatch-list"><li class="swatch-item selected"><span class="bg default" data-option="Bạc" data-handle="charm-treo-pandora-moments-bieu-tuong-cay-gia-dinh-ngoi-sao" style="background-image: url(https://product.hstatic.net/200000103143/product/icon_silver_78bbadfc643741b68803a64449acc3ea.png);" data-image-1-dk="//product.hstatic.net/200000103143/product/5983_6d3e9584264c4c31b2bd551c135e5269_55819f14887348df9b2316e949ecddc8_0b3f934ad06e47c6873c886d026357bd_grande.jpg" data-image-2-dk="//product.hstatic.net/200000103143/product/pngtrpnt_799645c01_v2_rgb_da16de38ec4c4d978a4b541b2316f02e_grande.png" data-image-1-mb="//product.hstatic.net/200000103143/product/5983_6d3e9584264c4c31b2bd551c135e5269_55819f14887348df9b2316e949ecddc8_0b3f934ad06e47c6873c886d026357bd_grande.jpg" data-image-2-mb="//product.hstatic.net/200000103143/product/pngtrpnt_799645c01_v2_rgb_da16de38ec4c4d978a4b541b2316f02e_grande.png">
+														</span>
+               </li></ul>
              </div>
-             <div class="mask-line">
+             <div class="product-loop-badges d-none">
+
+
              </div>
-             <div class="mask-line">
+             <h3 class="product-loop-title"><a href="/products/charm-treo-pandora-moments-bieu-tuong-cay-gia-dinh-ngoi-sao" title="Charm Pandora Moments Bạc Biểu Tượng Cây Gia Đình Ngôi Sao">Charm Pandora Moments Bạc Biểu Tượng Cây Gia Đình Ngôi Sao</a></h3>
+             <div class="hrv-crv-container disabled" data-hrvcrv-layout="star" data-product-id="1051085860"></div>
+             <div class="product-loop-prices">
+              <b class="normal">2,790,000₫</b>
+              <del class="d-none">0</del>
+
              </div>
             </div>
            </div>
           </div>
          </div>
-         <div class="swiper-slide">
-          <div class="product-loading">
-           <div class="product-block loading-mask">
-            <div class="product-image loading-mask--image">
-             <div class="mask-line lazy-img">
-             </div>
-            </div>
-            <div class="product-detail loading-mask--detail">
-             <div class="mask-line">
-             </div>
-             <div class="mask-line">
-             </div>
-             <div class="mask-line">
-             </div>
-            </div>
-           </div>
-          </div>
-         </div>
-         <div class="swiper-slide">
-          <div class="product-loading">
-           <div class="product-block loading-mask">
-            <div class="product-image loading-mask--image">
-             <div class="mask-line lazy-img">
-             </div>
-            </div>
-            <div class="product-detail loading-mask--detail">
-             <div class="mask-line">
-             </div>
-             <div class="mask-line">
-             </div>
-             <div class="mask-line">
-             </div>
-            </div>
-           </div>
-          </div>
-         </div>
-         <div class="swiper-slide">
-          <div class="product-loading">
-           <div class="product-block loading-mask">
-            <div class="product-image loading-mask--image">
-             <div class="mask-line lazy-img">
-             </div>
-            </div>
-            <div class="product-detail loading-mask--detail">
-             <div class="mask-line">
-             </div>
-             <div class="mask-line">
-             </div>
-             <div class="mask-line">
-             </div>
-            </div>
-           </div>
-          </div>
-         </div>
-         <div class="swiper-slide">
-          <div class="product-loading">
-           <div class="product-block loading-mask">
-            <div class="product-image loading-mask--image">
-             <div class="mask-line lazy-img">
-             </div>
-            </div>
-            <div class="product-detail loading-mask--detail">
-             <div class="mask-line">
-             </div>
-             <div class="mask-line">
-             </div>
-             <div class="mask-line">
-             </div>
-            </div>
-           </div>
-          </div>
-         </div>
-        </div>
-       </div>
-       <div class="swiper-pagination">
-       </div>
-       <div class="swiper-button-prev">
-       </div>
-       <div class="swiper-button-next">
-       </div>
+        {% endfor %}
       </div>
      </div>
     </div>
+   </div>
    </div>
   </section>
  </main>
- <div class="social-contact">
-  <div class="button-social-contact">
-   <button class="btn">
-    Liên hệ
-   </button>
-  </div>
-  <div class="list-social-chat active">
-   <div class="fb-icon">
-    <a aria-label="fb social" href="https://www.messenger.com/t/450846288276998/?utm_source=FB&amp;utm_medium=Mess&amp;utm_campaign=click_messenger_HRV" target="_blank">
-     <svg fill="none" viewbox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="22" cy="22" fill="url(#paint3_linear)" r="22">
-      </circle>
-      <path clip-rule="evenodd" d="M22.0026 7.70215C14.1041 7.70215 7.70117 13.6308 7.70117 20.9442C7.70117 25.1115 9.78083 28.8286 13.0309 31.256V36.305L17.9004 33.6325C19.2 33.9922 20.5767 34.1863 22.0026 34.1863C29.9011 34.1863 36.304 28.2576 36.304 20.9442C36.304 13.6308 29.9011 7.70215 22.0026 7.70215ZM23.4221 25.5314L19.7801 21.6471L12.6738 25.5314L20.4908 17.2331L24.2216 21.1174L31.239 17.2331L23.4221 25.5314Z" fill="white" fill-rule="evenodd">
-      </path>
-      <defs>
-       <lineargradient gradientunits="userSpaceOnUse" id="paint3_linear" x1="21.6426" x2="21.6426" y1="43.3555" y2="0.428639">
-        <stop stop-color="#ffcad4">
-        </stop>
-        <stop offset="1" stop-color="#ffcad4">
-        </stop>
-       </lineargradient>
-      </defs>
-     </svg>
-    </a>
-   </div>
-   <div class="zalo-icon">
-    <a alt="zalo" href="https://zalo.me/752168566862100952?utm_source=ZALO&amp;utm_medium=Zalo&amp;utm_campaign=click_zalobutton_HRV" target="_blank">
-     <svg id="Layer_2_00000063599641603698683780000005733330940780045713_" style="enable-background:new 0 0 1080 1080;" version="1.1" viewbox="0 0 1080 1080" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
-      <style type="text/css">
-       .st0{fill:#FFFFFF;stroke:#FFA0C8;stroke-width:14.74;stroke-miterlimit:10;}
-						.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#FFA0C8;}
-						.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
-      </style>
-      <circle class="st0" cx="540.5" cy="540.5" r="428">
-      </circle>
-      <path class="st1" d="M540.5,240.5c-178.2,0-322.7,131.6-322.7,294c0,89.6,44,169.8,113.4,223.8l-6.5,87l83.8-42.5  c40.3,16.5,85,25.7,132.1,25.7c178.2,0,322.7-131.6,322.7-294S718.7,240.5,540.5,240.5L540.5,240.5z">
-      </path>
-      <path class="st2" d="M557.9,490.3v-8.6h25.6v120.3h-14.7c-6,0-10.9-4.9-11-10.9c0,0,0,0,0,0c-10.3,7.5-23.1,12-36.9,12  c-34.5,0-62.5-28-62.5-62.5s28-62.5,62.5-62.5C534.8,478.3,547.6,482.7,557.9,490.3C557.9,490.3,557.9,490.3,557.9,490.3  L557.9,490.3z M451.9,443v3.9c0,7.3-1,13.2-5.7,20.2l-0.6,0.6c-1,1.2-3.5,3.9-4.6,5.4l-82.3,103.3h93.2v14.6c0,6.1-4.9,11-11,11  H320.1v-6.9c0-8.5,2.1-12.2,4.8-16.1l87.7-108.6h-88.8V443L451.9,443L451.9,443z M614.6,602.1c-5,0-9.1-4.1-9.1-9.1V443.1h27.4v159  H614.6z M714.1,477.5c34.8,0,62.9,28.2,62.9,62.9s-28.2,62.9-62.9,62.9s-62.9-28.2-62.9-62.9S679.3,477.5,714.1,477.5L714.1,477.5z   M521,577.5c20.3,0,36.8-16.5,36.8-36.8S541.3,504,521,504s-36.8,16.5-36.8,36.7S500.7,577.5,521,577.5z M714.1,577.4  c20.4,0,37-16.6,37-37s-16.6-37-37-37s-37,16.6-37,37S693.6,577.4,714.1,577.4L714.1,577.4z">
-      </path>
-     </svg>
-    </a>
-   </div>
-  </div>
- </div>
- <div class="modal fade modal-contact modalBanner" id="contactModal" role="dialog" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-   <div class="modal-content">
-    <div class="modal-wrapper-contact">
-     <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-      <svg aria-label="icon cross" role="img" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-       <path clip-rule="evenodd" d="M9.222 9.922a.1.1 0 010 .142L.08 19.206a.1.1 0 000 .14l.56.572a.1.1 0 00.141 0l9.148-9.147a.1.1 0 01.142 0l9.142 9.142a.1.1 0 00.14 0l.572-.56a.1.1 0 000-.142l-9.147-9.147a.1.1 0 010-.142L19.92.78a.1.1 0 000-.14l-.56-.572a.1.1 0 00-.142 0l-9.147 9.147a.1.1 0 01-.142 0L.787.073a.1.1 0 00-.14 0l-.572.56a.1.1 0 000 .141l9.147 9.148z" fill="#27251F" fill-rule="evenodd">
-       </path>
-      </svg>
-     </button>
-     <a class="linkbanner-modal-contact" href="https://pandora.norbreeze.vn/collections/national-holiday" title="SUMMER SALE PANDORA 50% ƯU ĐÃI HOÀN TIỀN 2.500.000Đ">
-      <img alt="SUMMER SALE PANDORA 50% ƯU ĐÃI HOÀN TIỀN 2.500.000Đ" src="https://file.hstatic.net/200000103143/file/main_banner__3_.jpg"/>
-     </a>
-    </div>
-   </div>
-  </div>
- </div>
- <div aria-labelledby="removeProductLineItemModal" aria-modal="true" class="modal fade" data-auto="divCartRemoveProductModal" id="removeProductModal" role="dialog" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-   <div class="modal-content">
-    <div class="modal-header delete-confirmation-header">
-     <h4 class="modal-title" data-auto="lblCartRemoveProductHeader">
-      Xoá sản phẩm
-     </h4>
-     <button aria-label="Close" class="close" data-auto="btnCartRemoveProductClose" data-dismiss="modal" type="button">
-      <svg aria-label="icon cross" role="img" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-       <path clip-rule="evenodd" d="M9.222 9.922a.1.1 0 010 .142L.08 19.206a.1.1 0 000 .14l.56.572a.1.1 0 00.141 0l9.148-9.147a.1.1 0 01.142 0l9.142 9.142a.1.1 0 00.14 0l.572-.56a.1.1 0 000-.142l-9.147-9.147a.1.1 0 010-.142L19.92.78a.1.1 0 000-.14l-.56-.572a.1.1 0 00-.142 0l-9.147 9.147a.1.1 0 01-.142 0L.787.073a.1.1 0 00-.14 0l-.572.56a.1.1 0 000 .141l9.147 9.148z" fill="#27251F" fill-rule="evenodd">
-       </path>
-      </svg>
-     </button>
-    </div>
-    <div class="modal-body delete-confirmation-body" data-auto="lblCartRemoveProductBody">
-     Bạn muốn xoá sản phẩm từ giỏ hàng?
-     <p class="product-to-remove highlight">
-     </p>
-    </div>
-    <div class="modal-footer">
-     <button class="btn btn-secondary order-md-2" data-dismiss="modal" id="btn-delete-confirm" type="button">
-      CÓ, XOÁ
-     </button>
-     <button class="btn btn-outline order-md-1" data-dismiss="modal" id="btn-cancel-confirm" type="button">
-      KHÔNG
-     </button>
-    </div>
-   </div>
-  </div>
- </div>
- <div aria-hidden="false" aria-labelledby="myLargeModalLabel" class="modal fade modal-quickview" id="quickviewProductModal" role="dialog" style="display: none!important;" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered modal-lg modal-xl">
-   <div class="modal-content">
-    <div class="modal-header">
-     <h4>
-      <a href="/">
-       Xem chi tiết sản phẩm
-      </a>
-     </h4>
-     <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-      <svg aria-label="icon cross" role="img" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-       <path clip-rule="evenodd" d="M9.222 9.922a.1.1 0 010 .142L.08 19.206a.1.1 0 000 .14l.56.572a.1.1 0 00.141 0l9.148-9.147a.1.1 0 01.142 0l9.142 9.142a.1.1 0 00.14 0l.572-.56a.1.1 0 000-.142l-9.147-9.147a.1.1 0 010-.142L19.92.78a.1.1 0 000-.14l-.56-.572a.1.1 0 00-.142 0l-9.147 9.147a.1.1 0 01-.142 0L.787.073a.1.1 0 00-.14 0l-.572.56a.1.1 0 000 .141l9.147 9.148z" fill="#27251F" fill-rule="evenodd">
-       </path>
-      </svg>
-     </button>
-    </div>
-    <div class="modal-body">
-    </div>
-    <div class="modal-footer">
-     <div class="quickviewdetail-footer">
-      <button class="btn btn-secondary add-cart" id="qv-btn-addtocart" type="button">
-       <span>
-        Thêm vào giỏ
-       </span>
-      </button>
-     </div>
-    </div>
-   </div>
-  </div>
- </div>
- <link href="//theme.hstatic.net/200000103143/1001237438/14/engraving.scss.css?v=9706" media="all" rel="stylesheet" type="text/css"/>
- <div class="mask-overlay-engraving">
- </div>
- <div id="sidebar-engraving-review">
-  <div class="wrap-engraving">
-   <div class="head-sidebar">
-    <div class="title-sidebar">
-     Xem lại bản khắc của bạn
-    </div>
-    <div class="close-sidebar">
-     <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
-      <g>
-       <path d="M4.59 59.41a2 2 0 0 0 2.83 0L32 34.83l24.59 24.58a2 2 0 0 0 2.83-2.83L34.83 32 59.41 7.41a2 2 0 0 0-2.83-2.83L32 29.17 7.41 4.59a2 2 0 0 0-2.82 2.82L29.17 32 4.59 56.59a2 2 0 0 0 0 2.82z" data-original="#000000" fill="#000000" opacity="1">
-       </path>
-      </g>
-     </svg>
-    </div>
-   </div>
-   <div class="content-sidebar">
-    <div class="item-review-engraving" data-review="front">
-     <div class="head-review">
-      Mặt trước
-     </div>
-     <div class="style-img-review img-front-review">
-     </div>
-     <div class="style-review-added review-added-front">
-     </div>
-    </div>
-    <div class="item-review-engraving" data-review="back">
-     <div class="head-review">
-      Mặt sau
-     </div>
-     <div class="style-img-review img-back-review">
-     </div>
-     <div class="style-review-added review-added-back">
-     </div>
-    </div>
-   </div>
-   <div class="box-note-preview">
-    <div class="wrap-note-preview">
-     <div class="notify-choose-size">
-      <span class="notification__content">
-       Vui lòng chọn
-      </span>
-     </div>
-     <input name="acept-engraving" required="" type="checkbox" value="true"/>
-     <p>
-      Bằng việc chọn dịch vụ khắc chữ, khách hàng đồng ý không sử dụng bất kỳ ngôn ngữ hoặc hình ảnh nào mang tính xúc phạm, 
-        khiếm nhã hoặc vi phạm quyền sở hữu trí tuệ của bên thứ ba. Chúng tôi có quyền từ chối bất kỳ yêu cầu khắc nào. 
-        Tất cả sản phẩm có khắc chữ là giá bán cuối cùng và không chấp nhận đổi trả.
-     </p>
-    </div>
-    <a href="/pages/chinh-sach-dich-vu-khac-ten-tren-san-pham-trang-suc">
-     Q&amp;A
-    </a>
-   </div>
-   <div class="action-print">
-    <button id="addtocart-engraving">
-     Lưu và thêm vào giỏ hàng
-    </button>
-    <button class="back-engraving">
-     Quay lại
-    </button>
-   </div>
-  </div>
- </div>
- <div id="sidebar-engraving">
-  <div id="show-design">
-  </div>
-  <div class="wrap-engraving">
-   <div class="head-sidebar">
-    <div class="title-sidebar">
-     Khắc thông điệp của bạn
-    </div>
-    <div class="close-sidebar">
-     <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
-      <g>
-       <path d="M4.59 59.41a2 2 0 0 0 2.83 0L32 34.83l24.59 24.58a2 2 0 0 0 2.83-2.83L34.83 32 59.41 7.41a2 2 0 0 0-2.83-2.83L32 29.17 7.41 4.59a2 2 0 0 0-2.82 2.82L29.17 32 4.59 56.59a2 2 0 0 0 0 2.82z" data-original="#000000" fill="#000000" opacity="1">
-       </path>
-      </g>
-     </svg>
-    </div>
-   </div>
-   <div class="tab-front-back">
-    <div class="item-tab active" data-tab="front">
-     Mặt trước
-    </div>
-    <div class="item-tab" data-tab="back">
-     Mặt sau
-    </div>
-   </div>
-   <div class="alert-danger engraving-one-side-note d-none">
-    <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 512 512" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
-     <g>
-      <path class="" d="M256 0C114.497 0 0 114.507 0 256c0 141.503 114.507 256 256 256 141.503 0 256-114.507 256-256C512 114.497 397.493 0 256 0zm0 472c-119.393 0-216-96.615-216-216 0-119.393 96.615-216 216-216 119.393 0 216 96.615 216 216 0 119.393-96.615 216-216 216z" data-original="#000000" fill="#000000" opacity="1">
-      </path>
-      <path class="" d="M256 128.877c-11.046 0-20 8.954-20 20V277.67c0 11.046 8.954 20 20 20s20-8.954 20-20V148.877c0-11.046-8.954-20-20-20z" data-original="#000000" fill="#000000" opacity="1">
-      </path>
-      <circle class="" cx="256" cy="349.16" data-original="#000000" fill="#000000" opacity="1" r="27">
-      </circle>
-     </g>
-    </svg>
-    <div class="content-asset">
-     Thật không may, mặt được chọn không cho phép khắc. Một số thiết kế không cho phép khắc ở cả hai mặt.
-    </div>
-   </div>
-   <div class="type-engraving">
-    <div class="item-type active" data-tab="text">
-     <img alt="Text &amp; Icons" src="https://file.hstatic.net/200000103143/file/textandsymbol.png"/>
-     <span>
-      Thông điệp
-     </span>
-    </div>
-    <div class="item-type" data-tab="image">
-     <img alt="Zodiac" src="https://file.hstatic.net/200000103143/file/constellations.png"/>
-     <span>
-      Biểu tượng
-     </span>
-    </div>
-   </div>
-   <input id="hidden-input" style="position: absolute; opacity: 0; pointer-events: none;" type="text"/>
-   <div class="face-print active" data-face="front" id="canvas-capture-front">
-    <img alt="" id="image-front" src="https://product.hstatic.net/200000103143/product/pngtrpnt_793439c00_v2_rgb_aa6d66b9db664812b1dc9d2b346eaad4_50525c9e0dbd4e1a83f96e0e5f273101_master.png"/>
-    <div class="slider-ranger-size-front">
-     <span>
-      65px
-     </span>
-     <input max="65" min="10" type="range" value="65"/>
-    </div>
-    <div class="draw-icon-text">
-     <div id="canvasContainer-front">
-      <div id="myCanvas-front">
-      </div>
-     </div>
-    </div>
-    <div class="draw-image">
-    </div>
-   </div>
-   <div class="face-print" data-face="back" id="canvas-capture-back">
-    <img alt="" id="image-back" src="https://product.hstatic.net/200000103143/product/pngtrpnt_793439c00_v2_rgb_aa6d66b9db664812b1dc9d2b346eaad4_50525c9e0dbd4e1a83f96e0e5f273101_master.png"/>
-    <div class="slider-ranger-size-back">
-     <span>
-      65px
-     </span>
-     <input max="65" min="10" type="range" value="65"/>
-    </div>
-    <div class="draw-icon-text">
-     <div id="canvasContainer-back">
-      <div id="myCanvas-back">
-      </div>
-     </div>
-    </div>
-    <div class="draw-image">
-    </div>
-   </div>
-   <div id="warningMessage">
-   </div>
-   <div class="group-optional">
-    <div class="group-type group-icon active" data-tab="text">
-     <div class="wrap-small-tab">
-      <button class="btn-tab-type active" data-tab-type="fonts">
-       Phông chữ
-      </button>
-      <button class="btn-tab-type" data-tab-type="icon">
-       Icons
-      </button>
-     </div>
-     <div class="content-small-tab">
-      <div class="item-content-tab active" data-tab-type="fonts">
-       <div class="wrap-input-text d-none">
-        <input class="input-text-front" placeholder="Your text..." type="text"/>
-       </div>
-       <div class="inner-scroll-wrapper js-font-content">
-        <button class="js-font-change active" data-attr-value="OptimaLTProRoman" default-font="true">
-         <span>
-          Aa
-         </span>
-        </button>
-        <button class="js-font-change" data-attr-value="Casual_JennaSuePro" default-font="true">
-         <span>
-          Aa
-         </span>
-        </button>
-        <button class="js-font-change" data-attr-value="TypewriterEliteMTStd" default-font="true">
-         <span>
-          Aa
-         </span>
-        </button>
-        <button class="js-font-change" data-attr-value="Gothic_FRAKTUR" default-font="true">
-         <span>
-          Aa
-         </span>
-        </button>
-        <button class="js-font-change" data-attr-value="Magazine_ROMAN" default-font="true">
-         <span>
-          Aa
-         </span>
-        </button>
-        <button class="js-font-change" data-attr-value="Script_VANESSA" default-font="true">
-         <span>
-          Aa
-         </span>
-        </button>
-       </div>
-      </div>
-      <div class="item-content-tab" data-tab-type="icon">
-       <div class="inner-scroll-symbols js-icons-tabs-carousel">
-        <button class="engraving-symbols-nav trai_tim selected" data-category="trai_tim">
-         <span class="trai_tim">
-          Trái tim
-         </span>
-        </button>
-        <button class="engraving-symbols-nav dip_dac_biet" data-category="dip_dac_biet">
-         <span class="dip_dac_biet">
-          Dịp đặc biệt
-         </span>
-        </button>
-        <button class="engraving-symbols-nav bieu_tuong" data-category="bieu_tuong">
-         <span class="bieu_tuong">
-          Biểu tượng
-         </span>
-        </button>
-        <button class="engraving-symbols-nav dong_vat" data-category="dong_vat">
-         <span class="dong_vat">
-          Động vật
-         </span>
-        </button>
-        <button class="engraving-symbols-nav thien_nhien" data-category="thien_nhien">
-         <span class="thien_nhien">
-          Thiên nhiên
-         </span>
-        </button>
-        <button class="engraving-symbols-nav phong_cach" data-category="phong_cach">
-         <span class="phong_cach">
-          Phong cách
-         </span>
-        </button>
-       </div>
-       <div class="js-icons-vertical-carousel">
-        <div class="engraving-symbols-content-title section-trai_tim">
-         Trái tim
-        </div>
-        <div class="engraving-symbols-content-icons">
-         <button class="btn js-btn-engraving-symbol" data-name="Trái tim" data-svgurl="https://file.hstatic.net/200000103143/file/heart1.png">
-          <span>
-           <img alt="Trái tim" src="https://file.hstatic.net/200000103143/file/heart1.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="Trái tim" data-svgurl="https://file.hstatic.net/200000103143/file/0xea73.png">
-          <span>
-           <img alt="Trái tim" src="https://file.hstatic.net/200000103143/file/0xea73.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="Hoa hồng" data-svgurl="https://file.hstatic.net/200000103143/file/0xea11.png">
-          <span>
-           <img alt="Hoa hồng" src="https://file.hstatic.net/200000103143/file/0xea11.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="XO" data-svgurl="https://file.hstatic.net/200000103143/file/0xea77.png">
-          <span>
-           <img alt="XO" src="https://file.hstatic.net/200000103143/file/0xea77.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="Trái tim" data-svgurl="https://file.hstatic.net/200000103143/file/0xea08.png">
-          <span>
-           <img alt="Trái tim" src="https://file.hstatic.net/200000103143/file/0xea08.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="Trái tim" data-svgurl="https://file.hstatic.net/200000103143/file/0xea07.png">
-          <span>
-           <img alt="Trái tim" src="https://file.hstatic.net/200000103143/file/0xea07.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="Vô cực" data-svgurl="https://file.hstatic.net/200000103143/file/0xea04.png">
-          <span>
-           <img alt="Vô cực" src="https://file.hstatic.net/200000103143/file/0xea04.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="Trái tim lửa" data-svgurl="https://file.hstatic.net/200000103143/file/0xea13.png">
-          <span>
-           <img alt="Trái tim lửa" src="https://file.hstatic.net/200000103143/file/0xea13.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="Đôi môi" data-svgurl="https://file.hstatic.net/200000103143/file/0xea76.png">
-          <span>
-           <img alt="Đôi môi" src="https://file.hstatic.net/200000103143/file/0xea76.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="MOM" data-svgurl="https://file.hstatic.net/200000103143/file/0xea85.png">
-          <span>
-           <img alt="MOM" src="https://file.hstatic.net/200000103143/file/0xea85.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="Bắn tim" data-svgurl="https://file.hstatic.net/200000103143/file/0xea12.png">
-          <span>
-           <img alt="Bắn tim" src="https://file.hstatic.net/200000103143/file/0xea12.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="Trái tim" data-svgurl="https://file.hstatic.net/200000103143/file/0xea75.png">
-          <span>
-           <img alt="Trái tim" src="https://file.hstatic.net/200000103143/file/0xea75.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea78.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea78.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea78.png" src="https://file.hstatic.net/200000103143/file/0xea78.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea74.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea74.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea74.png" src="https://file.hstatic.net/200000103143/file/0xea74.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea03.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea03.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea03.png" src="https://file.hstatic.net/200000103143/file/0xea03.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea09.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea09.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea09.png" src="https://file.hstatic.net/200000103143/file/0xea09.png"/>
-          </span>
-         </button>
-        </div>
-        <div class="engraving-symbols-content-title section-dip_dac_biet">
-         Dịp đặc biệt
-        </div>
-        <div class="engraving-symbols-content-icons">
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea10.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea10.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea10.png" src="https://file.hstatic.net/200000103143/file/0xea10.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea01.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea01.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea01.png" src="https://file.hstatic.net/200000103143/file/0xea01.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea83.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea83.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea83.png" src="https://file.hstatic.net/200000103143/file/0xea83.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea28.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea28.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea28.png" src="https://file.hstatic.net/200000103143/file/0xea28.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea06.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea06.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea06.png" src="https://file.hstatic.net/200000103143/file/0xea06.png"/>
-          </span>
-         </button>
-        </div>
-        <div class="engraving-symbols-content-title section-bieu_tuong">
-         Biểu tượng
-        </div>
-        <div class="engraving-symbols-content-icons">
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea56.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea56.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea56.png" src="https://file.hstatic.net/200000103143/file/0xea56.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea53.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea53.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea53.png" src="https://file.hstatic.net/200000103143/file/0xea53.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea54.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea54.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea54.png" src="https://file.hstatic.net/200000103143/file/0xea54.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea82.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea82.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea82.png" src="https://file.hstatic.net/200000103143/file/0xea82.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xeb04.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xeb04.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xeb04.png" src="https://file.hstatic.net/200000103143/file/0xeb04.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea37.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea37.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea37.png" src="https://file.hstatic.net/200000103143/file/0xea37.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea55.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea55.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea55.png" src="https://file.hstatic.net/200000103143/file/0xea55.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea33.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea33.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea33.png" src="https://file.hstatic.net/200000103143/file/0xea33.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea57.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea57.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea57.png" src="https://file.hstatic.net/200000103143/file/0xea57.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea02.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea02.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea02.png" src="https://file.hstatic.net/200000103143/file/0xea02.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea86.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea86.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea86.png" src="https://file.hstatic.net/200000103143/file/0xea86.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea58.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea58.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea58.png" src="https://file.hstatic.net/200000103143/file/0xea58.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea80.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea80.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea80.png" src="https://file.hstatic.net/200000103143/file/0xea80.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea80.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea80.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea80.png" src="https://file.hstatic.net/200000103143/file/0xea80.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea87.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea87.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea87.png" src="https://file.hstatic.net/200000103143/file/0xea87.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea81.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea81.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea81.png" src="https://file.hstatic.net/200000103143/file/0xea81.png"/>
-          </span>
-         </button>
-        </div>
-        <div class="engraving-symbols-content-title section-dong_vat">
-         Động vật
-        </div>
-        <div class="engraving-symbols-content-icons">
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xeb32.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xeb32.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xeb32.png" src="https://file.hstatic.net/200000103143/file/0xeb32.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea16.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea16.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea16.png" src="https://file.hstatic.net/200000103143/file/0xea16.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea15.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea15.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea15.png" src="https://file.hstatic.net/200000103143/file/0xea15.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea14.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea14.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea14.png" src="https://file.hstatic.net/200000103143/file/0xea14.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xeb16.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xeb16.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xeb16.png" src="https://file.hstatic.net/200000103143/file/0xeb16.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea17.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea17.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea17.png" src="https://file.hstatic.net/200000103143/file/0xea17.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea97.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea97.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea97.png" src="https://file.hstatic.net/200000103143/file/0xea97.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xeb33.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xeb33.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xeb33.png" src="https://file.hstatic.net/200000103143/file/0xeb33.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xeb02.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xeb02.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xeb02.png" src="https://file.hstatic.net/200000103143/file/0xeb02.png"/>
-          </span>
-         </button>
-        </div>
-        <div class="engraving-symbols-content-title section-thien_nhien">
-         Thiên nhiên
-        </div>
-        <div class="engraving-symbols-content-icons">
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xeb03.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xeb03.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xeb03.png" src="https://file.hstatic.net/200000103143/file/0xeb03.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea23.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea23.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea23.png" src="https://file.hstatic.net/200000103143/file/0xea23.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xeb31.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xeb31.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xeb31.png" src="https://file.hstatic.net/200000103143/file/0xeb31.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea24.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea24.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea24.png" src="https://file.hstatic.net/200000103143/file/0xea24.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea19.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea19.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea19.png" src="https://file.hstatic.net/200000103143/file/0xea19.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea27.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea27.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea27.png" src="https://file.hstatic.net/200000103143/file/0xea27.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea22.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea22.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea22.png" src="https://file.hstatic.net/200000103143/file/0xea22.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea26.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea26.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea26.png" src="https://file.hstatic.net/200000103143/file/0xea26.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea21.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea21.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea21.png" src="https://file.hstatic.net/200000103143/file/0xea21.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xea20.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xea20.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xea20.png" src="https://file.hstatic.net/200000103143/file/0xea20.png"/>
-          </span>
-         </button>
-         <button class="btn js-btn-engraving-symbol" data-name="https://file.hstatic.net/200000103143/file/0xeb17.png" data-svgurl="https://file.hstatic.net/200000103143/file/0xeb17.png">
-          <span>
-           <img alt="https://file.hstatic.net/200000103143/file/0xeb17.png" src="https://file.hstatic.net/200000103143/file/0xeb17.png"/>
-          </span>
-         </button>
-        </div>
-        <div class="engraving-symbols-content-title section-phong_cach">
-         Phong cách
-        </div>
-        <div class="engraving-symbols-content-icons">
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-    <div class="group-type group-image" data-tab="image">
-     <div class="swiper swiper-engraving">
-      <div class="swiper-wrapper">
-       <div class="swiper-slide">
-        <div class="item-type-image">
-         <div class="head-type">
-          Cung hoàng đạo
-         </div>
-         <div class="list-icon">
-          <div class="item-icon">
-           <button>
-            <img alt="Kim Ngưu" src="https://file.hstatic.net/200000103143/file/0xea62.svg"/>
-           </button>
-           <label>
-            Kim Ngưu
-           </label>
-          </div>
-          <div class="item-icon">
-           <button>
-            <img alt="Song Tử" src="https://file.hstatic.net/200000103143/file/0xea63.svg"/>
-           </button>
-           <label>
-            Song Tử
-           </label>
-          </div>
-          <div class="item-icon">
-           <button>
-            <img alt="Song Ngư" src="https://file.hstatic.net/200000103143/file/0xea72.svg"/>
-           </button>
-           <label>
-            Song Ngư
-           </label>
-          </div>
-          <div class="item-icon">
-           <button>
-            <img alt="Nhân Mã" src="https://file.hstatic.net/200000103143/file/0xea69.svg"/>
-           </button>
-           <label>
-            Nhân Mã
-           </label>
-          </div>
-          <div class="item-icon">
-           <button>
-            <img alt="Sư Tử" src="https://file.hstatic.net/200000103143/file/0xea65.svg"/>
-           </button>
-           <label>
-            Sư Tử
-           </label>
-          </div>
-          <div class="item-icon">
-           <button>
-            <img alt="Cự Giải" src="https://file.hstatic.net/200000103143/file/0xea64.svg"/>
-           </button>
-           <label>
-            Cự Giải
-           </label>
-          </div>
-          <div class="item-icon">
-           <button>
-            <img alt="Thiên Bình" src="https://file.hstatic.net/200000103143/file/0xea67.svg"/>
-           </button>
-           <label>
-            Thiên Bình
-           </label>
-          </div>
-          <div class="item-icon">
-           <button>
-            <img alt="Ma Kết" src="https://file.hstatic.net/200000103143/file/0xea70.svg"/>
-           </button>
-           <label>
-            Ma Kết
-           </label>
-          </div>
-          <div class="item-icon">
-           <button>
-            <img alt="Xử Nữ" src="https://file.hstatic.net/200000103143/file/0xea66.svg"/>
-           </button>
-           <label>
-            Xử Nữ
-           </label>
-          </div>
-          <div class="item-icon">
-           <button>
-            <img alt="Bọ Cạp" src="https://file.hstatic.net/200000103143/file/0xea68.svg"/>
-           </button>
-           <label>
-            Bọ Cạp
-           </label>
-          </div>
-          <div class="item-icon">
-           <button>
-            <img alt="Bảo Bình" src="https://file.hstatic.net/200000103143/file/0xea71.svg"/>
-           </button>
-           <label>
-            Bảo Bình
-           </label>
-          </div>
-          <div class="item-icon">
-           <button>
-            <img alt="Bạch Dương" src="https://file.hstatic.net/200000103143/file/0xea61.svg"/>
-           </button>
-           <label>
-            Bạch Dương
-           </label>
-          </div>
-         </div>
-        </div>
-       </div>
-       <div class="swiper-slide">
-        <div class="item-type-image">
-         <div class="head-type">
-          Zodiac Signs
-         </div>
-         <div class="list-icon">
-          <div class="item-icon">
-           <button>
-            <img alt="Kim Ngưu" src="https://file.hstatic.net/200000103143/file/taurus.svg"/>
-           </button>
-           <label>
-            Kim Ngưu
-           </label>
-          </div>
-          <div class="item-icon">
-           <button>
-            <img alt="Song Tử" src="https://file.hstatic.net/200000103143/file/gemini.svg"/>
-           </button>
-           <label>
-            Song Tử
-           </label>
-          </div>
-          <div class="item-icon">
-           <button>
-            <img alt="Sư Tử" src="https://file.hstatic.net/200000103143/file/leo.svg"/>
-           </button>
-           <label>
-            Sư Tử
-           </label>
-          </div>
-          <div class="item-icon">
-           <button>
-            <img alt="Cự Giải" src="https://file.hstatic.net/200000103143/file/cancer.svg"/>
-           </button>
-           <label>
-            Cự Giải
-           </label>
-          </div>
-          <div class="item-icon">
-           <button>
-            <img alt="Song Ngư" src="https://file.hstatic.net/200000103143/file/pisces.svg"/>
-           </button>
-           <label>
-            Song Ngư
-           </label>
-          </div>
-          <div class="item-icon">
-           <button>
-            <img alt="Bọ Cạp" src="https://file.hstatic.net/200000103143/file/scorpio.svg"/>
-           </button>
-           <label>
-            Bọ Cạp
-           </label>
-          </div>
-          <div class="item-icon">
-           <button>
-            <img alt="Bạch Dương" src="https://file.hstatic.net/200000103143/file/aries.svg"/>
-           </button>
-           <label>
-            Bạch Dương
-           </label>
-          </div>
-          <div class="item-icon">
-           <button>
-            <img alt="Ma Kết" src="https://file.hstatic.net/200000103143/file/capricorn.svg"/>
-           </button>
-           <label>
-            Ma Kết
-           </label>
-          </div>
-          <div class="item-icon">
-           <button>
-            <img alt="Thiên Bình" src="https://file.hstatic.net/200000103143/file/libra.svg"/>
-           </button>
-           <label>
-            Thiên Bình
-           </label>
-          </div>
-          <div class="item-icon">
-           <button>
-            <img alt="Nhân Mã" src="https://file.hstatic.net/200000103143/file/sagi.svg"/>
-           </button>
-           <label>
-            Nhân Mã
-           </label>
-          </div>
-          <div class="item-icon">
-           <button>
-            <img alt="Xử Nữ" src="https://file.hstatic.net/200000103143/file/virgo.svg"/>
-           </button>
-           <label>
-            Xử Nữ
-           </label>
-          </div>
-          <div class="item-icon">
-           <button>
-            <img alt="Bảo Bình" src="https://file.hstatic.net/200000103143/file/virgo.svg"/>
-           </button>
-           <label>
-            Bảo Bình
-           </label>
-          </div>
-         </div>
-        </div>
-       </div>
-      </div>
-      <div class="swiper-style-btn swiper-prev">
-       <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 100 100" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
-        <g>
-         <switch>
-          <g>
-           <path d="M34.5 83c-.5 0-1-.2-1.4-.6-.8-.8-.8-2 0-2.8L62.7 50 33.1 20.4c-.8-.8-.8-2 0-2.8s2-.8 2.8 0l31 31c.8.8.8 2 0 2.8l-31 31c-.4.4-.9.6-1.4.6z" data-original="#000000" fill="#000000" opacity="1">
-           </path>
-          </g>
-         </switch>
-        </g>
-       </svg>
-      </div>
-      <div class="swiper-style-btn swiper-next">
-       <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 100 100" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
-        <g>
-         <switch>
-          <g>
-           <path d="M34.5 83c-.5 0-1-.2-1.4-.6-.8-.8-.8-2 0-2.8L62.7 50 33.1 20.4c-.8-.8-.8-2 0-2.8s2-.8 2.8 0l31 31c.8.8.8 2 0 2.8l-31 31c-.4.4-.9.6-1.4.6z" data-original="#000000" fill="#000000" opacity="1">
-           </path>
-          </g>
-         </switch>
-        </g>
-       </svg>
-      </div>
-     </div>
-     <div class="swiper-pagination">
-     </div>
-    </div>
-   </div>
-   <div class="action-print">
-    <div class="wrap-at-print">
-     <button id="capture-btn-save">
-      Lưu và xem mẫu
-     </button>
-     <button class="d-none" id="capture-btn-review">
-      Xem mẫu
-     </button>
-    </div>
-    <button class="close-engraving">
-     Huỷ
-    </button>
-   </div>
-  </div>
- </div>
-</div>
-<div aria-atomic="true" aria-live="assertive" class="toast" data-delay="8000" role="alert">
- <button aria-label="Close" class="close" data-bs-dismiss="toast" type="button">
-  <svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-   <path d="M18.75 5.25L5.25 18.75" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
-   </path>
-   <path d="M18.75 18.75L5.25 5.25" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
-   </path>
-  </svg>
- </button>
- <div class="toast-body">
- </div>
-</div>
-<div class="mainLoading" id="mainLoading">
- <div class="underlay">
- </div>
- <div class="spinner">
-  <div class="dot1">
-  </div>
-  <div class="dot2">
-  </div>
- </div>
-</div>
-SCRIPT THEME 
-
-
-
- Google Tag Manager (noscript)
-<noscript>
- <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-NGF6FB3" style="display:none;visibility:hidden" width="0">
- </iframe>
-</noscript>
-End Google Tag Manager (noscript)
-
 {%endblock %}

@@ -17,9 +17,7 @@
 {{ loadCommonJs() | raw }}
 {{ loadTemplateJs() | raw }}
 <div id="app" class="mainBody-theme-container">
-    {% include 'layout/header' %}
     {% block body %}{% endblock %}
-    {% include 'layout/footer' %}
 </div>
 {{ loadScripts({'position':'body'}) | raw }}
 {{ loadViewMarketingEvent() | raw }}
