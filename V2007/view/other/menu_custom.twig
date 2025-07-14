@@ -1,0 +1,75 @@
+<ul class="header-menu-list menu-header">
+    {% set menu = getMenus({'type':'header'}) %}
+    {% if menu is not empty %}
+        {% for m in menu %}
+            <li class="header-menu-list-item {% if m.childs %}has-child{% endif %}">
+                <div class="wrap-group-menu">
+                    <a href="{{ m.viewLink }}">
+                        <span>{{ m.name }}</span>
+                    </a>
+                    <div class="box-arrow-svg">
+                        {% if m.childs %}
+                            <i class="fa-thin fa-angle-down"></i>
+                        {% endif %}
+                    </div>
+                </div>
+                {% if m.type in m.typeCates %}
+                    {% set categoryCustom = getCategoryTypeMenu(m.type) %}
+                    {% if categoryCustom is not empty %}
+                        <div class="header-menu-mega">
+                            <div class="header-menu-mega-wrapper">
+                                <ul class="header-menu-mega-list">
+                                    {% for c in categoryCustom %}
+                                        <li class="header-menu-mega-item">
+                                            <div class="wrap-group-menu">
+                                                <a href="{{ c.viewLink }}">
+                                                    <span>{{ c.name }}</span>
+                                                </a>
+                                                <div class="box-arrow-svg">
+                                                    {% if c.childs %}
+                                                        <svg height="20" viewbox="0 0 19.777 10.413" width="20" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M0 .637L.637 0l9.251 9.326L19.14.075l.637.637-9.59 9.55c-.074.076-.186.15-.299.15s-.224-.074-.3-.15L0 .638z" xmlns="http://www.w3.org/2000/svg"></path>
+                                                        </svg>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                            {% if c.childs %}
+                                                <ul class="header-menu-mega-sub">
+                                                    {% for c1 in c.childs %}
+                                                        <li class="back-menu">
+                                                            <a href="{{ c1.viewLink }}">
+                                                                <span>{{ c1.name }}</span>
+                                                            </a>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            {% endif %}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% else %}
+                    {% if m.childs %}
+                        <div class="header-menu-mega">
+                            <div class="header-menu-mega-wrapper">
+                                <ul class="header-menu-mega-list">
+                                    {% for c1 in m.childs %}
+                                        <li class="header-menu-mega-item">
+                                            <div class="wrap-group-menu">
+                                                <a href="{{ c1.viewLink }}">
+                                                    <span>{{ c1.name }}</span>
+                                                </a>
+                                            </div>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endif %}
+            </li>
+        {% endfor %}
+    {% endif %}
+</ul>
