@@ -1,0 +1,59 @@
+<ul class="header-menu-list menu-header">
+    {% set category = getCategories() %}
+    {% if category is not empty %}
+        {% for c in category %}
+            {% if(loop.index <=5) %}
+            <li class="header-menu-list-item{% if c.childs is not empty %} has-child{% endif %}">
+                <div class="wrap-group-menu">
+                    <a href="{{ c.viewLink }}">
+                        <span>{{ c.name }}</span>
+                    </a>
+                    {% if c.childs is not empty %}
+                        <div class="box-arrow-svg">
+                            <i class="fa-thin fa-angle-down"></i>
+                        </div>
+                    {% endif %}
+                </div>
+                {% if c.childs is not empty %}
+                    <div class="header-menu-mega">
+                        <div class="header-menu-mega-wrapper">
+                            <ul class="header-menu-mega-list">
+                                {% for c1 in c.childs %}
+                                    <li class="header-menu-mega-item {% if c1.childs is not empty %} has-child{% endif %}">
+                                        <div class="wrap-group-menu">
+                                            <a href="{{ c1.viewLink }}">
+                                                <span>{{ c1.name }}</span>
+                                            </a>
+                                            {% if c1.childs %}
+                                            <div class="box-arrow-svg">
+                                                <i class="fa-light fa-angle-right"></i>
+                                            </div>
+                                            {% endif %}
+                                        </div>
+                                        {% if c1.childs %}
+                                        <ul class="header-menu-mega-sub">
+                                            <li class="back-menu">
+                                                <a href="#" class="active">
+                                                    <span>{{ c1.name }}</span>
+                                                </a>
+                                            </li>
+                                            {% for c2 in c1.childs %}
+                                            <li>
+                                                <a href="{{ c2.viewLink }}">
+                                                    <span>{{ c2.name }}</span>
+                                                </a>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                        {% endif %}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                {% endif %}
+            </li>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+</ul>

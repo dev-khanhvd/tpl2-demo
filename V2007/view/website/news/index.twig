@@ -1,0 +1,342 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(translate('Danh sách bài viết')).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ getKeyContentValue('META_KEYWORDS') }}">
+<meta name="description" content="{{ getKeyContentValue('META_DESCRIPTION') }}">
+<meta property="og:title" content="{{ getKeyContentValue('META_TITLE') }}">
+<meta property="og:url" content="{{ getCurrentUrl() }}">
+<meta property="og:image" content="{{ getBusinessLogo() }}">
+<link rel="canonical" href="{{ getCurrentUrl() }}">
+{%endblock %}
+
+{%block body %}
+ <main class="body-main">
+  <div class="container blog-container">
+   <div class="head-category">
+    Danh mục bài viết
+   </div>
+   <div class="category-filter">
+    <a href="/collections/charms">
+     Charms
+    </a>
+    <a href="/collections/vongtaypandora">
+     Vòng tay
+    </a>
+    <a href="/collections/day-chuyen-1">
+     Dây chuyền
+    </a>
+    <a href="/collections/hoataipandora">
+     Hoa tai
+    </a>
+    <a href="/collections/nhan-pandora">
+     Nhẫn
+    </a>
+    <a href="https://pandora.norbreeze.vn/collections/khuyen-mai">
+     Combo
+    </a>
+   </div>
+   <div class="highlight-section">
+    <div class="featured-post">
+     <h3>
+      Bài viết nổi bật
+     </h3>
+     <div class="swiper featured-swiper swiper-style swiper-style-slider">
+      <div class="swiper-wrapper">
+       <div class="swiper-slide">
+        <a aria-label="Bí Quyết Bảo Quản Trang Sức Đúng Cách" href="/blogs/news/bi-quyet-bao-quan-trang-suc-dung-cach">
+         <img alt="Bí Quyết Bảo Quản Trang Sức Đúng Cách" src="//file.hstatic.net/200000103143/article/ldp_mob_cate_4_37d3ac5a24ff474ca4cd0133ae0c2491_large.jpg"/>
+        </a>
+        <div class="post-info">
+         <p>
+          16/05/2025 | Admin Pandora
+         </p>
+         <h2>
+          <a aria-label="Bí Quyết Bảo Quản Trang Sức Đúng Cách" href="/blogs/news/bi-quyet-bao-quan-trang-suc-dung-cach">
+           Bí Quyết Bảo Quản Trang Sức Đúng Cách
+          </a>
+         </h2>
+         <button class="cta d-none">
+          Tin tức
+         </button>
+         <div class="short">
+          Trang sức Pandora không chỉ là món phụ kiện mà còn là người bạn đồng hành lưu giữ những khoảnh...
+         </div>
+        </div>
+       </div>
+       <div class="swiper-slide">
+        <a aria-label="Hướng dẫn tạo tài khoản thành viên trên pandora" href="/blogs/news/huong-dan-tao-tai-khoan-thanh-vien-tren-pandora">
+         <img alt="Hướng dẫn tạo tài khoản thành viên trên pandora" src="//file.hstatic.net/200000103143/article/banner_mb_1200x500_68b50dbb1fa846ca935fb5005226bbc0_large.jpg"/>
+        </a>
+        <div class="post-info">
+         <p>
+          15/05/2025 | Lan Phương
+         </p>
+         <h2>
+          <a aria-label="Hướng dẫn tạo tài khoản thành viên trên pandora" href="/blogs/news/huong-dan-tao-tai-khoan-thanh-vien-tren-pandora">
+           Hướng dẫn tạo tài khoản thành viên trên pandora
+          </a>
+         </h2>
+         <button class="cta d-none">
+          Tin tức
+         </button>
+         <div class="short">
+          Bước 1: Quý Khách truy cập website: https://pandora.norbreeze.vnDesktopMobile   Bước 2:Đăng nhập/ Đăng ký1. Khách hàng đã có tài khoản trên website: chọn "ĐĂNG...
+         </div>
+        </div>
+       </div>
+       <div class="swiper-slide">
+        <a aria-label="HƯỚNG DẪN VỆ SINH TRANG SỨC PANDORA" href="/blogs/news/huong-dan-ve-sinh-trang-suc-pandora">
+         <img alt="HƯỚNG DẪN VỆ SINH TRANG SỨC PANDORA" src="//file.hstatic.net/200000103143/article/giftset_banner_1_ldp_mb_cfd100df93ff4e8d945d5da8f60ad93a_large.jpg"/>
+        </a>
+        <div class="post-info">
+         <p>
+          12/05/2025 | Admin Pandora
+         </p>
+         <h2>
+          <a aria-label="HƯỚNG DẪN VỆ SINH TRANG SỨC PANDORA" href="/blogs/news/huong-dan-ve-sinh-trang-suc-pandora">
+           HƯỚNG DẪN VỆ SINH TRANG SỨC PANDORA
+          </a>
+         </h2>
+         <button class="cta d-none">
+          Tin tức
+         </button>
+         <div class="short">
+          Từ chiếc dây chuyền quý giá đến những chiếc nhẫn yêu thích, hãy khám phá hướng dẫn toàn diện về...
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="swiper-pagination">
+      </div>
+      <div class="swiper-button-prev">
+      </div>
+      <div class="swiper-button-next">
+      </div>
+     </div>
+    </div>
+    <div class="popular-posts">
+     <h3>
+      Xem nhiều nhất
+     </h3>
+     <ul>
+      <li>
+       <a aria-label="Bí Quyết Bảo Quản Trang Sức Đúng Cách" href="/blogs/news/bi-quyet-bao-quan-trang-suc-dung-cach">
+        <img alt="Bí Quyết Bảo Quản Trang Sức Đúng Cách" src="//file.hstatic.net/200000103143/article/ldp_mob_cate_4_37d3ac5a24ff474ca4cd0133ae0c2491_large.jpg"/>
+       </a>
+       <p>
+        <span>
+         Tin tức - 16/05/2025
+        </span>
+        <br/>
+        <a aria-label="Bí Quyết Bảo Quản Trang Sức Đúng Cách" href="/blogs/news/bi-quyet-bao-quan-trang-suc-dung-cach">
+         Bí Quyết Bảo Quản Trang Sức Đúng Cách
+        </a>
+       </p>
+      </li>
+      <li>
+       <a aria-label="Hướng dẫn tạo tài khoản thành viên trên pandora" href="/blogs/news/huong-dan-tao-tai-khoan-thanh-vien-tren-pandora">
+        <img alt="Hướng dẫn tạo tài khoản thành viên trên pandora" src="//file.hstatic.net/200000103143/article/banner_mb_1200x500_68b50dbb1fa846ca935fb5005226bbc0_large.jpg"/>
+       </a>
+       <p>
+        <span>
+         Tin tức - 15/05/2025
+        </span>
+        <br/>
+        <a aria-label="Hướng dẫn tạo tài khoản thành viên trên pandora" href="/blogs/news/huong-dan-tao-tai-khoan-thanh-vien-tren-pandora">
+         Hướng dẫn tạo tài khoản thành viên trên pandora
+        </a>
+       </p>
+      </li>
+      <li>
+       <a aria-label="HƯỚNG DẪN VỆ SINH TRANG SỨC PANDORA" href="/blogs/news/huong-dan-ve-sinh-trang-suc-pandora">
+        <img alt="HƯỚNG DẪN VỆ SINH TRANG SỨC PANDORA" src="//file.hstatic.net/200000103143/article/giftset_banner_1_ldp_mb_cfd100df93ff4e8d945d5da8f60ad93a_large.jpg"/>
+       </a>
+       <p>
+        <span>
+         Tin tức - 12/05/2025
+        </span>
+        <br/>
+        <a aria-label="HƯỚNG DẪN VỆ SINH TRANG SỨC PANDORA" href="/blogs/news/huong-dan-ve-sinh-trang-suc-pandora">
+         HƯỚNG DẪN VỆ SINH TRANG SỨC PANDORA
+        </a>
+       </p>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="latest-posts">
+    <h3>
+     Bài mới mỗi ngày
+    </h3>
+    <div class="posts-grid">
+     <div class="post-card">
+      <a aria-label="/blogs/cung-menh/trang-suc-phong-thuy-cung-hoang-dao-bao-binh-aquarius" href="/blogs/cung-menh/trang-suc-phong-thuy-cung-hoang-dao-bao-binh-aquarius">
+       <img alt="Trang Sức Phong Thủy Cung Hoàng Đạo Bảo Bình Aquarius" src="//cdn.hstatic.net/shared/noDefaultImage6_large.gif"/>
+      </a>
+      <div>
+       <span class="tag">
+        Cung - Mệnh
+       </span>
+       <span class="time_mb">
+        - 08/07/2025
+       </span>
+       <h4>
+        <a href="/blogs/cung-menh/trang-suc-phong-thuy-cung-hoang-dao-bao-binh-aquarius">
+         Trang Sức Phong Thủy Cung Hoàng Đạo Bảo Bình Aquarius
+        </a>
+       </h4>
+       <time>
+        08/07/2025 | Admin Pandora
+       </time>
+       <p>
+        Cung Bảo Bình: Người dẫn đầu của tương laiCung Bảo Bình (Aquarius) là cung thứ 11 trong vòng hoàng đạo,...
+       </p>
+      </div>
+     </div>
+     <div class="post-card">
+      <a aria-label="/blogs/cung-menh/trang-suc-phong-thuy-cung-hoang-dao-nhan-ma-sagittarius" href="/blogs/cung-menh/trang-suc-phong-thuy-cung-hoang-dao-nhan-ma-sagittarius">
+       <img alt="Trang Sức Phong Thủy Cung Hoàng Đạo Nhân Mã Sagittarius" src="//file.hstatic.net/200000103143/article/rpnt_ao25-horoscope-some-meta-product-image-03-logo-keyline-square__1__1b48e7f6befd4f10bfcee3f48d5e7ca5_large.png"/>
+      </a>
+      <div>
+       <span class="tag">
+        Cung - Mệnh
+       </span>
+       <span class="time_mb">
+        - 04/07/2025
+       </span>
+       <h4>
+        <a href="/blogs/cung-menh/trang-suc-phong-thuy-cung-hoang-dao-nhan-ma-sagittarius">
+         Trang Sức Phong Thủy Cung Hoàng Đạo Nhân Mã Sagittarius
+        </a>
+       </h4>
+       <time>
+        04/07/2025 | Admin Pandora
+       </time>
+       <p>
+        Cung Nhân Mã – Biểu tượng của sự lạc quan và tự doNhân Mã (Sagittarius) là cung thứ 9 trong vòng...
+       </p>
+      </div>
+     </div>
+     <div class="post-card">
+      <a aria-label="/blogs/cung-menh/trang-suc-phong-thuy-cung-hoang-dao-bo-cap-scorpio" href="/blogs/cung-menh/trang-suc-phong-thuy-cung-hoang-dao-bo-cap-scorpio">
+       <img alt="Trang Sức Phong Thủy Cung Hoàng Đạo Bọ Cạp Scorpio" src="//file.hstatic.net/200000103143/article/pngtrpnt_ao25-horoscope-some-meta-product-image-02-logo-keyline-square_f108981621074251864e4e290a2431c5_large.png"/>
+      </a>
+      <div>
+       <span class="tag">
+        Cung - Mệnh
+       </span>
+       <span class="time_mb">
+        - 04/07/2025
+       </span>
+       <h4>
+        <a href="/blogs/cung-menh/trang-suc-phong-thuy-cung-hoang-dao-bo-cap-scorpio">
+         Trang Sức Phong Thủy Cung Hoàng Đạo Bọ Cạp Scorpio
+        </a>
+       </h4>
+       <time>
+        04/07/2025 | Admin Pandora
+       </time>
+       <p>
+        Cung Bọ Cạp – Biểu tượng của chiều sâu và đam mêBọ Cạp (Scorpio) là cung thứ 8 trong vòng...
+       </p>
+      </div>
+     </div>
+     <div class="post-card">
+      <a aria-label="/blogs/cung-menh/trang-suc-phong-thuy-cung-hoang-dao-thien-binh-libra" href="/blogs/cung-menh/trang-suc-phong-thuy-cung-hoang-dao-thien-binh-libra">
+       <img alt="Trang Sức Phong Thủy Cung Hoàng Đạo Thiên Bình (Libra)" src="//file.hstatic.net/200000103143/article/pngtrpnt_ao25-horoscope-some-meta-product-image-05-logo-keyline-square_fbfd5e7f828a48f48cba21cf8f350c43_large.png"/>
+      </a>
+      <div>
+       <span class="tag">
+        Cung - Mệnh
+       </span>
+       <span class="time_mb">
+        - 04/07/2025
+       </span>
+       <h4>
+        <a href="/blogs/cung-menh/trang-suc-phong-thuy-cung-hoang-dao-thien-binh-libra">
+         Trang Sức Phong Thủy Cung Hoàng Đạo Thiên Bình (Libra)
+        </a>
+       </h4>
+       <time>
+        04/07/2025 | Admin Pandora
+       </time>
+       <p>
+        Cung Thiên Bình – Biểu tượng của sự công bằng và quyến rũThiên Bình (Libra) là cung thứ 7 trong...
+       </p>
+      </div>
+     </div>
+     <div class="post-card">
+      <a aria-label="/blogs/cung-menh/trang-suc-phong-thuy-cung-hoang-dao-xu-nu-virgo" href="/blogs/cung-menh/trang-suc-phong-thuy-cung-hoang-dao-xu-nu-virgo">
+       <img alt="Trang Sức Phong Thủy Cung Hoàng Đạo Xử Nữ Virgo" src="//file.hstatic.net/200000103143/article/pngtrpnt_ao25-horoscope-some-meta-model-image-12-clean-keyline-square_e2dec0d7a89849b4acc0e7878b813047_large.png"/>
+      </a>
+      <div>
+       <span class="tag">
+        Cung - Mệnh
+       </span>
+       <span class="time_mb">
+        - 04/07/2025
+       </span>
+       <h4>
+        <a href="/blogs/cung-menh/trang-suc-phong-thuy-cung-hoang-dao-xu-nu-virgo">
+         Trang Sức Phong Thủy Cung Hoàng Đạo Xử Nữ Virgo
+        </a>
+       </h4>
+       <time>
+        04/07/2025 | Admin Pandora
+       </time>
+       <p>
+        Cung Xử Nữ: Tinh Tế – Tỉ Mỉ – Thanh LịchXử Nữ (Virgo) là cung thứ 6 trong vòng hoàng đạo, dành...
+       </p>
+      </div>
+     </div>
+     <div class="post-card">
+      <a aria-label="/blogs/cung-menh/trang-suc-phong-thuy-cung-hoang-dao-su-tu-leo" href="/blogs/cung-menh/trang-suc-phong-thuy-cung-hoang-dao-su-tu-leo">
+       <img alt="Trang Sức Phong Thủy Cung Hoàng Đạo Sư Tử - Leo" src="//file.hstatic.net/200000103143/article/ngtrpnt_ao25-horoscope-some-meta-product-image-06-clean-keyline-square_cb96a6f8ff3540cebc7b53845577986c_large.png"/>
+      </a>
+      <div>
+       <span class="tag">
+        Cung - Mệnh
+       </span>
+       <span class="time_mb">
+        - 04/07/2025
+       </span>
+       <h4>
+        <a href="/blogs/cung-menh/trang-suc-phong-thuy-cung-hoang-dao-su-tu-leo">
+         Trang Sức Phong Thủy Cung Hoàng Đạo Sư Tử - Leo
+        </a>
+       </h4>
+       <time>
+        04/07/2025 | Admin Pandora
+       </time>
+       <p>
+        Cung Sư Tử: Quyến Rũ – Bản Lĩnh – Tỏa SángSư Tử (Leo) là cung thứ 5 trong vòng hoàng đạo,...
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="clearfix" id="pagination">
+    <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+     <span class="page-node current">
+      1
+     </span>
+     <a class="page-node" href="/blogs/all?page=2">
+      2
+     </a>
+     <a class="page-node" href="/blogs/all?page=3">
+      3
+     </a>
+     <span class="page-node">
+      …
+     </span>
+     <a class="page-node" href="/blogs/all?page=10">
+      10
+     </a>
+     <a class="page-node" href="/blogs/all?page=2">
+      ❯
+     </a>
+    </div>
+   </div>
+  </div>
+ </main>
+{%endblock %}

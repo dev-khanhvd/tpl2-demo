@@ -1,0 +1,103 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(translate('Hệ thống cửa hàng')).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ getKeyContentValue('META_KEYWORDS') }}">
+<meta name="description" content="{{ getKeyContentValue('META_DESCRIPTION') }}">
+<meta property="og:title" content="{{ getKeyContentValue('META_TITLE') }}">
+<meta property="og:url" content="{{ getCurrentUrl() }}">
+<meta property="og:image" content="{{ getBusinessLogo() }}">
+<link rel="canonical" href="{{ getCurrentUrl() }}">
+{%endblock %}
+
+{%block body %}
+ <main class="body-main">
+ <div class="page-layout store-layout" id="page-stores">
+  <div class="page-heading">
+   <div class="hero-banner" id="hero-banner">
+    <div class="hero-wrapper" style="background-image: url(https://file.hstatic.net/200000103143/file/tg_image_3274504118_1a2b37ab6451462480592eb6cf23e73a.jpeg);">
+     <div class="hero-content-backing">
+      <div class="container">
+       <div class="hero-banner d-xl-none d-lg-none">
+        <div class="aspect-ratio">
+         <img alt="HỆ THỐNG CỬA HÀNG" loading="lazy" src="https://file.hstatic.net/200000103143/file/tg_image_3274504118_1a2b37ab6451462480592eb6cf23e73a.jpeg" />
+        </div>
+       </div>
+       <div class="hero-content">
+        <h1 class="hero-title text-white">
+         HỆ THỐNG CỬA HÀNG
+        </h1>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="container">
+    <div class="breadcrumb-wrapper">
+     <div class="breadcrumb-list">
+      <ol class="breadcrumb breadcrumb-arrows" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+       <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+        <a href="/" itemprop="item" target="_self">
+          <span itemprop="name">
+           Trang chủ
+          </span>
+        </a>
+        <meta content="1" itemprop="position"/>
+       </li>
+       <li class="active" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+         <span content="https://pandora.norbreeze.vn/pages/he-thong-cua-hang" itemprop="item">
+          <strong itemprop="name">
+           HỆ THỐNG CỬA HÀNG
+          </strong>
+         </span>
+        <meta content="2" itemprop="position"/>
+       </li>
+      </ol>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="page-body">
+   <div class="container">
+    <div class="listStore">
+     <div class="leftColStore">
+      <div class="form-group input-group">
+       <label class="form-control-label icon-field">
+        Chọn Tỉnh/Thành phố
+       </label>
+       <select class="change-tinh form-control input-text" data-store="store" name="change-tinh">
+        <option data-url="" value="all">
+         Chọn tỉnh thành
+        </option>
+        <option data-url="https://pandora.norbreeze.vn/pages/he-thong-cua-hang" value="https://pandora.norbreeze.vn/pages/he-thong-cua-hang">
+         Cửa hàng toàn quốc
+        </option>
+       </select>
+      </div>
+      <div class="form-group input-group">
+       <label class="form-control-label icon-field">
+        Chọn Quận/Huyện
+       </label>
+       <input class="change-quan form-control input-text" name="change-quan" onkeyup="filterItemInList($('.change-quan'))" placeholder="Chọn Quận..."/>
+      </div>
+      <div class="resultStoreBig">
+       <h4 class="titleStorePage resuteBlog">
+        Cửa hàng mở cửa
+       </h4>
+       <div class="resultStore">
+        <div class="innerResultStore">
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="rightColStore">
+      <div id="map_embed">
+       <iframe height="580" src="https://www.google.com/maps/d/embed?mid=1i31gacu8V_C_wyketj0Ft0Kl8kOEO34&amp;ehbc=2E312F" width="100%">
+       </iframe>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</main>
+{%endblock %}
