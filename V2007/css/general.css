@@ -2059,7 +2059,7 @@ table tr td:last-child, table tr th:last-child {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
+    gap: 5px;
 }
 
 .header-main .header-bottom .header-menu .header-menu-list-item > .wrap-group-menu svg {
