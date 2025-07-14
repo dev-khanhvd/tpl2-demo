@@ -333,7 +333,7 @@
           </div>
           <div class="foot">
            <a class="aspect-ratio" href="/account/login">
-            <img  src="https://file.hstatic.net/200000103143/file/hinh_log_in.png"/>
+            <img src="https://file.hstatic.net/200000103143/file/hinh_log_in.png"/>
            </a>
            <div class="notify">
             Đăng ký thành viên PANDORA ngay để tận hưởng ưu đãi độc quyền online.
@@ -433,79 +433,11 @@
      </div>
     </div>
     <div class="header-menu-nav">
-     <ul class="header-menu-list menu-header">
-      <li class="header-menu-list-item has-child">
-       <div class="wrap-group-menu">
-        <a  href="/collections/new-collection-bo-suu-tap-trang-suc-moi-nhat">
-         <span>
-          BỘ SƯU TẬP MỚI
-         </span>
-        </a>
-        <div class="box-arrow-svg">
-         <i class="fa-thin fa-angle-down"></i>
-        </div>
-       </div>
-       <div class="header-menu-mega">
-        <div class="header-menu-mega-wrapper">
-         <ul class="header-menu-mega-list">
-          <li class="header-menu-mega-item">
-           <div class="wrap-group-menu">
-            <a href="/collections/tat-ca-san-pham-trang-suc">
-             <span>
-              TẤT CẢ SẢN PHẨM
-             </span>
-            </a>
-            <div class="box-arrow-svg">
-             <svg height="20" viewbox="0 0 19.777 10.413" width="20" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 .637L.637 0l9.251 9.326L19.14.075l.637.637-9.59 9.55c-.074.076-.186.15-.299.15s-.224-.074-.3-.15L0 .638z" xmlns="http://www.w3.org/2000/svg">
-              </path>
-             </svg>
-            </div>
-           </div>
-           <ul class="header-menu-mega-sub">
-            <li class="back-menu">
-             <a href="#">
-              <svg height="20" viewbox="0 0 19.777 10.413" width="20" xmlns="http://www.w3.org/2000/svg">
-               <path d="M0 .637L.637 0l9.251 9.326L19.14.075l.637.637-9.59 9.55c-.074.076-.186.15-.299.15s-.224-.074-.3-.15L0 .638z" xmlns="http://www.w3.org/2000/svg">
-               </path>
-              </svg>
-              <span>
-               TẤT CẢ SẢN PHẨM
-              </span>
-             </a>
-            </li>
-            <li>
-             <a href="/collections/vongtaypandora">
-              Vòng tay
-             </a>
-            </li>
-            <li>
-             <a href="/collections/charms">
-              Charms
-             </a>
-            </li>
-            <li>
-             <a href="/collections/day-chuyen-1">
-              Dây chuyền
-             </a>
-            </li>
-            <li>
-             <a href="/collections/hoataipandora">
-              Hoa tai
-             </a>
-            </li>
-            <li>
-             <a href="/collections/nhan-pandora">
-              Nhẫn
-             </a>
-            </li>
-           </ul>
-          </li>
-         </ul>
-        </div>
-       </div>
-      </li>
-     </ul>
+     {% if(menuIsExisted({'type': 'header' })) %}
+            {% include 'other/menu_custom' %}
+        {% else %}
+            {% include 'other/menu' %}
+        {% endif %}
     </div>
    </div>
   </div>
