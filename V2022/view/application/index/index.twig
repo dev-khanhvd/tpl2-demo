@@ -1,0 +1,574 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(translate('Trang chủ')).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ getKeyContentValue('META_KEYWORDS') }}">
+<meta name="description" content="{{ getKeyContentValue('META_DESCRIPTION') }}">
+<meta property="og:title" content="{{ getKeyContentValue('META_TITLE') }}">
+<meta property="og:url" content="{{ getCurrentUrl() }}">
+<meta property="og:image" content="{{ getBusinessLogo() }}">
+<link rel="canonical" href="{{ getCurrentUrl() }}">
+{%endblock %}
+
+{%block body %}
+
+<div class="hidden-md hidden-lg opacity_menu">
+</div>
+Main content 
+ Menu mobile
+<div class="sidenav menu_mobile hidden-md hidden-lg" id="mySidenav">
+ <div class="top_menu_mobile">
+  <span class="close_menu">
+  </span>
+ </div>
+ <div class="content_memu_mb">
+  <div class="link_list_mobile">
+   <ul class="ct-mobile">
+    <li class="level0 level-top parent level_ico">
+     <a href="https://www.shippo.vn/bang-gia-ky-gui-1-buoc-hang-tmdt">
+      BIỂU PHÍ
+     </a>
+     <i class="ti-plus hide_close">
+     </i>
+     <ul class="level0 sub-menu" style="display:none;">
+      <li class="level1">
+       <a href="https://www.shippo.vn/bieu-phi">
+        <span>
+         Phí vận chuyển hàng thương mại điện tử
+        </span>
+       </a>
+      </li>
+      <li class="level1">
+       <a href="https://www.shippo.vn/bieu-phi-th">
+        <span>
+         Phí vận chuyển hàng Tổng hợp
+        </span>
+       </a>
+      </li>
+      <li class="level1">
+       <a href="https://www.shippo.vn/bang-gia-hang-theo-lo-san-pham">
+        <span>
+         Phí vận chuyển hàng theo lô sản phẩm
+        </span>
+       </a>
+      </li>
+     </ul>
+    </li>
+    <li class="level0 level-top parent level_ico">
+     <a href="/quy-dinh-chinh-sach">
+      CHÍNH SÁCH
+     </a>
+    </li>
+    <li class="level0 level-top parent level_ico">
+     <a href="/huong-dan-2">
+      HƯỚNG DẪN
+     </a>
+    </li>
+    <li class="level0 level-top parent level_ico">
+     <a href="/tin-tuc">
+      THÔNG BÁO
+     </a>
+    </li>
+    <li class="level0 level-top parent level_ico">
+     <a href="https://chrome.google.com/webstore/detail/gobiz-assistant-tr%E1%BB%A3-l%C3%BD-mu/jgaegppalmpgekgpdmlhjjoncfaceocg?hl=vi">
+      CÔNG CỤ
+     </a>
+    </li>
+    <li class="level0 level-top parent level_ico">
+     <a href="https://cb.shippo.vn/#/register">
+      ĐĂNG KÝ
+     </a>
+    </li>
+    <li class="level0 level-top parent level_ico">
+     <a href="https://cb.shippo.vn/">
+      ĐĂNG NHẬP
+     </a>
+    </li>
+   </ul>
+  </div>
+ </div>
+</div>
+End
+<div class="" id="menu-overlay">
+</div>
+<h1 class="hidden">
+ Shippo - Vận chuyển hàng hoá từ Trung Quốc về Việt Nam.
+Mức giá: thấp nhất 7.000/kg.
+Thời gian: nhanh nhất 5 ngày.
+Cam kết: hoàn tiền 100% nếu thất lạc hàng hoá
+</h1>
+<section class="awe-section-1">
+ <div class="owl-carousel owl-theme not-aweowl" id="sync1">
+  <div class="items">
+   <a class="clearfix" href="">
+    <picture>
+     <source media="(max-width: 767px)" srcset="//bizweb.dktcdn.net/thumb/grande/100/378/502/themes/756692/assets/slider_2.jpg?1741235076651"/>
+     <img alt="" src="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/slider_2.jpg?1741235076651"/>
+    </picture>
+   </a>
+  </div>
+  <div class="items">
+   <a class="clearfix" href="https://www.shippo.vn/bang-gia-hang-theo-lo-san-pham">
+    <picture>
+     <source media="(max-width: 767px)" srcset="//bizweb.dktcdn.net/thumb/grande/100/378/502/themes/756692/assets/slider_3.jpg?1741235076651"/>
+     <img alt="van-chuyen-trung-viet-hangTMDT" src="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/slider_3.jpg?1741235076651"/>
+    </picture>
+   </a>
+  </div>
+  <div class="items">
+   <a class="clearfix" href="https://www.shippo.vn/huong-dan-su-dung-hinh-thuc-ky-gui-mot-buoc">
+    <picture>
+     <source media="(max-width: 767px)" srcset="//bizweb.dktcdn.net/thumb/grande/100/378/502/themes/756692/assets/slider_4.jpg?1741235076651"/>
+     <img alt="van-chuyen-hang-theo-lo-san-pham" src="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/slider_4.jpg?1741235076651"/>
+    </picture>
+   </a>
+  </div>
+ </div>
+ <div class="owl-carousel owl-theme not-aweowl hidden-xs" id="sync2">
+  <div class="item">
+   Vận chuyển Trung Việt
+   <br/>
+   chính ngạch
+  </div>
+  <div class="item">
+   Vận chuyển hàng
+   <br/>
+   theo lô sản phẩm
+  </div>
+  <div class="item">
+   Hướng dẫn tạo đơn
+   <br/>
+   Ký gửi một bước
+  </div>
+ </div>
+</section>
+<section class="awe-section-2">
+ <div class="section_why">
+  <div class="container">
+   <div class="row">
+    <div class="hidden-xs col-sm-12 col-md-8 col-lg-8 bg_why">
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+     <div class="margin-top-0">
+      <div class="heading">
+       <h2 class="title-base">
+        <span>
+         GIỚI THIỆU
+        </span>
+       </h2>
+      </div>
+      <div class="section-content">
+       <div class="info margin-bottom-30">
+        Shippo tự hào là đơn vị được cấp phép vận chuyển quốc tế, hoạt động
+        <b>
+         giao vận hàng hóa xuyên biên giới từ Trung Quốc về Việt Nam, thông quan chính ngạch 100% qua đường bộ và đường biển.
+        </b>
+        <br/>
+        Shippo cung cấp 2 dịch vụ chính:
+        <br/>
+        - Vận chuyển hàng Thương mại điện tử
+        <b>
+         (hàng nhập khẩu tiêu dùng)
+        </b>
+        <br/>
+        - Vận chuyển hàng theo lô sản phẩm
+        <b>
+         (hàng nhập khẩu thương mại)
+        </b>
+        <br/>
+        <i>
+         (Nếu có nhu cầu khác, liên hệ với Shippo để được tư vấn phương thức vận chuyển phù hợp nhất với nhu cầu và chủng loại hàng hoá)
+        </i>
+        <br/>
+        Khi sử dụng dịch vụ vận chuyển của Shippo, Bạn sẽ nhận được những giá trị thiết thực:
+        <br/>
+        <b>
+         •  Thời gian vận chuyển nhanh chóng, ổn định, thông quan chính ngạch, không tắc biên.
+         <br/>
+         •  Quy trình vận chuyển nghiêm ngặt giúp hạn chế tối đa tình trạng hư hỏng, thất lạc hàng hóa.
+         <br/>
+         •  Chính sách chiết khấu, giảm giá cho khách hàng có nhu cầu vận chuyển thường xuyên hoặc khối lượng hàng lớn.
+        </b>
+        <br/>
+       </div>
+       <div class="about-contact" title="Về chúng tôi">
+        <a class="btn btn-primary" href="https://www.shippo.vn/gioi-thieu-ship-cb">
+         Về chúng tôi
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+<section class="awe-section-3">
+ <div class="st section_service" id="dichvu">
+  <div class="container">
+   <div class="row">
+    <div class="col-lg-12">
+     <div class="heading">
+      <h2>
+       TẠI SAO CHỌN SHIPPO
+      </h2>
+      <p>
+      </p>
+     </div>
+     <div class="utilities">
+      <div class="uti_content">
+       <div class="owl-carousel owl-theme uti_content" data-dot="true" data-lg-items="3" data-margin="30" data-md-items="3" data-nav="false" data-sm-items="2" data-xs-items="1">
+        <div class="uti_body">
+         <span class="icon">
+          <img alt="HỆ THỐNG QUẢN LÝ&lt;BR&gt;CHUYÊN NGHIỆP" data-lazyload="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/icon_ser_1.png?1741235076651" src="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/rolling.svg?1741235076651"/>
+         </span>
+         <div class="content">
+          <span class="title">
+           HỆ THỐNG QUẢN LÝ
+           <br/>
+           CHUYÊN NGHIỆP
+          </span>
+          <span class="sum">
+           Dễ dàng kiểm tra, theo dõi đơn hàng, tài chính
+          </span>
+         </div>
+        </div>
+        <div class="uti_body">
+         <span class="icon">
+          <img alt="THÔNG QUAN CHÍNH NGẠCH 100% &lt;br&gt; " data-lazyload="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/icon_ser_2.png?1741235076651" src="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/rolling.svg?1741235076651"/>
+         </span>
+         <div class="content">
+          <span class="title">
+           THÔNG QUAN CHÍNH NGẠCH 100%
+           <br/>
+          </span>
+          <span class="sum">
+           Vận chuyển ổn định, hàng hóa an toàn
+          </span>
+         </div>
+        </div>
+        <div class="uti_body">
+         <span class="icon">
+          <img alt="HỢP ĐỒNG DỊCH VỤ&lt;BR&gt;ĐẦY ĐỦ" data-lazyload="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/icon_ser_3.png?1741235076651" src="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/rolling.svg?1741235076651"/>
+         </span>
+         <div class="content">
+          <span class="title">
+           HỢP ĐỒNG DỊCH VỤ
+           <br/>
+           ĐẦY ĐỦ
+          </span>
+          <span class="sum">
+           Hóa đơn, chứng từ phù hợp với nhu cầu của khách hàng
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+<section class="awe-section-4">
+ <div class="section_educate">
+  <div class="container">
+   <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+     <div class="heading a-center">
+      <h2 title="Tin tức">
+       <a href="tin-tuc">
+        Tin tức
+       </a>
+      </h2>
+     </div>
+     <div class="content_blog_new margin-top-30">
+      <div class="wrap_owl_blog owl-carousel" data-dot="true" data-height="false" data-lg-items="3" data-loop="false" data-margin="30" data-md-items="3" data-nav="false" data-sm-items="2" data-xs-items="1">
+       <div class="blog_index">
+        <div class="myblog" onclick="window.location.href='/shippo-thong-bao-cham-thong-quan-trung-quoc-viet-nam';">
+         <div class="image-blog-left a-center">
+          <a href="/shippo-thong-bao-cham-thong-quan-trung-quoc-viet-nam">
+           <img alt="Shippo thông báo chậm thông quan Trung Quốc - Việt Nam" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/378/502/articles/li-ch-to-chu-c-hoa-t-do-ng-no-i-bo-cho-cbnv-trung-quo-c-d61f2082-ee26-4ab5-a9f6-027cac653f29.png?v=1747878281740" src="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/rolling.svg?1741235076651" title="Shippo thông báo chậm thông quan Trung Quốc - Việt Nam"/>
+          </a>
+         </div>
+         <div class="content_blog">
+          <div class="content_right">
+           <h3>
+            <a href="/shippo-thong-bao-cham-thong-quan-trung-quoc-viet-nam" title="Shippo thông báo chậm thông quan Trung Quốc - Việt Nam">
+             Shippo thông báo chậm thông quan Trung Quốc - Việt Nam
+            </a>
+           </h3>
+           <p class="time_post">
+            <i class="far fa-calendar-alt">
+            </i>
+            22/05/2025
+           </p>
+          </div>
+          <div class="summary_item_blog">
+           <p>
+            Kính gửi Quý Khách hàng,
+Hiện tại, do ảnh hưởng bởi một số yếu tố khách quan trong quá trình vận...
+           </p>
+           <p class="meta">
+            <span>
+             <i class="far fa-bookmark">
+             </i>
+             Tin tức
+            </span>
+            <a class="more" href="/shippo-thong-bao-cham-thong-quan-trung-quoc-viet-nam">
+             Xem thêm
+            </a>
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="blog_index">
+        <div class="myblog" onclick="window.location.href='/thong-bao-tam-dung-van-chuyen-mat-hang-co-thuong-hieu-my-pham-thuc-pham';">
+         <div class="image-blog-left a-center">
+          <a href="/thong-bao-tam-dung-van-chuyen-mat-hang-co-thuong-hieu-my-pham-thuc-pham">
+           <img alt="Thông báo tạm dừng vận chuyển mặt hàng có thương hiệu, mỹ phẩm, thực phẩm." data-lazyload="//bizweb.dktcdn.net/thumb/large/100/378/502/articles/lich-to-chuc-hoat-dong-noi-bo-cho-cbnv-trung-quoc-ed5e87ce-4fec-4e02-b19c-3d8d0aed0b7e.png?v=1747455236197" src="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/rolling.svg?1741235076651" title="Thông báo tạm dừng vận chuyển mặt hàng có thương hiệu, mỹ phẩm, thực phẩm."/>
+          </a>
+         </div>
+         <div class="content_blog">
+          <div class="content_right">
+           <h3>
+            <a href="/thong-bao-tam-dung-van-chuyen-mat-hang-co-thuong-hieu-my-pham-thuc-pham" title="Thông báo tạm dừng vận chuyển mặt hàng có thương hiệu, mỹ phẩm, thực phẩm.">
+             Thông báo tạm dừng vận chuyển mặt hàng có thương hiệu, mỹ phẩm, thực phẩm.
+            </a>
+           </h3>
+           <p class="time_post">
+            <i class="far fa-calendar-alt">
+            </i>
+            17/05/2025
+           </p>
+          </div>
+          <div class="summary_item_blog">
+           <p>
+            Kính gửi Quý Khách hàng,
+Do tình hình thông quan thực tế khó khăn, Shippo xin thông báo tạm dừng...
+           </p>
+           <p class="meta">
+            <span>
+             <i class="far fa-bookmark">
+             </i>
+             Tin tức
+            </span>
+            <a class="more" href="/thong-bao-tam-dung-van-chuyen-mat-hang-co-thuong-hieu-my-pham-thuc-pham">
+             Xem thêm
+            </a>
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="blog_index">
+        <div class="myblog" onclick="window.location.href='/thong-bao-lich-nghi-gio-to-hung-vuong-30-04-va-01-05-2025';">
+         <div class="image-blog-left a-center">
+          <a href="/thong-bao-lich-nghi-gio-to-hung-vuong-30-04-va-01-05-2025">
+           <img alt="Thông Báo lịch nghỉ giỗ tổ Hùng Vương, 30/04 và 01/05/2025" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/378/502/articles/li-ch-to-chu-c-hoa-t-do-ng-no-i-bo-cho-cbnv-trung-quo-c-4eae2836-37bb-4b0c-8d94-4b1ede7b37d4.png?v=1743649367457" src="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/rolling.svg?1741235076651" title="Thông Báo lịch nghỉ giỗ tổ Hùng Vương, 30/04 và 01/05/2025"/>
+          </a>
+         </div>
+         <div class="content_blog">
+          <div class="content_right">
+           <h3>
+            <a href="/thong-bao-lich-nghi-gio-to-hung-vuong-30-04-va-01-05-2025" title="Thông Báo lịch nghỉ giỗ tổ Hùng Vương, 30/04 và 01/05/2025">
+             Thông Báo lịch nghỉ giỗ tổ Hùng Vương, 30/04 và 01/05/2025
+            </a>
+           </h3>
+           <p class="time_post">
+            <i class="far fa-calendar-alt">
+            </i>
+            03/04/2025
+           </p>
+          </div>
+          <div class="summary_item_blog">
+           <p>
+            Kính gửi Quý Khách hàng!
+Theo lịch nghỉ lễ chung, Shippo sắp xếp lịch cho cán bộ nhân viên nghỉ l...
+           </p>
+           <p class="meta">
+            <span>
+             <i class="far fa-bookmark">
+             </i>
+             Tin tức
+            </span>
+            <a class="more" href="/thong-bao-lich-nghi-gio-to-hung-vuong-30-04-va-01-05-2025">
+             Xem thêm
+            </a>
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+<section class="awe-section-5">
+ <div class="section_top_brand">
+  <div class="container">
+   <div class="title_brand heading">
+    <h2>
+     <span class="text_gradient">
+      ĐỐI TÁC GIAO HÀNG NỘI ĐỊA
+     </span>
+    </h2>
+   </div>
+   <div class="item_fix_brand">
+    <div class="owl-carousel owl-theme brand_content not-aweowl">
+     <div class="item">
+      <a class="img_" href="https://snappy.vn/">
+       <img alt="Shippo" data-lazyload="//bizweb.dktcdn.net/thumb/compact/100/378/502/themes/756692/assets/brand_1.png?1741235076651" src="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/rolling.svg?1741235076651"/>
+      </a>
+     </div>
+     <div class="item">
+      <a class="img_" href="https://snappy.vn/">
+       <img alt="Shippo" data-lazyload="//bizweb.dktcdn.net/thumb/compact/100/378/502/themes/756692/assets/brand_3.png?1741235076651" src="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/rolling.svg?1741235076651"/>
+      </a>
+     </div>
+     <div class="item">
+      <a class="img_" href="https://snappy.vn/">
+       <img alt="Shippo" data-lazyload="//bizweb.dktcdn.net/thumb/compact/100/378/502/themes/756692/assets/brand_4.png?1741235076651" src="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/rolling.svg?1741235076651"/>
+      </a>
+     </div>
+     <div class="item">
+      <a class="img_" href="https://snappy.vn/">
+       <img alt="Shippo" data-lazyload="//bizweb.dktcdn.net/thumb/compact/100/378/502/themes/756692/assets/brand_5.png?1741235076651" src="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/rolling.svg?1741235076651"/>
+      </a>
+     </div>
+     <div class="item">
+      <a class="img_" href="https://snappy.vn/">
+       <img alt="Shippo" data-lazyload="//bizweb.dktcdn.net/thumb/compact/100/378/502/themes/756692/assets/brand_6.png?1741235076651" src="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/rolling.svg?1741235076651"/>
+      </a>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+<style>
+ body {
+		margin-top: 80px;
+	}
+	.header {
+		position: fixed;
+		top: 0!important;
+		left: 0;
+		z-index: 1000;
+		float: left;
+		width: 100%;
+		background: #FFF
+	}
+	.info {
+	   text-align: justify;
+	}
+</style>
+<div class="modal" id="datlich_thanhcong" tabindex="-1">
+ <div class="modal-dialog wrap-modal-dv" role="document">
+  <div class="modal-title relative">
+   <div class="title_module_main a-center">
+    <h2>
+     <span>
+      Gửi yêu cầu thành công
+     </span>
+    </h2>
+   </div>
+   <a class="absolute hidden-xs" data-dismiss="modal" href="javascript:;" id="btnclose" style=" right: 20px; top: 30%; color: #fff; ">
+    <i class="fa fa-close">
+    </i>
+   </a>
+  </div>
+  <div class="text-xs-center padding-0">
+   <div class="datlich a-center">
+    <div class="row">
+     <div class="modalbox success col-sm-12 col-md-12 col-lg-12 center animate">
+      <!--/.icon-->
+      <h2 class="margin-0">
+       Cảm ơn bạn
+      </h2>
+      <p>
+       Chúng tôi sẽ liên hệ với bạn sớm nhất
+      </p>
+      <button class="button_custome_35 btn btn-primary" data-dismiss="modal" type="button">
+       Ok
+      </button>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="categories-faq">
+ <ul class="list">
+  <li class="category">
+   <a href="https://snappy.vn/track">
+    <div class="category-ic">
+     <img alt="Tra cứu&lt;br&gt;mã vận đơn &lt;br&gt; nội địa VN" src="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/fix_1.jpg?1741235076651"/>
+    </div>
+    <span>
+     Tra cứu
+     <br/>
+     mã vận đơn
+     <br/>
+     nội địa VN
+    </span>
+   </a>
+  </li>
+  <li class="category">
+   <a href="https://www.shippo.vn/hang-hoa-khong-van-chuyen-trung-viet">
+    <div class="category-ic">
+     <img alt="Hàng hóa không vận chuyển" src="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/fix_2.jpg?1741235076651"/>
+    </div>
+    <span>
+     Hàng hóa không vận chuyển
+    </span>
+   </a>
+  </li>
+  <li class="category">
+   <a href="https://www.shippo.vn/huong-dan-su-dung-hinh-thuc-ky-gui-mot-buoc">
+    <div class="category-ic">
+     <img alt="Hướng dẫn &lt;br&gt; ''ký gửi Một bước''" src="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/fix_3.jpg?1741235076651"/>
+    </div>
+    <span>
+     Hướng dẫn
+     <br/>
+     ''ký gửi Một bước''
+    </span>
+   </a>
+  </li>
+  <li class="category">
+   <a href="https://www.shippo.vn/huong-dan-tao-don-ky-gui-tren-taobao-tmall-1688">
+    <div class="category-ic">
+     <img alt="Hướng dẫn &lt;br&gt;ký gửi Truyền thống bằng Công cụ" src="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/fix_4.jpg?1741235076651"/>
+    </div>
+    <span>
+     Hướng dẫn
+     <br/>
+     ký gửi Truyền thống bằng Công cụ
+    </span>
+   </a>
+  </li>
+ </ul>
+</div>
+Plugin JS 
+
+
+
+ Main JS 
+
+ Messenger Plugin chat Code
+<div id="fb-root">
+</div>
+Your Plugin chat code
+<div class="fb-customerchat" id="fb-customer-chat">
+</div>
+Your SDK code 
+
+ Start of caresoft live-chat widget 
+
+ End of caresoft live-chat widget
+
+{%endblock %}
