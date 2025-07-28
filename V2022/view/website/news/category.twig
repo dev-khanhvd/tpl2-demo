@@ -1,0 +1,749 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(newsCategory.name).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ newsCategory.metaKeywords?:newsCategory.name }}">
+<meta name="description" content="{{ newsCategory.metaDescription?:newsCategory.name }}">
+<meta property="og:title" content="{{ newsCategory.metaTitle?:newsCategory.name }}">
+<meta property="og:url" content="{{ newsCategory.canonicalLink }}">
+<meta property="og:image" content="{{ newsCategory.imgUri }}">
+<link rel="canonical" href="{{ newsCategory.canonicalLink }}">
+{%endblock %}
+
+{%block body %}
+
+<div class="hidden-md hidden-lg opacity_menu">
+</div>
+Main content 
+ Menu mobile
+<div class="sidenav menu_mobile hidden-md hidden-lg" id="mySidenav">
+ <div class="top_menu_mobile">
+  <span class="close_menu">
+  </span>
+ </div>
+ <div class="content_memu_mb">
+  <div class="link_list_mobile">
+   <ul class="ct-mobile">
+    <li class="level0 level-top parent level_ico">
+     <a href="https://www.shippo.vn/bang-gia-ky-gui-1-buoc-hang-tmdt">
+      BIỂU PHÍ
+     </a>
+     <i class="ti-plus hide_close">
+     </i>
+     <ul class="level0 sub-menu" style="display:none;">
+      <li class="level1">
+       <a href="https://www.shippo.vn/bieu-phi">
+        <span>
+         Phí vận chuyển hàng thương mại điện tử
+        </span>
+       </a>
+      </li>
+      <li class="level1">
+       <a href="https://www.shippo.vn/bieu-phi-th">
+        <span>
+         Phí vận chuyển hàng Tổng hợp
+        </span>
+       </a>
+      </li>
+      <li class="level1">
+       <a href="https://www.shippo.vn/bang-gia-hang-theo-lo-san-pham">
+        <span>
+         Phí vận chuyển hàng theo lô sản phẩm
+        </span>
+       </a>
+      </li>
+     </ul>
+    </li>
+    <li class="level0 level-top parent level_ico">
+     <a href="/quy-dinh-chinh-sach">
+      CHÍNH SÁCH
+     </a>
+    </li>
+    <li class="level0 level-top parent level_ico">
+     <a href="/huong-dan-2">
+      HƯỚNG DẪN
+     </a>
+    </li>
+    <li class="level0 level-top parent level_ico">
+     <a href="/tin-tuc">
+      THÔNG BÁO
+     </a>
+    </li>
+    <li class="level0 level-top parent level_ico">
+     <a href="https://chrome.google.com/webstore/detail/gobiz-assistant-tr%E1%BB%A3-l%C3%BD-mu/jgaegppalmpgekgpdmlhjjoncfaceocg?hl=vi">
+      CÔNG CỤ
+     </a>
+    </li>
+    <li class="level0 level-top parent level_ico">
+     <a href="https://cb.shippo.vn/#/register">
+      ĐĂNG KÝ
+     </a>
+    </li>
+    <li class="level0 level-top parent level_ico">
+     <a href="https://cb.shippo.vn/">
+      ĐĂNG NHẬP
+     </a>
+    </li>
+   </ul>
+  </div>
+ </div>
+</div>
+End
+<div class="" id="menu-overlay">
+</div>
+<div class="container blog-page" itemscope="" itemtype="https://schema.org/Blog">
+ <meta content="Tin tức" itemprop="name"/>
+ <meta content="Vận chuyển hàng hoá từ Trung Quốc về Việt Nam.
+Mức giá: thấp nhất 7.000/kg.
+Thời gian: nhanh nhất 5 ngày.
+Cam kết: hoàn tiền 100% nếu thất lạc hàng hoá" itemprop="description"/>
+ <div class="row">
+  <div class="content_all f-left w_100">
+   <div class="right-content margin-bottom-fix margin-bottom-50-article col-md-8 col-sm-12 col-xs-12">
+    <div class="box-heading relative hidden">
+     <h1 class="title-head page_title">
+      Tin tức
+     </h1>
+    </div>
+    <div class="list-blogs blog-main">
+     <div class="myblog myblog-list">
+      <div class="image-blog-left a-center">
+       <a href="/shippo-thong-bao-cham-thong-quan-trung-quoc-viet-nam">
+        <img alt="Shippo thông báo chậm thông quan Trung Quốc - Việt Nam" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/378/502/articles/li-ch-to-chu-c-hoa-t-do-ng-no-i-bo-cho-cbnv-trung-quo-c-d61f2082-ee26-4ab5-a9f6-027cac653f29.png?v=1747878281740" src="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/rolling.svg?1741235076651" title="Shippo thông báo chậm thông quan Trung Quốc - Việt Nam"/>
+       </a>
+       <span class="chuyenmuc">
+        Tin tức
+       </span>
+      </div>
+      <div class="content_blog">
+       <div class="content_right">
+        <h3>
+         <a href="/shippo-thong-bao-cham-thong-quan-trung-quoc-viet-nam" title="Shippo thông báo chậm thông quan Trung Quốc - Việt Nam">
+          Shippo thông báo chậm thông quan Trung Quốc - Việt Nam
+         </a>
+        </h3>
+        <div class="date_blog">
+         <i class="far fa-calendar-alt">
+         </i>
+         22/05/2025
+        </div>
+       </div>
+       <div class="summary_item_blog">
+        <p>
+         Kính gửi Quý Khách hàng,
+Hiện tại, do ảnh hưởng bởi một số yếu tố khách quan trong quá trình vận chuyển và thông quan hàng hóa tại cửa khẩu Trung Quốc – Việt Nam (bao gồm tăng cường kiểm tra, ùn t...
+        </p>
+        <a class="more" href="/shippo-thong-bao-cham-thong-quan-trung-quoc-viet-nam">
+         Xem thêm
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="myblog myblog-list">
+      <div class="image-blog-left a-center">
+       <a href="/thong-bao-tam-dung-van-chuyen-mat-hang-co-thuong-hieu-my-pham-thuc-pham">
+        <img alt="Thông báo tạm dừng vận chuyển mặt hàng có thương hiệu, mỹ phẩm, thực phẩm." data-lazyload="//bizweb.dktcdn.net/thumb/large/100/378/502/articles/lich-to-chuc-hoat-dong-noi-bo-cho-cbnv-trung-quoc-ed5e87ce-4fec-4e02-b19c-3d8d0aed0b7e.png?v=1747455236197" src="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/rolling.svg?1741235076651" title="Thông báo tạm dừng vận chuyển mặt hàng có thương hiệu, mỹ phẩm, thực phẩm."/>
+       </a>
+       <span class="chuyenmuc">
+        Tin tức
+       </span>
+      </div>
+      <div class="content_blog">
+       <div class="content_right">
+        <h3>
+         <a href="/thong-bao-tam-dung-van-chuyen-mat-hang-co-thuong-hieu-my-pham-thuc-pham" title="Thông báo tạm dừng vận chuyển mặt hàng có thương hiệu, mỹ phẩm, thực phẩm.">
+          Thông báo tạm dừng vận chuyển mặt hàng có thương hiệu, mỹ phẩm, thực phẩm.
+         </a>
+        </h3>
+        <div class="date_blog">
+         <i class="far fa-calendar-alt">
+         </i>
+         17/05/2025
+        </div>
+       </div>
+       <div class="summary_item_blog">
+        <p>
+         Kính gửi Quý Khách hàng,
+Do tình hình thông quan thực tế khó khăn, Shippo xin thông báo tạm dừng vận chuyển mặt hàng có thương hiệu, hàng fake, mỹ phẩm, thực phẩm kể từ ngày 17/05/2025.
+Trong trư...
+        </p>
+        <a class="more" href="/thong-bao-tam-dung-van-chuyen-mat-hang-co-thuong-hieu-my-pham-thuc-pham">
+         Xem thêm
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="myblog myblog-list">
+      <div class="image-blog-left a-center">
+       <a href="/thong-bao-lich-nghi-gio-to-hung-vuong-30-04-va-01-05-2025">
+        <img alt="Thông Báo lịch nghỉ giỗ tổ Hùng Vương, 30/04 và 01/05/2025" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/378/502/articles/li-ch-to-chu-c-hoa-t-do-ng-no-i-bo-cho-cbnv-trung-quo-c-4eae2836-37bb-4b0c-8d94-4b1ede7b37d4.png?v=1743649367457" src="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/rolling.svg?1741235076651" title="Thông Báo lịch nghỉ giỗ tổ Hùng Vương, 30/04 và 01/05/2025"/>
+       </a>
+       <span class="chuyenmuc">
+        Tin tức
+       </span>
+      </div>
+      <div class="content_blog">
+       <div class="content_right">
+        <h3>
+         <a href="/thong-bao-lich-nghi-gio-to-hung-vuong-30-04-va-01-05-2025" title="Thông Báo lịch nghỉ giỗ tổ Hùng Vương, 30/04 và 01/05/2025">
+          Thông Báo lịch nghỉ giỗ tổ Hùng Vương, 30/04 và 01/05/2025
+         </a>
+        </h3>
+        <div class="date_blog">
+         <i class="far fa-calendar-alt">
+         </i>
+         03/04/2025
+        </div>
+       </div>
+       <div class="summary_item_blog">
+        <p>
+         Kính gửi Quý Khách hàng!
+Theo lịch nghỉ lễ chung, Shippo sắp xếp lịch cho cán bộ nhân viên nghỉ lễ giỗ tổ Hùng Vương, 30/04 và 01/05/2025, thông tin cụ thể như sau: 
+-   &amp;n...
+        </p>
+        <a class="more" href="/thong-bao-lich-nghi-gio-to-hung-vuong-30-04-va-01-05-2025">
+         Xem thêm
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="myblog myblog-list">
+      <div class="image-blog-left a-center">
+       <a href="/shippo-vn-thong-bao-thay-doi-email-ho-tro-dich-vu">
+        <img alt="Shippo.vn thông báo thay đổi email hỗ trợ dịch vụ" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/378/502/articles/li-ch-to-chu-c-hoa-t-do-ng-no-i-bo-cho-cbnv-trung-quo-c-f62046ed-d4f8-4771-b481-c67c02d4b0bc.png?v=1741229824513" src="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/rolling.svg?1741235076651" title="Shippo.vn thông báo thay đổi email hỗ trợ dịch vụ"/>
+       </a>
+       <span class="chuyenmuc">
+        Tin tức
+       </span>
+      </div>
+      <div class="content_blog">
+       <div class="content_right">
+        <h3>
+         <a href="/shippo-vn-thong-bao-thay-doi-email-ho-tro-dich-vu" title="Shippo.vn thông báo thay đổi email hỗ trợ dịch vụ">
+          Shippo.vn thông báo thay đổi email hỗ trợ dịch vụ
+         </a>
+        </h3>
+        <div class="date_blog">
+         <i class="far fa-calendar-alt">
+         </i>
+         06/03/2025
+        </div>
+       </div>
+       <div class="summary_item_blog">
+        <p>
+         Kính gửi Quý Khách hàng!
+Shippo.vn xin thông báo thay đổi email hỗ trợ dịch vụ từ ngày 06/03/2025, cụ thể như sau:
+Để được hỗ trợ các thông tin về dịch vụ, Quý Khách vui lòng liên hệ vớ...
+        </p>
+        <a class="more" href="/shippo-vn-thong-bao-thay-doi-email-ho-tro-dich-vu">
+         Xem thêm
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="myblog myblog-list">
+      <div class="image-blog-left a-center">
+       <a href="/shippo-canh-bao-cac-doi-tuong-gia-mao-shipper-de-lua-dao">
+        <img alt="SHIPPO CẢNH BÁO CÁC ĐỐI TƯỢNG GIẢ MẠO SHIPPER ĐỂ LỪA ĐẢO" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/378/502/articles/li-ch-to-chu-c-hoa-t-do-ng-no-i-bo-cho-cbnv-trung-quo-c-073b7b16-7c9f-49d8-a697-29c08e031fc2.png?v=1739870220677" src="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/rolling.svg?1741235076651" title="SHIPPO CẢNH BÁO CÁC ĐỐI TƯỢNG GIẢ MẠO SHIPPER ĐỂ LỪA ĐẢO"/>
+       </a>
+       <span class="chuyenmuc">
+        Tin tức
+       </span>
+      </div>
+      <div class="content_blog">
+       <div class="content_right">
+        <h3>
+         <a href="/shippo-canh-bao-cac-doi-tuong-gia-mao-shipper-de-lua-dao" title="SHIPPO CẢNH BÁO CÁC ĐỐI TƯỢNG GIẢ MẠO SHIPPER ĐỂ LỪA ĐẢO">
+          SHIPPO CẢNH BÁO CÁC ĐỐI TƯỢNG GIẢ MẠO SHIPPER ĐỂ LỪA ĐẢO
+         </a>
+        </h3>
+        <div class="date_blog">
+         <i class="far fa-calendar-alt">
+         </i>
+         18/02/2025
+        </div>
+       </div>
+       <div class="summary_item_blog">
+        <p>
+         Kính gửi Quý Khách hàng,
+Gần đây, Shippo ghi nhận một số trường hợp kẻ gian giả mạo shipper để lừa đảo Khách hàng bằng cách yêu cầu thanh toán trước hoặc cung cấp thông tin cá nhân khi nhận hàng.
+�...
+        </p>
+        <a class="more" href="/shippo-canh-bao-cac-doi-tuong-gia-mao-shipper-de-lua-dao">
+         Xem thêm
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="myblog myblog-list">
+      <div class="image-blog-left a-center">
+       <a href="/shippo-thong-bao-lich-nghi-va-lich-lam-viec-lai-sau-tet-nguyen-dan-2025">
+        <img alt="Shippo thông báo lịch nghỉ và lịch làm việc lại sau Tết Nguyên Đán 2025" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/378/502/articles/lich-to-chuc-hoat-dong-noi-bo-cho-cbnv-trung-quoc-ca32008d-cca9-40c9-99f9-98a1b42324ac.png?v=1736475790033" src="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/rolling.svg?1741235076651" title="Shippo thông báo lịch nghỉ và lịch làm việc lại sau Tết Nguyên Đán 2025"/>
+       </a>
+       <span class="chuyenmuc">
+        Tin tức
+       </span>
+      </div>
+      <div class="content_blog">
+       <div class="content_right">
+        <h3>
+         <a href="/shippo-thong-bao-lich-nghi-va-lich-lam-viec-lai-sau-tet-nguyen-dan-2025" title="Shippo thông báo lịch nghỉ và lịch làm việc lại sau Tết Nguyên Đán 2025">
+          Shippo thông báo lịch nghỉ và lịch làm việc lại sau Tết Nguyên Đán 2025
+         </a>
+        </h3>
+        <div class="date_blog">
+         <i class="far fa-calendar-alt">
+         </i>
+         10/01/2025
+        </div>
+       </div>
+       <div class="summary_item_blog">
+        <p>
+         Kính gửi Quý Khách hàng!
+Shippo xin thông báo về thời gian nghỉ Tết Nguyên Đán 2025 cho CBNV, cụ thể như sau:
+1. Thời gian nghỉ Tết:
+- Thời gian nghỉ&amp;nbsp...
+        </p>
+        <a class="more" href="/shippo-thong-bao-lich-nghi-va-lich-lam-viec-lai-sau-tet-nguyen-dan-2025">
+         Xem thêm
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="myblog myblog-list">
+      <div class="image-blog-left a-center">
+       <a href="/shippo-thong-bao-tam-ngung-dich-vu-de-tham-gia-hoat-dong-tong-ket-cuoi-nam">
+        <img alt="Shippo thông báo tạm ngưng dịch vụ để tham gia hoạt động tổng kết cuối năm" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/378/502/articles/lich-to-chuc-hoat-dong-noi-bo-cho-cbnv-trung-quoc-6d3f8200-96f3-4ca6-9020-343c41071fa6.png?v=1736309753423" src="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/rolling.svg?1741235076651" title="Shippo thông báo tạm ngưng dịch vụ để tham gia hoạt động tổng kết cuối năm"/>
+       </a>
+       <span class="chuyenmuc">
+        Tin tức
+       </span>
+      </div>
+      <div class="content_blog">
+       <div class="content_right">
+        <h3>
+         <a href="/shippo-thong-bao-tam-ngung-dich-vu-de-tham-gia-hoat-dong-tong-ket-cuoi-nam" title="Shippo thông báo tạm ngưng dịch vụ để tham gia hoạt động tổng kết cuối năm">
+          Shippo thông báo tạm ngưng dịch vụ để tham gia hoạt động tổng kết cuối năm
+         </a>
+        </h3>
+        <div class="date_blog">
+         <i class="far fa-calendar-alt">
+         </i>
+         08/01/2025
+        </div>
+       </div>
+       <div class="summary_item_blog">
+        <p>
+         Kính gửi Quý Khách hàng!
+Shippo xin thông báo tạm ngưng hoạt động để tham gia hoạt động tổng kết cuối năm, cụ thể như sau:
+
+Kho Sài Gòn ngưng hoạt động từ 15h00 thứ Sáu ngày 10/01 và hoạt động t...
+        </p>
+        <a class="more" href="/shippo-thong-bao-tam-ngung-dich-vu-de-tham-gia-hoat-dong-tong-ket-cuoi-nam">
+         Xem thêm
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="myblog myblog-list">
+      <div class="image-blog-left a-center">
+       <a href="/thong-bao-lich-ngung-nhan-hang-truoc-tet-nguyen-dan-2025">
+        <img alt="THÔNG BÁO LỊCH NGỪNG NHẬN HÀNG TRƯỚC TẾT NGUYÊN ĐÁN 2025" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/378/502/articles/li-ch-to-chu-c-hoa-t-do-ng-no-i-bo-cho-cbnv-trung-quo-c-86405b50-5ca2-453c-89e6-3ada091949a8.png?v=1736156136940" src="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/rolling.svg?1741235076651" title="THÔNG BÁO LỊCH NGỪNG NHẬN HÀNG TRƯỚC TẾT NGUYÊN ĐÁN 2025"/>
+       </a>
+       <span class="chuyenmuc">
+        Tin tức
+       </span>
+      </div>
+      <div class="content_blog">
+       <div class="content_right">
+        <h3>
+         <a href="/thong-bao-lich-ngung-nhan-hang-truoc-tet-nguyen-dan-2025" title="THÔNG BÁO LỊCH NGỪNG NHẬN HÀNG TRƯỚC TẾT NGUYÊN ĐÁN 2025">
+          THÔNG BÁO LỊCH NGỪNG NHẬN HÀNG TRƯỚC TẾT NGUYÊN ĐÁN 2025
+         </a>
+        </h3>
+        <div class="date_blog">
+         <i class="far fa-calendar-alt">
+         </i>
+         06/01/2025
+        </div>
+       </div>
+       <div class="summary_item_blog">
+        <p>
+         Kính gửi Quý Khách hàng!
+Shippo xin thông báo lịch ngừng nhận đơn hàng trước Tết Nguyên đán 2025, cụ thể như sau:
+- Thời gian nhận đơn hàng tạo mới (ký gửi truyền thống):&amp;n...
+        </p>
+        <a class="more" href="/thong-bao-lich-ngung-nhan-hang-truoc-tet-nguyen-dan-2025">
+         Xem thêm
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="myblog myblog-list">
+      <div class="image-blog-left a-center">
+       <a href="/shippo-thong-bao-lich-nghi-tet-duong-lich-2025">
+        <img alt="Shippo thông báo lịch nghỉ Tết dương lịch 2025" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/378/502/articles/lich-to-chuc-hoat-dong-noi-bo-cho-cbnv-trung-quoc-088a3ce3-ba6c-42f8-80a7-e8cbd6349425.png?v=1735024823753" src="//bizweb.dktcdn.net/100/378/502/themes/756692/assets/rolling.svg?1741235076651" title="Shippo thông báo lịch nghỉ Tết dương lịch 2025"/>
+       </a>
+       <span class="chuyenmuc">
+        Tin tức
+       </span>
+      </div>
+      <div class="content_blog">
+       <div class="content_right">
+        <h3>
+         <a href="/shippo-thong-bao-lich-nghi-tet-duong-lich-2025" title="Shippo thông báo lịch nghỉ Tết dương lịch 2025">
+          Shippo thông báo lịch nghỉ Tết dương lịch 2025
+         </a>
+        </h3>
+        <div class="date_blog">
+         <i class="far fa-calendar-alt">
+         </i>
+         24/12/2024
+        </div>
+       </div>
+       <div class="summary_item_blog">
+        <p>
+         Kính gửi Quý Khách hàng!
+Theo quy định của Nhà nước, Shippo sắp xếp cho nhân viên nghỉ Tết dương lịch 2025, thông tin cụ thể như sau:
+-       Shippo nghỉ vào&amp;nb...
+        </p>
+        <a class="more" href="/shippo-thong-bao-lich-nghi-tet-duong-lich-2025">
+         Xem thêm
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="row">
+     <div class="col-xs-12 text-right">
+      <nav class="clearfix relative nav_pagi f-left w_100">
+       <ul class="pagination clearfix">
+        <li class="page-item disabled">
+         <a class="page-link" href="#">
+          <i class="fas fa-angle-double-left">
+          </i>
+         </a>
+        </li>
+        <li class="active page-item disabled">
+         <a class="page-link" href="#">
+          1
+         </a>
+        </li>
+        <li class="page-item">
+         <a class="page-link" href="/tin-tuc?page=2">
+          2
+         </a>
+        </li>
+        <li class="page-item">
+         <a class="page-link" href="/tin-tuc?page=3">
+          3
+         </a>
+        </li>
+        <li class="page-item">
+         <a class="page-link" href="">
+          ...
+         </a>
+        </li>
+        <li class="page-item">
+         <a class="page-link" href="/tin-tuc?page=20">
+          20
+         </a>
+        </li>
+        <li class="page-item hidden-xs">
+         <a class="page-link" href="/tin-tuc?page=2">
+          <i class="fas fa-angle-double-right">
+          </i>
+         </a>
+        </li>
+       </ul>
+      </nav>
+     </div>
+    </div>
+   </div>
+   <aside class="blog_hai left left-content col-md-4 col-sm-12 col-xs-12">
+    <aside class="aside-item blog-tab">
+     <ul class="nav nav-tabs" role="tablist">
+      <li class="active" role="presentation">
+       <a aria-controls="home" data-toggle="tab" href="#home" role="tab">
+        Hướng dẫn
+       </a>
+      </li>
+      <li role="presentation">
+       <a aria-controls="profile" data-toggle="tab" href="#profile" role="tab">
+        Chính sách
+       </a>
+      </li>
+      <li role="presentation">
+       <a aria-controls="messages" data-toggle="tab" href="#messages" role="tab">
+        Kho thông tin
+       </a>
+      </li>
+     </ul>
+     <div class="tab-content">
+      <div class="tab-pane fade in active" id="home" role="tabpanel">
+       <h3>
+        <a href="/huong-dan-tat-che-do-bao-mat-thong-tin-don-hang">
+         • HƯỚNG DẪN TẮT CHẾ ĐỘ BẢO MẬT THÔNG TIN ĐƠN HÀNG
+        </a>
+       </h3>
+       <h3>
+        <a href="/huong-dan-cach-tra-ma-van-don-noi-dia-trung-quoc-khi-mua-hang-taobao">
+         • HƯỚNG DẪN CÁCH TRA MÃ VẬN ĐƠN NỘI ĐỊA TRUNG QUỐC KHI MUA HÀNG TAOBAO
+        </a>
+       </h3>
+       <h3>
+        <a href="/huong-dan-them-dia-chi-giao-hang-taobao">
+         • HƯỚNG DẪN THÊM ĐỊA CHỈ GIAO HÀNG TAOBAO
+        </a>
+       </h3>
+       <h3>
+        <a href="/huong-dan-tao-don-ky-gui-tren-taobao-tmall-1688">
+         • HƯỚNG DẪN TẠO ĐƠN KÝ GỬI TỰ ĐỘNG TRÊN TAOBAO, TMALL, 1688
+        </a>
+       </h3>
+       <h3>
+        <a href="/huong-dan-su-dung-hinh-thuc-ky-gui-mot-buoc">
+         • HƯỚNG DẪN SỬ DỤNG HÌNH THỨC "KÝ GỬI MỘT BƯỚC"
+        </a>
+       </h3>
+       <h3>
+        <a href="/huong-dan-tao-don-ky-gui-kien-le">
+         • HƯỚNG DẪN TẠO ĐƠN KÝ GỬI KIỆN LẺ
+        </a>
+       </h3>
+       <h3>
+        <a href="/huong-dan-rut-tien-khoi-tai-khoan-shippo">
+         • HƯỚNG DẪN RÚT TIỀN KHỎI TÀI KHOẢN SHIPPO
+        </a>
+       </h3>
+       <h3>
+        <a href="/huong-dan-tao-khieu-nai-dich-vu-tren-don-hang">
+         • HƯỚNG DẪN TẠO KHIẾU NẠI DỊCH VỤ TRÊN ĐƠN HÀNG
+        </a>
+       </h3>
+       <h3>
+        <a href="/huong-dan-tao-tai-khoan-ky-gui-don-hang-shippo">
+         • HƯỚNG DẪN TẠO TÀI KHOẢN KÝ GỬI ĐƠN HÀNG - SHIPPO
+        </a>
+       </h3>
+       <h3>
+        <a href="/huong-dan-kiem-tra-hang-ve-kho-va-thuc-hien-yeu-cau-giao-hang">
+         • HƯỚNG DẪN KIỂM TRA HÀNG VỀ KHO VÀ THỰC HIỆN YÊU CẦU GIAO HÀNG
+        </a>
+       </h3>
+      </div>
+      <div class="tab-pane fade" id="profile" role="tabpanel">
+       <h3>
+        <a href="/chinh-sach-hang-han-che">
+         • CHÍNH SÁCH MUA HÀNG ĐỐI VỚI SẢN PHẨM HẠN CHẾ NHẬP
+        </a>
+       </h3>
+       <h3>
+        <a href="/chinh-sach-giao-hang-noi-dia-viet-nam">
+         • CHÍNH SÁCH GIAO HÀNG NỘI ĐỊA VIỆT NAM
+        </a>
+       </h3>
+       <h3>
+        <a href="/chinh-sach-ky-gui-mot-buoc">
+         • CHÍNH SÁCH KÝ GỬI MỘT BƯỚC
+        </a>
+       </h3>
+       <h3>
+        <a href="/chinh-sach-cam-ket-thoi-gian-van-chuyen-quoc-te">
+         • CHÍNH SÁCH CAM KẾT THỜI GIAN VẬN CHUYỂN QUỐC TẾ
+        </a>
+       </h3>
+       <h3>
+        <a href="/chinh-sach-bao-hiem-hang-hoa">
+         • CHÍNH SÁCH BẢO HIỂM HÀNG HÓA
+        </a>
+       </h3>
+       <h3>
+        <a href="/chinh-sach-quan-bot-khi-cc">
+         • CHÍNH SÁCH QUẤN BỌT KHÍ
+        </a>
+       </h3>
+       <h3>
+        <a href="/chinh-sach-dong-go-cc">
+         • CHÍNH SÁCH ĐÓNG GỖ
+        </a>
+       </h3>
+       <h3>
+        <a href="/chinh-sach-khieu-nai-dich-vu-1">
+         • CHÍNH SÁCH KHIẾU NẠI DỊCH VỤ
+        </a>
+       </h3>
+       <h3>
+        <a href="/nguyen-tac-quy-doi-can-nang-tinh-phi-cho-hang-hoa">
+         • NGUYÊN TẮC QUY ĐỔI CÂN NẶNG TÍNH PHÍ CHO HÀNG HÓA
+        </a>
+       </h3>
+       <h3>
+        <a href="/van-chuyen-hang-theo-lo-danh-muc-hang-han-che-khong-nhan-van-chuyen">
+         • DANH MỤC HẠN CHẾ &amp; KHÔNG NHẬN VẬN CHUYỂN HÀNG THEO LÔ SẢN PHẨM
+        </a>
+       </h3>
+       <h3>
+        <a href="/chinh-sach-van-chuyen-hang-theo-lo-san-pham">
+         • CHÍNH SÁCH VẬN CHUYỂN QUỐC TẾ HÀNG THEO LÔ SẢN PHẨM
+        </a>
+       </h3>
+       <h3>
+        <a href="/danh-muc-thuong-hieu-cam-nhap">
+         • DANH MỤC THƯƠNG HIỆU CẤM NHẬP
+        </a>
+       </h3>
+       <h3>
+        <a href="/chinh-sach-van-chuyen-trung-viet-hang-tong-hop">
+         • CHÍNH SÁCH VẬN CHUYỂN QUỐC TẾ HÀNG TỔNG HỢP
+        </a>
+       </h3>
+       <h3>
+        <a href="/chinh-sach-van-chuyen-quoc-te">
+         • CHÍNH SÁCH VẬN CHUYỂN HÀNG THƯƠNG MẠI ĐIỆN TỬ
+        </a>
+       </h3>
+       <h3>
+        <a href="/hang-hoa-khong-van-chuyen-trung-viet">
+         • DANH MỤC HÀNG HÓA KHÔNG NHẬN VẬN CHUYỂN
+        </a>
+       </h3>
+      </div>
+      <div class="tab-pane fade" id="messages" role="tabpanel">
+       <h3>
+        <a href="/nhap-may-xay-thit-do-gia-dung-nha-bep-tu-trung-quoc">
+         • Nhập máy xay thịt - đồ gia dụng nhà bếp từ Trung Quốc
+        </a>
+       </h3>
+       <h3>
+        <a href="/cach-deal-gia-voi-chu-shop-trung-it-ai-biet">
+         • Cách deal giá với chủ shop Trung ít ai biết
+        </a>
+       </h3>
+       <h3>
+        <a href="/wechat-cac-cau-hoi-lien-quan-den-wechat">
+         • Wechat là gì? Các câu hỏi liên quan đến Wechat
+        </a>
+       </h3>
+       <h3>
+        <a href="/3-kinh-nghiem-order-nhap-khau-hang-trung-quoc-nhat-dinh-phai-biet">
+         • 3 kinh nghiệm order nhập khẩu hàng Trung Quốc nhất định phải biết
+        </a>
+       </h3>
+       <h3>
+        <a href="/black-friday">
+         • Black Friday là ngày gì? Ý nghĩa của Black Friday
+        </a>
+       </h3>
+       <h3>
+        <a href="/nguon-hang-quan-ao-the-thao-trung-quoc-gia-si">
+         • 25+ Link Shop Quần áo thể thao Trung Quốc giá sỉ
+        </a>
+       </h3>
+       <h3>
+        <a href="/cach-van-chuyen-hang-trung-quoc-ve-viet-nam-cho-nguoi-moi">
+         • Cách vận chuyển hàng Trung Quốc về Việt Nam cho người mới
+        </a>
+       </h3>
+       <h3>
+        <a href="/nen-nhap-hang-gi-tu-trung-quoc-ve-ban">
+         • Nên nhập hàng gì từ Trung Quốc về bán?
+        </a>
+       </h3>
+       <h3>
+        <a href="/60-loi-chuc-ngay-phu-nu-viet-nam-20-10-hay-va-y-nghia-nhat">
+         • 60 LỜI CHÚC NGÀY PHỤ NỮ VIỆT NAM 20/10 HAY VÀ Ý NGHĨA NHẤT
+        </a>
+       </h3>
+       <h3>
+        <a href="/13-ao-hoodie">
+         • 13+ Link Shop Áo Hoodie Đẹp, Giá Rẻ Quảng Châu
+        </a>
+       </h3>
+       <h3>
+        <a href="/kinh-nghiem-ban-do-trang-tri-tet-thu-loi-nhuan-khung">
+         • Kinh nghiệm bán đồ trang trí Tết thu ''lợi nhuận khủng''
+        </a>
+       </h3>
+       <h3>
+        <a href="/tong-quan-cac-cua-khau-viet-nam-trung-quoc">
+         • Tổng quan các Cửa Khẩu Việt Nam - Trung Quốc
+        </a>
+       </h3>
+       <h3>
+        <a href="/hoi-cho-canton-fair-2023-lan-thu-134">
+         • Hội chợ Canton Fair 2023 lần thứ 134
+        </a>
+       </h3>
+       <h3>
+        <a href="/huong-dan-cach-tao-tai-khoan-va-mua-hang-tren-wechat-chi-tiet-nhat">
+         • Hướng dẫn cách tạo tài khoản và mua hàng trên Wechat chi tiết nhất
+        </a>
+       </h3>
+       <h3>
+        <a href="/nguon-hang-den-nhay-trang-tri-trung-quoc">
+         • Nguồn hàng đèn nháy trang trí Trung Quốc
+        </a>
+       </h3>
+      </div>
+     </div>
+    </aside>
+   </aside>
+  </div>
+ </div>
+</div>
+<div class="ab-module-article-mostview">
+</div>
+<div class="modal" id="datlich_thanhcong" tabindex="-1">
+ <div class="modal-dialog wrap-modal-dv" role="document">
+  <div class="modal-title relative">
+   <div class="title_module_main a-center">
+    <h2>
+     <span>
+      Gửi yêu cầu thành công
+     </span>
+    </h2>
+   </div>
+   <a class="absolute hidden-xs" data-dismiss="modal" href="javascript:;" id="btnclose" style=" right: 20px; top: 30%; color: #fff; ">
+    <i class="fa fa-close">
+    </i>
+   </a>
+  </div>
+  <div class="text-xs-center padding-0">
+   <div class="datlich a-center">
+    <div class="row">
+     <div class="modalbox success col-sm-12 col-md-12 col-lg-12 center animate">
+      <!--/.icon-->
+      <h2 class="margin-0">
+       Cảm ơn bạn
+      </h2>
+      <p>
+       Chúng tôi sẽ liên hệ với bạn sớm nhất
+      </p>
+      <button class="button_custome_35 btn btn-primary" data-dismiss="modal" type="button">
+       Ok
+      </button>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+Plugin JS 
+
+
+
+ Main JS 
+
+ Messenger Plugin chat Code
+<div id="fb-root">
+</div>
+Your Plugin chat code
+<div class="fb-customerchat" id="fb-customer-chat">
+</div>
+Your SDK code 
+
+ Start of caresoft live-chat widget 
+
+ End of caresoft live-chat widget
+
+{%endblock %}
