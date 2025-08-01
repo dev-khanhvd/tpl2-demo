@@ -1,0 +1,117 @@
+<header class="header relative flex items-center justify-center top-0 py-4-5 h-max">
+ <div class="container">
+  <div class="header-wrapper flex items-center justify-between gap-3 lg:grid lg:gap-2 lg:grid-cols-[286px_1fr_auto] flex-wrap">
+   <div class="flex items-center gap-5">
+    <div class="flex gap-2 xl:gap-6 xl:flex-row-reverse items-center transition-all duration-150">
+     <div class="menu-opener xl:hidden">
+      <portal-opener>
+       <div class="hamburger-button cursor-pointer link group inline-flex items-center justify-center gap-2 active:scale-95 transition-all duration-150 bg-relative text-primary rounded p-2" data-portal="#menu-drawer" id="toggle-menu-mobile">
+        <div class="w-[3rem] h-[3rem] p-2 rounded bg-relative justify-center items-center grid grid-cols-2 gap-0.5">
+         <span class="h-[7px] w-[7px] rounded-full border-[2px] block border-primary">
+         </span>
+         <span class="h-[7px] w-[7px] rounded-full border-[2px] block border-primary">
+         </span>
+         <span class="h-[7px] w-[7px] rounded-full border-[2px] block border-primary">
+         </span>
+         <span class="h-[7px] w-[7px] rounded-full border-[2px] block border-primary">
+         </span>
+        </div>
+        <span class="font-semibold hidden xl:">
+         Danh mục sản phẩm
+        </span>
+       </div>
+      </portal-opener>
+     </div>
+     <a class="logo-wrapper mx-auto" data-prefetch="" href="/" title="Chay Thực Dưỡng Lá Tía Tô">
+      <img alt="logo Chay Thực Dưỡng Lá Tía Tô" height="56" src="//bizweb.dktcdn.net/100/456/761/themes/1010044/assets/logo.png?1753342729308" width="196"/>
+     </a>
+    </div>
+   </div>
+   <div class="mx-auto header-search dnone md:block order-1 lg:order-none">
+    <div class="mx-auto md:px-5">
+     <div class="search-bar relative">
+      <quick-search class="quick-search">
+       <form action="/search" class="m-0 flex bg-background pl-1 py-1 rounded items-center relative border border-neutral-50" method="get" role="search">
+        <div class="search-input-group w-full relative flex items-center">
+         <input autocomplete="off" class="border-0 bg-transparent focus:ring-transparent p-0 w-full text-base text-foreground pr-3 text-ellipsis" data-placeholder="Tìm theo tên sản phẩm...; Tìm theo thương hiệu...;" name="query" placeholder="Tìm theo tên sản phẩm..." required="" type="text" value=""/>
+         <input name="type" type="hidden" value="product"/>
+         <button aria-label="search" class="search-button btn flex items-center justify-center text-foreground rounded bg-[var(--color-search)] text-white" type="submit">
+          <i class="icon icon-search">
+          </i>
+         </button>
+        </div>
+       </form>
+       <div class="search-dropdown absolute bottom-0 top-full mt-1 left-0 bg-background rounded-lg py-3 text-foreground w-full px-2">
+        <div class="search-loading absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full z-[1] bg-background flex items-center justify-center">
+         <span class="loading-icon gap-1 hidden items-center justify-center">
+          <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+          </span>
+          <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+          </span>
+          <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+          </span>
+         </span>
+        </div>
+        <div class="search-result space-y-3">
+        </div>
+        <div class="search-history-list border-neutral-50">
+        </div>
+        <div class="search-keywords space-y-2 pt-2 px-2">
+         <span class="text-primary font-semibold">
+          Từ khóa phổ biến
+         </span>
+         <div class="search-keyword-list flex gap-1 items-center flex-wrap">
+          <a class="search-keyword text-secondary px-3 py-1 bg-relative rounded-full inline-flex items-center justify-center hover:border-secondary border border-transparent" href="/search?q=G%E1%BA%A1o+l%E1%BB%A9t&amp;type=product" title="">
+           Gạo lứt
+          </a>
+          <a class="search-keyword text-secondary px-3 py-1 bg-relative rounded-full inline-flex items-center justify-center hover:border-secondary border border-transparent" href="/search?q=+G%E1%BA%A1o+x%C3%A1t+d%E1%BB%91i&amp;type=product" title="">
+           Gạo xát dối
+          </a>
+          <a class="search-keyword text-secondary px-3 py-1 bg-relative rounded-full inline-flex items-center justify-center hover:border-secondary border border-transparent" href="/search?q=+Tr%C3%A0+b%C3%ACnh+minh&amp;type=product" title="">
+           Trà bình minh
+          </a>
+          <a class="search-keyword text-secondary px-3 py-1 bg-relative rounded-full inline-flex items-center justify-center hover:border-secondary border border-transparent" href="/search?q=+N%C6%B0%E1%BB%9Bc+m%E1%BA%AFm+chay&amp;type=product" title="">
+           Nước mắm chay
+          </a>
+          <a class="search-keyword text-secondary px-3 py-1 bg-relative rounded-full inline-flex items-center justify-center hover:border-secondary border border-transparent" href="/search?q=+Ch%E1%BA%A3+gi%C3%B2+b%C3%A1t+b%E1%BB%ADu&amp;type=product" title="">
+           Chả giò bát bửu
+          </a>
+          <a class="search-keyword text-secondary px-3 py-1 bg-relative rounded-full inline-flex items-center justify-center hover:border-secondary border border-transparent" href="/search?q=+B%C3%BAn+th%C3%AC+l%C3%A0&amp;type=product" title="">
+           Bún thì là
+          </a>
+         </div>
+        </div>
+       </div>
+      </quick-search>
+     </div>
+    </div>
+   </div>
+   <div class="header-icon-wrapper flex items-center justify-end gap-2 xl:gap-5.5">
+    <portal-opener class="search-opener block lg:hidden">
+     <a class="header-icon-group flex gap-2 items-center cart-group hover:bg-neutral-50 active:scale-95 transition-all duration-150 md:px-2 px-1 py-1 rounded-sm" data-portal="#search-drawer" href="/search" title="tìm kiếm">
+      <div class="header-icon w-[3.6rem] h-[3.6rem] p-2 rounded-full flex items-center justify-center relative border border-neutral-50">
+       <img src="https://bizweb.dktcdn.net/100/456/761/themes/1010044/assets/search.png?1745658136604"/>
+      </div>
+     </a>
+    </portal-opener>
+    <a class="header-icon-group dnone md:flex gap-2 items-center cart-group hover:bg-neutral-50 active:scale-95 transition-all duration-150 md:px-2 px-1 py-1 rounded-sm" href="/account/login" title="Đăng nhập">
+     <div class="header-icon w-[3.6rem] h-[3.6rem] p-2 rounded-full flex items-center justify-center relative border border-neutral-50">
+      <i class="icon icon-user">
+      </i>
+     </div>
+    </a>
+    <portal-opener>
+     <a class="mini-cart header-icon-group flex gap-2 items-center cart-group hover:bg-neutral-50 active:scale-95 transition-all duration-150 md:px-2 px-1 py-1 rounded-sm" data-portal="#cart-drawer" href="/cart" title="Giỏ hàng">
+      <div class="header-icon w-[3.6rem] h-[3.6rem] p-2 rounded-full flex items-center justify-center relative border border-neutral-50">
+       <i class="icon icon-cart">
+       </i>
+       <span class="cart-count flex items-center count_item count_item_pr justify-center rounded-full absolute font-semibold">
+        0
+       </span>
+      </div>
+     </a>
+    </portal-opener>
+   </div>
+  </div>
+ </div>
+</header>
