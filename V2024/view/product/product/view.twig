@@ -1,0 +1,1879 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(product.name).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ product.metaKeywords?:product.name }}">
+<meta name="description" content="{{ product.metaDescription?:product.name }}">
+<meta property="og:title" content="{{ product.metaTitle?:product.name }}">
+<meta property="og:url" content="{{ product.canonicalLink }}">
+<meta property="og:image" content="{{ product.imageUri }}">
+<link rel="canonical" href="{{ product.canonicalLink }}">
+{%endblock %}
+
+{%block body %}
+  {% set wishlist = jsonDecode(getCookies('WISHLIST_STORE_PRODUCT')) %}
+                            {% set ivt = 0 %}
+                            {% if product.inventory().calcAvailable() > 0 %}
+                                {% set ivt = product.inventory().calcAvailable() %}
+                            {% elseif product.available > 0 %}
+                                {% set ivt = product.available %}
+                            {% endif %}
+                            {% set variableAttributes = product.variableAttributes %}
+                            {% set flag = 0 %}
+<div class="top-banner position-relative" style="background: #ff9838">
+ <div class="text-center px-0 container">
+  <a class="position-relative block md:hidden" href="/collections/all" title="top banner">
+   <img alt="top banner" class="w-full position-absolute mx-auto" height="45" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/top_banner_mb.jpg?v=23" style="left:0" width="480"/>
+  </a>
+  <a class="position-relative dnone md:block" href="/collections/all" title="top banner">
+   <picture>
+    <source media="(max-width: 480px)" srcset="//theme.hstatic.net/200000939217/1001374153/14/top_banner.jpg?v=23"/>
+    <img alt="top banner" class="w-full position-absolute mx-auto" height="50" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/top_banner.jpg?v=23" style="left:0" width="1296"/>
+   </picture>
+  </a>
+ </div>
+</div>
+<div class="navigation-wrapper dnone xl:flex items-center sub-header">
+ <div class="container relative">
+  <div class="">
+   <div class="flex justify-between items-center">
+    <div class="navigation--horizontal dnone lg:flex items-center">
+     <div class="navigation-horizontal-wrapper overflow-hidden">
+      <nav>
+       <ul class="navigation-horizontal">
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/" href="/" title="TRANG CHỦ">
+          <span>
+           TRANG CHỦ
+          </span>
+         </a>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/collections/all" href="/collections/all" title="TẤT CẢ SẢN PHẨM">
+          <span>
+           TẤT CẢ SẢN PHẨM
+          </span>
+         </a>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/pages/flash-sale-1-khung-gio" href="/pages/flash-sale-1-khung-gio" title="CHƯƠNG TRÌNH KHUYẾN MÃI">
+          <span>
+           CHƯƠNG TRÌNH KHUYẾN MÃI
+          </span>
+          <i class="icon icon-carret-down" data-toggle-submenu="">
+          </i>
+         </a>
+         <div class="submenu default">
+          <ul class="submenu__list">
+           <li class="submenu__item submenu__item--main">
+            <a class="link font-semibold" data-prefetch="/pages/flash-sale-1-khung-gio" href="/pages/flash-sale-1-khung-gio" title="Flash Sale 1 khung giờ">
+             Flash Sale 1 khung giờ
+            </a>
+           </li>
+           <li class="submenu__item submenu__item--main">
+            <a class="link font-semibold" data-prefetch="/pages/flash-sale-nhieu-khung-gio" href="/pages/flash-sale-nhieu-khung-gio" title="Flash Sale nhiều khung giờ">
+             Flash Sale nhiều khung giờ
+            </a>
+           </li>
+          </ul>
+         </div>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/pages/about-us" href="/pages/about-us" title="GIỚI THIỆU">
+          <span>
+           GIỚI THIỆU
+          </span>
+         </a>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/blogs/news" href="/blogs/news" title="TIN TỨC">
+          <span>
+           TIN TỨC
+          </span>
+         </a>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/pages/lien-he" href="/pages/lien-he" title="LIÊN HỆ">
+          <span>
+           LIÊN HỆ
+          </span>
+         </a>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="https://wiki.egany.com/s/ega-baby-mart-haravan" href="https://wiki.egany.com/s/ega-baby-mart-haravan" target="_blank" title="HƯỚNG DẪN THIẾT LẬP">
+          <span>
+           HƯỚNG DẪN THIẾT LẬP
+          </span>
+         </a>
+        </li>
+       </ul>
+      </nav>
+     </div>
+     <div class="navigation-arrows">
+      <button class="btn prev px-1">
+       <i class="disabled icon icon-carret-left link">
+       </i>
+      </button>
+      <button class="btn next px-1">
+       <i class="icon icon-carret-right link">
+       </i>
+      </button>
+     </div>
+    </div>
+    <div class="flex gap-[var(--spacing-8)] whitespace-nowrap">
+     <a class="inline-flex gap-1 items-center store-group hover:text-[var(--color-sub-header-link)]" href="/pages/he-thong-cua-hang" title="Hệ thống cửa hàng">
+      <div class="rounded-sm flex items-center justify-center">
+       <i class="icon icon-store">
+       </i>
+      </div>
+      <div>
+       <span class="font-semibold">
+        Hệ thống cửa hàng
+       </span>
+      </div>
+     </a>
+     <a class="inline-flex gap-1 items-center phone-group hover:text-[var(--color-sub-header-link)]" href="tel:099999998" title="099999998">
+      <div class="rounded-sm flex items-center justify-center">
+       <i class="icon icon-calling-phone">
+       </i>
+      </div>
+      <div>
+       <span>
+        Hotline:
+        <b>
+         099999998
+        </b>
+       </span>
+      </div>
+     </a>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<main>
+ <div class="breadcrumbs">
+  <div class="container">
+   <div class="breadcrumb-list">
+    <ol class="breadcrumb py-3 flex flex-wrap items-center text-xs md:text-sm" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+     <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+      <a class="link" href="/" itemprop="item" target="_self">
+       <span itemprop="name">
+        Trang chủ
+       </span>
+      </a>
+      <meta content="1" itemprop="position"/>
+      <span class="mx-1 md:mx-2 inline-block">
+       /
+      </span>
+     </li>
+     <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+      <a class="link" href="https://ega-babymart.myharavan.com/collections/bim" itemprop="item" target="_self">
+       <span itemprop="name">
+        Bỉm
+       </span>
+      </a>
+      <meta content="2" itemprop="position"/>
+      <span class="mx-1 md:mx-2 inline-block">
+       /
+      </span>
+     </li>
+     <li class="active" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+      <span class="text-neutral-100" content="https://ega-babymart.myharavan.com/products/bim-goldgi-eco-quan-l48-9-14kg" itemprop="item">
+       <strong class="font-normal" itemprop="name">
+        Bỉm Goldgi ECO quần L48 (9-14kg)
+       </strong>
+      </span>
+      <meta content="3" itemprop="position"/>
+     </li>
+    </ol>
+   </div>
+  </div>
+ </div>
+ <div class="main-product pb-5 bg-background">
+  <div class="container bg-background lg:bg-transparent">
+   <product-form id="main-product-1061887944">
+    <div class="product-detail lg:gap-x-[3.2rem] gap-x-6 grid grid-cols-1 auto-rows-min lg:grid-cols-2 relative">
+     <div class="product-gallery-wrapper bg-background min-h-0 min-w-0 relative lg:rounded-lg" style="height:fit-content">
+      <div class="">
+       <div class="product-gallery md:px-3 pt-3 md:pt-6">
+        <media-gallery>
+         <div class="embla gallery-main relative mx-auto" id="GalleryMain-product-1" style="max-width: 500px">
+          <div class="card-product__badges absolute top-2 left-2 z-10 flex items-center gap-2">
+          </div>
+          <div class="embla__viewport">
+           <div class="embla__container">
+            <div class="embla__slide w-full grow-0 shrink-0 aspect-square flex items-center justify-center relative swiper-spotlight cursor-zoom-in" data-href="https://product.hstatic.net/200000939217/product/upload_87a30a57bdf84360a5e357d7c3a28bcd.jpg" data-src="https://product.hstatic.net/200000939217/product/upload_87a30a57bdf84360a5e357d7c3a28bcd.jpg">
+             <img alt="Bỉm Goldgi ECO quần L48 (9-14kg)" class="object-contain rounded-lg scale-[var(--image-scale)] gallery-main-img" fetchpriority="high" loading="eager" src="//product.hstatic.net/200000939217/product/upload_87a30a57bdf84360a5e357d7c3a28bcd_grande.jpg" style="--image-scale:1"/>
+            </div>
+           </div>
+          </div>
+         </div>
+        </media-gallery>
+       </div>
+      </div>
+     </div>
+     <div class="product-form-wrapper lg:row-start-1 lg:row-end-5 lg:col-start-2">
+      <div class="bg-background lg:rounded-l md:py-6 lg:p-6 relative lg:sticky lg:top-[calc(var(--header-height)-1.2rem)]">
+       <div class="">
+        <div class="product-title space-y-2 mb-4">
+         <h1 class="font-semibold text-h4">
+          Bỉm Goldgi ECO quần L48 (9-14kg)
+         </h1>
+         <div class="flex flex-wrap gap-2 items-center mt-2">
+          <div class="flex gap-2 items-center flex-wrap">
+           <div class="proloop--review">
+            <!--  check review -->
+            <div class="haravan-product-reviews-badge" data-id="1061887944">
+            </div>
+           </div>
+          </div>
+          <compare-button>
+           <button aria-label="So sánh" class="p-0 text-secondary text-xs font-semibold flex gap-2 items-centerfont-semibold" data-portal="#quick-view-compare" data-product="1061887944" data-product-type="bim-bim-goldgi" type="button">
+            <i class="icon icon-arrow-swap">
+            </i>
+            <span>
+             So sánh
+            </span>
+           </button>
+          </compare-button>
+         </div>
+         <div class="group-status flex flex-wrap gap-4 pb-2 items-center border-b border-dash border-neutral-50">
+          <div class="status status-vendor">
+           <span class="text-xs">
+            Thương hiệu:
+           </span>
+           <a class="link text-xs font-semibold underline" href="/collections/all?vendor=Goldgi">
+            Goldgi
+           </a>
+          </div>
+          <div class="status status-sku">
+           <span class="text-xs">
+            Mã sản phẩm:
+           </span>
+           <span class="text-xs">
+            Đang cập nhật
+           </span>
+          </div>
+         </div>
+         <div class="product-price-group grid rounded-sm overflow-hidden mb-4" style="
+		    --color-flashsale: #ffffff;
+			--color-flashsale-bg: #e53175;
+			--color-flashsale-timer-bg: #fcfcfc;
+			--color-flashsale-timer: #000000;
+			--color-flashsale-process: #ffe500;
+			">
+          <div class="product-flashsale">
+          </div>
+          <div class="price-box flex items-center flex-wrap gap-2">
+           <div class="flex flex-wrap gap-1 items-baseline">
+            <span class="price text-h4">
+             440,000₫
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="promo-box md:col-start-1 min-h-0 min-w-0 relative mb-4">
+         <div class="promo-box-group border rounded-sm">
+          <div class="promo-box__header flex items-center gap-1 px-5 py-1.5">
+           <i class="icon icon-gift">
+           </i>
+           <div class="promo-box__header-title">
+            Quà tặng khuyến mãi
+           </div>
+          </div>
+          <div class="promo-box__body px-5 bg-background p-3 flex lg:grid grid-cols-1 gap-1 flex-col">
+           <div class="promo-box__body-item">
+            1. Nhập mã EGANY thêm 5% đơn hàng
+           </div>
+           <div class="promo-box__body-item">
+            2. Giảm giá 10% khi mua từ 5 sản phẩm
+           </div>
+           <div class="promo-box__body-item">
+            3. Giảm giá 15% khi mua từ 10 sản phẩm
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="coupon-box md:col-start-1 min-h-0 min-w-0 relative mb-4">
+         <div class="coupon-group flex items-center gap-3">
+          <div class="coupon-group-header text-neutral-400 mb-2 w-[88px] flex-shrink-0 flex-grow-0">
+           Mã giảm giá
+          </div>
+          <portal-opener class="block w-full overflow-hidden">
+           <div class="flex gap-3 items-center" data-portal="#coupon-drawer">
+            <div class="inline-flex max-w-[calc(100%-48px)] overflow-hidden items-center gap-3 cursor-pointer">
+             <div class="coupon-group-item transition-all hover:scale-105 whitespace-nowrap text-ellipsis overflow-hidden w-1/2 md:w-1/3 flex gap-2 items-center px-3 py-2 rounded-lg text-[#FF9D02] bg-relative">
+              <i class="icon icon-ticket">
+              </i>
+              <div class="coupon-group-item__code font-semibold text-ellipsis overflow-hidden">
+               EGA50
+              </div>
+             </div>
+             <div class="coupon-group-item transition-all hover:scale-105 whitespace-nowrap text-ellipsis overflow-hidden w-1/2 md:w-1/3 flex gap-2 items-center px-3 py-2 rounded-lg text-[#FF9D02] bg-relative">
+              <i class="icon icon-ticket">
+              </i>
+              <div class="coupon-group-item__code font-semibold text-ellipsis overflow-hidden">
+               EGAT10
+              </div>
+             </div>
+             <div class="coupon-group-item transition-all hover:scale-105 whitespace-nowrap text-ellipsis overflow-hidden w-1/2 md:w-1/3 dnone md:flex gap-2 items-center px-3 py-2 rounded-lg text-[#FF9D02] bg-relative">
+              <i class="icon icon-ticket">
+              </i>
+              <div class="coupon-group-item__code font-semibold text-ellipsis overflow-hidden">
+               FREESHIP
+              </div>
+             </div>
+            </div>
+            <div class="px-3 py-2 cursor-pointer rounded-lg text-[#FF9D02] bg-relative w-[3.6rem] h-[3.6rem] transition-all hover:scale-105">
+             <i class="icon icon-carret-right">
+             </i>
+            </div>
+           </div>
+          </portal-opener>
+         </div>
+        </div>
+       </div>
+       <div class="product-cta mb-0 mt-4">
+        <div class="hidden btn--soldout font-semibold mt-2 btn bg-neutral-50 w-full" style="pointer-events:none">
+         HẾT HÀNG
+        </div>
+        <form action="/cart/add" class="" enctype="multipart/form-data" id="add-to-cart-form" method="post">
+         <input name="id" type="hidden" value="1140639447"/>
+         <div class="flex items-center gap-3 mb-4">
+          <div class="w-[88px] text-neutral-400">
+           Số lượng
+          </div>
+          <quantity-input>
+           <div class="custom-number-input product-quantity">
+            <div class="flex flex-row h-10 border border-neutral-50 relative bg-background rounded-pill overflow-hidden h-[3.8rem] w-[13rem]">
+             <button class="h-full w-20 cursor-pointer outline-non p-2" name="minus" type="button">
+              <i class="m-auto icon icon-minus">
+              </i>
+             </button>
+             <input class="focus:outline-none form-quantity w-full focus:ring-transparent text-base font-semibold text-md md:text-basecursor-default flex items-center outline-none bg-transparent border-none text-center" min="1" name="quantity" type="number" value="1"/>
+             <button class="h-full w-20 rounded-r cursor-pointer p-2" name="plus" type="button">
+              <i class="m-auto icon icon-plus">
+              </i>
+             </button>
+            </div>
+           </div>
+          </quantity-input>
+         </div>
+         <div class="flex gap-2 mt-4 border-t border-neutral-50 pt-4">
+          <button class="font-semibold btn bg-[var(--color-addtocart-bg)] text-[var(--color-addtocart)] btn-add-to-cart w-full" name="addtocart">
+           <p>
+            THÊM VÀO GIỎ
+            <br/>
+            <span>
+             Giao hàng tận nơi hoặc nhận tại cửa hàng
+            </span>
+           </p>
+           <span class="loading-icon gap-1 hidden items-center justify-center">
+            <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+            </span>
+            <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+            </span>
+            <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+            </span>
+           </span>
+          </button>
+         </div>
+        </form>
+       </div>
+       <div class="product-contact grid gap-3 my-3">
+        <div class="product-contact__socials grid md:flex gap-3">
+         <div class="product-contact__item w-full">
+          <a class="product-contact__zalo btn product-contact__link w-full flex flex-col justify-center items-center text-center gap-1" href="https://zalo.me/egany" target="_blank" title="Giải đáp và hỗ trợ ngay tức thì">
+           <div class="flex gap-1 font-semibold items-center justify-center">
+            <img alt="zalo" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/zalo-white.png?v=23" width="20"/>
+            <span>
+             Zalo
+            </span>
+           </div>
+           <span class="product-contact__text text-xs">
+            Giải đáp và hỗ trợ ngay tức thì
+           </span>
+          </a>
+         </div>
+         <div class="product-contact__item w-full">
+          <a class="product-contact__messenger btn product-contact__link w-full flex flex-col justify-center items-center text-center gap-1" href="https://m.me/egany" target="_blank" title="Giải đáp và hỗ trợ ngay tức thì">
+           <div class="flex gap-1 font-semibold items-center justify-center">
+            <img alt="zalo" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/facebook-white.png?v=23" width="20"/>
+            <span>
+             Facebook
+            </span>
+           </div>
+           <span class="product-contact__text text-xs">
+            Giải đáp và hỗ trợ ngay tức thì
+           </span>
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="card-product__badges hidden space-y-2 col-span-full lg:col-start-2 md:py-3 mt-4">
+       </div>
+       <ul class="pt-3 flex gap-2 flex-col product-polices">
+        <li class="item relative flex gap-2 items-center">
+         <div class="max-w-5">
+          <img alt="Giao hàng miễn phí trong 24h (chỉ áp dụng khu vực nội thành)" class="object-contain" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/policy_product_image_1.png?v=23" width="20"/>
+         </div>
+         <div class="">
+          Giao hàng miễn phí trong 24h (chỉ áp dụng khu vực nội thành)
+         </div>
+        </li>
+        <li class="item relative flex gap-2 items-center">
+         <div class="max-w-5">
+          <img alt="Trả góp lãi suất 0% qua thẻ tín dụng Visa, Master, JCB" class="object-contain" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/policy_product_image_2.png?v=23" width="20"/>
+         </div>
+         <div class="">
+          Trả góp lãi suất 0% qua thẻ tín dụng Visa, Master, JCB
+         </div>
+        </li>
+        <li class="item relative flex gap-2 items-center">
+         <div class="max-w-5">
+          <img alt="Đổi trả miễn phí trong 30 ngày" class="object-contain" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/policy_product_image_3.png?v=23" width="20"/>
+         </div>
+         <div class="">
+          Đổi trả miễn phí trong 30 ngày
+         </div>
+        </li>
+       </ul>
+       <div class="mt-4 flex flex-wrap justify-between border-t border-neutral-50 py-4 gap-3 items-center">
+        <div class="social-media flex gap-2">
+         <div class="social-media__image relative z-[1]">
+          <img alt="EGA Baby tiktok" class="object-cover rounded-full aspect-square" height="50" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/social_media_image.png?v=23" width="50"/>
+         </div>
+         <div class="flex flex-col gap-1 relative z-[1] items-start">
+          <div class="social-media__title font-semibold text-h6">
+           EGA Baby tiktok
+          </div>
+          <div class="social-media__description text-body">
+           Kết nối với chúng tôi
+          </div>
+          <a class="social-media__link btn py-1.5 bg-transparent border border-primary text-primary hover:bg-primary hover:text-white" href="https://seller-vn.tiktok.com/account/register?channel=egany" target="_blank" title="Kết nối với chúng tôi">
+           Kết nối với chúng tôi
+          </a>
+         </div>
+        </div>
+        <div class="share-group flex flex-col gap-2">
+         <p class="share-group__heading mr-3 font-semibold">
+          Chia sẻ
+         </p>
+         <div class="share-group__list flex gap-3">
+          <a class="share-group__item hover:bg-neutral-50 p-2 border border-neutral-50 rounded-full w-[3.6rem] h-[3.6rem] flex items-center justify-center facebook" href="http://www.facebook.com/sharer.php?u=https://ega-babymart.myharavan.com/products/bim-goldgi-eco-quan-l48-9-14kg" target="_blank" title="facebook-share">
+           <img alt="facebook" class="object-contain" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/facebook-icon.png?v=23" width="20"/>
+          </a>
+          <a class="share-group__item hover:bg-neutral-50 messenger p-2 border border-neutral-50 rounded-full w-[3.6rem] h-[3.6rem] flex items-center justify-center lg:hidden" href="fb-messenger://share/?link=https://ega-babymart.myharavan.com/products/bim-goldgi-eco-quan-l48-9-14kg" target="_blank" title="messenger-share">
+           <img alt="messenger" class="object-contain" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/messenger-icon.png?v=23" width="20"/>
+          </a>
+          <a class="share-group__item hover:bg-neutral-50 pinterest p-2 border border-neutral-50 rounded-full w-[3.6rem] h-[3.6rem] flex items-center justify-center" href="http://pinterest.com/pin/create/button/?url=https://ega-babymart.myharavan.com/products/bim-goldgi-eco-quan-l48-9-14kg" target="_blank" title="pinterest-share">
+           <img alt="pinterest" class="object-contain" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/pinterest-icon.png?v=23" width="20"/>
+          </a>
+          <a class="share-group__item hover:bg-neutral-50 twitter p-2 border border-neutral-50 rounded-full w-[3.6rem] h-[3.6rem] flex items-center justify-center" href="http://twitter.com/share?text=https://ega-babymart.myharavan.com/products/bim-goldgi-eco-quan-l48-9-14kg" target="_blank" title="twitter-share">
+           <img alt="twitter" class="object-contain" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/twitter-icon.png?v=23" width="20"/>
+          </a>
+          <share-button class="share-group__item hover:bg-neutral-50 twitter p-2 border border-neutral-50 rounded-full w-[3.6rem] h-[3.6rem] flex items-center justify-center cursor-pointer">
+           <img alt="share" class="object-contain" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/share.png?v=23" width="20"/>
+          </share-button>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="">
+      <div class="product-description relative">
+       <div class="bg-white py-5" id="product-content">
+        <div class="mx-auto">
+         <h3 class="text-h5 block border-b border-neutral-50 pb-3 font-semibold mb-5">
+          Đặc điểm nổi bật
+         </h3>
+         <expandable-content max-height="200px">
+          <div class="expandable-content mb-3">
+           <div class="prose text-base w-full max-w-full content" data-id="1061887944" data-platform="haravan" id="ega-uti-editable-content">
+            <strong>
+             Bỉm Nhật GOLDGI ECO size Quần L
+            </strong>
+            48 miếng cho bé &gt;15kg đến từ Nhật Bản, sở hữu
+            <em>
+             cô
+            </em>
+            ng nghệ hiện đại nhất hiện nay với lõi hạt phân tử SAP liên kết
+            <em>
+             chắc chắn
+            </em>
+            giúp thấm hút siêu nhanh mà không gây vón cục bỉm. Bỉm Nhật GOLDGI ECO size Quần L siêu mỏng chỉ 1- 1.5mm tạo nên sự thoải mái và nhẹ nhàng khi bé sử dụng ngay cả vào mùa hè. Đai eo được kết cấu bởi 53 sợi thun đàn hồi, hai bên liên kết hàn siêu âm không sử dụng keo dính, không gây hằn đỏ da bé.
+            <div>
+             <p>
+              <strong>
+               Đặc điểm nổi bật của sản phẩm
+              </strong>
+             </p>
+             <p>
+              <em>
+               <strong>
+                Siêu mỏng với độ dày chỉ 1 – 1.5mm
+               </strong>
+              </em>
+             </p>
+             <p>
+              Bỉm Nhật GOLDGI ECO nổi bật với thiết kế siêu mỏng, chỉ 1 – 1.5mm, phù hợp sử dụng cả mùa hè lẫn mùa đông, mang đến cho bé những vận động thoải mái
+             </p>
+             <p>
+              <em>
+               <strong>
+                <em>
+                 Cô
+                </em>
+                ng nghệ hạt phân tử siêu thấm hút, không vón cục
+               </strong>
+              </em>
+             </p>
+             <p>
+              – Bỉm Nhật GOLDGI ECO được sản xuất theo
+              <em>
+               cô
+              </em>
+              ng nghệ hiện đại nhất hiện nay tại Nhật Bản – sử dụng
+              <em>
+               100%
+              </em>
+              lõi hạt phân tử SAP được liên kết bởi sợi chỉ nhân tạo rayon, tạo ra kết cấu lõi mỏng, có sự liên kết
+              <em>
+               chắc chắn
+              </em>
+              , thấm hút nhanh mà không vón cục, an toàn
+              <em>
+               tuyệt đối
+              </em>
+              cho bé
+             </p>
+             <p>
+              – Đồng thời, lõi treo hấp thu 3 mặt tăng tốc độ thấm hút, giảm thiểu tràn nước tiểu sang hai bên
+             </p>
+             <p>
+              <em>
+               <strong>
+                Bề mặt 3D chống tràn, siêu khô thoáng
+               </strong>
+              </em>
+             </p>
+             <p>
+              Vải màng lõi thiết kế hoa văn 3D tạo hình nổi, tăng rãnh dẫn nước thấm hút nhanh chóng, giảm diện tích bề mặt tiếp xúc với da bé, không trào ngược, cảm giác khô thoáng hơn.
+             </p>
+             <p>
+              <em>
+               <strong>
+                Đai eo siêu co giãn, không gây hằn đỏ
+               </strong>
+              </em>
+             </p>
+             <p>
+              – Đai eo rộng, được kết cấu bởi 53 sợi thun đàn hồi, ôm sát vào eo bé, tăng diện tích tiếp xúc phân tán đều lực bó, giảm thiểu tối đa hằn da
+             </p>
+             <p>
+              – Hai bên đai eo được liên kết hàn siêu âm không sử dụng keo dính, mềm mại và an toàn cho da bé
+             </p>
+             <p>
+              <em>
+               <strong>
+                Vạch báo đầy bỉm thông minh
+               </strong>
+              </em>
+             </p>
+             <p>
+              Chỉ thị độ ẩm thông minh dưới đáy bỉm, chuyển màu để báo hiệu thời điểm bỉm đầy, mẹ cần thay cho bé
+             </p>
+             <p>
+              <em>
+               <strong>
+                Băng dính dán miếng bỉm
+               </strong>
+              </em>
+             </p>
+             <p>
+              Bỉm Nhật GOLDGI ECO có băng dính dán miếng bỉm
+              <em>
+               sau
+              </em>
+              khi sử dụng vô cùng tiện lợi (Băng dính này có tác dụng cuốn gọn bỉm
+              <em>
+               sau
+              </em>
+              khi dùng lại rồi mới cho vào thùng rác)
+             </p>
+             <h3>
+              <strong>
+               Hướng dẫn chọn size bỉm quần GOLDGI +X5 cho bé
+              </strong>
+             </h3>
+             <p>
+              – Size M: 6 – 11kg
+             </p>
+             <p>
+              – Size L: 9 – 14kg
+             </p>
+             <p>
+              – Size XL: 12 – 17kg
+             </p>
+             <p>
+              – Size XXL: Trên 15kg
+             </p>
+            </div>
+           </div>
+          </div>
+         </expandable-content>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </product-form>
+  </div>
+ </div>
+ <section class="section section-related-products section-products" style="--section-margin: 64px 0 64px 0;--section-margin-mb: 32px 0 32px 0">
+  <div class="container">
+   <div class="section-card">
+    <div class="heading-bar py-3 px-5 text-center mb-2">
+     <h2 class="heading font-semibold">
+      <a href="/collections/bim" title="Sản phẩm liên quan">
+       Sản phẩm liên quan
+      </a>
+     </h2>
+    </div>
+    <related-products class="releated-products w-full" data-empty-content="Sản phẩm đang được cập nhật" data-limit="5" data-query="(id:product&lt;&gt;1061887944) &amp;&amp;  (collectionid:product=1004289429)">
+     <carousel-slider>
+      <div class="embla">
+       <div class="embla__viewport">
+        <div class="embla__container product-list h-inherit [&amp;&gt;div:first-of-type]:-ml-2 [&amp;&gt;div]:pl-2 [&amp;&gt;div]:w-[61.3%] md:[&amp;&gt;div]:w-[27%] xl:[&amp;&gt;div]:w-1/5 [&amp;&gt;div]:flex_0 [&amp;&gt;div]:shrink-0">
+         <div class="skeleton__product-grid__item bg-background border border-neutral-50 rounded relative z-10 m-0 h-full">
+          <div class="skeleton__product-grid__item__image aspect-square bg-neutral-50 animate-pulse">
+          </div>
+          <div class="skeleton__product-grid__item__body p-2 md:p-4 space-y-2">
+           <div class="skeleton__product-grid__item__title w-full h-4 bg-neutral-50 animate-pulse">
+           </div>
+           <div class="skeleton__product-grid__item__price w-1/3 h-4 bg-neutral-50 animate-pulse">
+           </div>
+          </div>
+         </div>
+         <div class="skeleton__product-grid__item bg-background border border-neutral-50 rounded relative z-10 m-0 h-full">
+          <div class="skeleton__product-grid__item__image aspect-square bg-neutral-50 animate-pulse">
+          </div>
+          <div class="skeleton__product-grid__item__body p-2 md:p-4 space-y-2">
+           <div class="skeleton__product-grid__item__title w-full h-4 bg-neutral-50 animate-pulse">
+           </div>
+           <div class="skeleton__product-grid__item__price w-1/3 h-4 bg-neutral-50 animate-pulse">
+           </div>
+          </div>
+         </div>
+         <div class="skeleton__product-grid__item bg-background border border-neutral-50 rounded relative z-10 m-0 h-full">
+          <div class="skeleton__product-grid__item__image aspect-square bg-neutral-50 animate-pulse">
+          </div>
+          <div class="skeleton__product-grid__item__body p-2 md:p-4 space-y-2">
+           <div class="skeleton__product-grid__item__title w-full h-4 bg-neutral-50 animate-pulse">
+           </div>
+           <div class="skeleton__product-grid__item__price w-1/3 h-4 bg-neutral-50 animate-pulse">
+           </div>
+          </div>
+         </div>
+         <div class="skeleton__product-grid__item bg-background border border-neutral-50 rounded relative z-10 m-0 h-full">
+          <div class="skeleton__product-grid__item__image aspect-square bg-neutral-50 animate-pulse">
+          </div>
+          <div class="skeleton__product-grid__item__body p-2 md:p-4 space-y-2">
+           <div class="skeleton__product-grid__item__title w-full h-4 bg-neutral-50 animate-pulse">
+           </div>
+           <div class="skeleton__product-grid__item__price w-1/3 h-4 bg-neutral-50 animate-pulse">
+           </div>
+          </div>
+         </div>
+         <div class="skeleton__product-grid__item bg-background border border-neutral-50 rounded relative z-10 m-0 h-full">
+          <div class="skeleton__product-grid__item__image aspect-square bg-neutral-50 animate-pulse">
+          </div>
+          <div class="skeleton__product-grid__item__body p-2 md:p-4 space-y-2">
+           <div class="skeleton__product-grid__item__title w-full h-4 bg-neutral-50 animate-pulse">
+           </div>
+           <div class="skeleton__product-grid__item__price w-1/3 h-4 bg-neutral-50 animate-pulse">
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="embla__buttons">
+        <button class="embla__button embla__button--prev" onclick="event.stopPropagation()" type="button">
+         <i class="icon icon-carret-left">
+         </i>
+        </button>
+        <button class="embla__button embla__button--next" onclick="event.stopPropagation()" type="button">
+         <i class="icon icon-carret-right">
+         </i>
+        </button>
+       </div>
+      </div>
+     </carousel-slider>
+    </related-products>
+   </div>
+  </div>
+ </section>
+ <section class="section section-products section-equal-price-products" id="equalprice-products" style="--section-margin: 64px 0 64px 0;--section-margin-mb: 32px 0 32px 0">
+  <div class="container">
+   <div class="section-card">
+    <div class="heading-bar py-3 px-5 text-center mb-2">
+     <h2 class="heading font-semibold">
+      Sản phẩm cùng phân khúc
+     </h2>
+    </div>
+    <related-products class="releated-products w-full" data-empty-content="Sản phẩm đang được cập nhật" data-limit="5" data-query="(id:product&lt;&gt;1061887944&amp;&amp;(price:product &gt;=220000)&amp;&amp;(price:product &lt;=660000))">
+     <carousel-slider>
+      <div class="embla">
+       <div class="embla__viewport">
+        <div class="embla__container product-list h-inherit [&amp;&gt;div:first-of-type]:-ml-2 [&amp;&gt;div]:pl-2 [&amp;&gt;div]:w-[61.3%] md:[&amp;&gt;div]:w-[27%] xl:[&amp;&gt;div]:w-1/5 [&amp;&gt;div]:flex_0 [&amp;&gt;div]:shrink-0">
+         <div class="skeleton__product-grid__item bg-background border border-neutral-50 rounded relative z-10 m-0 h-full">
+          <div class="skeleton__product-grid__item__image aspect-square bg-neutral-50 animate-pulse">
+          </div>
+          <div class="skeleton__product-grid__item__body p-2 md:p-4 space-y-2">
+           <div class="skeleton__product-grid__item__title w-full h-4 bg-neutral-50 animate-pulse">
+           </div>
+           <div class="skeleton__product-grid__item__price w-1/3 h-4 bg-neutral-50 animate-pulse">
+           </div>
+          </div>
+         </div>
+         <div class="skeleton__product-grid__item bg-background border border-neutral-50 rounded relative z-10 m-0 h-full">
+          <div class="skeleton__product-grid__item__image aspect-square bg-neutral-50 animate-pulse">
+          </div>
+          <div class="skeleton__product-grid__item__body p-2 md:p-4 space-y-2">
+           <div class="skeleton__product-grid__item__title w-full h-4 bg-neutral-50 animate-pulse">
+           </div>
+           <div class="skeleton__product-grid__item__price w-1/3 h-4 bg-neutral-50 animate-pulse">
+           </div>
+          </div>
+         </div>
+         <div class="skeleton__product-grid__item bg-background border border-neutral-50 rounded relative z-10 m-0 h-full">
+          <div class="skeleton__product-grid__item__image aspect-square bg-neutral-50 animate-pulse">
+          </div>
+          <div class="skeleton__product-grid__item__body p-2 md:p-4 space-y-2">
+           <div class="skeleton__product-grid__item__title w-full h-4 bg-neutral-50 animate-pulse">
+           </div>
+           <div class="skeleton__product-grid__item__price w-1/3 h-4 bg-neutral-50 animate-pulse">
+           </div>
+          </div>
+         </div>
+         <div class="skeleton__product-grid__item bg-background border border-neutral-50 rounded relative z-10 m-0 h-full">
+          <div class="skeleton__product-grid__item__image aspect-square bg-neutral-50 animate-pulse">
+          </div>
+          <div class="skeleton__product-grid__item__body p-2 md:p-4 space-y-2">
+           <div class="skeleton__product-grid__item__title w-full h-4 bg-neutral-50 animate-pulse">
+           </div>
+           <div class="skeleton__product-grid__item__price w-1/3 h-4 bg-neutral-50 animate-pulse">
+           </div>
+          </div>
+         </div>
+         <div class="skeleton__product-grid__item bg-background border border-neutral-50 rounded relative z-10 m-0 h-full">
+          <div class="skeleton__product-grid__item__image aspect-square bg-neutral-50 animate-pulse">
+          </div>
+          <div class="skeleton__product-grid__item__body p-2 md:p-4 space-y-2">
+           <div class="skeleton__product-grid__item__title w-full h-4 bg-neutral-50 animate-pulse">
+           </div>
+           <div class="skeleton__product-grid__item__price w-1/3 h-4 bg-neutral-50 animate-pulse">
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="embla__buttons">
+        <button class="embla__button embla__button--prev" onclick="event.stopPropagation()" type="button">
+         <i class="icon icon-carret-left">
+         </i>
+        </button>
+        <button class="embla__button embla__button--next" onclick="event.stopPropagation()" type="button">
+         <i class="icon icon-carret-right">
+         </i>
+        </button>
+       </div>
+      </div>
+     </carousel-slider>
+    </related-products>
+   </div>
+  </div>
+ </section>
+ <section class="section section-products section-related-products" id="recent-view-coll" style="--section-margin: 64px 0 64px 0;--section-margin-mb: 32px 0 32px 0">
+  <div class="container">
+   <div class="section-card">
+    <div class="heading-bar py-3 px-5 text-center mb-2">
+     <h2 class="text-h4 heading font-semibold">
+      Sản phẩm đã xem
+     </h2>
+    </div>
+    <recentview-products class="releated-products w-full" data-limit="8" data-product="1061887944">
+     <carousel-slider>
+      <div class="embla">
+       <div class="embla__viewport">
+        <div class="embla__container product-list h-inherit [&amp;&gt;div:first-of-type]:-ml-2 [&amp;&gt;div]:pl-2 [&amp;&gt;div]:w-[61.3%] md:[&amp;&gt;div]:w-[27%] xl:[&amp;&gt;div]:w-1/5 [&amp;&gt;div]:flex_0 [&amp;&gt;div]:shrink-0">
+         <div class="skeleton__product-grid__item bg-background border border-neutral-50 rounded relative z-10 m-0 h-full">
+          <div class="skeleton__product-grid__item__image aspect-square bg-neutral-50 animate-pulse">
+          </div>
+          <div class="skeleton__product-grid__item__body p-2 md:p-4 space-y-2">
+           <div class="skeleton__product-grid__item__title w-full h-4 bg-neutral-50 animate-pulse">
+           </div>
+           <div class="skeleton__product-grid__item__price w-1/3 h-4 bg-neutral-50 animate-pulse">
+           </div>
+          </div>
+         </div>
+         <div class="skeleton__product-grid__item bg-background border border-neutral-50 rounded relative z-10 m-0 h-full">
+          <div class="skeleton__product-grid__item__image aspect-square bg-neutral-50 animate-pulse">
+          </div>
+          <div class="skeleton__product-grid__item__body p-2 md:p-4 space-y-2">
+           <div class="skeleton__product-grid__item__title w-full h-4 bg-neutral-50 animate-pulse">
+           </div>
+           <div class="skeleton__product-grid__item__price w-1/3 h-4 bg-neutral-50 animate-pulse">
+           </div>
+          </div>
+         </div>
+         <div class="skeleton__product-grid__item bg-background border border-neutral-50 rounded relative z-10 m-0 h-full">
+          <div class="skeleton__product-grid__item__image aspect-square bg-neutral-50 animate-pulse">
+          </div>
+          <div class="skeleton__product-grid__item__body p-2 md:p-4 space-y-2">
+           <div class="skeleton__product-grid__item__title w-full h-4 bg-neutral-50 animate-pulse">
+           </div>
+           <div class="skeleton__product-grid__item__price w-1/3 h-4 bg-neutral-50 animate-pulse">
+           </div>
+          </div>
+         </div>
+         <div class="skeleton__product-grid__item bg-background border border-neutral-50 rounded relative z-10 m-0 h-full">
+          <div class="skeleton__product-grid__item__image aspect-square bg-neutral-50 animate-pulse">
+          </div>
+          <div class="skeleton__product-grid__item__body p-2 md:p-4 space-y-2">
+           <div class="skeleton__product-grid__item__title w-full h-4 bg-neutral-50 animate-pulse">
+           </div>
+           <div class="skeleton__product-grid__item__price w-1/3 h-4 bg-neutral-50 animate-pulse">
+           </div>
+          </div>
+         </div>
+         <div class="skeleton__product-grid__item bg-background border border-neutral-50 rounded relative z-10 m-0 h-full">
+          <div class="skeleton__product-grid__item__image aspect-square bg-neutral-50 animate-pulse">
+          </div>
+          <div class="skeleton__product-grid__item__body p-2 md:p-4 space-y-2">
+           <div class="skeleton__product-grid__item__title w-full h-4 bg-neutral-50 animate-pulse">
+           </div>
+           <div class="skeleton__product-grid__item__price w-1/3 h-4 bg-neutral-50 animate-pulse">
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="embla__buttons">
+        <button class="embla__button embla__button--prev" onclick="event.stopPropagation()" type="button">
+         <i class="icon icon-carret-left">
+         </i>
+        </button>
+        <button class="embla__button embla__button--next" onclick="event.stopPropagation()" type="button">
+         <i class="icon icon-carret-right">
+         </i>
+        </button>
+       </div>
+      </div>
+     </carousel-slider>
+    </recentview-products>
+   </div>
+  </div>
+ </section>
+</main>
+<menu-drawer class="portal portal--drawer" data-animation="slide-in-left" data-type="drawer" id="menu-drawer">
+ <dialog class="portal-dialog">
+  <div class="portal-overlay">
+  </div>
+  <div class="portal-inner animation bg-background h-full grid grid-rows-[auto_1fr_auto]">
+   <div class="navigation-header pt-4 flex justify-between items-center border-b pb-3 border-neutral-50 px-4">
+    <a class="header-icon-group flex gap-2 items-center account-group hover:bg-neutral-50 active:scale-95 transition-all duration-150 px-2 py-1 rounded-sm" href="/account/login" title="Đăng nhập">
+     <div class="header-icon w-[3.6rem] h-[3.6rem] p-2 rounded-sm flex items-center justify-center border border-neutral-50">
+      <i class="icon icon-user">
+      </i>
+     </div>
+     <div class="">
+      <span class="text-xs">
+       Tài khoản
+      </span>
+      <span class="font-semibold block">
+       Đăng nhập
+      </span>
+     </div>
+    </a>
+    <button class="w-[3.2rem] h-[3.2rem] rounded-full border border-neutral-50 text-neutral-200 flex items-center justify-center active:scale-95 transition-transform hover:bg-neutral-50" id="PortalClose-menu-crawer" type="button">
+     <i class="icon icon-cross">
+     </i>
+    </button>
+   </div>
+   <nav class="navigation-vertical overflow-y-auto no-scrollbar">
+    <ul class="">
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/collections/sua" href="/collections/sua" title="Sữa bột cao cấp">
+       <img alt="Sữa bột cao cấp" class="w-5" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_icon_1.png?v=23" width="20"/>
+       <span>
+        Sữa bột cao cấp
+       </span>
+       <span class="ml-auto text-neutral-200" data-toggle-submenu="">
+        <i class="icon icon-carret-right">
+        </i>
+       </span>
+      </a>
+      <div class="submenu absolute lg:group-hover:grid p-4 overflow-auto mega-menu bg-white mega-menu--banner">
+       <div class="relative toggle-submenu -mt-4 -mx-4 p-3 mb-4 bg-neutral-50 font-semibold flex justify-between lg:hidden" data-toggle-submenu="">
+        <span class="">
+         <i class="icon icon-carret-left mr-auto text-neutral-200">
+         </i>
+        </span>
+        <span class="mx-auto">
+         Sữa bột cao cấp
+        </span>
+       </div>
+       <div class="mega-menu__inner flex-wrap gap-3 flex items-start">
+        <ul class="submenu__list flex flex-col gap-3 w-full">
+         <li class="submenu__col">
+          <span class="submenu__item submenu__item--main mb-3 font-semibold">
+           <a class="link font-semibold" data-prefetch="/collections/sua" href="/collections/sua" title="Loại sữa">
+            Loại sữa
+           </a>
+          </span>
+          <ul class="list-disc pl-4 flex-col flex">
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="Sữa Mỹ">
+             Sữa Mỹ
+            </a>
+           </li>
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="Sữa Nhật">
+             Sữa Nhật
+            </a>
+           </li>
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="Sữa Úc">
+             Sữa Úc
+            </a>
+           </li>
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="Châu Âu">
+             Châu Âu
+            </a>
+           </li>
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="Sữa khác">
+             Sữa khác
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="submenu__col">
+          <span class="submenu__item submenu__item--main mb-3 font-semibold">
+           <a class="link font-semibold" data-prefetch="/collections/sua" href="/collections/sua" title="Theo độ tuổi">
+            Theo độ tuổi
+           </a>
+          </span>
+          <ul class="list-disc pl-4 flex-col flex">
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="0-1 tuổi">
+             0-1 tuổi
+            </a>
+           </li>
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="1-2 tuổi">
+             1-2 tuổi
+            </a>
+           </li>
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="&gt;2 tuổi">
+             &gt;2 tuổi
+            </a>
+           </li>
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="Sữa bầu">
+             Sữa bầu
+            </a>
+           </li>
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="Sữa người lớn">
+             Sữa người lớn
+            </a>
+           </li>
+          </ul>
+         </li>
+        </ul>
+        <div class="mmega-menu__banner w-full">
+         <div>
+          <a href="banner" title="">
+           <img alt="" height="200" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_1_banner_1.jpg?v=23" width="400"/>
+          </a>
+         </div>
+        </div>
+       </div>
+       <section-ajax data-section="section-brand" data-url="/?view=section">
+       </section-ajax>
+      </div>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/collections/sua" href="/collections/sua" title="Sữa tươi các loại">
+       <img alt="Sữa tươi các loại" class="w-5" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_icon_2.png?v=23" width="20"/>
+       <span>
+        Sữa tươi các loại
+       </span>
+       <span class="ml-auto text-neutral-200" data-toggle-submenu="">
+        <i class="icon icon-carret-right">
+        </i>
+       </span>
+      </a>
+      <div class="submenu absolute lg:group-hover:grid p-4 overflow-auto default">
+       <div class="relative toggle-submenu -mt-4 -mx-4 p-3 mb-4 bg-neutral-50 font-semibold flex justify-between lg:hidden" data-toggle-submenu="">
+        <span class="">
+         <i class="icon icon-carret-left mr-auto text-neutral-200">
+         </i>
+        </span>
+        <span class="mx-auto">
+         Sữa tươi các loại
+        </span>
+       </div>
+       <div class="mega-menu__inner flex-wrap gap-3 flex items-start">
+        <ul class="submenu__list flex flex-col gap-3 w-full">
+         <li class="submenu__item submenu__item--main font-semibold">
+          <a class="link" data-prefetch="/collections/sua" href="/collections/sua" title="Sữa bột pha săn">
+           Sữa bột pha săn
+          </a>
+         </li>
+         <li class="submenu__item submenu__item--main font-semibold">
+          <a class="link" data-prefetch="/collections/sua" href="/collections/sua" title="Sữa tươi, sữa chua">
+           Sữa tươi, sữa chua
+          </a>
+         </li>
+         <li class="submenu__item submenu__item--main font-semibold">
+          <a class="link" data-prefetch="/collections/sua" href="/collections/sua" title="Sữa hạt dinh dưỡng">
+           Sữa hạt dinh dưỡng
+          </a>
+         </li>
+         <li class="submenu__item submenu__item--main font-semibold">
+          <a class="link" data-prefetch="/collections/sua" href="/collections/sua" title="Thức uống dinh dưỡng">
+           Thức uống dinh dưỡng
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/collections/bim" href="/collections/bim" title="Bỉm tã khuyến mãi">
+       <img alt="Bỉm tã khuyến mãi" class="w-5" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_icon_3.png?v=23" width="20"/>
+       <span>
+        Bỉm tã khuyến mãi
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/collections/dinh-duong-cho-be" href="/collections/dinh-duong-cho-be" title="Ăn dặm, dinh dưỡng">
+       <img alt="Ăn dặm, dinh dưỡng" class="w-5" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_icon_4.png?v=23" width="20"/>
+       <span>
+        Ăn dặm, dinh dưỡng
+       </span>
+       <span class="ml-auto text-neutral-200" data-toggle-submenu="">
+        <i class="icon icon-carret-right">
+        </i>
+       </span>
+      </a>
+      <div class="submenu absolute lg:group-hover:grid p-4 overflow-auto mega-menu bg-white mega-menu--products">
+       <div class="relative toggle-submenu -mt-4 -mx-4 p-3 mb-4 bg-neutral-50 font-semibold flex justify-between lg:hidden" data-toggle-submenu="">
+        <span class="">
+         <i class="icon icon-carret-left mr-auto text-neutral-200">
+         </i>
+        </span>
+        <span class="mx-auto">
+         Ăn dặm, dinh dưỡng
+        </span>
+       </div>
+       <div class="mega-menu__inner flex-wrap gap-3 flex items-start">
+        <ul class="submenu__list flex flex-col gap-3 w-full">
+         <li class="submenu__item submenu__item--main font-semibold">
+          <a class="link" data-prefetch="/collections/dinh-duong-cho-be" href="/collections/dinh-duong-cho-be" title="Bột bánh ăn dặm">
+           Bột bánh ăn dặm
+          </a>
+         </li>
+        </ul>
+        <related-products class="releated-products w-full" data-empty-content="Sản phẩm đang được cập nhật" data-limit="4" data-product-type="row" data-query="((id:product=1061887940)||        (id:product=1061887960))">
+         <div class="heading-bar">
+          <h2 class="heading w-auto font-semibold">
+           Sản phẩm mới
+          </h2>
+         </div>
+         <carousel-slider>
+          <div class="embla">
+           <div class="embla__viewport">
+            <div class="embla__container product-list h-inherit -ml-2 [&amp;&gt;div]:pl-2 [&amp;&gt;div]:w-full [&amp;&gt;div]:flex_0 [&amp;&gt;div]:shrink-0">
+             <div class="skeleton__product-row__item bg-background border border-neutral-50 rounded-sm relative z-10 m-0 h-full grid grid-cols-[calc(2/4.72*100%)_1fr]">
+              <div class="skeleton__product-row__item__image aspect-square bg-neutral-50 animate-pulse">
+              </div>
+              <div class="skeleton__product-row__item__body p-2 md:p-4 space-y-2">
+               <div class="skeleton__product-row__item__title w-full h-4 bg-neutral-50 animate-pulse">
+               </div>
+               <div class="skeleton__product-row__item__price w-1/3 h-4 bg-neutral-50 animate-pulse">
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="embla__buttons md:block dnone">
+            <button class="embla__button embla__button--prev" onclick="event.stopPropagation()" type="button">
+             <i class="icon icon-carret-left">
+             </i>
+            </button>
+            <button class="embla__button embla__button--next" onclick="event.stopPropagation()" type="button">
+             <i class="icon icon-carret-right">
+             </i>
+            </button>
+           </div>
+           <div class="embla__dots mt-3 mx-auto">
+           </div>
+          </div>
+         </carousel-slider>
+        </related-products>
+       </div>
+       <section-ajax data-section="section-brand" data-url="/?view=section">
+       </section-ajax>
+      </div>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/collections/dinh-duong-cho-be" href="/collections/dinh-duong-cho-be" title="Sức khỏe &amp; Vitamin">
+       <img alt="Sức khỏe &amp; Vitamin" class="w-5" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_icon_5.png?v=23" width="20"/>
+       <span>
+        Sức khỏe &amp; Vitamin
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/collections/dinh-duong-cho-be" href="/collections/dinh-duong-cho-be" title="Đồ dùng mẹ &amp; bé">
+       <img alt="Đồ dùng mẹ &amp; bé" class="w-5" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_icon_6.png?v=23" width="20"/>
+       <span>
+        Đồ dùng mẹ &amp; bé
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/" href="/" title="Đồ chơi, học tập">
+       <img alt="Đồ chơi, học tập" class="w-5" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_icon_7.png?v=23" width="20"/>
+       <span>
+        Đồ chơi, học tập
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/" href="/" title="Chăm sóc gia đình">
+       <img alt="Chăm sóc gia đình" class="w-5" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_icon_8.png?v=23" width="20"/>
+       <span>
+        Chăm sóc gia đình
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/" href="/" title="Thời trang và phụ kiện">
+       <img alt="Thời trang và phụ kiện" class="w-5" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_icon_9.png?v=23" width="20"/>
+       <span>
+        Thời trang và phụ kiện
+       </span>
+      </a>
+     </li>
+    </ul>
+    <ul class="">
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/" title="TRANG CHỦ">
+       <span>
+        TRANG CHỦ
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/collections/all" title="TẤT CẢ SẢN PHẨM">
+       <span>
+        TẤT CẢ SẢN PHẨM
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/pages/flash-sale-1-khung-gio" title="CHƯƠNG TRÌNH KHUYẾN MÃI">
+       <span>
+        CHƯƠNG TRÌNH KHUYẾN MÃI
+       </span>
+       <i class="icon icon-carret-right ml-auto" data-toggle-submenu="">
+       </i>
+      </a>
+      <div class="submenu p-4 lg:group-hover:block overflow-auto default">
+       <div class="relative toggle-submenu -mt-4 -mx-4 mb-4 bg-neutral-50 p-3 font-semibold flex justify-between lg:hidden" data-toggle-submenu="">
+        <span class="mr-3">
+         <i class="icon icon-carret-left mr-auto text-neutral-200">
+         </i>
+        </span>
+        <span class="mx-auto">
+         CHƯƠNG TRÌNH KHUYẾN MÃI
+        </span>
+       </div>
+       <ul class="submenu__list flex flex-col gap-3">
+        <li class="submenu__item submenu__item--main font-semibold">
+         <a class="link font-semibold" data-prefetch="" href="/pages/flash-sale-1-khung-gio" title="Flash Sale 1 khung giờ">
+          Flash Sale 1 khung giờ
+         </a>
+        </li>
+        <li class="submenu__item submenu__item--main font-semibold">
+         <a class="link font-semibold" data-prefetch="" href="/pages/flash-sale-nhieu-khung-gio" title="Flash Sale nhiều khung giờ">
+          Flash Sale nhiều khung giờ
+         </a>
+        </li>
+       </ul>
+      </div>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/pages/about-us" title="GIỚI THIỆU">
+       <span>
+        GIỚI THIỆU
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/blogs/news" title="TIN TỨC">
+       <span>
+        TIN TỨC
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/pages/lien-he" title="LIÊN HỆ">
+       <span>
+        LIÊN HỆ
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="https://wiki.egany.com/s/ega-baby-mart-haravan" target="_blank" title="HƯỚNG DẪN THIẾT LẬP">
+       <span>
+        HƯỚNG DẪN THIẾT LẬP
+       </span>
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div class="navigation-footer 4 border-t border-neutral-50 flex">
+    <div class="w-1/2">
+     <a class="header-icon-group flex gap-2 items-center hover:bg-neutral-50 transition-all duration-150 px-2 py-4 store-group" href="/pages/he-thong-cua-hang" title="Hệ thống cửa hàng">
+      <div class="header-icon w-[3.6rem] h-[3.6rem] p-2 rounded-sm flex items-center justify-center border border-neutral-50">
+       <i class="icon icon-store">
+       </i>
+      </div>
+      <div>
+       <span class="text-xs">
+        Hệ thống cửa hàng
+       </span>
+      </div>
+     </a>
+    </div>
+    <div class="w-1/2">
+     <a class="header-icon-group flex gap-2 items-center hover:bg-neutral-50 transition-all duration-150 px-2 py-4 phone-group" href="tel:099999998" title="099999998">
+      <div class="header-icon w-[3.6rem] h-[3.6rem] p-2 rounded-sm flex items-center justify-center border border-neutral-50">
+       <i class="icon icon-calling-phone">
+       </i>
+      </div>
+      <div>
+       <span class="text-xs">
+        Hotline:
+        <b>
+         099999998
+        </b>
+       </span>
+      </div>
+     </a>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</menu-drawer>
+<link href="//theme.hstatic.net/200000939217/1001374153/14/sales-pop.css?v=23" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript>
+ <link href="//theme.hstatic.net/200000939217/1001374153/14/sales-pop.css?v=23" media="all" rel="stylesheet" type="text/css"/>
+</noscript>
+<div class="sales-pop hidden" id="ega-sale-pop" style="--sale-pop-color: #ee1926">
+ <div class="sale-pop-wrap">
+ </div>
+ <div class="sale-pop-close">
+  <i class="icon icon-cross">
+  </i>
+ </div>
+</div>
+<link href="//theme.hstatic.net/200000939217/1001374153/14/addthis-sharing.css?v=23" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript>
+ <link href="//theme.hstatic.net/200000939217/1001374153/14/addthis-sharing.css?v=23" media="all" rel="stylesheet" type="text/css"/>
+</noscript>
+<div class="addThis_listSharing hidden">
+ <div class="floating_banner relative">
+  <a class="block p-2 hover:scale-105 transition-all" href="/" title="sticky banner">
+   <img alt="sticky banner" height="100" src="//theme.hstatic.net/200000939217/1001374153/14/floating-banner.png?v=23" width="100"/>
+  </a>
+  <button class="btn p-0 absolute -top-3 right-1 link">
+   <i class="icon icon-cross">
+   </i>
+  </button>
+ </div>
+ <a class="backtop back-to-top flex items-center justify-center" href="#" id="back-to-top" title="Lên đầu trang">
+  <i class="icon icon-carret-up">
+  </i>
+ </a>
+ <div class="header-box-live mr-1 lg:mr-0 md:hidden block">
+  <button class="btn-live" data-mobile-link="https://fb.watch/t6bCpir7ve/" style="--header-live-color:#ff0000">
+   <span class="relative z-[1] font-semibold">
+    LIVE
+   </span>
+  </button>
+ </div>
+ <call-center-group class="addThis_group" style="--color-primary: #ff6d02">
+  <ul class="addThis_listing list-unstyled dnone">
+   <li class="addThis_item">
+    <a class="addThis_item--icon" href="tel:19006750" rel="nofollow">
+     <img alt="Gọi ngay cho chúng tôi" class="img-fluid" height="44" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/addthis-phone.svg?v=23" width="44"/>
+     <span class="tooltip-text">
+      Gọi ngay cho chúng tôi
+     </span>
+    </a>
+   </li>
+   <li class="addThis_item">
+    <a class="addThis_item--icon" href="https://zalo.me/834141234794359222" rel="nofollow" target="_blank">
+     <img alt="Chat với chúng tôi qua Zalo" class="img-fluid" height="44" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/addthis-zalo.svg?v=23" width="44"/>
+     <span class="tooltip-text">
+      Chat với chúng tôi qua Zalo
+     </span>
+    </a>
+   </li>
+   <li class="addThis_item">
+    <a class="addThis_item--icon" href="https://m.me/" rel="nofollow" target="_blank">
+     <img alt="Chat với chúng tôi qua Messenger" class="img-fluid" height="44" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/addthis-messenger.svg?v=23" width="44"/>
+     <span class="tooltip-text">
+      Chat với chúng tôi qua Messenger
+     </span>
+    </a>
+   </li>
+  </ul>
+  <div class="addThis_item relative z-[1]" data-toggle="">
+   <div class="addThis_item--icon addThis_item--toggle rounded-full">
+    <img alt="call-center" height="30" src="//theme.hstatic.net/200000939217/1001374153/14/call-center.png?v=23" width="30"/>
+    <i class="icon icon-cross">
+    </i>
+   </div>
+  </div>
+ </call-center-group>
+</div>
+<div class="cro-btns sticky md:hidden block z-10 min-h-[5.6rem] bottom-0 left-0 slide-in-bottom" data-template="product">
+ <div class="bg-background rounded-t-sm w-full min-h-[5.6rem] px-2 justify-between items-center inline-flex slide-in-bottom" style="box-shadow:var(--shadow-l)">
+  <div class="cro-btns-container w-full h-full justify-center items-center gap-0.5 grid grid-cols-[repeat(auto-fit,minmax(0,1fr))]">
+   <portal-opener style="order:6">
+    <a class="cro-btn-item cro-btn-item--cart w-auto flex-shrink-0 flex-grow-0 h-full py-0.5 px-0.5 text-foreground h-full flex flex-col justify-center items-center gap-0.5" data-portal="#cart-drawer" href="/cart" title="">
+     <div class="w-4 h-4 relative">
+      <img alt="" class="w-full h-full object-contain" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/cro-btn-cart-icon.png?v=23"/>
+      <span class="cart-count flex items-center count_item count_item_pr justify-center rounded-full absolute font-semibold">
+       0
+      </span>
+     </div>
+     <div class="text-ellipsis overflow-hidden max-w-full text-xs text-center line-clamp-1">
+      Giỏ hàng
+     </div>
+    </a>
+   </portal-opener>
+   <portal-opener style="order:6;    grid-column: span 3;">
+    <div class="cro-btn-item w-full cro-btn-item--addtocart" style=" min-width: 104px;">
+     <button class="text-center w-full line-clamp-1 font-semibold btn bg-[var(--color-addtocart-bg)] text-[var(--color-addtocart)] btn-add-to-cart w-full" data-portal="#quick-view-product" data-product="/products/bim-goldgi-eco-quan-l48-9-14kg" data-product-id="1061887944">
+      Thêm vào giỏ
+     </button>
+    </div>
+   </portal-opener>
+  </div>
+ </div>
+</div>
+<portal-component class="portal portal--drawer" data-animation="slide-in-right" data-type="drawer" id="search-drawer" style="--dialog-max-width:52rem">
+ <dialog class="portal-dialog">
+  <div class="w-full h-full flex">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner w-full ml-auto bg-background overflow-auto h-screen px-4 animation">
+    <div class="portal-header px-3 pb-3 pt-5">
+     <div class="font-semibold text-h6 md:text-h4 flex items-center gap-2">
+      <i class="icon icon-arrow-left text-h6 md:text-h4" id="PortalClose-search-drawer">
+      </i>
+      Tìm kiếm
+     </div>
+    </div>
+    <div class="search-bar relative">
+     <div class="search-bar relative">
+      <quick-search class="quick-search">
+       <form action="/search" class="m-0 flex bg-background pl-1 py-1 rounded items-center relative border border-neutral-50" method="get" role="search">
+        <select aria-label="Danh mục sản phẩm" class="form-select border-0 focus:ring-transparent collection-options">
+         <option value="">
+          Danh mục sản phẩm
+         </option>
+         <option value="1004289423">
+          Sữa bột cao cấp
+         </option>
+         <option value="1004289423">
+          Sữa tươi các loại
+         </option>
+         <option value="1004289429">
+          Bỉm tã khuyến mãi
+         </option>
+         <option value="1004289424">
+          Ăn dặm, dinh dưỡng
+         </option>
+         <option value="1004289424">
+          Sức khỏe &amp; Vitamin
+         </option>
+         <option value="1004289424">
+          Đồ dùng mẹ &amp; bé
+         </option>
+        </select>
+        <div class="search-input-group w-full relative flex items-center">
+         <input autocomplete="off" class="border-0 bg-transparent focus:ring-transparent p-0 w-full text-base text-foreground" data-placeholder="Tìm theo tên sản phẩm...; Tìm theo thương hiệu...;" name="q" placeholder="Tìm theo tên sản phẩm..." required="" type="text" value=""/>
+         <input name="type" type="hidden" value="product"/>
+         <button aria-label="search" class="search-button btn flex items-center justify-center text-foreground rounded bg-[var(--color-search)] text-white" type="submit">
+          <i class="icon icon-search">
+          </i>
+         </button>
+        </div>
+       </form>
+       <div class="search-dropdown absolute bottom-0 top-full mt-1 left-0 bg-background rounded-lg py-3 text-foreground w-full px-2">
+        <div class="search-loading absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full z-[1] bg-background flex items-center justify-center">
+         <span class="loading-icon gap-1 hidden items-center justify-center">
+          <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+          </span>
+          <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+          </span>
+          <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+          </span>
+         </span>
+        </div>
+        <div class="search-result space-y-3">
+        </div>
+        <div class="search-history-list border-neutral-50">
+        </div>
+        <div class="search-keywords space-y-2 pt-2 px-2">
+         <span class="text-primary font-semibold">
+          Từ khóa phổ biến
+         </span>
+         <div class="search-keyword-list flex gap-1 items-center flex-wrap">
+          <a class="search-keyword text-secondary px-3 py-1 bg-relative rounded-full inline-flex items-center justify-center hover:border-secondary border border-transparent" href="/search?q=Sữa bột&amp;type=product" title="">
+           Sữa bột
+          </a>
+          <a class="search-keyword text-secondary px-3 py-1 bg-relative rounded-full inline-flex items-center justify-center hover:border-secondary border border-transparent" href="/search?q= Bĩm tã&amp;type=product" title="">
+           Bĩm tã
+          </a>
+          <a class="search-keyword text-secondary px-3 py-1 bg-relative rounded-full inline-flex items-center justify-center hover:border-secondary border border-transparent" href="/search?q= Máy hút sữa&amp;type=product" title="">
+           Máy hút sữa
+          </a>
+         </div>
+        </div>
+       </div>
+      </quick-search>
+     </div>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</portal-component>
+<quick-view class="portal portal--modal" data-animation="scale-in-hor-left" data-type="modal" id="quick-view-product">
+ <dialog class="portal-dialog">
+  <div class="flex items-center justify-center w-full h-full">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner h-full">
+    <button class="portal-close-button animation rounded-full w-[3.2rem] h-[3.2rem] border border-white text-white flex items-center justify-center active:scale-95 transition-transform hover:animate-spin" data-animation="fade-in" id="PortalClose-quick-view-product" type="button">
+     <i class="icon icon-cross">
+     </i>
+    </button>
+    <div class="product-wrapper animation bg-background w-full h-full md:rounded-lg">
+    </div>
+    <span class="loading-icon gap-1 hidden items-center justify-center">
+     <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+     </span>
+     <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+     </span>
+     <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+     </span>
+    </span>
+   </div>
+  </div>
+ </dialog>
+</quick-view>
+<cart-drawer class="portal portal--drawer" data-animation="slide-in-right" data-type="drawer" id="cart-drawer" style="--dialog-max-width:52rem">
+ <dialog class="portal-dialog">
+  <div class="w-full h-full flex">
+   <div class="portal-overlay">
+   </div>
+   <div class="cart-drawer-related-products animation fade-in flex items-center justify-center" data-animation="fade-in" id="PortalClose-cart-related-drawer">
+    <related-products class="cart-releated-products w-full fade-in dnone lg:block hidden" data-limit="5">
+     <carousel-slider>
+      <div class="embla lg:pb-[var(--spacing-10)]">
+       <h2 class="text-h4 text-center mb-5 font-semibold text-white">
+        Sản phẩm gợi ý
+       </h2>
+       <div class="embla__viewport">
+        <div class="embla__container product-list h-inherit [&amp;&gt;div]:px-2 [&amp;&gt;div]:w-full md:[&amp;&gt;div]:w-[75%] xl:[&amp;&gt;div]:w-1/3 [&amp;&gt;div]:grow-0 [&amp;&gt;div]:shrink-0 [&amp;&gt;div:first-child]:ml-auto [&amp;&gt;div:last-child]:mr-auto">
+        </div>
+       </div>
+       <div class="embla__buttons dnone md:block">
+        <button class="embla__button embla__button--prev" onclick="event.stopPropagation()" type="button">
+         <i class="icon icon-carret-left">
+         </i>
+        </button>
+        <button class="embla__button embla__button--next" onclick="event.stopPropagation()" type="button">
+         <i class="icon icon-carret-right">
+         </i>
+        </button>
+       </div>
+      </div>
+     </carousel-slider>
+    </related-products>
+   </div>
+   <div class="portal-inner w-full bg-background animation h-full">
+    <cart-form class="h-full">
+     <form action="/cart" class="cart-form h-full" method="post">
+      <div class="cart grid grid-rows-[auto_1fr_auto]">
+       <div class="portal-header pt-4 px-4 flex justify-between items-center border-b pb-3 border-neutral-50 px-4">
+        <p class="text-h6 md:text-h4">
+         Giỏ hàng
+        </p>
+        <button class="w-[3.2rem] h-[3.2rem] rounded-full border border-neutral-50 text-neutral-200 flex items-center justify-center active:scale-95 transition-transform hover:bg-neutral-50" id="PortalClose-cart-crawer" type="button">
+         <i class="icon icon-cross">
+         </i>
+        </button>
+       </div>
+       <div class="cart-left p-4 overflow-y-auto flex flex-col">
+        <rewards-bar>
+        </rewards-bar>
+        <div class="cart-table">
+        </div>
+        <div class="lg:hidden w-full mt-auto">
+         <related-products class="cart-releated-products" data-product-type="row" data-query="(id:product=1061887940)||        (id:product=1061887960)">
+          <div class="mb-2">
+           <h2 class="text-base font-semibold">
+            Sản phẩm gợi ý
+           </h2>
+          </div>
+          <div class="overflow-hidden">
+           <div class="flex overflow-x-auto no-scrollbar product-list [&amp;&gt;div]:flex-grow-0 [&amp;&gt;div]:flex-shrink-0 [&amp;&gt;div]:w-[75%] gap-2">
+           </div>
+          </div>
+         </related-products>
+        </div>
+       </div>
+       <div class="cart-right p-4">
+        <div class="cart-summary">
+        </div>
+       </div>
+       <div class="cart-empty">
+       </div>
+      </div>
+     </form>
+    </cart-form>
+   </div>
+  </div>
+ </dialog>
+</cart-drawer>
+<portal-component class="portal portal--drawer" data-animation="slide-in-right" data-type="drawer" id="cart-note-drawer" style="--dialog-max-width:52rem">
+ <dialog class="portal-dialog">
+  <div class="w-full h-full flex">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner w-full ml-auto bg-background h-screen px-4 animation">
+    <div class="portal-header px-3 pb-3 pt-5">
+     <div class="font-semibold text-h4 flex items-center gap-2">
+      <i class="icon icon-arrow-left cursor-pointer text-h6 md:text-h4" id="PortalClose-cart-note-drawer">
+      </i>
+      Ghi
+            chú đơn hàng
+     </div>
+    </div>
+    <div class="r-bill px-3">
+     <cart-note>
+      <form>
+       <div class="form-group">
+        <label class="label block mb-2">
+         Ghi chú
+        </label>
+        <textarea class="form-textarea" name="note" rows="6"></textarea>
+       </div>
+       <button class="btn w-full mt-5 btn--large font-semibold bg-primary text-white inline-flex justify-center items-center gap-2" type="submit">
+        Lưu thông tin
+       </button>
+      </form>
+     </cart-note>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</portal-component>
+<cart-vat-drawer class="portal portal--drawer" data-animation="slide-in-right" data-type="drawer" id="cart-vat-drawer" style="--dialog-max-width:52rem">
+ <dialog class="portal-dialog">
+  <div class="w-full h-full flex">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner w-full ml-auto bg-background h-screen px-4 animation">
+    <div class="portal-header px-3 pb-3 pt-5">
+     <div class="font-semibold text-h6 md:text-h4 flex items-center gap-2">
+      <i class="icon icon-arrow-left text-h6 md:text-h4 cursor-pointer" id="PortalClose-cart-vat-drawer">
+      </i>
+      Xuất hóa đơn công ty
+     </div>
+    </div>
+    <div class="r-bill px-3">
+     <form>
+      <div class="bill-field space-y-3">
+       <div class="flex items-center">
+        <div class="flex items-center">
+         <input class="invoice" name="attributes[Xuất hóa đơn]" type="hidden" value="không"/>
+         <input class="invoice-checkbox form-checkbox" type="checkbox"/>
+        </div>
+        <div class="ml-2 text-sm">
+         <label>
+          Xuất hóa đơn
+         </label>
+        </div>
+       </div>
+       <div class="form-group">
+        <label class="label block mb-2">
+         Tên công ty
+        </label>
+        <input class="form-input" data-messages="{'required':'Trường này không được bỏ trống' }" data-rules="['required']" name="attributes[Tên công ty]" placeholder="Tên công ty" type="text" value=""/>
+        <span class="error text-error block mt-2">
+        </span>
+       </div>
+       <div class="form-group">
+        <label class="label block mb-2">
+         Mã số thuế
+        </label>
+        <input class="form-input" data-messages="{ 'minLength:10': 'Số kí tự tối thiểu [size]', 'require':'Trường này không được bỏ trống' }" data-rules="['minLength:10','required']" name="attributes[Mã số thuế]" placeholder="Mã số thuế" type="number" value=""/>
+        <span class="error text-error block mt-2">
+        </span>
+       </div>
+       <div class="form-group">
+        <label class="label block mb-2">
+         Địa chỉ công ty
+        </label>
+        <textarea class="form-textarea" data-messages="{'required':'Trường này không được bỏ trống' }" data-rules="['required']" name="attributes[Địa chỉ công ty]" placeholder="Địa chỉ công ty"></textarea>
+        <span class="error text-error block mt-2">
+        </span>
+       </div>
+       <div class="form-group">
+        <label class="label block mb-2">
+         Email nhận hóa đơn
+        </label>
+        <input class="form-input" data-messages="{'required':'Trường này không được bỏ trống', 'email': 'Email không đúng định dạng' }" data-rules="['required','email']" name="attributes[Email nhận hóa đơn]" placeholder="Email nhận hóa đơn" type="email" value=""/>
+        <span class="error text-error block mt-2">
+        </span>
+       </div>
+      </div>
+      <button class="btn w-full mt-5 btn--large font-semibold bg-primary text-white inline-flex justify-center items-center gap-2" type="submit">
+       Lưu thông tin
+      </button>
+     </form>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</cart-vat-drawer>
+<portal-component class="portal portal--drawer" data-animation="slide-in-right" data-type="drawer" id="cart-delivery-drawer" style="--dialog-max-width:52rem">
+ <dialog class="portal-dialog">
+  <div class="w-full h-full flex">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner w-full ml-auto bg-background h-screen px-4 animation">
+    <div class="portal-header px-3 pb-3 pt-5">
+     <div class="font-semibold text-h6 md:text-h4 flex items-center gap-2">
+      <i class="icon icon-arrow-left text-h4 cursor-pointer" id="PortalClose-cart-delivery-drawer">
+      </i>
+      Hẹn giờ nhận hàng
+     </div>
+    </div>
+    <div class="r-bill px-3">
+     <cart-delivery>
+      <form>
+       <div class="cart-delivery-time py-4">
+        <div class="grid gap-2">
+         <div class="flex items-center">
+          <div class="flex items-center">
+           <input id="use-delivery" name="attributes[Hẹn giờ nhận hàng]" type="hidden" value="cart.attributes[Hẹn giờ nhận hàng]"/>
+           <input class="form-checkbox" id="delivery-enabled" type="checkbox"/>
+          </div>
+          <div class="ml-2 text-sm">
+           <label class="" for="delivery-enabled">
+            Hẹn giờ nhận hàng
+           </label>
+          </div>
+         </div>
+         <div>
+          <label class="label block mb-1 text-base" for="delivery-date-input">
+           Ngày nhận hàng
+          </label>
+          <div class="relative">
+           <i class="icon icon-calendar text-neutral-200 top-1/2 left-2 -translate-y-1/2 absolute">
+           </i>
+           <datepicker-input class="datepicker-input">
+            <input class="form-input pl-2 pl-[var(--spacing-6-5)] py-2.5 min-h-[4rem]" id="delivery-date-input" name="attributes[Ngày nhận hàng]" type="text" value=""/>
+           </datepicker-input>
+          </div>
+         </div>
+         <div>
+          <label class="label block mb-1 text-base" for="delivery-time">
+           Thời gian nhận hàng
+          </label>
+          <select class="form-select min-h-[4rem] px-2 py-2.5 border-neutral-50" id="delivery-time" name="attributes[Thời gian nhận hàng]">
+           <option selected="" value="">
+            Chọn thời gian
+           </option>
+           <option value="08h00 - 12h00">
+            08h00 - 12h00
+           </option>
+           <option value="14h00 - 18h00">
+            14h00 - 18h00
+           </option>
+           <option value="19h00 - 21h00">
+            19h00 - 21h00
+           </option>
+          </select>
+         </div>
+        </div>
+       </div>
+       <button class="btn w-full mt-5 btn--large font-semibold bg-primary text-white inline-flex justify-center items-center gap-2" type="submit">
+        Lưu thông tin
+       </button>
+      </form>
+     </cart-delivery>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</portal-component>
+<coupon-drawer data-animation="slide-in-right" data-type="drawer" id="coupon-drawer" lass="portal portal--drawer" style="--dialog-max-width:52rem">
+ <dialog class="portal-dialog">
+  <div class="w-full h-full flex">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner grid grid-rows-[auto_1fr_auto] w-full ml-auto bg-background h-screen px-4 pb-4 animation">
+    <div class="portal-header px-3 pb-3 pt-5">
+     <div class="font-semibold text-h6 md:text-h4 flex items-center gap-2">
+      <i class="icon icon-arrow-left text-h6 md:text-h4 cursor-pointer" id="PortalClose-coupon-drawer">
+      </i>
+      Chọn mã giảm giá
+     </div>
+    </div>
+    <div class="coupon-list py-4">
+    </div>
+    <div>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</coupon-drawer>
+<coupon-modal class="portal portal--modal portal--modal-sm" data-animation="fade-in" data-type="modal" id="coupon-modal">
+ <dialog class="portal-dialog">
+  <div class="flex items-center justify-center w-full h-full p-3">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner animation">
+    <button class="portal-close-button w-[3.2rem] h-[3.2rem] rounded-full border border-white text-white flex items-center justify-center active:scale-95 transition-transform hover:animate-spin" id="PortalClose-coupon-modal" type="button">
+     <i class="icon icon-cross">
+     </i>
+    </button>
+    <div class="p-3 md:p-5 rounded-lg bg-background h-full grid grid grid-rows-[auto_1fr_auto]">
+     <div class="coupon-header border-b pb-2.5 border-dashed border-neutral-50">
+     </div>
+     <div class="coupon-desc">
+     </div>
+     <div class="coupon-act grid grid-cols-2 gap-3 border-t pt-2.5 border-dashed border-neutral-50">
+      <button class="btn border border-neutral-50 hover:bg-neutral-100 py-1.5" id="PortalClose-coupon-item-modal">
+       Đóng
+      </button>
+      <copy-button data-copied-text="Đã sao chép">
+       <input type="hidden" value=""/>
+       <button class="btn copy-button w-full font-semibold text-primary border border-primary bg-primary text-white py-1.5" type="button">
+        Sao chép
+       </button>
+      </copy-button>
+     </div>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</coupon-modal>
+<compare-qv class="portal portal--modal" data-animation="slide-in-bottom" data-type="modal" id="quick-view-compare">
+ <dialog class="portal-dialog">
+  <div class="flex items-center justify-center w-full">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner bg-background rounded-sm animation">
+    <button class="absolute active:scale-95 transition-transform right-0 p-3 bg-background rounded-sm flex items-center justify-center gap-2 link" id="PortalClose-quick-view" type="button">
+     Thu gọn
+     <i class="icon icon-carret-down">
+     </i>
+    </button>
+    <div class="compare-product-list">
+    </div>
+   </div>
+  </div>
+ </dialog>
+</compare-qv>
+<portal-opener class="compare-opener hidden">
+ <div class="cursor-pointer font-semibold btn rounded-full bg-background border border-primary text-primary" data-portal="#quick-view-compare">
+  <p class="flex items-center gap-1">
+   <span class="line-clamp-1">
+    So sánh
+   </span>
+   <span class="compare-count">
+   </span>
+   <i class="ico icon-arrow-swap">
+   </i>
+  </p>
+ </div>
+</portal-opener>
+<promo-popup class="portal portal--modal" data-animation="fade-in" data-type="modal" id="promo-popup">
+ <dialog class="portal-dialog">
+  <div class="flex items-center justify-center w-full h-full">
+   <div class="portal-overlay">
+   </div>
+   <div class="relative z-10 animation p-6 md:p-4">
+    <button class="portal-close-button w-[3.2rem] h-[3.2rem] rounded-full border border-white text-white flex items-center justify-center active:scale-95 transition-transform hover:animate-spin" id="PortalClose-promo-popup" type="button">
+     <i class="icon icon-cross">
+     </i>
+    </button>
+    <a href="/collections/all" title="Click ngay để nhận ưu đãi hot!!">
+     <img alt="Click ngay để nhận ưu đãi hot!!" class="object-contain" height="540" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/banner-popup-img.png?v=23" width="540"/>
+    </a>
+   </div>
+  </div>
+ </dialog>
+</promo-popup>
+<error-popup class="portal portal--modal portal--modal-sm" data-animation="fade-in" data-type="modal" id="error-modal">
+ <dialog class="portal-dialog">
+  <div class="flex items-start justify-end p-3 w-full h-full">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner animation">
+    <div class="error-list flex gap-4 flex-col items-end">
+    </div>
+   </div>
+  </div>
+ </dialog>
+</error-popup>
+<div class="modal-live">
+ <div class="modal-live--inner">
+  <template id="live-template">
+   <iframe allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen="true" height="476" src="https://www.facebook.com/plugins/video.php?height=314&amp;href=https%3A%2F%2Fwww.facebook.com%2Ffacebook%2Fvideos%2F644342003942740%2F&amp;show_text=false&amp;width=560&amp;t=0" style="border:none;overflow:hidden" width="560">
+   </iframe>
+  </template>
+  <div class="modal-live-iframe">
+  </div>
+  <div class="btn-close--live">
+   <svg fill="none" height="22" viewbox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
+    <path d="M11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0Z" fill="#373535" opacity="0.9">
+    </path>
+    <path clip-rule="evenodd" d="M10.066 11.0007L6.79418 7.72894C6.53605 7.47081 6.53605 7.05231 6.79418 6.79418C7.05231 6.53605 7.47081 6.53605 7.72893 6.79418L11.0007 10.066L14.2713 6.79543C14.5294 6.53731 14.9479 6.53731 15.206 6.79543C15.4641 7.05356 15.4641 7.47206 15.206 7.73019L11.9355 11.0007L15.207 14.2722C15.4651 14.5304 15.4651 14.9489 15.207 15.207C14.9489 15.4651 14.5304 15.4651 14.2722 15.207L11.0007 11.9355L7.72796 15.2082C7.46983 15.4664 7.05133 15.4664 6.7932 15.2082C6.53508 14.9501 6.53508 14.5316 6.7932 14.2735L10.066 11.0007Z" fill="white" fill-rule="evenodd">
+    </path>
+   </svg>
+  </div>
+ </div>
+</div>
+
+{%endblock %}
