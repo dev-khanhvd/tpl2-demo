@@ -1,0 +1,1623 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(translate('Hệ thống cửa hàng')).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ getKeyContentValue('META_KEYWORDS') }}">
+<meta name="description" content="{{ getKeyContentValue('META_DESCRIPTION') }}">
+<meta property="og:title" content="{{ getKeyContentValue('META_TITLE') }}">
+<meta property="og:url" content="{{ getCurrentUrl() }}">
+<meta property="og:image" content="{{ getBusinessLogo() }}">
+<link rel="canonical" href="{{ getCurrentUrl() }}">
+{%endblock %}
+
+{%block body %}
+
+<div class="navigation-wrapper hidden xl:flex items-center sub-header">
+ <div class="container relative">
+  <div class="">
+   <div class="flex justify-between items-center">
+    <div class="navigation--horizontal dnone lg:flex items-center">
+     <div class="navigation-horizontal-wrapper overflow-hidden">
+      <nav>
+       <ul class="navigation-horizontal">
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/" href="/" title="Trang chủ">
+          <span>
+           Trang chủ
+          </span>
+         </a>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/gioi-thieu-chung" href="/gioi-thieu-chung" title="Giới thiệu">
+          <span>
+           Giới thiệu
+          </span>
+          <i class="icon icon-carret-down" data-toggle-submenu="">
+          </i>
+         </a>
+         <div class="submenu mega-menu bg-white">
+          <ul class="submenu__list">
+           <li class="submenu__item submenu__item--main">
+            <a class="link font-semibold" data-prefetch="/gioi-thieu-chung" href="/gioi-thieu-chung" title="Giới thiệu chung">
+             Giới thiệu chung
+            </a>
+           </li>
+           <li class="submenu__col">
+            <span class="submenu__item submenu__item--main">
+             <a class="link font-semibold" data-prefetch="/tam-nhin-su-menh" href="/tam-nhin-su-menh" title="Tầm nhìn - Sứ mệnh">
+              Tầm nhìn - Sứ mệnh
+             </a>
+            </span>
+            <ul>
+             <li class="submenu__item submenu__item">
+              <a class="link" data-prefetch="/cau-chuyen-thuong-hieu" href="/cau-chuyen-thuong-hieu" title="Câu chuyện Thương hiệu">
+               Câu chuyện Thương hiệu
+              </a>
+             </li>
+             <li class="submenu__item submenu__item">
+              <a class="link" data-prefetch="/cau-chuyen-nha-sang-lap-la-tia-to" href="/cau-chuyen-nha-sang-lap-la-tia-to" title="Câu chuyện Nhà sáng lập">
+               Câu chuyện Nhà sáng lập
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li class="submenu__item submenu__item--main">
+            <a class="link font-semibold" data-prefetch="/ket-noi-cong-dong" href="/ket-noi-cong-dong" title="Kết nối cộng đồng">
+             Kết nối cộng đồng
+            </a>
+           </li>
+          </ul>
+         </div>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/collections/all" href="/collections/all" title="Sản phẩm">
+          <span>
+           Sản phẩm
+          </span>
+          <i class="icon icon-carret-down" data-toggle-submenu="">
+          </i>
+         </a>
+         <div class="submenu mega-menu bg-white">
+          <ul class="submenu__list">
+           <li class="submenu__col">
+            <span class="submenu__item submenu__item--main">
+             <a class="link font-semibold" data-prefetch="/gao-dau-hat" href="/gao-dau-hat" title="Gạo - Đậu - Hạt">
+              Gạo - Đậu - Hạt
+             </a>
+            </span>
+            <ul>
+             <li class="submenu__item submenu__item">
+              <a class="link" data-prefetch="/cac-loai-dau" href="/cac-loai-dau" title="Các Loại Đậu">
+               Các Loại Đậu
+              </a>
+             </li>
+             <li class="submenu__item submenu__item">
+              <a class="link" data-prefetch="/com-gao-lut" href="/com-gao-lut" title="Cơm - Gạo Lứt">
+               Cơm - Gạo Lứt
+              </a>
+             </li>
+             <li class="submenu__item submenu__item">
+              <a class="link" data-prefetch="/cac-loai-hat" href="/cac-loai-hat" title="Các Loại Hạt">
+               Các Loại Hạt
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li class="submenu__col">
+            <span class="submenu__item submenu__item--main">
+             <a class="link font-semibold" data-prefetch="/bun-mien-chao-nui" href="/bun-mien-chao-nui" title="Bún - Mì - Cháo - Nui">
+              Bún - Mì - Cháo - Nui
+             </a>
+            </span>
+            <ul>
+             <li class="submenu__item submenu__item">
+              <a class="link" data-prefetch="/bun-chao-an-lien" href="/bun-chao-an-lien" title="Bún - Cháo Ăn Liền">
+               Bún - Cháo Ăn Liền
+              </a>
+             </li>
+             <li class="submenu__item submenu__item">
+              <a class="link" data-prefetch="/che-bien-1" href="/che-bien-1" title="Chế Biến">
+               Chế Biến
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li class="submenu__col">
+            <span class="submenu__item submenu__item--main">
+             <a class="link font-semibold" data-prefetch="/gia-vi-thuc-duong" href="/gia-vi-thuc-duong" title="Gia Vị Thực Dưỡng">
+              Gia Vị Thực Dưỡng
+             </a>
+            </span>
+            <ul>
+             <li class="submenu__item submenu__item">
+              <a class="link" data-prefetch="/gia-vi-nau-an" href="/gia-vi-nau-an" title="Gia Vị Nấu Ăn">
+               Gia Vị Nấu Ăn
+              </a>
+             </li>
+             <li class="submenu__item submenu__item">
+              <a class="link" data-prefetch="/cac-loai-dau-1" href="/cac-loai-dau-1" title="Các Loại Dầu">
+               Các Loại Dầu
+              </a>
+             </li>
+             <li class="submenu__item submenu__item">
+              <a class="link" data-prefetch="/duong-mat" href="/duong-mat" title="Đường - Mật">
+               Đường - Mật
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li class="submenu__col">
+            <span class="submenu__item submenu__item--main">
+             <a class="link font-semibold" data-prefetch="/thuc-pham-dong-lanh" href="/thuc-pham-dong-lanh" title="Thực Phẩm Đông Lạnh">
+              Thực Phẩm Đông Lạnh
+             </a>
+            </span>
+            <ul>
+             <li class="submenu__item submenu__item">
+              <a class="link" data-prefetch="/che-bien" href="/che-bien" title="Chế biến">
+               Chế biến
+              </a>
+             </li>
+             <li class="submenu__item submenu__item">
+              <a class="link" data-prefetch="/che-bien-san" href="/che-bien-san" title="Chế Biến Sẵn">
+               Chế Biến Sẵn
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li class="submenu__item submenu__item--main">
+            <a class="link font-semibold" data-prefetch="/thuc-pham-kho" href="/thuc-pham-kho" title="Thực Phẩm Khô">
+             Thực Phẩm Khô
+            </a>
+           </li>
+           <li class="submenu__item submenu__item--main">
+            <a class="link font-semibold" data-prefetch="/rong-bien-cac-loai" href="/rong-bien-cac-loai" title="Rong Biển Các Loại">
+             Rong Biển Các Loại
+            </a>
+           </li>
+           <li class="submenu__item submenu__item--main">
+            <a class="link font-semibold" data-prefetch="/bot-ngu-coc" href="/bot-ngu-coc" title="Bột - Ngũ Cốc">
+             Bột - Ngũ Cốc
+            </a>
+           </li>
+           <li class="submenu__item submenu__item--main">
+            <a class="link font-semibold" data-prefetch="/mon-an-do-uong" href="/mon-an-do-uong" title="Món Ăn - Đồ Uống">
+             Món Ăn - Đồ Uống
+            </a>
+           </li>
+           <li class="submenu__item submenu__item--main">
+            <a class="link font-semibold" data-prefetch="/banh-dinh-duong" href="/banh-dinh-duong" title="Các Loại Bánh">
+             Các Loại Bánh
+            </a>
+           </li>
+           <li class="submenu__item submenu__item--main">
+            <a class="link font-semibold" data-prefetch="/tra-thao-duoc" href="/tra-thao-duoc" title="Trà Thảo Dược">
+             Trà Thảo Dược
+            </a>
+           </li>
+           <li class="submenu__item submenu__item--main">
+            <a class="link font-semibold" data-prefetch="/duong-the-thien-nhien-da-muoi" href="/duong-the-thien-nhien-da-muoi" title="Dưỡng Thể - Đá Muối">
+             Dưỡng Thể - Đá Muối
+            </a>
+           </li>
+           <li class="submenu__item submenu__item--main">
+            <a class="link font-semibold" data-prefetch="/nhang-thao-duoc" href="/nhang-thao-duoc" title="Nhang Thảo Dược">
+             Nhang Thảo Dược
+            </a>
+           </li>
+           <li class="submenu__item submenu__item--main">
+            <a class="link font-semibold" data-prefetch="/tu-sach-suc-khoe" href="/tu-sach-suc-khoe" title="Tủ Sách Sức Khỏe">
+             Tủ Sách Sức Khỏe
+            </a>
+           </li>
+           <li class="submenu__item submenu__item--main">
+            <a class="link font-semibold" data-prefetch="/rau-cu-sach-da-lat" href="/rau-cu-sach-da-lat" title="Rau Củ Sạch Đà Lạt">
+             Rau Củ Sạch Đà Lạt
+            </a>
+           </li>
+           <li class="submenu__item submenu__item--main">
+            <a class="link font-semibold" data-prefetch="/do-gia-dung" href="/do-gia-dung" title="Đồ Gia Dụng">
+             Đồ Gia Dụng
+            </a>
+           </li>
+          </ul>
+         </div>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/blogs/all" href="/blogs/all" target="_blank" title="Tin tức">
+          <span>
+           Tin tức
+          </span>
+          <i class="icon icon-carret-down" data-toggle-submenu="">
+          </i>
+         </a>
+         <div class="submenu default">
+          <ul class="submenu__list">
+           <li class="submenu__item submenu__item--main">
+            <a class="link font-semibold" data-prefetch="/kien-thuc-suc-khoe" href="/kien-thuc-suc-khoe" title="Kiến thức Thực Dưỡng">
+             Kiến thức Thực Dưỡng
+            </a>
+           </li>
+           <li class="submenu__item submenu__item--main">
+            <a class="link font-semibold" data-prefetch="/vao-bep-cung-la-tia-to" href="/vao-bep-cung-la-tia-to" title="Vào bếp cùng Lá Tía Tô">
+             Vào bếp cùng Lá Tía Tô
+            </a>
+           </li>
+           <li class="submenu__item submenu__item--main">
+            <a class="link font-semibold" data-prefetch="/dat-tiec-chay-thuc-duong" href="/dat-tiec-chay-thuc-duong" title="Đặt tiệc chay thực dưỡng">
+             Đặt tiệc chay thực dưỡng
+            </a>
+           </li>
+           <li class="submenu__item submenu__item--main">
+            <a class="link font-semibold" data-prefetch="/khach-hang-than-thiet" href="/khach-hang-than-thiet" title="Khách hàng thân thiết">
+             Khách hàng thân thiết
+            </a>
+           </li>
+           <li class="submenu__item submenu__item--main">
+            <a class="link font-semibold" data-prefetch="/chuong-trinh-khuyen-mai" href="/chuong-trinh-khuyen-mai" title="Chương trình khuyến mãi">
+             Chương trình khuyến mãi
+            </a>
+           </li>
+           <li class="submenu__item submenu__item--main">
+            <a class="link font-semibold" data-prefetch="/tuyen-dung" href="/tuyen-dung" title="Tuyển dụng">
+             Tuyển dụng
+            </a>
+           </li>
+          </ul>
+         </div>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/hop-tac-dai-li" href="/hop-tac-dai-li" title="Chính sách sỉ">
+          <span>
+           Chính sách sỉ
+          </span>
+         </a>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/trai-nghiem-khach-hang" href="/trai-nghiem-khach-hang" title="Trải nghiệm Khách hàng">
+          <span>
+           Trải nghiệm Khách hàng
+          </span>
+         </a>
+        </li>
+       </ul>
+      </nav>
+     </div>
+     <div class="navigation-arrows">
+      <button class="btn prev px-1">
+       <i class="disabled icon icon-carret-left link">
+       </i>
+      </button>
+      <button class="btn next px-1">
+       <i class="icon icon-carret-right link">
+       </i>
+      </button>
+     </div>
+    </div>
+    <div class="flex gap-[var(--spacing-8)] whitespace-nowrap">
+     <a class="inline-flex gap-1 items-center store-group hover:text-[var(--color-sub-header-link)]" href="/he-thong-cua-hang" title="Hệ thống cửa hàng">
+      <div class="rounded-sm flex items-center justify-center">
+       <i class="icon icon-store">
+       </i>
+      </div>
+      <div>
+       <span class="font-semibold">
+        Hệ thống cửa hàng
+       </span>
+      </div>
+     </a>
+     <a class="inline-flex gap-1 items-center phone-group hover:text-[var(--color-sub-header-link)]" href="tel:0937849727" title="0937849727">
+      <div class="rounded-sm flex items-center justify-center">
+       <i class="icon icon-calling-phone">
+       </i>
+      </div>
+      <div>
+       <span>
+        Hotline:
+        <b>
+         0937849727
+        </b>
+       </span>
+      </div>
+     </a>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<main>
+ <div class="breadcrumbs">
+  <div class="container">
+   <ul class="breadcrumb py-3 flex flex-wrap items-center text-xs md:text-sm">
+    <li class="home">
+     <a class="link" href="/" title="Trang chủ">
+      <span>
+       Trang chủ
+      </span>
+     </a>
+     <span class="mx-1 md:mx-2 inline-block">
+      /
+     </span>
+    </li>
+    <li>
+     <span class="text-neutral-100">
+      Hệ thống cửa hàng
+     </span>
+    </li>
+   </ul>
+  </div>
+ </div>
+ <link href="//bizweb.dktcdn.net/100/456/761/themes/1010044/assets/shoplist.css?1753342729308" rel="stylesheet" type="text/css"/>
+ <div class="ega-store-locator">
+  <svg class="lds-magnify" preserveaspectratio="xMidYMid" style="position: absolute; width: 0; height: 0; overflow: hidden;" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+    <symbol id="ega-ic-location" viewbox="0 0 512 512">
+     <path d="M256,0C153.755,0,70.573,83.182,70.573,185.426c0,126.888,165.939,313.167,173.004,321.035
+						 c6.636,7.391,18.222,7.378,24.846,0c7.065-7.868,173.004-194.147,173.004-321.035C441.425,83.182,358.244,0,256,0z M256,278.719
+						 c-51.442,0-93.292-41.851-93.292-93.293S204.559,92.134,256,92.134s93.291,41.851,93.291,93.293S307.441,278.719,256,278.719z" fill="currentColor">
+     </path>
+    </symbol>
+    <symbol id="ega-icon-spinner" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+     <path d="M12 4c0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.209-1.791 4-4
+        4s-4-1.791-4-4zM20.485 7.515c0-2.209 1.791-4 4-4s4 1.791 4 4c0
+        2.209-1.791 4-4 4s-4-1.791-4-4zM26 16c0-1.105 0.895-2 2-2s2 0.895 2 2c0
+        1.105-0.895 2-2 2s-2-0.895-2-2zM22.485 24.485c0-1.105 0.895-2 2-2s2
+        0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM14 28c0 0 0 0 0 0 0-1.105
+        0.895-2 2-2s2 0.895 2 2c0 0 0 0 0 0 0 1.105-0.895 2-2
+        2s-2-0.895-2-2zM5.515 24.485c0 0 0 0 0 0 0-1.105 0.895-2 2-2s2 0.895 2
+        2c0 0 0 0 0 0 0 1.105-0.895 2-2 2s-2-0.895-2-2zM4.515 7.515c0 0 0 0 0 0
+        0-1.657 1.343-3 3-3s3 1.343 3 3c0 0 0 0 0 0 0 1.657-1.343 3-3
+        3s-3-1.343-3-3zM1.75 16c0-1.243 1.007-2.25 2.25-2.25s2.25 1.007 2.25
+        2.25c0 1.243-1.007 2.25-2.25 2.25s-2.25-1.007-2.25-2.25z">
+     </path>
+    </symbol>
+   </defs>
+  </svg>
+  <div class="container ega-section">
+   <h1 class="title_page text-center text-h4 font-semibold">
+    Hệ thống cửa hàng
+   </h1>
+   <div class="loading-icon">
+    <svg class="ega-ic-spinner icon spin">
+     <use xlink:href="#ega-icon-spinner">
+     </use>
+    </svg>
+   </div>
+   <div class="card loading not_found col-md-6 col-12 py-5 mx-auto mt-4 text-center">
+    <h5 class="m-0 text-center text-base font-semibold">
+     Địa chỉ cửa hàng đang cập nhật
+    </h5>
+   </div>
+   <div class="ega-row--grid loading">
+    <div class="card" id="store">
+     <div class="card-body">
+      <h5 class="text-base font-semibold">
+       Tìm cửa hàng
+      </h5>
+      <div class="form-group">
+       <label class="block">
+        Chọn tỉnh thành
+       </label>
+       <div class="ega-custom-select">
+        <select class="form-select" id="city">
+        </select>
+       </div>
+      </div>
+      <div class="form-group my-3">
+       <label class="block">
+        Chọn cửa hàng
+       </label>
+       <div class="ega-custom-select">
+        <input autocomplete="off" class="form-select border-neutral-400" id="shop" list="shops" name="shop" placeholder="Tìm nhanh cửa hàng"/>
+        <datalist id="shops">
+        </datalist>
+       </div>
+      </div>
+      <div class="ega-store-locator__address">
+       <div class="space-y-2" id="shop-infor">
+       </div>
+      </div>
+     </div>
+    </div>
+    <div id="map">
+    </div>
+   </div>
+  </div>
+ </div>
+</main>
+<link href="//bizweb.dktcdn.net/100/456/761/themes/1010044/assets/bpr-products-module.css?1753342729308" media="all" rel="stylesheet" type="text/css"/>
+<div class="sapo-product-reviews-module">
+</div>
+<menu-drawer class="portal portal--drawer" data-animation="slide-in-left" data-type="drawer" id="menu-drawer">
+ <dialog class="portal-dialog">
+  <div class="portal-overlay">
+  </div>
+  <div class="portal-inner animation bg-background h-full grid grid-rows-[auto_1fr_auto]">
+   <div class="navigation-header pt-4 flex justify-between items-center border-b pb-3 border-neutral-50 px-4">
+    <a class="header-icon-group flex gap-2 items-center account-group hover:bg-neutral-50 active:scale-95 transition-all duration-150 px-2 py-1 rounded-sm" href="/account/login" title="Đăng nhập">
+     <div class="header-icon w-[3.6rem] h-[3.6rem] p-2 rounded-sm flex items-center justify-center border border-neutral-50">
+      <i class="icon icon-user">
+      </i>
+     </div>
+     <div class="">
+      <span class="text-xs">
+       Tài khoản
+      </span>
+      <span class="font-semibold block">
+       Đăng nhập
+      </span>
+     </div>
+    </a>
+    <button class="w-[3.2rem] h-[3.2rem] rounded-full border border-neutral-50 text-neutral-200 flex items-center justify-center active:scale-95 transition-transform hover:bg-neutral-50" id="PortalClose-menu-crawer" type="button">
+     <i class="icon icon-cross">
+     </i>
+    </button>
+   </div>
+   <nav class="navigation-vertical overflow-y-auto no-scrollbar">
+    <ul class="">
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/gao-dau-hat" href="/gao-dau-hat" title="Gạo - Đậu - Hạt">
+       <img alt="Gạo - Đậu - Hạt" class="w-5" height="20" loading="lazy" src="//bizweb.dktcdn.net/100/456/761/themes/1010044/assets/menu_icon_1.png?1753342729308" width="20"/>
+       <span>
+        Gạo - Đậu - Hạt
+       </span>
+       <span class="ml-auto text-neutral-200 flex items-center" data-toggle-submenu="">
+        <i class="icon icon-carret-right">
+        </i>
+       </span>
+      </a>
+      <div class="submenu absolute lg:group-hover:grid p-4 overflow-auto mega-menu bg-white mega-menu--banner">
+       <div class="relative toggle-submenu -mt-4 -mx-4 p-3 mb-4 bg-neutral-50 font-semibold flex justify-between lg:hidden" data-toggle-submenu="">
+        <span class="">
+         <i class="icon icon-carret-left mr-auto text-neutral-200">
+         </i>
+        </span>
+        <span class="mx-auto">
+         Gạo - Đậu - Hạt
+        </span>
+       </div>
+       <div class="mega-menu__inner flex-wrap gap-3 flex items-start">
+        <ul class="submenu__list flex flex-col gap-3 w-full">
+         <li class="submenu__item submenu__item--main font-semibold">
+          <a class="link" data-prefetch="/cac-loai-dau" href="/cac-loai-dau" title="Các Loại Đậu">
+           Các Loại Đậu
+          </a>
+         </li>
+         <li class="submenu__item submenu__item--main font-semibold">
+          <a class="link" data-prefetch="/com-gao-lut" href="/com-gao-lut" title="Cơm - Gạo Lứt">
+           Cơm - Gạo Lứt
+          </a>
+         </li>
+         <li class="submenu__col">
+          <span class="submenu__item submenu__item--main mb-3 font-semibold">
+           <a class="link font-semibold" data-prefetch="/cac-loai-hat" href="/cac-loai-hat" title="Các Loại Hạt">
+            Các Loại Hạt
+           </a>
+          </span>
+          <ul class="list-disc pl-4 flex-col flex">
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/hat-che-bien" href="/hat-che-bien" title="Hạt Chế Biến">
+             Hạt Chế Biến
+            </a>
+           </li>
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/hat-an-lien" href="/hat-an-lien" title="Hạt Ăn Liền">
+             Hạt Ăn Liền
+            </a>
+           </li>
+          </ul>
+         </li>
+        </ul>
+        <div class="mmega-menu__banner w-full">
+         <div>
+          <a href="banner" title="">
+           <img alt="" height="200" loading="lazy" src="//bizweb.dktcdn.net/100/456/761/themes/1010044/assets/menu_1_banner_1.jpg?1753342729308" width="400"/>
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/bun-mien-chao-nui" href="/bun-mien-chao-nui" title="Bún - Mì - Cháo - Nui">
+       <img alt="Bún - Mì - Cháo - Nui" class="w-5" height="20" loading="lazy" src="//bizweb.dktcdn.net/100/456/761/themes/1010044/assets/menu_icon_2.png?1753342729308" width="20"/>
+       <span>
+        Bún - Mì - Cháo - Nui
+       </span>
+       <span class="ml-auto text-neutral-200 flex items-center" data-toggle-submenu="">
+        <i class="icon icon-carret-right">
+        </i>
+       </span>
+      </a>
+      <div class="submenu absolute lg:group-hover:grid p-4 overflow-auto default">
+       <div class="relative toggle-submenu -mt-4 -mx-4 p-3 mb-4 bg-neutral-50 font-semibold flex justify-between lg:hidden" data-toggle-submenu="">
+        <span class="">
+         <i class="icon icon-carret-left mr-auto text-neutral-200">
+         </i>
+        </span>
+        <span class="mx-auto">
+         Bún - Mì - Cháo - Nui
+        </span>
+       </div>
+       <div class="mega-menu__inner flex-wrap gap-3 flex items-start">
+        <ul class="submenu__list flex flex-col gap-3 w-full">
+         <li class="submenu__item submenu__item--main font-semibold">
+          <a class="link" data-prefetch="/bun-chao-an-lien" href="/bun-chao-an-lien" title="Bún - Cháo Ăn Liền">
+           Bún - Cháo Ăn Liền
+          </a>
+         </li>
+         <li class="submenu__item submenu__item--main font-semibold">
+          <a class="link" data-prefetch="/che-bien-1" href="/che-bien-1" title="Chế Biến">
+           Chế Biến
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/gia-vi-thuc-duong" href="/gia-vi-thuc-duong" title="Gia Vị Thực Dưỡng">
+       <img alt="Gia Vị Thực Dưỡng" class="w-5" height="20" loading="lazy" src="//bizweb.dktcdn.net/100/456/761/themes/1010044/assets/menu_icon_3.png?1753342729308" width="20"/>
+       <span>
+        Gia Vị Thực Dưỡng
+       </span>
+       <span class="ml-auto text-neutral-200 flex items-center" data-toggle-submenu="">
+        <i class="icon icon-carret-right">
+        </i>
+       </span>
+      </a>
+      <div class="submenu absolute lg:group-hover:grid p-4 overflow-auto mega-menu bg-white mega-menu--products">
+       <div class="relative toggle-submenu -mt-4 -mx-4 p-3 mb-4 bg-neutral-50 font-semibold flex justify-between lg:hidden" data-toggle-submenu="">
+        <span class="">
+         <i class="icon icon-carret-left mr-auto text-neutral-200">
+         </i>
+        </span>
+        <span class="mx-auto">
+         Gia Vị Thực Dưỡng
+        </span>
+       </div>
+       <div class="mega-menu__inner flex-wrap gap-3 flex items-start">
+        <ul class="submenu__list flex flex-col gap-3 w-full">
+         <li class="submenu__item submenu__item--main font-semibold">
+          <a class="link" data-prefetch="/gia-vi-nau-an" href="/gia-vi-nau-an" title="Gia Vị Nấu Ăn">
+           Gia Vị Nấu Ăn
+          </a>
+         </li>
+         <li class="submenu__item submenu__item--main font-semibold">
+          <a class="link" data-prefetch="/cac-loai-dau-1" href="/cac-loai-dau-1" title="Các Loại Dầu">
+           Các Loại Dầu
+          </a>
+         </li>
+         <li class="submenu__item submenu__item--main font-semibold">
+          <a class="link" data-prefetch="/duong-mat" href="/duong-mat" title="Đường - Mật">
+           Đường - Mật
+          </a>
+         </li>
+        </ul>
+        <related-products class="releated-products w-full" data-empty-content="Sản phẩm đang được cập nhật" data-limit="4" data-product-type="row" data-query="((id:37693865)OR         (id:38597097)OR         (id:27025536))">
+         <div class="heading-bar">
+          <h2 class="heading w-auto font-semibold">
+           <a class="link" href="" title="Sản phẩm nổi bật">
+            Sản phẩm nổi bật
+           </a>
+          </h2>
+         </div>
+         <carousel-slider>
+          <div class="embla">
+           <div class="embla__viewport">
+            <div class="embla__container product-list h-inherit -ml-2 [&amp;&gt;div]:pl-2 [&amp;&gt;div]:w-full [&amp;&gt;div]:flex_0 [&amp;&gt;div]:shrink-0">
+             <div class="skeleton__product-row__item bg-background border border-neutral-50 rounded-sm relative z-10 m-0 h-full grid grid-cols-[calc(2/4.72*100%)_1fr]">
+              <div class="skeleton__product-row__item__image aspect-square bg-neutral-50 animate-pulse">
+              </div>
+              <div class="skeleton__product-row__item__body p-2 md:p-4 space-y-2">
+               <div class="skeleton__product-row__item__title w-full h-4 bg-neutral-50 animate-pulse">
+               </div>
+               <div class="skeleton__product-row__item__price w-1/3 h-4 bg-neutral-50 animate-pulse">
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="embla__buttons md:block dnone">
+            <button class="embla__button embla__button--prev" onclick="event.stopPropagation()" type="button">
+             <i class="icon icon-carret-left">
+             </i>
+            </button>
+            <button class="embla__button embla__button--next" onclick="event.stopPropagation()" type="button">
+             <i class="icon icon-carret-right">
+             </i>
+            </button>
+           </div>
+           <div class="embla__dots mt-3 mx-auto">
+           </div>
+          </div>
+         </carousel-slider>
+        </related-products>
+       </div>
+       <section-ajax data-section="section-brand" data-url="/?view=section">
+       </section-ajax>
+      </div>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/thuc-pham-dong-lanh" href="/thuc-pham-dong-lanh" title="Thực Phẩm Đông Lạnh">
+       <img alt="Thực Phẩm Đông Lạnh" class="w-5" height="20" loading="lazy" src="//bizweb.dktcdn.net/100/456/761/themes/1010044/assets/menu_icon_4.png?1753342729308" width="20"/>
+       <span>
+        Thực Phẩm Đông Lạnh
+       </span>
+       <span class="ml-auto text-neutral-200 flex items-center" data-toggle-submenu="">
+        <i class="icon icon-carret-right">
+        </i>
+       </span>
+      </a>
+      <div class="submenu absolute lg:group-hover:grid p-4 overflow-auto default">
+       <div class="relative toggle-submenu -mt-4 -mx-4 p-3 mb-4 bg-neutral-50 font-semibold flex justify-between lg:hidden" data-toggle-submenu="">
+        <span class="">
+         <i class="icon icon-carret-left mr-auto text-neutral-200">
+         </i>
+        </span>
+        <span class="mx-auto">
+         Thực Phẩm Đông Lạnh
+        </span>
+       </div>
+       <div class="mega-menu__inner flex-wrap gap-3 flex items-start">
+        <ul class="submenu__list flex flex-col gap-3 w-full">
+         <li class="submenu__item submenu__item--main font-semibold">
+          <a class="link" data-prefetch="/che-bien" href="/che-bien" title="Chế biến">
+           Chế biến
+          </a>
+         </li>
+         <li class="submenu__item submenu__item--main font-semibold">
+          <a class="link" data-prefetch="/che-bien-san" href="/che-bien-san" title="Chế Biến Sẵn">
+           Chế Biến Sẵn
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/thuc-pham-kho" href="/thuc-pham-kho" title="Thực Phẩm Khô">
+       <img alt="Thực Phẩm Khô" class="w-5" height="20" loading="lazy" src="//bizweb.dktcdn.net/100/456/761/themes/1010044/assets/menu_icon_5.png?1753342729308" width="20"/>
+       <span>
+        Thực Phẩm Khô
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/rong-bien-cac-loai" href="/rong-bien-cac-loai" title="Rong Biển Các Loại">
+       <img alt="Rong Biển Các Loại" class="w-5" height="20" loading="lazy" src="//bizweb.dktcdn.net/100/456/761/themes/1010044/assets/menu_icon_6.png?1753342729308" width="20"/>
+       <span>
+        Rong Biển Các Loại
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/bot-ngu-coc" href="/bot-ngu-coc" title="Bột - Ngũ Cốc">
+       <img alt="Bột - Ngũ Cốc" class="w-5" height="20" loading="lazy" src="//bizweb.dktcdn.net/100/456/761/themes/1010044/assets/menu_icon_7.png?1753342729308" width="20"/>
+       <span>
+        Bột - Ngũ Cốc
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/mon-an-do-uong" href="/mon-an-do-uong" title="Món Ăn - Đồ Uống">
+       <img alt="Món Ăn - Đồ Uống" class="w-5" height="20" loading="lazy" src="//bizweb.dktcdn.net/100/456/761/themes/1010044/assets/menu_icon_8.png?1753342729308" width="20"/>
+       <span>
+        Món Ăn - Đồ Uống
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/banh-dinh-duong" href="/banh-dinh-duong" title="Các Loại Bánh">
+       <img alt="Các Loại Bánh" class="w-5" height="20" loading="lazy" src="//bizweb.dktcdn.net/100/456/761/themes/1010044/assets/menu_icon_9.png?1753342729308" width="20"/>
+       <span>
+        Các Loại Bánh
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/tra-thao-duoc" href="/tra-thao-duoc" title="Trà Thảo Dược">
+       <img alt="Trà Thảo Dược" class="w-5" height="20" loading="lazy" src="//bizweb.dktcdn.net/100/456/761/themes/1010044/assets/menu_icon_10.png?1753342729308" width="20"/>
+       <span>
+        Trà Thảo Dược
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/duong-the-thien-nhien-da-muoi" href="/duong-the-thien-nhien-da-muoi" title="Dưỡng Thể - Đá Muối">
+       <img alt="Dưỡng Thể - Đá Muối" class="w-5" height="20" loading="lazy" src="//bizweb.dktcdn.net/100/456/761/themes/1010044/assets/menu_icon_11.png?1753342729308" width="20"/>
+       <span>
+        Dưỡng Thể - Đá Muối
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/nhang-thao-duoc" href="/nhang-thao-duoc" title="Nhang Thảo Dược">
+       <img alt="Nhang Thảo Dược" class="w-5" height="20" loading="lazy" src="//bizweb.dktcdn.net/100/456/761/themes/1010044/assets/menu_icon_12.png?1753342729308" width="20"/>
+       <span>
+        Nhang Thảo Dược
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/tu-sach-suc-khoe" href="/tu-sach-suc-khoe" title="Tủ Sách Sức Khỏe">
+       <img alt="Tủ Sách Sức Khỏe" class="w-5" height="20" loading="lazy" src="//bizweb.dktcdn.net/100/456/761/themes/1010044/assets/menu_icon_13.png?1753342729308" width="20"/>
+       <span>
+        Tủ Sách Sức Khỏe
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/rau-cu-sach-da-lat" href="/rau-cu-sach-da-lat" title="Rau Củ Sạch Đà Lạt">
+       <img alt="Rau Củ Sạch Đà Lạt" class="w-5" height="20" loading="lazy" src="//bizweb.dktcdn.net/100/456/761/themes/1010044/assets/menu_icon_14.png?1753342729308" width="20"/>
+       <span>
+        Rau Củ Sạch Đà Lạt
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/do-gia-dung" href="/do-gia-dung" title="Đồ Gia Dụng">
+       <span>
+        Đồ Gia Dụng
+       </span>
+      </a>
+     </li>
+    </ul>
+    <ul class="">
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/" title="Trang chủ">
+       <span>
+        Trang chủ
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/gioi-thieu-chung" title="Giới thiệu">
+       <span>
+        Giới thiệu
+       </span>
+       <i class="icon icon-carret-right ml-auto" data-toggle-submenu="">
+       </i>
+      </a>
+      <div class="submenu p-4 lg:group-hover:block overflow-auto mega-menu bg-white">
+       <div class="relative toggle-submenu -mt-4 -mx-4 mb-4 bg-neutral-50 p-3 font-semibold flex justify-between lg:hidden" data-toggle-submenu="">
+        <span class="mr-3">
+         <i class="icon icon-carret-left mr-auto text-neutral-200">
+         </i>
+        </span>
+        <span class="mx-auto">
+         Giới thiệu
+        </span>
+       </div>
+       <ul class="submenu__list flex flex-col gap-3">
+        <li class="submenu__item submenu__item--main font-semibold">
+         <a class="link font-semibold" data-prefetch="" href="/gioi-thieu-chung" title="Giới thiệu chung">
+          Giới thiệu chung
+         </a>
+        </li>
+        <li class="submenu__col">
+         <span class="submenu__item submenu__item--main submenu__item submenu__item--main mb-3 font-semibold">
+          <a class="link font-semibold" data-prefetch="" href="/tam-nhin-su-menh" title="Tầm nhìn - Sứ mệnh">
+           Tầm nhìn - Sứ mệnh
+          </a>
+         </span>
+         <ul class="list-disc pl-4 flex-col flex">
+          <li class="submenu__item submenu__item">
+           <a class="link" data-prefetch="" href="/cau-chuyen-thuong-hieu" title="Câu chuyện Thương hiệu">
+            Câu chuyện Thương hiệu
+           </a>
+          </li>
+          <li class="submenu__item submenu__item">
+           <a class="link" data-prefetch="" href="/cau-chuyen-nha-sang-lap-la-tia-to" title="Câu chuyện Nhà sáng lập">
+            Câu chuyện Nhà sáng lập
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="submenu__item submenu__item--main font-semibold">
+         <a class="link font-semibold" data-prefetch="" href="/ket-noi-cong-dong" title="Kết nối cộng đồng">
+          Kết nối cộng đồng
+         </a>
+        </li>
+       </ul>
+      </div>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/collections/all" title="Sản phẩm">
+       <span>
+        Sản phẩm
+       </span>
+       <i class="icon icon-carret-right ml-auto" data-toggle-submenu="">
+       </i>
+      </a>
+      <div class="submenu p-4 lg:group-hover:block overflow-auto mega-menu bg-white">
+       <div class="relative toggle-submenu -mt-4 -mx-4 mb-4 bg-neutral-50 p-3 font-semibold flex justify-between lg:hidden" data-toggle-submenu="">
+        <span class="mr-3">
+         <i class="icon icon-carret-left mr-auto text-neutral-200">
+         </i>
+        </span>
+        <span class="mx-auto">
+         Sản phẩm
+        </span>
+       </div>
+       <ul class="submenu__list flex flex-col gap-3">
+        <li class="submenu__col">
+         <span class="submenu__item submenu__item--main submenu__item submenu__item--main mb-3 font-semibold">
+          <a class="link font-semibold" data-prefetch="" href="/gao-dau-hat" title="Gạo - Đậu - Hạt">
+           Gạo - Đậu - Hạt
+          </a>
+         </span>
+         <ul class="list-disc pl-4 flex-col flex">
+          <li class="submenu__item submenu__item">
+           <a class="link" data-prefetch="" href="/cac-loai-dau" title="Các Loại Đậu">
+            Các Loại Đậu
+           </a>
+          </li>
+          <li class="submenu__item submenu__item">
+           <a class="link" data-prefetch="" href="/com-gao-lut" title="Cơm - Gạo Lứt">
+            Cơm - Gạo Lứt
+           </a>
+          </li>
+          <li class="submenu__item submenu__item">
+           <a class="link" data-prefetch="" href="/cac-loai-hat" title="Các Loại Hạt">
+            Các Loại Hạt
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="submenu__col">
+         <span class="submenu__item submenu__item--main submenu__item submenu__item--main mb-3 font-semibold">
+          <a class="link font-semibold" data-prefetch="" href="/bun-mien-chao-nui" title="Bún - Mì - Cháo - Nui">
+           Bún - Mì - Cháo - Nui
+          </a>
+         </span>
+         <ul class="list-disc pl-4 flex-col flex">
+          <li class="submenu__item submenu__item">
+           <a class="link" data-prefetch="" href="/bun-chao-an-lien" title="Bún - Cháo Ăn Liền">
+            Bún - Cháo Ăn Liền
+           </a>
+          </li>
+          <li class="submenu__item submenu__item">
+           <a class="link" data-prefetch="" href="/che-bien-1" title="Chế Biến">
+            Chế Biến
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="submenu__col">
+         <span class="submenu__item submenu__item--main submenu__item submenu__item--main mb-3 font-semibold">
+          <a class="link font-semibold" data-prefetch="" href="/gia-vi-thuc-duong" title="Gia Vị Thực Dưỡng">
+           Gia Vị Thực Dưỡng
+          </a>
+         </span>
+         <ul class="list-disc pl-4 flex-col flex">
+          <li class="submenu__item submenu__item">
+           <a class="link" data-prefetch="" href="/gia-vi-nau-an" title="Gia Vị Nấu Ăn">
+            Gia Vị Nấu Ăn
+           </a>
+          </li>
+          <li class="submenu__item submenu__item">
+           <a class="link" data-prefetch="" href="/cac-loai-dau-1" title="Các Loại Dầu">
+            Các Loại Dầu
+           </a>
+          </li>
+          <li class="submenu__item submenu__item">
+           <a class="link" data-prefetch="" href="/duong-mat" title="Đường - Mật">
+            Đường - Mật
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="submenu__col">
+         <span class="submenu__item submenu__item--main submenu__item submenu__item--main mb-3 font-semibold">
+          <a class="link font-semibold" data-prefetch="" href="/thuc-pham-dong-lanh" title="Thực Phẩm Đông Lạnh">
+           Thực Phẩm Đông Lạnh
+          </a>
+         </span>
+         <ul class="list-disc pl-4 flex-col flex">
+          <li class="submenu__item submenu__item">
+           <a class="link" data-prefetch="" href="/che-bien" title="Chế biến">
+            Chế biến
+           </a>
+          </li>
+          <li class="submenu__item submenu__item">
+           <a class="link" data-prefetch="" href="/che-bien-san" title="Chế Biến Sẵn">
+            Chế Biến Sẵn
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="submenu__item submenu__item--main font-semibold">
+         <a class="link font-semibold" data-prefetch="" href="/thuc-pham-kho" title="Thực Phẩm Khô">
+          Thực Phẩm Khô
+         </a>
+        </li>
+        <li class="submenu__item submenu__item--main font-semibold">
+         <a class="link font-semibold" data-prefetch="" href="/rong-bien-cac-loai" title="Rong Biển Các Loại">
+          Rong Biển Các Loại
+         </a>
+        </li>
+        <li class="submenu__item submenu__item--main font-semibold">
+         <a class="link font-semibold" data-prefetch="" href="/bot-ngu-coc" title="Bột - Ngũ Cốc">
+          Bột - Ngũ Cốc
+         </a>
+        </li>
+        <li class="submenu__item submenu__item--main font-semibold">
+         <a class="link font-semibold" data-prefetch="" href="/mon-an-do-uong" title="Món Ăn - Đồ Uống">
+          Món Ăn - Đồ Uống
+         </a>
+        </li>
+        <li class="submenu__item submenu__item--main font-semibold">
+         <a class="link font-semibold" data-prefetch="" href="/banh-dinh-duong" title="Các Loại Bánh">
+          Các Loại Bánh
+         </a>
+        </li>
+        <li class="submenu__item submenu__item--main font-semibold">
+         <a class="link font-semibold" data-prefetch="" href="/tra-thao-duoc" title="Trà Thảo Dược">
+          Trà Thảo Dược
+         </a>
+        </li>
+        <li class="submenu__item submenu__item--main font-semibold">
+         <a class="link font-semibold" data-prefetch="" href="/duong-the-thien-nhien-da-muoi" title="Dưỡng Thể - Đá Muối">
+          Dưỡng Thể - Đá Muối
+         </a>
+        </li>
+        <li class="submenu__item submenu__item--main font-semibold">
+         <a class="link font-semibold" data-prefetch="" href="/nhang-thao-duoc" title="Nhang Thảo Dược">
+          Nhang Thảo Dược
+         </a>
+        </li>
+        <li class="submenu__item submenu__item--main font-semibold">
+         <a class="link font-semibold" data-prefetch="" href="/tu-sach-suc-khoe" title="Tủ Sách Sức Khỏe">
+          Tủ Sách Sức Khỏe
+         </a>
+        </li>
+        <li class="submenu__item submenu__item--main font-semibold">
+         <a class="link font-semibold" data-prefetch="" href="/rau-cu-sach-da-lat" title="Rau Củ Sạch Đà Lạt">
+          Rau Củ Sạch Đà Lạt
+         </a>
+        </li>
+        <li class="submenu__item submenu__item--main font-semibold">
+         <a class="link font-semibold" data-prefetch="" href="/do-gia-dung" title="Đồ Gia Dụng">
+          Đồ Gia Dụng
+         </a>
+        </li>
+       </ul>
+      </div>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/blogs/all" target="_blank" title="Tin tức">
+       <span>
+        Tin tức
+       </span>
+       <i class="icon icon-carret-right ml-auto" data-toggle-submenu="">
+       </i>
+      </a>
+      <div class="submenu p-4 lg:group-hover:block overflow-auto default">
+       <div class="relative toggle-submenu -mt-4 -mx-4 mb-4 bg-neutral-50 p-3 font-semibold flex justify-between lg:hidden" data-toggle-submenu="">
+        <span class="mr-3">
+         <i class="icon icon-carret-left mr-auto text-neutral-200">
+         </i>
+        </span>
+        <span class="mx-auto">
+         Tin tức
+        </span>
+       </div>
+       <ul class="submenu__list flex flex-col gap-3">
+        <li class="submenu__item submenu__item--main font-semibold">
+         <a class="link font-semibold" data-prefetch="" href="/kien-thuc-suc-khoe" title="Kiến thức Thực Dưỡng">
+          Kiến thức Thực Dưỡng
+         </a>
+        </li>
+        <li class="submenu__item submenu__item--main font-semibold">
+         <a class="link font-semibold" data-prefetch="" href="/vao-bep-cung-la-tia-to" title="Vào bếp cùng Lá Tía Tô">
+          Vào bếp cùng Lá Tía Tô
+         </a>
+        </li>
+        <li class="submenu__item submenu__item--main font-semibold">
+         <a class="link font-semibold" data-prefetch="" href="/dat-tiec-chay-thuc-duong" title="Đặt tiệc chay thực dưỡng">
+          Đặt tiệc chay thực dưỡng
+         </a>
+        </li>
+        <li class="submenu__item submenu__item--main font-semibold">
+         <a class="link font-semibold" data-prefetch="" href="/khach-hang-than-thiet" title="Khách hàng thân thiết">
+          Khách hàng thân thiết
+         </a>
+        </li>
+        <li class="submenu__item submenu__item--main font-semibold">
+         <a class="link font-semibold" data-prefetch="" href="/chuong-trinh-khuyen-mai" title="Chương trình khuyến mãi">
+          Chương trình khuyến mãi
+         </a>
+        </li>
+        <li class="submenu__item submenu__item--main font-semibold">
+         <a class="link font-semibold" data-prefetch="" href="/tuyen-dung" title="Tuyển dụng">
+          Tuyển dụng
+         </a>
+        </li>
+       </ul>
+      </div>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/hop-tac-dai-li" title="Chính sách sỉ">
+       <span>
+        Chính sách sỉ
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/trai-nghiem-khach-hang" title="Trải nghiệm Khách hàng">
+       <span>
+        Trải nghiệm Khách hàng
+       </span>
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div class="navigation-footer 4 border-t border-neutral-50 flex">
+    <div class="w-1/2">
+     <a class="header-icon-group flex gap-2 items-center hover:bg-neutral-50 transition-all duration-150 px-2 py-4 store-group" href="/he-thong-cua-hang" title="Hệ thống cửa hàng">
+      <div class="header-icon w-[3.6rem] h-[3.6rem] p-2 rounded-sm flex items-center justify-center border border-neutral-50">
+       <i class="icon icon-store">
+       </i>
+      </div>
+      <div>
+       <span class="text-xs">
+        Hệ thống cửa hàng
+       </span>
+      </div>
+     </a>
+    </div>
+    <div class="w-1/2">
+     <a class="header-icon-group flex gap-2 items-center hover:bg-neutral-50 transition-all duration-150 px-2 py-4 phone-group" href="tel:0937849727" title="0937849727">
+      <div class="header-icon w-[3.6rem] h-[3.6rem] p-2 rounded-sm flex items-center justify-center border border-neutral-50">
+       <i class="icon icon-calling-phone">
+       </i>
+      </div>
+      <div>
+       <span class="text-xs">
+        Hotline:
+        <b>
+         0937849727
+        </b>
+       </span>
+      </div>
+     </a>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</menu-drawer>
+<link href="//bizweb.dktcdn.net/100/456/761/themes/1010044/assets/addthis-sharing.css?1753342729308" media="print" onload="this.media='all'" rel="stylesheet">
+ <noscript>
+  <link href="//bizweb.dktcdn.net/100/456/761/themes/1010044/assets/addthis-sharing.css?1753342729308" media="all" rel="stylesheet" type="text/css"/>
+ </noscript>
+ <div class="addThis_listSharing hidden">
+  <a class="backtop back-to-top flex items-center justify-center" href="#" id="back-to-top" title="Lên đầu trang">
+   <i class="icon icon-carret-up">
+   </i>
+  </a>
+  <call-center-group class="addThis_group" style="--color-primary: #fe924d">
+   <ul class="addThis_listing list-unstyled dnone">
+    <li class="addThis_item">
+     <a class="addThis_item--icon" href="tel:0937849727" rel="nofollow">
+      <img alt="Gọi ngay cho chúng tôi" class="img-fluid" height="44" loading="lazy" src="//bizweb.dktcdn.net/100/456/761/themes/1010044/assets/addthis-phone.svg?1753342729308" width="44"/>
+      <span class="tooltip-text">
+       Gọi ngay cho chúng tôi
+      </span>
+     </a>
+    </li>
+    <li class="addThis_item">
+     <a class="addThis_item--icon" href="https://zalo.me/0937849727" rel="nofollow" target="_blank">
+      <img alt="Chat với chúng tôi qua Zalo" class="img-fluid" height="44" loading="lazy" src="//bizweb.dktcdn.net/100/456/761/themes/1010044/assets/addthis-zalo.svg?1753342729308" width="44"/>
+      <span class="tooltip-text">
+       Chat với chúng tôi qua Zalo
+      </span>
+     </a>
+    </li>
+    <li class="addThis_item">
+     <a class="addThis_item--icon" href="https://m.me/thucduonglatiato" rel="nofollow" target="_blank">
+      <img alt="Chat với chúng tôi qua Facebook" class="img-fluid" height="44" loading="lazy" src="//bizweb.dktcdn.net/100/456/761/themes/1010044/assets/addthis-messenger.svg?1753342729308" width="44"/>
+      <span class="tooltip-text">
+       Chat với chúng tôi qua Facebook
+      </span>
+     </a>
+    </li>
+   </ul>
+   <div class="addThis_item relative z-[1]" data-toggle="">
+    <div class="addThis_item--icon addThis_item--toggle rounded-full">
+     <img alt="call-center" height="30" src="//bizweb.dktcdn.net/100/456/761/themes/1010044/assets/call-center.png?1753342729308" width="30"/>
+     <i class="icon icon-cross">
+     </i>
+    </div>
+   </div>
+  </call-center-group>
+ </div>
+ <div class="cro-btns sticky md:hidden block z-10 min-h-[5.6rem] bottom-0 left-0 slide-in-bottom" data-template="page.shoplist">
+  <div class="bg-background rounded-t-sm w-full min-h-[5.6rem] px-2 justify-between items-center inline-flex slide-in-bottom" style="box-shadow:var(--shadow-l)">
+   <div class="cro-btns-container w-full h-full justify-center items-center gap-0.5 grid grid-cols-[repeat(auto-fit,minmax(0,1fr))]">
+    <a class="cro-btn-item cro-btn-item--2 w-auto flex-shrink-0 flex-grow-0 h-full py-0.5 px-0.5 text-foreground h-full flex flex-col justify-center items-center gap-0.5" href="/collections/all" style="order:1" title="Sản phẩm">
+     <div class="w-4 h-4 relative">
+      <img alt="Sản phẩm" class="w-full h-full object-contain" loading="lazy" src="//bizweb.dktcdn.net/thumb/small/100/456/761/themes/1010044/assets/cro-btn-2-icon.png?1753342729308"/>
+     </div>
+     <div class="text-ellipsis overflow-hidden max-w-full text-xs text-center line-clamp-1">
+      Sản phẩm
+     </div>
+    </a>
+    <a class="cro-btn-item cro-btn-item--3 w-auto flex-shrink-0 flex-grow-0 h-full py-0.5 px-0.5 text-foreground h-full flex flex-col justify-center items-center gap-0.5" href="/pages/he-thong-cua-hang" style="order:2" title="Cửa hàng">
+     <div class="w-4 h-4 relative">
+      <img alt="Cửa hàng" class="w-full h-full object-contain" loading="lazy" src="//bizweb.dktcdn.net/thumb/small/100/456/761/themes/1010044/assets/cro-btn-3-icon.png?1753342729308"/>
+     </div>
+     <div class="text-ellipsis overflow-hidden max-w-full text-xs text-center line-clamp-1">
+      Cửa hàng
+     </div>
+    </a>
+    <a class="cro-btn-item cro-btn-item--4 w-auto flex-shrink-0 flex-grow-0 h-full py-0.5 px-0.5 text-foreground h-full flex flex-col justify-center items-center gap-0.5" href="/blogs/all" style="order:4" title="Blog">
+     <div class="w-4 h-4 relative">
+      <img alt="Blog" class="w-full h-full object-contain" loading="lazy" src="//bizweb.dktcdn.net/thumb/small/100/456/761/themes/1010044/assets/cro-btn-4-icon.png?1753342729308"/>
+     </div>
+     <div class="text-ellipsis overflow-hidden max-w-full text-xs text-center line-clamp-1">
+      Blog
+     </div>
+    </a>
+    <a class="cro-btn-item cro-btn-item--5 w-auto flex-shrink-0 flex-grow-0 h-full py-0.5 px-0.5 text-foreground h-full flex flex-col justify-center items-center gap-0.5" href="/account" style="order:5" title="Cá nhân">
+     <div class="w-4 h-4 relative">
+      <img alt="Cá nhân" class="w-full h-full object-contain" loading="lazy" src="//bizweb.dktcdn.net/thumb/small/100/456/761/themes/1010044/assets/cro-btn-5-icon.png?1753342729308"/>
+     </div>
+     <div class="text-ellipsis overflow-hidden max-w-full text-xs text-center line-clamp-1">
+      Cá nhân
+     </div>
+    </a>
+   </div>
+  </div>
+ </div>
+ <portal-component class="portal portal--drawer" data-animation="slide-in-right" data-type="drawer" id="search-drawer" style="--dialog-max-width:52rem">
+  <dialog class="portal-dialog">
+   <div class="w-full h-full flex">
+    <div class="portal-overlay">
+    </div>
+    <div class="portal-inner w-full ml-auto bg-background overflow-auto h-screen px-4 animation">
+     <div class="portal-header px-3 pb-3 pt-5">
+      <div class="font-semibold text-h6 md:text-h4 flex items-center gap-2">
+       <i class="icon icon-arrow-left text-h6 md:text-h4" id="PortalClose-search-drawer">
+       </i>
+       Tìm kiếm
+      </div>
+     </div>
+     <div class="search-bar relative">
+      <div class="search-bar relative">
+       <quick-search class="quick-search">
+        <form action="/search" class="m-0 flex bg-background pl-1 py-1 rounded items-center relative border border-neutral-50" method="get" role="search">
+         <div class="search-input-group w-full relative flex items-center">
+          <input autocomplete="off" class="border-0 bg-transparent focus:ring-transparent p-0 w-full text-base text-foreground pr-3 text-ellipsis" data-placeholder="Tìm theo tên sản phẩm...; Tìm theo thương hiệu...;" name="query" placeholder="Tìm theo tên sản phẩm..." required="" type="text" value=""/>
+          <input name="type" type="hidden" value="product"/>
+          <button aria-label="search" class="search-button btn flex items-center justify-center text-foreground rounded bg-[var(--color-search)] text-white" type="submit">
+           <i class="icon icon-search">
+           </i>
+          </button>
+         </div>
+        </form>
+        <div class="search-dropdown absolute bottom-0 top-full mt-1 left-0 bg-background rounded-lg py-3 text-foreground w-full px-2">
+         <div class="search-loading absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full z-[1] bg-background flex items-center justify-center">
+          <span class="loading-icon gap-1 hidden items-center justify-center">
+           <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+           </span>
+           <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+           </span>
+           <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+           </span>
+          </span>
+         </div>
+         <div class="search-result space-y-3">
+         </div>
+         <div class="search-history-list border-neutral-50">
+         </div>
+         <div class="search-keywords space-y-2 pt-2 px-2">
+          <span class="text-primary font-semibold">
+           Từ khóa phổ biến
+          </span>
+          <div class="search-keyword-list flex gap-1 items-center flex-wrap">
+           <a class="search-keyword text-secondary px-3 py-1 bg-relative rounded-full inline-flex items-center justify-center hover:border-secondary border border-transparent" href="/search?q=G%E1%BA%A1o+l%E1%BB%A9t&amp;type=product" title="">
+            Gạo lứt
+           </a>
+           <a class="search-keyword text-secondary px-3 py-1 bg-relative rounded-full inline-flex items-center justify-center hover:border-secondary border border-transparent" href="/search?q=+G%E1%BA%A1o+x%C3%A1t+d%E1%BB%91i&amp;type=product" title="">
+            Gạo xát dối
+           </a>
+           <a class="search-keyword text-secondary px-3 py-1 bg-relative rounded-full inline-flex items-center justify-center hover:border-secondary border border-transparent" href="/search?q=+Tr%C3%A0+b%C3%ACnh+minh&amp;type=product" title="">
+            Trà bình minh
+           </a>
+           <a class="search-keyword text-secondary px-3 py-1 bg-relative rounded-full inline-flex items-center justify-center hover:border-secondary border border-transparent" href="/search?q=+N%C6%B0%E1%BB%9Bc+m%E1%BA%AFm+chay&amp;type=product" title="">
+            Nước mắm chay
+           </a>
+           <a class="search-keyword text-secondary px-3 py-1 bg-relative rounded-full inline-flex items-center justify-center hover:border-secondary border border-transparent" href="/search?q=+Ch%E1%BA%A3+gi%C3%B2+b%C3%A1t+b%E1%BB%ADu&amp;type=product" title="">
+            Chả giò bát bửu
+           </a>
+           <a class="search-keyword text-secondary px-3 py-1 bg-relative rounded-full inline-flex items-center justify-center hover:border-secondary border border-transparent" href="/search?q=+B%C3%BAn+th%C3%AC+l%C3%A0&amp;type=product" title="">
+            Bún thì là
+           </a>
+          </div>
+         </div>
+        </div>
+       </quick-search>
+      </div>
+     </div>
+    </div>
+   </div>
+  </dialog>
+ </portal-component>
+ <quick-view class="portal portal--modal" data-animation="scale-in-hor-left" data-type="modal" id="quick-view-product">
+  <dialog class="portal-dialog">
+   <div class="flex items-center justify-center w-full h-full">
+    <div class="portal-overlay">
+    </div>
+    <div class="portal-inner h-full">
+     <button class="portal-close-button animation rounded-full w-[3.2rem] h-[3.2rem] border border-white text-white flex items-center justify-center active:scale-95 transition-transform hover:animate-spin" data-animation="fade-in" id="PortalClose-quick-view-product" type="button">
+      <i class="icon icon-cross">
+      </i>
+     </button>
+     <div class="product-wrapper animation bg-background w-full h-full md:rounded-lg">
+     </div>
+     <span class="loading-icon gap-1 hidden items-center justify-center">
+      <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+      </span>
+      <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+      </span>
+      <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+      </span>
+     </span>
+    </div>
+   </div>
+  </dialog>
+ </quick-view>
+ <cart-drawer class="portal portal--drawer" data-animation="slide-in-right" data-type="drawer" id="cart-drawer" style="--dialog-max-width:52rem">
+  <dialog class="portal-dialog">
+   <div class="w-full h-full flex">
+    <div class="portal-overlay">
+    </div>
+    <div class="cart-drawer-related-products animation fade-in flex items-center justify-center" data-animation="fade-in" id="PortalClose-cart-related-drawer">
+     <related-products class="cart-releated-products w-full fade-in dnone lg:block hidden" data-limit="10">
+      <carousel-slider>
+       <div class="embla lg:pb-[var(--spacing-10)]">
+        <h2 class="text-h4 text-center mb-5 font-semibold text-white">
+         Sản phẩm gợi ý
+        </h2>
+        <div class="embla__viewport">
+         <div class="embla__container product-list h-inherit [&amp;&gt;div]:px-2 [&amp;&gt;div]:w-full md:[&amp;&gt;div]:w-[75%] xl:[&amp;&gt;div]:w-1/3 [&amp;&gt;div]:grow-0 [&amp;&gt;div]:shrink-0 [&amp;&gt;div:first-child]:ml-auto [&amp;&gt;div:last-child]:mr-auto">
+         </div>
+        </div>
+        <div class="embla__buttons dnone md:block">
+         <button class="embla__button embla__button--prev" onclick="event.stopPropagation()" type="button">
+          <i class="icon icon-carret-left">
+          </i>
+         </button>
+         <button class="embla__button embla__button--next" onclick="event.stopPropagation()" type="button">
+          <i class="icon icon-carret-right">
+          </i>
+         </button>
+        </div>
+       </div>
+      </carousel-slider>
+     </related-products>
+    </div>
+    <div class="portal-inner w-full bg-background animation h-full">
+     <cart-form class="h-full">
+      <form action="/cart" class="cart-form h-full" method="post">
+       <div class="cart grid grid-rows-[auto_1fr_auto]">
+        <div class="portal-header pt-4 px-4 flex justify-between items-center border-b pb-3 border-neutral-50 px-4">
+         <p class="text-h6 md:text-h4">
+          Giỏ hàng
+         </p>
+         <button class="w-[3.2rem] h-[3.2rem] rounded-full border border-neutral-50 text-neutral-200 flex items-center justify-center active:scale-95 transition-transform hover:bg-neutral-50" id="PortalClose-cart-crawer" type="button">
+          <i class="icon icon-cross">
+          </i>
+         </button>
+        </div>
+        <div class="cart-left p-4 overflow-y-auto flex flex-col">
+         <rewards-bar>
+         </rewards-bar>
+         <div class="cart-table">
+         </div>
+         <div class="lg:hidden w-full mt-auto">
+          <related-products class="cart-releated-products" data-product-type="row" data-query="(id:37693865)OR         (id:38597097)OR         (id:27025536)">
+           <div class="mb-2">
+            <h2 class="text-base font-semibold">
+             Sản phẩm gợi ý
+            </h2>
+           </div>
+           <div class="overflow-hidden">
+            <div class="flex overflow-x-auto no-scrollbar product-list [&amp;&gt;div]:flex-grow-0 [&amp;&gt;div]:flex-shrink-0 [&amp;&gt;div]:w-[75%] gap-2">
+            </div>
+           </div>
+          </related-products>
+         </div>
+        </div>
+        <div class="cart-right p-4">
+         <div class="cart-summary">
+         </div>
+        </div>
+        <div class="cart-empty">
+        </div>
+       </div>
+      </form>
+     </cart-form>
+    </div>
+   </div>
+  </dialog>
+ </cart-drawer>
+ <portal-component class="portal portal--drawer" data-animation="slide-in-right" data-type="drawer" id="cart-note-drawer" style="--dialog-max-width:52rem">
+  <dialog class="portal-dialog">
+   <div class="w-full h-full flex">
+    <div class="portal-overlay">
+    </div>
+    <div class="portal-inner w-full ml-auto bg-background h-screen px-4 animation">
+     <div class="portal-header px-3 pb-3 pt-5">
+      <div class="font-semibold text-h4 flex items-center gap-2">
+       <i class="icon icon-arrow-left cursor-pointer text-h6 md:text-h4" id="PortalClose-cart-note-drawer">
+       </i>
+       Ghi
+            chú đơn hàng
+      </div>
+     </div>
+     <div class="r-bill px-3">
+      <cart-note>
+       <form>
+        <div class="form-group">
+         <label class="label block mb-2">
+          Ghi chú
+         </label>
+         <textarea class="form-textarea" name="note" rows="6"></textarea>
+        </div>
+        <button class="btn w-full mt-5 btn--large font-semibold bg-primary text-white inline-flex justify-center items-center gap-2" type="submit">
+         Lưu thông tin
+        </button>
+       </form>
+      </cart-note>
+     </div>
+    </div>
+   </div>
+  </dialog>
+ </portal-component>
+ <cart-vat-drawer class="portal portal--drawer" data-animation="slide-in-right" data-type="drawer" id="cart-vat-drawer" style="--dialog-max-width:52rem">
+  <dialog class="portal-dialog">
+   <div class="w-full h-full flex">
+    <div class="portal-overlay">
+    </div>
+    <div class="portal-inner w-full ml-auto bg-background h-screen px-4 animation">
+     <div class="portal-header px-3 pb-3 pt-5">
+      <div class="font-semibold text-h6 md:text-h4 flex items-center gap-2">
+       <i class="icon icon-arrow-left text-h6 md:text-h4 cursor-pointer" id="PortalClose-cart-vat-drawer">
+       </i>
+       Xuất hóa đơn công ty
+      </div>
+     </div>
+     <div class="r-bill px-3">
+      <form>
+       <div class="bill-field space-y-3">
+        <div class="flex items-center">
+         <div class="flex items-center">
+          <input class="invoice" name="attributes[Xuất hóa đơn]" type="hidden" value="không"/>
+          <input class="invoice-checkbox form-checkbox" type="checkbox"/>
+         </div>
+         <div class="ml-2 text-sm">
+          <label>
+           Xuất hóa đơn
+          </label>
+         </div>
+        </div>
+        <div class="form-group">
+         <label class="label block mb-2">
+          Tên công ty
+         </label>
+         <input class="form-input" data-messages="{'required':'Trường này không được bỏ trống' }" data-rules="['required']" name="attributes[Tên công ty]" placeholder="Tên công ty" type="text" value=""/>
+         <span class="error text-error mt-2 block">
+         </span>
+        </div>
+        <div class="form-group">
+         <label class="label block mb-2">
+          Mã số thuế
+         </label>
+         <input class="form-input" data-messages="{ 'minLength:10': 'Số kí tự tối thiểu [size]', 'require':'Trường này không được bỏ trống' }" data-rules="['minLength:10','required']" name="attributes[Mã số thuế]" placeholder="Mã số thuế" type="number" value=""/>
+         <span class="error text-error mt-2 block">
+         </span>
+        </div>
+        <div class="form-group">
+         <label class="label block mb-2">
+          Địa chỉ công ty
+         </label>
+         <textarea class="form-textarea" data-messages="{'required':'Trường này không được bỏ trống' }" data-rules="['required']" name="attributes[Địa chỉ công ty]" placeholder="Địa chỉ công ty"></textarea>
+         <span class="error text-error mt-2 block">
+         </span>
+        </div>
+        <div class="form-group">
+         <label class="label block mb-2">
+          Email nhận hóa đơn
+         </label>
+         <input class="form-input" data-messages="{'required':'Trường này không được bỏ trống', 'email': 'Email không đúng định dạng' }" data-rules="['required','email']" name="attributes[Email nhận hóa đơn]" placeholder="Email nhận hóa đơn" type="email" value=""/>
+         <span class="error text-error mt-2 block">
+         </span>
+        </div>
+       </div>
+       <button class="btn w-full mt-5 btn--large font-semibold bg-primary text-white inline-flex justify-center items-center gap-2" type="submit">
+        Lưu thông tin
+       </button>
+      </form>
+     </div>
+    </div>
+   </div>
+  </dialog>
+ </cart-vat-drawer>
+ <portal-component class="portal portal--drawer" data-animation="slide-in-right" data-type="drawer" id="cart-delivery-drawer" style="--dialog-max-width:52rem">
+  <dialog class="portal-dialog">
+   <div class="w-full h-full flex">
+    <div class="portal-overlay">
+    </div>
+    <div class="portal-inner w-full ml-auto bg-background h-screen px-4 animation">
+     <div class="portal-header px-3 pb-3 pt-5">
+      <div class="font-semibold text-h6 md:text-h4 flex items-center gap-2">
+       <i class="icon icon-arrow-left text-h4 cursor-pointer" id="PortalClose-cart-delivery-drawer">
+       </i>
+       Hẹn giờ nhận hàng
+      </div>
+     </div>
+     <div class="r-bill px-3">
+      <cart-delivery>
+       <form>
+        <div class="cart-delivery-time py-4">
+         <div class="grid gap-2">
+          <div class="flex items-center">
+           <div class="flex items-center">
+            <input id="use-delivery" name="attributes[Hẹn giờ nhận hàng]" type="hidden" value="cart.attributes[Hẹn giờ nhận hàng]"/>
+            <input class="form-checkbox" id="delivery-enabled" type="checkbox"/>
+           </div>
+           <div class="ml-2 text-sm">
+            <label class="" for="delivery-enabled">
+             Hẹn giờ nhận hàng
+            </label>
+           </div>
+          </div>
+          <div>
+           <label class="label block mb-1 text-base" for="delivery-date-input">
+            Ngày nhận hàng
+           </label>
+           <div class="relative">
+            <i class="icon icon-calendar text-neutral-200 top-1/2 left-2 -translate-y-1/2 absolute">
+            </i>
+            <datepicker-input class="datepicker-input">
+             <input class="form-input pl-2 pl-[var(--spacing-6-5)] py-2.5 min-h-[4rem]" id="delivery-date-input" name="attributes[Ngày nhận hàng]" type="text" value=""/>
+            </datepicker-input>
+           </div>
+          </div>
+          <div>
+           <label class="label block mb-1 text-base" for="delivery-time">
+            Thời gian nhận hàng
+           </label>
+           <select class="form-select min-h-[4rem] px-2 py-2.5 border-neutral-50" id="delivery-time" name="attributes[Thời gian nhận hàng]">
+            <option selected="" value="">
+             Chọn thời gian
+            </option>
+            <option value="08h00 - 12h00">
+             08h00 - 12h00
+            </option>
+            <option value="14h00 - 18h00">
+             14h00 - 18h00
+            </option>
+            <option value="19h00 - 21h00">
+             19h00 - 21h00
+            </option>
+           </select>
+          </div>
+         </div>
+        </div>
+        <button class="btn w-full mt-5 btn--large font-semibold bg-primary text-white inline-flex justify-center items-center gap-2" type="submit">
+         Lưu thông tin
+        </button>
+       </form>
+      </cart-delivery>
+     </div>
+    </div>
+   </div>
+  </dialog>
+ </portal-component>
+ <coupon-drawer data-animation="slide-in-right" data-type="drawer" id="coupon-drawer" lass="portal portal--drawer" style="--dialog-max-width:52rem">
+  <dialog class="portal-dialog">
+   <div class="w-full h-full flex">
+    <div class="portal-overlay">
+    </div>
+    <div class="portal-inner grid grid-rows-[auto_1fr_auto] w-full ml-auto bg-background h-screen px-4 pb-4 animation">
+     <div class="portal-header px-3 pb-3 pt-5">
+      <div class="font-semibold text-h6 md:text-h4 flex items-center gap-2">
+       <i class="icon icon-arrow-left text-h6 md:text-h4 cursor-pointer" id="PortalClose-coupon-drawer">
+       </i>
+       Chọn mã giảm giá
+      </div>
+     </div>
+     <div class="coupon-list py-4">
+     </div>
+     <div>
+     </div>
+    </div>
+   </div>
+  </dialog>
+ </coupon-drawer>
+ <coupon-modal class="portal portal--modal portal--modal-sm" data-animation="fade-in" data-type="modal" id="coupon-modal">
+  <dialog class="portal-dialog">
+   <div class="flex items-center justify-center w-full h-full p-3">
+    <div class="portal-overlay">
+    </div>
+    <div class="portal-inner animation">
+     <button class="portal-close-button w-[3.2rem] h-[3.2rem] rounded-full border border-white text-white flex items-center justify-center active:scale-95 transition-transform hover:animate-spin" id="PortalClose-coupon-modal" type="button">
+      <i class="icon icon-cross">
+      </i>
+     </button>
+     <div class="p-3 md:p-5 rounded-lg bg-background h-full grid grid grid-rows-[auto_1fr_auto]">
+      <div class="coupon-header border-b pb-2.5 border-dashed border-neutral-50">
+      </div>
+      <div class="coupon-desc">
+      </div>
+      <div class="coupon-act grid grid-cols-2 gap-3 border-t pt-2.5 border-dashed border-neutral-50">
+       <button class="btn border border-neutral-50 hover:bg-neutral-100 py-1.5" id="PortalClose-coupon-item-modal">
+        Đóng
+       </button>
+       <copy-button data-copied-text="Đã sao chép">
+        <input type="hidden" value=""/>
+        <button class="btn copy-button w-full font-semibold text-primary border border-primary bg-primary text-white py-1.5" type="button">
+         Sao chép
+        </button>
+       </copy-button>
+      </div>
+     </div>
+    </div>
+   </div>
+  </dialog>
+ </coupon-modal>
+ <compare-qv class="portal portal--modal" data-animation="slide-in-bottom" data-type="modal" id="quick-view-compare">
+  <dialog class="portal-dialog">
+   <div class="flex items-center justify-center w-full">
+    <div class="portal-overlay">
+    </div>
+    <div class="portal-inner bg-background rounded-sm animation">
+     <button class="absolute active:scale-95 transition-transform right-0 p-3 bg-background rounded-sm flex items-center justify-center gap-2 link" id="PortalClose-quick-view" type="button">
+      Thu gọn
+      <i class="icon icon-carret-down">
+      </i>
+     </button>
+     <div class="compare-product-list">
+     </div>
+    </div>
+   </div>
+  </dialog>
+ </compare-qv>
+ <portal-opener class="compare-opener hidden">
+  <div class="cursor-pointer font-semibold btn rounded-full bg-background border border-primary text-primary" data-portal="#quick-view-compare">
+   <p class="flex items-center gap-1">
+    <span class="line-clamp-1">
+     So sánh
+    </span>
+    <span class="compare-count">
+    </span>
+    <i class="ico icon-arrow-swap">
+    </i>
+   </p>
+  </div>
+ </portal-opener>
+ <error-popup class="portal portal--modal portal--modal-sm" data-animation="fade-in" data-type="modal" id="error-modal">
+  <dialog class="portal-dialog">
+   <div class="flex items-start justify-end p-3 w-full h-full">
+    <div class="portal-overlay">
+    </div>
+    <div class="portal-inner animation">
+     <div class="error-list flex gap-4 flex-col items-end">
+     </div>
+    </div>
+   </div>
+  </dialog>
+ </error-popup>
+ <style>
+  .text-base {
+				font-size: 16px;
+			}
+			body {
+				font-size: 16px;
+			}
+ </style>
+</link>
+
+{%endblock %}
