@@ -1,0 +1,3115 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(category.name).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ category.metaKeywords?:category.name }}">
+<meta name="description" content="{{ category.metaDescription?:category.name }}">
+<meta property="og:title" content="{{ category.metaTitle?:category.name }}">
+<meta property="og:url" content="{{ category.canonicalLink }}">
+<meta property="og:image" content="{{ category.imageUri }}">
+<link rel="canonical" href="{{ category.canonicalLink }}">
+{%endblock %}
+
+{%block body %}
+
+<div class="top-banner position-relative" style="background: #ff9838">
+ <div class="text-center px-0 container">
+  <a class="position-relative block md:hidden" href="/collections/all" title="top banner">
+   <img alt="top banner" class="w-full position-absolute mx-auto" height="45" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/top_banner_mb.jpg?v=23" style="left:0" width="480"/>
+  </a>
+  <a class="position-relative dnone md:block" href="/collections/all" title="top banner">
+   <picture>
+    <source media="(max-width: 480px)" srcset="//theme.hstatic.net/200000939217/1001374153/14/top_banner.jpg?v=23"/>
+    <img alt="top banner" class="w-full position-absolute mx-auto" height="50" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/top_banner.jpg?v=23" style="left:0" width="1296"/>
+   </picture>
+  </a>
+ </div>
+</div>
+<div class="navigation-wrapper dnone xl:flex items-center sub-header">
+ <div class="container relative">
+  <div class="">
+   <div class="flex justify-between items-center">
+    <div class="navigation--horizontal dnone lg:flex items-center">
+     <div class="navigation-horizontal-wrapper overflow-hidden">
+      <nav>
+       <ul class="navigation-horizontal">
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/" href="/" title="TRANG CHỦ">
+          <span>
+           TRANG CHỦ
+          </span>
+         </a>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/collections/all" href="/collections/all" title="TẤT CẢ SẢN PHẨM">
+          <span>
+           TẤT CẢ SẢN PHẨM
+          </span>
+         </a>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/pages/flash-sale-1-khung-gio" href="/pages/flash-sale-1-khung-gio" title="CHƯƠNG TRÌNH KHUYẾN MÃI">
+          <span>
+           CHƯƠNG TRÌNH KHUYẾN MÃI
+          </span>
+          <i class="icon icon-carret-down" data-toggle-submenu="">
+          </i>
+         </a>
+         <div class="submenu default">
+          <ul class="submenu__list">
+           <li class="submenu__item submenu__item--main">
+            <a class="link font-semibold" data-prefetch="/pages/flash-sale-1-khung-gio" href="/pages/flash-sale-1-khung-gio" title="Flash Sale 1 khung giờ">
+             Flash Sale 1 khung giờ
+            </a>
+           </li>
+           <li class="submenu__item submenu__item--main">
+            <a class="link font-semibold" data-prefetch="/pages/flash-sale-nhieu-khung-gio" href="/pages/flash-sale-nhieu-khung-gio" title="Flash Sale nhiều khung giờ">
+             Flash Sale nhiều khung giờ
+            </a>
+           </li>
+          </ul>
+         </div>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/pages/about-us" href="/pages/about-us" title="GIỚI THIỆU">
+          <span>
+           GIỚI THIỆU
+          </span>
+         </a>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/blogs/news" href="/blogs/news" title="TIN TỨC">
+          <span>
+           TIN TỨC
+          </span>
+         </a>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/pages/lien-he" href="/pages/lien-he" title="LIÊN HỆ">
+          <span>
+           LIÊN HỆ
+          </span>
+         </a>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="https://wiki.egany.com/s/ega-baby-mart-haravan" href="https://wiki.egany.com/s/ega-baby-mart-haravan" target="_blank" title="HƯỚNG DẪN THIẾT LẬP">
+          <span>
+           HƯỚNG DẪN THIẾT LẬP
+          </span>
+         </a>
+        </li>
+       </ul>
+      </nav>
+     </div>
+     <div class="navigation-arrows">
+      <button class="btn prev px-1">
+       <i class="disabled icon icon-carret-left link">
+       </i>
+      </button>
+      <button class="btn next px-1">
+       <i class="icon icon-carret-right link">
+       </i>
+      </button>
+     </div>
+    </div>
+    <div class="flex gap-[var(--spacing-8)] whitespace-nowrap">
+     <a class="inline-flex gap-1 items-center store-group hover:text-[var(--color-sub-header-link)]" href="/pages/he-thong-cua-hang" title="Hệ thống cửa hàng">
+      <div class="rounded-sm flex items-center justify-center">
+       <i class="icon icon-store">
+       </i>
+      </div>
+      <div>
+       <span class="font-semibold">
+        Hệ thống cửa hàng
+       </span>
+      </div>
+     </a>
+     <a class="inline-flex gap-1 items-center phone-group hover:text-[var(--color-sub-header-link)]" href="tel:099999998" title="099999998">
+      <div class="rounded-sm flex items-center justify-center">
+       <i class="icon icon-calling-phone">
+       </i>
+      </div>
+      <div>
+       <span>
+        Hotline:
+        <b>
+         099999998
+        </b>
+       </span>
+      </div>
+     </a>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<main>
+ <div class="breadcrumbs">
+  <div class="container">
+   <div class="breadcrumb-list">
+    <ol class="breadcrumb py-3 flex flex-wrap items-center text-xs md:text-sm" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+     <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+      <a class="link" href="/" itemprop="item" target="_self">
+       <span itemprop="name">
+        Trang chủ
+       </span>
+      </a>
+      <meta content="1" itemprop="position"/>
+      <span class="mx-1 md:mx-2 inline-block">
+       /
+      </span>
+     </li>
+     <li class="active" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+      <span class="text-neutral-100" content="https://ega-babymart.myharavan.com/collections/all" itemprop="item">
+       <strong class="font-normal" itemprop="name">
+        Tất cả sản phẩm
+       </strong>
+      </span>
+      <meta content="2" itemprop="position"/>
+     </li>
+    </ol>
+   </div>
+  </div>
+ </div>
+ <section class="section section-collection-banner">
+  <div class="collection_banner mb-4 md:mb-6 container text-center">
+   <a class="banner" href="/collections/all" title="Products">
+    <picture>
+     <source media="(max-width: 767px)" srcset="//theme.hstatic.net/200000939217/1001374153/14/collection_main_banner.jpg?v=23"/>
+     <img alt="Products" class="object-contain mx-auto" fetchpriority="high" height="216" loading="eager" src="//theme.hstatic.net/200000939217/1001374153/14/collection_main_banner.jpg?v=23" width="1296"/>
+    </picture>
+   </a>
+  </div>
+ </section>
+ <section class="section section-coupons" style="--section-padding: 0;--section-margin: 30px 0 30px;--section-padding-mb: 0;--section-margin-mb: 30px 0 30px;">
+  <div class="container">
+   <div class="section-card">
+    <div class="heading-bar">
+     <h2 class="heading w-auto font-semibold">
+      Voucher giảm giá
+     </h2>
+    </div>
+    <carousel-slider>
+     <div class="embla relative overflow-hidden w-full">
+      <div class="embla__viewport">
+       <div class="embla__container max-w-max h-auto -ml-gutter md:[&amp;&gt;div]:w-[45%] xl:[&amp;&gt;div]:w-1/4">
+        <div class="embla__slide grow-0 shrink-0 w-full md:w-[40%] pl-gutter">
+         <coupon-item>
+          <div class="coupon-item cursor-pointer" data-portal="#coupon-modal">
+           <div class="h-inhiret grid grid-cols-[30%_auto]">
+            <div class="flex justify-center items-center p-3 rounded text-primary bg-relative relative">
+             <div class="coupon-item__code font-bold text-secondary whitespace-nowrap text-ellipsis overflow-hidden">
+              <span class="swiper-no-swiping">
+               EGA50
+              </span>
+             </div>
+             <div class="absolute opacity-50 w-[1px] h-[calc(100%-40px)] border border-dashed border-primary -right-[1px] top-1/2 -translate-y-1/2">
+             </div>
+            </div>
+            <div class="p-3 rounded text-primary bg-relative relative">
+             <div class="coupon-item__summary mb-2.5 text-xs text-neutral-400 font-semibold line-clamp-2">
+              Giảm 15% cho đơn hàng giá trị tối thiểu 500k. Mã giảm tối đa 250K
+             </div>
+             <div class="coupon-item__rules mb-2.5 hidden">
+              - Đồng giá 2 triệu cho nhóm sản phẩm Set combo
+              <br/>
+              - Tổng giá trị sản phẩm từ 5 triệu trở lên
+             </div>
+             <div class="coupon-item__action grid grid-cols-2 gap-3">
+              <div class="coupon-item__end-date text-xs">
+               <span class="text-neutral-300" data-expired-date="28/12/2024-16:00:00">
+                28/12/2024
+               </span>
+              </div>
+              <copy-button data-copied-text="Đã sao chép" onclick="event.stopPropagation()">
+               <input type="hidden" value="EGA50"/>
+               <button class="btn text-xs relative z-[1] font-semibold copy-button w-full text-white border border-primary bg-primary py-1.5 whitespace-nowrap px-2" type="button">
+                Sao chép
+               </button>
+              </copy-button>
+             </div>
+            </div>
+           </div>
+          </div>
+         </coupon-item>
+        </div>
+        <div class="embla__slide grow-0 shrink-0 w-full md:w-[40%] pl-gutter">
+         <coupon-item>
+          <div class="coupon-item cursor-pointer" data-portal="#coupon-modal">
+           <div class="h-inhiret grid grid-cols-[30%_auto]">
+            <div class="flex justify-center items-center p-3 rounded text-primary bg-relative relative">
+             <div class="coupon-item__code font-bold text-secondary whitespace-nowrap text-ellipsis overflow-hidden">
+              <span class="swiper-no-swiping">
+               EGAT10
+              </span>
+             </div>
+             <div class="absolute opacity-50 w-[1px] h-[calc(100%-40px)] border border-dashed border-primary -right-[1px] top-1/2 -translate-y-1/2">
+             </div>
+            </div>
+            <div class="p-3 rounded text-primary bg-relative relative">
+             <div class="coupon-item__summary mb-2.5 text-xs text-neutral-400 font-semibold line-clamp-2">
+              Giảm 15% cho đơn hàng giá trị tối thiểu 500k. Mã giảm tối đa 250K
+             </div>
+             <div class="coupon-item__rules mb-2.5 hidden">
+             </div>
+             <div class="coupon-item__action grid grid-cols-2 gap-3">
+              <div class="coupon-item__end-date text-xs">
+               <span class="text-neutral-300" data-expired-date="20/12/2024-">
+                20/12/2024
+               </span>
+              </div>
+              <copy-button data-copied-text="Đã sao chép" onclick="event.stopPropagation()">
+               <input type="hidden" value="EGAT10"/>
+               <button class="btn text-xs relative z-[1] font-semibold copy-button w-full text-white border border-primary bg-primary py-1.5 whitespace-nowrap px-2" type="button">
+                Sao chép
+               </button>
+              </copy-button>
+             </div>
+            </div>
+           </div>
+          </div>
+         </coupon-item>
+        </div>
+        <div class="embla__slide grow-0 shrink-0 w-full md:w-[40%] pl-gutter">
+         <coupon-item>
+          <div class="coupon-item cursor-pointer" data-portal="#coupon-modal">
+           <div class="h-inhiret grid grid-cols-[30%_auto]">
+            <div class="flex justify-center items-center p-3 rounded text-primary bg-relative relative">
+             <div class="coupon-item__code font-bold text-secondary whitespace-nowrap text-ellipsis overflow-hidden">
+              <span class="swiper-no-swiping">
+               FREESHIP
+              </span>
+             </div>
+             <div class="absolute opacity-50 w-[1px] h-[calc(100%-40px)] border border-dashed border-primary -right-[1px] top-1/2 -translate-y-1/2">
+             </div>
+            </div>
+            <div class="p-3 rounded text-primary bg-relative relative">
+             <div class="coupon-item__summary mb-2.5 text-xs text-neutral-400 font-semibold line-clamp-2">
+              Mã giảm 99k cho đơn hàng tối thiểu 1 triệu. Tối đa 1 mã giảm giá/đơn hàng.
+             </div>
+             <div class="coupon-item__rules mb-2.5 hidden">
+             </div>
+             <div class="coupon-item__action grid grid-cols-2 gap-3">
+              <div class="coupon-item__end-date text-xs">
+               <span class="text-neutral-300" data-expired-date="30/12/2024-20:18:00">
+                30/12/2024
+               </span>
+              </div>
+              <copy-button data-copied-text="Đã sao chép" onclick="event.stopPropagation()">
+               <input type="hidden" value="FREESHIP"/>
+               <button class="btn text-xs relative z-[1] font-semibold copy-button w-full text-white border border-primary bg-primary py-1.5 whitespace-nowrap px-2" type="button">
+                Sao chép
+               </button>
+              </copy-button>
+             </div>
+            </div>
+           </div>
+          </div>
+         </coupon-item>
+        </div>
+        <div class="embla__slide grow-0 shrink-0 w-full md:w-[40%] pl-gutter">
+         <coupon-item>
+          <div class="coupon-item cursor-pointer" data-portal="#coupon-modal">
+           <div class="h-inhiret grid grid-cols-[30%_auto]">
+            <div class="flex justify-center items-center p-3 rounded text-primary bg-relative relative">
+             <div class="coupon-item__code font-bold text-secondary whitespace-nowrap text-ellipsis overflow-hidden">
+              <span class="swiper-no-swiping">
+               EGA500K
+              </span>
+             </div>
+             <div class="absolute opacity-50 w-[1px] h-[calc(100%-40px)] border border-dashed border-primary -right-[1px] top-1/2 -translate-y-1/2">
+             </div>
+            </div>
+            <div class="p-3 rounded text-primary bg-relative relative">
+             <div class="coupon-item__summary mb-2.5 text-xs text-neutral-400 font-semibold line-clamp-2">
+              Miễn phí vận chuyển cho đơn hàng từ 500k. Áp dụng cho khu vực Tp.HCM
+             </div>
+             <div class="coupon-item__rules mb-2.5 hidden">
+             </div>
+             <div class="coupon-item__action grid grid-cols-2 gap-3">
+              <div class="coupon-item__end-date text-xs">
+              </div>
+              <copy-button data-copied-text="Đã sao chép" onclick="event.stopPropagation()">
+               <input type="hidden" value="EGA500K"/>
+               <button class="btn text-xs relative z-[1] font-semibold copy-button w-full text-white border border-primary bg-primary py-1.5 whitespace-nowrap px-2" type="button">
+                Sao chép
+               </button>
+              </copy-button>
+             </div>
+            </div>
+           </div>
+          </div>
+         </coupon-item>
+        </div>
+       </div>
+       <div class="embla__dots mt-3 md:hidden">
+       </div>
+       <div class="embla__buttons dnone md:block">
+        <button class="embla__button embla__button--prev" type="button">
+         <i class="icon icon-carret-left">
+         </i>
+        </button>
+        <button class="embla__button embla__button--next" type="button">
+         <i class="icon icon-carret-right">
+         </i>
+        </button>
+       </div>
+      </div>
+     </div>
+    </carousel-slider>
+   </div>
+  </div>
+ </section>
+ <section class="section" id="product-list-0" style="--section-margin: 32px 0 32px 0;--section-margin-mb: 32px 0 32px 0">
+  <div class="container">
+   <div class="grid grid-cols-1 xl:grid-cols-[3fr_9fr] lg:gap-6">
+    <facet-drawer data-collection="0">
+     <div class="collection-filter h-full dnone xl:block">
+      <div class="facet-overlay absolute z-0 w-full h-full inset-x-0 xl:hidden bg-[rgba(0,0,0,0.5)]" data-toggle-facet="">
+      </div>
+      <div class="facet-inner overflow-auto bg-background h-full xl:h-auto px-5 md:rounded-sm max-w-[32rem] z-10 relative ml-auto">
+       <form class="facet-form">
+        <div class="filter-container flex flex-col rounded-sm bg-neutral-50">
+         <div class="facet-header xl:hidden flex justify-center items-center md:py-5 py-4 bg-background relative">
+          <button class="absolute left-0 btn border border-neutral-50 rounded-full p-1 inline-flex items-center justify-center w-[3.6rem] h-[3.6rem]" data-toggle-facet="" type="button">
+           <i class="icon icon-arrow-left">
+           </i>
+          </button>
+          <div>
+           Lọc
+           <span class="filter-count w-5 h-5 md:w-6 md:h-6 inline-flex items-center justify-center bg-[#EE1926] text-white rounded-full ml-1">
+            0
+           </span>
+          </div>
+         </div>
+         <aside class="aside-item filter-price md:py-5 py-4" style="order: 1">
+          <div class="aside-title">
+           <h2 class="title-head margin-top-0 text-base font-semibold mb-3">
+            Giá
+           </h2>
+          </div>
+          <div class="aside-content filter-group">
+           <ul class="space-y-3">
+            <li class="filter-item filter-item--check-box link">
+             <label class="custom-radio cursor-pointer flex gap-2 items-center" for="filter-lower-1000000">
+              <input class="form-radio" data-field="price_min" data-group="price" data-operator="OR" data-value="Giá dưới 1,000,000₫" id="filter-lower-1000000" name="price_min" type="radio" value="0:1000000"/>
+              Giá dưới 1,000,000₫
+             </label>
+            </li>
+            <li class="filter-item filter-item--check-box link">
+             <label class="custom-radio cursor-pointer flex gap-2 items-center" for="filter-1000000-2000000">
+              <input class="form-radio" data-field="price_min" data-group="price" data-operator="OR" data-value="1,000,000₫ - 2,000,000₫" id="filter-1000000-2000000" name="price_min" type="radio" value="1000000:2000000"/>
+              1,000,000₫ - 2,000,000₫
+             </label>
+            </li>
+            <li class="filter-item filter-item--check-box link">
+             <label class="custom-radio cursor-pointer flex gap-2 items-center" for="filter-2000000-3000000">
+              <input class="form-radio" data-field="price_min" data-group="price" data-operator="OR" data-value="2,000,000₫ - 3,000,000₫" id="filter-2000000-3000000" name="price_min" type="radio" value="2000000:3000000"/>
+              2,000,000₫ - 3,000,000₫
+             </label>
+            </li>
+            <li class="filter-item filter-item--check-box link">
+             <label class="custom-radio cursor-pointer flex gap-2 items-center" for="filter-3000000-5000000">
+              <input class="form-radio" data-field="price_min" data-group="price" data-operator="OR" data-value="3,000,000₫ - 5,000,000₫" id="filter-3000000-5000000" name="price_min" type="radio" value="3000000:5000000"/>
+              3,000,000₫ - 5,000,000₫
+             </label>
+            </li>
+            <li class="filter-item filter-item--check-box link">
+             <label class="custom-radio cursor-pointer flex gap-2 items-center" for="filter-5000000-7000000">
+              <input class="form-radio" data-field="price_min" data-group="price" data-operator="OR" data-value="5,000,000₫ - 7,000,000₫" id="filter-5000000-7000000" name="price_min" type="radio" value="5000000:7000000"/>
+              5,000,000₫ - 7,000,000₫
+             </label>
+            </li>
+            <li class="filter-item filter-item--check-box link">
+             <label class="custom-radio cursor-pointer flex gap-2 items-center" for="filter-7000000-10000000">
+              <input class="form-radio" data-field="price_min" data-group="price" data-operator="OR" data-value="7,000,000₫ - 10,000,000₫" id="filter-7000000-10000000" name="price_min" type="radio" value="7000000:10000000"/>
+              7,000,000₫ - 10,000,000₫
+             </label>
+            </li>
+            <li class="filter-item filter-item--check-box link">
+             <label class="custom-radio cursor-pointer flex gap-2 items-center" for="filter-upper-10000000">
+              <input class="form-radio" data-field="price_min" data-group="price" data-operator="OR" data-value="Giá trên 10,000,000₫" id="filter-upper-10000000" name="price_min" type="radio" value="10000000:max"/>
+              Giá trên 10,000,000₫
+             </label>
+            </li>
+           </ul>
+          </div>
+         </aside>
+         <aside class="aside-item filter-vendor md:py-5 py-4" style="order: 2">
+          <div class="aside-title">
+           <h2 class="title-head margin-top-0 text-base font-semibold mb-3">
+            Hãng sản xuất
+           </h2>
+          </div>
+          <div class="aside-content filter-group">
+           <ul class="space-y-3">
+            <li class="filter-item link filter-item--check-box">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-vendor-khac">
+              <input class="form-checkbox" data-field="vendor.filter_ke" data-group="PRODUCT_VENDOR" data-operator="OR" data-value="Khác" id="filter-vendor-khac" name="vendor" type="checkbox" value="Khác"/>
+              Khác
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-vendor-meiji">
+              <input class="form-checkbox" data-field="vendor.filter_ke" data-group="PRODUCT_VENDOR" data-operator="OR" data-value="Meiji" id="filter-vendor-meiji" name="vendor" type="checkbox" value="Meiji"/>
+              Meiji
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-vendor-goldgi">
+              <input class="form-checkbox" data-field="vendor.filter_ke" data-group="PRODUCT_VENDOR" data-operator="OR" data-value="Goldgi" id="filter-vendor-goldgi" name="vendor" type="checkbox" value="Goldgi"/>
+              Goldgi
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-vendor-gluck">
+              <input class="form-checkbox" data-field="vendor.filter_ke" data-group="PRODUCT_VENDOR" data-operator="OR" data-value="Gluck" id="filter-vendor-gluck" name="vendor" type="checkbox" value="Gluck"/>
+              Gluck
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-vendor-spectra-baby">
+              <input class="form-checkbox" data-field="vendor.filter_ke" data-group="PRODUCT_VENDOR" data-operator="OR" data-value="Spectra Baby" id="filter-vendor-spectra-baby" name="vendor" type="checkbox" value="Spectra Baby"/>
+              Spectra Baby
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-vendor-agusha">
+              <input class="form-checkbox" data-field="vendor.filter_ke" data-group="PRODUCT_VENDOR" data-operator="OR" data-value="Agusha" id="filter-vendor-agusha" name="vendor" type="checkbox" value="Agusha"/>
+              Agusha
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-vendor-aptamil">
+              <input class="form-checkbox" data-field="vendor.filter_ke" data-group="PRODUCT_VENDOR" data-operator="OR" data-value="Aptamil" id="filter-vendor-aptamil" name="vendor" type="checkbox" value="Aptamil"/>
+              Aptamil
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-vendor-kamidi">
+              <input class="form-checkbox" data-field="vendor.filter_ke" data-group="PRODUCT_VENDOR" data-operator="OR" data-value="Kamidi" id="filter-vendor-kamidi" name="vendor" type="checkbox" value="Kamidi"/>
+              Kamidi
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-vendor-chibe">
+              <input class="form-checkbox" data-field="vendor.filter_ke" data-group="PRODUCT_VENDOR" data-operator="OR" data-value="CHIBÉ" id="filter-vendor-chibe" name="vendor" type="checkbox" value="CHIBÉ"/>
+              CHIBÉ
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-vendor-bimunica">
+              <input class="form-checkbox" data-field="vendor.filter_ke" data-group="PRODUCT_VENDOR" data-operator="OR" data-value="Bimunica" id="filter-vendor-bimunica" name="vendor" type="checkbox" value="Bimunica"/>
+              Bimunica
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-vendor-livespo">
+              <input class="form-checkbox" data-field="vendor.filter_ke" data-group="PRODUCT_VENDOR" data-operator="OR" data-value="LiveSpo" id="filter-vendor-livespo" name="vendor" type="checkbox" value="LiveSpo"/>
+              LiveSpo
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-vendor-ph-care">
+              <input class="form-checkbox" data-field="vendor.filter_ke" data-group="PRODUCT_VENDOR" data-operator="OR" data-value="PH Care" id="filter-vendor-ph-care" name="vendor" type="checkbox" value="PH Care"/>
+              PH Care
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-vendor-japan-premium">
+              <input class="form-checkbox" data-field="vendor.filter_ke" data-group="PRODUCT_VENDOR" data-operator="OR" data-value="Japan Premium" id="filter-vendor-japan-premium" name="vendor" type="checkbox" value="Japan Premium"/>
+              Japan Premium
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-vendor-yaocare">
+              <input class="form-checkbox" data-field="vendor.filter_ke" data-group="PRODUCT_VENDOR" data-operator="OR" data-value="Yaocare" id="filter-vendor-yaocare" name="vendor" type="checkbox" value="Yaocare"/>
+              Yaocare
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-vendor-jack-n-jill">
+              <input class="form-checkbox" data-field="vendor.filter_ke" data-group="PRODUCT_VENDOR" data-operator="OR" data-value="Jack N' Jill" id="filter-vendor-jack-n-jill" name="vendor" type="checkbox" value="Jack N' Jill"/>
+              Jack N' Jill
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-vendor-gerber">
+              <input class="form-checkbox" data-field="vendor.filter_ke" data-group="PRODUCT_VENDOR" data-operator="OR" data-value="Gerber" id="filter-vendor-gerber" name="vendor" type="checkbox" value="Gerber"/>
+              Gerber
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-vendor-pigeon">
+              <input class="form-checkbox" data-field="vendor.filter_ke" data-group="PRODUCT_VENDOR" data-operator="OR" data-value="Pigeon" id="filter-vendor-pigeon" name="vendor" type="checkbox" value="Pigeon"/>
+              Pigeon
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-vendor-pororo">
+              <input class="form-checkbox" data-field="vendor.filter_ke" data-group="PRODUCT_VENDOR" data-operator="OR" data-value="Pororo" id="filter-vendor-pororo" name="vendor" type="checkbox" value="Pororo"/>
+              Pororo
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-vendor-wakodo">
+              <input class="form-checkbox" data-field="vendor.filter_ke" data-group="PRODUCT_VENDOR" data-operator="OR" data-value="Wakodo" id="filter-vendor-wakodo" name="vendor" type="checkbox" value="Wakodo"/>
+              Wakodo
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-vendor-bobby">
+              <input class="form-checkbox" data-field="vendor.filter_ke" data-group="PRODUCT_VENDOR" data-operator="OR" data-value="Bobby" id="filter-vendor-bobby" name="vendor" type="checkbox" value="Bobby"/>
+              Bobby
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-vendor-molfix">
+              <input class="form-checkbox" data-field="vendor.filter_ke" data-group="PRODUCT_VENDOR" data-operator="OR" data-value="Molfix" id="filter-vendor-molfix" name="vendor" type="checkbox" value="Molfix"/>
+              Molfix
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-vendor-moony">
+              <input class="form-checkbox" data-field="vendor.filter_ke" data-group="PRODUCT_VENDOR" data-operator="OR" data-value="Moony" id="filter-vendor-moony" name="vendor" type="checkbox" value="Moony"/>
+              Moony
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-vendor-merries">
+              <input class="form-checkbox" data-field="vendor.filter_ke" data-group="PRODUCT_VENDOR" data-operator="OR" data-value="Merries" id="filter-vendor-merries" name="vendor" type="checkbox" value="Merries"/>
+              Merries
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-vendor-nestle">
+              <input class="form-checkbox" data-field="vendor.filter_ke" data-group="PRODUCT_VENDOR" data-operator="OR" data-value="Nestle" id="filter-vendor-nestle" name="vendor" type="checkbox" value="Nestle"/>
+              Nestle
+             </label>
+            </li>
+            <li class="filter-item-toggle link text-secondary font-semibold cursor-pointer flex items-center pl-[var(--spacing-6-5)] gap-2">
+             Xem thêm
+             <i class="icon icon-carret-down">
+             </i>
+            </li>
+           </ul>
+          </div>
+         </aside>
+         <aside class="aside-item filter-type md:py-5 py-4" style="order: 3">
+          <div class="aside-title">
+           <h2 class="title-head margin-top-0 text-base font-semibold mb-3">
+            Loại sản phẩm
+           </h2>
+          </div>
+          <div class="aside-content filter-group">
+           <ul class="space-y-3">
+            <li class="filter-item link filter-item--check-box">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-type-1-do-an-uong">
+              <input class="form-checkbox" data-field="type.filter_key" data-group="PRODUCT_TYPE" data-operator="OR" data-value="1.Đồ ăn uống" id="filter-type-1-do-an-uong" name="type" type="checkbox" value="1.Đồ ăn uống"/>
+              1.Đồ ăn uống
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-type-hmp-dung-dich-ve-sinh">
+              <input class="form-checkbox" data-field="type.filter_key" data-group="PRODUCT_TYPE" data-operator="OR" data-value="HMP Dung dịch vệ sinh" id="filter-type-hmp-dung-dich-ve-sinh" name="type" type="checkbox" value="HMP Dung dịch vệ sinh"/>
+              HMP Dung dịch vệ sinh
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-type-bim-bim-goldgi">
+              <input class="form-checkbox" data-field="type.filter_key" data-group="PRODUCT_TYPE" data-operator="OR" data-value="BIM Bỉm Goldgi" id="filter-type-bim-bim-goldgi" name="type" type="checkbox" value="BIM Bỉm Goldgi"/>
+              BIM Bỉm Goldgi
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-type-ddcm-may-hut-sua">
+              <input class="form-checkbox" data-field="type.filter_key" data-group="PRODUCT_TYPE" data-operator="OR" data-value="DDCM Máy hút sữa" id="filter-type-ddcm-may-hut-sua" name="type" type="checkbox" value="DDCM Máy hút sữa"/>
+              DDCM Máy hút sữa
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-type-hmp-kem-danh-rang">
+              <input class="form-checkbox" data-field="type.filter_key" data-group="PRODUCT_TYPE" data-operator="OR" data-value="HMP Kem đánh răng" id="filter-type-hmp-kem-danh-rang" name="type" type="checkbox" value="HMP Kem đánh răng"/>
+              HMP Kem đánh răng
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-type-sua-sua-meiji-nhap-khau">
+              <input class="form-checkbox" data-field="type.filter_key" data-group="PRODUCT_TYPE" data-operator="OR" data-value="SUA Sữa Meiji nhập khẩu" id="filter-type-sua-sua-meiji-nhap-khau" name="type" type="checkbox" value="SUA Sữa Meiji nhập khẩu"/>
+              SUA Sữa Meiji nhập khẩu
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-type-do-dung-cho-me">
+              <input class="form-checkbox" data-field="type.filter_key" data-group="PRODUCT_TYPE" data-operator="OR" data-value="Đồ dùng cho mẹ" id="filter-type-do-dung-cho-me" name="type" type="checkbox" value="Đồ dùng cho mẹ"/>
+              Đồ dùng cho mẹ
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-type-sua-sua-meiji-noi-dia">
+              <input class="form-checkbox" data-field="type.filter_key" data-group="PRODUCT_TYPE" data-operator="OR" data-value="SUA Sữa Meiji nội địa" id="filter-type-sua-sua-meiji-noi-dia" name="type" type="checkbox" value="SUA Sữa Meiji nội địa"/>
+              SUA Sữa Meiji nội địa
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-type-bim-bim-huggies">
+              <input class="form-checkbox" data-field="type.filter_key" data-group="PRODUCT_TYPE" data-operator="OR" data-value="BIM Bỉm Huggies" id="filter-type-bim-bim-huggies" name="type" type="checkbox" value="BIM Bỉm Huggies"/>
+              BIM Bỉm Huggies
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-type-bim-bim-merries">
+              <input class="form-checkbox" data-field="type.filter_key" data-group="PRODUCT_TYPE" data-operator="OR" data-value="BIM Bỉm Merries" id="filter-type-bim-bim-merries" name="type" type="checkbox" value="BIM Bỉm Merries"/>
+              BIM Bỉm Merries
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-type-sua-sua-aptamil-uc">
+              <input class="form-checkbox" data-field="type.filter_key" data-group="PRODUCT_TYPE" data-operator="OR" data-value="SUA Sữa Aptamil Úc" id="filter-type-sua-sua-aptamil-uc" name="type" type="checkbox" value="SUA Sữa Aptamil Úc"/>
+              SUA Sữa Aptamil Úc
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-type-bim-bim-bobby">
+              <input class="form-checkbox" data-field="type.filter_key" data-group="PRODUCT_TYPE" data-operator="OR" data-value="BIM Bỉm Bobby" id="filter-type-bim-bim-bobby" name="type" type="checkbox" value="BIM Bỉm Bobby"/>
+              BIM Bỉm Bobby
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-type-bim-bim-molfix">
+              <input class="form-checkbox" data-field="type.filter_key" data-group="PRODUCT_TYPE" data-operator="OR" data-value="BIM Bỉm Molfix" id="filter-type-bim-bim-molfix" name="type" type="checkbox" value="BIM Bỉm Molfix"/>
+              BIM Bỉm Molfix
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-type-bim-bim-moony-nk">
+              <input class="form-checkbox" data-field="type.filter_key" data-group="PRODUCT_TYPE" data-operator="OR" data-value="BIM Bỉm Moony NK" id="filter-type-bim-bim-moony-nk" name="type" type="checkbox" value="BIM Bỉm Moony NK"/>
+              BIM Bỉm Moony NK
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-type-6-sua">
+              <input class="form-checkbox" data-field="type.filter_key" data-group="PRODUCT_TYPE" data-operator="OR" data-value="6.Sữa" id="filter-type-6-sua" name="type" type="checkbox" value="6.Sữa"/>
+              6.Sữa
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-type-sua-sua-nan-nga">
+              <input class="form-checkbox" data-field="type.filter_key" data-group="PRODUCT_TYPE" data-operator="OR" data-value="SUA Sữa Nan Nga" id="filter-type-sua-sua-nan-nga" name="type" type="checkbox" value="SUA Sữa Nan Nga"/>
+              SUA Sữa Nan Nga
+             </label>
+            </li>
+            <li class="filter-item-toggle link text-secondary font-semibold cursor-pointer flex items-center pl-[var(--spacing-6-5)] gap-2">
+             Xem thêm
+             <i class="icon icon-carret-down">
+             </i>
+            </li>
+           </ul>
+          </div>
+         </aside>
+         <aside class="aside-item filter-tag1 md:py-5 py-4" style="order: 4">
+          <div class="aside-title">
+           <h2 class="title-head margin-top-0 text-base font-semibold mb-3">
+            Tags
+           </h2>
+          </div>
+          <div class="aside-content filter-group">
+           <ul class="space-y-3">
+            <li class="filter-item link filter-item--check-box">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-tag1-flash-sale">
+              <input class="form-checkbox" data-field="tag.key" data-group="PRODUCT_TAG" data-operator="OR" data-value="Flash Sale" id="filter-tag1-flash-sale" name="tag-tags" type="checkbox" value="Flash Sale"/>
+              Flash Sale
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-tag1-giao-nhanh-24h">
+              <input class="form-checkbox" data-field="tag.key" data-group="PRODUCT_TAG" data-operator="OR" data-value="Giao Nhanh 24h" id="filter-tag1-giao-nhanh-24h" name="tag-tags" type="checkbox" value="Giao Nhanh 24h"/>
+              Giao Nhanh 24h
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-tag1-chinh-hang">
+              <input class="form-checkbox" data-field="tag.key" data-group="PRODUCT_TAG" data-operator="OR" data-value="Chính hãng" id="filter-tag1-chinh-hang" name="tag-tags" type="checkbox" value="Chính hãng"/>
+              Chính hãng
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-tag1-ngoai-nhap">
+              <input class="form-checkbox" data-field="tag.key" data-group="PRODUCT_TAG" data-operator="OR" data-value="Ngoại nhập" id="filter-tag1-ngoai-nhap" name="tag-tags" type="checkbox" value="Ngoại nhập"/>
+              Ngoại nhập
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-tag1-xa-kho">
+              <input class="form-checkbox" data-field="tag.key" data-group="PRODUCT_TAG" data-operator="OR" data-value="Xả kho" id="filter-tag1-xa-kho" name="tag-tags" type="checkbox" value="Xả kho"/>
+              Xả kho
+             </label>
+            </li>
+           </ul>
+          </div>
+         </aside>
+        </div>
+       </form>
+      </div>
+     </div>
+    </facet-drawer>
+    <div class="">
+     <div class="mb-2 py-3 flex flex-wrap items-center gap-3">
+      <h1 class="heading mb-0">
+       Tất cả sản phẩm
+      </h1>
+      <div class="flex text-xs w-full md:w-auto md:text-base md:gap-6 items-center justify-between md:ml-auto md:rounded-0 rounded-sm md:p-0">
+       <button class="btn flex xl:hidden gap-1 bg-white border border-neutral-50 items-center" data-toggle-facet="" type="button">
+        <svg class="icon w-4" fill="none" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+         <path clip-rule="evenodd" d="M9.79166 6.45835C9.79166 5.53788 10.5379 4.79169 11.4583 4.79169C12.3788 4.79169 13.125 5.53788 13.125 6.45835C13.125 7.37883 12.3788 8.12502 11.4583 8.12502C10.5379 8.12502 9.79166 7.37883 9.79166 6.45835ZM8.60878 7.08335C8.89489 8.39384 10.062 9.37502 11.4583 9.37502C12.8546 9.37502 14.0218 8.39384 14.3079 7.08335H17.5C17.8452 7.08335 18.125 6.80353 18.125 6.45835C18.125 6.11317 17.8452 5.83335 17.5 5.83335H14.3079C14.0218 4.52286 12.8546 3.54169 11.4583 3.54169C10.062 3.54169 8.89489 4.52286 8.60878 5.83335H2.5C2.15482 5.83335 1.875 6.11317 1.875 6.45835C1.875 6.80353 2.15482 7.08335 2.5 7.08335H8.60878ZM4.79166 13.125C4.79166 12.2045 5.53786 11.4583 6.45833 11.4583C7.3788 11.4583 8.125 12.2045 8.125 13.125C8.125 14.0455 7.3788 14.7917 6.45833 14.7917C5.53786 14.7917 4.79166 14.0455 4.79166 13.125ZM6.45833 16.0417C5.06203 16.0417 3.8949 15.0605 3.60879 13.75H2.5C2.15482 13.75 1.875 13.4702 1.875 13.125C1.875 12.7798 2.15482 12.5 2.5 12.5H3.60879C3.8949 11.1895 5.06203 10.2083 6.45833 10.2083C7.85463 10.2083 9.02176 11.1895 9.30787 12.5H17.5C17.8452 12.5 18.125 12.7798 18.125 13.125C18.125 13.4702 17.8452 13.75 17.5 13.75H9.30787C9.02176 15.0605 7.85463 16.0417 6.45833 16.0417Z" fill="currentColor" fill-opacity="0.1" fill-rule="evenodd">
+         </path>
+        </svg>
+        Lọc
+        <span class="filter-count w-5 h-5 md:w-6 md:h-6 inline-flex items-center justify-center bg-[#EE1926] text-white rounded-full ml-1">
+         0
+        </span>
+       </button>
+       <div class="sort-mobile whitespace-nowrap flex items-center gap-2 ml-auto">
+        <label class="labbel text-neutral-100" for="sort-mobile">
+         Sắp xếp
+        </label>
+        <sort-by data-collection="0">
+         <select class="form-select bg-white rounded-pill border-neutral-50" data-default="created-descending" id="sort-mobile" name="sort_by">
+          <option value="title:product=asc">
+           Tên A → Z
+          </option>
+          <option value="title:product=desc">
+           Tên Z → A
+          </option>
+          <option value="price:product=asc">
+           Giá tăng dần
+          </option>
+          <option value="price:product=desc">
+           Giá giảm dần
+          </option>
+          <option selected="" value="created_at:product=desc">
+           Mới nhất
+          </option>
+          <option value="created_at:product=asc">
+           Cũ nhất
+          </option>
+          <option value="sold_quantity:product=desc">
+           Bán chạy nhất
+          </option>
+          <option value="quantity:product=desc">
+           Tồn kho giảm
+          </option>
+         </select>
+        </sort-by>
+       </div>
+      </div>
+      <div class="filter-items overflow-hidden md:order-last flex-[0_0_100%]">
+      </div>
+     </div>
+     <div class="product-list">
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-2 mt-2">
+       <card-product class="h-full card-product--vertical" data-prefetch="/products/sua-nan-nga-so-1-optipro-0-6-thang">
+        <div class="item_product_main card-product relative transition-transform duration-200 ease-in-out h-full">
+         <form action="/cart/add" class="bg-background rounded relative z-10 m-0 h-full" data-id="product-actions-1061887960" enctype="multipart/form-data" method="post">
+          <div class="card-product__top relative overflow-hidden group/card p-2">
+           <a class="link aspect-square flex items-center justify-center w-full relative rounded overflow-hidden" href="/products/sua-nan-nga-so-1-optipro-0-6-thang" title="Sữa Nan Nga số 1 Optipro (0-6 tháng)">
+            <div class="card-product__badges absolute top-2 left-2 z-10 flex items-center gap-2">
+            </div>
+            <img alt="Sữa Nan Nga số 1 Optipro (0-6 tháng)" class="product-frame w-full aspect-square object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10" height="480" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/frame_1.png?v=23" width="480"/>
+            <picture>
+             <source media="(max-width: 600px)" srcset="//product.hstatic.net/200000939217/product/upload_73f41e0fa568438d8f389228a9d60b6b_medium.jpg"/>
+             <img alt="Sữa Nan Nga số 1 Optipro (0-6 tháng)" class="card-product__image max-h-full w-auto object-contain scale-[var(--image-scale)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition duration-300 ease-out group-hover/card:opacity-0" decoding="async" height="480" loading="lazy" src="//product.hstatic.net/200000939217/product/upload_73f41e0fa568438d8f389228a9d60b6b_large.jpg" style="--image-scale:0.9" width="480">
+             </img>
+            </picture>
+            <picture>
+             <source media="(max-width: 600px)" srcset="//product.hstatic.net/200000939217/product/upload_7bec2eab96bf4e099c7061976361c34b_medium.jpg"/>
+             <img alt="Sữa Nan Nga số 1 Optipro (0-6 tháng)" class="card-product__image-2 max-h-full w-auto object-contain opacity-0 scale-[var(--image-scale)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[0] group-hover/card:opacity-1 group-hover/card:z-[1] group-hover/card:opacity-100 transition duration-300 ease-out" decoding="async" height="480" loading="lazy" src="//product.hstatic.net/200000939217/product/upload_7bec2eab96bf4e099c7061976361c34b_large.jpg" style="--image-scale:0.9" width="480"/>
+            </picture>
+           </a>
+           <div class="card-product__utilites absolute top-2 right-2 z-10 dnone lg:flex flex-col items-center gap-2 transition duration-300 ease-out">
+            <portal-opener>
+             <button aria-label="Xem nhanh" class="quick-view border bg-background rounded-full flex items-center justify-center relative active:scale-95 transition-transform" data-portal="#quick-view-product" data-product="/products/sua-nan-nga-so-1-optipro-0-6-thang" type="button">
+              <i class="icon icon-eye">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               Xem nhanh
+              </span>
+             </button>
+            </portal-opener>
+            <compare-button>
+             <button aria-label="So sánh" class="add-compare border bg-background rounded-full flex items-center justify-center active:scale-95 transition-transform" data-portal="#quick-view-compare" data-product="1061887960" data-product-type="sua-sua-nan-nga" type="button">
+              <i class="icon icon-arrow-swap">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               So sánh
+              </span>
+             </button>
+            </compare-button>
+           </div>
+          </div>
+          <a class="link" href="/products/sua-nan-nga-so-1-optipro-0-6-thang" title="Sữa Nan Nga số 1 Optipro (0-6 tháng)">
+           <div class="card-product__body flex flex-col gap-2 px-2 pb-2 md:gap-1 md:px-4 md:pb-4">
+            <div class="card-product__title text-base line-clamp-2">
+             Sữa Nan Nga số 1 Optipro (0-6 tháng)
+            </div>
+            <div class="proloop--review">
+             <!--  check review -->
+             <div class="haravan-product-reviews-badge" data-id="1061887960">
+             </div>
+            </div>
+            <div class="flex justify-between items-center gap-1 flex-wrap">
+             <div class="price-box flex justify-between items-center">
+              <div class="flex flex-col gap-1">
+               <span class="price text-h6 font-semibold">
+                980,000₫
+               </span>
+              </div>
+             </div>
+             <div class="">
+              <input name="id" type="hidden" value="1140639467"/>
+              <div class="btn bg-relative addtocart-btn font-semibold add_to_cart flex justify-center items-center gap-3" data-action="quickview" data-portal="#quick-view-product" data-product="/products/sua-nan-nga-so-1-optipro-0-6-thang">
+               <span class="loading-icon gap-1 hidden items-center justify-center">
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+               </span>
+               <span class="flex items-center justify-center">
+                <i class="icon icon-settings text-[2rem]">
+                </i>
+               </span>
+              </div>
+             </div>
+            </div>
+           </div>
+          </a>
+         </form>
+        </div>
+       </card-product>
+       <card-product class="h-full card-product--vertical" data-prefetch="/products/sua-meiji-nhap-khau-so-1-800g-1-3-tuoi">
+        <div class="item_product_main card-product relative transition-transform duration-200 ease-in-out h-full">
+         <form action="/cart/add" class="bg-background rounded relative z-10 m-0 h-full" data-id="product-actions-1061887958" enctype="multipart/form-data" method="post">
+          <div class="card-product__top relative overflow-hidden group/card p-2">
+           <a class="link aspect-square flex items-center justify-center w-full relative rounded overflow-hidden" href="/products/sua-meiji-nhap-khau-so-1-800g-1-3-tuoi" title="Sữa Meiji nhập khẩu số 9 lon 800g (1-3 tuổi)">
+            <div class="card-product__badges absolute top-2 left-2 z-10 flex items-center gap-2">
+            </div>
+            <img alt="Sữa Meiji nhập khẩu số 9 lon 800g (1-3 tuổi)" class="product-frame w-full aspect-square object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10" height="480" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/frame_1.png?v=23" width="480"/>
+            <picture>
+             <source media="(max-width: 600px)" srcset="//product.hstatic.net/200000939217/product/upload_0200c979f2c44bce941989d3ab321a4e_medium.jpg"/>
+             <img alt="Sữa Meiji nhập khẩu số 9 lon 800g (1-3 tuổi)" class="card-product__image max-h-full w-auto object-contain scale-[var(--image-scale)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition duration-300 ease-out group-hover/card:opacity-0" decoding="async" height="480" loading="lazy" src="//product.hstatic.net/200000939217/product/upload_0200c979f2c44bce941989d3ab321a4e_large.jpg" style="--image-scale:0.9" width="480">
+             </img>
+            </picture>
+            <picture>
+             <source media="(max-width: 600px)" srcset="//product.hstatic.net/200000939217/product/upload_b834f78e91ba4fd38817d7c6c30d75fc_medium.jpg"/>
+             <img alt="Sữa Meiji nhập khẩu số 9 lon 800g (1-3 tuổi)" class="card-product__image-2 max-h-full w-auto object-contain opacity-0 scale-[var(--image-scale)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[0] group-hover/card:opacity-1 group-hover/card:z-[1] group-hover/card:opacity-100 transition duration-300 ease-out" decoding="async" height="480" loading="lazy" src="//product.hstatic.net/200000939217/product/upload_b834f78e91ba4fd38817d7c6c30d75fc_large.jpg" style="--image-scale:0.9" width="480"/>
+            </picture>
+           </a>
+           <div class="card-product__utilites absolute top-2 right-2 z-10 dnone lg:flex flex-col items-center gap-2 transition duration-300 ease-out">
+            <portal-opener>
+             <button aria-label="Xem nhanh" class="quick-view border bg-background rounded-full flex items-center justify-center relative active:scale-95 transition-transform" data-portal="#quick-view-product" data-product="/products/sua-meiji-nhap-khau-so-1-800g-1-3-tuoi" type="button">
+              <i class="icon icon-eye">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               Xem nhanh
+              </span>
+             </button>
+            </portal-opener>
+            <compare-button>
+             <button aria-label="So sánh" class="add-compare border bg-background rounded-full flex items-center justify-center active:scale-95 transition-transform" data-portal="#quick-view-compare" data-product="1061887958" data-product-type="sua-sua-meiji-nhap-khau" type="button">
+              <i class="icon icon-arrow-swap">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               So sánh
+              </span>
+             </button>
+            </compare-button>
+           </div>
+          </div>
+          <a class="link" href="/products/sua-meiji-nhap-khau-so-1-800g-1-3-tuoi" title="Sữa Meiji nhập khẩu số 9 lon 800g (1-3 tuổi)">
+           <div class="card-product__body flex flex-col gap-2 px-2 pb-2 md:gap-1 md:px-4 md:pb-4">
+            <div class="card-product__title text-base line-clamp-2">
+             Sữa Meiji nhập khẩu số 9 lon 800g (1-3 tuổi)
+            </div>
+            <div class="proloop--review">
+             <!--  check review -->
+             <div class="haravan-product-reviews-badge" data-id="1061887958">
+             </div>
+            </div>
+            <div class="flex justify-between items-center gap-1 flex-wrap">
+             <div class="price-box flex justify-between items-center">
+              <div class="flex flex-col gap-1">
+               <span class="price text-h6 font-semibold">
+                950,000₫
+               </span>
+              </div>
+             </div>
+             <div class="">
+              <input name="id" type="hidden" value="1140639465"/>
+              <div class="btn bg-relative addtocart-btn font-semibold add_to_cart flex justify-center items-center gap-3" data-action="addtocart" data-portal="#quick-view-product" data-product="/products/sua-meiji-nhap-khau-so-1-800g-1-3-tuoi">
+               <span class="loading-icon gap-1 hidden items-center justify-center">
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+               </span>
+               <span class="flex items-center justify-center">
+                <i class="icon icon-cart text-[2rem]">
+                </i>
+               </span>
+              </div>
+             </div>
+            </div>
+           </div>
+          </a>
+         </form>
+        </div>
+       </card-product>
+       <card-product class="h-full card-product--vertical" data-prefetch="/products/sua-meiji-nhap-khau-so-0-800g-0-1-tuoi">
+        <div class="item_product_main card-product relative transition-transform duration-200 ease-in-out h-full">
+         <form action="/cart/add" class="bg-background rounded relative z-10 m-0 h-full" data-id="product-actions-1061887957" enctype="multipart/form-data" method="post">
+          <div class="card-product__top relative overflow-hidden group/card p-2">
+           <a class="link aspect-square flex items-center justify-center w-full relative rounded overflow-hidden" href="/products/sua-meiji-nhap-khau-so-0-800g-0-1-tuoi" title="Sữa Meiji nhập khẩu số 0 800g (0 - 1 tuổi)">
+            <div class="card-product__badges absolute top-2 left-2 z-10 flex items-center gap-2">
+            </div>
+            <picture>
+             <source media="(max-width: 600px)" srcset="//product.hstatic.net/200000939217/product/upload_009e455c34c743fd8972550dbaead8cb_medium.jpg"/>
+             <img alt="Sữa Meiji nhập khẩu số 0 800g (0 - 1 tuổi)" class="card-product__image max-h-full w-auto object-contain scale-[var(--image-scale)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition duration-300 ease-out group-hover/card:opacity-0" decoding="async" height="480" loading="lazy" src="//product.hstatic.net/200000939217/product/upload_009e455c34c743fd8972550dbaead8cb_large.jpg" style="--image-scale:1" width="480"/>
+            </picture>
+            <picture>
+             <source media="(max-width: 600px)" srcset="//product.hstatic.net/200000939217/product/upload_981429a4056c49c6a9c2e8f70f43dc83_medium.jpg"/>
+             <img alt="Sữa Meiji nhập khẩu số 0 800g (0 - 1 tuổi)" class="card-product__image-2 max-h-full w-auto object-contain opacity-0 scale-[var(--image-scale)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[0] group-hover/card:opacity-1 group-hover/card:z-[1] group-hover/card:opacity-100 transition duration-300 ease-out" decoding="async" height="480" loading="lazy" src="//product.hstatic.net/200000939217/product/upload_981429a4056c49c6a9c2e8f70f43dc83_large.jpg" style="--image-scale:1" width="480"/>
+            </picture>
+           </a>
+           <div class="card-product__utilites absolute top-2 right-2 z-10 dnone lg:flex flex-col items-center gap-2 transition duration-300 ease-out">
+            <portal-opener>
+             <button aria-label="Xem nhanh" class="quick-view border bg-background rounded-full flex items-center justify-center relative active:scale-95 transition-transform" data-portal="#quick-view-product" data-product="/products/sua-meiji-nhap-khau-so-0-800g-0-1-tuoi" type="button">
+              <i class="icon icon-eye">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               Xem nhanh
+              </span>
+             </button>
+            </portal-opener>
+            <compare-button>
+             <button aria-label="So sánh" class="add-compare border bg-background rounded-full flex items-center justify-center active:scale-95 transition-transform" data-portal="#quick-view-compare" data-product="1061887957" data-product-type="sua-sua-meiji-nhap-khau" type="button">
+              <i class="icon icon-arrow-swap">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               So sánh
+              </span>
+             </button>
+            </compare-button>
+           </div>
+          </div>
+          <a class="link" href="/products/sua-meiji-nhap-khau-so-0-800g-0-1-tuoi" title="Sữa Meiji nhập khẩu số 0 800g (0 - 1 tuổi)">
+           <div class="card-product__body flex flex-col gap-2 px-2 pb-2 md:gap-1 md:px-4 md:pb-4">
+            <div class="card-product__title text-base line-clamp-2">
+             Sữa Meiji nhập khẩu số 0 800g (0 - 1 tuổi)
+            </div>
+            <div class="proloop--review">
+             <!--  check review -->
+             <div class="haravan-product-reviews-badge" data-id="1061887957">
+             </div>
+            </div>
+            <div class="flex justify-between items-center gap-1 flex-wrap">
+             <div class="price-box flex justify-between items-center">
+              <div class="flex flex-col gap-1">
+               <span class="price text-h6 font-semibold">
+                1,070,000₫
+               </span>
+              </div>
+             </div>
+             <div class="">
+              <input name="id" type="hidden" value="1140639464"/>
+              <div class="btn bg-relative addtocart-btn font-semibold add_to_cart flex justify-center items-center gap-3" data-action="addtocart" data-portal="#quick-view-product" data-product="/products/sua-meiji-nhap-khau-so-0-800g-0-1-tuoi">
+               <span class="loading-icon gap-1 hidden items-center justify-center">
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+               </span>
+               <span class="flex items-center justify-center">
+                <i class="icon icon-cart text-[2rem]">
+                </i>
+               </span>
+              </div>
+             </div>
+            </div>
+           </div>
+          </a>
+         </form>
+        </div>
+       </card-product>
+       <card-product class="h-full card-product--vertical" data-prefetch="/products/sua-aptamil-profutura-uc-so-2-6-12-thang">
+        <div class="item_product_main card-product relative transition-transform duration-200 ease-in-out h-full">
+         <form action="/cart/add" class="bg-background rounded relative z-10 m-0 h-full" data-id="product-actions-1061887956" enctype="multipart/form-data" method="post">
+          <div class="card-product__top relative overflow-hidden group/card p-2">
+           <a class="link aspect-square flex items-center justify-center w-full relative rounded overflow-hidden" href="/products/sua-aptamil-profutura-uc-so-2-6-12-thang" title="Sữa Aptamil Profutura Úc số 2 (6-12 tháng)">
+            <div class="card-product__badges absolute top-2 left-2 z-10 flex items-center gap-2">
+            </div>
+            <picture>
+             <source media="(max-width: 600px)" srcset="//product.hstatic.net/200000939217/product/upload_a29c07298df64b99b2b8f064bfa72a0c_medium.jpg"/>
+             <img alt="Sữa Aptamil Profutura Úc số 2 (6-12 tháng)" class="card-product__image max-h-full w-auto object-contain scale-[var(--image-scale)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition duration-300 ease-out group-hover/card:opacity-0" decoding="async" height="480" loading="lazy" src="//product.hstatic.net/200000939217/product/upload_a29c07298df64b99b2b8f064bfa72a0c_large.jpg" style="--image-scale:1" width="480"/>
+            </picture>
+            <picture>
+             <source media="(max-width: 600px)" srcset="//product.hstatic.net/200000939217/product/upload_d6c68917dd8e4c7dbc7a8f198330828d_medium.jpg"/>
+             <img alt="Sữa Aptamil Profutura Úc số 2 (6-12 tháng)" class="card-product__image-2 max-h-full w-auto object-contain opacity-0 scale-[var(--image-scale)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[0] group-hover/card:opacity-1 group-hover/card:z-[1] group-hover/card:opacity-100 transition duration-300 ease-out" decoding="async" height="480" loading="lazy" src="//product.hstatic.net/200000939217/product/upload_d6c68917dd8e4c7dbc7a8f198330828d_large.jpg" style="--image-scale:1" width="480"/>
+            </picture>
+           </a>
+           <div class="card-product__utilites absolute top-2 right-2 z-10 dnone lg:flex flex-col items-center gap-2 transition duration-300 ease-out">
+            <portal-opener>
+             <button aria-label="Xem nhanh" class="quick-view border bg-background rounded-full flex items-center justify-center relative active:scale-95 transition-transform" data-portal="#quick-view-product" data-product="/products/sua-aptamil-profutura-uc-so-2-6-12-thang" type="button">
+              <i class="icon icon-eye">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               Xem nhanh
+              </span>
+             </button>
+            </portal-opener>
+            <compare-button>
+             <button aria-label="So sánh" class="add-compare border bg-background rounded-full flex items-center justify-center active:scale-95 transition-transform" data-portal="#quick-view-compare" data-product="1061887956" data-product-type="sua-sua-aptamil-uc" type="button">
+              <i class="icon icon-arrow-swap">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               So sánh
+              </span>
+             </button>
+            </compare-button>
+           </div>
+          </div>
+          <a class="link" href="/products/sua-aptamil-profutura-uc-so-2-6-12-thang" title="Sữa Aptamil Profutura Úc số 2 (6-12 tháng)">
+           <div class="card-product__body flex flex-col gap-2 px-2 pb-2 md:gap-1 md:px-4 md:pb-4">
+            <div class="card-product__title text-base line-clamp-2">
+             Sữa Aptamil Profutura Úc số 2 (6-12 tháng)
+            </div>
+            <div class="proloop--review">
+             <!--  check review -->
+             <div class="haravan-product-reviews-badge" data-id="1061887956">
+             </div>
+            </div>
+            <div class="flex justify-between items-center gap-1 flex-wrap">
+             <div class="price-box flex justify-between items-center">
+              <div class="flex flex-col gap-1">
+               <span class="price text-h6 font-semibold">
+                1,990,000₫
+               </span>
+              </div>
+             </div>
+             <div class="">
+              <input name="id" type="hidden" value="1140639463"/>
+              <div class="btn bg-relative addtocart-btn font-semibold add_to_cart flex justify-center items-center gap-3" data-action="addtocart" data-portal="#quick-view-product" data-product="/products/sua-aptamil-profutura-uc-so-2-6-12-thang">
+               <span class="loading-icon gap-1 hidden items-center justify-center">
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+               </span>
+               <span class="flex items-center justify-center">
+                <i class="icon icon-cart text-[2rem]">
+                </i>
+               </span>
+              </div>
+             </div>
+            </div>
+           </div>
+          </a>
+         </form>
+        </div>
+       </card-product>
+       <card-product class="h-full card-product--vertical" data-prefetch="/products/sua-meiji-thanh-nhap-khau-0-1-tuoi-thanh-le">
+        <div class="item_product_main card-product relative transition-transform duration-200 ease-in-out h-full">
+         <form action="/cart/add" class="bg-background rounded relative z-10 m-0 h-full" data-id="product-actions-1061887954" enctype="multipart/form-data" method="post">
+          <div class="card-product__top relative overflow-hidden group/card p-2">
+           <a class="link aspect-square flex items-center justify-center w-full relative rounded overflow-hidden" href="/products/sua-meiji-thanh-nhap-khau-0-1-tuoi-thanh-le" title="Sữa Meiji thanh nhập khẩu Infant Formula EZcube (0-1 tuổi)">
+            <div class="card-product__badges absolute top-2 left-2 z-10 flex items-center gap-2">
+            </div>
+            <picture>
+             <source media="(max-width: 600px)" srcset="//product.hstatic.net/200000939217/product/upload_6a1e4bafe6674197b7547875b68533e6_medium.jpg"/>
+             <img alt="Sữa Meiji thanh nhập khẩu Infant Formula EZcube (0-1 tuổi)" class="card-product__image max-h-full w-auto object-contain scale-[var(--image-scale)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition duration-300 ease-out group-hover/card:opacity-0" decoding="async" height="480" loading="lazy" src="//product.hstatic.net/200000939217/product/upload_6a1e4bafe6674197b7547875b68533e6_large.jpg" style="--image-scale:1" width="480"/>
+            </picture>
+            <picture>
+             <source media="(max-width: 600px)" srcset="//product.hstatic.net/200000939217/product/upload_0bf9ec91dd27484f8194eff549431a31_medium.jpg"/>
+             <img alt="Sữa Meiji thanh nhập khẩu Infant Formula EZcube (0-1 tuổi)" class="card-product__image-2 max-h-full w-auto object-contain opacity-0 scale-[var(--image-scale)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[0] group-hover/card:opacity-1 group-hover/card:z-[1] group-hover/card:opacity-100 transition duration-300 ease-out" decoding="async" height="480" loading="lazy" src="//product.hstatic.net/200000939217/product/upload_0bf9ec91dd27484f8194eff549431a31_large.jpg" style="--image-scale:1" width="480"/>
+            </picture>
+           </a>
+           <div class="card-product__utilites absolute top-2 right-2 z-10 dnone lg:flex flex-col items-center gap-2 transition duration-300 ease-out">
+            <portal-opener>
+             <button aria-label="Xem nhanh" class="quick-view border bg-background rounded-full flex items-center justify-center relative active:scale-95 transition-transform" data-portal="#quick-view-product" data-product="/products/sua-meiji-thanh-nhap-khau-0-1-tuoi-thanh-le" type="button">
+              <i class="icon icon-eye">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               Xem nhanh
+              </span>
+             </button>
+            </portal-opener>
+            <compare-button>
+             <button aria-label="So sánh" class="add-compare border bg-background rounded-full flex items-center justify-center active:scale-95 transition-transform" data-portal="#quick-view-compare" data-product="1061887954" data-product-type="sua-sua-meiji-nhap-khau" type="button">
+              <i class="icon icon-arrow-swap">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               So sánh
+              </span>
+             </button>
+            </compare-button>
+           </div>
+          </div>
+          <a class="link" href="/products/sua-meiji-thanh-nhap-khau-0-1-tuoi-thanh-le" title="Sữa Meiji thanh nhập khẩu Infant Formula EZcube (0-1 tuổi)">
+           <div class="card-product__body flex flex-col gap-2 px-2 pb-2 md:gap-1 md:px-4 md:pb-4">
+            <div class="card-product__title text-base line-clamp-2">
+             Sữa Meiji thanh nhập khẩu Infant Formula EZcube (0-1 tuổi)
+            </div>
+            <div class="proloop--review">
+             <!--  check review -->
+             <div class="haravan-product-reviews-badge" data-id="1061887954">
+             </div>
+            </div>
+            <div class="flex justify-between items-center gap-1 flex-wrap">
+             <div class="price-box flex justify-between items-center">
+              <div class="flex flex-col gap-1">
+               <span class="price text-h6 font-semibold">
+                48,000₫
+               </span>
+              </div>
+             </div>
+             <div class="">
+              <input name="id" type="hidden" value="1140639460"/>
+              <div class="btn bg-relative addtocart-btn font-semibold add_to_cart flex justify-center items-center gap-3" data-action="quickview" data-portal="#quick-view-product" data-product="/products/sua-meiji-thanh-nhap-khau-0-1-tuoi-thanh-le">
+               <span class="loading-icon gap-1 hidden items-center justify-center">
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+               </span>
+               <span class="flex items-center justify-center">
+                <i class="icon icon-settings text-[2rem]">
+                </i>
+               </span>
+              </div>
+             </div>
+            </div>
+           </div>
+          </a>
+         </form>
+        </div>
+       </card-product>
+       <card-product class="h-full card-product--vertical" data-prefetch="/products/sua-meiji-kids-formula-900g-3-10-tuoi">
+        <div class="item_product_main card-product relative transition-transform duration-200 ease-in-out h-full">
+         <form action="/cart/add" class="bg-background rounded relative z-10 m-0 h-full" data-id="product-actions-1061887953" enctype="multipart/form-data" method="post">
+          <div class="card-product__top relative overflow-hidden group/card p-2">
+           <a class="link aspect-square flex items-center justify-center w-full relative rounded overflow-hidden" href="/products/sua-meiji-kids-formula-900g-3-10-tuoi" title="Sữa Meiji Kids Formula 900g (3 - 10 tuổi)">
+            <div class="card-product__badges absolute top-2 left-2 z-10 flex items-center gap-2">
+            </div>
+            <img alt="Sữa Meiji Kids Formula 900g (3 - 10 tuổi)" class="product-frame w-full aspect-square object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10" height="480" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/frame_1.png?v=23" width="480"/>
+            <picture>
+             <source media="(max-width: 600px)" srcset="//product.hstatic.net/200000939217/product/upload_0953c244db09449da18de54d69a8ad34_medium.jpg"/>
+             <img alt="Sữa Meiji Kids Formula 900g (3 - 10 tuổi)" class="card-product__image max-h-full w-auto object-contain scale-[var(--image-scale)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition duration-300 ease-out" decoding="async" height="480" loading="lazy" src="//product.hstatic.net/200000939217/product/upload_0953c244db09449da18de54d69a8ad34_large.jpg" style="--image-scale:0.9" width="480">
+             </img>
+            </picture>
+           </a>
+           <div class="card-product__utilites absolute top-2 right-2 z-10 dnone lg:flex flex-col items-center gap-2 transition duration-300 ease-out">
+            <portal-opener>
+             <button aria-label="Xem nhanh" class="quick-view border bg-background rounded-full flex items-center justify-center relative active:scale-95 transition-transform" data-portal="#quick-view-product" data-product="/products/sua-meiji-kids-formula-900g-3-10-tuoi" type="button">
+              <i class="icon icon-eye">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               Xem nhanh
+              </span>
+             </button>
+            </portal-opener>
+            <compare-button>
+             <button aria-label="So sánh" class="add-compare border bg-background rounded-full flex items-center justify-center active:scale-95 transition-transform" data-portal="#quick-view-compare" data-product="1061887953" data-product-type="6-sua" type="button">
+              <i class="icon icon-arrow-swap">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               So sánh
+              </span>
+             </button>
+            </compare-button>
+           </div>
+          </div>
+          <a class="link" href="/products/sua-meiji-kids-formula-900g-3-10-tuoi" title="Sữa Meiji Kids Formula 900g (3 - 10 tuổi)">
+           <div class="card-product__body flex flex-col gap-2 px-2 pb-2 md:gap-1 md:px-4 md:pb-4">
+            <div class="card-product__title text-base line-clamp-2">
+             Sữa Meiji Kids Formula 900g (3 - 10 tuổi)
+            </div>
+            <div class="proloop--review">
+             <!--  check review -->
+             <div class="haravan-product-reviews-badge" data-id="1061887953">
+             </div>
+            </div>
+            <div class="flex justify-between items-center gap-1 flex-wrap">
+             <div class="price-box flex justify-between items-center">
+              <div class="flex flex-col gap-1">
+               <span class="price text-h6 font-semibold">
+                1,090,000₫
+               </span>
+              </div>
+             </div>
+             <div class="">
+              <input name="id" type="hidden" value="1140639459"/>
+              <div class="btn bg-relative addtocart-btn font-semibold add_to_cart flex justify-center items-center gap-3" data-action="addtocart" data-portal="#quick-view-product" data-product="/products/sua-meiji-kids-formula-900g-3-10-tuoi">
+               <span class="loading-icon gap-1 hidden items-center justify-center">
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+               </span>
+               <span class="flex items-center justify-center">
+                <i class="icon icon-cart text-[2rem]">
+                </i>
+               </span>
+              </div>
+             </div>
+            </div>
+           </div>
+          </a>
+         </form>
+        </div>
+       </card-product>
+       <card-product class="h-full card-product--vertical" data-prefetch="/products/sua-sua-meiji-nhap-khau-dang-thanh-1-3-tuoi">
+        <div class="item_product_main card-product relative transition-transform duration-200 ease-in-out h-full">
+         <form action="/cart/add" class="bg-background rounded relative z-10 m-0 h-full" data-id="product-actions-1061887952" enctype="multipart/form-data" method="post">
+          <div class="card-product__top relative overflow-hidden group/card p-2">
+           <a class="link aspect-square flex items-center justify-center w-full relative rounded overflow-hidden" href="/products/sua-sua-meiji-nhap-khau-dang-thanh-1-3-tuoi" title="Sữa Meiji thanh nhập khẩu Growing Up Formula (1 - 3 tuổi)">
+            <div class="card-product__badges absolute top-2 left-2 z-10 flex items-center gap-2">
+            </div>
+            <picture>
+             <source media="(max-width: 600px)" srcset="//product.hstatic.net/200000939217/product/upload_b33f5964ec02420198710a34501ed87f_medium.jpg"/>
+             <img alt="Sữa Meiji thanh nhập khẩu Growing Up Formula (1 - 3 tuổi)" class="card-product__image max-h-full w-auto object-contain scale-[var(--image-scale)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition duration-300 ease-out group-hover/card:opacity-0" decoding="async" height="480" loading="lazy" src="//product.hstatic.net/200000939217/product/upload_b33f5964ec02420198710a34501ed87f_large.jpg" style="--image-scale:1" width="480"/>
+            </picture>
+            <picture>
+             <source media="(max-width: 600px)" srcset="//product.hstatic.net/200000939217/product/upload_4ada8089f5db402aa24351f78be232c8_medium.jpg"/>
+             <img alt="Sữa Meiji thanh nhập khẩu Growing Up Formula (1 - 3 tuổi)" class="card-product__image-2 max-h-full w-auto object-contain opacity-0 scale-[var(--image-scale)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[0] group-hover/card:opacity-1 group-hover/card:z-[1] group-hover/card:opacity-100 transition duration-300 ease-out" decoding="async" height="480" loading="lazy" src="//product.hstatic.net/200000939217/product/upload_4ada8089f5db402aa24351f78be232c8_large.jpg" style="--image-scale:1" width="480"/>
+            </picture>
+           </a>
+           <div class="card-product__utilites absolute top-2 right-2 z-10 dnone lg:flex flex-col items-center gap-2 transition duration-300 ease-out">
+            <portal-opener>
+             <button aria-label="Xem nhanh" class="quick-view border bg-background rounded-full flex items-center justify-center relative active:scale-95 transition-transform" data-portal="#quick-view-product" data-product="/products/sua-sua-meiji-nhap-khau-dang-thanh-1-3-tuoi" type="button">
+              <i class="icon icon-eye">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               Xem nhanh
+              </span>
+             </button>
+            </portal-opener>
+            <compare-button>
+             <button aria-label="So sánh" class="add-compare border bg-background rounded-full flex items-center justify-center active:scale-95 transition-transform" data-portal="#quick-view-compare" data-product="1061887952" data-product-type="sua-sua-meiji-nhap-khau" type="button">
+              <i class="icon icon-arrow-swap">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               So sánh
+              </span>
+             </button>
+            </compare-button>
+           </div>
+          </div>
+          <a class="link" href="/products/sua-sua-meiji-nhap-khau-dang-thanh-1-3-tuoi" title="Sữa Meiji thanh nhập khẩu Growing Up Formula (1 - 3 tuổi)">
+           <div class="card-product__body flex flex-col gap-2 px-2 pb-2 md:gap-1 md:px-4 md:pb-4">
+            <div class="card-product__title text-base line-clamp-2">
+             Sữa Meiji thanh nhập khẩu Growing Up Formula (1 - 3 tuổi)
+            </div>
+            <div class="proloop--review">
+             <!--  check review -->
+             <div class="haravan-product-reviews-badge" data-id="1061887952">
+             </div>
+            </div>
+            <div class="flex justify-between items-center gap-1 flex-wrap">
+             <div class="price-box flex justify-between items-center">
+              <div class="flex flex-col gap-1">
+               <span class="price text-h6 font-semibold">
+                44,000₫
+               </span>
+              </div>
+             </div>
+             <div class="">
+              <input name="id" type="hidden" value="1140639457"/>
+              <div class="btn bg-relative addtocart-btn font-semibold add_to_cart flex justify-center items-center gap-3" data-action="quickview" data-portal="#quick-view-product" data-product="/products/sua-sua-meiji-nhap-khau-dang-thanh-1-3-tuoi">
+               <span class="loading-icon gap-1 hidden items-center justify-center">
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+               </span>
+               <span class="flex items-center justify-center">
+                <i class="icon icon-settings text-[2rem]">
+                </i>
+               </span>
+              </div>
+             </div>
+            </div>
+           </div>
+          </a>
+         </form>
+        </div>
+       </card-product>
+       <card-product class="h-full card-product--vertical" data-prefetch="/products/sua-aptamil-profutura-uc-so-1-0-6-thang">
+        <div class="item_product_main card-product relative transition-transform duration-200 ease-in-out h-full">
+         <form action="/cart/add" class="bg-background rounded relative z-10 m-0 h-full" data-id="product-actions-1061887951" enctype="multipart/form-data" method="post">
+          <div class="card-product__top relative overflow-hidden group/card p-2">
+           <a class="link aspect-square flex items-center justify-center w-full relative rounded overflow-hidden" href="/products/sua-aptamil-profutura-uc-so-1-0-6-thang" title="Sữa Aptamil Profutura Úc số 1 (0-6 tháng)">
+            <div class="card-product__badges absolute top-2 left-2 z-10 flex items-center gap-2">
+            </div>
+            <picture>
+             <source media="(max-width: 600px)" srcset="//product.hstatic.net/200000939217/product/upload_f0eba7fc46a64ec99ebfd0f0a4551a3c_medium.jpg"/>
+             <img alt="Sữa Aptamil Profutura Úc số 1 (0-6 tháng)" class="card-product__image max-h-full w-auto object-contain scale-[var(--image-scale)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition duration-300 ease-out" decoding="async" height="480" loading="lazy" src="//product.hstatic.net/200000939217/product/upload_f0eba7fc46a64ec99ebfd0f0a4551a3c_large.jpg" style="--image-scale:1" width="480"/>
+            </picture>
+           </a>
+           <div class="card-product__utilites absolute top-2 right-2 z-10 dnone lg:flex flex-col items-center gap-2 transition duration-300 ease-out">
+            <portal-opener>
+             <button aria-label="Xem nhanh" class="quick-view border bg-background rounded-full flex items-center justify-center relative active:scale-95 transition-transform" data-portal="#quick-view-product" data-product="/products/sua-aptamil-profutura-uc-so-1-0-6-thang" type="button">
+              <i class="icon icon-eye">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               Xem nhanh
+              </span>
+             </button>
+            </portal-opener>
+            <compare-button>
+             <button aria-label="So sánh" class="add-compare border bg-background rounded-full flex items-center justify-center active:scale-95 transition-transform" data-portal="#quick-view-compare" data-product="1061887951" data-product-type="sua-sua-aptamil-uc" type="button">
+              <i class="icon icon-arrow-swap">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               So sánh
+              </span>
+             </button>
+            </compare-button>
+           </div>
+          </div>
+          <a class="link" href="/products/sua-aptamil-profutura-uc-so-1-0-6-thang" title="Sữa Aptamil Profutura Úc số 1 (0-6 tháng)">
+           <div class="card-product__body flex flex-col gap-2 px-2 pb-2 md:gap-1 md:px-4 md:pb-4">
+            <div class="card-product__title text-base line-clamp-2">
+             Sữa Aptamil Profutura Úc số 1 (0-6 tháng)
+            </div>
+            <div class="proloop--review">
+             <!--  check review -->
+             <div class="haravan-product-reviews-badge" data-id="1061887951">
+             </div>
+            </div>
+            <div class="flex justify-between items-center gap-1 flex-wrap">
+             <div class="price-box flex justify-between items-center">
+              <div class="flex flex-col gap-1">
+               <span class="price text-h6 font-semibold">
+                1,990,000₫
+               </span>
+              </div>
+             </div>
+             <div class="">
+              <input name="id" type="hidden" value="1140639456"/>
+              <div class="btn bg-relative addtocart-btn font-semibold add_to_cart flex justify-center items-center gap-3" data-action="addtocart" data-portal="#quick-view-product" data-product="/products/sua-aptamil-profutura-uc-so-1-0-6-thang">
+               <span class="loading-icon gap-1 hidden items-center justify-center">
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+               </span>
+               <span class="flex items-center justify-center">
+                <i class="icon icon-cart text-[2rem]">
+                </i>
+               </span>
+              </div>
+             </div>
+            </div>
+           </div>
+          </a>
+         </form>
+        </div>
+       </card-product>
+       <card-product class="h-full card-product--vertical" data-prefetch="/products/sua-meiji-noi-dia-nhat-ban-dang-thanh-so-0-0-1-tuoi">
+        <div class="item_product_main card-product relative transition-transform duration-200 ease-in-out h-full">
+         <form action="/cart/add" class="bg-background rounded relative z-10 m-0 h-full" data-id="product-actions-1061887950" enctype="multipart/form-data" method="post">
+          <div class="card-product__top relative overflow-hidden group/card p-2">
+           <a class="link aspect-square flex items-center justify-center w-full relative rounded overflow-hidden" href="/products/sua-meiji-noi-dia-nhat-ban-dang-thanh-so-0-0-1-tuoi" title="Sữa Meiji nội địa Nhật Bản dạng thanh số 0, (0 - 1 tuổi)">
+            <div class="card-product__badges absolute top-2 left-2 z-10 flex items-center gap-2">
+            </div>
+            <img alt="Sữa Meiji nội địa Nhật Bản dạng thanh số 0, (0 - 1 tuổi)" class="product-frame w-full aspect-square object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10" height="480" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/frame_1.png?v=23" width="480"/>
+            <picture>
+             <source media="(max-width: 600px)" srcset="//product.hstatic.net/200000939217/product/upload_1c06c335ea31452a8f5823f6265d8330_medium.jpg"/>
+             <img alt="Sữa Meiji nội địa Nhật Bản dạng thanh số 0, (0 - 1 tuổi)" class="card-product__image max-h-full w-auto object-contain scale-[var(--image-scale)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition duration-300 ease-out group-hover/card:opacity-0" decoding="async" height="480" loading="lazy" src="//product.hstatic.net/200000939217/product/upload_1c06c335ea31452a8f5823f6265d8330_large.jpg" style="--image-scale:0.9" width="480">
+             </img>
+            </picture>
+            <picture>
+             <source media="(max-width: 600px)" srcset="//product.hstatic.net/200000939217/product/upload_8aea4b3e49ad4fb78f0bb5590b8544f1_medium.jpg"/>
+             <img alt="Sữa Meiji nội địa Nhật Bản dạng thanh số 0, (0 - 1 tuổi)" class="card-product__image-2 max-h-full w-auto object-contain opacity-0 scale-[var(--image-scale)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[0] group-hover/card:opacity-1 group-hover/card:z-[1] group-hover/card:opacity-100 transition duration-300 ease-out" decoding="async" height="480" loading="lazy" src="//product.hstatic.net/200000939217/product/upload_8aea4b3e49ad4fb78f0bb5590b8544f1_large.jpg" style="--image-scale:0.9" width="480"/>
+            </picture>
+           </a>
+           <div class="card-product__utilites absolute top-2 right-2 z-10 dnone lg:flex flex-col items-center gap-2 transition duration-300 ease-out">
+            <portal-opener>
+             <button aria-label="Xem nhanh" class="quick-view border bg-background rounded-full flex items-center justify-center relative active:scale-95 transition-transform" data-portal="#quick-view-product" data-product="/products/sua-meiji-noi-dia-nhat-ban-dang-thanh-so-0-0-1-tuoi" type="button">
+              <i class="icon icon-eye">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               Xem nhanh
+              </span>
+             </button>
+            </portal-opener>
+            <compare-button>
+             <button aria-label="So sánh" class="add-compare border bg-background rounded-full flex items-center justify-center active:scale-95 transition-transform" data-portal="#quick-view-compare" data-product="1061887950" data-product-type="sua-sua-meiji-noi-dia" type="button">
+              <i class="icon icon-arrow-swap">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               So sánh
+              </span>
+             </button>
+            </compare-button>
+           </div>
+          </div>
+          <a class="link" href="/products/sua-meiji-noi-dia-nhat-ban-dang-thanh-so-0-0-1-tuoi" title="Sữa Meiji nội địa Nhật Bản dạng thanh số 0, (0 - 1 tuổi)">
+           <div class="card-product__body flex flex-col gap-2 px-2 pb-2 md:gap-1 md:px-4 md:pb-4">
+            <div class="card-product__title text-base line-clamp-2">
+             Sữa Meiji nội địa Nhật Bản dạng thanh số 0, (0 - 1 tuổi)
+            </div>
+            <div class="proloop--review">
+             <!--  check review -->
+             <div class="haravan-product-reviews-badge" data-id="1061887950">
+             </div>
+            </div>
+            <div class="flex justify-between items-center gap-1 flex-wrap">
+             <div class="price-box flex justify-between items-center">
+              <div class="flex flex-col gap-1">
+               <span class="price text-h6 font-semibold">
+                48,000₫
+               </span>
+              </div>
+             </div>
+             <div class="">
+              <input name="id" type="hidden" value="1140639453"/>
+              <div class="btn bg-relative addtocart-btn font-semibold add_to_cart flex justify-center items-center gap-3" data-action="quickview" data-portal="#quick-view-product" data-product="/products/sua-meiji-noi-dia-nhat-ban-dang-thanh-so-0-0-1-tuoi">
+               <span class="loading-icon gap-1 hidden items-center justify-center">
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+               </span>
+               <span class="flex items-center justify-center">
+                <i class="icon icon-settings text-[2rem]">
+                </i>
+               </span>
+              </div>
+             </div>
+            </div>
+           </div>
+          </a>
+         </form>
+        </div>
+       </card-product>
+       <card-product class="h-full card-product--vertical" data-prefetch="/products/sua-meiji-noi-dia-nhat-ban-so-0-800g-0-1-tuoi">
+        <div class="item_product_main card-product relative transition-transform duration-200 ease-in-out h-full">
+         <form action="/cart/add" class="bg-background rounded relative z-10 m-0 h-full" data-id="product-actions-1061887949" enctype="multipart/form-data" method="post">
+          <div class="card-product__top relative overflow-hidden group/card p-2">
+           <a class="link aspect-square flex items-center justify-center w-full relative rounded overflow-hidden" href="/products/sua-meiji-noi-dia-nhat-ban-so-0-800g-0-1-tuoi" title="Sữa Meiji nội địa Nhật Bản số 0, 800g (0 -  1 tuổi)">
+            <div class="card-product__badges absolute top-2 left-2 z-10 flex items-center gap-2">
+            </div>
+            <img alt="Sữa Meiji nội địa Nhật Bản số 0, 800g (0 -  1 tuổi)" class="product-frame w-full aspect-square object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10" height="480" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/frame_1.png?v=23" width="480"/>
+            <picture>
+             <source media="(max-width: 600px)" srcset="//product.hstatic.net/200000939217/product/upload_6437aa7d0edb427788e325ec4a56275c_medium.jpg"/>
+             <img alt="Sữa Meiji nội địa Nhật Bản số 0, 800g (0 -  1 tuổi)" class="card-product__image max-h-full w-auto object-contain scale-[var(--image-scale)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition duration-300 ease-out group-hover/card:opacity-0" decoding="async" height="480" loading="lazy" src="//product.hstatic.net/200000939217/product/upload_6437aa7d0edb427788e325ec4a56275c_large.jpg" style="--image-scale:0.9" width="480">
+             </img>
+            </picture>
+            <picture>
+             <source media="(max-width: 600px)" srcset="//product.hstatic.net/200000939217/product/upload_cbd26ef878cf4edb93a823fbf7115cc4_medium.jpg"/>
+             <img alt="Sữa Meiji nội địa Nhật Bản số 0, 800g (0 -  1 tuổi)" class="card-product__image-2 max-h-full w-auto object-contain opacity-0 scale-[var(--image-scale)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[0] group-hover/card:opacity-1 group-hover/card:z-[1] group-hover/card:opacity-100 transition duration-300 ease-out" decoding="async" height="480" loading="lazy" src="//product.hstatic.net/200000939217/product/upload_cbd26ef878cf4edb93a823fbf7115cc4_large.jpg" style="--image-scale:0.9" width="480"/>
+            </picture>
+           </a>
+           <div class="card-product__utilites absolute top-2 right-2 z-10 dnone lg:flex flex-col items-center gap-2 transition duration-300 ease-out">
+            <portal-opener>
+             <button aria-label="Xem nhanh" class="quick-view border bg-background rounded-full flex items-center justify-center relative active:scale-95 transition-transform" data-portal="#quick-view-product" data-product="/products/sua-meiji-noi-dia-nhat-ban-so-0-800g-0-1-tuoi" type="button">
+              <i class="icon icon-eye">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               Xem nhanh
+              </span>
+             </button>
+            </portal-opener>
+            <compare-button>
+             <button aria-label="So sánh" class="add-compare border bg-background rounded-full flex items-center justify-center active:scale-95 transition-transform" data-portal="#quick-view-compare" data-product="1061887949" data-product-type="sua-sua-meiji-noi-dia" type="button">
+              <i class="icon icon-arrow-swap">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               So sánh
+              </span>
+             </button>
+            </compare-button>
+           </div>
+          </div>
+          <a class="link" href="/products/sua-meiji-noi-dia-nhat-ban-so-0-800g-0-1-tuoi" title="Sữa Meiji nội địa Nhật Bản số 0, 800g (0 -  1 tuổi)">
+           <div class="card-product__body flex flex-col gap-2 px-2 pb-2 md:gap-1 md:px-4 md:pb-4">
+            <div class="card-product__title text-base line-clamp-2">
+             Sữa Meiji nội địa Nhật Bản số 0, 800g (0 -  1 tuổi)
+            </div>
+            <div class="proloop--review">
+             <!--  check review -->
+             <div class="haravan-product-reviews-badge" data-id="1061887949">
+             </div>
+            </div>
+            <div class="flex justify-between items-center gap-1 flex-wrap">
+             <div class="price-box flex justify-between items-center">
+              <div class="flex flex-col gap-1">
+               <span class="price text-h6 font-semibold">
+                990,000₫
+               </span>
+              </div>
+             </div>
+             <div class="">
+              <input name="id" type="hidden" value="1140639452"/>
+              <div class="btn bg-relative addtocart-btn font-semibold add_to_cart flex justify-center items-center gap-3" data-action="addtocart" data-portal="#quick-view-product" data-product="/products/sua-meiji-noi-dia-nhat-ban-so-0-800g-0-1-tuoi">
+               <span class="loading-icon gap-1 hidden items-center justify-center">
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+               </span>
+               <span class="flex items-center justify-center">
+                <i class="icon icon-cart text-[2rem]">
+                </i>
+               </span>
+              </div>
+             </div>
+            </div>
+           </div>
+          </a>
+         </form>
+        </div>
+       </card-product>
+       <card-product class="h-full card-product--vertical" data-prefetch="/products/sua-meiji-noi-dia-so-9-1-3-tuoi">
+        <div class="item_product_main card-product relative transition-transform duration-200 ease-in-out h-full">
+         <form action="/cart/add" class="bg-background rounded relative z-10 m-0 h-full" data-id="product-actions-1061887948" enctype="multipart/form-data" method="post">
+          <div class="card-product__top relative overflow-hidden group/card p-2">
+           <a class="link aspect-square flex items-center justify-center w-full relative rounded overflow-hidden" href="/products/sua-meiji-noi-dia-so-9-1-3-tuoi" title="Sữa Meiji nội địa Nhật Bản số 9, 800g (1 - 3 tuổi)">
+            <div class="card-product__badges absolute top-2 left-2 z-10 flex items-center gap-2">
+            </div>
+            <img alt="Sữa Meiji nội địa Nhật Bản số 9, 800g (1 - 3 tuổi)" class="product-frame w-full aspect-square object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10" height="480" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/frame_1.png?v=23" width="480"/>
+            <picture>
+             <source media="(max-width: 600px)" srcset="//product.hstatic.net/200000939217/product/upload_0bfaf4ff77434fbda4341de303642c49_medium.jpg"/>
+             <img alt="Sữa Meiji nội địa Nhật Bản số 9, 800g (1 - 3 tuổi)" class="card-product__image max-h-full w-auto object-contain scale-[var(--image-scale)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition duration-300 ease-out group-hover/card:opacity-0" decoding="async" height="480" loading="lazy" src="//product.hstatic.net/200000939217/product/upload_0bfaf4ff77434fbda4341de303642c49_large.jpg" style="--image-scale:0.9" width="480">
+             </img>
+            </picture>
+            <picture>
+             <source media="(max-width: 600px)" srcset="//product.hstatic.net/200000939217/product/upload_c60a1f14b16b4193984b7900dcbf9caf_medium.jpg"/>
+             <img alt="Sữa Meiji nội địa Nhật Bản số 9, 800g (1 - 3 tuổi)" class="card-product__image-2 max-h-full w-auto object-contain opacity-0 scale-[var(--image-scale)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[0] group-hover/card:opacity-1 group-hover/card:z-[1] group-hover/card:opacity-100 transition duration-300 ease-out" decoding="async" height="480" loading="lazy" src="//product.hstatic.net/200000939217/product/upload_c60a1f14b16b4193984b7900dcbf9caf_large.jpg" style="--image-scale:0.9" width="480"/>
+            </picture>
+           </a>
+           <div class="card-product__utilites absolute top-2 right-2 z-10 dnone lg:flex flex-col items-center gap-2 transition duration-300 ease-out">
+            <portal-opener>
+             <button aria-label="Xem nhanh" class="quick-view border bg-background rounded-full flex items-center justify-center relative active:scale-95 transition-transform" data-portal="#quick-view-product" data-product="/products/sua-meiji-noi-dia-so-9-1-3-tuoi" type="button">
+              <i class="icon icon-eye">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               Xem nhanh
+              </span>
+             </button>
+            </portal-opener>
+            <compare-button>
+             <button aria-label="So sánh" class="add-compare border bg-background rounded-full flex items-center justify-center active:scale-95 transition-transform" data-portal="#quick-view-compare" data-product="1061887948" data-product-type="sua-sua-meiji-noi-dia" type="button">
+              <i class="icon icon-arrow-swap">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               So sánh
+              </span>
+             </button>
+            </compare-button>
+           </div>
+          </div>
+          <a class="link" href="/products/sua-meiji-noi-dia-so-9-1-3-tuoi" title="Sữa Meiji nội địa Nhật Bản số 9, 800g (1 - 3 tuổi)">
+           <div class="card-product__body flex flex-col gap-2 px-2 pb-2 md:gap-1 md:px-4 md:pb-4">
+            <div class="card-product__title text-base line-clamp-2">
+             Sữa Meiji nội địa Nhật Bản số 9, 800g (1 - 3 tuổi)
+            </div>
+            <div class="proloop--review">
+             <!--  check review -->
+             <div class="haravan-product-reviews-badge" data-id="1061887948">
+             </div>
+            </div>
+            <div class="flex justify-between items-center gap-1 flex-wrap">
+             <div class="price-box flex justify-between items-center">
+              <div class="flex flex-col gap-1">
+               <span class="price text-h6 font-semibold">
+                790,000₫
+               </span>
+              </div>
+             </div>
+             <div class="">
+              <input name="id" type="hidden" value="1140639451"/>
+              <div class="btn bg-relative addtocart-btn font-semibold add_to_cart flex justify-center items-center gap-3" data-action="addtocart" data-portal="#quick-view-product" data-product="/products/sua-meiji-noi-dia-so-9-1-3-tuoi">
+               <span class="loading-icon gap-1 hidden items-center justify-center">
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+               </span>
+               <span class="flex items-center justify-center">
+                <i class="icon icon-cart text-[2rem]">
+                </i>
+               </span>
+              </div>
+             </div>
+            </div>
+           </div>
+          </a>
+         </form>
+        </div>
+       </card-product>
+       <card-product class="h-full card-product--vertical" data-prefetch="/products/bim-goldgi-eco-quan-m54-6-11kg">
+        <div class="item_product_main card-product relative transition-transform duration-200 ease-in-out h-full">
+         <form action="/cart/add" class="bg-background rounded relative z-10 m-0 h-full" data-id="product-actions-1061887947" enctype="multipart/form-data" method="post">
+          <div class="card-product__top relative overflow-hidden group/card p-2">
+           <a class="link aspect-square flex items-center justify-center w-full relative rounded overflow-hidden" href="/products/bim-goldgi-eco-quan-m54-6-11kg" title="Bỉm Goldgi ECO quần M54 (6-11kg)">
+            <div class="card-product__badges absolute top-2 left-2 z-10 flex items-center gap-2">
+            </div>
+            <picture>
+             <source media="(max-width: 600px)" srcset="//product.hstatic.net/200000939217/product/upload_a797f17c05f546aba29c0988a55017a9_medium.jpg"/>
+             <img alt="Bỉm Goldgi ECO quần M54 (6-11kg)" class="card-product__image max-h-full w-auto object-contain scale-[var(--image-scale)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition duration-300 ease-out" decoding="async" height="480" loading="lazy" src="//product.hstatic.net/200000939217/product/upload_a797f17c05f546aba29c0988a55017a9_large.jpg" style="--image-scale:1" width="480"/>
+            </picture>
+           </a>
+           <div class="card-product__utilites absolute top-2 right-2 z-10 dnone lg:flex flex-col items-center gap-2 transition duration-300 ease-out">
+            <portal-opener>
+             <button aria-label="Xem nhanh" class="quick-view border bg-background rounded-full flex items-center justify-center relative active:scale-95 transition-transform" data-portal="#quick-view-product" data-product="/products/bim-goldgi-eco-quan-m54-6-11kg" type="button">
+              <i class="icon icon-eye">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               Xem nhanh
+              </span>
+             </button>
+            </portal-opener>
+            <compare-button>
+             <button aria-label="So sánh" class="add-compare border bg-background rounded-full flex items-center justify-center active:scale-95 transition-transform" data-portal="#quick-view-compare" data-product="1061887947" data-product-type="bim-bim-goldgi" type="button">
+              <i class="icon icon-arrow-swap">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               So sánh
+              </span>
+             </button>
+            </compare-button>
+           </div>
+          </div>
+          <a class="link" href="/products/bim-goldgi-eco-quan-m54-6-11kg" title="Bỉm Goldgi ECO quần M54 (6-11kg)">
+           <div class="card-product__body flex flex-col gap-2 px-2 pb-2 md:gap-1 md:px-4 md:pb-4">
+            <div class="card-product__title text-base line-clamp-2">
+             Bỉm Goldgi ECO quần M54 (6-11kg)
+            </div>
+            <div class="proloop--review">
+             <!--  check review -->
+             <div class="haravan-product-reviews-badge" data-id="1061887947">
+             </div>
+            </div>
+            <div class="flex justify-between items-center gap-1 flex-wrap">
+             <div class="price-box flex justify-between items-center">
+              <div class="flex flex-col gap-1">
+               <span class="price text-h6 font-semibold">
+                440,000₫
+               </span>
+              </div>
+             </div>
+             <div class="">
+              <input name="id" type="hidden" value="1140639450"/>
+              <div class="btn bg-relative addtocart-btn font-semibold add_to_cart flex justify-center items-center gap-3" data-action="addtocart" data-portal="#quick-view-product" data-product="/products/bim-goldgi-eco-quan-m54-6-11kg">
+               <span class="loading-icon gap-1 hidden items-center justify-center">
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+               </span>
+               <span class="flex items-center justify-center">
+                <i class="icon icon-cart text-[2rem]">
+                </i>
+               </span>
+              </div>
+             </div>
+            </div>
+           </div>
+          </a>
+         </form>
+        </div>
+       </card-product>
+       <card-product class="h-full card-product--vertical" data-prefetch="/products/bim-bim-merries-noi-dia-quan-xl38-12-22kg-cong-mieng">
+        <div class="item_product_main card-product relative transition-transform duration-200 ease-in-out h-full">
+         <form action="/cart/add" class="bg-background rounded relative z-10 m-0 h-full" data-id="product-actions-1061887945" enctype="multipart/form-data" method="post">
+          <div class="card-product__top relative overflow-hidden group/card p-2">
+           <a class="link aspect-square flex items-center justify-center w-full relative rounded overflow-hidden" href="/products/bim-bim-merries-noi-dia-quan-xl38-12-22kg-cong-mieng" title="Bỉm Merries nội địa quần XL38 (12-22kg) - Cộng miếng">
+            <div class="card-product__badges absolute top-2 left-2 z-10 flex items-center gap-2">
+            </div>
+            <picture>
+             <source media="(max-width: 600px)" srcset="//product.hstatic.net/200000939217/product/upload_2d15a72bbf5e4afab3dfd35b2bea99f7_medium.jpg"/>
+             <img alt="Bỉm Merries nội địa quần XL38 (12-22kg) - Cộng miếng" class="card-product__image max-h-full w-auto object-contain scale-[var(--image-scale)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition duration-300 ease-out" decoding="async" height="480" loading="lazy" src="//product.hstatic.net/200000939217/product/upload_2d15a72bbf5e4afab3dfd35b2bea99f7_large.jpg" style="--image-scale:1" width="480"/>
+            </picture>
+           </a>
+           <div class="card-product__utilites absolute top-2 right-2 z-10 dnone lg:flex flex-col items-center gap-2 transition duration-300 ease-out">
+            <portal-opener>
+             <button aria-label="Xem nhanh" class="quick-view border bg-background rounded-full flex items-center justify-center relative active:scale-95 transition-transform" data-portal="#quick-view-product" data-product="/products/bim-bim-merries-noi-dia-quan-xl38-12-22kg-cong-mieng" type="button">
+              <i class="icon icon-eye">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               Xem nhanh
+              </span>
+             </button>
+            </portal-opener>
+            <compare-button>
+             <button aria-label="So sánh" class="add-compare border bg-background rounded-full flex items-center justify-center active:scale-95 transition-transform" data-portal="#quick-view-compare" data-product="1061887945" data-product-type="bim-bim-merries" type="button">
+              <i class="icon icon-arrow-swap">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               So sánh
+              </span>
+             </button>
+            </compare-button>
+           </div>
+          </div>
+          <a class="link" href="/products/bim-bim-merries-noi-dia-quan-xl38-12-22kg-cong-mieng" title="Bỉm Merries nội địa quần XL38 (12-22kg) - Cộng miếng">
+           <div class="card-product__body flex flex-col gap-2 px-2 pb-2 md:gap-1 md:px-4 md:pb-4">
+            <div class="card-product__title text-base line-clamp-2">
+             Bỉm Merries nội địa quần XL38 (12-22kg) - Cộng miếng
+            </div>
+            <div class="proloop--review">
+             <!--  check review -->
+             <div class="haravan-product-reviews-badge" data-id="1061887945">
+             </div>
+            </div>
+            <div class="flex justify-between items-center gap-1 flex-wrap">
+             <div class="price-box flex justify-between items-center">
+              <div class="flex flex-col gap-1">
+               <span class="price text-h6 font-semibold">
+                618,000₫
+               </span>
+              </div>
+             </div>
+             <div class="">
+              <input name="id" type="hidden" value="1140639448"/>
+              <div class="btn bg-relative addtocart-btn font-semibold add_to_cart flex justify-center items-center gap-3" data-action="addtocart" data-portal="#quick-view-product" data-product="/products/bim-bim-merries-noi-dia-quan-xl38-12-22kg-cong-mieng">
+               <span class="loading-icon gap-1 hidden items-center justify-center">
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+               </span>
+               <span class="flex items-center justify-center">
+                <i class="icon icon-cart text-[2rem]">
+                </i>
+               </span>
+              </div>
+             </div>
+            </div>
+           </div>
+          </a>
+         </form>
+        </div>
+       </card-product>
+       <card-product class="h-full card-product--vertical" data-prefetch="/products/bim-goldgi-eco-quan-l48-9-14kg">
+        <div class="item_product_main card-product relative transition-transform duration-200 ease-in-out h-full">
+         <form action="/cart/add" class="bg-background rounded relative z-10 m-0 h-full" data-id="product-actions-1061887944" enctype="multipart/form-data" method="post">
+          <div class="card-product__top relative overflow-hidden group/card p-2">
+           <a class="link aspect-square flex items-center justify-center w-full relative rounded overflow-hidden" href="/products/bim-goldgi-eco-quan-l48-9-14kg" title="Bỉm Goldgi ECO quần L48 (9-14kg)">
+            <div class="card-product__badges absolute top-2 left-2 z-10 flex items-center gap-2">
+            </div>
+            <picture>
+             <source media="(max-width: 600px)" srcset="//product.hstatic.net/200000939217/product/upload_87a30a57bdf84360a5e357d7c3a28bcd_medium.jpg"/>
+             <img alt="Bỉm Goldgi ECO quần L48 (9-14kg)" class="card-product__image max-h-full w-auto object-contain scale-[var(--image-scale)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition duration-300 ease-out" decoding="async" height="480" loading="lazy" src="//product.hstatic.net/200000939217/product/upload_87a30a57bdf84360a5e357d7c3a28bcd_large.jpg" style="--image-scale:1" width="480"/>
+            </picture>
+           </a>
+           <div class="card-product__utilites absolute top-2 right-2 z-10 dnone lg:flex flex-col items-center gap-2 transition duration-300 ease-out">
+            <portal-opener>
+             <button aria-label="Xem nhanh" class="quick-view border bg-background rounded-full flex items-center justify-center relative active:scale-95 transition-transform" data-portal="#quick-view-product" data-product="/products/bim-goldgi-eco-quan-l48-9-14kg" type="button">
+              <i class="icon icon-eye">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               Xem nhanh
+              </span>
+             </button>
+            </portal-opener>
+            <compare-button>
+             <button aria-label="So sánh" class="add-compare border bg-background rounded-full flex items-center justify-center active:scale-95 transition-transform" data-portal="#quick-view-compare" data-product="1061887944" data-product-type="bim-bim-goldgi" type="button">
+              <i class="icon icon-arrow-swap">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               So sánh
+              </span>
+             </button>
+            </compare-button>
+           </div>
+          </div>
+          <a class="link" href="/products/bim-goldgi-eco-quan-l48-9-14kg" title="Bỉm Goldgi ECO quần L48 (9-14kg)">
+           <div class="card-product__body flex flex-col gap-2 px-2 pb-2 md:gap-1 md:px-4 md:pb-4">
+            <div class="card-product__title text-base line-clamp-2">
+             Bỉm Goldgi ECO quần L48 (9-14kg)
+            </div>
+            <div class="proloop--review">
+             <!--  check review -->
+             <div class="haravan-product-reviews-badge" data-id="1061887944">
+             </div>
+            </div>
+            <div class="flex justify-between items-center gap-1 flex-wrap">
+             <div class="price-box flex justify-between items-center">
+              <div class="flex flex-col gap-1">
+               <span class="price text-h6 font-semibold">
+                440,000₫
+               </span>
+              </div>
+             </div>
+             <div class="">
+              <input name="id" type="hidden" value="1140639447"/>
+              <div class="btn bg-relative addtocart-btn font-semibold add_to_cart flex justify-center items-center gap-3" data-action="addtocart" data-portal="#quick-view-product" data-product="/products/bim-goldgi-eco-quan-l48-9-14kg">
+               <span class="loading-icon gap-1 hidden items-center justify-center">
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+               </span>
+               <span class="flex items-center justify-center">
+                <i class="icon icon-cart text-[2rem]">
+                </i>
+               </span>
+              </div>
+             </div>
+            </div>
+           </div>
+          </a>
+         </form>
+        </div>
+       </card-product>
+       <card-product class="h-full card-product--vertical" data-prefetch="/products/bim-moony-dan-m56-6-11kg">
+        <div class="item_product_main card-product relative transition-transform duration-200 ease-in-out h-full">
+         <form action="/cart/add" class="bg-background rounded relative z-10 m-0 h-full" data-id="product-actions-1061887943" enctype="multipart/form-data" method="post">
+          <div class="card-product__top relative overflow-hidden group/card p-2">
+           <a class="link aspect-square flex items-center justify-center w-full relative rounded overflow-hidden" href="/products/bim-moony-dan-m56-6-11kg" title="Bỉm Moony dán M56 (6-11kg)">
+            <div class="card-product__badges absolute top-2 left-2 z-10 flex items-center gap-2">
+            </div>
+            <picture>
+             <source media="(max-width: 600px)" srcset="//product.hstatic.net/200000939217/product/upload_7b9fe47c8def46b0831303fdb1b5f881_medium.jpg"/>
+             <img alt="Bỉm Moony dán M56 (6-11kg)" class="card-product__image max-h-full w-auto object-contain scale-[var(--image-scale)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition duration-300 ease-out" decoding="async" height="480" loading="lazy" src="//product.hstatic.net/200000939217/product/upload_7b9fe47c8def46b0831303fdb1b5f881_large.jpg" style="--image-scale:1" width="480"/>
+            </picture>
+           </a>
+           <div class="card-product__utilites absolute top-2 right-2 z-10 dnone lg:flex flex-col items-center gap-2 transition duration-300 ease-out">
+            <portal-opener>
+             <button aria-label="Xem nhanh" class="quick-view border bg-background rounded-full flex items-center justify-center relative active:scale-95 transition-transform" data-portal="#quick-view-product" data-product="/products/bim-moony-dan-m56-6-11kg" type="button">
+              <i class="icon icon-eye">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               Xem nhanh
+              </span>
+             </button>
+            </portal-opener>
+            <compare-button>
+             <button aria-label="So sánh" class="add-compare border bg-background rounded-full flex items-center justify-center active:scale-95 transition-transform" data-portal="#quick-view-compare" data-product="1061887943" data-product-type="bim-bim-moony-nk" type="button">
+              <i class="icon icon-arrow-swap">
+              </i>
+              <span class="absolute opacity-0 bg-black py-1 px-3 whitespace-nowrap transition ease-out duration-300">
+               So sánh
+              </span>
+             </button>
+            </compare-button>
+           </div>
+          </div>
+          <a class="link" href="/products/bim-moony-dan-m56-6-11kg" title="Bỉm Moony dán M56 (6-11kg)">
+           <div class="card-product__body flex flex-col gap-2 px-2 pb-2 md:gap-1 md:px-4 md:pb-4">
+            <div class="card-product__title text-base line-clamp-2">
+             Bỉm Moony dán M56 (6-11kg)
+            </div>
+            <div class="proloop--review">
+             <!--  check review -->
+             <div class="haravan-product-reviews-badge" data-id="1061887943">
+             </div>
+            </div>
+            <div class="flex justify-between items-center gap-1 flex-wrap">
+             <div class="price-box flex justify-between items-center">
+              <div class="flex flex-col gap-1">
+               <span class="price text-h6 font-semibold">
+                618,000₫
+               </span>
+              </div>
+             </div>
+             <div class="">
+              <input name="id" type="hidden" value="1140639446"/>
+              <div class="btn bg-relative addtocart-btn font-semibold add_to_cart flex justify-center items-center gap-3" data-action="addtocart" data-portal="#quick-view-product" data-product="/products/bim-moony-dan-m56-6-11kg">
+               <span class="loading-icon gap-1 hidden items-center justify-center">
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+                <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+                </span>
+               </span>
+               <span class="flex items-center justify-center">
+                <i class="icon icon-cart text-[2rem]">
+                </i>
+               </span>
+              </div>
+             </div>
+            </div>
+           </div>
+          </a>
+         </form>
+        </div>
+       </card-product>
+       <div class="mt-6 lg:pt-6" style="grid-column: 1 / -1">
+        <nav class="pages w-full lg:mt-6 lg:mb-6 text-center">
+         <ul class="pagination inline-flex mx-auto items-center gap-2 md:gap-4">
+          <li class="page-item dnone md:block disabled">
+           <a class="page-link w-[3.6rem] h-[3.6rem] border-transparent border flex items-center justify-center rounded bg-background hover:bg-neutral-50 active:scale-95 transition-transform" href="#">
+            <i class="icon icon-carret-left">
+            </i>
+           </a>
+          </li>
+          <li class="active page-item disabled">
+           <a class="page-link text-secondary border border-secondary w-[3.6rem] h-[3.6rem] flex items-center justify-center rounded bg-background hover:bg-neutral-50 active:scale-95 transition-transform" href="javascript:;">
+            1
+           </a>
+          </li>
+          <li class="page-item">
+           <a class="page-link w-[3.6rem] h-[3.6rem] border-transparent border flex items-center justify-center rounded bg-background hover:bg-neutral-50 active:scale-95 transition-transform" data-page="2" href="?page=2">
+            2
+           </a>
+          </li>
+          <li class="page-item">
+           <a class="page-link w-[3.6rem] h-[3.6rem] border-transparent border flex items-center justify-center rounded bg-background hover:bg-neutral-50 active:scale-95 transition-transform" data-page="3" href="?page=3">
+            3
+           </a>
+          </li>
+          <li class="page-item">
+           <a class="page-link w-[3.6rem] h-[3.6rem] border-transparent border flex items-center justify-center rounded bg-background hover:bg-neutral-50 active:scale-95 transition-transform" data-page="4" href="?page=4">
+            4
+           </a>
+          </li>
+          <li class="page-item dnone md:block">
+           <a class="page-link w-[3.6rem] h-[3.6rem] flex items-center justify-center rounded bg-background hover:bg-neutral-50 active:scale-95 transition-transform" data-page="2" href="?page=2">
+            <i aria-hidden="true" class="icon icon-carret-right">
+            </i>
+           </a>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </section>
+ <section class="section section-collection-list relative" style="--section-padding: 0;--section-margin: 24px 0 24px;--section-padding-mb: 0;--section-margin-mb: 24px 0 24px;     color: var(--color-foreground);	--color-collection-item: transparent;	--grid-col-desktop:repeat(auto-fit, minmax(calc(100% / 7 - 1px ), 1fr));	--grid-col-mobile:repeat(3,1fr); ">
+  <div class="container overflow-hidden md:px-container relative z-[1]">
+   <div class="section-card">
+    <div class="heading-bar">
+     <h2 class="heading w-auto font-semibold">
+      Chủ đề cho bạn
+     </h2>
+    </div>
+    <carousel-slider>
+     <div class="embla flex">
+      <div class="embla__viewport mx-auto">
+       <div class="collection-list embla__container -ml-2">
+        <div class="embla__slide w-[130px] md:w-1/5 lg:w-1/6 grow-0 shrink-0 pl-2">
+         <a class="collection-item text-center flex flex-col items-center gap-1 lg:gap-3 group hover:brightness-[0.98]" href="/collections/all" title="Mẹ mang thai">
+          <div class="collection-item-thumb flex items-center justify-center overflow-hidden">
+           <img alt="Mẹ mang thai" class="object-contain transition-transform relative z-10 duration-200" height="215" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/coll_1.png?v=23" width="180"/>
+          </div>
+         </a>
+        </div>
+        <div class="embla__slide w-[130px] md:w-1/5 lg:w-1/6 grow-0 shrink-0 pl-2">
+         <a class="collection-item text-center flex flex-col items-center gap-1 lg:gap-3 group hover:brightness-[0.98]" href="/collections/all" title="Chăm mẹ sau sinh">
+          <div class="collection-item-thumb flex items-center justify-center overflow-hidden">
+           <img alt="Chăm mẹ sau sinh" class="object-contain transition-transform relative z-10 duration-200" height="215" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/coll_2.png?v=23" width="180"/>
+          </div>
+         </a>
+        </div>
+        <div class="embla__slide w-[130px] md:w-1/5 lg:w-1/6 grow-0 shrink-0 pl-2">
+         <a class="collection-item text-center flex flex-col items-center gap-1 lg:gap-3 group hover:brightness-[0.98]" href="/collections/all" title="Con 0-12 tháng">
+          <div class="collection-item-thumb flex items-center justify-center overflow-hidden">
+           <img alt="Con 0-12 tháng" class="object-contain transition-transform relative z-10 duration-200" height="215" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/coll_3.png?v=23" width="180"/>
+          </div>
+         </a>
+        </div>
+        <div class="embla__slide w-[130px] md:w-1/5 lg:w-1/6 grow-0 shrink-0 pl-2">
+         <a class="collection-item text-center flex flex-col items-center gap-1 lg:gap-3 group hover:brightness-[0.98]" href="/collections/all" title="Con 1-2 tuổi">
+          <div class="collection-item-thumb flex items-center justify-center overflow-hidden">
+           <img alt="Con 1-2 tuổi" class="object-contain transition-transform relative z-10 duration-200" height="215" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/coll_4.png?v=23" width="180"/>
+          </div>
+         </a>
+        </div>
+        <div class="embla__slide w-[130px] md:w-1/5 lg:w-1/6 grow-0 shrink-0 pl-2">
+         <a class="collection-item text-center flex flex-col items-center gap-1 lg:gap-3 group hover:brightness-[0.98]" href="/collections/all" title="Con 2-5 tuổi">
+          <div class="collection-item-thumb flex items-center justify-center overflow-hidden">
+           <img alt="Con 2-5 tuổi" class="object-contain transition-transform relative z-10 duration-200" height="215" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/coll_5.png?v=23" width="180"/>
+          </div>
+         </a>
+        </div>
+        <div class="embla__slide w-[130px] md:w-1/5 lg:w-1/6 grow-0 shrink-0 pl-2">
+         <a class="collection-item text-center flex flex-col items-center gap-1 lg:gap-3 group hover:brightness-[0.98]" href="/collections/all" title="Khăn em bé">
+          <div class="collection-item-thumb flex items-center justify-center overflow-hidden">
+           <img alt="Khăn em bé" class="object-contain transition-transform relative z-10 duration-200" height="215" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/coll_6.png?v=23" width="180"/>
+          </div>
+         </a>
+        </div>
+        <div class="embla__slide w-[130px] md:w-1/5 lg:w-1/6 grow-0 shrink-0 pl-2">
+         <a class="collection-item text-center flex flex-col items-center gap-1 lg:gap-3 group hover:brightness-[0.98]" href="/collections/all" title="Bình sữa">
+          <div class="collection-item-thumb flex items-center justify-center overflow-hidden">
+           <img alt="Bình sữa" class="object-contain transition-transform relative z-10 duration-200" height="215" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/coll_7.png?v=23" width="180"/>
+          </div>
+         </a>
+        </div>
+        <div class="embla__slide w-[130px] md:w-1/5 lg:w-1/6 grow-0 shrink-0 pl-2">
+         <a class="collection-item text-center flex flex-col items-center gap-1 lg:gap-3 group hover:brightness-[0.98]" href="/collections/all" title="Baby Kit">
+          <div class="collection-item-thumb flex items-center justify-center overflow-hidden">
+           <img alt="Baby Kit" class="object-contain transition-transform relative z-10 duration-200" height="215" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/coll_8.png?v=23" width="180"/>
+          </div>
+         </a>
+        </div>
+        <div class="embla__slide w-[130px] md:w-1/5 lg:w-1/6 grow-0 shrink-0 pl-2">
+         <a class="collection-item text-center flex flex-col items-center gap-1 lg:gap-3 group hover:brightness-[0.98]" href="/collections/all" title="Bồn tắm trẻ em">
+          <div class="collection-item-thumb flex items-center justify-center overflow-hidden">
+           <img alt="Bồn tắm trẻ em" class="object-contain transition-transform relative z-10 duration-200" height="215" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/coll_9.png?v=23" width="180"/>
+          </div>
+         </a>
+        </div>
+        <div class="embla__slide w-[130px] md:w-1/5 lg:w-1/6 grow-0 shrink-0 pl-2">
+         <a class="collection-item text-center flex flex-col items-center gap-1 lg:gap-3 group hover:brightness-[0.98]" href="/collections/all" title="Đồ chơi trẻ em">
+          <div class="collection-item-thumb flex items-center justify-center overflow-hidden">
+           <img alt="Đồ chơi trẻ em" class="object-contain transition-transform relative z-10 duration-200" height="215" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/coll_10.png?v=23" width="180"/>
+          </div>
+         </a>
+        </div>
+       </div>
+      </div>
+      <div class="embla__buttons">
+       <button class="embla__button embla__button--prev md:block dnone" type="button">
+        <i class="icon icon-carret-left">
+        </i>
+       </button>
+       <button class="embla__button embla__button--next md:block dnone" type="button">
+        <i class="icon icon-carret-right">
+        </i>
+       </button>
+      </div>
+     </div>
+    </carousel-slider>
+   </div>
+  </div>
+ </section>
+</main>
+<menu-drawer class="portal portal--drawer" data-animation="slide-in-left" data-type="drawer" id="menu-drawer">
+ <dialog class="portal-dialog">
+  <div class="portal-overlay">
+  </div>
+  <div class="portal-inner animation bg-background h-full grid grid-rows-[auto_1fr_auto]">
+   <div class="navigation-header pt-4 flex justify-between items-center border-b pb-3 border-neutral-50 px-4">
+    <a class="header-icon-group flex gap-2 items-center account-group hover:bg-neutral-50 active:scale-95 transition-all duration-150 px-2 py-1 rounded-sm" href="/account/login" title="Đăng nhập">
+     <div class="header-icon w-[3.6rem] h-[3.6rem] p-2 rounded-sm flex items-center justify-center border border-neutral-50">
+      <i class="icon icon-user">
+      </i>
+     </div>
+     <div class="">
+      <span class="text-xs">
+       Tài khoản
+      </span>
+      <span class="font-semibold block">
+       Đăng nhập
+      </span>
+     </div>
+    </a>
+    <button class="w-[3.2rem] h-[3.2rem] rounded-full border border-neutral-50 text-neutral-200 flex items-center justify-center active:scale-95 transition-transform hover:bg-neutral-50" id="PortalClose-menu-crawer" type="button">
+     <i class="icon icon-cross">
+     </i>
+    </button>
+   </div>
+   <nav class="navigation-vertical overflow-y-auto no-scrollbar">
+    <ul class="">
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/collections/sua" href="/collections/sua" title="Sữa bột cao cấp">
+       <img alt="Sữa bột cao cấp" class="w-5" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_icon_1.png?v=23" width="20"/>
+       <span>
+        Sữa bột cao cấp
+       </span>
+       <span class="ml-auto text-neutral-200" data-toggle-submenu="">
+        <i class="icon icon-carret-right">
+        </i>
+       </span>
+      </a>
+      <div class="submenu absolute lg:group-hover:grid p-4 overflow-auto mega-menu bg-white mega-menu--banner">
+       <div class="relative toggle-submenu -mt-4 -mx-4 p-3 mb-4 bg-neutral-50 font-semibold flex justify-between lg:hidden" data-toggle-submenu="">
+        <span class="">
+         <i class="icon icon-carret-left mr-auto text-neutral-200">
+         </i>
+        </span>
+        <span class="mx-auto">
+         Sữa bột cao cấp
+        </span>
+       </div>
+       <div class="mega-menu__inner flex-wrap gap-3 flex items-start">
+        <ul class="submenu__list flex flex-col gap-3 w-full">
+         <li class="submenu__col">
+          <span class="submenu__item submenu__item--main mb-3 font-semibold">
+           <a class="link font-semibold" data-prefetch="/collections/sua" href="/collections/sua" title="Loại sữa">
+            Loại sữa
+           </a>
+          </span>
+          <ul class="list-disc pl-4 flex-col flex">
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="Sữa Mỹ">
+             Sữa Mỹ
+            </a>
+           </li>
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="Sữa Nhật">
+             Sữa Nhật
+            </a>
+           </li>
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="Sữa Úc">
+             Sữa Úc
+            </a>
+           </li>
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="Châu Âu">
+             Châu Âu
+            </a>
+           </li>
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="Sữa khác">
+             Sữa khác
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="submenu__col">
+          <span class="submenu__item submenu__item--main mb-3 font-semibold">
+           <a class="link font-semibold" data-prefetch="/collections/sua" href="/collections/sua" title="Theo độ tuổi">
+            Theo độ tuổi
+           </a>
+          </span>
+          <ul class="list-disc pl-4 flex-col flex">
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="0-1 tuổi">
+             0-1 tuổi
+            </a>
+           </li>
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="1-2 tuổi">
+             1-2 tuổi
+            </a>
+           </li>
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="&gt;2 tuổi">
+             &gt;2 tuổi
+            </a>
+           </li>
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="Sữa bầu">
+             Sữa bầu
+            </a>
+           </li>
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="Sữa người lớn">
+             Sữa người lớn
+            </a>
+           </li>
+          </ul>
+         </li>
+        </ul>
+        <div class="mmega-menu__banner w-full">
+         <div>
+          <a href="banner" title="">
+           <img alt="" height="200" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_1_banner_1.jpg?v=23" width="400"/>
+          </a>
+         </div>
+        </div>
+       </div>
+       <section-ajax data-section="section-brand" data-url="/?view=section">
+       </section-ajax>
+      </div>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/collections/sua" href="/collections/sua" title="Sữa tươi các loại">
+       <img alt="Sữa tươi các loại" class="w-5" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_icon_2.png?v=23" width="20"/>
+       <span>
+        Sữa tươi các loại
+       </span>
+       <span class="ml-auto text-neutral-200" data-toggle-submenu="">
+        <i class="icon icon-carret-right">
+        </i>
+       </span>
+      </a>
+      <div class="submenu absolute lg:group-hover:grid p-4 overflow-auto default">
+       <div class="relative toggle-submenu -mt-4 -mx-4 p-3 mb-4 bg-neutral-50 font-semibold flex justify-between lg:hidden" data-toggle-submenu="">
+        <span class="">
+         <i class="icon icon-carret-left mr-auto text-neutral-200">
+         </i>
+        </span>
+        <span class="mx-auto">
+         Sữa tươi các loại
+        </span>
+       </div>
+       <div class="mega-menu__inner flex-wrap gap-3 flex items-start">
+        <ul class="submenu__list flex flex-col gap-3 w-full">
+         <li class="submenu__item submenu__item--main font-semibold">
+          <a class="link" data-prefetch="/collections/sua" href="/collections/sua" title="Sữa bột pha săn">
+           Sữa bột pha săn
+          </a>
+         </li>
+         <li class="submenu__item submenu__item--main font-semibold">
+          <a class="link" data-prefetch="/collections/sua" href="/collections/sua" title="Sữa tươi, sữa chua">
+           Sữa tươi, sữa chua
+          </a>
+         </li>
+         <li class="submenu__item submenu__item--main font-semibold">
+          <a class="link" data-prefetch="/collections/sua" href="/collections/sua" title="Sữa hạt dinh dưỡng">
+           Sữa hạt dinh dưỡng
+          </a>
+         </li>
+         <li class="submenu__item submenu__item--main font-semibold">
+          <a class="link" data-prefetch="/collections/sua" href="/collections/sua" title="Thức uống dinh dưỡng">
+           Thức uống dinh dưỡng
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/collections/bim" href="/collections/bim" title="Bỉm tã khuyến mãi">
+       <img alt="Bỉm tã khuyến mãi" class="w-5" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_icon_3.png?v=23" width="20"/>
+       <span>
+        Bỉm tã khuyến mãi
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/collections/dinh-duong-cho-be" href="/collections/dinh-duong-cho-be" title="Ăn dặm, dinh dưỡng">
+       <img alt="Ăn dặm, dinh dưỡng" class="w-5" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_icon_4.png?v=23" width="20"/>
+       <span>
+        Ăn dặm, dinh dưỡng
+       </span>
+       <span class="ml-auto text-neutral-200" data-toggle-submenu="">
+        <i class="icon icon-carret-right">
+        </i>
+       </span>
+      </a>
+      <div class="submenu absolute lg:group-hover:grid p-4 overflow-auto mega-menu bg-white mega-menu--products">
+       <div class="relative toggle-submenu -mt-4 -mx-4 p-3 mb-4 bg-neutral-50 font-semibold flex justify-between lg:hidden" data-toggle-submenu="">
+        <span class="">
+         <i class="icon icon-carret-left mr-auto text-neutral-200">
+         </i>
+        </span>
+        <span class="mx-auto">
+         Ăn dặm, dinh dưỡng
+        </span>
+       </div>
+       <div class="mega-menu__inner flex-wrap gap-3 flex items-start">
+        <ul class="submenu__list flex flex-col gap-3 w-full">
+         <li class="submenu__item submenu__item--main font-semibold">
+          <a class="link" data-prefetch="/collections/dinh-duong-cho-be" href="/collections/dinh-duong-cho-be" title="Bột bánh ăn dặm">
+           Bột bánh ăn dặm
+          </a>
+         </li>
+        </ul>
+        <related-products class="releated-products w-full" data-empty-content="Sản phẩm đang được cập nhật" data-limit="4" data-product-type="row" data-query="((id:product=1061887940)||        (id:product=1061887960))">
+         <div class="heading-bar">
+          <h2 class="heading w-auto font-semibold">
+           Sản phẩm mới
+          </h2>
+         </div>
+         <carousel-slider>
+          <div class="embla">
+           <div class="embla__viewport">
+            <div class="embla__container product-list h-inherit -ml-2 [&amp;&gt;div]:pl-2 [&amp;&gt;div]:w-full [&amp;&gt;div]:flex_0 [&amp;&gt;div]:shrink-0">
+             <div class="skeleton__product-row__item bg-background border border-neutral-50 rounded-sm relative z-10 m-0 h-full grid grid-cols-[calc(2/4.72*100%)_1fr]">
+              <div class="skeleton__product-row__item__image aspect-square bg-neutral-50 animate-pulse">
+              </div>
+              <div class="skeleton__product-row__item__body p-2 md:p-4 space-y-2">
+               <div class="skeleton__product-row__item__title w-full h-4 bg-neutral-50 animate-pulse">
+               </div>
+               <div class="skeleton__product-row__item__price w-1/3 h-4 bg-neutral-50 animate-pulse">
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="embla__buttons md:block dnone">
+            <button class="embla__button embla__button--prev" onclick="event.stopPropagation()" type="button">
+             <i class="icon icon-carret-left">
+             </i>
+            </button>
+            <button class="embla__button embla__button--next" onclick="event.stopPropagation()" type="button">
+             <i class="icon icon-carret-right">
+             </i>
+            </button>
+           </div>
+           <div class="embla__dots mt-3 mx-auto">
+           </div>
+          </div>
+         </carousel-slider>
+        </related-products>
+       </div>
+       <section-ajax data-section="section-brand" data-url="/?view=section">
+       </section-ajax>
+      </div>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/collections/dinh-duong-cho-be" href="/collections/dinh-duong-cho-be" title="Sức khỏe &amp; Vitamin">
+       <img alt="Sức khỏe &amp; Vitamin" class="w-5" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_icon_5.png?v=23" width="20"/>
+       <span>
+        Sức khỏe &amp; Vitamin
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/collections/dinh-duong-cho-be" href="/collections/dinh-duong-cho-be" title="Đồ dùng mẹ &amp; bé">
+       <img alt="Đồ dùng mẹ &amp; bé" class="w-5" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_icon_6.png?v=23" width="20"/>
+       <span>
+        Đồ dùng mẹ &amp; bé
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/" href="/" title="Đồ chơi, học tập">
+       <img alt="Đồ chơi, học tập" class="w-5" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_icon_7.png?v=23" width="20"/>
+       <span>
+        Đồ chơi, học tập
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/" href="/" title="Chăm sóc gia đình">
+       <img alt="Chăm sóc gia đình" class="w-5" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_icon_8.png?v=23" width="20"/>
+       <span>
+        Chăm sóc gia đình
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/" href="/" title="Thời trang và phụ kiện">
+       <img alt="Thời trang và phụ kiện" class="w-5" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_icon_9.png?v=23" width="20"/>
+       <span>
+        Thời trang và phụ kiện
+       </span>
+      </a>
+     </li>
+    </ul>
+    <ul class="">
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/" title="TRANG CHỦ">
+       <span>
+        TRANG CHỦ
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/collections/all" title="TẤT CẢ SẢN PHẨM">
+       <span>
+        TẤT CẢ SẢN PHẨM
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/pages/flash-sale-1-khung-gio" title="CHƯƠNG TRÌNH KHUYẾN MÃI">
+       <span>
+        CHƯƠNG TRÌNH KHUYẾN MÃI
+       </span>
+       <i class="icon icon-carret-right ml-auto" data-toggle-submenu="">
+       </i>
+      </a>
+      <div class="submenu p-4 lg:group-hover:block overflow-auto default">
+       <div class="relative toggle-submenu -mt-4 -mx-4 mb-4 bg-neutral-50 p-3 font-semibold flex justify-between lg:hidden" data-toggle-submenu="">
+        <span class="mr-3">
+         <i class="icon icon-carret-left mr-auto text-neutral-200">
+         </i>
+        </span>
+        <span class="mx-auto">
+         CHƯƠNG TRÌNH KHUYẾN MÃI
+        </span>
+       </div>
+       <ul class="submenu__list flex flex-col gap-3">
+        <li class="submenu__item submenu__item--main font-semibold">
+         <a class="link font-semibold" data-prefetch="" href="/pages/flash-sale-1-khung-gio" title="Flash Sale 1 khung giờ">
+          Flash Sale 1 khung giờ
+         </a>
+        </li>
+        <li class="submenu__item submenu__item--main font-semibold">
+         <a class="link font-semibold" data-prefetch="" href="/pages/flash-sale-nhieu-khung-gio" title="Flash Sale nhiều khung giờ">
+          Flash Sale nhiều khung giờ
+         </a>
+        </li>
+       </ul>
+      </div>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/pages/about-us" title="GIỚI THIỆU">
+       <span>
+        GIỚI THIỆU
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/blogs/news" title="TIN TỨC">
+       <span>
+        TIN TỨC
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/pages/lien-he" title="LIÊN HỆ">
+       <span>
+        LIÊN HỆ
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="https://wiki.egany.com/s/ega-baby-mart-haravan" target="_blank" title="HƯỚNG DẪN THIẾT LẬP">
+       <span>
+        HƯỚNG DẪN THIẾT LẬP
+       </span>
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div class="navigation-footer 4 border-t border-neutral-50 flex">
+    <div class="w-1/2">
+     <a class="header-icon-group flex gap-2 items-center hover:bg-neutral-50 transition-all duration-150 px-2 py-4 store-group" href="/pages/he-thong-cua-hang" title="Hệ thống cửa hàng">
+      <div class="header-icon w-[3.6rem] h-[3.6rem] p-2 rounded-sm flex items-center justify-center border border-neutral-50">
+       <i class="icon icon-store">
+       </i>
+      </div>
+      <div>
+       <span class="text-xs">
+        Hệ thống cửa hàng
+       </span>
+      </div>
+     </a>
+    </div>
+    <div class="w-1/2">
+     <a class="header-icon-group flex gap-2 items-center hover:bg-neutral-50 transition-all duration-150 px-2 py-4 phone-group" href="tel:099999998" title="099999998">
+      <div class="header-icon w-[3.6rem] h-[3.6rem] p-2 rounded-sm flex items-center justify-center border border-neutral-50">
+       <i class="icon icon-calling-phone">
+       </i>
+      </div>
+      <div>
+       <span class="text-xs">
+        Hotline:
+        <b>
+         099999998
+        </b>
+       </span>
+      </div>
+     </a>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</menu-drawer>
+<link href="//theme.hstatic.net/200000939217/1001374153/14/sales-pop.css?v=23" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript>
+ <link href="//theme.hstatic.net/200000939217/1001374153/14/sales-pop.css?v=23" media="all" rel="stylesheet" type="text/css"/>
+</noscript>
+<div class="sales-pop hidden" id="ega-sale-pop" style="--sale-pop-color: #ee1926">
+ <div class="sale-pop-wrap">
+ </div>
+ <div class="sale-pop-close">
+  <i class="icon icon-cross">
+  </i>
+ </div>
+</div>
+<link href="//theme.hstatic.net/200000939217/1001374153/14/addthis-sharing.css?v=23" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript>
+ <link href="//theme.hstatic.net/200000939217/1001374153/14/addthis-sharing.css?v=23" media="all" rel="stylesheet" type="text/css"/>
+</noscript>
+<div class="addThis_listSharing hidden">
+ <div class="floating_banner relative">
+  <a class="block p-2 hover:scale-105 transition-all" href="/" title="sticky banner">
+   <img alt="sticky banner" height="100" src="//theme.hstatic.net/200000939217/1001374153/14/floating-banner.png?v=23" width="100"/>
+  </a>
+  <button class="btn p-0 absolute -top-3 right-1 link">
+   <i class="icon icon-cross">
+   </i>
+  </button>
+ </div>
+ <a class="backtop back-to-top flex items-center justify-center" href="#" id="back-to-top" title="Lên đầu trang">
+  <i class="icon icon-carret-up">
+  </i>
+ </a>
+ <div class="header-box-live mr-1 lg:mr-0 md:hidden block">
+  <button class="btn-live" data-mobile-link="https://fb.watch/t6bCpir7ve/" style="--header-live-color:#ff0000">
+   <span class="relative z-[1] font-semibold">
+    LIVE
+   </span>
+  </button>
+ </div>
+ <call-center-group class="addThis_group" style="--color-primary: #ff6d02">
+  <ul class="addThis_listing list-unstyled dnone">
+   <li class="addThis_item">
+    <a class="addThis_item--icon" href="tel:19006750" rel="nofollow">
+     <img alt="Gọi ngay cho chúng tôi" class="img-fluid" height="44" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/addthis-phone.svg?v=23" width="44"/>
+     <span class="tooltip-text">
+      Gọi ngay cho chúng tôi
+     </span>
+    </a>
+   </li>
+   <li class="addThis_item">
+    <a class="addThis_item--icon" href="https://zalo.me/834141234794359222" rel="nofollow" target="_blank">
+     <img alt="Chat với chúng tôi qua Zalo" class="img-fluid" height="44" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/addthis-zalo.svg?v=23" width="44"/>
+     <span class="tooltip-text">
+      Chat với chúng tôi qua Zalo
+     </span>
+    </a>
+   </li>
+   <li class="addThis_item">
+    <a class="addThis_item--icon" href="https://m.me/" rel="nofollow" target="_blank">
+     <img alt="Chat với chúng tôi qua Messenger" class="img-fluid" height="44" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/addthis-messenger.svg?v=23" width="44"/>
+     <span class="tooltip-text">
+      Chat với chúng tôi qua Messenger
+     </span>
+    </a>
+   </li>
+  </ul>
+  <div class="addThis_item relative z-[1]" data-toggle="">
+   <div class="addThis_item--icon addThis_item--toggle rounded-full">
+    <img alt="call-center" height="30" src="//theme.hstatic.net/200000939217/1001374153/14/call-center.png?v=23" width="30"/>
+    <i class="icon icon-cross">
+    </i>
+   </div>
+  </div>
+ </call-center-group>
+</div>
+<div class="cro-btns sticky md:hidden block z-10 min-h-[5.6rem] bottom-0 left-0 slide-in-bottom" data-template="collection">
+ <div class="bg-background rounded-t-sm w-full min-h-[5.6rem] px-2 justify-between items-center inline-flex slide-in-bottom" style="box-shadow:var(--shadow-l)">
+  <div class="cro-btns-container w-full h-full justify-center items-center gap-0.5 grid grid-cols-[repeat(auto-fit,minmax(0,1fr))]">
+   <a class="cro-btn-item cro-btn-item--1 w-auto flex-shrink-0 flex-grow-0 h-full py-0.5 px-0.5 text-foreground h-full flex flex-col justify-center items-center gap-0.5" href="/collections/all" style="order:3" title="Khuyến mãi">
+    <div class="w-4 h-4 relative">
+     <img alt="Khuyến mãi" class="w-full h-full object-contain" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/cro-btn-1-icon.png?v=23"/>
+    </div>
+    <div class="text-ellipsis overflow-hidden max-w-full text-xs text-center line-clamp-1">
+     Khuyến mãi
+    </div>
+   </a>
+   <a class="cro-btn-item cro-btn-item--2 w-auto flex-shrink-0 flex-grow-0 h-full py-0.5 px-0.5 text-foreground h-full flex flex-col justify-center items-center gap-0.5" href="/collections/all" style="order:4" title="Sản phẩm">
+    <div class="w-4 h-4 relative">
+     <img alt="Sản phẩm" class="w-full h-full object-contain" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/cro-btn-2-icon.png?v=23"/>
+    </div>
+    <div class="text-ellipsis overflow-hidden max-w-full text-xs text-center line-clamp-1">
+     Sản phẩm
+    </div>
+   </a>
+   <a class="cro-btn-item cro-btn-item--3 w-auto flex-shrink-0 flex-grow-0 h-full py-0.5 px-0.5 text-foreground h-full flex flex-col justify-center items-center gap-0.5" href="/pages/he-thong-cua-hang" style="order:3" title="Cửa hàng">
+    <div class="w-4 h-4 relative">
+     <img alt="Cửa hàng" class="w-full h-full object-contain" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/cro-btn-3-icon.png?v=23"/>
+    </div>
+    <div class="text-ellipsis overflow-hidden max-w-full text-xs text-center line-clamp-1">
+     Cửa hàng
+    </div>
+   </a>
+  </div>
+ </div>
+</div>
+<portal-component class="portal portal--drawer" data-animation="slide-in-right" data-type="drawer" id="search-drawer" style="--dialog-max-width:52rem">
+ <dialog class="portal-dialog">
+  <div class="w-full h-full flex">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner w-full ml-auto bg-background overflow-auto h-screen px-4 animation">
+    <div class="portal-header px-3 pb-3 pt-5">
+     <div class="font-semibold text-h6 md:text-h4 flex items-center gap-2">
+      <i class="icon icon-arrow-left text-h6 md:text-h4" id="PortalClose-search-drawer">
+      </i>
+      Tìm kiếm
+     </div>
+    </div>
+    <div class="search-bar relative">
+     <div class="search-bar relative">
+      <quick-search class="quick-search">
+       <form action="/search" class="m-0 flex bg-background pl-1 py-1 rounded items-center relative border border-neutral-50" method="get" role="search">
+        <select aria-label="Danh mục sản phẩm" class="form-select border-0 focus:ring-transparent collection-options">
+         <option value="">
+          Danh mục sản phẩm
+         </option>
+         <option value="1004289423">
+          Sữa bột cao cấp
+         </option>
+         <option value="1004289423">
+          Sữa tươi các loại
+         </option>
+         <option value="1004289429">
+          Bỉm tã khuyến mãi
+         </option>
+         <option value="1004289424">
+          Ăn dặm, dinh dưỡng
+         </option>
+         <option value="1004289424">
+          Sức khỏe &amp; Vitamin
+         </option>
+         <option value="1004289424">
+          Đồ dùng mẹ &amp; bé
+         </option>
+        </select>
+        <div class="search-input-group w-full relative flex items-center">
+         <input autocomplete="off" class="border-0 bg-transparent focus:ring-transparent p-0 w-full text-base text-foreground" data-placeholder="Tìm theo tên sản phẩm...; Tìm theo thương hiệu...;" name="q" placeholder="Tìm theo tên sản phẩm..." required="" type="text" value=""/>
+         <input name="type" type="hidden" value="product"/>
+         <button aria-label="search" class="search-button btn flex items-center justify-center text-foreground rounded bg-[var(--color-search)] text-white" type="submit">
+          <i class="icon icon-search">
+          </i>
+         </button>
+        </div>
+       </form>
+       <div class="search-dropdown absolute bottom-0 top-full mt-1 left-0 bg-background rounded-lg py-3 text-foreground w-full px-2">
+        <div class="search-loading absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full z-[1] bg-background flex items-center justify-center">
+         <span class="loading-icon gap-1 hidden items-center justify-center">
+          <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+          </span>
+          <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+          </span>
+          <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+          </span>
+         </span>
+        </div>
+        <div class="search-result space-y-3">
+        </div>
+        <div class="search-history-list border-neutral-50">
+        </div>
+        <div class="search-keywords space-y-2 pt-2 px-2">
+         <span class="text-primary font-semibold">
+          Từ khóa phổ biến
+         </span>
+         <div class="search-keyword-list flex gap-1 items-center flex-wrap">
+          <a class="search-keyword text-secondary px-3 py-1 bg-relative rounded-full inline-flex items-center justify-center hover:border-secondary border border-transparent" href="/search?q=Sữa bột&amp;type=product" title="">
+           Sữa bột
+          </a>
+          <a class="search-keyword text-secondary px-3 py-1 bg-relative rounded-full inline-flex items-center justify-center hover:border-secondary border border-transparent" href="/search?q= Bĩm tã&amp;type=product" title="">
+           Bĩm tã
+          </a>
+          <a class="search-keyword text-secondary px-3 py-1 bg-relative rounded-full inline-flex items-center justify-center hover:border-secondary border border-transparent" href="/search?q= Máy hút sữa&amp;type=product" title="">
+           Máy hút sữa
+          </a>
+         </div>
+        </div>
+       </div>
+      </quick-search>
+     </div>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</portal-component>
+<quick-view class="portal portal--modal" data-animation="scale-in-hor-left" data-type="modal" id="quick-view-product">
+ <dialog class="portal-dialog">
+  <div class="flex items-center justify-center w-full h-full">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner h-full">
+    <button class="portal-close-button animation rounded-full w-[3.2rem] h-[3.2rem] border border-white text-white flex items-center justify-center active:scale-95 transition-transform hover:animate-spin" data-animation="fade-in" id="PortalClose-quick-view-product" type="button">
+     <i class="icon icon-cross">
+     </i>
+    </button>
+    <div class="product-wrapper animation bg-background w-full h-full md:rounded-lg">
+    </div>
+    <span class="loading-icon gap-1 hidden items-center justify-center">
+     <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+     </span>
+     <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+     </span>
+     <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+     </span>
+    </span>
+   </div>
+  </div>
+ </dialog>
+</quick-view>
+<cart-drawer class="portal portal--drawer" data-animation="slide-in-right" data-type="drawer" id="cart-drawer" style="--dialog-max-width:52rem">
+ <dialog class="portal-dialog">
+  <div class="w-full h-full flex">
+   <div class="portal-overlay">
+   </div>
+   <div class="cart-drawer-related-products animation fade-in flex items-center justify-center" data-animation="fade-in" id="PortalClose-cart-related-drawer">
+    <related-products class="cart-releated-products w-full fade-in dnone lg:block hidden" data-limit="5">
+     <carousel-slider>
+      <div class="embla lg:pb-[var(--spacing-10)]">
+       <h2 class="text-h4 text-center mb-5 font-semibold text-white">
+        Sản phẩm gợi ý
+       </h2>
+       <div class="embla__viewport">
+        <div class="embla__container product-list h-inherit [&amp;&gt;div]:px-2 [&amp;&gt;div]:w-full md:[&amp;&gt;div]:w-[75%] xl:[&amp;&gt;div]:w-1/3 [&amp;&gt;div]:grow-0 [&amp;&gt;div]:shrink-0 [&amp;&gt;div:first-child]:ml-auto [&amp;&gt;div:last-child]:mr-auto">
+        </div>
+       </div>
+       <div class="embla__buttons dnone md:block">
+        <button class="embla__button embla__button--prev" onclick="event.stopPropagation()" type="button">
+         <i class="icon icon-carret-left">
+         </i>
+        </button>
+        <button class="embla__button embla__button--next" onclick="event.stopPropagation()" type="button">
+         <i class="icon icon-carret-right">
+         </i>
+        </button>
+       </div>
+      </div>
+     </carousel-slider>
+    </related-products>
+   </div>
+   <div class="portal-inner w-full bg-background animation h-full">
+    <cart-form class="h-full">
+     <form action="/cart" class="cart-form h-full" method="post">
+      <div class="cart grid grid-rows-[auto_1fr_auto]">
+       <div class="portal-header pt-4 px-4 flex justify-between items-center border-b pb-3 border-neutral-50 px-4">
+        <p class="text-h6 md:text-h4">
+         Giỏ hàng
+        </p>
+        <button class="w-[3.2rem] h-[3.2rem] rounded-full border border-neutral-50 text-neutral-200 flex items-center justify-center active:scale-95 transition-transform hover:bg-neutral-50" id="PortalClose-cart-crawer" type="button">
+         <i class="icon icon-cross">
+         </i>
+        </button>
+       </div>
+       <div class="cart-left p-4 overflow-y-auto flex flex-col">
+        <rewards-bar>
+        </rewards-bar>
+        <div class="cart-table">
+        </div>
+        <div class="lg:hidden w-full mt-auto">
+         <related-products class="cart-releated-products" data-product-type="row" data-query="(id:product=1061887940)||        (id:product=1061887960)">
+          <div class="mb-2">
+           <h2 class="text-base font-semibold">
+            Sản phẩm gợi ý
+           </h2>
+          </div>
+          <div class="overflow-hidden">
+           <div class="flex overflow-x-auto no-scrollbar product-list [&amp;&gt;div]:flex-grow-0 [&amp;&gt;div]:flex-shrink-0 [&amp;&gt;div]:w-[75%] gap-2">
+           </div>
+          </div>
+         </related-products>
+        </div>
+       </div>
+       <div class="cart-right p-4">
+        <div class="cart-summary">
+        </div>
+       </div>
+       <div class="cart-empty">
+       </div>
+      </div>
+     </form>
+    </cart-form>
+   </div>
+  </div>
+ </dialog>
+</cart-drawer>
+<portal-component class="portal portal--drawer" data-animation="slide-in-right" data-type="drawer" id="cart-note-drawer" style="--dialog-max-width:52rem">
+ <dialog class="portal-dialog">
+  <div class="w-full h-full flex">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner w-full ml-auto bg-background h-screen px-4 animation">
+    <div class="portal-header px-3 pb-3 pt-5">
+     <div class="font-semibold text-h4 flex items-center gap-2">
+      <i class="icon icon-arrow-left cursor-pointer text-h6 md:text-h4" id="PortalClose-cart-note-drawer">
+      </i>
+      Ghi
+            chú đơn hàng
+     </div>
+    </div>
+    <div class="r-bill px-3">
+     <cart-note>
+      <form>
+       <div class="form-group">
+        <label class="label block mb-2">
+         Ghi chú
+        </label>
+        <textarea class="form-textarea" name="note" rows="6"></textarea>
+       </div>
+       <button class="btn w-full mt-5 btn--large font-semibold bg-primary text-white inline-flex justify-center items-center gap-2" type="submit">
+        Lưu thông tin
+       </button>
+      </form>
+     </cart-note>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</portal-component>
+<cart-vat-drawer class="portal portal--drawer" data-animation="slide-in-right" data-type="drawer" id="cart-vat-drawer" style="--dialog-max-width:52rem">
+ <dialog class="portal-dialog">
+  <div class="w-full h-full flex">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner w-full ml-auto bg-background h-screen px-4 animation">
+    <div class="portal-header px-3 pb-3 pt-5">
+     <div class="font-semibold text-h6 md:text-h4 flex items-center gap-2">
+      <i class="icon icon-arrow-left text-h6 md:text-h4 cursor-pointer" id="PortalClose-cart-vat-drawer">
+      </i>
+      Xuất hóa đơn công ty
+     </div>
+    </div>
+    <div class="r-bill px-3">
+     <form>
+      <div class="bill-field space-y-3">
+       <div class="flex items-center">
+        <div class="flex items-center">
+         <input class="invoice" name="attributes[Xuất hóa đơn]" type="hidden" value="không"/>
+         <input class="invoice-checkbox form-checkbox" type="checkbox"/>
+        </div>
+        <div class="ml-2 text-sm">
+         <label>
+          Xuất hóa đơn
+         </label>
+        </div>
+       </div>
+       <div class="form-group">
+        <label class="label block mb-2">
+         Tên công ty
+        </label>
+        <input class="form-input" data-messages="{'required':'Trường này không được bỏ trống' }" data-rules="['required']" name="attributes[Tên công ty]" placeholder="Tên công ty" type="text" value=""/>
+        <span class="error text-error block mt-2">
+        </span>
+       </div>
+       <div class="form-group">
+        <label class="label block mb-2">
+         Mã số thuế
+        </label>
+        <input class="form-input" data-messages="{ 'minLength:10': 'Số kí tự tối thiểu [size]', 'require':'Trường này không được bỏ trống' }" data-rules="['minLength:10','required']" name="attributes[Mã số thuế]" placeholder="Mã số thuế" type="number" value=""/>
+        <span class="error text-error block mt-2">
+        </span>
+       </div>
+       <div class="form-group">
+        <label class="label block mb-2">
+         Địa chỉ công ty
+        </label>
+        <textarea class="form-textarea" data-messages="{'required':'Trường này không được bỏ trống' }" data-rules="['required']" name="attributes[Địa chỉ công ty]" placeholder="Địa chỉ công ty"></textarea>
+        <span class="error text-error block mt-2">
+        </span>
+       </div>
+       <div class="form-group">
+        <label class="label block mb-2">
+         Email nhận hóa đơn
+        </label>
+        <input class="form-input" data-messages="{'required':'Trường này không được bỏ trống', 'email': 'Email không đúng định dạng' }" data-rules="['required','email']" name="attributes[Email nhận hóa đơn]" placeholder="Email nhận hóa đơn" type="email" value=""/>
+        <span class="error text-error block mt-2">
+        </span>
+       </div>
+      </div>
+      <button class="btn w-full mt-5 btn--large font-semibold bg-primary text-white inline-flex justify-center items-center gap-2" type="submit">
+       Lưu thông tin
+      </button>
+     </form>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</cart-vat-drawer>
+<portal-component class="portal portal--drawer" data-animation="slide-in-right" data-type="drawer" id="cart-delivery-drawer" style="--dialog-max-width:52rem">
+ <dialog class="portal-dialog">
+  <div class="w-full h-full flex">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner w-full ml-auto bg-background h-screen px-4 animation">
+    <div class="portal-header px-3 pb-3 pt-5">
+     <div class="font-semibold text-h6 md:text-h4 flex items-center gap-2">
+      <i class="icon icon-arrow-left text-h4 cursor-pointer" id="PortalClose-cart-delivery-drawer">
+      </i>
+      Hẹn giờ nhận hàng
+     </div>
+    </div>
+    <div class="r-bill px-3">
+     <cart-delivery>
+      <form>
+       <div class="cart-delivery-time py-4">
+        <div class="grid gap-2">
+         <div class="flex items-center">
+          <div class="flex items-center">
+           <input id="use-delivery" name="attributes[Hẹn giờ nhận hàng]" type="hidden" value="cart.attributes[Hẹn giờ nhận hàng]"/>
+           <input class="form-checkbox" id="delivery-enabled" type="checkbox"/>
+          </div>
+          <div class="ml-2 text-sm">
+           <label class="" for="delivery-enabled">
+            Hẹn giờ nhận hàng
+           </label>
+          </div>
+         </div>
+         <div>
+          <label class="label block mb-1 text-base" for="delivery-date-input">
+           Ngày nhận hàng
+          </label>
+          <div class="relative">
+           <i class="icon icon-calendar text-neutral-200 top-1/2 left-2 -translate-y-1/2 absolute">
+           </i>
+           <datepicker-input class="datepicker-input">
+            <input class="form-input pl-2 pl-[var(--spacing-6-5)] py-2.5 min-h-[4rem]" id="delivery-date-input" name="attributes[Ngày nhận hàng]" type="text" value=""/>
+           </datepicker-input>
+          </div>
+         </div>
+         <div>
+          <label class="label block mb-1 text-base" for="delivery-time">
+           Thời gian nhận hàng
+          </label>
+          <select class="form-select min-h-[4rem] px-2 py-2.5 border-neutral-50" id="delivery-time" name="attributes[Thời gian nhận hàng]">
+           <option selected="" value="">
+            Chọn thời gian
+           </option>
+           <option value="08h00 - 12h00">
+            08h00 - 12h00
+           </option>
+           <option value="14h00 - 18h00">
+            14h00 - 18h00
+           </option>
+           <option value="19h00 - 21h00">
+            19h00 - 21h00
+           </option>
+          </select>
+         </div>
+        </div>
+       </div>
+       <button class="btn w-full mt-5 btn--large font-semibold bg-primary text-white inline-flex justify-center items-center gap-2" type="submit">
+        Lưu thông tin
+       </button>
+      </form>
+     </cart-delivery>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</portal-component>
+<coupon-drawer data-animation="slide-in-right" data-type="drawer" id="coupon-drawer" lass="portal portal--drawer" style="--dialog-max-width:52rem">
+ <dialog class="portal-dialog">
+  <div class="w-full h-full flex">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner grid grid-rows-[auto_1fr_auto] w-full ml-auto bg-background h-screen px-4 pb-4 animation">
+    <div class="portal-header px-3 pb-3 pt-5">
+     <div class="font-semibold text-h6 md:text-h4 flex items-center gap-2">
+      <i class="icon icon-arrow-left text-h6 md:text-h4 cursor-pointer" id="PortalClose-coupon-drawer">
+      </i>
+      Chọn mã giảm giá
+     </div>
+    </div>
+    <div class="coupon-list py-4">
+    </div>
+    <div>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</coupon-drawer>
+<coupon-modal class="portal portal--modal portal--modal-sm" data-animation="fade-in" data-type="modal" id="coupon-modal">
+ <dialog class="portal-dialog">
+  <div class="flex items-center justify-center w-full h-full p-3">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner animation">
+    <button class="portal-close-button w-[3.2rem] h-[3.2rem] rounded-full border border-white text-white flex items-center justify-center active:scale-95 transition-transform hover:animate-spin" id="PortalClose-coupon-modal" type="button">
+     <i class="icon icon-cross">
+     </i>
+    </button>
+    <div class="p-3 md:p-5 rounded-lg bg-background h-full grid grid grid-rows-[auto_1fr_auto]">
+     <div class="coupon-header border-b pb-2.5 border-dashed border-neutral-50">
+     </div>
+     <div class="coupon-desc">
+     </div>
+     <div class="coupon-act grid grid-cols-2 gap-3 border-t pt-2.5 border-dashed border-neutral-50">
+      <button class="btn border border-neutral-50 hover:bg-neutral-100 py-1.5" id="PortalClose-coupon-item-modal">
+       Đóng
+      </button>
+      <copy-button data-copied-text="Đã sao chép">
+       <input type="hidden" value=""/>
+       <button class="btn copy-button w-full font-semibold text-primary border border-primary bg-primary text-white py-1.5" type="button">
+        Sao chép
+       </button>
+      </copy-button>
+     </div>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</coupon-modal>
+<compare-qv class="portal portal--modal" data-animation="slide-in-bottom" data-type="modal" id="quick-view-compare">
+ <dialog class="portal-dialog">
+  <div class="flex items-center justify-center w-full">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner bg-background rounded-sm animation">
+    <button class="absolute active:scale-95 transition-transform right-0 p-3 bg-background rounded-sm flex items-center justify-center gap-2 link" id="PortalClose-quick-view" type="button">
+     Thu gọn
+     <i class="icon icon-carret-down">
+     </i>
+    </button>
+    <div class="compare-product-list">
+    </div>
+   </div>
+  </div>
+ </dialog>
+</compare-qv>
+<portal-opener class="compare-opener hidden">
+ <div class="cursor-pointer font-semibold btn rounded-full bg-background border border-primary text-primary" data-portal="#quick-view-compare">
+  <p class="flex items-center gap-1">
+   <span class="line-clamp-1">
+    So sánh
+   </span>
+   <span class="compare-count">
+   </span>
+   <i class="ico icon-arrow-swap">
+   </i>
+  </p>
+ </div>
+</portal-opener>
+<promo-popup class="portal portal--modal" data-animation="fade-in" data-type="modal" id="promo-popup">
+ <dialog class="portal-dialog">
+  <div class="flex items-center justify-center w-full h-full">
+   <div class="portal-overlay">
+   </div>
+   <div class="relative z-10 animation p-6 md:p-4">
+    <button class="portal-close-button w-[3.2rem] h-[3.2rem] rounded-full border border-white text-white flex items-center justify-center active:scale-95 transition-transform hover:animate-spin" id="PortalClose-promo-popup" type="button">
+     <i class="icon icon-cross">
+     </i>
+    </button>
+    <a href="/collections/all" title="Click ngay để nhận ưu đãi hot!!">
+     <img alt="Click ngay để nhận ưu đãi hot!!" class="object-contain" height="540" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/banner-popup-img.png?v=23" width="540"/>
+    </a>
+   </div>
+  </div>
+ </dialog>
+</promo-popup>
+<error-popup class="portal portal--modal portal--modal-sm" data-animation="fade-in" data-type="modal" id="error-modal">
+ <dialog class="portal-dialog">
+  <div class="flex items-start justify-end p-3 w-full h-full">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner animation">
+    <div class="error-list flex gap-4 flex-col items-end">
+    </div>
+   </div>
+  </div>
+ </dialog>
+</error-popup>
+<div class="modal-live">
+ <div class="modal-live--inner">
+  <template id="live-template">
+   <iframe allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen="true" height="476" src="https://www.facebook.com/plugins/video.php?height=314&amp;href=https%3A%2F%2Fwww.facebook.com%2Ffacebook%2Fvideos%2F644342003942740%2F&amp;show_text=false&amp;width=560&amp;t=0" style="border:none;overflow:hidden" width="560">
+   </iframe>
+  </template>
+  <div class="modal-live-iframe">
+  </div>
+  <div class="btn-close--live">
+   <svg fill="none" height="22" viewbox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
+    <path d="M11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0Z" fill="#373535" opacity="0.9">
+    </path>
+    <path clip-rule="evenodd" d="M10.066 11.0007L6.79418 7.72894C6.53605 7.47081 6.53605 7.05231 6.79418 6.79418C7.05231 6.53605 7.47081 6.53605 7.72893 6.79418L11.0007 10.066L14.2713 6.79543C14.5294 6.53731 14.9479 6.53731 15.206 6.79543C15.4641 7.05356 15.4641 7.47206 15.206 7.73019L11.9355 11.0007L15.207 14.2722C15.4651 14.5304 15.4651 14.9489 15.207 15.207C14.9489 15.4651 14.5304 15.4651 14.2722 15.207L11.0007 11.9355L7.72796 15.2082C7.46983 15.4664 7.05133 15.4664 6.7932 15.2082C6.53508 14.9501 6.53508 14.5316 6.7932 14.2735L10.066 11.0007Z" fill="white" fill-rule="evenodd">
+    </path>
+   </svg>
+  </div>
+ </div>
+</div>
+
+{%endblock %}
