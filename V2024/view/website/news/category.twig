@@ -1,0 +1,1436 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(newsCategory.name).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ newsCategory.metaKeywords?:newsCategory.name }}">
+<meta name="description" content="{{ newsCategory.metaDescription?:newsCategory.name }}">
+<meta property="og:title" content="{{ newsCategory.metaTitle?:newsCategory.name }}">
+<meta property="og:url" content="{{ newsCategory.canonicalLink }}">
+<meta property="og:image" content="{{ newsCategory.imgUri }}">
+<link rel="canonical" href="{{ newsCategory.canonicalLink }}">
+{%endblock %}
+
+{%block body %}
+
+<div class="top-banner position-relative" style="background: #ff9838">
+ <div class="text-center px-0 container">
+  <a class="position-relative block md:hidden" href="/collections/all" title="top banner">
+   <img alt="top banner" class="w-full position-absolute mx-auto" height="45" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/top_banner_mb.jpg?v=23" style="left:0" width="480"/>
+  </a>
+  <a class="position-relative dnone md:block" href="/collections/all" title="top banner">
+   <picture>
+    <source media="(max-width: 480px)" srcset="//theme.hstatic.net/200000939217/1001374153/14/top_banner.jpg?v=23"/>
+    <img alt="top banner" class="w-full position-absolute mx-auto" height="50" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/top_banner.jpg?v=23" style="left:0" width="1296"/>
+   </picture>
+  </a>
+ </div>
+</div>
+<div class="navigation-wrapper dnone xl:flex items-center sub-header">
+ <div class="container relative">
+  <div class="">
+   <div class="flex justify-between items-center">
+    <div class="navigation--horizontal dnone lg:flex items-center">
+     <div class="navigation-horizontal-wrapper overflow-hidden">
+      <nav>
+       <ul class="navigation-horizontal">
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/" href="/" title="TRANG CHỦ">
+          <span>
+           TRANG CHỦ
+          </span>
+         </a>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/collections/all" href="/collections/all" title="TẤT CẢ SẢN PHẨM">
+          <span>
+           TẤT CẢ SẢN PHẨM
+          </span>
+         </a>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/pages/flash-sale-1-khung-gio" href="/pages/flash-sale-1-khung-gio" title="CHƯƠNG TRÌNH KHUYẾN MÃI">
+          <span>
+           CHƯƠNG TRÌNH KHUYẾN MÃI
+          </span>
+          <i class="icon icon-carret-down" data-toggle-submenu="">
+          </i>
+         </a>
+         <div class="submenu default">
+          <ul class="submenu__list">
+           <li class="submenu__item submenu__item--main">
+            <a class="link font-semibold" data-prefetch="/pages/flash-sale-1-khung-gio" href="/pages/flash-sale-1-khung-gio" title="Flash Sale 1 khung giờ">
+             Flash Sale 1 khung giờ
+            </a>
+           </li>
+           <li class="submenu__item submenu__item--main">
+            <a class="link font-semibold" data-prefetch="/pages/flash-sale-nhieu-khung-gio" href="/pages/flash-sale-nhieu-khung-gio" title="Flash Sale nhiều khung giờ">
+             Flash Sale nhiều khung giờ
+            </a>
+           </li>
+          </ul>
+         </div>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/pages/about-us" href="/pages/about-us" title="GIỚI THIỆU">
+          <span>
+           GIỚI THIỆU
+          </span>
+         </a>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/blogs/news" href="/blogs/news" title="TIN TỨC">
+          <span>
+           TIN TỨC
+          </span>
+         </a>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/pages/lien-he" href="/pages/lien-he" title="LIÊN HỆ">
+          <span>
+           LIÊN HỆ
+          </span>
+         </a>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="https://wiki.egany.com/s/ega-baby-mart-haravan" href="https://wiki.egany.com/s/ega-baby-mart-haravan" target="_blank" title="HƯỚNG DẪN THIẾT LẬP">
+          <span>
+           HƯỚNG DẪN THIẾT LẬP
+          </span>
+         </a>
+        </li>
+       </ul>
+      </nav>
+     </div>
+     <div class="navigation-arrows">
+      <button class="btn prev px-1">
+       <i class="disabled icon icon-carret-left link">
+       </i>
+      </button>
+      <button class="btn next px-1">
+       <i class="icon icon-carret-right link">
+       </i>
+      </button>
+     </div>
+    </div>
+    <div class="flex gap-[var(--spacing-8)] whitespace-nowrap">
+     <a class="inline-flex gap-1 items-center store-group hover:text-[var(--color-sub-header-link)]" href="/pages/he-thong-cua-hang" title="Hệ thống cửa hàng">
+      <div class="rounded-sm flex items-center justify-center">
+       <i class="icon icon-store">
+       </i>
+      </div>
+      <div>
+       <span class="font-semibold">
+        Hệ thống cửa hàng
+       </span>
+      </div>
+     </a>
+     <a class="inline-flex gap-1 items-center phone-group hover:text-[var(--color-sub-header-link)]" href="tel:099999998" title="099999998">
+      <div class="rounded-sm flex items-center justify-center">
+       <i class="icon icon-calling-phone">
+       </i>
+      </div>
+      <div>
+       <span>
+        Hotline:
+        <b>
+         099999998
+        </b>
+       </span>
+      </div>
+     </a>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<main>
+ <div class="breadcrumbs">
+  <div class="container">
+   <div class="breadcrumb-list">
+    <ol class="breadcrumb py-3 flex flex-wrap items-center text-xs md:text-sm" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+     <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+      <a class="link" href="/" itemprop="item" target="_self">
+       <span itemprop="name">
+        Trang chủ
+       </span>
+      </a>
+      <meta content="1" itemprop="position"/>
+      <span class="mx-1 md:mx-2 inline-block">
+       /
+      </span>
+     </li>
+     <li class="active" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+      <span class="text-neutral-100" content="https://ega-babymart.myharavan.com/blogs/news" itemprop="item">
+       <strong class="font-normal" itemprop="name">
+        Tin tức
+       </strong>
+      </span>
+      <meta content="2" itemprop="position"/>
+     </li>
+    </ol>
+   </div>
+  </div>
+ </div>
+ <section class="section section-main-blog" style="--section-margin: 0px 0px 40px; --section-margin-mb: 0px 0px 20px">
+  <div class="container">
+   <div class="grid grid-cols-1 lg:grid-cols-[calc(100%_-_32.8rem)_32rem] gap-5">
+    <div>
+     <div class="text-center md:text-left">
+      <h1 class="heading font-semibold text-secondary">
+       Tin tức
+      </h1>
+     </div>
+     <div class="article-list">
+      <div class="grid grid-cols-2 xl:grid-cols-3 lg:grid-cols-2 gap-2 mt-2">
+       <div class="card-article grid grid-rows-[auto_1fr] bg-background rounded-sm overflow-hidden group" style="--aspect-ratio: 480/320">
+        <div class="card-article__image aspect-custom flex items-center justify-center overflow-hidden">
+         <a data-prefetch="/blogs/news/may-ham-sua-tro-thu-dac-luc-cua-me" href="/blogs/news/may-ham-sua-tro-thu-dac-luc-cua-me" title="Máy hâm sữa – Trợ thủ đắc lực của mẹ">
+          <img alt="Máy hâm sữa – Trợ thủ đắc lực của mẹ" class="object-contain group-hover:scale-105 transition-transform duration-300" height="320" loading="lazy" src="https://file.hstatic.net/200000939217/article/2024-11-05-10-12-29_f1d4134f3ad943ac9a800e6e2784b06f.webp" width="480"/>
+         </a>
+        </div>
+        <div class="card-article__body h-full p-3 lg:p-4 flex flex-col gap-2-5 md:gap-4">
+         <div>
+          <p class="card-article__category font-semibold text-xs text-secondary mb-1">
+          </p>
+          <p class="card-article__title font-semibold">
+           <a class="link line-clamp-2 break-word" href="/blogs/news/may-ham-sua-tro-thu-dac-luc-cua-me" title="Máy hâm sữa – Trợ thủ đắc lực của mẹ">
+            Máy hâm sữa – Trợ thủ đắc lực của mẹ
+           </a>
+          </p>
+         </div>
+         <div class="card-article__desc break-word hidden md:line-clamp-3 text-neutral-200">
+          Sữa là nguồn dinh dưỡng thiết yếu, đặc biệt quan trọng cho sự phát triển của trẻ sơ sinh và trẻ nhỏ. Với những mẹ...
+         </div>
+         <div class="flex gap-2 justify-between items-center pt-2 mt-auto md:pt-3 border-t border-neutral-50 flex-wrap">
+          <div class="cart-article__date text-xs md:text-sm text-neutral-200 flex gap-1 items-center whitespace-nowrap">
+           <i class="icon icon-calendar">
+           </i>
+           26/11/2024
+          </div>
+          <a class="btn font-semibold text-secondary border border-secondary hover:bg-secondary hover:text-background whitespace-nowrap md:w-auto w-full p-2 md:p-3 md:px-6 text-xs md:text-sm" href="/blogs/news/may-ham-sua-tro-thu-dac-luc-cua-me" title="Xem chi tiết">
+           Xem chi tiết
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="card-article grid grid-rows-[auto_1fr] bg-background rounded-sm overflow-hidden group" style="--aspect-ratio: 480/320">
+        <div class="card-article__image aspect-custom flex items-center justify-center overflow-hidden">
+         <a data-prefetch="/blogs/news/cho-be-uong-vitamin-tong-hop-khi-nao-la-tot-nhat" href="/blogs/news/cho-be-uong-vitamin-tong-hop-khi-nao-la-tot-nhat" title="Cho bé uống vitamin tổng hợp khi nào là tốt nhất?">
+          <img alt="Cho bé uống vitamin tổng hợp khi nào là tốt nhất?" class="object-contain group-hover:scale-105 transition-transform duration-300" height="320" loading="lazy" src="https://file.hstatic.net/200000939217/article/frame-4551_819a0e7557544a1fbe3a416c67c5079c.webp" width="480"/>
+         </a>
+        </div>
+        <div class="card-article__body h-full p-3 lg:p-4 flex flex-col gap-2-5 md:gap-4">
+         <div>
+          <p class="card-article__category font-semibold text-xs text-secondary mb-1">
+          </p>
+          <p class="card-article__title font-semibold">
+           <a class="link line-clamp-2 break-word" href="/blogs/news/cho-be-uong-vitamin-tong-hop-khi-nao-la-tot-nhat" title="Cho bé uống vitamin tổng hợp khi nào là tốt nhất?">
+            Cho bé uống vitamin tổng hợp khi nào là tốt nhất?
+           </a>
+          </p>
+         </div>
+         <div class="card-article__desc break-word hidden md:line-clamp-3 text-neutral-200">
+          1. Vitamin tổng hợp cho bé là gì?Vitamin tổng hợp cho bé (Multivitamin) là sản phẩm có chứa ít nhất 3 loại vitamin và khoáng...
+         </div>
+         <div class="flex gap-2 justify-between items-center pt-2 mt-auto md:pt-3 border-t border-neutral-50 flex-wrap">
+          <div class="cart-article__date text-xs md:text-sm text-neutral-200 flex gap-1 items-center whitespace-nowrap">
+           <i class="icon icon-calendar">
+           </i>
+           26/11/2024
+          </div>
+          <a class="btn font-semibold text-secondary border border-secondary hover:bg-secondary hover:text-background whitespace-nowrap md:w-auto w-full p-2 md:p-3 md:px-6 text-xs md:text-sm" href="/blogs/news/cho-be-uong-vitamin-tong-hop-khi-nao-la-tot-nhat" title="Xem chi tiết">
+           Xem chi tiết
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="card-article grid grid-rows-[auto_1fr] bg-background rounded-sm overflow-hidden group" style="--aspect-ratio: 480/320">
+        <div class="card-article__image aspect-custom flex items-center justify-center overflow-hidden">
+         <a data-prefetch="/blogs/news/phan-biet-dau-hieu-ham-ta-va-di-ung-bim-o-tre" href="/blogs/news/phan-biet-dau-hieu-ham-ta-va-di-ung-bim-o-tre" title="Phân biệt dấu hiệu hăm tã và dị ứng bỉm ở trẻ">
+          <img alt="Phân biệt dấu hiệu hăm tã và dị ứng bỉm ở trẻ" class="object-contain group-hover:scale-105 transition-transform duration-300" height="320" loading="lazy" src="https://file.hstatic.net/200000939217/article/frame-4552_0a3c028c77b14d81b2e1d3bf1a252d24.webp" width="480"/>
+         </a>
+        </div>
+        <div class="card-article__body h-full p-3 lg:p-4 flex flex-col gap-2-5 md:gap-4">
+         <div>
+          <p class="card-article__category font-semibold text-xs text-secondary mb-1">
+          </p>
+          <p class="card-article__title font-semibold">
+           <a class="link line-clamp-2 break-word" href="/blogs/news/phan-biet-dau-hieu-ham-ta-va-di-ung-bim-o-tre" title="Phân biệt dấu hiệu hăm tã và dị ứng bỉm ở trẻ">
+            Phân biệt dấu hiệu hăm tã và dị ứng bỉm ở trẻ
+           </a>
+          </p>
+         </div>
+         <div class="card-article__desc break-word hidden md:line-clamp-3 text-neutral-200">
+          Tìm hiểu về dấu hiệu dị ứng tãDấu hiệu dị ứng tã cũng giống như những dị ứng thông thường do những tác nhân dị...
+         </div>
+         <div class="flex gap-2 justify-between items-center pt-2 mt-auto md:pt-3 border-t border-neutral-50 flex-wrap">
+          <div class="cart-article__date text-xs md:text-sm text-neutral-200 flex gap-1 items-center whitespace-nowrap">
+           <i class="icon icon-calendar">
+           </i>
+           26/11/2024
+          </div>
+          <a class="btn font-semibold text-secondary border border-secondary hover:bg-secondary hover:text-background whitespace-nowrap md:w-auto w-full p-2 md:p-3 md:px-6 text-xs md:text-sm" href="/blogs/news/phan-biet-dau-hieu-ham-ta-va-di-ung-bim-o-tre" title="Xem chi tiết">
+           Xem chi tiết
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="card-article grid grid-rows-[auto_1fr] bg-background rounded-sm overflow-hidden group" style="--aspect-ratio: 480/320">
+        <div class="card-article__image aspect-custom flex items-center justify-center overflow-hidden">
+         <a data-prefetch="/blogs/news/me-nen-chon-nuoc-giat-cho-tre-so-sinh-bi-kho-da-loai-nao" href="/blogs/news/me-nen-chon-nuoc-giat-cho-tre-so-sinh-bi-kho-da-loai-nao" title="Mẹ nên chọn nước giặt cho trẻ sơ sinh bị khô da loại nào?">
+          <img alt="Mẹ nên chọn nước giặt cho trẻ sơ sinh bị khô da loại nào?" class="object-contain group-hover:scale-105 transition-transform duration-300" height="320" loading="lazy" src="https://file.hstatic.net/200000939217/article/frame-4553_3aec54372f014382831392c2b824463b.webp" width="480"/>
+         </a>
+        </div>
+        <div class="card-article__body h-full p-3 lg:p-4 flex flex-col gap-2-5 md:gap-4">
+         <div>
+          <p class="card-article__category font-semibold text-xs text-secondary mb-1">
+          </p>
+          <p class="card-article__title font-semibold">
+           <a class="link line-clamp-2 break-word" href="/blogs/news/me-nen-chon-nuoc-giat-cho-tre-so-sinh-bi-kho-da-loai-nao" title="Mẹ nên chọn nước giặt cho trẻ sơ sinh bị khô da loại nào?">
+            Mẹ nên chọn nước giặt cho trẻ sơ sinh bị khô da loại nào?
+           </a>
+          </p>
+         </div>
+         <div class="card-article__desc break-word hidden md:line-clamp-3 text-neutral-200">
+          Khi trẻ bị khô da, ba mẹ cần sử dụng loại nước giặt cho trẻ sơ sinh phù hợp để tránh gây kích ứng và...
+         </div>
+         <div class="flex gap-2 justify-between items-center pt-2 mt-auto md:pt-3 border-t border-neutral-50 flex-wrap">
+          <div class="cart-article__date text-xs md:text-sm text-neutral-200 flex gap-1 items-center whitespace-nowrap">
+           <i class="icon icon-calendar">
+           </i>
+           26/11/2024
+          </div>
+          <a class="btn font-semibold text-secondary border border-secondary hover:bg-secondary hover:text-background whitespace-nowrap md:w-auto w-full p-2 md:p-3 md:px-6 text-xs md:text-sm" href="/blogs/news/me-nen-chon-nuoc-giat-cho-tre-so-sinh-bi-kho-da-loai-nao" title="Xem chi tiết">
+           Xem chi tiết
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="card-article grid grid-rows-[auto_1fr] bg-background rounded-sm overflow-hidden group" style="--aspect-ratio: 480/320">
+        <div class="card-article__image aspect-custom flex items-center justify-center overflow-hidden">
+         <a data-prefetch="/blogs/news/luong-sua-phu-hop-voi-moi-giai-doan-phat-trien-cua-tre" href="/blogs/news/luong-sua-phu-hop-voi-moi-giai-doan-phat-trien-cua-tre" title="Lượng sữa phù hợp với mỗi giai đoạn phát triển của trẻ - Bài viết có chèn sản phẩm">
+          <img alt="Lượng sữa phù hợp với mỗi giai đoạn phát triển của trẻ - Bài viết có chèn sản phẩm" class="object-contain group-hover:scale-105 transition-transform duration-300" height="320" loading="lazy" src="https://file.hstatic.net/200000939217/article/2024-11-05-10-07-46_47be230cacab42afad76e17b5527b890.webp" width="480"/>
+         </a>
+        </div>
+        <div class="card-article__body h-full p-3 lg:p-4 flex flex-col gap-2-5 md:gap-4">
+         <div>
+          <p class="card-article__category font-semibold text-xs text-secondary mb-1">
+          </p>
+          <p class="card-article__title font-semibold">
+           <a class="link line-clamp-2 break-word" href="/blogs/news/luong-sua-phu-hop-voi-moi-giai-doan-phat-trien-cua-tre" title="Lượng sữa phù hợp với mỗi giai đoạn phát triển của trẻ - Bài viết có chèn sản phẩm">
+            Lượng sữa phù hợp với mỗi giai đoạn phát triển của trẻ - Bài viết có chèn sản phẩm
+           </a>
+          </p>
+         </div>
+         <div class="card-article__desc break-word hidden md:line-clamp-3 text-neutral-200">
+          Sữa là nguồn dinh dưỡng không thể thiếu trong suốt giai đoạn phát triển đầu đời của trẻ. Bên cạnh việc lựa chọn loại sữa...
+         </div>
+         <div class="flex gap-2 justify-between items-center pt-2 mt-auto md:pt-3 border-t border-neutral-50 flex-wrap">
+          <div class="cart-article__date text-xs md:text-sm text-neutral-200 flex gap-1 items-center whitespace-nowrap">
+           <i class="icon icon-calendar">
+           </i>
+           26/11/2024
+          </div>
+          <a class="btn font-semibold text-secondary border border-secondary hover:bg-secondary hover:text-background whitespace-nowrap md:w-auto w-full p-2 md:p-3 md:px-6 text-xs md:text-sm" href="/blogs/news/luong-sua-phu-hop-voi-moi-giai-doan-phat-trien-cua-tre" title="Xem chi tiết">
+           Xem chi tiết
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="mt-6 pt-6" style="grid-column: 1 / -1">
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="blog-sidebar w-full ml-auto xl:max-w-[32rem]">
+     <div class="bg-background mb-5 h-auto px-5 z-10 relative flex flex-col rounded-sm">
+      <aside class="aside-item blog-sidebar aside-item md:py-5 py-4">
+       <div class="aside-title">
+        <h2 class="title-head margin-top-0 text-base font-semibold mb-3">
+         <span>
+          DANH MỤC
+         </span>
+        </h2>
+       </div>
+       <div class="aside-content">
+        <nav class="nav-category navbar-toggleable-md">
+         <ul class="space-y-3">
+          <li class="nav-item">
+           <a class="nav-link link" href="/blogs/news">
+            Thai kỳ
+           </a>
+          </li>
+          <li class="nav-item">
+           <a class="nav-link link" href="/blogs/news">
+            Giấc ngủ mẹ và bé
+           </a>
+          </li>
+          <li class="nav-item">
+           <a class="nav-link link" href="/blogs/news">
+            Truyện ngắn cho bé
+           </a>
+          </li>
+          <li class="nav-item">
+           <a class="nav-link link" href="/blogs/news">
+            Tâm sự mẹ bỉm
+           </a>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </aside>
+      <aside class="blog-aside aside-item blog-aside-article aside-item md:py-5 py-4 border-t border-neutral-50">
+       <div class="aside-title">
+        <h2 class="title-head margin-top-0 text-base font-semibold mb-3">
+         <span>
+          <a class="link" href="tin-tuc" title="TIN TỨC NỔI BẬT">
+           TIN TỨC NỔI BẬT
+          </a>
+         </span>
+        </h2>
+       </div>
+       <div class="aside-content-article aside-content margin-top-0">
+        <div class="blog-image-list space-y-3">
+         <p class="">
+          Đang cập nhật bài viết
+         </p>
+        </div>
+       </div>
+      </aside>
+     </div>
+     <div class="bg-background mt-5 h-auto px-5 z-10 relative flex flex-col rounded-sm">
+      <aside class="blog-aside aside-item blog-aside-article aside-item md:py-5 py-4 border-t border-neutral-50">
+       <div class="aside-title">
+        <h2 class="title-head margin-top-0 text-base font-semibold mb-3">
+         Tags
+        </h2>
+       </div>
+       <div class="aside-content-article aside-content mt-3">
+        <div class="blog-tag-list flex flex-wrap gap-2">
+         <a class="border px-3 py-1 rounded-sm border-secondary text-secondary hover:bg-secondary hover:text-background" href="/blogs/all/tagged/dinh-duong" title="dinh dưỡng">
+          dinh dưỡng
+         </a>
+         <a class="border px-3 py-1 rounded-sm border-secondary text-secondary hover:bg-secondary hover:text-background" href="/blogs/all/tagged/sua-me" title="sữa mẹ">
+          sữa mẹ
+         </a>
+         <a class="border px-3 py-1 rounded-sm border-secondary text-secondary hover:bg-secondary hover:text-background" href="/blogs/all/tagged/may-ham-sua" title="máy hâm sữa">
+          máy hâm sữa
+         </a>
+         <a class="border px-3 py-1 rounded-sm border-secondary text-secondary hover:bg-secondary hover:text-background" href="/blogs/all/tagged/tre-so-sinh" title="trẻ sơ sinh">
+          trẻ sơ sinh
+         </a>
+         <a class="border px-3 py-1 rounded-sm border-secondary text-secondary hover:bg-secondary hover:text-background" href="/blogs/all/tagged/kinh-nghiem-cham-con" title="kinh nghiệm chăm con">
+          kinh nghiệm chăm con
+         </a>
+        </div>
+       </div>
+      </aside>
+     </div>
+    </div>
+   </div>
+  </div>
+ </section>
+</main>
+<menu-drawer class="portal portal--drawer" data-animation="slide-in-left" data-type="drawer" id="menu-drawer">
+ <dialog class="portal-dialog">
+  <div class="portal-overlay">
+  </div>
+  <div class="portal-inner animation bg-background h-full grid grid-rows-[auto_1fr_auto]">
+   <div class="navigation-header pt-4 flex justify-between items-center border-b pb-3 border-neutral-50 px-4">
+    <a class="header-icon-group flex gap-2 items-center account-group hover:bg-neutral-50 active:scale-95 transition-all duration-150 px-2 py-1 rounded-sm" href="/account/login" title="Đăng nhập">
+     <div class="header-icon w-[3.6rem] h-[3.6rem] p-2 rounded-sm flex items-center justify-center border border-neutral-50">
+      <i class="icon icon-user">
+      </i>
+     </div>
+     <div class="">
+      <span class="text-xs">
+       Tài khoản
+      </span>
+      <span class="font-semibold block">
+       Đăng nhập
+      </span>
+     </div>
+    </a>
+    <button class="w-[3.2rem] h-[3.2rem] rounded-full border border-neutral-50 text-neutral-200 flex items-center justify-center active:scale-95 transition-transform hover:bg-neutral-50" id="PortalClose-menu-crawer" type="button">
+     <i class="icon icon-cross">
+     </i>
+    </button>
+   </div>
+   <nav class="navigation-vertical overflow-y-auto no-scrollbar">
+    <ul class="">
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/collections/sua" href="/collections/sua" title="Sữa bột cao cấp">
+       <img alt="Sữa bột cao cấp" class="w-5" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_icon_1.png?v=23" width="20"/>
+       <span>
+        Sữa bột cao cấp
+       </span>
+       <span class="ml-auto text-neutral-200" data-toggle-submenu="">
+        <i class="icon icon-carret-right">
+        </i>
+       </span>
+      </a>
+      <div class="submenu absolute lg:group-hover:grid p-4 overflow-auto mega-menu bg-white mega-menu--banner">
+       <div class="relative toggle-submenu -mt-4 -mx-4 p-3 mb-4 bg-neutral-50 font-semibold flex justify-between lg:hidden" data-toggle-submenu="">
+        <span class="">
+         <i class="icon icon-carret-left mr-auto text-neutral-200">
+         </i>
+        </span>
+        <span class="mx-auto">
+         Sữa bột cao cấp
+        </span>
+       </div>
+       <div class="mega-menu__inner flex-wrap gap-3 flex items-start">
+        <ul class="submenu__list flex flex-col gap-3 w-full">
+         <li class="submenu__col">
+          <span class="submenu__item submenu__item--main mb-3 font-semibold">
+           <a class="link font-semibold" data-prefetch="/collections/sua" href="/collections/sua" title="Loại sữa">
+            Loại sữa
+           </a>
+          </span>
+          <ul class="list-disc pl-4 flex-col flex">
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="Sữa Mỹ">
+             Sữa Mỹ
+            </a>
+           </li>
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="Sữa Nhật">
+             Sữa Nhật
+            </a>
+           </li>
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="Sữa Úc">
+             Sữa Úc
+            </a>
+           </li>
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="Châu Âu">
+             Châu Âu
+            </a>
+           </li>
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="Sữa khác">
+             Sữa khác
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="submenu__col">
+          <span class="submenu__item submenu__item--main mb-3 font-semibold">
+           <a class="link font-semibold" data-prefetch="/collections/sua" href="/collections/sua" title="Theo độ tuổi">
+            Theo độ tuổi
+           </a>
+          </span>
+          <ul class="list-disc pl-4 flex-col flex">
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="0-1 tuổi">
+             0-1 tuổi
+            </a>
+           </li>
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="1-2 tuổi">
+             1-2 tuổi
+            </a>
+           </li>
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="&gt;2 tuổi">
+             &gt;2 tuổi
+            </a>
+           </li>
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="Sữa bầu">
+             Sữa bầu
+            </a>
+           </li>
+           <li class="submenu__item">
+            <a class="link" data-prefetch="/" href="/" title="Sữa người lớn">
+             Sữa người lớn
+            </a>
+           </li>
+          </ul>
+         </li>
+        </ul>
+        <div class="mmega-menu__banner w-full">
+         <div>
+          <a href="banner" title="">
+           <img alt="" height="200" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_1_banner_1.jpg?v=23" width="400"/>
+          </a>
+         </div>
+        </div>
+       </div>
+       <section-ajax data-section="section-brand" data-url="/?view=section">
+       </section-ajax>
+      </div>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/collections/sua" href="/collections/sua" title="Sữa tươi các loại">
+       <img alt="Sữa tươi các loại" class="w-5" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_icon_2.png?v=23" width="20"/>
+       <span>
+        Sữa tươi các loại
+       </span>
+       <span class="ml-auto text-neutral-200" data-toggle-submenu="">
+        <i class="icon icon-carret-right">
+        </i>
+       </span>
+      </a>
+      <div class="submenu absolute lg:group-hover:grid p-4 overflow-auto default">
+       <div class="relative toggle-submenu -mt-4 -mx-4 p-3 mb-4 bg-neutral-50 font-semibold flex justify-between lg:hidden" data-toggle-submenu="">
+        <span class="">
+         <i class="icon icon-carret-left mr-auto text-neutral-200">
+         </i>
+        </span>
+        <span class="mx-auto">
+         Sữa tươi các loại
+        </span>
+       </div>
+       <div class="mega-menu__inner flex-wrap gap-3 flex items-start">
+        <ul class="submenu__list flex flex-col gap-3 w-full">
+         <li class="submenu__item submenu__item--main font-semibold">
+          <a class="link" data-prefetch="/collections/sua" href="/collections/sua" title="Sữa bột pha săn">
+           Sữa bột pha săn
+          </a>
+         </li>
+         <li class="submenu__item submenu__item--main font-semibold">
+          <a class="link" data-prefetch="/collections/sua" href="/collections/sua" title="Sữa tươi, sữa chua">
+           Sữa tươi, sữa chua
+          </a>
+         </li>
+         <li class="submenu__item submenu__item--main font-semibold">
+          <a class="link" data-prefetch="/collections/sua" href="/collections/sua" title="Sữa hạt dinh dưỡng">
+           Sữa hạt dinh dưỡng
+          </a>
+         </li>
+         <li class="submenu__item submenu__item--main font-semibold">
+          <a class="link" data-prefetch="/collections/sua" href="/collections/sua" title="Thức uống dinh dưỡng">
+           Thức uống dinh dưỡng
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/collections/bim" href="/collections/bim" title="Bỉm tã khuyến mãi">
+       <img alt="Bỉm tã khuyến mãi" class="w-5" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_icon_3.png?v=23" width="20"/>
+       <span>
+        Bỉm tã khuyến mãi
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/collections/dinh-duong-cho-be" href="/collections/dinh-duong-cho-be" title="Ăn dặm, dinh dưỡng">
+       <img alt="Ăn dặm, dinh dưỡng" class="w-5" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_icon_4.png?v=23" width="20"/>
+       <span>
+        Ăn dặm, dinh dưỡng
+       </span>
+       <span class="ml-auto text-neutral-200" data-toggle-submenu="">
+        <i class="icon icon-carret-right">
+        </i>
+       </span>
+      </a>
+      <div class="submenu absolute lg:group-hover:grid p-4 overflow-auto mega-menu bg-white mega-menu--products">
+       <div class="relative toggle-submenu -mt-4 -mx-4 p-3 mb-4 bg-neutral-50 font-semibold flex justify-between lg:hidden" data-toggle-submenu="">
+        <span class="">
+         <i class="icon icon-carret-left mr-auto text-neutral-200">
+         </i>
+        </span>
+        <span class="mx-auto">
+         Ăn dặm, dinh dưỡng
+        </span>
+       </div>
+       <div class="mega-menu__inner flex-wrap gap-3 flex items-start">
+        <ul class="submenu__list flex flex-col gap-3 w-full">
+         <li class="submenu__item submenu__item--main font-semibold">
+          <a class="link" data-prefetch="/collections/dinh-duong-cho-be" href="/collections/dinh-duong-cho-be" title="Bột bánh ăn dặm">
+           Bột bánh ăn dặm
+          </a>
+         </li>
+        </ul>
+        <related-products class="releated-products w-full" data-empty-content="Sản phẩm đang được cập nhật" data-limit="4" data-product-type="row" data-query="((id:product=1061887940)||        (id:product=1061887960))">
+         <div class="heading-bar">
+          <h2 class="heading w-auto font-semibold">
+           Sản phẩm mới
+          </h2>
+         </div>
+         <carousel-slider>
+          <div class="embla">
+           <div class="embla__viewport">
+            <div class="embla__container product-list h-inherit -ml-2 [&amp;&gt;div]:pl-2 [&amp;&gt;div]:w-full [&amp;&gt;div]:flex_0 [&amp;&gt;div]:shrink-0">
+             <div class="skeleton__product-row__item bg-background border border-neutral-50 rounded-sm relative z-10 m-0 h-full grid grid-cols-[calc(2/4.72*100%)_1fr]">
+              <div class="skeleton__product-row__item__image aspect-square bg-neutral-50 animate-pulse">
+              </div>
+              <div class="skeleton__product-row__item__body p-2 md:p-4 space-y-2">
+               <div class="skeleton__product-row__item__title w-full h-4 bg-neutral-50 animate-pulse">
+               </div>
+               <div class="skeleton__product-row__item__price w-1/3 h-4 bg-neutral-50 animate-pulse">
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="embla__buttons md:block dnone">
+            <button class="embla__button embla__button--prev" onclick="event.stopPropagation()" type="button">
+             <i class="icon icon-carret-left">
+             </i>
+            </button>
+            <button class="embla__button embla__button--next" onclick="event.stopPropagation()" type="button">
+             <i class="icon icon-carret-right">
+             </i>
+            </button>
+           </div>
+           <div class="embla__dots mt-3 mx-auto">
+           </div>
+          </div>
+         </carousel-slider>
+        </related-products>
+       </div>
+       <section-ajax data-section="section-brand" data-url="/?view=section">
+       </section-ajax>
+      </div>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/collections/dinh-duong-cho-be" href="/collections/dinh-duong-cho-be" title="Sức khỏe &amp; Vitamin">
+       <img alt="Sức khỏe &amp; Vitamin" class="w-5" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_icon_5.png?v=23" width="20"/>
+       <span>
+        Sức khỏe &amp; Vitamin
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/collections/dinh-duong-cho-be" href="/collections/dinh-duong-cho-be" title="Đồ dùng mẹ &amp; bé">
+       <img alt="Đồ dùng mẹ &amp; bé" class="w-5" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_icon_6.png?v=23" width="20"/>
+       <span>
+        Đồ dùng mẹ &amp; bé
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/" href="/" title="Đồ chơi, học tập">
+       <img alt="Đồ chơi, học tập" class="w-5" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_icon_7.png?v=23" width="20"/>
+       <span>
+        Đồ chơi, học tập
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/" href="/" title="Chăm sóc gia đình">
+       <img alt="Chăm sóc gia đình" class="w-5" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_icon_8.png?v=23" width="20"/>
+       <span>
+        Chăm sóc gia đình
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="/" href="/" title="Thời trang và phụ kiện">
+       <img alt="Thời trang và phụ kiện" class="w-5" height="20" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/menu_icon_9.png?v=23" width="20"/>
+       <span>
+        Thời trang và phụ kiện
+       </span>
+      </a>
+     </li>
+    </ul>
+    <ul class="">
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/" title="TRANG CHỦ">
+       <span>
+        TRANG CHỦ
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/collections/all" title="TẤT CẢ SẢN PHẨM">
+       <span>
+        TẤT CẢ SẢN PHẨM
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/pages/flash-sale-1-khung-gio" title="CHƯƠNG TRÌNH KHUYẾN MÃI">
+       <span>
+        CHƯƠNG TRÌNH KHUYẾN MÃI
+       </span>
+       <i class="icon icon-carret-right ml-auto" data-toggle-submenu="">
+       </i>
+      </a>
+      <div class="submenu p-4 lg:group-hover:block overflow-auto default">
+       <div class="relative toggle-submenu -mt-4 -mx-4 mb-4 bg-neutral-50 p-3 font-semibold flex justify-between lg:hidden" data-toggle-submenu="">
+        <span class="mr-3">
+         <i class="icon icon-carret-left mr-auto text-neutral-200">
+         </i>
+        </span>
+        <span class="mx-auto">
+         CHƯƠNG TRÌNH KHUYẾN MÃI
+        </span>
+       </div>
+       <ul class="submenu__list flex flex-col gap-3">
+        <li class="submenu__item submenu__item--main font-semibold">
+         <a class="link font-semibold" data-prefetch="" href="/pages/flash-sale-1-khung-gio" title="Flash Sale 1 khung giờ">
+          Flash Sale 1 khung giờ
+         </a>
+        </li>
+        <li class="submenu__item submenu__item--main font-semibold">
+         <a class="link font-semibold" data-prefetch="" href="/pages/flash-sale-nhieu-khung-gio" title="Flash Sale nhiều khung giờ">
+          Flash Sale nhiều khung giờ
+         </a>
+        </li>
+       </ul>
+      </div>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/pages/about-us" title="GIỚI THIỆU">
+       <span>
+        GIỚI THIỆU
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/blogs/news" title="TIN TỨC">
+       <span>
+        TIN TỨC
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/pages/lien-he" title="LIÊN HỆ">
+       <span>
+        LIÊN HỆ
+       </span>
+      </a>
+     </li>
+     <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+      <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="https://wiki.egany.com/s/ega-baby-mart-haravan" target="_blank" title="HƯỚNG DẪN THIẾT LẬP">
+       <span>
+        HƯỚNG DẪN THIẾT LẬP
+       </span>
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div class="navigation-footer 4 border-t border-neutral-50 flex">
+    <div class="w-1/2">
+     <a class="header-icon-group flex gap-2 items-center hover:bg-neutral-50 transition-all duration-150 px-2 py-4 store-group" href="/pages/he-thong-cua-hang" title="Hệ thống cửa hàng">
+      <div class="header-icon w-[3.6rem] h-[3.6rem] p-2 rounded-sm flex items-center justify-center border border-neutral-50">
+       <i class="icon icon-store">
+       </i>
+      </div>
+      <div>
+       <span class="text-xs">
+        Hệ thống cửa hàng
+       </span>
+      </div>
+     </a>
+    </div>
+    <div class="w-1/2">
+     <a class="header-icon-group flex gap-2 items-center hover:bg-neutral-50 transition-all duration-150 px-2 py-4 phone-group" href="tel:099999998" title="099999998">
+      <div class="header-icon w-[3.6rem] h-[3.6rem] p-2 rounded-sm flex items-center justify-center border border-neutral-50">
+       <i class="icon icon-calling-phone">
+       </i>
+      </div>
+      <div>
+       <span class="text-xs">
+        Hotline:
+        <b>
+         099999998
+        </b>
+       </span>
+      </div>
+     </a>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</menu-drawer>
+<link href="//theme.hstatic.net/200000939217/1001374153/14/sales-pop.css?v=23" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript>
+ <link href="//theme.hstatic.net/200000939217/1001374153/14/sales-pop.css?v=23" media="all" rel="stylesheet" type="text/css"/>
+</noscript>
+<div class="sales-pop hidden" id="ega-sale-pop" style="--sale-pop-color: #ee1926">
+ <div class="sale-pop-wrap">
+ </div>
+ <div class="sale-pop-close">
+  <i class="icon icon-cross">
+  </i>
+ </div>
+</div>
+<link href="//theme.hstatic.net/200000939217/1001374153/14/addthis-sharing.css?v=23" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript>
+ <link href="//theme.hstatic.net/200000939217/1001374153/14/addthis-sharing.css?v=23" media="all" rel="stylesheet" type="text/css"/>
+</noscript>
+<div class="addThis_listSharing hidden">
+ <div class="floating_banner relative">
+  <a class="block p-2 hover:scale-105 transition-all" href="/" title="sticky banner">
+   <img alt="sticky banner" height="100" src="//theme.hstatic.net/200000939217/1001374153/14/floating-banner.png?v=23" width="100"/>
+  </a>
+  <button class="btn p-0 absolute -top-3 right-1 link">
+   <i class="icon icon-cross">
+   </i>
+  </button>
+ </div>
+ <a class="backtop back-to-top flex items-center justify-center" href="#" id="back-to-top" title="Lên đầu trang">
+  <i class="icon icon-carret-up">
+  </i>
+ </a>
+ <div class="header-box-live mr-1 lg:mr-0 md:hidden block">
+  <button class="btn-live" data-mobile-link="https://fb.watch/t6bCpir7ve/" style="--header-live-color:#ff0000">
+   <span class="relative z-[1] font-semibold">
+    LIVE
+   </span>
+  </button>
+ </div>
+ <call-center-group class="addThis_group" style="--color-primary: #ff6d02">
+  <ul class="addThis_listing list-unstyled dnone">
+   <li class="addThis_item">
+    <a class="addThis_item--icon" href="tel:19006750" rel="nofollow">
+     <img alt="Gọi ngay cho chúng tôi" class="img-fluid" height="44" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/addthis-phone.svg?v=23" width="44"/>
+     <span class="tooltip-text">
+      Gọi ngay cho chúng tôi
+     </span>
+    </a>
+   </li>
+   <li class="addThis_item">
+    <a class="addThis_item--icon" href="https://zalo.me/834141234794359222" rel="nofollow" target="_blank">
+     <img alt="Chat với chúng tôi qua Zalo" class="img-fluid" height="44" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/addthis-zalo.svg?v=23" width="44"/>
+     <span class="tooltip-text">
+      Chat với chúng tôi qua Zalo
+     </span>
+    </a>
+   </li>
+   <li class="addThis_item">
+    <a class="addThis_item--icon" href="https://m.me/" rel="nofollow" target="_blank">
+     <img alt="Chat với chúng tôi qua Messenger" class="img-fluid" height="44" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/addthis-messenger.svg?v=23" width="44"/>
+     <span class="tooltip-text">
+      Chat với chúng tôi qua Messenger
+     </span>
+    </a>
+   </li>
+  </ul>
+  <div class="addThis_item relative z-[1]" data-toggle="">
+   <div class="addThis_item--icon addThis_item--toggle rounded-full">
+    <img alt="call-center" height="30" src="//theme.hstatic.net/200000939217/1001374153/14/call-center.png?v=23" width="30"/>
+    <i class="icon icon-cross">
+    </i>
+   </div>
+  </div>
+ </call-center-group>
+</div>
+<div class="cro-btns sticky md:hidden block z-10 min-h-[5.6rem] bottom-0 left-0 slide-in-bottom" data-template="blog">
+ <div class="bg-background rounded-t-sm w-full min-h-[5.6rem] px-2 justify-between items-center inline-flex slide-in-bottom" style="box-shadow:var(--shadow-l)">
+  <div class="cro-btns-container w-full h-full justify-center items-center gap-0.5 grid grid-cols-[repeat(auto-fit,minmax(0,1fr))]">
+   <a class="cro-btn-item cro-btn-item--1 w-auto flex-shrink-0 flex-grow-0 h-full py-0.5 px-0.5 text-foreground h-full flex flex-col justify-center items-center gap-0.5" href="/collections/all" style="order:3" title="Khuyến mãi">
+    <div class="w-4 h-4 relative">
+     <img alt="Khuyến mãi" class="w-full h-full object-contain" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/cro-btn-1-icon.png?v=23"/>
+    </div>
+    <div class="text-ellipsis overflow-hidden max-w-full text-xs text-center line-clamp-1">
+     Khuyến mãi
+    </div>
+   </a>
+   <a class="cro-btn-item cro-btn-item--2 w-auto flex-shrink-0 flex-grow-0 h-full py-0.5 px-0.5 text-foreground h-full flex flex-col justify-center items-center gap-0.5" href="/collections/all" style="order:4" title="Sản phẩm">
+    <div class="w-4 h-4 relative">
+     <img alt="Sản phẩm" class="w-full h-full object-contain" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/cro-btn-2-icon.png?v=23"/>
+    </div>
+    <div class="text-ellipsis overflow-hidden max-w-full text-xs text-center line-clamp-1">
+     Sản phẩm
+    </div>
+   </a>
+   <a class="cro-btn-item cro-btn-item--3 w-auto flex-shrink-0 flex-grow-0 h-full py-0.5 px-0.5 text-foreground h-full flex flex-col justify-center items-center gap-0.5" href="/pages/he-thong-cua-hang" style="order:3" title="Cửa hàng">
+    <div class="w-4 h-4 relative">
+     <img alt="Cửa hàng" class="w-full h-full object-contain" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/cro-btn-3-icon.png?v=23"/>
+    </div>
+    <div class="text-ellipsis overflow-hidden max-w-full text-xs text-center line-clamp-1">
+     Cửa hàng
+    </div>
+   </a>
+  </div>
+ </div>
+</div>
+<portal-component class="portal portal--drawer" data-animation="slide-in-right" data-type="drawer" id="search-drawer" style="--dialog-max-width:52rem">
+ <dialog class="portal-dialog">
+  <div class="w-full h-full flex">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner w-full ml-auto bg-background overflow-auto h-screen px-4 animation">
+    <div class="portal-header px-3 pb-3 pt-5">
+     <div class="font-semibold text-h6 md:text-h4 flex items-center gap-2">
+      <i class="icon icon-arrow-left text-h6 md:text-h4" id="PortalClose-search-drawer">
+      </i>
+      Tìm kiếm
+     </div>
+    </div>
+    <div class="search-bar relative">
+     <div class="search-bar relative">
+      <quick-search class="quick-search">
+       <form action="/search" class="m-0 flex bg-background pl-1 py-1 rounded items-center relative border border-neutral-50" method="get" role="search">
+        <select aria-label="Danh mục sản phẩm" class="form-select border-0 focus:ring-transparent collection-options">
+         <option value="">
+          Danh mục sản phẩm
+         </option>
+         <option value="1004289423">
+          Sữa bột cao cấp
+         </option>
+         <option value="1004289423">
+          Sữa tươi các loại
+         </option>
+         <option value="1004289429">
+          Bỉm tã khuyến mãi
+         </option>
+         <option value="1004289424">
+          Ăn dặm, dinh dưỡng
+         </option>
+         <option value="1004289424">
+          Sức khỏe &amp; Vitamin
+         </option>
+         <option value="1004289424">
+          Đồ dùng mẹ &amp; bé
+         </option>
+        </select>
+        <div class="search-input-group w-full relative flex items-center">
+         <input autocomplete="off" class="border-0 bg-transparent focus:ring-transparent p-0 w-full text-base text-foreground" data-placeholder="Tìm theo tên sản phẩm...; Tìm theo thương hiệu...;" name="q" placeholder="Tìm theo tên sản phẩm..." required="" type="text" value=""/>
+         <input name="type" type="hidden" value="product"/>
+         <button aria-label="search" class="search-button btn flex items-center justify-center text-foreground rounded bg-[var(--color-search)] text-white" type="submit">
+          <i class="icon icon-search">
+          </i>
+         </button>
+        </div>
+       </form>
+       <div class="search-dropdown absolute bottom-0 top-full mt-1 left-0 bg-background rounded-lg py-3 text-foreground w-full px-2">
+        <div class="search-loading absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full z-[1] bg-background flex items-center justify-center">
+         <span class="loading-icon gap-1 hidden items-center justify-center">
+          <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+          </span>
+          <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+          </span>
+          <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+          </span>
+         </span>
+        </div>
+        <div class="search-result space-y-3">
+        </div>
+        <div class="search-history-list border-neutral-50">
+        </div>
+        <div class="search-keywords space-y-2 pt-2 px-2">
+         <span class="text-primary font-semibold">
+          Từ khóa phổ biến
+         </span>
+         <div class="search-keyword-list flex gap-1 items-center flex-wrap">
+          <a class="search-keyword text-secondary px-3 py-1 bg-relative rounded-full inline-flex items-center justify-center hover:border-secondary border border-transparent" href="/search?q=Sữa bột&amp;type=product" title="">
+           Sữa bột
+          </a>
+          <a class="search-keyword text-secondary px-3 py-1 bg-relative rounded-full inline-flex items-center justify-center hover:border-secondary border border-transparent" href="/search?q= Bĩm tã&amp;type=product" title="">
+           Bĩm tã
+          </a>
+          <a class="search-keyword text-secondary px-3 py-1 bg-relative rounded-full inline-flex items-center justify-center hover:border-secondary border border-transparent" href="/search?q= Máy hút sữa&amp;type=product" title="">
+           Máy hút sữa
+          </a>
+         </div>
+        </div>
+       </div>
+      </quick-search>
+     </div>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</portal-component>
+<quick-view class="portal portal--modal" data-animation="scale-in-hor-left" data-type="modal" id="quick-view-product">
+ <dialog class="portal-dialog">
+  <div class="flex items-center justify-center w-full h-full">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner h-full">
+    <button class="portal-close-button animation rounded-full w-[3.2rem] h-[3.2rem] border border-white text-white flex items-center justify-center active:scale-95 transition-transform hover:animate-spin" data-animation="fade-in" id="PortalClose-quick-view-product" type="button">
+     <i class="icon icon-cross">
+     </i>
+    </button>
+    <div class="product-wrapper animation bg-background w-full h-full md:rounded-lg">
+    </div>
+    <span class="loading-icon gap-1 hidden items-center justify-center">
+     <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+     </span>
+     <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+     </span>
+     <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+     </span>
+    </span>
+   </div>
+  </div>
+ </dialog>
+</quick-view>
+<cart-drawer class="portal portal--drawer" data-animation="slide-in-right" data-type="drawer" id="cart-drawer" style="--dialog-max-width:52rem">
+ <dialog class="portal-dialog">
+  <div class="w-full h-full flex">
+   <div class="portal-overlay">
+   </div>
+   <div class="cart-drawer-related-products animation fade-in flex items-center justify-center" data-animation="fade-in" id="PortalClose-cart-related-drawer">
+    <related-products class="cart-releated-products w-full fade-in dnone lg:block hidden" data-limit="5">
+     <carousel-slider>
+      <div class="embla lg:pb-[var(--spacing-10)]">
+       <h2 class="text-h4 text-center mb-5 font-semibold text-white">
+        Sản phẩm gợi ý
+       </h2>
+       <div class="embla__viewport">
+        <div class="embla__container product-list h-inherit [&amp;&gt;div]:px-2 [&amp;&gt;div]:w-full md:[&amp;&gt;div]:w-[75%] xl:[&amp;&gt;div]:w-1/3 [&amp;&gt;div]:grow-0 [&amp;&gt;div]:shrink-0 [&amp;&gt;div:first-child]:ml-auto [&amp;&gt;div:last-child]:mr-auto">
+        </div>
+       </div>
+       <div class="embla__buttons dnone md:block">
+        <button class="embla__button embla__button--prev" onclick="event.stopPropagation()" type="button">
+         <i class="icon icon-carret-left">
+         </i>
+        </button>
+        <button class="embla__button embla__button--next" onclick="event.stopPropagation()" type="button">
+         <i class="icon icon-carret-right">
+         </i>
+        </button>
+       </div>
+      </div>
+     </carousel-slider>
+    </related-products>
+   </div>
+   <div class="portal-inner w-full bg-background animation h-full">
+    <cart-form class="h-full">
+     <form action="/cart" class="cart-form h-full" method="post">
+      <div class="cart grid grid-rows-[auto_1fr_auto]">
+       <div class="portal-header pt-4 px-4 flex justify-between items-center border-b pb-3 border-neutral-50 px-4">
+        <p class="text-h6 md:text-h4">
+         Giỏ hàng
+        </p>
+        <button class="w-[3.2rem] h-[3.2rem] rounded-full border border-neutral-50 text-neutral-200 flex items-center justify-center active:scale-95 transition-transform hover:bg-neutral-50" id="PortalClose-cart-crawer" type="button">
+         <i class="icon icon-cross">
+         </i>
+        </button>
+       </div>
+       <div class="cart-left p-4 overflow-y-auto flex flex-col">
+        <rewards-bar>
+        </rewards-bar>
+        <div class="cart-table">
+        </div>
+        <div class="lg:hidden w-full mt-auto">
+         <related-products class="cart-releated-products" data-product-type="row" data-query="(id:product=1061887940)||        (id:product=1061887960)">
+          <div class="mb-2">
+           <h2 class="text-base font-semibold">
+            Sản phẩm gợi ý
+           </h2>
+          </div>
+          <div class="overflow-hidden">
+           <div class="flex overflow-x-auto no-scrollbar product-list [&amp;&gt;div]:flex-grow-0 [&amp;&gt;div]:flex-shrink-0 [&amp;&gt;div]:w-[75%] gap-2">
+           </div>
+          </div>
+         </related-products>
+        </div>
+       </div>
+       <div class="cart-right p-4">
+        <div class="cart-summary">
+        </div>
+       </div>
+       <div class="cart-empty">
+       </div>
+      </div>
+     </form>
+    </cart-form>
+   </div>
+  </div>
+ </dialog>
+</cart-drawer>
+<portal-component class="portal portal--drawer" data-animation="slide-in-right" data-type="drawer" id="cart-note-drawer" style="--dialog-max-width:52rem">
+ <dialog class="portal-dialog">
+  <div class="w-full h-full flex">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner w-full ml-auto bg-background h-screen px-4 animation">
+    <div class="portal-header px-3 pb-3 pt-5">
+     <div class="font-semibold text-h4 flex items-center gap-2">
+      <i class="icon icon-arrow-left cursor-pointer text-h6 md:text-h4" id="PortalClose-cart-note-drawer">
+      </i>
+      Ghi
+            chú đơn hàng
+     </div>
+    </div>
+    <div class="r-bill px-3">
+     <cart-note>
+      <form>
+       <div class="form-group">
+        <label class="label block mb-2">
+         Ghi chú
+        </label>
+        <textarea class="form-textarea" name="note" rows="6"></textarea>
+       </div>
+       <button class="btn w-full mt-5 btn--large font-semibold bg-primary text-white inline-flex justify-center items-center gap-2" type="submit">
+        Lưu thông tin
+       </button>
+      </form>
+     </cart-note>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</portal-component>
+<cart-vat-drawer class="portal portal--drawer" data-animation="slide-in-right" data-type="drawer" id="cart-vat-drawer" style="--dialog-max-width:52rem">
+ <dialog class="portal-dialog">
+  <div class="w-full h-full flex">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner w-full ml-auto bg-background h-screen px-4 animation">
+    <div class="portal-header px-3 pb-3 pt-5">
+     <div class="font-semibold text-h6 md:text-h4 flex items-center gap-2">
+      <i class="icon icon-arrow-left text-h6 md:text-h4 cursor-pointer" id="PortalClose-cart-vat-drawer">
+      </i>
+      Xuất hóa đơn công ty
+     </div>
+    </div>
+    <div class="r-bill px-3">
+     <form>
+      <div class="bill-field space-y-3">
+       <div class="flex items-center">
+        <div class="flex items-center">
+         <input class="invoice" name="attributes[Xuất hóa đơn]" type="hidden" value="không"/>
+         <input class="invoice-checkbox form-checkbox" type="checkbox"/>
+        </div>
+        <div class="ml-2 text-sm">
+         <label>
+          Xuất hóa đơn
+         </label>
+        </div>
+       </div>
+       <div class="form-group">
+        <label class="label block mb-2">
+         Tên công ty
+        </label>
+        <input class="form-input" data-messages="{'required':'Trường này không được bỏ trống' }" data-rules="['required']" name="attributes[Tên công ty]" placeholder="Tên công ty" type="text" value=""/>
+        <span class="error text-error block mt-2">
+        </span>
+       </div>
+       <div class="form-group">
+        <label class="label block mb-2">
+         Mã số thuế
+        </label>
+        <input class="form-input" data-messages="{ 'minLength:10': 'Số kí tự tối thiểu [size]', 'require':'Trường này không được bỏ trống' }" data-rules="['minLength:10','required']" name="attributes[Mã số thuế]" placeholder="Mã số thuế" type="number" value=""/>
+        <span class="error text-error block mt-2">
+        </span>
+       </div>
+       <div class="form-group">
+        <label class="label block mb-2">
+         Địa chỉ công ty
+        </label>
+        <textarea class="form-textarea" data-messages="{'required':'Trường này không được bỏ trống' }" data-rules="['required']" name="attributes[Địa chỉ công ty]" placeholder="Địa chỉ công ty"></textarea>
+        <span class="error text-error block mt-2">
+        </span>
+       </div>
+       <div class="form-group">
+        <label class="label block mb-2">
+         Email nhận hóa đơn
+        </label>
+        <input class="form-input" data-messages="{'required':'Trường này không được bỏ trống', 'email': 'Email không đúng định dạng' }" data-rules="['required','email']" name="attributes[Email nhận hóa đơn]" placeholder="Email nhận hóa đơn" type="email" value=""/>
+        <span class="error text-error block mt-2">
+        </span>
+       </div>
+      </div>
+      <button class="btn w-full mt-5 btn--large font-semibold bg-primary text-white inline-flex justify-center items-center gap-2" type="submit">
+       Lưu thông tin
+      </button>
+     </form>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</cart-vat-drawer>
+<portal-component class="portal portal--drawer" data-animation="slide-in-right" data-type="drawer" id="cart-delivery-drawer" style="--dialog-max-width:52rem">
+ <dialog class="portal-dialog">
+  <div class="w-full h-full flex">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner w-full ml-auto bg-background h-screen px-4 animation">
+    <div class="portal-header px-3 pb-3 pt-5">
+     <div class="font-semibold text-h6 md:text-h4 flex items-center gap-2">
+      <i class="icon icon-arrow-left text-h4 cursor-pointer" id="PortalClose-cart-delivery-drawer">
+      </i>
+      Hẹn giờ nhận hàng
+     </div>
+    </div>
+    <div class="r-bill px-3">
+     <cart-delivery>
+      <form>
+       <div class="cart-delivery-time py-4">
+        <div class="grid gap-2">
+         <div class="flex items-center">
+          <div class="flex items-center">
+           <input id="use-delivery" name="attributes[Hẹn giờ nhận hàng]" type="hidden" value="cart.attributes[Hẹn giờ nhận hàng]"/>
+           <input class="form-checkbox" id="delivery-enabled" type="checkbox"/>
+          </div>
+          <div class="ml-2 text-sm">
+           <label class="" for="delivery-enabled">
+            Hẹn giờ nhận hàng
+           </label>
+          </div>
+         </div>
+         <div>
+          <label class="label block mb-1 text-base" for="delivery-date-input">
+           Ngày nhận hàng
+          </label>
+          <div class="relative">
+           <i class="icon icon-calendar text-neutral-200 top-1/2 left-2 -translate-y-1/2 absolute">
+           </i>
+           <datepicker-input class="datepicker-input">
+            <input class="form-input pl-2 pl-[var(--spacing-6-5)] py-2.5 min-h-[4rem]" id="delivery-date-input" name="attributes[Ngày nhận hàng]" type="text" value=""/>
+           </datepicker-input>
+          </div>
+         </div>
+         <div>
+          <label class="label block mb-1 text-base" for="delivery-time">
+           Thời gian nhận hàng
+          </label>
+          <select class="form-select min-h-[4rem] px-2 py-2.5 border-neutral-50" id="delivery-time" name="attributes[Thời gian nhận hàng]">
+           <option selected="" value="">
+            Chọn thời gian
+           </option>
+           <option value="08h00 - 12h00">
+            08h00 - 12h00
+           </option>
+           <option value="14h00 - 18h00">
+            14h00 - 18h00
+           </option>
+           <option value="19h00 - 21h00">
+            19h00 - 21h00
+           </option>
+          </select>
+         </div>
+        </div>
+       </div>
+       <button class="btn w-full mt-5 btn--large font-semibold bg-primary text-white inline-flex justify-center items-center gap-2" type="submit">
+        Lưu thông tin
+       </button>
+      </form>
+     </cart-delivery>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</portal-component>
+<coupon-drawer data-animation="slide-in-right" data-type="drawer" id="coupon-drawer" lass="portal portal--drawer" style="--dialog-max-width:52rem">
+ <dialog class="portal-dialog">
+  <div class="w-full h-full flex">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner grid grid-rows-[auto_1fr_auto] w-full ml-auto bg-background h-screen px-4 pb-4 animation">
+    <div class="portal-header px-3 pb-3 pt-5">
+     <div class="font-semibold text-h6 md:text-h4 flex items-center gap-2">
+      <i class="icon icon-arrow-left text-h6 md:text-h4 cursor-pointer" id="PortalClose-coupon-drawer">
+      </i>
+      Chọn mã giảm giá
+     </div>
+    </div>
+    <div class="coupon-list py-4">
+    </div>
+    <div>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</coupon-drawer>
+<coupon-modal class="portal portal--modal portal--modal-sm" data-animation="fade-in" data-type="modal" id="coupon-modal">
+ <dialog class="portal-dialog">
+  <div class="flex items-center justify-center w-full h-full p-3">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner animation">
+    <button class="portal-close-button w-[3.2rem] h-[3.2rem] rounded-full border border-white text-white flex items-center justify-center active:scale-95 transition-transform hover:animate-spin" id="PortalClose-coupon-modal" type="button">
+     <i class="icon icon-cross">
+     </i>
+    </button>
+    <div class="p-3 md:p-5 rounded-lg bg-background h-full grid grid grid-rows-[auto_1fr_auto]">
+     <div class="coupon-header border-b pb-2.5 border-dashed border-neutral-50">
+     </div>
+     <div class="coupon-desc">
+     </div>
+     <div class="coupon-act grid grid-cols-2 gap-3 border-t pt-2.5 border-dashed border-neutral-50">
+      <button class="btn border border-neutral-50 hover:bg-neutral-100 py-1.5" id="PortalClose-coupon-item-modal">
+       Đóng
+      </button>
+      <copy-button data-copied-text="Đã sao chép">
+       <input type="hidden" value=""/>
+       <button class="btn copy-button w-full font-semibold text-primary border border-primary bg-primary text-white py-1.5" type="button">
+        Sao chép
+       </button>
+      </copy-button>
+     </div>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</coupon-modal>
+<compare-qv class="portal portal--modal" data-animation="slide-in-bottom" data-type="modal" id="quick-view-compare">
+ <dialog class="portal-dialog">
+  <div class="flex items-center justify-center w-full">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner bg-background rounded-sm animation">
+    <button class="absolute active:scale-95 transition-transform right-0 p-3 bg-background rounded-sm flex items-center justify-center gap-2 link" id="PortalClose-quick-view" type="button">
+     Thu gọn
+     <i class="icon icon-carret-down">
+     </i>
+    </button>
+    <div class="compare-product-list">
+    </div>
+   </div>
+  </div>
+ </dialog>
+</compare-qv>
+<portal-opener class="compare-opener hidden">
+ <div class="cursor-pointer font-semibold btn rounded-full bg-background border border-primary text-primary" data-portal="#quick-view-compare">
+  <p class="flex items-center gap-1">
+   <span class="line-clamp-1">
+    So sánh
+   </span>
+   <span class="compare-count">
+   </span>
+   <i class="ico icon-arrow-swap">
+   </i>
+  </p>
+ </div>
+</portal-opener>
+<promo-popup class="portal portal--modal" data-animation="fade-in" data-type="modal" id="promo-popup">
+ <dialog class="portal-dialog">
+  <div class="flex items-center justify-center w-full h-full">
+   <div class="portal-overlay">
+   </div>
+   <div class="relative z-10 animation p-6 md:p-4">
+    <button class="portal-close-button w-[3.2rem] h-[3.2rem] rounded-full border border-white text-white flex items-center justify-center active:scale-95 transition-transform hover:animate-spin" id="PortalClose-promo-popup" type="button">
+     <i class="icon icon-cross">
+     </i>
+    </button>
+    <a href="/collections/all" title="Click ngay để nhận ưu đãi hot!!">
+     <img alt="Click ngay để nhận ưu đãi hot!!" class="object-contain" height="540" loading="lazy" src="//theme.hstatic.net/200000939217/1001374153/14/banner-popup-img.png?v=23" width="540"/>
+    </a>
+   </div>
+  </div>
+ </dialog>
+</promo-popup>
+<error-popup class="portal portal--modal portal--modal-sm" data-animation="fade-in" data-type="modal" id="error-modal">
+ <dialog class="portal-dialog">
+  <div class="flex items-start justify-end p-3 w-full h-full">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner animation">
+    <div class="error-list flex gap-4 flex-col items-end">
+    </div>
+   </div>
+  </div>
+ </dialog>
+</error-popup>
+<div class="modal-live">
+ <div class="modal-live--inner">
+  <template id="live-template">
+   <iframe allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen="true" height="476" src="https://www.facebook.com/plugins/video.php?height=314&amp;href=https%3A%2F%2Fwww.facebook.com%2Ffacebook%2Fvideos%2F644342003942740%2F&amp;show_text=false&amp;width=560&amp;t=0" style="border:none;overflow:hidden" width="560">
+   </iframe>
+  </template>
+  <div class="modal-live-iframe">
+  </div>
+  <div class="btn-close--live">
+   <svg fill="none" height="22" viewbox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg">
+    <path d="M11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0Z" fill="#373535" opacity="0.9">
+    </path>
+    <path clip-rule="evenodd" d="M10.066 11.0007L6.79418 7.72894C6.53605 7.47081 6.53605 7.05231 6.79418 6.79418C7.05231 6.53605 7.47081 6.53605 7.72893 6.79418L11.0007 10.066L14.2713 6.79543C14.5294 6.53731 14.9479 6.53731 15.206 6.79543C15.4641 7.05356 15.4641 7.47206 15.206 7.73019L11.9355 11.0007L15.207 14.2722C15.4651 14.5304 15.4651 14.9489 15.207 15.207C14.9489 15.4651 14.5304 15.4651 14.2722 15.207L11.0007 11.9355L7.72796 15.2082C7.46983 15.4664 7.05133 15.4664 6.7932 15.2082C6.53508 14.9501 6.53508 14.5316 6.7932 14.2735L10.066 11.0007Z" fill="white" fill-rule="evenodd">
+    </path>
+   </svg>
+  </div>
+ </div>
+</div>
+
+{%endblock %}
