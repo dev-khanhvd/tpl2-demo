@@ -1,0 +1,382 @@
+:root {
+  --main-ldp-color: #6AC8BA;
+  --main-ldp-text: #131518; }
+
+@media (min-width: 992px) {
+  .page-ldp_flashsale .container {
+    max-width: 1080px;
+    padding: 0 15px; } }
+
+.page-ldp_flashsale .page-wrapper {
+  padding-bottom: 60px;
+  background: var(--main-ldp-color); }
+
+.page-ldp_flashsale .section-main-banner {
+  position: relative; }
+  .page-ldp_flashsale .section-main-banner .section-content .box-banner img {
+    width: 100%; }
+  .page-ldp_flashsale .section-main-banner .section-content a {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(106, 200, 186, 0) 78.2%, #6AC8BA 100%); }
+
+.page-ldp_flashsale .section-countdown {
+  padding: 40px 0; }
+  .page-ldp_flashsale .section-countdown .section-content .countdown-wrapper {
+    max-width: 368px;
+    margin: 0 auto;
+    padding: 6px 12px;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #FFD4E1;
+    margin-bottom: 40px; }
+    .page-ldp_flashsale .section-countdown .section-content .countdown-wrapper .countdown-title {
+      text-align: center;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      color: var(--main-ldp-text);
+      margin-bottom: 4px; }
+    .page-ldp_flashsale .section-countdown .section-content .countdown-wrapper .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: linear-gradient(180deg, #FF4565 0%, #F6729C 51.5%, #FF4565 55.21%, #F6729C 100%);
+      border-radius: 8px; }
+      .page-ldp_flashsale .section-countdown .section-content .countdown-wrapper .countdown > span {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; }
+        .page-ldp_flashsale .section-countdown .section-content .countdown-wrapper .countdown > span:not(:last-child) {
+          border-right: 1px solid #EA477B; }
+        .page-ldp_flashsale .section-countdown .section-content .countdown-wrapper .countdown > span .number {
+          width: 100%;
+          text-align: center;
+          display: block;
+          padding: 12px 0 6px;
+          font-size: 32px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 140%;
+          /* 44.8px */
+          letter-spacing: -0.64px;
+          color: #fff; }
+        .page-ldp_flashsale .section-countdown .section-content .countdown-wrapper .countdown > span .text {
+          padding: 6px 0 12px;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 140%;
+          /* 28px */
+          letter-spacing: -0.2px;
+          color: rgba(255, 255, 255, 0.8); }
+  .page-ldp_flashsale .section-countdown .section-content .voucher-wrapper .list-voucher {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 21px; }
+    .page-ldp_flashsale .section-countdown .section-content .voucher-wrapper .list-voucher .item-voucher {
+      display: grid;
+      grid-template-columns: 35% 65%; }
+      .page-ldp_flashsale .section-countdown .section-content .voucher-wrapper .list-voucher .item-voucher .box-left {
+        background: #fff;
+        padding: 8px 12px;
+        border-radius: 8px 0 0 8px; }
+        .page-ldp_flashsale .section-countdown .section-content .voucher-wrapper .list-voucher .item-voucher .box-left .icon {
+          width: 100%;
+          height: 100%;
+          background: #F6C8D8;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 4px; }
+      .page-ldp_flashsale .section-countdown .section-content .voucher-wrapper .list-voucher .item-voucher .box-right {
+        padding: 16px 0;
+        background: #fff;
+        border-radius: 0 8px 8px 0; }
+        .page-ldp_flashsale .section-countdown .section-content .voucher-wrapper .list-voucher .item-voucher .box-right .info {
+          height: 100%;
+          padding: 0 12px;
+          border-left: 1px dotted #F6C8D8; }
+          .page-ldp_flashsale .section-countdown .section-content .voucher-wrapper .list-voucher .item-voucher .box-right .info p {
+            font-size: 20px;
+            margin-bottom: 4px; }
+          .page-ldp_flashsale .section-countdown .section-content .voucher-wrapper .list-voucher .item-voucher .box-right .info h3 {
+            margin: 0;
+            font-size: 24px;
+            color: #47C1FF; }
+  @media (max-width: 991px) {
+    .page-ldp_flashsale .section-countdown {
+      padding: 20px 0; }
+      .page-ldp_flashsale .section-countdown .section-content .voucher-wrapper .list-voucher {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px; } }
+
+.page-ldp_flashsale .section-hotdeal {
+  margin-top: 70px; }
+  .page-ldp_flashsale .section-hotdeal .section-wrapper {
+    padding: 55px 32px 5px;
+    border-radius: 8px;
+    background: #FA6997;
+    position: relative; }
+    .page-ldp_flashsale .section-hotdeal .section-wrapper .section-content .image-title {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      z-index: 10;
+      transform: translate(-50%, -65%); }
+    @media (min-width: 992px) {
+      .page-ldp_flashsale .section-hotdeal .section-wrapper .section-content .collection-wrap .box-product-single .product-loop {
+        margin-bottom: 5px;
+        padding: 0; }
+        .page-ldp_flashsale .section-hotdeal .section-wrapper .section-content .collection-wrap .box-product-single .product-loop .product-inner {
+          display: grid;
+          grid-template-columns: 35% 65%; }
+          .page-ldp_flashsale .section-hotdeal .section-wrapper .section-content .collection-wrap .box-product-single .product-loop .product-inner .proloop-image {
+            padding: 10px; }
+          .page-ldp_flashsale .section-hotdeal .section-wrapper .section-content .collection-wrap .box-product-single .product-loop .product-inner .proloop-detail {
+            justify-content: center;
+            padding: 10px 20px; }
+            .page-ldp_flashsale .section-hotdeal .section-wrapper .section-content .collection-wrap .box-product-single .product-loop .product-inner .proloop-detail .proloop--vendor {
+              margin-bottom: 20px;
+              justify-content: flex-start;
+              gap: 20px; }
+              .page-ldp_flashsale .section-hotdeal .section-wrapper .section-content .collection-wrap .box-product-single .product-loop .product-inner .proloop-detail .proloop--vendor > div a {
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 120%;
+                /* 21.6px */
+                letter-spacing: -0.3px;
+                text-transform: uppercase; }
+            .page-ldp_flashsale .section-hotdeal .section-wrapper .section-content .collection-wrap .box-product-single .product-loop .product-inner .proloop-detail h3 a {
+              font-size: 32px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 120%;
+              /* 38.4px */
+              letter-spacing: -0.2px;
+              text-transform: capitalize; }
+            .page-ldp_flashsale .section-hotdeal .section-wrapper .section-content .collection-wrap .box-product-single .product-loop .product-inner .proloop-detail .wrapper-action-loop {
+              margin: 0; }
+              .page-ldp_flashsale .section-hotdeal .section-wrapper .section-content .collection-wrap .box-product-single .product-loop .product-inner .proloop-detail .wrapper-action-loop .proloop--priceflex {
+                justify-content: flex-start;
+                gap: 15px; } }
+    .page-ldp_flashsale .section-hotdeal .section-wrapper .section-content .collection-wrap .product-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px; }
+      .page-ldp_flashsale .section-hotdeal .section-wrapper .section-content .collection-wrap .product-list .product-loop {
+        padding: 0;
+        margin: 0; }
+    .page-ldp_flashsale .section-hotdeal .section-wrapper .section-content .action-bottom {
+      text-align: center;
+      margin-top: 10px; }
+      .page-ldp_flashsale .section-hotdeal .section-wrapper .section-content .action-bottom a {
+        display: inline-flex;
+        flex-direction: column; }
+        .page-ldp_flashsale .section-hotdeal .section-wrapper .section-content .action-bottom a .text {
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 140%;
+          color: #fff; }
+  @media (max-width: 991px) {
+    .page-ldp_flashsale .section-hotdeal {
+      margin-top: 40px; }
+      .page-ldp_flashsale .section-hotdeal .container {
+        padding: 0; }
+      .page-ldp_flashsale .section-hotdeal .section-wrapper {
+        padding: 55px 5px 5px; }
+        .page-ldp_flashsale .section-hotdeal .section-wrapper .section-content .collection-wrap .box-product-single .product-loop {
+          padding: 0; }
+        .page-ldp_flashsale .section-hotdeal .section-wrapper .section-content .collection-wrap .product-list {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 5px; }
+          .page-ldp_flashsale .section-hotdeal .section-wrapper .section-content .collection-wrap .product-list .product-loop {
+            min-width: 0; } }
+
+.page-ldp_flashsale .section-collection {
+  padding-top: 40px; }
+  .page-ldp_flashsale .section-collection .section-wrappper .section-title .box-banner img {
+    width: 100%; }
+  .page-ldp_flashsale .section-collection .section-wrappper .section-title .box-title {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    position: relative;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #fff; }
+    .page-ldp_flashsale .section-collection .section-wrappper .section-title .box-title .title h2 {
+      text-align: center;
+      margin: 0;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 140%;
+      /* 44.8px */
+      letter-spacing: -0.64px;
+      color: #fff; }
+    .page-ldp_flashsale .section-collection .section-wrappper .section-title .box-title .title .btn-title {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translatey(-30%);
+      display: inline-flex;
+      gap: 5px;
+      padding: 6px 16px;
+      background: #FFD4E1;
+      border: 1px solid #F999B7;
+      border-radius: 30px; }
+      .page-ldp_flashsale .section-collection .section-wrappper .section-title .box-title .title .btn-title .text {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 140%;
+        color: #190065; }
+  .page-ldp_flashsale .section-collection .section-wrappper .section-content .list-product {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px; }
+    .page-ldp_flashsale .section-collection .section-wrappper .section-content .list-product .product-loop {
+      min-width: 0;
+      padding: 0;
+      margin: 0; }
+      .page-ldp_flashsale .section-collection .section-wrappper .section-content .list-product .product-loop .tagflextop > div {
+        font-size: 8px; }
+  @media (max-width: 991px) {
+    .page-ldp_flashsale .section-collection {
+      padding-top: 20px; }
+      .page-ldp_flashsale .section-collection .section-wrappper .section-title .box-title {
+        padding-top: 20px;
+        padding-bottom: 10px;
+        position: relative;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #fff; }
+        .page-ldp_flashsale .section-collection .section-wrappper .section-title .box-title .title {
+          display: flex;
+          justify-content: space-between;
+          align-items: center; }
+          .page-ldp_flashsale .section-collection .section-wrappper .section-title .box-title .title h2 {
+            font-size: 24px; }
+          .page-ldp_flashsale .section-collection .section-wrappper .section-title .box-title .title .btn-title {
+            position: relative;
+            transform: translatey(0); }
+      .page-ldp_flashsale .section-collection .section-wrappper .section-content .list-product {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); } }
+
+@media (min-width: 992px) {
+  .page-ldp_flashsale_2 .container {
+    max-width: 1080px;
+    padding: 0 15px; } }
+
+.page-ldp_flashsale_2 .section-countdown {
+  padding: 10px 0; }
+  .page-ldp_flashsale_2 .section-countdown .section-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; }
+    .page-ldp_flashsale_2 .section-countdown .section-content .countdown-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px; }
+      .page-ldp_flashsale_2 .section-countdown .section-content .countdown-wrap .title {
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 140%;
+        /* 25.2px */
+        letter-spacing: -0.18px; }
+      .page-ldp_flashsale_2 .section-countdown .section-content .countdown-wrap .countdown {
+        display: flex;
+        justify-content: center;
+        gap: 2px; }
+        .page-ldp_flashsale_2 .section-countdown .section-content .countdown-wrap .countdown > span.dots {
+          font-weight: 800; }
+        .page-ldp_flashsale_2 .section-countdown .section-content .countdown-wrap .countdown > span .number {
+          padding: 8px 8px;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 800;
+          line-height: 140%;
+          /* 19.6px */
+          letter-spacing: -0.14px;
+          color: #fff;
+          background: #333;
+          border-radius: 4px;
+          display: block; }
+  @media (max-width: 991px) {
+    .page-ldp_flashsale_2 .section-countdown .section-content {
+      flex-direction: column; }
+      .page-ldp_flashsale_2 .section-countdown .section-content .countdown-wrap {
+        flex-direction: column; } }
+
+.page-ldp_flashsale_2 .section-main-banner {
+  position: relative; }
+  .page-ldp_flashsale_2 .section-main-banner .section-content .box-banner img {
+    width: 100%; }
+  .page-ldp_flashsale_2 .section-main-banner .section-content a {
+    position: absolute;
+    inset: 0; }
+
+@media (max-width: 991px) {
+  .page-ldp_flashsale_2 .section-navtabs .container {
+    padding: 0; } }
+
+.page-ldp_flashsale_2 .section-navtabs .section-content .navtabs-control {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); }
+  .page-ldp_flashsale_2 .section-navtabs .section-content .navtabs-control .item-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 0;
+    border: 1px solid #FEE5ED;
+    background: #FEF1F5;
+    color: #4E4A4B; }
+    .page-ldp_flashsale_2 .section-navtabs .section-content .navtabs-control .item-control .title {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 140%;
+      /* 25.2px */
+      letter-spacing: -0.18px; }
+    .page-ldp_flashsale_2 .section-navtabs .section-content .navtabs-control .item-control .status {
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 140%;
+      /* 16.8px */
+      text-transform: uppercase; }
+    .page-ldp_flashsale_2 .section-navtabs .section-content .navtabs-control .item-control.active, .page-ldp_flashsale_2 .section-navtabs .section-content .navtabs-control .item-control:hover {
+      background: #F6729C;
+      color: #fff; }
+  @media (max-width: 991px) {
+    .page-ldp_flashsale_2 .section-navtabs .section-content .navtabs-control {
+      display: flex;
+      overflow: auto; }
+      .page-ldp_flashsale_2 .section-navtabs .section-content .navtabs-control .item-control {
+        flex: 0 0 45%;
+        max-width: 45%; } }
+
+.page-ldp_flashsale_2 .section-navtabs .section-content .navtabs-content .item-content-wrap {
+  display: none; }
+  .page-ldp_flashsale_2 .section-navtabs .section-content .navtabs-content .item-content-wrap.active {
+    display: block; }
+  .page-ldp_flashsale_2 .section-navtabs .section-content .navtabs-content .item-content-wrap .item-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px; }
+    .page-ldp_flashsale_2 .section-navtabs .section-content .navtabs-content .item-content-wrap .item-list .product-loop {
+      padding: 0;
+      margin: 0;
+      min-width: 0; }
+  @media (max-width: 991px) {
+    .page-ldp_flashsale_2 .section-navtabs .section-content .navtabs-content .item-content-wrap .item-list {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5px; } }
