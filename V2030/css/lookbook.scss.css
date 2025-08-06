@@ -1,0 +1,110 @@
+look-book [data-image] {
+  width: 100%; }
+
+[data-dot] {
+  cursor: pointer;
+  display: flex;
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  transform: translateX(0); }
+  [data-dot]:before {
+    content: '';
+    background: var(--mainColor);
+    position: absolute;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    transition: all .2s ease-in-out;
+    z-index: 1; }
+  [data-dot]:after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background: rgba(255, 255, 255, 0.5);
+    width: 28px;
+    height: 28px;
+    border-radius: 15px;
+    animation: dingdong 1.5s ease-out infinite;
+    z-index: -1; }
+
+@keyframes dingdong {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(1.5); }
+  100% {
+    transform: scale(1); } }
+
+[data-dot] > * {
+  margin: auto;
+  align-self: center;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  transition: all .2s ease-in-out;
+  z-index: 1; }
+
+[data-dot]:hover:before {
+  background: var(--mainColor2); }
+
+[data-dot]:hover > * {
+  transform: scale(1.3); }
+
+.tooltip {
+  width: 200px;
+  background: #fff;
+  border-radius: 10px;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease;
+  cursor: pointer; }
+  .tooltip .lookbook-item-list {
+    flex-direction: column; }
+
+.tooltip.active {
+  opacity: 1;
+  pointer-events: all; }
+
+@media (max-width: 991px) {
+  [data-scroll] {
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: unset; }
+  [data-scroll] .item {
+    flex: 0 0 80%; } }
+
+[data-scroll] {
+  position: relative;
+  overflow: auto;
+  margin-top: auto; }
+  @media (min-width: 992px) {
+    [data-scroll] {
+      max-height: 204px; } }
+  @media (min-width: 1200px) {
+    [data-scroll] {
+      max-height: 286px; } }
+  @media (min-width: 1300px) {
+    [data-scroll] {
+      max-height: 322px; } }
+
+[data-scroll] .item {
+  border: 1px solid #dee2e6;
+  transition: all 0.3s ease; }
+
+[data-scroll] .focus {
+  border: 1px solid var(--mainColor); }
+
+.lookbook-item-list .lbi_img {
+  width: 100%;
+  margin-right: 8px; }
