@@ -1,0 +1,941 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(translate('Giỏ hàng')).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ translate('Giỏ hàng') }}">
+<meta name="description" content="{{ translate('Giỏ hàng') }}">
+<meta property="og:title" content="{{ translate('Giỏ hàng') }}">
+<meta property="og:url" content="{{ getCurrentUrl() }}">
+<meta property="og:image" content="{{ getBusinessLogo() }}">
+<link rel="canonical" href="{{ getCurrentUrl() }}">
+{%endblock %}
+
+{%block body %}
+ {% set products = serviceCart().productList %}
+                           {% set totalCartMoney = serviceCart().totalMoney %}
+                           {% set latestProduct = products|last %}
+Google Tag Manager (noscript)
+<noscript>
+ <iframe height="0" src="https://measure.maisononline.vn/ns.html?id=GTM-P3P2TMLG" style="display:none;visibility:hidden" width="0">
+ </iframe>
+</noscript>
+End Google Tag Manager (noscript)
+<h1 class="d-none entry-title page">
+ Giỏ hàng của bạn - MaisonOnline - Phân Phối Độc Quyền Các Thương Hiệu Thời Trang Quốc Tế Chính Hãng
+</h1>
+<div class="d-none hidden hide">
+ <svg class="d-none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="icon-wl-white">
+   <path d="M10.001 17.25C10.001 17.25 0.625977 12 0.625977 5.62501C0.626167 4.49826 1.01659 3.40635 1.73086 2.53493C2.44514 1.66351 3.43917 1.06636 4.54397 0.845015C5.64876 0.623669 6.79612 0.791788 7.79097 1.32079C8.78581 1.84979 9.56674 2.70702 10.001 3.74673L10.001 3.74673C10.4352 2.70702 11.2161 1.84979 12.211 1.32079C13.2058 0.79179 14.3532 0.62367 15.458 0.845015C16.5628 1.06636 17.5568 1.66351 18.2711 2.53493C18.9854 3.40635 19.3758 4.49826 19.376 5.62501C19.376 12 10.001 17.25 10.001 17.25Z" stroke="white" stroke-linecap="round" stroke-linejoin="round">
+   </path>
+  </symbol>
+  <symbol id="icon-wl-black">
+   <path d="M10.001 17.25C10.001 17.25 0.625977 12 0.625977 5.62501C0.626167 4.49826 1.01659 3.40635 1.73086 2.53493C2.44514 1.66351 3.43917 1.06636 4.54397 0.845015C5.64876 0.623669 6.79612 0.791788 7.79097 1.32079C8.78581 1.84979 9.56674 2.70702 10.001 3.74673L10.001 3.74673C10.4352 2.70702 11.2161 1.84979 12.211 1.32079C13.2058 0.79179 14.3532 0.62367 15.458 0.845015C16.5628 1.06636 17.5568 1.66351 18.2711 2.53493C18.9854 3.40635 19.3758 4.49826 19.376 5.62501C19.376 12 10.001 17.25 10.001 17.25Z" fill="#2e2e2e" stroke="#2e2e2e" stroke-linecap="round" stroke-linejoin="round">
+   </path>
+  </symbol>
+ </svg>
+</div>
+<noscript>
+ <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-WJNQ9RP" style="display:none;visibility:hidden" width="0">
+ </iframe>
+</noscript>
+<div class="mainHeader--height">
+ <div id="banner-top-sider">
+  <picture>
+   <source media="(min-width:992px)" srcset="https://file.hstatic.net/1000284478/file/25-desktop.jpg"/>
+   <source media="(max-width:991px)" srcset="https://file.hstatic.net/1000284478/file/25_bc744a968d2940a9b3334ded63b0e7aa.jpg"/>
+   <img alt="Banner top" class="lazyload" data-src="https://file.hstatic.net/1000284478/file/25-desktop.jpg" height="1" width="1"/>
+  </picture>
+  <div class="container">
+   <div class="slider-banner-top">
+    <div class="item-banner-top">
+     <a aria-label="Thông tin giao hàng Lễ 2/9" href="/pages/lich-giao-hang-le-quoc-khanh" style="color: #ffffff;">
+      Thông tin giao hàng Lễ 2/9
+     </a>
+    </div>
+    <div class="item-banner-top">
+     <a aria-label="Giảm 10% đơn đầu cho thành viên mới!" href="/collections/tat-ca-san-pham" style="color: #ffffff;">
+      Giảm 10% đơn đầu cho thành viên mới!
+     </a>
+    </div>
+    <div class="item-banner-top">
+     <a aria-label="Ưu Đãi Lên Đến 100K từ VNPAY" href="/collections/tat-ca-san-pham" style="color: #ffffff;">
+      Ưu Đãi Lên Đến 100K từ VNPAY
+     </a>
+    </div>
+    <div class="item-banner-top">
+     <a aria-label="Lug VN - Nhận quà tặng độc quyền*" href="/collections/lug-special-gift" style="color: #ffffff;">
+      Lug VN - Nhận quà tặng độc quyền*
+     </a>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<main class="wrapper-main-body cart-content">
+ <div id="ajaxCart">
+  <section class="empty-products">
+   <div class="empty-products__image">
+    <svg fill="none" height="110" viewbox="0 0 110 110" width="110" xmlns="http://www.w3.org/2000/svg">
+     <path d="M99.5884 74.9004C98.7114 59.6543 85.3171 55.6177 78.7902 43.9043C72.2162 32.106 75.5762 22.2811 62.6305 13.5214C51.1627 5.7617 34.7557 9.15174 30.2119 22.7151C28.9172 26.5802 29.2325 31.0037 27.2083 34.6569C23.9428 40.55 17.9346 40.9895 13.6769 45.5575C-4.01367 64.5376 29.4234 88.2036 45.0275 94.0827C69.4993 103.303 100.851 96.8585 99.5884 74.9004Z" fill="#F9E076" opacity="0.4">
+     </path>
+     <path d="M79.7153 38.5H29.1905C28.5753 38.5 27.9817 38.7269 27.5232 39.1372C27.0648 39.5475 26.7738 40.1124 26.7058 40.7239L22.2614 80.7239C22.2226 81.0734 22.2579 81.4271 22.365 81.7619C22.4722 82.0968 22.6488 82.4053 22.8833 82.6673C23.1178 82.9293 23.4049 83.1389 23.7259 83.2824C24.0469 83.4258 24.3945 83.5 24.7461 83.5H84.1598C84.5114 83.5 84.859 83.4258 85.18 83.2824C85.501 83.1389 85.7881 82.9293 86.0226 82.6673C86.2571 82.4053 86.4337 82.0968 86.5408 81.7619C86.648 81.4271 86.6833 81.0734 86.6445 80.7239L82.2 40.7239C82.1321 40.1124 81.8411 39.5475 81.3826 39.1372C80.9242 38.7269 80.3306 38.5 79.7153 38.5Z" fill="#F0F0F0" stroke="#50555B" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+     </path>
+     <path d="M41.9531 48.5V38.5C41.9531 35.1848 43.2701 32.0054 45.6143 29.6612C47.9585 27.317 51.1379 26 54.4531 26C57.7683 26 60.9478 27.317 63.292 29.6612C65.6362 32.0054 66.9531 35.1848 66.9531 38.5V48.5" stroke="#50555B" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+     </path>
+    </svg>
+   </div>
+   <div class="empty-products__shop-now">
+    <div>
+     <p class="content-1">
+      Không có sản phẩm nào!
+     </p>
+     <p class="content-2">
+      Hãy mua sắm ngay lúc này để tận hưởng các ưu đãi hấp dẫn chỉ dành riêng cho bạn.
+     </p>
+    </div>
+    <a class="btn btn-block btn--fill-black" href="/collections/new-arrival">
+     <span>
+      DẠO MỘT VÒNG XEM NÀO!
+     </span>
+    </a>
+   </div>
+  </section>
+  <section class="cart-product-recommended zone-product-over section-slide">
+   <div class="container-fluid">
+    <hr/>
+    <h3>
+     GỢI Ý CHO BẠN
+    </h3>
+    <div class="products_slick_over" data-id="1002645914" data-sort="created-descending">
+     <div class="product-loop product-loop-no">
+      <div class="product-loop-inner">
+       <div class="product-loop-img proloop-image">
+        <a aria-label="Loading loop" href="#" title="Loading loop">
+        </a>
+       </div>
+       <div class="product-loop-info">
+        <div class="wrap-pro-vendor">
+        </div>
+        <div class="wrap-pro-title">
+        </div>
+        <div class="product-loop-price">
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="product-loop product-loop-no">
+      <div class="product-loop-inner">
+       <div class="product-loop-img proloop-image">
+        <a aria-label="Loading loop" href="#" title="Loading loop">
+        </a>
+       </div>
+       <div class="product-loop-info">
+        <div class="wrap-pro-vendor">
+        </div>
+        <div class="wrap-pro-title">
+        </div>
+        <div class="product-loop-price">
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="product-loop product-loop-no">
+      <div class="product-loop-inner">
+       <div class="product-loop-img proloop-image">
+        <a aria-label="Loading loop" href="#" title="Loading loop">
+        </a>
+       </div>
+       <div class="product-loop-info">
+        <div class="wrap-pro-vendor">
+        </div>
+        <div class="wrap-pro-title">
+        </div>
+        <div class="product-loop-price">
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="product-loop product-loop-no">
+      <div class="product-loop-inner">
+       <div class="product-loop-img proloop-image">
+        <a aria-label="Loading loop" href="#" title="Loading loop">
+        </a>
+       </div>
+       <div class="product-loop-info">
+        <div class="wrap-pro-vendor">
+        </div>
+        <div class="wrap-pro-title">
+        </div>
+        <div class="product-loop-price">
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="product-loop product-loop-no">
+      <div class="product-loop-inner">
+       <div class="product-loop-img proloop-image">
+        <a aria-label="Loading loop" href="#" title="Loading loop">
+        </a>
+       </div>
+       <div class="product-loop-info">
+        <div class="wrap-pro-vendor">
+        </div>
+        <div class="wrap-pro-title">
+        </div>
+        <div class="product-loop-price">
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+ </div>
+</main>
+<div id="social-footer">
+ <div class="container-fluid">
+  <div class="social-footer-inner d-flex align-items-center justify-content-center">
+   <div class="logo-footer">
+    <a href="/">
+     <img alt="MaisonOnline - Phân Phối Độc Quyền Các Thương Hiệu Thời Trang Quốc Tế Chính Hãng" class="lazyload" data-src="https://file.hstatic.net/1000284478/file/logo-maisononline_15232e6154de4a40a1e62d83c7070bfd.svg" height="38" width="74"/>
+    </a>
+   </div>
+   <div class="social-logo">
+    <ul class="d-flex align-items-center justify-content-center">
+     <li>
+      <a aria-label="Facebook" href="https://www.facebook.com/maisononline.vn" title="Facebook">
+       <img alt="fb" class="lazyload" data-src="https://file.hstatic.net/1000284478/file/fb-36_ad58fa6752cd4292a854e9ee8a55f06c.svg" height="30" width="30"/>
+      </a>
+     </li>
+     <li>
+      <a aria-label="Instagram" href="https://www.instagram.com/maisononline/" title="Instagram">
+       <img alt="ins" class="lazyload" data-src="https://file.hstatic.net/1000284478/file/insta-37_4015d59e770d4ec5bfe4aa38246738fa.svg" height="30" width="30"/>
+      </a>
+     </li>
+     <li>
+      <a aria-label="YouTube" href="https://youtube.com/c/MaisonJSC" title="YouTube">
+       <img alt="ytb" class="lazyload" data-src="https://file.hstatic.net/1000284478/file/youtube-38_22809f73ff424eb294899cc27c5fd982.svg" height="30" width="30"/>
+      </a>
+     </li>
+     <li>
+      <a aria-label="Zalo" href="https://zalo.me/2334201460104189186" title="Zalo">
+       <img alt="zalo" class="lazyload" data-src="https://file.hstatic.net/1000284478/file/zalo-44_9f39f0c65b4a4263ba9b413f4dde6bfd.svg" height="30" width="30"/>
+      </a>
+     </li>
+     <li class="hidden-mobile">
+      <ul class="d-flex align-items-center justify-content-center">
+       <li>
+        |
+       </li>
+       <li>
+        <img alt="payment 1" class="lazyload" data-src="https://file.hstatic.net/1000284478/file/momo-45_eee48d6f0f9e41f1bd2c5f06ab4214a2.svg" height="30" width="30"/>
+       </li>
+       <li>
+        <img alt="payment 2" class="lazyload" data-src="https://file.hstatic.net/1000284478/file/zalo_pay-39_a15d1d155b814bf38a06e52e1fff5cad.svg" height="30" width="30"/>
+       </li>
+       <li>
+        <img alt="payment 3" class="lazyload" data-src="https://file.hstatic.net/1000284478/file/vnpay-40_5dbcecd2b4eb4245a4527d357a0459fc.svg" height="30" width="30"/>
+       </li>
+       <li>
+        <img alt="payment 4" class="lazyload" data-src="https://file.hstatic.net/1000284478/file/shopee_pay-41_7bd40e1d333446ebbc23d25fd3754218.svg" height="30" width="30"/>
+       </li>
+       <li>
+        <img alt="payment 5" class="lazyload" data-src="https://file.hstatic.net/1000284478/file/payoo-01_e9e5e556edcb421ca976168c95b32dda.svg" height="30" width="30"/>
+       </li>
+       <li>
+        |
+       </li>
+       <li>
+        <img alt="payment 7" class="lazyload" data-src="https://file.hstatic.net/1000284478/file/visa-43_bc000e2615304f8690da9e32431cb099.svg" height="30" width="30"/>
+       </li>
+       <li>
+        <img alt="payment 8" class="lazyload" data-src="https://file.hstatic.net/1000284478/file/master_card-46_f88e1baa7d2345ea9f1c68a966187993.svg" height="30" width="30"/>
+       </li>
+       <li>
+        <img alt="payment 6" class="lazyload" data-src="https://file.hstatic.net/1000284478/file/napas_82df3ba5adc44b738977587e3ed5fd39.svg" height="30" width="30"/>
+       </li>
+       <li>
+        <img alt="payment 9" class="lazyload" data-src="https://file.hstatic.net/1000284478/file/cod-01_e7f3ef7e4a214dd293c0c3d61e61f18b.svg" height="30" width="30"/>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</div>
+<div aria-atomic="true" aria-live="assertive" class="toast" data-bs-delay="3000" role="alert">
+ <button aria-label="Close" class="close" data-bs-dismiss="toast" type="button">
+  <img alt="Button Close" class="lazyload" data-src="https://file.hstatic.net/1000284478/file/icon-close_86eea6d5dc3c4de8b9dda0f02f6d2ab6.svg" height="24" width="24"/>
+ </button>
+ <div class="toast-body">
+ </div>
+</div>
+<div aria-hidden="true" aria-labelledby="staticBackdropLabel" class="light-scrollbar modal style-modal-mso" data-backdrop="static" id="modal-alert-linechange" role="dialog" tabindex="-1">
+ <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+  <div class="modal-content tab">
+   <div class="modal-header">
+    <h4 class="letter-spacing-2">
+     CẬP NHẬT TRẠNG THÁI SẢN PHẨM
+    </h4>
+    <div class="alert-reason">
+     Những sản phẩm dưới đây đã có cập nhật mới về số lượng và đơn giá.
+    </div>
+   </div>
+   <div class="modal-body">
+    <div class="tab-content">
+     <div class="product-wrapper">
+     </div>
+    </div>
+   </div>
+   <div class="actions-wrapper">
+    <button class="update-cart-change go-link btn back-to-cart" type="button">
+     XEM GIỎ HÀNG
+    </button>
+   </div>
+  </div>
+ </div>
+</div>
+<div aria-labelledby="staticBackdropLabel" aria-modal="true" class="light-scrollbar modal style-modal-mso" data-bs-backdrop="static" data-bs-keyboard="false" id="modal-sync-cart" role="dialog" tabindex="-1">
+ <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+  <div class="modal-content tab">
+   <div class="modal-header">
+    <h4 class="letter-spacing-2">
+     ĐỒNG BỘ GIỎ HÀNG
+    </h4>
+    <div class="alert-reason">
+    </div>
+    <button aria-label="Close" class="close-btn-new" data-bs-dismiss="modal" type="button">
+     <img alt="close" class="lazyload" data-src="https://file.hstatic.net/1000284478/file/x-close_9f6732cf7f214bb6b66300a16a413dd5.svg" height="20" width="20"/>
+    </button>
+   </div>
+   <div class="modal-body">
+    <div class="tab-content">
+     <div class="product-wrapper">
+     </div>
+    </div>
+   </div>
+   <div class="actions-wrapper">
+    <button class="update-process-cart btn back-to-cart" type="button">
+     ĐỒNG BỘ TẤT CẢ
+    </button>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="loading-ovl">
+ <div class="load-3">
+  <div class="line">
+  </div>
+  <div class="line">
+  </div>
+  <div class="line">
+  </div>
+ </div>
+</div>
+<div class="loading-v2">
+ <span class="icon-loading">
+  <img alt="loading" class="lazyload" data-src="https://file.hstatic.net/1000284478/file/icon-loading_1a97ca366cd54a198806ed4dfd667c1b.svg" height="40px" width="40px"/>
+ </span>
+ <span>
+  Loading...
+ </span>
+</div>
+<div class="cus-backdrop">
+</div>
+<div aria-atomic="true" aria-live="assertive" class="toast" data-bs-delay="3000" id="messenger" role="alert">
+ <div class="toast-close">
+  <img alt="messenger" class="lazyload" data-src="https://file.hstatic.net/1000284478/file/icon-messenger-close_d1ceabfc61234d179d6f6c378d5459f6.svg" height="24" width="24"/>
+ </div>
+ <div class="toast-body">
+ </div>
+</div>
+<div id="modal-banner">
+ <div class="modal-banner-inner">
+  <a href="https://www.maisononline.vn/collections/lush">
+   <img alt="Banner" class="lazyload" data-src="https://file.hstatic.net/1000284478/file/1920x700_4a905b7fd1444e0d974f0726bf56525f.jpg"/>
+  </a>
+ </div>
+</div>
+<div id="modal-qrvip">
+ <div class="modal-qrvip-inner">
+  <img alt="qrvip" class="lazyload" data-src="https://file.hstatic.net/1000284478/file/mso-pop-up__1__752e52e6d1ca4f0990d99380c6ef3bcf__1__5b4952f873174cb2920a9ce245e63066.png"/>
+ </div>
+</div>
+<div id="modalQuickView">
+ <div class="inner-quickview">
+  <div class="close-quickview">
+   <img alt="close" class="lazyload" data-src="https://file.hstatic.net/1000284478/file/x-close_9f6732cf7f214bb6b66300a16a413dd5.svg" height="20" width="20"/>
+  </div>
+  <div class="wrapper-img-info-quickview">
+   <div class="box-media-quickview">
+    <a aria-label="Loading..." href="#" title="Loading...">
+    </a>
+   </div>
+   <div class="info-media-quickview">
+    <div class="brand-quickview">
+     Loading...
+    </div>
+    <div class="title-quickview">
+     Loading...
+    </div>
+    <div class="list-color-quickview">
+     <div class="item-color-variant">
+      <input name="color-quickview" type="radio" value=""/>
+      <label>
+      </label>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="wrapper-size-quickview">
+   <div class="heading-size-quickview">
+    <label>
+     Kích cỡ
+    </label>
+    <a href="#" title="Hướng dẫn chọn size">
+     <img alt="Hướng dẫn chọn size" class="lazyload" data-src="https://file.hstatic.net/1000284478/file/rule_38f91ad25b6a40e186ce69d0b2b8252f.svg" height="20" width="26"/>
+     Hướng dẫn chọn size
+    </a>
+   </div>
+   <div class="wrap-convert-size" data-brand="">
+   </div>
+   <div class="list-size-variant">
+    <div class="item-size-variant">
+     <input name="size-quickview" type="radio" value=""/>
+     <label>
+      Loading...
+     </label>
+    </div>
+   </div>
+   <div class="notify-quickview d-none">
+   </div>
+  </div>
+  <div class="action-quickview">
+   <button class="btn-buynow-quickview">
+    MUA NGAY
+   </button>
+   <button class="btn-addtocart-quickview">
+    THÊM VÀO GIỎ
+   </button>
+   <button class="btn-soldout-quickview d-none">
+    HẾT HÀNG
+   </button>
+  </div>
+ </div>
+ <div class="overflow-quickview">
+ </div>
+</div>
+<div id="menu-mobile-new">
+ <div class="wrapper-mobile-menu">
+  <div class="inner-menu-mobile-new">
+   <div class="heading-menu-mobile">
+    <div class="title-menu-mobile">
+     <a class="d-none" data-gender="men" href="?view=men">
+      Menswear homepage
+     </a>
+     <a class="d-none" data-gender="women" href="?view=women">
+      Womenswear homepage
+     </a>
+     <a class="d-none" data-gender="kids" href="?view=kids">
+      Kids homepage
+     </a>
+     <a class="d-none" data-gender="beauty" href="?view=beauty">
+      Beauty homepage
+     </a>
+     <a class="d-none" data-gender="homecare" href="?view=homecare">
+      Homecare homepage
+     </a>
+    </div>
+    <div class="close-menu-mobile">
+     <span>
+      ĐÓNG
+     </span>
+     <img alt="icon close" class="lazyload" data-src="https://file.hstatic.net/1000284478/file/x-close_9f6732cf7f214bb6b66300a16a413dd5.svg" height="20" width="20"/>
+    </div>
+   </div>
+   <div class="tab-heading-menu-gender">
+    <div class="tab-menu-gender" data-gender="women">
+     Nữ
+    </div>
+    <div class="tab-menu-gender" data-gender="men">
+     Nam
+    </div>
+    <div class="tab-menu-gender" data-gender="kids">
+     Trẻ em
+    </div>
+    <div class="tab-menu-gender" data-gender="beauty">
+     Làm đẹp
+    </div>
+    <div class="tab-menu-gender" data-gender="homecare">
+     Đồ gia dụng
+    </div>
+   </div>
+   <div class="content-menu-mobile">
+   </div>
+  </div>
+ </div>
+</div>
+<div aria-hidden="true" aria-labelledby="modal-form-account" class="modal fade" id="modal-form-account" tabindex="-1">
+ <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+   <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button">
+   </button>
+   <div class="inner-form-account">
+    <div class="heading-tab-form-account">
+     <div class="item-tab-form active" data-tab="login">
+      ĐĂNG NHẬP
+     </div>
+     <div class="item-tab-form" data-tab="register">
+      ĐĂNG KÝ
+     </div>
+    </div>
+    <div class="wrapper-content-form-account">
+     <div class="item-content-form active" data-tab="login">
+      <div id="form-login-custom">
+       <div class="item-input">
+        <div class="heading-form">
+         <label>
+          EMAIL
+         </label>
+         <span class="login-form-phone">
+          ĐĂNG NHẬP BẰNG SỐ ĐIỆN THOẠI
+         </span>
+        </div>
+        <input class="input-form" name="customer[email]" placeholder="Nhập Email" type="email"/>
+        <span class="text-error">
+        </span>
+       </div>
+       <div class="item-input">
+        <label>
+         MẬT KHẨU
+        </label>
+        <input class="input-form" name="customer[password]" placeholder="Nhập Mật Khẩu" type="password"/>
+        <span class="eyes-password">
+         <svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.5 3.75L19.5 20.25" stroke="#2E2E2E" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+          <path d="M14.5223 14.7752C13.7864 15.4441 12.8149 15.7933 11.8215 15.7459C10.8281 15.6986 9.89422 15.2586 9.22524 14.5227C8.55626 13.7868 8.20698 12.8153 8.25424 11.822C8.3015 10.8286 8.74142 9.89463 9.47724 9.22559" stroke="#2E2E2E" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+          <path d="M6.93698 6.43066C3.11486 8.36618 1.5 12 1.5 12C1.5 12 4.5 18.7493 12 18.7493C13.7572 18.7633 15.4926 18.3585 17.0623 17.5685" stroke="#2E2E2E" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+          <path d="M19.5571 15.8528C21.6011 14.0222 22.5 11.9998 22.5 11.9998C22.5 11.9998 19.5 5.24904 12 5.24904C11.3504 5.24798 10.7019 5.30079 10.061 5.40693" stroke="#2E2E2E" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+          <path d="M12.7056 8.31641C13.5026 8.46946 14.2285 8.8768 14.7745 9.47735C15.3204 10.0779 15.6569 10.8393 15.7335 11.6472" stroke="#2E2E2E" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+         </svg>
+         <svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.24902C4.5 5.24902 1.5 11.9998 1.5 11.9998C1.5 11.9998 4.5 18.749 12 18.749C19.5 18.749 22.5 11.9998 22.5 11.9998C22.5 11.9998 19.5 5.24902 12 5.24902Z" stroke="black" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+          <path d="M12 15.75C14.0711 15.75 15.75 14.0711 15.75 12C15.75 9.92893 14.0711 8.25 12 8.25C9.92893 8.25 8.25 9.92893 8.25 12C8.25 14.0711 9.92893 15.75 12 15.75Z" stroke="black" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+         </svg>
+        </span>
+        <span class="text-error">
+        </span>
+       </div>
+       <div class="error-status d-none">
+       </div>
+       <div class="item-input-action">
+        <button class="btn-login-form" type="submit">
+         ĐĂNG NHẬP
+        </button>
+        <div class="btn-forgot-form">
+         QUÊN MẬT KHẨU?
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="item-content-form" data-tab="register">
+      <div class="des-form-register">
+       Mật khẩu phải có ít nhất 8 ký tự, bao gồm chữ và số, không bao gồm ký tự đặc biệt
+      </div>
+      <div id="form-register-custom">
+       <div class="item-input">
+        <div class="heading-form">
+         <label>
+          HỌ
+         </label>
+        </div>
+        <input class="input-form" name="customer[last_name]" placeholder="Nhập họ của bạn" type="text"/>
+        <span class="text-error">
+        </span>
+       </div>
+       <div class="item-input">
+        <div class="heading-form">
+         <label>
+          TÊN
+         </label>
+        </div>
+        <input class="input-form" name="customer[first_name]" placeholder="Nhập tên của bạn" type="text"/>
+        <span class="text-error">
+        </span>
+       </div>
+       <div class="item-input">
+        <div class="heading-form">
+         <label>
+          EMAIL
+         </label>
+        </div>
+        <input class="input-form" name="customer[email]" placeholder="Nhập Email" type="email"/>
+        <span class="text-error">
+        </span>
+       </div>
+       <div class="item-input">
+        <label>
+         MẬT KHẨU
+        </label>
+        <input class="input-form" name="customer[password]" placeholder="Nhập Mật Khẩu" type="password"/>
+        <span class="eyes-password">
+         <svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.5 3.75L19.5 20.25" stroke="#2E2E2E" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+          <path d="M14.5223 14.7752C13.7864 15.4441 12.8149 15.7933 11.8215 15.7459C10.8281 15.6986 9.89422 15.2586 9.22524 14.5227C8.55626 13.7868 8.20698 12.8153 8.25424 11.822C8.3015 10.8286 8.74142 9.89463 9.47724 9.22559" stroke="#2E2E2E" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+          <path d="M6.93698 6.43066C3.11486 8.36618 1.5 12 1.5 12C1.5 12 4.5 18.7493 12 18.7493C13.7572 18.7633 15.4926 18.3585 17.0623 17.5685" stroke="#2E2E2E" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+          <path d="M19.5571 15.8528C21.6011 14.0222 22.5 11.9998 22.5 11.9998C22.5 11.9998 19.5 5.24904 12 5.24904C11.3504 5.24798 10.7019 5.30079 10.061 5.40693" stroke="#2E2E2E" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+          <path d="M12.7056 8.31641C13.5026 8.46946 14.2285 8.8768 14.7745 9.47735C15.3204 10.0779 15.6569 10.8393 15.7335 11.6472" stroke="#2E2E2E" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+         </svg>
+         <svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5.24902C4.5 5.24902 1.5 11.9998 1.5 11.9998C1.5 11.9998 4.5 18.749 12 18.749C19.5 18.749 22.5 11.9998 22.5 11.9998C22.5 11.9998 19.5 5.24902 12 5.24902Z" stroke="black" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+          <path d="M12 15.75C14.0711 15.75 15.75 14.0711 15.75 12C15.75 9.92893 14.0711 8.25 12 8.25C9.92893 8.25 8.25 9.92893 8.25 12C8.25 14.0711 9.92893 15.75 12 15.75Z" stroke="black" stroke-linecap="round" stroke-linejoin="round">
+          </path>
+         </svg>
+        </span>
+        <span class="text-error">
+        </span>
+       </div>
+       <div class="error-status d-none">
+       </div>
+       <div class="success-status d-none">
+       </div>
+       <div class="item-input-policy">
+        Bằng cách tạo tài khoản ở Maison là bạn đồng ý với các
+        <a aria-label="Chính sách Bảo mật và Điều khoản - Điều kiện" href="#" title="Chính sách Bảo mật và Điều khoản - Điều kiện">
+         Chính sách Bảo mật và Điều khoản - Điều kiện
+        </a>
+       </div>
+       <div class="item-input-action">
+        <button class="btn-register-form">
+         TẠO TÀI KHOẢN
+        </button>
+        <div class="btn-forgot-form">
+         QUÊN MẬT KHẨU?
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="item-content-form" data-tab="forgot">
+      <div class="des-form-register">
+       Vui lòng nhập email của bạn ở đây để nhận hướng dẫn đặt lại mật khẩu.
+      </div>
+      <div id="form-forgot-custom">
+       <div class="item-input">
+        <div class="heading-form">
+         <label>
+          EMAIL
+         </label>
+        </div>
+        <input class="input-form" name="customer[email]" placeholder="Nhập Email" type="email"/>
+        <span class="text-error">
+        </span>
+       </div>
+       <div class="error-status d-none">
+       </div>
+       <div class="success-status d-none">
+       </div>
+       <div class="item-input-action">
+        <button class="btn-send-forgot-form">
+         XÁC THỰC EMAIL
+        </button>
+       </div>
+      </div>
+     </div>
+     <div class="item-content-form" data-tab="login-phone">
+      <h3 class="item-content-form-title d-none">
+       Đăng nhập qua Số điện thoại
+      </h3>
+      <div class="des-form-register">
+       Vui lòng nhập số điện thoại của bạn ở đây để đăng nhập.
+      </div>
+      <form id="form_phone">
+       <div class="item-input">
+        <div class="heading-form">
+         <label>
+          Số điện thoại
+         </label>
+         <span class="login-form-email">
+          ĐĂNG NHẬP BẰNG EMAIL
+         </span>
+        </div>
+        <input class="input-form" id="login_phone" name="phone_number" placeholder="Nhập số điện thoại" type="text"/>
+        <div class="verify-input-element verify-phone-form-login disabled">
+         Xác thực
+        </div>
+        <span class="text-error">
+        </span>
+       </div>
+       <div class="item-input item-input-otp d-none">
+        <label>
+         Mã OTP
+        </label>
+        <input class="input-form" id="otp_code" name="otp_code" placeholder="Nhập OTP Code" type="text"/>
+       </div>
+       <div class="item-input item-input-countdown d-none">
+        <div class="note">
+         Bạn chưa nhận được mã?
+        </div>
+        <div class="note bold disabled">
+         Gửi lại mã
+         <span id="countdown">
+         </span>
+        </div>
+       </div>
+       <div class="error-status d-none">
+       </div>
+       <input name="g-recaptcha-response" type="hidden"/>
+       <div class="item-input-action">
+        <button class="btn-login-phone disabled" disabled="" type="submit">
+         ĐĂNG NHẬP
+        </button>
+       </div>
+      </form>
+     </div>
+     <div class="item-content-social-login">
+      <button id="btn-google-login">
+       <img alt="icon" class="lazyload" data-src="https://file.hstatic.net/1000284478/file/frame_5554_fb48ce1d555d437797a89652ceb41692.svg"/>
+       <span>
+        Đăng nhập Google
+       </span>
+      </button>
+      <button id="btn-facebook-login">
+       <img alt="icon" class="lazyload" data-src="https://file.hstatic.net/1000284478/file/container_e6d783f122e2404984aec64b04708af1.svg"/>
+       <span>
+        Đăng nhập Facebook
+       </span>
+      </button>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="modal-update-profile">
+</div>
+<div aria-hidden="true" aria-labelledby="staticBackdropLabel" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="lush-clickcollect" tabindex="-1">
+ <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h5 class="modal-title">
+     Thông báo
+    </h5>
+   </div>
+   <div class="modal-body">
+    <div class="head-lush">
+     Sản phẩm Lush bạn mua chỉ hỗ trợ nhận tại cửa hàng, bạn cần thanh toán riêng cho sản phẩm này.
+    </div>
+    <div class="list-lush">
+    </div>
+   </div>
+   <div class="modal-footer">
+    <button class="btn cancel-lush btn--solid-gray">
+     Xóa sản phẩm
+    </button>
+    <button class="btn confirm-lush btn--fill-black">
+     Đồng ý và thanh toán
+    </button>
+   </div>
+  </div>
+ </div>
+</div>
+<button class="d-none btn-lush-clickcollect" data-bs-target="#lush-clickcollect" data-bs-toggle="modal" type="button">
+ Launch static backdrop modal
+</button>
+<div id="modal-warning-email-null" style="display: none;">
+ <div class="inner-modal-email">
+  <div class="heading-modal">
+   Tài khoản bạn chưa có email!
+  </div>
+  <div class="content-modal">
+   Bạn vui lòng cập nhật email cho tài khoản
+   <a href="/account">
+    tại đây
+   </a>
+   .
+  </div>
+ </div>
+</div>
+<div id="modal-warning-phone-null" style="display: none;">
+ <div class="inner-modal-email">
+  <div class="heading-modal">
+   Tài khoản bạn chưa có số điện thoại!
+  </div>
+  <div class="content-modal">
+   Bạn vui lòng cập nhật số điện thoại cho tài khoản
+   <a href="/account">
+    tại đây
+   </a>
+   .
+  </div>
+ </div>
+</div>
+<div id="modal-redirect-checkout" style="display: none;">
+ <div class="inner-modal-email">
+  <div class="heading-modal">
+   Thông báo
+  </div>
+  <div class="content-modal">
+   Hệ thống sẽ chuyển đến trang thanh toán trước trong
+   <span class="count-time">
+   </span>
+  </div>
+  <div class="action-redirect-checkout">
+   <button>
+    Tiếp tục mua hàng
+   </button>
+  </div>
+ </div>
+</div>
+<div class="d-none" id="find-keyFormOmini">
+ <form accept-charset="UTF-8" action="/account/login" id="customer_login" method="post">
+  <input name="form_type" type="hidden" value="customer_login"/>
+  <input name="utf8" type="hidden" value="✓"/>
+  <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt-IJgiQbPEpew7TXu4fKjj9vtWfQelwn_197aqiSMdwRg7sQYTTzMaWFUZg0Hc2MQlJB4f3Q2kQFHpR3auxkhw1Vc0Mv3tvx2MM78qio2mbI1kIfm-_Vw5iGxjPNaTfDo0"/>
+ </form>
+</div>
+<style>
+ .men.banner--1 { /*background-image: url("");*/ }
+	.men.banner--2 { /*background-image: url("https://file.hstatic.net/1000284478/file/main-new_5b07bd8ee5f24f9abba2dc60ae90b733.jpg");*/ }
+	.women.banner--1 { /*background-image: url("https://file.hstatic.net/1000284478/file/main-new_899cf8ae6adb4def87fc5be9042bea53.jpg");*/ }
+	.women.banner--2 { /*background-image: url("https://file.hstatic.net/1000284478/file/cki21_vie_womansday_sale_social_posting-1440x760_5bfcf30f677a4d5fad7e325bc7b8e1a6.jpg");*/ }
+	.kids.banner--1 { /*background-image: url("");*/ }
+	.kids.banner--2 { /*background-image: url("");*/ }
+	
+		.color-do:after{
+				content: '';
+				background: #c30010;
+
+		}
+		.color-vang:after{
+				content: '';
+				background: #ffd300;
+
+		}
+		.color-cam:after{
+				content: '';
+				background: #ed9121;
+
+		}
+		.color-xanh-duong:after{
+				content: '';
+				background: #0044ff;
+
+		}
+		.color-xanh-la:after{
+				content: '';
+				background: #33b864;
+
+		}
+		.color-nau:after{
+				content: '';
+				background: #753a3a;
+
+		}
+		.color-xam:after{
+				content: '';
+				background: #6b6e70;
+
+		}
+		.color-tim:after{
+				content: '';
+				background: #c45aec;
+
+		}
+		.color-hong:after{
+				content: '';
+				background: #f47dbb;
+
+		}
+		.color-den:after{
+				content: '';
+				background: #000000;
+
+		}
+		.color-nude:after{
+				content: '';
+				background: #dcb49e;
+
+		}
+		.color-trang:after{
+				content: '';
+				background: #ffffff;
+
+					border: 1px solid #E5E5E5;
+
+		}
+		.color-be:after{
+				content: '';
+				background: #f6ead4;
+
+		}
+		.color-nhieu-mau:after{
+				content: '';
+				background: url(https://file.hstatic.net/1000356698/file/multicolor_c94045b1782348f1a04eebace2443ecd.png) no-repeat;
+
+		}
+
+	.label_all .product-loop .product-loop-img:before { background-image: url(); }
+	.product-loop.label_markdown .product-loop-img:before { background-image: url(); }
+	.product-loop.label_full_price .product-loop-img:before { background-image: url(); }
+	.product-loop.label_tag_1 .product-loop-img:before { background-image: url(); }
+	.product-loop.label_tag_2 .product-loop-img:before { background-image: url(); }
+	.product-loop.label_tag_3 .product-loop-img:before { background-image: url(); }
+	.product-loop.label_tag_4 .product-loop-img:before { background-image: url(); }
+	.product-loop.label_tag_5 .product-loop-img:before { background-image: url(); }
+	.product-loop.label_tag_6 .product-loop-img:before { background-image: url(); }
+	.product-loop.label_tag_7 .product-loop-img:before { background-image: url(); }
+	.product-loop.label_tag_8 .product-loop-img:before { background-image: url(); }
+	.product-loop.checkBrandLabel_1 .product-loop-img:before { background-image: url(); }
+	.product-loop.checkBrandLabel_2 .product-loop-img:before { background-image: url(); }
+	.product-loop.checkBrandLabel_3 .product-loop-img:before { background-image: url(); }
+	.product-loop.checkBrandLabel_4 .product-loop-img:before { background-image: url(); }
+	.product-loop.checkBrandLabel_5 .product-loop-img:before { background-image: url(); }
+	.product-loop.checkBrandLabel_6 .product-loop-img:before { background-image: url(); }
+	.product-loop.checkBrandLabel_7 .product-loop-img:before { background-image: url(); }
+	.product-loop.checkBrandLabel_8 .product-loop-img:before { background-image: url(); }
+	.product-loop.checkBrandLabel_9 .product-loop-img:before { background-image: url(); }
+	.product-loop.checkBrandLabel_10 .product-loop-img:before { background-image: url(); }
+	.product-loop.checkBrandLabel_11 .product-loop-img:before { background-image: url(); }
+	.product-loop.checkBrandLabel_12 .product-loop-img:before { background-image: url(); }
+	.product-loop.checkBrandLabel_13 .product-loop-img:before { background-image: url(); }
+	.product-loop.checkBrandLabel_14 .product-loop-img:before { background-image: url(); }
+	.product-loop.checkBrandLabel_15 .product-loop-img:before { background-image: url(); }
+	.product-loop.checkBrandLabel_16 .product-loop-img:before { background-image: url(); }
+	.product-loop.checkBrandLabel_17 .product-loop-img:before { background-image: url(); }
+	.product-loop.checkBrandLabel_18 .product-loop-img:before { background-image: url(); }
+	.product-loop.checkBrandLabel_19 .product-loop-img:before { background-image: url(); }
+	.product-loop.checkBrandLabel_20 .product-loop-img:before { background-image: url(); }
+	.product-loop.checkBrandLabel_21 .product-loop-img:before { background-image: url(); }
+	.product-loop.checkBrandLabel_22 .product-loop-img:before { background-image: url(); }
+
+	#tracking-page .order-tracking .order-tracking-wrap .ort-block.active.refunded .ort-block-circle span{ background-image: url(//theme.hstatic.net/1000284478/1001180179/14/icon-refund.png?v=8455) center no-repeat !important; }
+	@media(max-width: 575px) {
+		.men.banner--1 { /*background-image: url("");*/ }
+		.men.banner--2 { /*background-image: url("https://file.hstatic.net/1000284478/file/main-new-m_d0bfa79ef313475bb6874f760acd504b.jpg");*/ }
+		.women.banner--1 { /*background-image: url("https://file.hstatic.net/1000284478/file/main-new-m_05b369bb01a1402b8074fa405cd00d58.jpg");*/ }
+		.women.banner--2 { /*background-image: url("https://file.hstatic.net/1000284478/file/cki21_vie_womansday_sale_social_posting-414x740_33042ba6e5d44c8ba3d80a748cd3f31a.jpg");*/ }
+		.kids.banner--1 { /*background-image: url("");*/ }
+		.kids.banner--2 { /*background-image: url("");*/ }
+	}
+</style>
+<div class="messenger-fb">
+ <a aria-label="fb messenger" href="https://www.facebook.com/messages/t/676935962723999" target="_blank">
+  <img alt="fb messenger" src="https://file.hstatic.net/1000284478/file/ic_messenger_logo.png"/>
+ </a>
+</div>
+
+{%endblock %}
