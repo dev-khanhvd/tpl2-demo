@@ -1,0 +1,2523 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(translate('Trang chủ')).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ getKeyContentValue('META_KEYWORDS') }}">
+<meta name="description" content="{{ getKeyContentValue('META_DESCRIPTION') }}">
+<meta property="og:title" content="{{ getKeyContentValue('META_TITLE') }}">
+<meta property="og:url" content="{{ getCurrentUrl() }}">
+<meta property="og:image" content="{{ getBusinessLogo() }}">
+<link rel="canonical" href="{{ getCurrentUrl() }}">
+{%endblock %}
+
+{%block body %}
+
+<div class="backdrop__body-backdrop___1rvky">
+</div>
+<div class="page-body">
+ <div class="hidden-md hidden-lg opacity_menu">
+ </div>
+ <div class="opacity_filter">
+ </div>
+ <div class="body_opactiy">
+ </div>
+ <div class="op_login">
+ </div>
+ <div class="menu_mobile max_991 hidden-md hidden-lg">
+  <div class="account">
+   <svg id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewbox="0 0 512 512" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+    <g>
+     <path d="M256,0c-74.439,0-135,60.561-135,135s60.561,135,135,135s135-60.561,135-135S330.439,0,256,0z">
+     </path>
+    </g>
+    <g>
+     <path d="M423.966,358.195C387.006,320.667,338.009,300,286,300h-60c-52.008,0-101.006,20.667-137.966,58.195
+						 C51.255,395.539,31,444.833,31,497c0,8.284,6.716,15,15,15h420c8.284,0,15-6.716,15-15
+						 C481,444.833,460.745,395.539,423.966,358.195z">
+     </path>
+    </g>
+   </svg>
+   <a href="/account/login" title="Đăng nhập">
+    Đăng nhập
+   </a>
+   <span>
+    |
+   </span>
+   <a href="/account/register" title="Đăng ký">
+    Đăng ký
+   </a>
+   <i class="close-menu">
+    <svg id="Capa_1" style="enable-background:new 0 0 512.001 512.001;" version="1.1" viewbox="0 0 512.001 512.001" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+     <g>
+      <path d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717
+							 L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859
+							 c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287
+							 l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285
+							 L284.286,256.002z">
+      </path>
+     </g>
+    </svg>
+   </i>
+  </div>
+  <ul class="ul_collections">
+   <li class="level0 level-top parent">
+    <a href="/ao" title="ÁO">
+     ÁO
+    </a>
+    <i class="fa">
+    </i>
+    <ul class="level0" style="display:none;">
+     <li class="level1">
+      <a href="/jackets" title="ÁO KHOÁC">
+       <span>
+        ÁO KHOÁC
+       </span>
+      </a>
+     </li>
+     <li class="level1">
+      <a href="/so-mi" title="ÁO SƠ MI">
+       <span>
+        ÁO SƠ MI
+       </span>
+      </a>
+     </li>
+     <li class="level1">
+      <a href="/ao-len" title="ÁO LEN">
+       <span>
+        ÁO LEN
+       </span>
+      </a>
+     </li>
+     <li class="level1">
+      <a href="/sweater" title="ÁO PHÔNG &amp; HOODIE">
+       <span>
+        ÁO PHÔNG &amp; HOODIE
+       </span>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="level0 level-top parent">
+    <a href="/quan" title="QUẦN">
+     QUẦN
+    </a>
+    <i class="fa">
+    </i>
+    <ul class="level0" style="display:none;">
+     <li class="level1">
+      <a href="/short" title="QUẦN SHORT">
+       <span>
+        QUẦN SHORT
+       </span>
+      </a>
+     </li>
+     <li class="level1">
+      <a href="/trouser" title="QUẦN KAKI &amp; VẢI">
+       <span>
+        QUẦN KAKI &amp; VẢI
+       </span>
+      </a>
+     </li>
+     <li class="level1">
+      <a href="/jean" title="QUẦN JEAN">
+       <span>
+        QUẦN JEAN
+       </span>
+      </a>
+     </li>
+     <li class="level1">
+      <a href="/jogger" title="QUẦN JOGGER">
+       <span>
+        QUẦN JOGGER
+       </span>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="level0 level-top parent">
+    <a href="/phu-kien" title="PHỤ KIỆN">
+     PHỤ KIỆN
+    </a>
+    <i class="fa">
+    </i>
+    <ul class="level0" style="display:none;">
+     <li class="level1">
+      <a href="/bag" title="TÚI / VÍ / BA LÔ">
+       <span>
+        TÚI / VÍ / BA LÔ
+       </span>
+      </a>
+     </li>
+     <li class="level1">
+      <a href="/other" title="PHỤ KIỆN KHÁC">
+       <span>
+        PHỤ KIỆN KHÁC
+       </span>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="level0 level-top parent">
+    <a href="/sale" title="OUTLET">
+     OUTLET
+    </a>
+   </li>
+   <li class="level0 level-top parent">
+    <a href="/women-area" title="ĐỒ NỮ">
+     ĐỒ NỮ
+    </a>
+   </li>
+   <li class="level0 level-top parent">
+    <a href="https://s.shopee.vn/6VA1cLrGVP" title="SHOPEE">
+     SHOPEE
+    </a>
+   </li>
+  </ul>
+ </div>
+ <h1 class="hidden">
+  THE NOOB
+ </h1>
+ <section class="awe-section-1">
+  <section class="section-slider">
+   <div class="home-slider">
+    <div class="item">
+     <a class="clearfix" href="/all" title="quần áo">
+      <picture>
+       <source media="(max-width: 480px)" srcset="//bizweb.dktcdn.net/thumb/large/100/045/077/themes/894305/assets/slider_1.jpg?1741967380019"/>
+       <img alt="quần áo" class="img-responsive" src="//bizweb.dktcdn.net/100/045/077/themes/894305/assets/slider_1.jpg?1741967380019"/>
+      </picture>
+     </a>
+    </div>
+   </div>
+  </section>
+ </section>
+ <section class="awe-section-2">
+  <section class="section-product section-product-1">
+   <div class="container">
+    <div class="title-module">
+     <h2 class="col-md-3 col-sm-12">
+      <a href="jean" title="JEAN / OTHER DENIM">
+       JEAN / OTHER DENIM
+      </a>
+      <i class="fa fa-bars hidden-lg hidden-md hidden-sm">
+      </i>
+     </h2>
+     <ul class="col-md-6 col-sm-9 link">
+      <li>
+       <a href="/ao" title="ÁO">
+        ÁO
+       </a>
+      </li>
+      <li>
+       <a href="/quan" title="QUẦN">
+        QUẦN
+       </a>
+      </li>
+      <li>
+       <a href="/phu-kien" title="PHỤ KIỆN">
+        PHỤ KIỆN
+       </a>
+      </li>
+      <li>
+       <a href="/sale" title="OUTLET">
+        OUTLET
+       </a>
+      </li>
+      <li>
+       <a href="/women-area" title="ĐỒ NỮ">
+        ĐỒ NỮ
+       </a>
+      </li>
+      <li>
+       <a href="https://s.shopee.vn/6VA1cLrGVP" title="SHOPEE">
+        SHOPEE
+       </a>
+      </li>
+      <li>
+       <a class="hidden-lg hidden-md hidden-sm" href="jean" title="Xem tất cả">
+        XEM TẤT CẢ
+       </a>
+      </li>
+     </ul>
+     <a class="view-all hidden-xs" href="jean" title="Xem tất cả">
+      XEM TẤT CẢ
+     </a>
+    </div>
+    <div class="row">
+     <div class="slider-product">
+      <div class="item">
+       <div class="product-box product-item-main">
+        <div class="tag-flash">
+        </div>
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2025qb18" title="BTM - Quần Jean Ống Đứng - 2025QB18">
+          <picture>
+           <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/504251729-3182899288528453-7761217027810742682-n-jpg-nc-cat-103-ccb-1-7-nc-sid-127cfc-nc-eui2-aefbgi2vs3w1epywhxsa4x738uqn2ehw2mbxrcfz6hdazhhnggtnvm1vtxdsz04qq2ifxtictfic-ybdlhdswhxf-nc-ohc-dblu7ih-sziq7knvwge7mjm-nc-oc-a.jpg?v=1749459236753" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           <img alt="BTM - Quần Jean Ống Đứng - 2025QB18" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/504251729-3182899288528453-7761217027810742682-n-jpg-nc-cat-103-ccb-1-7-nc-sid-127cfc-nc-eui2-aefbgi2vs3w1epywhxsa4x738uqn2ehw2mbxrcfz6hdazhhnggtnvm1vtxdsz04qq2ifxtictfic-ybdlhdswhxf-nc-ohc-dblu7ih-sziq7knvwge7mjm-nc-oc-a.jpg?v=1749459236753" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+          </picture>
+         </a>
+         <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025qb18" href="/2025qb18" title="Xem nhanh">
+         </a>
+         <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-48910443" enctype="multipart/form-data" method="post">
+          <input class="hidden" name="variantId" type="hidden" value="151207718"/>
+          <button class="btn" onclick="window.location.href='/2025qb18'" title="Chọn sản phẩm" type="button">
+           Chọn sản phẩm
+          </button>
+         </form>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name line-clamp-2">
+          <a href="/2025qb18" title="BTM - Quần Jean Ống Đứng - 2025QB18">
+           BTM - Quần Jean Ống Đứng - 2025QB18
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           500.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="item">
+       <div class="product-box product-item-main">
+        <div class="tag-flash">
+        </div>
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2025qb17" title="BTM - Quần Jean Ống Đứng - 2025QB17">
+          <picture>
+           <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/505711218-3182899348528447-5386782681468582642-n-jpg-nc-cat-111-ccb-1-7-nc-sid-127cfc-nc-eui2-aefnxw68bzbvupjlcetoyzd3kosmveojxgwsiya8sipezq1nne-bdgh0lacwfolqmrwheyrg3y7gahml06pa6yks-nc-ohc-57yafrhxs-iq7knvwh5zovv-nc-oc-a.jpg?v=1749459452803" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           <img alt="BTM - Quần Jean Ống Đứng - 2025QB17" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/505711218-3182899348528447-5386782681468582642-n-jpg-nc-cat-111-ccb-1-7-nc-sid-127cfc-nc-eui2-aefnxw68bzbvupjlcetoyzd3kosmveojxgwsiya8sipezq1nne-bdgh0lacwfolqmrwheyrg3y7gahml06pa6yks-nc-ohc-57yafrhxs-iq7knvwh5zovv-nc-oc-a.jpg?v=1749459452803" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+          </picture>
+         </a>
+         <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025qb17" href="/2025qb17" title="Xem nhanh">
+         </a>
+         <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-48909224" enctype="multipart/form-data" method="post">
+          <input class="hidden" name="variantId" type="hidden" value="151206475"/>
+          <button class="btn" onclick="window.location.href='/2025qb17'" title="Chọn sản phẩm" type="button">
+           Chọn sản phẩm
+          </button>
+         </form>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name line-clamp-2">
+          <a href="/2025qb17" title="BTM - Quần Jean Ống Đứng - 2025QB17">
+           BTM - Quần Jean Ống Đứng - 2025QB17
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           500.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="item">
+       <div class="product-box product-item-main">
+        <div class="tag-flash">
+        </div>
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2025qb16" title="Z.R - Quần Jean Túi Hộp Dáng Rộng - 2025QB16">
+          <picture>
+           <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/01538205800-e1.jpg?v=1746126301220" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           <img alt="Z.R - Quần Jean Túi Hộp Dáng Rộng - 2025QB16" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/01538205800-e1.jpg?v=1746126301220" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+          </picture>
+         </a>
+         <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025qb16" href="/2025qb16" title="Xem nhanh">
+         </a>
+         <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-45175082" enctype="multipart/form-data" method="post">
+          <input class="hidden" name="variantId" type="hidden" value="145337486"/>
+          <button class="btn" onclick="window.location.href='/2025qb16'" title="Chọn sản phẩm" type="button">
+           Chọn sản phẩm
+          </button>
+         </form>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name line-clamp-2">
+          <a href="/2025qb16" title="Z.R - Quần Jean Túi Hộp Dáng Rộng - 2025QB16">
+           Z.R - Quần Jean Túi Hộp Dáng Rộng - 2025QB16
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           850.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="item">
+       <div class="product-box product-item-main">
+        <div class="tag-flash">
+        </div>
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2025qb11" title="BTM - Quần Jean Dáng Slim FIt - 2025QB11">
+          <picture>
+           <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/495278589-3149267278558321-2531985697525935769-n-jpg-nc-cat-103-ccb-1-7-nc-sid-127cfc-nc-ohc-rdu7pmfupmkq7knvwhuswyn-nc-oc-adk8cul-c0890rymwjwpb5shud89gzznou6f22xseyptr-7mu2usocvst0gkj5cpc6y-nc-zt-23-nc-ht-scontent-fhan5-.jpg?v=1746855867163" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           <img alt="BTM - Quần Jean Dáng Slim FIt - 2025QB11" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/495278589-3149267278558321-2531985697525935769-n-jpg-nc-cat-103-ccb-1-7-nc-sid-127cfc-nc-ohc-rdu7pmfupmkq7knvwhuswyn-nc-oc-adk8cul-c0890rymwjwpb5shud89gzznou6f22xseyptr-7mu2usocvst0gkj5cpc6y-nc-zt-23-nc-ht-scontent-fhan5-.jpg?v=1746855867163" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+          </picture>
+         </a>
+         <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025qb11" href="/2025qb11" title="Xem nhanh">
+         </a>
+         <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-44675350" enctype="multipart/form-data" method="post">
+          <input class="hidden" name="variantId" type="hidden" value="144277746"/>
+          <button class="btn" onclick="window.location.href='/2025qb11'" title="Chọn sản phẩm" type="button">
+           Chọn sản phẩm
+          </button>
+         </form>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name line-clamp-2">
+          <a href="/2025qb11" title="BTM - Quần Jean Dáng Slim FIt - 2025QB11">
+           BTM - Quần Jean Dáng Slim FIt - 2025QB11
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           500.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="item">
+       <div class="product-box product-item-main">
+        <div class="tag-flash">
+        </div>
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2025qb10" title="M.Jean - Quần Jean Carpenter Ống Flare - 2025QB10">
+          <picture>
+           <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/486784775-3102567696561613-3775970757891745345-n-jpg-nc-cat-105-ccb-1-7-nc-sid-127cfc-nc-ohc-jkfeq9yebyeq7knvgecemrs-nc-oc-admupbhxdrontrzdponcg6gtuthvbwc0d3kebnnc2bu5mcpp-uukb0pkvymqczs0is4-nc-zt-23-nc-ht-scontent-fhan5-.jpg?v=1743176931270" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           <img alt="M.Jean - Quần Jean Carpenter Ống Flare - 2025QB10" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/486784775-3102567696561613-3775970757891745345-n-jpg-nc-cat-105-ccb-1-7-nc-sid-127cfc-nc-ohc-jkfeq9yebyeq7knvgecemrs-nc-oc-admupbhxdrontrzdponcg6gtuthvbwc0d3kebnnc2bu5mcpp-uukb0pkvymqczs0is4-nc-zt-23-nc-ht-scontent-fhan5-.jpg?v=1743176931270" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+          </picture>
+         </a>
+         <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025qb10" href="/2025qb10" title="Xem nhanh">
+         </a>
+         <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-42620582" enctype="multipart/form-data" method="post">
+          <input class="hidden" name="variantId" type="hidden" value="140494135"/>
+          <button class="btn" onclick="window.location.href='/2025qb10'" title="Chọn sản phẩm" type="button">
+           Chọn sản phẩm
+          </button>
+         </form>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name line-clamp-2">
+          <a href="/2025qb10" title="M.Jean - Quần Jean Carpenter Ống Flare - 2025QB10">
+           M.Jean - Quần Jean Carpenter Ống Flare - 2025QB10
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           550.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="item">
+       <div class="product-box product-item-main">
+        <div class="tag-flash">
+        </div>
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2025qb09" title="M.Jean - Quần Jean Cạp Chun Dáng Baggy Fit - 2025QB09">
+          <picture>
+           <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/491576329-3124888084329574-7430750211244913898-n-jpg-nc-cat-102-ccb-1-7-nc-sid-127cfc-nc-eui2-aeezo5ue5buihzchlwi41n6lonmz3hcgfvwiczpefyb9vdpwxvmhinhpjbd34-lbldo3kbxbkdw7tpwkqolrkbcu-nc-ohc-j-tv-dgu-fqq7knvwhba134-nc-oc-a.jpg?v=1744865674300" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           <img alt="M.Jean - Quần Jean Cạp Chun Dáng Baggy Fit - 2025QB09" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/491576329-3124888084329574-7430750211244913898-n-jpg-nc-cat-102-ccb-1-7-nc-sid-127cfc-nc-eui2-aeezo5ue5buihzchlwi41n6lonmz3hcgfvwiczpefyb9vdpwxvmhinhpjbd34-lbldo3kbxbkdw7tpwkqolrkbcu-nc-ohc-j-tv-dgu-fqq7knvwhba134-nc-oc-a.jpg?v=1744865674300" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+          </picture>
+         </a>
+         <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025qb09" href="/2025qb09" title="Xem nhanh">
+         </a>
+         <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-42620581" enctype="multipart/form-data" method="post">
+          <input class="hidden" name="variantId" type="hidden" value="140494131"/>
+          <button class="btn" onclick="window.location.href='/2025qb09'" title="Chọn sản phẩm" type="button">
+           Chọn sản phẩm
+          </button>
+         </form>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name line-clamp-2">
+          <a href="/2025qb09" title="M.Jean - Quần Jean Cạp Chun Dáng Baggy Fit - 2025QB09">
+           M.Jean - Quần Jean Cạp Chun Dáng Baggy Fit - 2025QB09
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           500.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="item">
+       <div class="product-box product-item-main">
+        <div class="tag-flash">
+        </div>
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2025qb08" title="M.Jean - Quần Jean Cạp Chun Dáng Baggy Fit - 2025QB08">
+          <picture>
+           <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/491911541-3124887984329584-6396443264722074183-n-jpg-nc-cat-104-ccb-1-7-nc-sid-127cfc-nc-eui2-aeegekio1egdn8dcxr-8y-834eykygfaqljgritkaucqwmxolkq27vn1vsiqtmois6kadyb8nwob7blj9-cfc7sm-nc-ohc-vpd89gh53fcq7knvweq4ppq-nc-oc-a.jpg?v=1744865715540" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           <img alt="M.Jean - Quần Jean Cạp Chun Dáng Baggy Fit - 2025QB08" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/491911541-3124887984329584-6396443264722074183-n-jpg-nc-cat-104-ccb-1-7-nc-sid-127cfc-nc-eui2-aeegekio1egdn8dcxr-8y-834eykygfaqljgritkaucqwmxolkq27vn1vsiqtmois6kadyb8nwob7blj9-cfc7sm-nc-ohc-vpd89gh53fcq7knvweq4ppq-nc-oc-a.jpg?v=1744865715540" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+          </picture>
+         </a>
+         <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025qb08" href="/2025qb08" title="Xem nhanh">
+         </a>
+         <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-42620580" enctype="multipart/form-data" method="post">
+          <input class="hidden" name="variantId" type="hidden" value="140494127"/>
+          <button class="btn" onclick="window.location.href='/2025qb08'" title="Chọn sản phẩm" type="button">
+           Chọn sản phẩm
+          </button>
+         </form>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name line-clamp-2">
+          <a href="/2025qb08" title="M.Jean - Quần Jean Cạp Chun Dáng Baggy Fit - 2025QB08">
+           M.Jean - Quần Jean Cạp Chun Dáng Baggy Fit - 2025QB08
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           500.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="item">
+       <div class="product-box product-item-main">
+        <div class="tag-flash">
+        </div>
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2025qb07" title="BTM - Quần Jean Ống Đứng - 2025QB07">
+          <picture>
+           <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/486521820-3098207620330954-4870707682179657993-n-jpg-nc-cat-103-ccb-1-7-nc-sid-127cfc-nc-eui2-aehqmwrgbb12-hqxvsoy-vvzzqveptj51wjmpv49mnnvyv1rswzicppttj6fsibxplcy73vddifwtt4yzuq-j-c-nc-ohc-7jrftkn13msq7knvghw9bou-nc-oc-ad.jpg?v=1742811823783" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           <img alt="BTM - Quần Jean Ống Đứng - 2025QB07" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/486521820-3098207620330954-4870707682179657993-n-jpg-nc-cat-103-ccb-1-7-nc-sid-127cfc-nc-eui2-aehqmwrgbb12-hqxvsoy-vvzzqveptj51wjmpv49mnnvyv1rswzicppttj6fsibxplcy73vddifwtt4yzuq-j-c-nc-ohc-7jrftkn13msq7knvghw9bou-nc-oc-ad.jpg?v=1742811823783" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+          </picture>
+         </a>
+         <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025qb07" href="/2025qb07" title="Xem nhanh">
+         </a>
+         <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-42529861" enctype="multipart/form-data" method="post">
+          <input class="hidden" name="variantId" type="hidden" value="140026369"/>
+          <button class="btn" onclick="window.location.href='/2025qb07'" title="Chọn sản phẩm" type="button">
+           Chọn sản phẩm
+          </button>
+         </form>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name line-clamp-2">
+          <a href="/2025qb07" title="BTM - Quần Jean Ống Đứng - 2025QB07">
+           BTM - Quần Jean Ống Đứng - 2025QB07
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           500.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="item">
+       <div class="product-box product-item-main">
+        <div class="tag-flash">
+        </div>
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2025qb06" title="BTM - Quần Jean Ống Đứng - 2025QB06">
+          <picture>
+           <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/486363589-3098207526997630-2018936034456705349-n-jpg-nc-cat-110-ccb-1-7-nc-sid-127cfc-nc-eui2-aeeeh7fnoeevfcfyjc3o-qfh5ilipg-dc3zmkwi-d51zfeh6oyw78azuuagmex6g526fiodpfu5jix1qgxizxmya-nc-ohc-ldubazrki7eq7knvghaq3ej-nc-oc-a.jpg?v=1742811838887" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           <img alt="BTM - Quần Jean Ống Đứng - 2025QB06" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/486363589-3098207526997630-2018936034456705349-n-jpg-nc-cat-110-ccb-1-7-nc-sid-127cfc-nc-eui2-aeeeh7fnoeevfcfyjc3o-qfh5ilipg-dc3zmkwi-d51zfeh6oyw78azuuagmex6g526fiodpfu5jix1qgxizxmya-nc-ohc-ldubazrki7eq7knvghaq3ej-nc-oc-a.jpg?v=1742811838887" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+          </picture>
+         </a>
+         <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025qb06" href="/2025qb06" title="Xem nhanh">
+         </a>
+         <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-42529811" enctype="multipart/form-data" method="post">
+          <input class="hidden" name="variantId" type="hidden" value="140026279"/>
+          <button class="btn" onclick="window.location.href='/2025qb06'" title="Chọn sản phẩm" type="button">
+           Chọn sản phẩm
+          </button>
+         </form>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name line-clamp-2">
+          <a href="/2025qb06" title="BTM - Quần Jean Ống Đứng - 2025QB06">
+           BTM - Quần Jean Ống Đứng - 2025QB06
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           500.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="item">
+       <div class="product-box product-item-main">
+        <div class="tag-flash">
+        </div>
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2024qb21" title="M.Jean - Quần Jean Dáng Carpenter - 2024QB21">
+          <picture>
+           <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/o1cn01nyggtw1zqm7okq47d-2201202046709-0-cib-1724476613647.jpg?v=1740246193077" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           <img alt="M.Jean - Quần Jean Dáng Carpenter - 2024QB21" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/o1cn01nyggtw1zqm7okq47d-2201202046709-0-cib-1724476613647.jpg?v=1740246193077" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+          </picture>
+         </a>
+         <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2024qb21" href="/2024qb21" title="Xem nhanh">
+         </a>
+         <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-41213788" enctype="multipart/form-data" method="post">
+          <input class="hidden" name="variantId" type="hidden" value="137203043"/>
+          <button class="btn" onclick="window.location.href='/2024qb21'" title="Chọn sản phẩm" type="button">
+           Chọn sản phẩm
+          </button>
+         </form>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name line-clamp-2">
+          <a href="/2024qb21" title="M.Jean - Quần Jean Dáng Carpenter - 2024QB21">
+           M.Jean - Quần Jean Dáng Carpenter - 2024QB21
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           580.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="item">
+       <div class="product-box product-item-main">
+        <div class="tag-flash">
+        </div>
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2024qb17" title="M.Jean - Quần Jean Dáng Carpenter - 2024QB17">
+          <picture>
+           <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/o1cn01lrqzek1zqm7oknw74-2201202046709-0-cib-ca29f56d-6f96-498b-8e69-3bb374cb0c8a-1724475915367.jpg?v=1740246181087" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           <img alt="M.Jean - Quần Jean Dáng Carpenter - 2024QB17" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/o1cn01lrqzek1zqm7oknw74-2201202046709-0-cib-ca29f56d-6f96-498b-8e69-3bb374cb0c8a-1724475915367.jpg?v=1740246181087" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+          </picture>
+         </a>
+         <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2024qb17" href="/2024qb17" title="Xem nhanh">
+         </a>
+         <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-41213787" enctype="multipart/form-data" method="post">
+          <input class="hidden" name="variantId" type="hidden" value="137203039"/>
+          <button class="btn" onclick="window.location.href='/2024qb17'" title="Chọn sản phẩm" type="button">
+           Chọn sản phẩm
+          </button>
+         </form>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name line-clamp-2">
+          <a href="/2024qb17" title="M.Jean - Quần Jean Dáng Carpenter - 2024QB17">
+           M.Jean - Quần Jean Dáng Carpenter - 2024QB17
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           580.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="item">
+       <div class="product-box product-item-main">
+        <div class="tag-flash">
+        </div>
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2025qb05" title="M.Jean - Quần Jean Dáng Carpenter - 2025QB05">
+          <picture>
+           <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/o1cn01p6enhi1zqm7nxkhmg-22012020-c26661bd-37ef-447f-bec4-653f204d0381.jpg?v=1740246916887" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           <img alt="M.Jean - Quần Jean Dáng Carpenter - 2025QB05" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/o1cn01p6enhi1zqm7nxkhmg-22012020-c26661bd-37ef-447f-bec4-653f204d0381.jpg?v=1740246916887" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+          </picture>
+         </a>
+         <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025qb05" href="/2025qb05" title="Xem nhanh">
+         </a>
+         <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-41098120" enctype="multipart/form-data" method="post">
+          <input class="hidden" name="variantId" type="hidden" value="137011328"/>
+          <button class="btn" onclick="window.location.href='/2025qb05'" title="Chọn sản phẩm" type="button">
+           Chọn sản phẩm
+          </button>
+         </form>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name line-clamp-2">
+          <a href="/2025qb05" title="M.Jean - Quần Jean Dáng Carpenter - 2025QB05">
+           M.Jean - Quần Jean Dáng Carpenter - 2025QB05
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           580.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="item">
+       <div class="product-box product-item-main">
+        <div class="tag-flash">
+        </div>
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2025qb02" title="BTM - Quần Jean Ống Carrot - 2025QB02">
+          <picture>
+           <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/468926138-3000811793403871-1894291231125692315-n-jpg-nc-cat-100-ccb-1-7-nc-sid-127cfc-nc-ohc-qwbpxzomhysq7knvgg9by5w-nc-zt-23-nc-ht-scontent-fhan5-11-fna-nc-gid-ajzl6v0cfmctk2jl60mtcht-oh-00-ayayq-vdoh2izel7exfhswrrpnhfwc.jpg?v=1733129524643" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           <img alt="BTM - Quần Jean Ống Carrot - 2025QB02" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/468926138-3000811793403871-1894291231125692315-n-jpg-nc-cat-100-ccb-1-7-nc-sid-127cfc-nc-ohc-qwbpxzomhysq7knvgg9by5w-nc-zt-23-nc-ht-scontent-fhan5-11-fna-nc-gid-ajzl6v0cfmctk2jl60mtcht-oh-00-ayayq-vdoh2izel7exfhswrrpnhfwc.jpg?v=1733129524643" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+          </picture>
+         </a>
+         <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025qb02" href="/2025qb02" title="Xem nhanh">
+         </a>
+         <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-38550793" enctype="multipart/form-data" method="post">
+          <input class="hidden" name="variantId" type="hidden" value="129624504"/>
+          <button class="btn" onclick="window.location.href='/2025qb02'" title="Chọn sản phẩm" type="button">
+           Chọn sản phẩm
+          </button>
+         </form>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name line-clamp-2">
+          <a href="/2025qb02" title="BTM - Quần Jean Ống Carrot - 2025QB02">
+           BTM - Quần Jean Ống Carrot - 2025QB02
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           500.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="item">
+       <div class="product-box product-item-main">
+        <div class="tag-flash">
+         <span class="sale-flash">
+          -50%
+         </span>
+         <span class="hot-flash">
+          Hot
+         </span>
+        </div>
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2024qb29" title="M.Jean By Al Culture - Quần Jean Dáng Baggy Fit - 2024QB29">
+          <picture>
+           <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/o1cn01jywwo81zqmai8ifhk-2201202046709-0-cib.jpg?v=1724874354147" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           <img alt="M.Jean By Al Culture - Quần Jean Dáng Baggy Fit - 2024QB29" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/o1cn01jywwo81zqmai8ifhk-2201202046709-0-cib.jpg?v=1724874354147" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+          </picture>
+         </a>
+         <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2024qb29" href="/2024qb29" title="Xem nhanh">
+         </a>
+         <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-37077507" enctype="multipart/form-data" method="post">
+          <input class="hidden" name="variantId" type="hidden" value="124141794"/>
+          <button class="btn" onclick="window.location.href='/2024qb29'" title="Chọn sản phẩm" type="button">
+           Chọn sản phẩm
+          </button>
+         </form>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name line-clamp-2">
+          <a href="/2024qb29" title="M.Jean By Al Culture - Quần Jean Dáng Baggy Fit - 2024QB29">
+           M.Jean By Al Culture - Quần Jean Dáng Baggy Fit - 2024QB29
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           340.000₫
+          </span>
+          <span class="product-price old-price">
+           680.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="item">
+       <div class="product-box product-item-main">
+        <div class="tag-flash">
+         <span class="sale-flash">
+          -50%
+         </span>
+         <span class="hot-flash">
+          Hot
+         </span>
+        </div>
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2024qb27" title="M.jean - Quần Jean Dáng Relaxed Fit - 2024QB27">
+          <picture>
+           <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/o1cn01an5yaj1zqmavffcmf-2201202046709-0-cib.jpg?v=1724606019650" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           <img alt="M.jean - Quần Jean Dáng Relaxed Fit - 2024QB27" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/o1cn01an5yaj1zqmavffcmf-2201202046709-0-cib.jpg?v=1724606019650" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+          </picture>
+         </a>
+         <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2024qb27" href="/2024qb27" title="Xem nhanh">
+         </a>
+         <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-37077438" enctype="multipart/form-data" method="post">
+          <input class="hidden" name="variantId" type="hidden" value="124122066"/>
+          <button class="btn" onclick="window.location.href='/2024qb27'" title="Chọn sản phẩm" type="button">
+           Chọn sản phẩm
+          </button>
+         </form>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name line-clamp-2">
+          <a href="/2024qb27" title="M.jean - Quần Jean Dáng Relaxed Fit - 2024QB27">
+           M.jean - Quần Jean Dáng Relaxed Fit - 2024QB27
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           275.000₫
+          </span>
+          <span class="product-price old-price">
+           550.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="item">
+       <div class="product-box product-item-main">
+        <div class="tag-flash">
+         <span class="sale-flash">
+          -46%
+         </span>
+         <span class="hot-flash">
+          Hot
+         </span>
+        </div>
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2024qb24" title="M.Jean By Adercarten - Quần Jean Dáng Baggy Fit - 2024QB24">
+          <picture>
+           <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/o1cn01cmhjtg1zqmbni8acc-2201202046709-0-cib.jpg?v=1724832828447" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           <img alt="M.Jean By Adercarten - Quần Jean Dáng Baggy Fit - 2024QB24" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/o1cn01cmhjtg1zqmbni8acc-2201202046709-0-cib.jpg?v=1724832828447" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+          </picture>
+         </a>
+         <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2024qb24" href="/2024qb24" title="Xem nhanh">
+         </a>
+         <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-37077382" enctype="multipart/form-data" method="post">
+          <input class="hidden" name="variantId" type="hidden" value="124121930"/>
+          <button class="btn" onclick="window.location.href='/2024qb24'" title="Chọn sản phẩm" type="button">
+           Chọn sản phẩm
+          </button>
+         </form>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name line-clamp-2">
+          <a href="/2024qb24" title="M.Jean By Adercarten - Quần Jean Dáng Baggy Fit - 2024QB24">
+           M.Jean By Adercarten - Quần Jean Dáng Baggy Fit - 2024QB24
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           489.000₫
+          </span>
+          <span class="product-price old-price">
+           900.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+ </section>
+ <section class="awe-section-3">
+  <section class="section-product section-product-banner">
+   <div class="container">
+    <div class="title-module">
+     <h2 class="col-md-3 col-sm-12">
+      <a href="san-pham-moi" title="NEW ARRIVAL">
+       NEW ARRIVAL
+      </a>
+      <i class="fa fa-bars hidden-lg hidden-md hidden-sm">
+      </i>
+     </h2>
+     <ul class="col-md-6 col-sm-9 link">
+      <li>
+       <a href="/ao" title="ÁO">
+        ÁO
+       </a>
+      </li>
+      <li>
+       <a href="/quan" title="QUẦN">
+        QUẦN
+       </a>
+      </li>
+      <li>
+       <a href="/phu-kien" title="PHỤ KIỆN">
+        PHỤ KIỆN
+       </a>
+      </li>
+      <li>
+       <a href="/sale" title="OUTLET">
+        OUTLET
+       </a>
+      </li>
+      <li>
+       <a href="/women-area" title="ĐỒ NỮ">
+        ĐỒ NỮ
+       </a>
+      </li>
+      <li>
+       <a href="https://s.shopee.vn/6VA1cLrGVP" title="SHOPEE">
+        SHOPEE
+       </a>
+      </li>
+      <li>
+       <a class="hidden-lg hidden-md hidden-sm" href="san-pham-moi" title="Xem tất cả">
+        XEM TẤT CẢ
+       </a>
+      </li>
+     </ul>
+     <a class="view-all hidden-xs" href="san-pham-moi" title="Xem tất cả">
+      XEM TẤT CẢ
+     </a>
+    </div>
+    <div class="list-product-banner">
+     <a class="banner hidden-sm hidden-xs" href="all" title="NEW ARRIVAL">
+      <img alt="NEW ARRIVAL" data-lazyload="//bizweb.dktcdn.net/100/045/077/themes/894305/assets/collection_2_banner.jpg?1741967380019" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+     </a>
+     <div class="products">
+      <div class="slider-product-2">
+       <div class="item col-lg-3 col-md-4 col-sm-4 col-xs-6">
+        <div class="product-box product-item-main">
+         <div class="tag-flash">
+         </div>
+         <div class="product-thumbnail">
+          <a class="image_thumb" href="/2025qd38" title="Z.R - Quần Vải Cạp Chun Dáng Rộng - 2025QD38">
+           <picture>
+            <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/544383446-3277648965720151-9016985415728224081-n-jpg-nc-cat-110-ccb-1-7-nc-sid-127cfc-nc-eui2-aeeltpmsdeljzymytlxytk1bkjegxia2r-gqkqbgjrzh8zd8puetkx-9qmx7t1jzuobqr1ysgen-pv8dlh-wmor4-nc-ohc-i88gkgwpurwq7knvwes383c-nc-oc-a.jpg?v=1757094211430" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+            <img alt="Z.R - Quần Vải Cạp Chun Dáng Rộng - 2025QD38" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/544383446-3277648965720151-9016985415728224081-n-jpg-nc-cat-110-ccb-1-7-nc-sid-127cfc-nc-eui2-aeeltpmsdeljzymytlxytk1bkjegxia2r-gqkqbgjrzh8zd8puetkx-9qmx7t1jzuobqr1ysgen-pv8dlh-wmor4-nc-ohc-i88gkgwpurwq7knvwes383c-nc-oc-a.jpg?v=1757094211430" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           </picture>
+          </a>
+          <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025qd38" href="/2025qd38" title="Xem nhanh">
+          </a>
+          <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-57558823" enctype="multipart/form-data" method="post">
+           <input class="hidden" name="variantId" type="hidden" value="166200316"/>
+           <button class="btn" onclick="window.location.href='/2025qd38'" title="Chọn sản phẩm" type="button">
+            Chọn sản phẩm
+           </button>
+          </form>
+         </div>
+         <div class="product-info product-bottom">
+          <h3 class="product-name line-clamp-2">
+           <a href="/2025qd38" title="Z.R - Quần Vải Cạp Chun Dáng Rộng - 2025QD38">
+            Z.R - Quần Vải Cạp Chun Dáng Rộng - 2025QD38
+           </a>
+          </h3>
+          <div class="product-item-price price-box">
+           <span class="product-price special-price">
+            550.000₫
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="item col-lg-3 col-md-4 col-sm-4 col-xs-6">
+        <div class="product-box product-item-main">
+         <div class="tag-flash">
+         </div>
+         <div class="product-thumbnail">
+          <a class="image_thumb" href="/2025qd37" title="Z.R - Quần Vải Cạp Chun Dáng Rộng - 2025QD37">
+           <picture>
+            <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/544357074-3277649142386800-1654473934949528692-n-jpg-nc-cat-101-ccb-1-7-nc-sid-127cfc-nc-eui2-aeeaj3qkieacmfbrazk3r-zzdfliyufphrl0wujjqwmfgca3lul30ia4chq8lyljoskeqhwbbpwmgnbfxayb8z-f-nc-ohc-gtddrovuzx4q7knvwfv8kq0-nc-oc-a.jpg?v=1757094213717" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+            <img alt="Z.R - Quần Vải Cạp Chun Dáng Rộng - 2025QD37" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/544357074-3277649142386800-1654473934949528692-n-jpg-nc-cat-101-ccb-1-7-nc-sid-127cfc-nc-eui2-aeeaj3qkieacmfbrazk3r-zzdfliyufphrl0wujjqwmfgca3lul30ia4chq8lyljoskeqhwbbpwmgnbfxayb8z-f-nc-ohc-gtddrovuzx4q7knvwfv8kq0-nc-oc-a.jpg?v=1757094213717" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           </picture>
+          </a>
+          <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025qd37" href="/2025qd37" title="Xem nhanh">
+          </a>
+          <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-57555488" enctype="multipart/form-data" method="post">
+           <input class="hidden" name="variantId" type="hidden" value="166196898"/>
+           <button class="btn" onclick="window.location.href='/2025qd37'" title="Chọn sản phẩm" type="button">
+            Chọn sản phẩm
+           </button>
+          </form>
+         </div>
+         <div class="product-info product-bottom">
+          <h3 class="product-name line-clamp-2">
+           <a href="/2025qd37" title="Z.R - Quần Vải Cạp Chun Dáng Rộng - 2025QD37">
+            Z.R - Quần Vải Cạp Chun Dáng Rộng - 2025QD37
+           </a>
+          </h3>
+          <div class="product-item-price price-box">
+           <span class="product-price special-price">
+            550.000₫
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="item col-lg-3 col-md-4 col-sm-4 col-xs-6">
+        <div class="product-box product-item-main">
+         <div class="tag-flash">
+         </div>
+         <div class="product-thumbnail">
+          <a class="image_thumb" href="/2025akw03" title="Z.R - Áo Khoác Da Nữ Dáng Crop - Double Breasted Blazer  - 2025AKW03">
+           <picture>
+            <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/540605857-1206173338216690-7797189645074572200-n-jpg-stp-cp6-dst-jpg-tt6-nc-cat-100-ccb-1-7-nc-sid-833d8c-nc-ohc-q6ulhrv2lasq7knvwhgsi4o-nc-oc-adkzpejivcpab4tsgynmvb-klmhd2ojqair-y3j0dzydm4luvi8gtqi4mqpsqftgbhq-nc-zt-23-n.jpg?v=1756835197360" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+            <img alt="Z.R - Áo Khoác Da Nữ Dáng Crop - Double Breasted Blazer  - 2025AKW03" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/540605857-1206173338216690-7797189645074572200-n-jpg-stp-cp6-dst-jpg-tt6-nc-cat-100-ccb-1-7-nc-sid-833d8c-nc-ohc-q6ulhrv2lasq7knvwhgsi4o-nc-oc-adkzpejivcpab4tsgynmvb-klmhd2ojqair-y3j0dzydm4luvi8gtqi4mqpsqftgbhq-nc-zt-23-n.jpg?v=1756835197360" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           </picture>
+          </a>
+          <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025akw03" href="/2025akw03" title="Xem nhanh">
+          </a>
+          <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-57230833" enctype="multipart/form-data" method="post">
+           <input class="hidden" name="variantId" type="hidden" value="165552602"/>
+           <button class="btn" onclick="window.location.href='/2025akw03'" title="Chọn sản phẩm" type="button">
+            Chọn sản phẩm
+           </button>
+          </form>
+         </div>
+         <div class="product-info product-bottom">
+          <h3 class="product-name line-clamp-2">
+           <a href="/2025akw03" title="Z.R - Áo Khoác Da Nữ Dáng Crop - Double Breasted Blazer  - 2025AKW03">
+            Z.R - Áo Khoác Da Nữ Dáng Crop - Double Breasted Blazer  - 2025AKW03
+           </a>
+          </h3>
+          <div class="product-item-price price-box">
+           <span class="product-price special-price">
+            650.000₫
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="item col-lg-3 col-md-4 col-sm-4 col-xs-6">
+        <div class="product-box product-item-main">
+         <div class="tag-flash">
+         </div>
+         <div class="product-thumbnail">
+          <a class="image_thumb" href="/2025qd36" title="Z,R - Quần Khaki Thô Dáng Straight Fit - 2025QD36">
+           <picture>
+            <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/539917019-1205010678332956-1369725665583689823-n-jpg-nc-cat-105-ccb-1-7-nc-sid-127cfc-nc-ohc-lkpzzodjdpkq7knvwh8-5f-nc-oc-adkfwgqtfi1jclup8etftxeke3tg4xin8ctw48i0tcjf5wfbjimb-8ddzb9m-ly-ixs-nc-zt-23-nc-ht-scontent-fhan5-6.jpg?v=1756391362890" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+            <img alt="Z,R - Quần Khaki Thô Dáng Straight Fit - 2025QD36" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/539917019-1205010678332956-1369725665583689823-n-jpg-nc-cat-105-ccb-1-7-nc-sid-127cfc-nc-ohc-lkpzzodjdpkq7knvwh8-5f-nc-oc-adkfwgqtfi1jclup8etftxeke3tg4xin8ctw48i0tcjf5wfbjimb-8ddzb9m-ly-ixs-nc-zt-23-nc-ht-scontent-fhan5-6.jpg?v=1756391362890" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           </picture>
+          </a>
+          <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025qd36" href="/2025qd36" title="Xem nhanh">
+          </a>
+          <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-57230786" enctype="multipart/form-data" method="post">
+           <input class="hidden" name="variantId" type="hidden" value="165552525"/>
+           <button class="btn" onclick="window.location.href='/2025qd36'" title="Chọn sản phẩm" type="button">
+            Chọn sản phẩm
+           </button>
+          </form>
+         </div>
+         <div class="product-info product-bottom">
+          <h3 class="product-name line-clamp-2">
+           <a href="/2025qd36" title="Z,R - Quần Khaki Thô Dáng Straight Fit - 2025QD36">
+            Z,R - Quần Khaki Thô Dáng Straight Fit - 2025QD36
+           </a>
+          </h3>
+          <div class="product-item-price price-box">
+           <span class="product-price special-price">
+            580.000₫
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="item col-lg-3 col-md-4 col-sm-4 col-xs-6">
+        <div class="product-box product-item-main">
+         <div class="tag-flash">
+         </div>
+         <div class="product-thumbnail">
+          <a class="image_thumb" href="/2025an44" title="Holister - Áo Len Dài Tay Dáng Boxy Fit - 2025AN44">
+           <picture>
+            <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/536279120-3263294120488969-3220529619777481471-n-jpg-nc-cat-108-ccb-1-7-nc-sid-127cfc-nc-eui2-aeeapoqz2tdcy2iytwno8wa2i-4ao8gwahyl-ho7ydaafhas2mqkzgpmm3jznslmoyuixq4ekdutcx8tq4vrou2p-nc-ohc-bvygps20gruq7knvwhlr1ck-nc-oc-a.jpg?v=1755890459527" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+            <img alt="Holister - Áo Len Dài Tay Dáng Boxy Fit - 2025AN44" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/536279120-3263294120488969-3220529619777481471-n-jpg-nc-cat-108-ccb-1-7-nc-sid-127cfc-nc-eui2-aeeapoqz2tdcy2iytwno8wa2i-4ao8gwahyl-ho7ydaafhas2mqkzgpmm3jznslmoyuixq4ekdutcx8tq4vrou2p-nc-ohc-bvygps20gruq7knvwhlr1ck-nc-oc-a.jpg?v=1755890459527" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           </picture>
+          </a>
+          <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025an44" href="/2025an44" title="Xem nhanh">
+          </a>
+          <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-56531930" enctype="multipart/form-data" method="post">
+           <input class="hidden" name="variantId" type="hidden" value="164302257"/>
+           <button class="btn" onclick="window.location.href='/2025an44'" title="Chọn sản phẩm" type="button">
+            Chọn sản phẩm
+           </button>
+          </form>
+         </div>
+         <div class="product-info product-bottom">
+          <h3 class="product-name line-clamp-2">
+           <a href="/2025an44" title="Holister - Áo Len Dài Tay Dáng Boxy Fit - 2025AN44">
+            Holister - Áo Len Dài Tay Dáng Boxy Fit - 2025AN44
+           </a>
+          </h3>
+          <div class="product-item-price price-box">
+           <span class="product-price special-price">
+            420.000₫
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="item col-lg-3 col-md-4 col-sm-4 col-xs-6">
+        <div class="product-box product-item-main">
+         <div class="tag-flash">
+         </div>
+         <div class="product-thumbnail">
+          <a class="image_thumb" href="/2025an43" title="Holister - Áo Len Dài Tay Dáng Boxy Fit - 2025AN43">
+           <picture>
+            <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/536280930-3263293587155689-3544312427794030963-n-jpg-nc-cat-110-ccb-1-7-nc-sid-127cfc-nc-eui2-aegd-6ye4zipuprxn1cf4rkikjmv99ddk00omzx310mrtaqnfkzdz2jwhclhlc0fsejskod-p2nm9vxc4c5vsryt-nc-ohc-zxlhgtek-hqq7knvwhqbyao-nc-oc-a.jpg?v=1755890356260" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+            <img alt="Holister - Áo Len Dài Tay Dáng Boxy Fit - 2025AN43" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/536280930-3263293587155689-3544312427794030963-n-jpg-nc-cat-110-ccb-1-7-nc-sid-127cfc-nc-eui2-aegd-6ye4zipuprxn1cf4rkikjmv99ddk00omzx310mrtaqnfkzdz2jwhclhlc0fsejskod-p2nm9vxc4c5vsryt-nc-ohc-zxlhgtek-hqq7knvwhqbyao-nc-oc-a.jpg?v=1755890356260" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           </picture>
+          </a>
+          <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025an43" href="/2025an43" title="Xem nhanh">
+          </a>
+          <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-56530334" enctype="multipart/form-data" method="post">
+           <input class="hidden" name="variantId" type="hidden" value="164300610"/>
+           <button class="btn" onclick="window.location.href='/2025an43'" title="Chọn sản phẩm" type="button">
+            Chọn sản phẩm
+           </button>
+          </form>
+         </div>
+         <div class="product-info product-bottom">
+          <h3 class="product-name line-clamp-2">
+           <a href="/2025an43" title="Holister - Áo Len Dài Tay Dáng Boxy Fit - 2025AN43">
+            Holister - Áo Len Dài Tay Dáng Boxy Fit - 2025AN43
+           </a>
+          </h3>
+          <div class="product-item-price price-box">
+           <span class="product-price special-price">
+            420.000₫
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="item col-lg-3 col-md-4 col-sm-4 col-xs-6">
+        <div class="product-box product-item-main">
+         <div class="tag-flash">
+         </div>
+         <div class="product-thumbnail">
+          <a class="image_thumb" href="/2025an42" title="Holister - Áo Len Dài Tay Dáng Boxy Fit - 2025AN42">
+           <picture>
+            <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/537430307-3263294750488906-2208061941567750908-n-jpg-nc-cat-110-ccb-1-7-nc-sid-127cfc-nc-eui2-aegr4k4bdgg2keadoqqeh425o3qhh0gymrejdcefsbgyt7iyre1-yyiaxjou72hgefb6solbbz0eqcjdr3agsrad-nc-ohc-biujwtnfzyyq7knvwh8dvm3-nc-oc-a.jpg?v=1755890558607" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+            <img alt="Holister - Áo Len Dài Tay Dáng Boxy Fit - 2025AN42" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/537430307-3263294750488906-2208061941567750908-n-jpg-nc-cat-110-ccb-1-7-nc-sid-127cfc-nc-eui2-aegr4k4bdgg2keadoqqeh425o3qhh0gymrejdcefsbgyt7iyre1-yyiaxjou72hgefb6solbbz0eqcjdr3agsrad-nc-ohc-biujwtnfzyyq7knvwh8dvm3-nc-oc-a.jpg?v=1755890558607" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           </picture>
+          </a>
+          <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025an42" href="/2025an42" title="Xem nhanh">
+          </a>
+          <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-56530244" enctype="multipart/form-data" method="post">
+           <input class="hidden" name="variantId" type="hidden" value="164300487"/>
+           <button class="btn" onclick="window.location.href='/2025an42'" title="Chọn sản phẩm" type="button">
+            Chọn sản phẩm
+           </button>
+          </form>
+         </div>
+         <div class="product-info product-bottom">
+          <h3 class="product-name line-clamp-2">
+           <a href="/2025an42" title="Holister - Áo Len Dài Tay Dáng Boxy Fit - 2025AN42">
+            Holister - Áo Len Dài Tay Dáng Boxy Fit - 2025AN42
+           </a>
+          </h3>
+          <div class="product-item-price price-box">
+           <span class="product-price special-price">
+            420.000₫
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="item col-lg-3 col-md-4 col-sm-4 col-xs-6">
+        <div class="product-box product-item-main">
+         <div class="tag-flash">
+         </div>
+         <div class="product-thumbnail">
+          <a class="image_thumb" href="/2025an41" title="Holister - Áo Len Dài Tay Dáng Boxy Fit - 2025AN41">
+           <picture>
+            <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/536269901-3263293990488982-3756866762622492417-n-jpg-nc-cat-102-ccb-1-7-nc-sid-127cfc-nc-eui2-aegwjgus-tcr3wifspedn2az8zcywoi5y7dxlzjy4jljsdcxbkowba7gbqjgkdxaud-j9olelym3acvwvoxopgoc-nc-ohc-xnqj7vmezy8q7knvwhp4vgt-nc-oc-a.jpg?v=1755890414473" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+            <img alt="Holister - Áo Len Dài Tay Dáng Boxy Fit - 2025AN41" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/536269901-3263293990488982-3756866762622492417-n-jpg-nc-cat-102-ccb-1-7-nc-sid-127cfc-nc-eui2-aegwjgus-tcr3wifspedn2az8zcywoi5y7dxlzjy4jljsdcxbkowba7gbqjgkdxaud-j9olelym3acvwvoxopgoc-nc-ohc-xnqj7vmezy8q7knvwhp4vgt-nc-oc-a.jpg?v=1755890414473" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           </picture>
+          </a>
+          <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025an41" href="/2025an41" title="Xem nhanh">
+          </a>
+          <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-56530218" enctype="multipart/form-data" method="post">
+           <input class="hidden" name="variantId" type="hidden" value="164300438"/>
+           <button class="btn" onclick="window.location.href='/2025an41'" title="Chọn sản phẩm" type="button">
+            Chọn sản phẩm
+           </button>
+          </form>
+         </div>
+         <div class="product-info product-bottom">
+          <h3 class="product-name line-clamp-2">
+           <a href="/2025an41" title="Holister - Áo Len Dài Tay Dáng Boxy Fit - 2025AN41">
+            Holister - Áo Len Dài Tay Dáng Boxy Fit - 2025AN41
+           </a>
+          </h3>
+          <div class="product-item-price price-box">
+           <span class="product-price special-price">
+            420.000₫
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="item col-lg-3 col-md-4 col-sm-4 col-xs-6">
+        <div class="product-box product-item-main">
+         <div class="tag-flash">
+         </div>
+         <div class="product-thumbnail">
+          <a class="image_thumb" href="/2025an40" title="Holister - Áo Len Dài Tay Dáng Boxy Fit - 2025AN40">
+           <picture>
+            <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/536278380-3263293820488999-6173895189254863774-n-jpg-nc-cat-101-ccb-1-7-nc-sid-127cfc-nc-eui2-aeesghd3sdydzefet2zbgvonkpyjtdxvhkuq-ilmndweq3mt0lra9k6bymfupeikt46jvgsrdl-w1muqw4vtzpin-nc-ohc-dsvp18jm6nkq7knvwhreye6-nc-oc-a.jpg?v=1755890467447" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+            <img alt="Holister - Áo Len Dài Tay Dáng Boxy Fit - 2025AN40" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/536278380-3263293820488999-6173895189254863774-n-jpg-nc-cat-101-ccb-1-7-nc-sid-127cfc-nc-eui2-aeesghd3sdydzefet2zbgvonkpyjtdxvhkuq-ilmndweq3mt0lra9k6bymfupeikt46jvgsrdl-w1muqw4vtzpin-nc-ohc-dsvp18jm6nkq7knvwhreye6-nc-oc-a.jpg?v=1755890467447" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           </picture>
+          </a>
+          <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025an40" href="/2025an40" title="Xem nhanh">
+          </a>
+          <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-56530164" enctype="multipart/form-data" method="post">
+           <input class="hidden" name="variantId" type="hidden" value="164300351"/>
+           <button class="btn" onclick="window.location.href='/2025an40'" title="Chọn sản phẩm" type="button">
+            Chọn sản phẩm
+           </button>
+          </form>
+         </div>
+         <div class="product-info product-bottom">
+          <h3 class="product-name line-clamp-2">
+           <a href="/2025an40" title="Holister - Áo Len Dài Tay Dáng Boxy Fit - 2025AN40">
+            Holister - Áo Len Dài Tay Dáng Boxy Fit - 2025AN40
+           </a>
+          </h3>
+          <div class="product-item-price price-box">
+           <span class="product-price special-price">
+            420.000₫
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="item col-lg-3 col-md-4 col-sm-4 col-xs-6">
+        <div class="product-box product-item-main">
+         <div class="tag-flash">
+         </div>
+         <div class="product-thumbnail">
+          <a class="image_thumb" href="/2025ak188" title="Z.R - Áo Khoác Phao Trần Bông Họa Tiết - 2025AK188">
+           <picture>
+            <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/539183026-3267341503417564-2310872948704205105-n-jpg-nc-cat-103-ccb-1-7-nc-sid-127cfc-nc-ohc-r4da-7xsw3oq7knvwgn-5iw-nc-oc-adng6q-aiighgsgjlaw4qbwfndpvdjfamxdqopehokif5srl43bct3uqxxmegmkgr7o-nc-zt-23-nc-ht-scontent-fhan5-.jpg?v=1756224678367" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+            <img alt="Z.R - Áo Khoác Phao Trần Bông Họa Tiết - 2025AK188" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/539183026-3267341503417564-2310872948704205105-n-jpg-nc-cat-103-ccb-1-7-nc-sid-127cfc-nc-ohc-r4da-7xsw3oq7knvwgn-5iw-nc-oc-adng6q-aiighgsgjlaw4qbwfndpvdjfamxdqopehokif5srl43bct3uqxxmegmkgr7o-nc-zt-23-nc-ht-scontent-fhan5-.jpg?v=1756224678367" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           </picture>
+          </a>
+          <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025ak188" href="/2025ak188" title="Xem nhanh">
+          </a>
+          <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-56224751" enctype="multipart/form-data" method="post">
+           <input class="hidden" name="variantId" type="hidden" value="163746929"/>
+           <button class="btn" onclick="window.location.href='/2025ak188'" title="Chọn sản phẩm" type="button">
+            Chọn sản phẩm
+           </button>
+          </form>
+         </div>
+         <div class="product-info product-bottom">
+          <h3 class="product-name line-clamp-2">
+           <a href="/2025ak188" title="Z.R - Áo Khoác Phao Trần Bông Họa Tiết - 2025AK188">
+            Z.R - Áo Khoác Phao Trần Bông Họa Tiết - 2025AK188
+           </a>
+          </h3>
+          <div class="product-item-price price-box">
+           <span class="product-price special-price">
+            980.000₫
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+ </section>
+ <section class="awe-section-4">
+  <section class="section-product section-product-banner">
+   <div class="container">
+    <div class="title-module">
+     <h2 class="col-md-3 col-sm-12">
+      <a href="sale" title="KHUYẾN MÃI">
+       KHUYẾN MÃI
+      </a>
+      <i class="fa fa-bars hidden-lg hidden-md hidden-sm">
+      </i>
+     </h2>
+     <ul class="col-md-6 col-sm-9 link">
+      <li>
+       <a href="/ao" title="ÁO">
+        ÁO
+       </a>
+      </li>
+      <li>
+       <a href="/quan" title="QUẦN">
+        QUẦN
+       </a>
+      </li>
+      <li>
+       <a href="/phu-kien" title="PHỤ KIỆN">
+        PHỤ KIỆN
+       </a>
+      </li>
+      <li>
+       <a href="/sale" title="OUTLET">
+        OUTLET
+       </a>
+      </li>
+      <li>
+       <a href="/women-area" title="ĐỒ NỮ">
+        ĐỒ NỮ
+       </a>
+      </li>
+      <li>
+       <a href="https://s.shopee.vn/6VA1cLrGVP" title="SHOPEE">
+        SHOPEE
+       </a>
+      </li>
+      <li>
+       <a class="hidden-lg hidden-md hidden-sm" href="sale" title="Xem tất cả">
+        XEM TẤT CẢ
+       </a>
+      </li>
+     </ul>
+     <a class="view-all hidden-xs" href="sale" title="Xem tất cả">
+      XEM TẤT CẢ
+     </a>
+    </div>
+    <div class="list-product-banner">
+     <a class="banner hidden-sm hidden-xs" href="sale" title="KHUYẾN MÃI">
+      <img alt="KHUYẾN MÃI" data-lazyload="//bizweb.dktcdn.net/100/045/077/themes/894305/assets/collection_3_banner.jpg?1741967380019" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+     </a>
+     <div class="products">
+      <div class="slider-product-2">
+       <div class="item col-lg-3 col-md-4 col-sm-4 col-xs-6">
+        <div class="product-box product-item-main">
+         <div class="tag-flash">
+          <span class="sale-flash">
+           -59%
+          </span>
+          <span class="hot-flash">
+           Hot
+          </span>
+         </div>
+         <div class="product-thumbnail">
+          <a class="image_thumb" href="/2023qd09" title="Combat - Quần Legging Nửa Chân Nam - 2023QD09">
+           <picture>
+            <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/o1cn01quarim2agcznceraf-2878508175-0-cib-1-1676795492225.jpg?v=1751905388420" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+            <img alt="Combat - Quần Legging Nửa Chân Nam - 2023QD09" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/o1cn01quarim2agcznceraf-2878508175-0-cib-1-1676795492225.jpg?v=1751905388420" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           </picture>
+          </a>
+          <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2023qd09" href="/2023qd09" title="Xem nhanh">
+          </a>
+          <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-53469430" enctype="multipart/form-data" method="post">
+           <input class="hidden" name="variantId" type="hidden" value="158484341"/>
+           <button class="btn" onclick="window.location.href='/2023qd09'" title="Chọn sản phẩm" type="button">
+            Chọn sản phẩm
+           </button>
+          </form>
+         </div>
+         <div class="product-info product-bottom">
+          <h3 class="product-name line-clamp-2">
+           <a href="/2023qd09" title="Combat - Quần Legging Nửa Chân Nam - 2023QD09">
+            Combat - Quần Legging Nửa Chân Nam - 2023QD09
+           </a>
+          </h3>
+          <div class="product-item-price price-box">
+           <span class="product-price special-price">
+            49.000₫
+           </span>
+           <span class="product-price old-price">
+            120.000₫
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="item col-lg-3 col-md-4 col-sm-4 col-xs-6">
+        <div class="product-box product-item-main">
+         <div class="tag-flash">
+          <span class="sale-flash">
+           -48%
+          </span>
+          <span class="hot-flash">
+           Hot
+          </span>
+         </div>
+         <div class="product-thumbnail">
+          <a class="image_thumb" href="/2025ap93" title="Teennie Weenie - Áo Polo Cộc Tay Dáng Slim Fit - 2025AP93">
+           <picture>
+            <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/496941528-3154704514681264-2976179411920726207-n-jpg-nc-cat-102-ccb-1-7-nc-sid-127cfc-nc-eui2-aeevnktc1hkb7ig3tyliknzrft-polmlhsd9p884uyugx1gp5mvhiudkqmfm1gan1dmadvhcslgq2unk5y8wcjyc-nc-ohc-vs6gst9onikq7knvwggzdrv-nc-oc-a.jpg?v=1747276227307" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+            <img alt="Teennie Weenie - Áo Polo Cộc Tay Dáng Slim Fit - 2025AP93" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/496941528-3154704514681264-2976179411920726207-n-jpg-nc-cat-102-ccb-1-7-nc-sid-127cfc-nc-eui2-aeevnktc1hkb7ig3tyliknzrft-polmlhsd9p884uyugx1gp5mvhiudkqmfm1gan1dmadvhcslgq2unk5y8wcjyc-nc-ohc-vs6gst9onikq7knvwggzdrv-nc-oc-a.jpg?v=1747276227307" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           </picture>
+          </a>
+          <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025ap93" href="/2025ap93" title="Xem nhanh">
+          </a>
+          <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-46433934" enctype="multipart/form-data" method="post">
+           <input class="hidden" name="variantId" type="hidden" value="147254437"/>
+           <button class="btn" onclick="window.location.href='/2025ap93'" title="Chọn sản phẩm" type="button">
+            Chọn sản phẩm
+           </button>
+          </form>
+         </div>
+         <div class="product-info product-bottom">
+          <h3 class="product-name line-clamp-2">
+           <a href="/2025ap93" title="Teennie Weenie - Áo Polo Cộc Tay Dáng Slim Fit - 2025AP93">
+            Teennie Weenie - Áo Polo Cộc Tay Dáng Slim Fit - 2025AP93
+           </a>
+          </h3>
+          <div class="product-item-price price-box">
+           <span class="product-price special-price">
+            230.000₫
+           </span>
+           <span class="product-price old-price">
+            440.000₫
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="item col-lg-3 col-md-4 col-sm-4 col-xs-6">
+        <div class="product-box product-item-main">
+         <div class="tag-flash">
+          <span class="sale-flash">
+           -51%
+          </span>
+          <span class="hot-flash">
+           Hot
+          </span>
+         </div>
+         <div class="product-thumbnail">
+          <a class="image_thumb" href="/2025qs31" title="Z.R - Quần Short Dáng Rộng Vải Vân Nổi - 2025QS31">
+           <picture>
+            <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/493806442-3141659762652406-5523748346813278497-n-jpg-nc-cat-111-ccb-1-7-nc-sid-127cfc-nc-eui2-aeghl-8y1wrzjxi3uypnvqll0tsvqnpweeds1k9a2lz54kfidybfhg9bh3eho-02zcl6o5g7kep-veffwmlgjkmd-nc-ohc-nfc1qh6feuoq7knvwez8vi9-nc-oc-a.jpg?v=1746176989623" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+            <img alt="Z.R - Quần Short Dáng Rộng Vải Vân Nổi - 2025QS31" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/493806442-3141659762652406-5523748346813278497-n-jpg-nc-cat-111-ccb-1-7-nc-sid-127cfc-nc-eui2-aeghl-8y1wrzjxi3uypnvqll0tsvqnpweeds1k9a2lz54kfidybfhg9bh3eho-02zcl6o5g7kep-veffwmlgjkmd-nc-ohc-nfc1qh6feuoq7knvwez8vi9-nc-oc-a.jpg?v=1746176989623" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           </picture>
+          </a>
+          <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025qs31" href="/2025qs31" title="Xem nhanh">
+          </a>
+          <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-45175069" enctype="multipart/form-data" method="post">
+           <input class="hidden" name="variantId" type="hidden" value="145337461"/>
+           <button class="btn" onclick="window.location.href='/2025qs31'" title="Chọn sản phẩm" type="button">
+            Chọn sản phẩm
+           </button>
+          </form>
+         </div>
+         <div class="product-info product-bottom">
+          <h3 class="product-name line-clamp-2">
+           <a href="/2025qs31" title="Z.R - Quần Short Dáng Rộng Vải Vân Nổi - 2025QS31">
+            Z.R - Quần Short Dáng Rộng Vải Vân Nổi - 2025QS31
+           </a>
+          </h3>
+          <div class="product-item-price price-box">
+           <span class="product-price special-price">
+            290.000₫
+           </span>
+           <span class="product-price old-price">
+            590.000₫
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="item col-lg-3 col-md-4 col-sm-4 col-xs-6">
+        <div class="product-box product-item-main">
+         <div class="tag-flash">
+          <span class="sale-flash">
+           -48%
+          </span>
+          <span class="hot-flash">
+           Hot
+          </span>
+         </div>
+         <div class="product-thumbnail">
+          <a class="image_thumb" href="/2025qs26" title="Z.R - Quần Short Dệt Kim Dáng Bermuda - 2025QS26">
+           <picture>
+            <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/491889393-3128473280637721-182310534181277887-n-jpg-nc-cat-109-ccb-1-7-nc-sid-127cfc-nc-eui2-aeg6mwt0r0ilxlzwt7czz4ss7az73arilvvsbnvdquiu-wstbo3cxswrumig-v26lbeyvuvqyywum03ctdhr5llb-nc-ohc-kywhxjqs9hqq7knvweck6mh-nc-oc-ad.jpg?v=1745172033460" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+            <img alt="Z.R - Quần Short Dệt Kim Dáng Bermuda - 2025QS26" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/491889393-3128473280637721-182310534181277887-n-jpg-nc-cat-109-ccb-1-7-nc-sid-127cfc-nc-eui2-aeg6mwt0r0ilxlzwt7czz4ss7az73arilvvsbnvdquiu-wstbo3cxswrumig-v26lbeyvuvqyywum03ctdhr5llb-nc-ohc-kywhxjqs9hqq7knvweck6mh-nc-oc-ad.jpg?v=1745172033460" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           </picture>
+          </a>
+          <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025qs26" href="/2025qs26" title="Xem nhanh">
+          </a>
+          <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-44675550" enctype="multipart/form-data" method="post">
+           <input class="hidden" name="variantId" type="hidden" value="144279792"/>
+           <button class="btn" onclick="window.location.href='/2025qs26'" title="Chọn sản phẩm" type="button">
+            Chọn sản phẩm
+           </button>
+          </form>
+         </div>
+         <div class="product-info product-bottom">
+          <h3 class="product-name line-clamp-2">
+           <a href="/2025qs26" title="Z.R - Quần Short Dệt Kim Dáng Bermuda - 2025QS26">
+            Z.R - Quần Short Dệt Kim Dáng Bermuda - 2025QS26
+           </a>
+          </h3>
+          <div class="product-item-price price-box">
+           <span class="product-price special-price">
+            249.000₫
+           </span>
+           <span class="product-price old-price">
+            480.000₫
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="item col-lg-3 col-md-4 col-sm-4 col-xs-6">
+        <div class="product-box product-item-main">
+         <div class="tag-flash">
+          <span class="sale-flash">
+           -50%
+          </span>
+          <span class="hot-flash">
+           Hot
+          </span>
+         </div>
+         <div class="product-thumbnail">
+          <a class="image_thumb" href="/2025smd21" title="Z.R - Sơ Mi Cộc Tay Dáng Rộng Vải Vân Nổi - 2025SMD21">
+           <picture>
+            <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/493275392-3132112633607119-7499658905991133234-n-jpg-nc-cat-111-ccb-1-7-nc-sid-127cfc-nc-eui2-aeeh-06y4i4zvsnuam1amrwv1gob4aoc5sfuaghga4lmx36waj40gjfzigvbiyj8cpy8h1subjmfljtbwf2wwnur-nc-ohc-wopctjhbf-sq7knvwesxn1s-nc-oc-a.jpg?v=1745471566780" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+            <img alt="Z.R - Sơ Mi Cộc Tay Dáng Rộng Vải Vân Nổi - 2025SMD21" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/493275392-3132112633607119-7499658905991133234-n-jpg-nc-cat-111-ccb-1-7-nc-sid-127cfc-nc-eui2-aeeh-06y4i4zvsnuam1amrwv1gob4aoc5sfuaghga4lmx36waj40gjfzigvbiyj8cpy8h1subjmfljtbwf2wwnur-nc-ohc-wopctjhbf-sq7knvwesxn1s-nc-oc-a.jpg?v=1745471566780" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           </picture>
+          </a>
+          <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025smd21" href="/2025smd21" title="Xem nhanh">
+          </a>
+          <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-44675523" enctype="multipart/form-data" method="post">
+           <input class="hidden" name="variantId" type="hidden" value="144279693"/>
+           <button class="btn" onclick="window.location.href='/2025smd21'" title="Chọn sản phẩm" type="button">
+            Chọn sản phẩm
+           </button>
+          </form>
+         </div>
+         <div class="product-info product-bottom">
+          <h3 class="product-name line-clamp-2">
+           <a href="/2025smd21" title="Z.R - Sơ Mi Cộc Tay Dáng Rộng Vải Vân Nổi - 2025SMD21">
+            Z.R - Sơ Mi Cộc Tay Dáng Rộng Vải Vân Nổi - 2025SMD21
+           </a>
+          </h3>
+          <div class="product-item-price price-box">
+           <span class="product-price special-price">
+            310.000₫
+           </span>
+           <span class="product-price old-price">
+            620.000₫
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="item col-lg-3 col-md-4 col-sm-4 col-xs-6">
+        <div class="product-box product-item-main">
+         <div class="tag-flash">
+          <span class="sale-flash">
+           -34%
+          </span>
+          <span class="hot-flash">
+           Hot
+          </span>
+         </div>
+         <div class="product-thumbnail">
+          <a class="image_thumb" href="/2025qd27" title="Z.R - Quần Hoa Văn Nổi Dáng Relaxed Fit - 2025QD27">
+           <picture>
+            <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/thuy-pham.jpg?v=1744607172763" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+            <img alt="Z.R - Quần Hoa Văn Nổi Dáng Relaxed Fit - 2025QD27" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/thuy-pham.jpg?v=1744607172763" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           </picture>
+          </a>
+          <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025qd27" href="/2025qd27" title="Xem nhanh">
+          </a>
+          <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-44028738" enctype="multipart/form-data" method="post">
+           <input class="hidden" name="variantId" type="hidden" value="143115705"/>
+           <button class="btn" onclick="window.location.href='/2025qd27'" title="Chọn sản phẩm" type="button">
+            Chọn sản phẩm
+           </button>
+          </form>
+         </div>
+         <div class="product-info product-bottom">
+          <h3 class="product-name line-clamp-2">
+           <a href="/2025qd27" title="Z.R - Quần Hoa Văn Nổi Dáng Relaxed Fit - 2025QD27">
+            Z.R - Quần Hoa Văn Nổi Dáng Relaxed Fit - 2025QD27
+           </a>
+          </h3>
+          <div class="product-item-price price-box">
+           <span class="product-price special-price">
+            390.000₫
+           </span>
+           <span class="product-price old-price">
+            590.000₫
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="item col-lg-3 col-md-4 col-sm-4 col-xs-6">
+        <div class="product-box product-item-main">
+         <div class="tag-flash">
+          <span class="sale-flash">
+           -37%
+          </span>
+          <span class="hot-flash">
+           Hot
+          </span>
+         </div>
+         <div class="product-thumbnail">
+          <a class="image_thumb" href="/2025smd22" title="Z.R - Áo Sơ Mi Cộc Tay Dáng Rộng Cổ Cuban Vải Hoa Văn Nổi - 2025SMD22">
+           <picture>
+            <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/490405792-3121476834670699-767509535134399216-n-jpg-nc-cat-101-ccb-1-7-nc-sid-127cfc-nc-eui2-aeguuexmkbduhziy1uy0htwx9hdq3apdfab0d2rccl19pjeynxsebgubneqh4diop-ccuomshnco5wbac6ipcu7t-nc-ohc-eq4sfidthhkq7knvwg71erk-nc-oc-ad.jpg?v=1744606288430" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+            <img alt="Z.R - Áo Sơ Mi Cộc Tay Dáng Rộng Cổ Cuban Vải Hoa Văn Nổi - 2025SMD22" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/490405792-3121476834670699-767509535134399216-n-jpg-nc-cat-101-ccb-1-7-nc-sid-127cfc-nc-eui2-aeguuexmkbduhziy1uy0htwx9hdq3apdfab0d2rccl19pjeynxsebgubneqh4diop-ccuomshnco5wbac6ipcu7t-nc-ohc-eq4sfidthhkq7knvwg71erk-nc-oc-ad.jpg?v=1744606288430" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           </picture>
+          </a>
+          <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025smd22" href="/2025smd22" title="Xem nhanh">
+          </a>
+          <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-44028622" enctype="multipart/form-data" method="post">
+           <input class="hidden" name="variantId" type="hidden" value="143115505"/>
+           <button class="btn" onclick="window.location.href='/2025smd22'" title="Chọn sản phẩm" type="button">
+            Chọn sản phẩm
+           </button>
+          </form>
+         </div>
+         <div class="product-info product-bottom">
+          <h3 class="product-name line-clamp-2">
+           <a href="/2025smd22" title="Z.R - Áo Sơ Mi Cộc Tay Dáng Rộng Cổ Cuban Vải Hoa Văn Nổi - 2025SMD22">
+            Z.R - Áo Sơ Mi Cộc Tay Dáng Rộng Cổ Cuban Vải Hoa Văn Nổi - 2025SMD22
+           </a>
+          </h3>
+          <div class="product-item-price price-box">
+           <span class="product-price special-price">
+            390.000₫
+           </span>
+           <span class="product-price old-price">
+            620.000₫
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="item col-lg-3 col-md-4 col-sm-4 col-xs-6">
+        <div class="product-box product-item-main">
+         <div class="tag-flash">
+          <span class="sale-flash">
+           -50%
+          </span>
+          <span class="hot-flash">
+           Hot
+          </span>
+         </div>
+         <div class="product-thumbnail">
+          <a class="image_thumb" href="/2025smd16" title="Z.R - Sơ Mi Cộc Tay Dáng Rộng Vải Vân Nổi - 2025SMD16">
+           <picture>
+            <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/488507770-3107592506059132-5640158624975706758-n-jpg-nc-cat-108-ccb-1-7-nc-sid-127cfc-nc-ohc-lv67nwkfxioq7knvggfgx-s-nc-oc-adkvzi-jkbnottrqvrsa3q58ojzlnfq2uzunz-zl-ad450rlhfb2jkeyk8j1brce4-nc-zt-23-nc-ht-scontent-fhan5-8-.jpg?v=1743575626237" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+            <img alt="Z.R - Sơ Mi Cộc Tay Dáng Rộng Vải Vân Nổi - 2025SMD16" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/488507770-3107592506059132-5640158624975706758-n-jpg-nc-cat-108-ccb-1-7-nc-sid-127cfc-nc-ohc-lv67nwkfxioq7knvggfgx-s-nc-oc-adkvzi-jkbnottrqvrsa3q58ojzlnfq2uzunz-zl-ad450rlhfb2jkeyk8j1brce4-nc-zt-23-nc-ht-scontent-fhan5-8-.jpg?v=1743575626237" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           </picture>
+          </a>
+          <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025smd16" href="/2025smd16" title="Xem nhanh">
+          </a>
+          <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-43116313" enctype="multipart/form-data" method="post">
+           <input class="hidden" name="variantId" type="hidden" value="141601804"/>
+           <button class="btn" onclick="window.location.href='/2025smd16'" title="Chọn sản phẩm" type="button">
+            Chọn sản phẩm
+           </button>
+          </form>
+         </div>
+         <div class="product-info product-bottom">
+          <h3 class="product-name line-clamp-2">
+           <a href="/2025smd16" title="Z.R - Sơ Mi Cộc Tay Dáng Rộng Vải Vân Nổi - 2025SMD16">
+            Z.R - Sơ Mi Cộc Tay Dáng Rộng Vải Vân Nổi - 2025SMD16
+           </a>
+          </h3>
+          <div class="product-item-price price-box">
+           <span class="product-price special-price">
+            310.000₫
+           </span>
+           <span class="product-price old-price">
+            620.000₫
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="item col-lg-3 col-md-4 col-sm-4 col-xs-6">
+        <div class="product-box product-item-main">
+         <div class="tag-flash">
+          <span class="sale-flash">
+           -50%
+          </span>
+          <span class="hot-flash">
+           Hot
+          </span>
+         </div>
+         <div class="product-thumbnail">
+          <a class="image_thumb" href="/2025smd15" title="Z.R - Sơ Mi Cộc Tay Dáng Rộng Vải Vân Nổi - 2025SMD15">
+           <picture>
+            <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/488481685-3107591976059185-8093097602940361413-n-jpg-nc-cat-108-ccb-1-7-nc-sid-127cfc-nc-ohc-kdd3dptuutwq7knvghguj6g-nc-oc-adk34m3sjbejrfbevdioqejiy39x8ujnc6pl8nsrofxi4nej3-hdkqw17zjargbwi-u-nc-zt-23-nc-ht-scontent-fhan5-.jpg?v=1743575585357" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+            <img alt="Z.R - Sơ Mi Cộc Tay Dáng Rộng Vải Vân Nổi - 2025SMD15" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/488481685-3107591976059185-8093097602940361413-n-jpg-nc-cat-108-ccb-1-7-nc-sid-127cfc-nc-ohc-kdd3dptuutwq7knvghguj6g-nc-oc-adk34m3sjbejrfbevdioqejiy39x8ujnc6pl8nsrofxi4nej3-hdkqw17zjargbwi-u-nc-zt-23-nc-ht-scontent-fhan5-.jpg?v=1743575585357" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           </picture>
+          </a>
+          <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025smd15" href="/2025smd15" title="Xem nhanh">
+          </a>
+          <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-43116273" enctype="multipart/form-data" method="post">
+           <input class="hidden" name="variantId" type="hidden" value="141601753"/>
+           <button class="btn" onclick="window.location.href='/2025smd15'" title="Chọn sản phẩm" type="button">
+            Chọn sản phẩm
+           </button>
+          </form>
+         </div>
+         <div class="product-info product-bottom">
+          <h3 class="product-name line-clamp-2">
+           <a href="/2025smd15" title="Z.R - Sơ Mi Cộc Tay Dáng Rộng Vải Vân Nổi - 2025SMD15">
+            Z.R - Sơ Mi Cộc Tay Dáng Rộng Vải Vân Nổi - 2025SMD15
+           </a>
+          </h3>
+          <div class="product-item-price price-box">
+           <span class="product-price special-price">
+            310.000₫
+           </span>
+           <span class="product-price old-price">
+            620.000₫
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="item col-lg-3 col-md-4 col-sm-4 col-xs-6">
+        <div class="product-box product-item-main">
+         <div class="tag-flash">
+          <span class="sale-flash">
+           -50%
+          </span>
+          <span class="hot-flash">
+           Hot
+          </span>
+         </div>
+         <div class="product-thumbnail">
+          <a class="image_thumb" href="/2025smd14" title="Z.R - Sơ Mi Cộc Tay Dáng Rộng Vải Vân Nổi - 2025SMD14">
+           <picture>
+            <source data-lazyload3="//bizweb.dktcdn.net/thumb/medium/100/045/077/products/485159872-3094502407368142-2159067492952657628-n-jpg-nc-cat-106-ccb-1-7-nc-sid-127cfc-nc-ohc-5n3wvvchhkuq7knvgebturk-nc-oc-admdmxtjpsvdmrvk-mwszy8dm1ktaqssexblwmfjjcrtrwcvb6azdquop53rz4jkdy-nc-zt-23-nc-ht-scontent-fhan5-8.jpg?v=1742526225503" media="(max-width: 1599px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+            <img alt="Z.R - Sơ Mi Cộc Tay Dáng Rộng Vải Vân Nổi - 2025SMD14" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/products/485159872-3094502407368142-2159067492952657628-n-jpg-nc-cat-106-ccb-1-7-nc-sid-127cfc-nc-ohc-5n3wvvchhkuq7knvgebturk-nc-oc-admdmxtjpsvdmrvk-mwszy8dm1ktaqssexblwmfjjcrtrwcvb6azdquop53rz4jkdy-nc-zt-23-nc-ht-scontent-fhan5-8.jpg?v=1742526225503" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+           </picture>
+          </a>
+          <a class="btn-white btn_view btn right-to quick-view hidden-sm hidden-xs" data-handle="2025smd14" href="/2025smd14" title="Xem nhanh">
+          </a>
+          <form action="/cart/add" class="variants form-nut-grid product-action clearfix hidden-xs" data-id="product-actions-42467986" enctype="multipart/form-data" method="post">
+           <input class="hidden" name="variantId" type="hidden" value="139869598"/>
+           <button class="btn" onclick="window.location.href='/2025smd14'" title="Chọn sản phẩm" type="button">
+            Chọn sản phẩm
+           </button>
+          </form>
+         </div>
+         <div class="product-info product-bottom">
+          <h3 class="product-name line-clamp-2">
+           <a href="/2025smd14" title="Z.R - Sơ Mi Cộc Tay Dáng Rộng Vải Vân Nổi - 2025SMD14">
+            Z.R - Sơ Mi Cộc Tay Dáng Rộng Vải Vân Nổi - 2025SMD14
+           </a>
+          </h3>
+          <div class="product-item-price price-box">
+           <span class="product-price special-price">
+            310.000₫
+           </span>
+           <span class="product-price old-price">
+            620.000₫
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+ </section>
+ <section class="awe-section-5">
+  <section class="section-product-mini">
+   <div class="container">
+    <div class="title-module">
+     <h2 class="col-md-3 col-sm-12">
+      <a href="jean" title="JEAN PANT">
+       JEAN PANT
+      </a>
+      <i class="fa fa-bars hidden-lg hidden-md hidden-xs">
+      </i>
+     </h2>
+     <ul class="col-md-6 col-sm-9 link">
+      <li>
+       <a href="/ao" title="ÁO">
+        ÁO
+       </a>
+      </li>
+      <li>
+       <a href="/quan" title="QUẦN">
+        QUẦN
+       </a>
+      </li>
+      <li>
+       <a href="/phu-kien" title="PHỤ KIỆN">
+        PHỤ KIỆN
+       </a>
+      </li>
+      <li>
+       <a href="/sale" title="OUTLET">
+        OUTLET
+       </a>
+      </li>
+      <li>
+       <a href="/women-area" title="ĐỒ NỮ">
+        ĐỒ NỮ
+       </a>
+      </li>
+      <li>
+       <a href="https://s.shopee.vn/6VA1cLrGVP" title="SHOPEE">
+        SHOPEE
+       </a>
+      </li>
+      <li>
+       <a class="hidden-lg hidden-md hidden-sm" href="jean" title="Xem tất cả">
+        XEM TẤT CẢ
+       </a>
+      </li>
+     </ul>
+     <a class="view-all hidden-xs" href="jean" title="Xem tất cả">
+      XEM TẤT CẢ
+     </a>
+    </div>
+    <div class="row">
+     <div class="list-product-mini">
+      <div class="col-md-3 col-sm-6 col-xs-12">
+       <div class="product-box-mini">
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2025qb18" title="BTM - Quần Jean Ống Đứng - 2025QB18">
+          <img alt="BTM - Quần Jean Ống Đứng - 2025QB18" data-lazyload="//bizweb.dktcdn.net/thumb/grande/100/045/077/products/504251729-3182899288528453-7761217027810742682-n-jpg-nc-cat-103-ccb-1-7-nc-sid-127cfc-nc-eui2-aefbgi2vs3w1epywhxsa4x738uqn2ehw2mbxrcfz6hdazhhnggtnvm1vtxdsz04qq2ifxtictfic-ybdlhdswhxf-nc-ohc-dblu7ih-sziq7knvwge7mjm-nc-oc-a.jpg?v=1749459236753" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+         </a>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name">
+          <a href="/2025qb18" title="BTM - Quần Jean Ống Đứng - 2025QB18">
+           BTM - Quần Jean Ống Đứng - 2025QB18
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           500.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+       <div class="product-box-mini">
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2025qb17" title="BTM - Quần Jean Ống Đứng - 2025QB17">
+          <img alt="BTM - Quần Jean Ống Đứng - 2025QB17" data-lazyload="//bizweb.dktcdn.net/thumb/grande/100/045/077/products/505711218-3182899348528447-5386782681468582642-n-jpg-nc-cat-111-ccb-1-7-nc-sid-127cfc-nc-eui2-aefnxw68bzbvupjlcetoyzd3kosmveojxgwsiya8sipezq1nne-bdgh0lacwfolqmrwheyrg3y7gahml06pa6yks-nc-ohc-57yafrhxs-iq7knvwh5zovv-nc-oc-a.jpg?v=1749459452803" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+         </a>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name">
+          <a href="/2025qb17" title="BTM - Quần Jean Ống Đứng - 2025QB17">
+           BTM - Quần Jean Ống Đứng - 2025QB17
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           500.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+       <div class="product-box-mini">
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2025qb16" title="Z.R - Quần Jean Túi Hộp Dáng Rộng - 2025QB16">
+          <img alt="Z.R - Quần Jean Túi Hộp Dáng Rộng - 2025QB16" data-lazyload="//bizweb.dktcdn.net/thumb/grande/100/045/077/products/01538205800-e1.jpg?v=1746126301220" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+         </a>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name">
+          <a href="/2025qb16" title="Z.R - Quần Jean Túi Hộp Dáng Rộng - 2025QB16">
+           Z.R - Quần Jean Túi Hộp Dáng Rộng - 2025QB16
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           850.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+       <div class="product-box-mini">
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2025qb11" title="BTM - Quần Jean Dáng Slim FIt - 2025QB11">
+          <img alt="BTM - Quần Jean Dáng Slim FIt - 2025QB11" data-lazyload="//bizweb.dktcdn.net/thumb/grande/100/045/077/products/495278589-3149267278558321-2531985697525935769-n-jpg-nc-cat-103-ccb-1-7-nc-sid-127cfc-nc-ohc-rdu7pmfupmkq7knvwhuswyn-nc-oc-adk8cul-c0890rymwjwpb5shud89gzznou6f22xseyptr-7mu2usocvst0gkj5cpc6y-nc-zt-23-nc-ht-scontent-fhan5-.jpg?v=1746855867163" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+         </a>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name">
+          <a href="/2025qb11" title="BTM - Quần Jean Dáng Slim FIt - 2025QB11">
+           BTM - Quần Jean Dáng Slim FIt - 2025QB11
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           500.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+       <div class="product-box-mini">
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2025qb10" title="M.Jean - Quần Jean Carpenter Ống Flare - 2025QB10">
+          <img alt="M.Jean - Quần Jean Carpenter Ống Flare - 2025QB10" data-lazyload="//bizweb.dktcdn.net/thumb/grande/100/045/077/products/486784775-3102567696561613-3775970757891745345-n-jpg-nc-cat-105-ccb-1-7-nc-sid-127cfc-nc-ohc-jkfeq9yebyeq7knvgecemrs-nc-oc-admupbhxdrontrzdponcg6gtuthvbwc0d3kebnnc2bu5mcpp-uukb0pkvymqczs0is4-nc-zt-23-nc-ht-scontent-fhan5-.jpg?v=1743176931270" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+         </a>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name">
+          <a href="/2025qb10" title="M.Jean - Quần Jean Carpenter Ống Flare - 2025QB10">
+           M.Jean - Quần Jean Carpenter Ống Flare - 2025QB10
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           550.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+       <div class="product-box-mini">
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2025qb09" title="M.Jean - Quần Jean Cạp Chun Dáng Baggy Fit - 2025QB09">
+          <img alt="M.Jean - Quần Jean Cạp Chun Dáng Baggy Fit - 2025QB09" data-lazyload="//bizweb.dktcdn.net/thumb/grande/100/045/077/products/491576329-3124888084329574-7430750211244913898-n-jpg-nc-cat-102-ccb-1-7-nc-sid-127cfc-nc-eui2-aeezo5ue5buihzchlwi41n6lonmz3hcgfvwiczpefyb9vdpwxvmhinhpjbd34-lbldo3kbxbkdw7tpwkqolrkbcu-nc-ohc-j-tv-dgu-fqq7knvwhba134-nc-oc-a.jpg?v=1744865674300" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+         </a>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name">
+          <a href="/2025qb09" title="M.Jean - Quần Jean Cạp Chun Dáng Baggy Fit - 2025QB09">
+           M.Jean - Quần Jean Cạp Chun Dáng Baggy Fit - 2025QB09
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           500.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+       <div class="product-box-mini">
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2025qb08" title="M.Jean - Quần Jean Cạp Chun Dáng Baggy Fit - 2025QB08">
+          <img alt="M.Jean - Quần Jean Cạp Chun Dáng Baggy Fit - 2025QB08" data-lazyload="//bizweb.dktcdn.net/thumb/grande/100/045/077/products/491911541-3124887984329584-6396443264722074183-n-jpg-nc-cat-104-ccb-1-7-nc-sid-127cfc-nc-eui2-aeegekio1egdn8dcxr-8y-834eykygfaqljgritkaucqwmxolkq27vn1vsiqtmois6kadyb8nwob7blj9-cfc7sm-nc-ohc-vpd89gh53fcq7knvweq4ppq-nc-oc-a.jpg?v=1744865715540" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+         </a>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name">
+          <a href="/2025qb08" title="M.Jean - Quần Jean Cạp Chun Dáng Baggy Fit - 2025QB08">
+           M.Jean - Quần Jean Cạp Chun Dáng Baggy Fit - 2025QB08
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           500.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+       <div class="product-box-mini">
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2025qb07" title="BTM - Quần Jean Ống Đứng - 2025QB07">
+          <img alt="BTM - Quần Jean Ống Đứng - 2025QB07" data-lazyload="//bizweb.dktcdn.net/thumb/grande/100/045/077/products/486521820-3098207620330954-4870707682179657993-n-jpg-nc-cat-103-ccb-1-7-nc-sid-127cfc-nc-eui2-aehqmwrgbb12-hqxvsoy-vvzzqveptj51wjmpv49mnnvyv1rswzicppttj6fsibxplcy73vddifwtt4yzuq-j-c-nc-ohc-7jrftkn13msq7knvghw9bou-nc-oc-ad.jpg?v=1742811823783" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+         </a>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name">
+          <a href="/2025qb07" title="BTM - Quần Jean Ống Đứng - 2025QB07">
+           BTM - Quần Jean Ống Đứng - 2025QB07
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           500.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+       <div class="product-box-mini">
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2025qb06" title="BTM - Quần Jean Ống Đứng - 2025QB06">
+          <img alt="BTM - Quần Jean Ống Đứng - 2025QB06" data-lazyload="//bizweb.dktcdn.net/thumb/grande/100/045/077/products/486363589-3098207526997630-2018936034456705349-n-jpg-nc-cat-110-ccb-1-7-nc-sid-127cfc-nc-eui2-aeeeh7fnoeevfcfyjc3o-qfh5ilipg-dc3zmkwi-d51zfeh6oyw78azuuagmex6g526fiodpfu5jix1qgxizxmya-nc-ohc-ldubazrki7eq7knvghaq3ej-nc-oc-a.jpg?v=1742811838887" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+         </a>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name">
+          <a href="/2025qb06" title="BTM - Quần Jean Ống Đứng - 2025QB06">
+           BTM - Quần Jean Ống Đứng - 2025QB06
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           500.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+       <div class="product-box-mini">
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2024qb21" title="M.Jean - Quần Jean Dáng Carpenter - 2024QB21">
+          <img alt="M.Jean - Quần Jean Dáng Carpenter - 2024QB21" data-lazyload="//bizweb.dktcdn.net/thumb/grande/100/045/077/products/o1cn01nyggtw1zqm7okq47d-2201202046709-0-cib-1724476613647.jpg?v=1740246193077" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+         </a>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name">
+          <a href="/2024qb21" title="M.Jean - Quần Jean Dáng Carpenter - 2024QB21">
+           M.Jean - Quần Jean Dáng Carpenter - 2024QB21
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           580.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+       <div class="product-box-mini">
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2024qb17" title="M.Jean - Quần Jean Dáng Carpenter - 2024QB17">
+          <img alt="M.Jean - Quần Jean Dáng Carpenter - 2024QB17" data-lazyload="//bizweb.dktcdn.net/thumb/grande/100/045/077/products/o1cn01lrqzek1zqm7oknw74-2201202046709-0-cib-ca29f56d-6f96-498b-8e69-3bb374cb0c8a-1724475915367.jpg?v=1740246181087" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+         </a>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name">
+          <a href="/2024qb17" title="M.Jean - Quần Jean Dáng Carpenter - 2024QB17">
+           M.Jean - Quần Jean Dáng Carpenter - 2024QB17
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           580.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+       <div class="product-box-mini">
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2025qb05" title="M.Jean - Quần Jean Dáng Carpenter - 2025QB05">
+          <img alt="M.Jean - Quần Jean Dáng Carpenter - 2025QB05" data-lazyload="//bizweb.dktcdn.net/thumb/grande/100/045/077/products/o1cn01p6enhi1zqm7nxkhmg-22012020-c26661bd-37ef-447f-bec4-653f204d0381.jpg?v=1740246916887" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+         </a>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name">
+          <a href="/2025qb05" title="M.Jean - Quần Jean Dáng Carpenter - 2025QB05">
+           M.Jean - Quần Jean Dáng Carpenter - 2025QB05
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           580.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+       <div class="product-box-mini">
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2025qb02" title="BTM - Quần Jean Ống Carrot - 2025QB02">
+          <img alt="BTM - Quần Jean Ống Carrot - 2025QB02" data-lazyload="//bizweb.dktcdn.net/thumb/grande/100/045/077/products/468926138-3000811793403871-1894291231125692315-n-jpg-nc-cat-100-ccb-1-7-nc-sid-127cfc-nc-ohc-qwbpxzomhysq7knvgg9by5w-nc-zt-23-nc-ht-scontent-fhan5-11-fna-nc-gid-ajzl6v0cfmctk2jl60mtcht-oh-00-ayayq-vdoh2izel7exfhswrrpnhfwc.jpg?v=1733129524643" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+         </a>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name">
+          <a href="/2025qb02" title="BTM - Quần Jean Ống Carrot - 2025QB02">
+           BTM - Quần Jean Ống Carrot - 2025QB02
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           500.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+       <div class="product-box-mini">
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2024qb29" title="M.Jean By Al Culture - Quần Jean Dáng Baggy Fit - 2024QB29">
+          <img alt="M.Jean By Al Culture - Quần Jean Dáng Baggy Fit - 2024QB29" data-lazyload="//bizweb.dktcdn.net/thumb/grande/100/045/077/products/o1cn01jywwo81zqmai8ifhk-2201202046709-0-cib.jpg?v=1724874354147" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+         </a>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name">
+          <a href="/2024qb29" title="M.Jean By Al Culture - Quần Jean Dáng Baggy Fit - 2024QB29">
+           M.Jean By Al Culture - Quần Jean Dáng Baggy Fit - 2024QB29
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           340.000₫
+          </span>
+          <span class="product-price old-price">
+           680.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+       <div class="product-box-mini">
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2024qb27" title="M.jean - Quần Jean Dáng Relaxed Fit - 2024QB27">
+          <img alt="M.jean - Quần Jean Dáng Relaxed Fit - 2024QB27" data-lazyload="//bizweb.dktcdn.net/thumb/grande/100/045/077/products/o1cn01an5yaj1zqmavffcmf-2201202046709-0-cib.jpg?v=1724606019650" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+         </a>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name">
+          <a href="/2024qb27" title="M.jean - Quần Jean Dáng Relaxed Fit - 2024QB27">
+           M.jean - Quần Jean Dáng Relaxed Fit - 2024QB27
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           275.000₫
+          </span>
+          <span class="product-price old-price">
+           550.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+       <div class="product-box-mini">
+        <div class="product-thumbnail">
+         <a class="image_thumb" href="/2024qb24" title="M.Jean By Adercarten - Quần Jean Dáng Baggy Fit - 2024QB24">
+          <img alt="M.Jean By Adercarten - Quần Jean Dáng Baggy Fit - 2024QB24" data-lazyload="//bizweb.dktcdn.net/thumb/grande/100/045/077/products/o1cn01cmhjtg1zqmbni8acc-2201202046709-0-cib.jpg?v=1724832828447" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+         </a>
+        </div>
+        <div class="product-info product-bottom">
+         <h3 class="product-name">
+          <a href="/2024qb24" title="M.Jean By Adercarten - Quần Jean Dáng Baggy Fit - 2024QB24">
+           M.Jean By Adercarten - Quần Jean Dáng Baggy Fit - 2024QB24
+          </a>
+         </h3>
+         <div class="product-item-price price-box">
+          <span class="product-price special-price">
+           489.000₫
+          </span>
+          <span class="product-price old-price">
+           900.000₫
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+ </section>
+ <section class="awe-section-6">
+  <section class="section_blogs">
+   <div class="container">
+    <div class="title margin-bottom-40">
+     <h2>
+      <a href="tin-thoi-trang" title="GÓC TIN TỨC">
+       GÓC TIN TỨC
+      </a>
+     </h2>
+     <p>
+      Streetwear giờ đây không còn là xu hướng tạm thời, nó được xem như sự rẽ hướng kinh doanh bắt buộc phải làm của các hãng thời trang vì khách hàng Millennials đang chiếm ưu thế trên thị trường
+     </p>
+    </div>
+    <div class="list-blogs row">
+     <div class="blog-inner col-lg-3 col-md-3 col-sm-6">
+      <div class="thumbnail-article">
+       <a class="blog-img" href="/du-bao-thoi-tiet-tet-am-lich-2024" title="Dự báo thời tiết Tết Âm Lịch 2024 ở 3 miền Bắc - Trung - Nam">
+        <img alt="Dự báo thời tiết Tết Âm Lịch 2024 ở 3 miền Bắc - Trung - Nam" class="img-responsive" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/articles/untitled-1.jpg?v=1704607094260" src="//bizweb.dktcdn.net/100/045/077/themes/894305/assets/loading.svg?1741967380019" style="max-width:100%;"/>
+       </a>
+       <span class="time">
+        <span class="date">
+         07
+        </span>
+        <span class="year">
+         01/2024
+        </span>
+       </span>
+      </div>
+      <h3>
+       <a href="/du-bao-thoi-tiet-tet-am-lich-2024" title="Dự báo thời tiết Tết Âm Lịch 2024 ở 3 miền Bắc - Trung - Nam">
+        Dự báo thời tiết Tết Âm Lịch 2024 ở 3 miền Bắc - Trung - Nam
+       </a>
+      </h3>
+      <p class="meta-content">
+       Không gì có thể so sánh được với cảm giác ấm áp và nồng hậu của không khí thời tiết Tết Nguyên Đán 2024, khi mọi ngườ...
+      </p>
+     </div>
+     <div class="blog-inner col-lg-3 col-md-3 col-sm-6">
+      <div class="thumbnail-article">
+       <a class="blog-img" href="/thang6" title="Chương Trình KM Tháng 6">
+        <img alt="Chương Trình KM Tháng 6" class="img-responsive" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/articles/z4400915057804-073504a695f052c8cfb87487776b7e01.jpg?v=1685894939527" src="//bizweb.dktcdn.net/100/045/077/themes/894305/assets/loading.svg?1741967380019" style="max-width:100%;"/>
+       </a>
+       <span class="time">
+        <span class="date">
+         04
+        </span>
+        <span class="year">
+         06/2023
+        </span>
+       </span>
+      </div>
+      <h3>
+       <a href="/thang6" title="Chương Trình KM Tháng 6">
+        Chương Trình KM Tháng 6
+       </a>
+      </h3>
+      <p class="meta-content">
+       Event #SALE Tháng 6 này tại : https://thenoob.vn/ và Shopee : https://shope.ee/1AprgxSJMH
+- Giảm 10% đến 50% toàn bộ...
+      </p>
+     </div>
+     <div class="blog-inner col-lg-3 col-md-3 col-sm-6">
+      <div class="thumbnail-article">
+       <a class="blog-img" href="/50jean" title="[Hết Hạn] Giảm 50% giá gốc cho tất cả sản phẩm trừ áo khoác khi mua kèm Jean">
+        <img alt="[Hết Hạn] Giảm 50% giá gốc cho tất cả sản phẩm trừ áo khoác khi mua kèm Jean" class="img-responsive" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/articles/o1cn01zvpgtj1xko4kxo01q-3582756482-0-cib.jpg?v=1676199774790" src="//bizweb.dktcdn.net/100/045/077/themes/894305/assets/loading.svg?1741967380019" style="max-width:100%;"/>
+       </a>
+       <span class="time">
+        <span class="date">
+         10
+        </span>
+        <span class="year">
+         02/2023
+        </span>
+       </span>
+      </div>
+      <h3>
+       <a href="/50jean" title="[Hết Hạn] Giảm 50% giá gốc cho tất cả sản phẩm trừ áo khoác khi mua kèm Jean">
+        [Hết Hạn] Giảm 50% giá gốc cho tất cả sản phẩm trừ áo khoác khi mua kèm Jean
+       </a>
+      </h3>
+      <p class="meta-content">
+       CHƯƠNG TRÌNH SALE 50JEAN TẠM NGƯNG TRONG DỊP KM TỪ (23/04 - 30/04)
+
+Giảm 50% giá gốc cho tất cả các sản phẩm ( sơ mi ...
+      </p>
+     </div>
+     <div class="blog-inner col-lg-3 col-md-3 col-sm-6">
+      <div class="thumbnail-article">
+       <a class="blog-img" href="/xa-hang-30-50" title="[Hết Hạn] XẢ HÀNG TOÀN BỘ QUẦN ÁO 30-50%">
+        <img alt="[Hết Hạn] XẢ HÀNG TOÀN BỘ QUẦN ÁO 30-50%" class="img-responsive" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/045/077/articles/img-4935-1.jpg?v=1587877133893" src="//bizweb.dktcdn.net/100/045/077/themes/894305/assets/loading.svg?1741967380019" style="max-width:100%;"/>
+       </a>
+       <span class="time">
+        <span class="date">
+         26
+        </span>
+        <span class="year">
+         04/2020
+        </span>
+       </span>
+      </div>
+      <h3>
+       <a href="/xa-hang-30-50" title="[Hết Hạn] XẢ HÀNG TOÀN BỘ QUẦN ÁO 30-50%">
+        [Hết Hạn] XẢ HÀNG TOÀN BỘ QUẦN ÁO 30-50%
+       </a>
+      </h3>
+      <p class="meta-content">
+       🔥 https://thenoob.vn/ xin thông báo, xả hàng
+⚠️ Do chuyển đổi cơ cấu cửa hàng sau khủng hoảng, shop #...
+      </p>
+     </div>
+    </div>
+   </div>
+  </section>
+ </section>
+ <section class="awe-section-7">
+  <section class="section-brands">
+   <div class="list-brands">
+    <div class="item">
+     <a href="all" title="DeWALT">
+      <img alt="dewalt" class="img-responsive" data-lazyload="//bizweb.dktcdn.net/thumb/compact/100/045/077/themes/894305/assets/brand_1_image.png?1741967380019" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+     </a>
+    </div>
+    <div class="item">
+     <a href="all" title="Stanley">
+      <img alt="stanley" class="img-responsive" data-lazyload="//bizweb.dktcdn.net/thumb/compact/100/045/077/themes/894305/assets/brand_2_image.png?1741967380019" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+     </a>
+    </div>
+    <div class="item">
+     <a href="all" title="Makita">
+      <img alt="makita" class="img-responsive" data-lazyload="//bizweb.dktcdn.net/thumb/compact/100/045/077/themes/894305/assets/brand_3_image.png?1741967380019" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+     </a>
+    </div>
+    <div class="item">
+     <a href="all" title="Bosch">
+      <img alt="bosch" class="img-responsive" data-lazyload="//bizweb.dktcdn.net/thumb/compact/100/045/077/themes/894305/assets/brand_4_image.png?1741967380019" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+     </a>
+    </div>
+    <div class="item">
+     <a href="all" title="Honda">
+      <img alt="honda" class="img-responsive" data-lazyload="//bizweb.dktcdn.net/thumb/compact/100/045/077/themes/894305/assets/brand_5_image.png?1741967380019" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+     </a>
+    </div>
+    <div class="item">
+     <a href="all" title="">
+      <img alt="THE NOOB" class="img-responsive" data-lazyload="//bizweb.dktcdn.net/thumb/compact/100/045/077/themes/894305/assets/brand_6_image.png?1741967380019" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="/>
+     </a>
+    </div>
+   </div>
+  </section>
+ </section>
+ <link as="script" href="//bizweb.dktcdn.net/100/045/077/themes/894305/assets/index-js.js?1741967380019" rel="preload"/>
+ <link as="script" href="//bizweb.dktcdn.net/100/045/077/themes/894305/assets/main.js?1741967380019" rel="preload"/>
+ <div class="ajax-load">
+  <span class="loading-icon">
+   <svg height="30px" style="enable-background:new 0 0 50 50;" version="1.1" viewbox="0 0 24 30" width="24px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+    <rect fill="#333" height="10" opacity="0.2" width="4" x="0" y="10">
+     <animate attributename="opacity" attributetype="XML" begin="0s" dur="0.6s" repeatcount="indefinite" values="0.2; 1; .2">
+     </animate>
+     <animate attributename="height" attributetype="XML" begin="0s" dur="0.6s" repeatcount="indefinite" values="10; 20; 10">
+     </animate>
+     <animate attributename="y" attributetype="XML" begin="0s" dur="0.6s" repeatcount="indefinite" values="10; 5; 10">
+     </animate>
+    </rect>
+    <rect fill="#333" height="10" opacity="0.2" width="4" x="8" y="10">
+     <animate attributename="opacity" attributetype="XML" begin="0.15s" dur="0.6s" repeatcount="indefinite" values="0.2; 1; .2">
+     </animate>
+     <animate attributename="height" attributetype="XML" begin="0.15s" dur="0.6s" repeatcount="indefinite" values="10; 20; 10">
+     </animate>
+     <animate attributename="y" attributetype="XML" begin="0.15s" dur="0.6s" repeatcount="indefinite" values="10; 5; 10">
+     </animate>
+    </rect>
+    <rect fill="#333" height="10" opacity="0.2" width="4" x="16" y="10">
+     <animate attributename="opacity" attributetype="XML" begin="0.3s" dur="0.6s" repeatcount="indefinite" values="0.2; 1; .2">
+     </animate>
+     <animate attributename="height" attributetype="XML" begin="0.3s" dur="0.6s" repeatcount="indefinite" values="10; 20; 10">
+     </animate>
+     <animate attributename="y" attributetype="XML" begin="0.3s" dur="0.6s" repeatcount="indefinite" values="10; 5; 10">
+     </animate>
+    </rect>
+   </svg>
+  </span>
+ </div>
+ <div class="loading awe-popup">
+  <div class="overlay">
+  </div>
+  <div class="loader" title="2">
+   <svg height="30px" style="enable-background:new 0 0 50 50;" version="1.1" viewbox="0 0 24 30" width="24px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+    <rect fill="#333" height="10" opacity="0.2" width="4" x="0" y="10">
+     <animate attributename="opacity" attributetype="XML" begin="0s" dur="0.6s" repeatcount="indefinite" values="0.2; 1; .2">
+     </animate>
+     <animate attributename="height" attributetype="XML" begin="0s" dur="0.6s" repeatcount="indefinite" values="10; 20; 10">
+     </animate>
+     <animate attributename="y" attributetype="XML" begin="0s" dur="0.6s" repeatcount="indefinite" values="10; 5; 10">
+     </animate>
+    </rect>
+    <rect fill="#333" height="10" opacity="0.2" width="4" x="8" y="10">
+     <animate attributename="opacity" attributetype="XML" begin="0.15s" dur="0.6s" repeatcount="indefinite" values="0.2; 1; .2">
+     </animate>
+     <animate attributename="height" attributetype="XML" begin="0.15s" dur="0.6s" repeatcount="indefinite" values="10; 20; 10">
+     </animate>
+     <animate attributename="y" attributetype="XML" begin="0.15s" dur="0.6s" repeatcount="indefinite" values="10; 5; 10">
+     </animate>
+    </rect>
+    <rect fill="#333" height="10" opacity="0.2" width="4" x="16" y="10">
+     <animate attributename="opacity" attributetype="XML" begin="0.3s" dur="0.6s" repeatcount="indefinite" values="0.2; 1; .2">
+     </animate>
+     <animate attributename="height" attributetype="XML" begin="0.3s" dur="0.6s" repeatcount="indefinite" values="10; 20; 10">
+     </animate>
+     <animate attributename="y" attributetype="XML" begin="0.3s" dur="0.6s" repeatcount="indefinite" values="10; 5; 10">
+     </animate>
+    </rect>
+   </svg>
+  </div>
+ </div>
+ <div class="error-popup awe-popup">
+  <div class="overlay no-background">
+  </div>
+  <div class="popup-inner content">
+   <div class="error-message">
+   </div>
+  </div>
+ </div>
+ <div class="modal fade" id="popup-cart" role="dialog">
+  <div class="clearfix" id="popup-cart-desktop">
+   <div class="title-popup-cart">
+    <img alt="THE NOOB" src="//bizweb.dktcdn.net/100/045/077/themes/894305/assets/ico_check_.png?1741967380019"/>
+    <span class="your_product">
+     Bạn đã thêm [
+     <span class="cart-popup-name">
+     </span>
+     ] vào giỏ hàng thành công !
+    </span>
+   </div>
+   <div class="wrap_popup">
+    <div class="title-quantity-popup">
+     <span class="cart_status" onclick="window.location.href='/cart';">
+      Giỏ hàng của bạn có
+      <span class="cart-popup-count">
+      </span>
+      sản phẩm
+     </span>
+    </div>
+    <div class="content-popup-cart">
+     <div class="thead-popup">
+      <div class="text-left" style="width: 53%;">
+       Sản phẩm
+      </div>
+      <div class="text-center" style="width: 15%;">
+       Đơn giá
+      </div>
+      <div class="text-center" style="width: 15%;">
+       Số lượng
+      </div>
+      <div class="text-center" style="width: 17%;">
+       Thành tiền
+      </div>
+     </div>
+     <div class="tbody-popup scrollbar-dynamic">
+     </div>
+     <div class="tfoot-popup">
+      <div class="tfoot-popup-1 a-right clearfix">
+       <span class="total-p popup-total">
+        Tổng tiền thanh toán:
+        <span class="total-price">
+        </span>
+       </span>
+      </div>
+      <div class="tfoot-popup-2 clearfix">
+       <a class="button checkout_ btn-proceed-checkout" href="/checkout" title="Thực hiện thanh toán">
+        <span>
+         Thực hiện thanh toán
+        </span>
+       </a>
+       <a class="button buy_ btn-proceed-checkout" href="javascript:;" onclick="$('#popup-cart').modal('hide');" title="tiếp tục mua hàng">
+        <span>
+         <span>
+          Tiếp tục mua hàng
+         </span>
+        </span>
+       </a>
+      </div>
+     </div>
+    </div>
+    <a class="quickview-close close-window" href="javascript:;" onclick="$('#popup-cart').modal('hide');" title="Close">
+     <img alt="close" src="//bizweb.dktcdn.net/100/045/077/themes/894305/assets/close.svg?1741967380019"/>
+    </a>
+   </div>
+  </div>
+ </div>
+ <div class="modal fade" id="myModal" role="dialog">
+ </div>
+ <link as="script" href="//bizweb.dktcdn.net/100/045/077/themes/894305/assets/option-selectors.js?1741967380019" rel="preload"/>
+ <link as="script" href="//bizweb.dktcdn.net/assets/themes_support/api.jquery.js " rel="preload"/>
+ <link as="script" href="//bizweb.dktcdn.net/100/045/077/themes/894305/assets/cs.script.js?1741967380019" rel="preload"/>
+ <div class="quickview-product" id="quick-view-product" style="display:none;">
+  <div class="quickview-overlay fancybox-overlay fancybox-overlay-fixed">
+  </div>
+  <div class="quick-view-product">
+  </div>
+  <div id="quickview-modal" style="display:none;">
+   <div class="block-quickview primary_block row">
+    <div class="product-left-column col-xs-12 col-sm-5 col-md-5 col-lg-5">
+     <div class="clearfix image-block">
+      <span class="view_full_size">
+       <a class="img-product" href="#">
+        <img alt="quickview" class="img-responsive product-featured-image-quickview" id="product-featured-image-quickview" src="//bizweb.dktcdn.net/100/045/077/themes/894305/assets/logo.png?1741967380019"/>
+       </a>
+      </span>
+      <div class="loading-imgquickview" style="display:none;">
+      </div>
+     </div>
+     <div class="more-view-wrapper clearfix">
+      <div class="thumbs_quickview" id="thumbs_list_quickview">
+       <ul class="product-photo-thumbs quickview-more-views-owlslider" id="thumblist_quickview">
+       </ul>
+      </div>
+     </div>
+    </div>
+    <div class="product-center-column product-info product-item col-xs-5 col-sm-7 col-md-7 col-lg-7">
+     <div class="head-qv">
+      <h3 class="qwp-name">
+       abc
+      </h3>
+     </div>
+     <div class="quickview-info">
+      <span class="vendor_ frist">
+       Thương hiệu:
+       <span class="vendor">
+        Chưa có
+       </span>
+      </span>
+      <span class="vendor_ status">
+       Tình trạng:
+       <span class="status_name">
+       </span>
+      </span>
+      <span class="prices">
+       <span class="price">
+       </span>
+       <del class="old-price">
+       </del>
+      </span>
+     </div>
+     <div class="product-description">
+      <div class="rte">
+      </div>
+      <a class="view-more" href="#" title="Xem chi tiết">
+       Xem chi tiết
+      </a>
+     </div>
+     <form action="/cart/add" class="quick_option variants form-ajaxtocart" enctype="multipart/form-data" method="post">
+      <span class="price-product-detail hidden" style="opacity: 0;">
+       <span class="">
+       </span>
+      </span>
+      <select class="hidden" name="variantId" style="display:none">
+      </select>
+      <div class="clearfix">
+      </div>
+      <div class="quantity_wanted_p">
+       <div class="input_qty_qv input_number_product">
+        <a class="btn_num num_1 button button_qty" onclick="var result = document.getElementById('quantity-detail'); var qtyqv = result.value; if( !isNaN( qtyqv ) &amp;&amp; qtyqv &gt; 1 ) result.value--;return false;">
+         -
+        </a>
+        <input class="form-control prd_quantity" id="quantity-detail" maxlength="3" name="quantity" onchange="if(this.value == 0)this.value=1;" onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;" type="text" value="1"/>
+        <a class="btn_num num_2 button button_qty" onclick="var result = document.getElementById('quantity-detail'); var qtyqv = result.value; if( !isNaN( qtyqv )) result.value++;return false;">
+         +
+        </a>
+       </div>
+       <button class="btn btn-primary fix_add_to_cart button_cart_buy_enable add_to_cart_detail ajax_addtocart" name="add" title="Thêm vào giỏ hàng" type="submit">
+        <i class="ion-android-cart">
+        </i>
+        <span>
+         Thêm vào giỏ hàng
+        </span>
+       </button>
+      </div>
+      <div class="total-price" style="display:none">
+       <label>
+        Tổng cộng:
+       </label>
+       <span>
+       </span>
+      </div>
+     </form>
+    </div>
+   </div>
+   <a class="quickview-close close-window quickviewsclose" href="javascript:;" title="Close">
+    <img alt="close" src="//bizweb.dktcdn.net/100/045/077/themes/894305/assets/close.svg?1741967380019"/>
+   </a>
+  </div>
+ </div>
+ <div class="jas-sale-pop flex pf middle-xs">
+ </div>
+</div>
+538ca388eaeb71f50b6d9a8e3f789789538ca388eaeb71f50b6d9a8e3f789789
+84bd554a92b07ab6b2b1af6da550129584bd554a92b07ab6b2b1af6da5501295
+
+{%endblock %}
