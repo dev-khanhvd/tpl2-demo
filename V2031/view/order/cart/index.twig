@@ -1,0 +1,484 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(translate('Giỏ hàng')).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ translate('Giỏ hàng') }}">
+<meta name="description" content="{{ translate('Giỏ hàng') }}">
+<meta property="og:title" content="{{ translate('Giỏ hàng') }}">
+<meta property="og:url" content="{{ getCurrentUrl() }}">
+<meta property="og:image" content="{{ getBusinessLogo() }}">
+<link rel="canonical" href="{{ getCurrentUrl() }}">
+{%endblock %}
+
+{%block body %}
+ {% set products = serviceCart().productList %}
+                           {% set totalCartMoney = serviceCart().totalMoney %}
+                           {% set latestProduct = products|last %}
+<div class="backdrop__body-backdrop___1rvky">
+</div>
+<div class="page-body">
+ <div class="hidden-md hidden-lg opacity_menu">
+ </div>
+ <div class="opacity_filter">
+ </div>
+ <div class="body_opactiy">
+ </div>
+ <div class="op_login">
+ </div>
+ <div class="menu_mobile max_991 hidden-md hidden-lg">
+  <div class="account">
+   <svg id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewbox="0 0 512 512" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+    <g>
+     <path d="M256,0c-74.439,0-135,60.561-135,135s60.561,135,135,135s135-60.561,135-135S330.439,0,256,0z">
+     </path>
+    </g>
+    <g>
+     <path d="M423.966,358.195C387.006,320.667,338.009,300,286,300h-60c-52.008,0-101.006,20.667-137.966,58.195
+						 C51.255,395.539,31,444.833,31,497c0,8.284,6.716,15,15,15h420c8.284,0,15-6.716,15-15
+						 C481,444.833,460.745,395.539,423.966,358.195z">
+     </path>
+    </g>
+   </svg>
+   <a href="/account/login" title="Đăng nhập">
+    Đăng nhập
+   </a>
+   <span>
+    |
+   </span>
+   <a href="/account/register" title="Đăng ký">
+    Đăng ký
+   </a>
+   <i class="close-menu">
+    <svg id="Capa_1" style="enable-background:new 0 0 512.001 512.001;" version="1.1" viewbox="0 0 512.001 512.001" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+     <g>
+      <path d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717
+							 L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859
+							 c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287
+							 l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285
+							 L284.286,256.002z">
+      </path>
+     </g>
+    </svg>
+   </i>
+  </div>
+  <ul class="ul_collections">
+   <li class="level0 level-top parent">
+    <a href="/ao" title="ÁO">
+     ÁO
+    </a>
+    <i class="fa">
+    </i>
+    <ul class="level0" style="display:none;">
+     <li class="level1">
+      <a href="/jackets" title="ÁO KHOÁC">
+       <span>
+        ÁO KHOÁC
+       </span>
+      </a>
+     </li>
+     <li class="level1">
+      <a href="/so-mi" title="ÁO SƠ MI">
+       <span>
+        ÁO SƠ MI
+       </span>
+      </a>
+     </li>
+     <li class="level1">
+      <a href="/ao-len" title="ÁO LEN">
+       <span>
+        ÁO LEN
+       </span>
+      </a>
+     </li>
+     <li class="level1">
+      <a href="/sweater" title="ÁO PHÔNG &amp; HOODIE">
+       <span>
+        ÁO PHÔNG &amp; HOODIE
+       </span>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="level0 level-top parent">
+    <a href="/quan" title="QUẦN">
+     QUẦN
+    </a>
+    <i class="fa">
+    </i>
+    <ul class="level0" style="display:none;">
+     <li class="level1">
+      <a href="/short" title="QUẦN SHORT">
+       <span>
+        QUẦN SHORT
+       </span>
+      </a>
+     </li>
+     <li class="level1">
+      <a href="/trouser" title="QUẦN KAKI &amp; VẢI">
+       <span>
+        QUẦN KAKI &amp; VẢI
+       </span>
+      </a>
+     </li>
+     <li class="level1">
+      <a href="/jean" title="QUẦN JEAN">
+       <span>
+        QUẦN JEAN
+       </span>
+      </a>
+     </li>
+     <li class="level1">
+      <a href="/jogger" title="QUẦN JOGGER">
+       <span>
+        QUẦN JOGGER
+       </span>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="level0 level-top parent">
+    <a href="/phu-kien" title="PHỤ KIỆN">
+     PHỤ KIỆN
+    </a>
+    <i class="fa">
+    </i>
+    <ul class="level0" style="display:none;">
+     <li class="level1">
+      <a href="/bag" title="TÚI / VÍ / BA LÔ">
+       <span>
+        TÚI / VÍ / BA LÔ
+       </span>
+      </a>
+     </li>
+     <li class="level1">
+      <a href="/other" title="PHỤ KIỆN KHÁC">
+       <span>
+        PHỤ KIỆN KHÁC
+       </span>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="level0 level-top parent">
+    <a href="/sale" title="OUTLET">
+     OUTLET
+    </a>
+   </li>
+   <li class="level0 level-top parent">
+    <a href="/women-area" title="ĐỒ NỮ">
+     ĐỒ NỮ
+    </a>
+   </li>
+   <li class="level0 level-top parent">
+    <a href="https://s.shopee.vn/6VA1cLrGVP" title="SHOPEE">
+     SHOPEE
+    </a>
+   </li>
+  </ul>
+ </div>
+ <section class="bread-crumb">
+  <span class="crumb-border">
+  </span>
+  <div class="container">
+   <div class="row">
+    <div class="col-xs-12 a-left">
+     <ul class="breadcrumb">
+      <li class="home">
+       <a href="/">
+        <span>
+         Trang chủ
+        </span>
+       </a>
+       <span class="mr_lr">
+       </span>
+      </li>
+      <li>
+       <strong>
+        <span>
+         Giỏ hàng
+        </span>
+       </strong>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </div>
+ </section>
+ <section class="wrap_page">
+  <div class="container">
+   <div class="row">
+    <div class="col-lg-12">
+     <h1 class="title_head left after">
+      <span class="padding__">
+       Giỏ hàng của bạn
+      </span>
+     </h1>
+     <div class="header-cart title_cart_pc hidden-sm hidden-xs">
+     </div>
+    </div>
+   </div>
+  </div>
+ </section>
+ <section class="main-cart-page main-container col1-layout">
+  <div class="main container hidden-xs hidden-sm">
+   <div class="col-main cart_desktop_page cart-page">
+   </div>
+  </div>
+  <div class="cart-mobile hidden-md hidden-lg container">
+   <form action="/cart" class="margin-bottom-0" method="post" novalidate="">
+    <div class="title_cart_mobile">
+    </div>
+    <div class="header-cart-content" style="background:#fff;">
+    </div>
+   </form>
+  </div>
+ </section>
+ <div class="sapo-buyxgety-module-cart-v2 container">
+ </div>
+ <link as="script" href="//bizweb.dktcdn.net/100/045/077/themes/894305/assets/main.js?1741967380019" rel="preload"/>
+ <div class="ajax-load">
+  <span class="loading-icon">
+   <svg height="30px" style="enable-background:new 0 0 50 50;" version="1.1" viewbox="0 0 24 30" width="24px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+    <rect fill="#333" height="10" opacity="0.2" width="4" x="0" y="10">
+     <animate attributename="opacity" attributetype="XML" begin="0s" dur="0.6s" repeatcount="indefinite" values="0.2; 1; .2">
+     </animate>
+     <animate attributename="height" attributetype="XML" begin="0s" dur="0.6s" repeatcount="indefinite" values="10; 20; 10">
+     </animate>
+     <animate attributename="y" attributetype="XML" begin="0s" dur="0.6s" repeatcount="indefinite" values="10; 5; 10">
+     </animate>
+    </rect>
+    <rect fill="#333" height="10" opacity="0.2" width="4" x="8" y="10">
+     <animate attributename="opacity" attributetype="XML" begin="0.15s" dur="0.6s" repeatcount="indefinite" values="0.2; 1; .2">
+     </animate>
+     <animate attributename="height" attributetype="XML" begin="0.15s" dur="0.6s" repeatcount="indefinite" values="10; 20; 10">
+     </animate>
+     <animate attributename="y" attributetype="XML" begin="0.15s" dur="0.6s" repeatcount="indefinite" values="10; 5; 10">
+     </animate>
+    </rect>
+    <rect fill="#333" height="10" opacity="0.2" width="4" x="16" y="10">
+     <animate attributename="opacity" attributetype="XML" begin="0.3s" dur="0.6s" repeatcount="indefinite" values="0.2; 1; .2">
+     </animate>
+     <animate attributename="height" attributetype="XML" begin="0.3s" dur="0.6s" repeatcount="indefinite" values="10; 20; 10">
+     </animate>
+     <animate attributename="y" attributetype="XML" begin="0.3s" dur="0.6s" repeatcount="indefinite" values="10; 5; 10">
+     </animate>
+    </rect>
+   </svg>
+  </span>
+ </div>
+ <div class="loading awe-popup">
+  <div class="overlay">
+  </div>
+  <div class="loader" title="2">
+   <svg height="30px" style="enable-background:new 0 0 50 50;" version="1.1" viewbox="0 0 24 30" width="24px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+    <rect fill="#333" height="10" opacity="0.2" width="4" x="0" y="10">
+     <animate attributename="opacity" attributetype="XML" begin="0s" dur="0.6s" repeatcount="indefinite" values="0.2; 1; .2">
+     </animate>
+     <animate attributename="height" attributetype="XML" begin="0s" dur="0.6s" repeatcount="indefinite" values="10; 20; 10">
+     </animate>
+     <animate attributename="y" attributetype="XML" begin="0s" dur="0.6s" repeatcount="indefinite" values="10; 5; 10">
+     </animate>
+    </rect>
+    <rect fill="#333" height="10" opacity="0.2" width="4" x="8" y="10">
+     <animate attributename="opacity" attributetype="XML" begin="0.15s" dur="0.6s" repeatcount="indefinite" values="0.2; 1; .2">
+     </animate>
+     <animate attributename="height" attributetype="XML" begin="0.15s" dur="0.6s" repeatcount="indefinite" values="10; 20; 10">
+     </animate>
+     <animate attributename="y" attributetype="XML" begin="0.15s" dur="0.6s" repeatcount="indefinite" values="10; 5; 10">
+     </animate>
+    </rect>
+    <rect fill="#333" height="10" opacity="0.2" width="4" x="16" y="10">
+     <animate attributename="opacity" attributetype="XML" begin="0.3s" dur="0.6s" repeatcount="indefinite" values="0.2; 1; .2">
+     </animate>
+     <animate attributename="height" attributetype="XML" begin="0.3s" dur="0.6s" repeatcount="indefinite" values="10; 20; 10">
+     </animate>
+     <animate attributename="y" attributetype="XML" begin="0.3s" dur="0.6s" repeatcount="indefinite" values="10; 5; 10">
+     </animate>
+    </rect>
+   </svg>
+  </div>
+ </div>
+ <div class="error-popup awe-popup">
+  <div class="overlay no-background">
+  </div>
+  <div class="popup-inner content">
+   <div class="error-message">
+   </div>
+  </div>
+ </div>
+ <div class="modal fade" id="popup-cart" role="dialog">
+  <div class="clearfix" id="popup-cart-desktop">
+   <div class="title-popup-cart">
+    <img alt="THE NOOB" src="//bizweb.dktcdn.net/100/045/077/themes/894305/assets/ico_check_.png?1741967380019"/>
+    <span class="your_product">
+     Bạn đã thêm [
+     <span class="cart-popup-name">
+     </span>
+     ] vào giỏ hàng thành công !
+    </span>
+   </div>
+   <div class="wrap_popup">
+    <div class="title-quantity-popup">
+     <span class="cart_status" onclick="window.location.href='/cart';">
+      Giỏ hàng của bạn có
+      <span class="cart-popup-count">
+      </span>
+      sản phẩm
+     </span>
+    </div>
+    <div class="content-popup-cart">
+     <div class="thead-popup">
+      <div class="text-left" style="width: 53%;">
+       Sản phẩm
+      </div>
+      <div class="text-center" style="width: 15%;">
+       Đơn giá
+      </div>
+      <div class="text-center" style="width: 15%;">
+       Số lượng
+      </div>
+      <div class="text-center" style="width: 17%;">
+       Thành tiền
+      </div>
+     </div>
+     <div class="tbody-popup scrollbar-dynamic">
+     </div>
+     <div class="tfoot-popup">
+      <div class="tfoot-popup-1 a-right clearfix">
+       <span class="total-p popup-total">
+        Tổng tiền thanh toán:
+        <span class="total-price">
+        </span>
+       </span>
+      </div>
+      <div class="tfoot-popup-2 clearfix">
+       <a class="button checkout_ btn-proceed-checkout" href="/checkout" title="Thực hiện thanh toán">
+        <span>
+         Thực hiện thanh toán
+        </span>
+       </a>
+       <a class="button buy_ btn-proceed-checkout" href="javascript:;" onclick="$('#popup-cart').modal('hide');" title="tiếp tục mua hàng">
+        <span>
+         <span>
+          Tiếp tục mua hàng
+         </span>
+        </span>
+       </a>
+      </div>
+     </div>
+    </div>
+    <a class="quickview-close close-window" href="javascript:;" onclick="$('#popup-cart').modal('hide');" title="Close">
+     <img alt="close" src="//bizweb.dktcdn.net/100/045/077/themes/894305/assets/close.svg?1741967380019"/>
+    </a>
+   </div>
+  </div>
+ </div>
+ <div class="modal fade" id="myModal" role="dialog">
+ </div>
+ <link as="script" href="//bizweb.dktcdn.net/100/045/077/themes/894305/assets/option-selectors.js?1741967380019" rel="preload"/>
+ <link as="script" href="//bizweb.dktcdn.net/assets/themes_support/api.jquery.js " rel="preload"/>
+ <link as="script" href="//bizweb.dktcdn.net/100/045/077/themes/894305/assets/cs.script.js?1741967380019" rel="preload"/>
+ <div class="quickview-product" id="quick-view-product" style="display:none;">
+  <div class="quickview-overlay fancybox-overlay fancybox-overlay-fixed">
+  </div>
+  <div class="quick-view-product">
+  </div>
+  <div id="quickview-modal" style="display:none;">
+   <div class="block-quickview primary_block row">
+    <div class="product-left-column col-xs-12 col-sm-5 col-md-5 col-lg-5">
+     <div class="clearfix image-block">
+      <span class="view_full_size">
+       <a class="img-product" href="#">
+        <img alt="quickview" class="img-responsive product-featured-image-quickview" id="product-featured-image-quickview" src="//bizweb.dktcdn.net/100/045/077/themes/894305/assets/logo.png?1741967380019"/>
+       </a>
+      </span>
+      <div class="loading-imgquickview" style="display:none;">
+      </div>
+     </div>
+     <div class="more-view-wrapper clearfix">
+      <div class="thumbs_quickview" id="thumbs_list_quickview">
+       <ul class="product-photo-thumbs quickview-more-views-owlslider" id="thumblist_quickview">
+       </ul>
+      </div>
+     </div>
+    </div>
+    <div class="product-center-column product-info product-item col-xs-5 col-sm-7 col-md-7 col-lg-7">
+     <div class="head-qv">
+      <h3 class="qwp-name">
+       abc
+      </h3>
+     </div>
+     <div class="quickview-info">
+      <span class="vendor_ frist">
+       Thương hiệu:
+       <span class="vendor">
+        Chưa có
+       </span>
+      </span>
+      <span class="vendor_ status">
+       Tình trạng:
+       <span class="status_name">
+       </span>
+      </span>
+      <span class="prices">
+       <span class="price">
+       </span>
+       <del class="old-price">
+       </del>
+      </span>
+     </div>
+     <div class="product-description">
+      <div class="rte">
+      </div>
+      <a class="view-more" href="#" title="Xem chi tiết">
+       Xem chi tiết
+      </a>
+     </div>
+     <form action="/cart/add" class="quick_option variants form-ajaxtocart" enctype="multipart/form-data" method="post">
+      <span class="price-product-detail hidden" style="opacity: 0;">
+       <span class="">
+       </span>
+      </span>
+      <select class="hidden" name="variantId" style="display:none">
+      </select>
+      <div class="clearfix">
+      </div>
+      <div class="quantity_wanted_p">
+       <div class="input_qty_qv input_number_product">
+        <a class="btn_num num_1 button button_qty" onclick="var result = document.getElementById('quantity-detail'); var qtyqv = result.value; if( !isNaN( qtyqv ) &amp;&amp; qtyqv &gt; 1 ) result.value--;return false;">
+         -
+        </a>
+        <input class="form-control prd_quantity" id="quantity-detail" maxlength="3" name="quantity" onchange="if(this.value == 0)this.value=1;" onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;" type="text" value="1"/>
+        <a class="btn_num num_2 button button_qty" onclick="var result = document.getElementById('quantity-detail'); var qtyqv = result.value; if( !isNaN( qtyqv )) result.value++;return false;">
+         +
+        </a>
+       </div>
+       <button class="btn btn-primary fix_add_to_cart button_cart_buy_enable add_to_cart_detail ajax_addtocart" name="add" title="Thêm vào giỏ hàng" type="submit">
+        <i class="ion-android-cart">
+        </i>
+        <span>
+         Thêm vào giỏ hàng
+        </span>
+       </button>
+      </div>
+      <div class="total-price" style="display:none">
+       <label>
+        Tổng cộng:
+       </label>
+       <span>
+       </span>
+      </div>
+     </form>
+    </div>
+   </div>
+   <a class="quickview-close close-window quickviewsclose" href="javascript:;" title="Close">
+    <img alt="close" src="//bizweb.dktcdn.net/100/045/077/themes/894305/assets/close.svg?1741967380019"/>
+   </a>
+  </div>
+ </div>
+ <div class="jas-sale-pop flex pf middle-xs">
+ </div>
+</div>
+538ca388eaeb71f50b6d9a8e3f789789538ca388eaeb71f50b6d9a8e3f789789
+84bd554a92b07ab6b2b1af6da550129584bd554a92b07ab6b2b1af6da5501295
+
+{%endblock %}
