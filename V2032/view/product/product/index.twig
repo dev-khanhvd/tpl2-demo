@@ -1,0 +1,1614 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(translate('Danh sách sản phẩm')).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ getKeyContentValue('META_KEYWORDS') }}">
+<meta name="description" content="{{ getKeyContentValue('META_DESCRIPTION') }}">
+<meta property="og:title" content="{{ getKeyContentValue('META_TITLE') }}">
+<meta property="og:url" content="{{ getCurrentUrl() }}">
+<meta property="og:image" content="{{ getBusinessLogo() }}">
+<link rel="canonical" href="{{ getCurrentUrl() }}">
+{%endblock %}
+
+{%block body %}
+
+<div class="top-banner position-relative" style="background: #ff3c02">
+ <div class="text-center px-0">
+  <a class="position-relative block md:hidden" href="/collections/all" style="max-height: 63px;height:  calc( 63 * 100vw /810 )" title="top banner">
+   <img alt="top banner" class="img-fluid position-absolute mx-auto" height="63" loading="lazy" src="//theme.hstatic.net/200000888549/1001374142/14/top_banner_mb.jpg?v=26" style="left:0" width="810"/>
+  </a>
+  <a class="position-relative hidden md:block" href="/collections/all" style="max-height: 32px;height:  calc(32 * 100vw /1600)" title="top banner">
+   <picture>
+    <source media="(max-width: 480px)" srcset="//theme.hstatic.net/200000888549/1001374142/14/top_banner.jpg?v=26"/>
+    <img alt="top banner" class="img-fluid position-absolute mx-auto" height="32" loading="lazy" src="//theme.hstatic.net/200000888549/1001374142/14/top_banner.jpg?v=26" style="left:0" width="1600"/>
+   </picture>
+  </a>
+ </div>
+</div>
+<div class="navigation-wrapper hidden xl:flex items-center sub-header">
+ <div class="container relative">
+  <div class="grid">
+   <div class="navigation-header relative w-full py-3.5 hidden">
+    <portal-opener>
+     <div class="flex items-center gap-4 cursor-pointer hover:text-[var(--color-sub-header-link)]" data-portal="#menu-drawer">
+      <div class="hamburger-button inline-flex items-center flex-col gap-1">
+       <span class="h-[2px] w-5 bg-[currentColor] hover:bg-[var(--color-sub-header-link)]">
+       </span>
+       <span class="h-[2px] w-5 bg-[currentColor] hover:bg-[var(--color-sub-header-link)]">
+       </span>
+       <span class="h-[2px] w-5 bg-[currentColor] hover:bg-[var(--color-sub-header-link)]">
+       </span>
+      </div>
+      <span class="font-semibold">
+       Danh mục sản phẩm
+      </span>
+     </div>
+    </portal-opener>
+    <menu-drawer class="portal portal--drawer" data-animation="slide-in-left" data-type="drawer" id="menu-drawer">
+     <dialog class="portal-dialog">
+      <div class="portal-overlay">
+      </div>
+      <div class="portal-inner animation bg-background h-full grid grid-rows-[auto_1fr_auto]">
+       <div class="navigation-header pt-4 flex justify-between items-center border-b pb-3 border-neutral-50 px-4">
+        <a class="header-icon-group flex gap-2 items-center account-group hover:bg-neutral-50 active:scale-95 transition-all duration-150 px-2 py-1 rounded-sm" href="/account/login" title="Đăng nhập">
+         <div class="header-icon w-[3.6rem] h-[3.6rem] p-2 rounded-sm flex items-center justify-center border border-neutral-50">
+          <i class="icon icon-user">
+          </i>
+         </div>
+         <div class="">
+          <span class="text-xs">
+           Tài khoản
+          </span>
+          <span class="font-semibold block">
+           Đăng nhập
+          </span>
+         </div>
+        </a>
+        <button class="w-[3.2rem] h-[3.2rem] rounded-full border border-neutral-50 text-neutral-200 flex items-center justify-center active:scale-95 transition-transform hover:bg-neutral-50" id="PortalClose-menu-crawer" type="button">
+         <i class="icon icon-cross">
+         </i>
+        </button>
+       </div>
+       <nav class="navigation-vertical overflow-y-auto no-scrollbar">
+        <ul class="main-menu">
+         <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+          <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" href="/collections/all" title="Tất cả sản phẩm">
+           <span>
+            Tất cả sản phẩm
+           </span>
+          </a>
+         </li>
+         <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+          <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" href="/collections/thuc-pham-tuoi-song" title="Thực phẩm tươi sống">
+           <span>
+            Thực phẩm tươi sống
+           </span>
+           <span class="ml-auto text-neutral-200" data-toggle-submenu="">
+            <i class="icon icon-carret-right">
+            </i>
+           </span>
+          </a>
+          <div class="submenu absolute lg:group-hover:block p-4">
+           <div class="relative toggle-submenu -mt-4 -mx-4 p-3 mb-4 bg-neutral-50 p-3 font-semibold flex justify-center items-center lg:hidden" data-toggle-submenu="">
+            <span class="">
+             <i class="icon icon-carret-left mr-auto text-neutral-200">
+             </i>
+            </span>
+            <span>
+             Thực phẩm tươi sống
+            </span>
+           </div>
+           <ul class="submenu__list space-y-4">
+            <li class="submenu__col">
+             <span class="submenu__item submenu__item--main mb-3">
+              <a class="link font-semibold" href="/collections/thuc-pham-tuoi-song" title="Rau củ quả">
+               Rau củ quả
+              </a>
+             </span>
+             <ul class="list-disc pl-4 flex-col flex">
+              <li class="submenu__item">
+               <a class="link" href="/collections/thuc-pham-tuoi-song" title="Rau lá">
+                Rau lá
+               </a>
+              </li>
+              <li class="submenu__item">
+               <a class="link" href="/collections/thuc-pham-tuoi-song" title="Củ quả">
+                Củ quả
+               </a>
+              </li>
+              <li class="submenu__item">
+               <a class="link" href="/collections/thuc-pham-tuoi-song" title="Rau gia vị">
+                Rau gia vị
+               </a>
+              </li>
+              <li class="submenu__item">
+               <a class="link" href="/collections/thuc-pham-tuoi-song" title="Rau mầm">
+                Rau mầm
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li class="submenu__col">
+             <span class="submenu__item submenu__item--main mb-3">
+              <a class="link font-semibold" href="/collections/thuc-pham-tuoi-song" title="Trái cây">
+               Trái cây
+              </a>
+             </span>
+             <ul class="list-disc pl-4 flex-col flex">
+              <li class="submenu__item">
+               <a class="link" href="/collections/thuc-pham-tuoi-song" title="Trái cây nhiệt đới">
+                Trái cây nhiệt đới
+               </a>
+              </li>
+              <li class="submenu__item">
+               <a class="link" href="/collections/thuc-pham-tuoi-song" title="Trái cây ôn đới">
+                Trái cây ôn đới
+               </a>
+              </li>
+              <li class="submenu__item">
+               <a class="link" href="/collections/thuc-pham-tuoi-song" title="Trái cây có múi">
+                Trái cây có múi
+               </a>
+              </li>
+              <li class="submenu__item">
+               <a class="link" href="/collections/thuc-pham-tuoi-song" title="Trái cây hữu cơ">
+                Trái cây hữu cơ
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li class="submenu__col">
+             <span class="submenu__item submenu__item--main mb-3">
+              <a class="link font-semibold" href="/collections/thuc-pham-tuoi-song" title="Thịt các loại">
+               Thịt các loại
+              </a>
+             </span>
+             <ul class="list-disc pl-4 flex-col flex">
+              <li class="submenu__item">
+               <a class="link" href="/collections/thuc-pham-tuoi-song" title="Thịt heo">
+                Thịt heo
+               </a>
+              </li>
+              <li class="submenu__item">
+               <a class="link" href="/collections/thuc-pham-tuoi-song" title="Thịt bò">
+                Thịt bò
+               </a>
+              </li>
+              <li class="submenu__item">
+               <a class="link" href="/collections/thuc-pham-tuoi-song" title="Thịt gia cầm">
+                Thịt gia cầm
+               </a>
+              </li>
+              <li class="submenu__item">
+               <a class="link" href="/collections/thuc-pham-tuoi-song" title="Thịt xông khói">
+                Thịt xông khói
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li class="submenu__col">
+             <span class="submenu__item submenu__item--main mb-3">
+              <a class="link font-semibold" href="/collections/thuc-pham-tuoi-song" title="Thủy hải sản">
+               Thủy hải sản
+              </a>
+             </span>
+             <ul class="list-disc pl-4 flex-col flex">
+              <li class="submenu__item">
+               <a class="link" href="/collections/thuc-pham-tuoi-song" title="Cá biển">
+                Cá biển
+               </a>
+              </li>
+              <li class="submenu__item">
+               <a class="link" href="/collections/thuc-pham-tuoi-song" title="Cá nước ngọt">
+                Cá nước ngọt
+               </a>
+              </li>
+              <li class="submenu__item">
+               <a class="link" href="/collections/thuc-pham-tuoi-song" title="Hải sản">
+                Hải sản
+               </a>
+              </li>
+              <li class="submenu__item">
+               <a class="link" href="/collections/thuc-pham-tuoi-song" title="Ốc các loại">
+                Ốc các loại
+               </a>
+              </li>
+             </ul>
+            </li>
+           </ul>
+          </div>
+         </li>
+         <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+          <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" href="/collections/hot-products" title="Thực phẩm khô">
+           <span>
+            Thực phẩm khô
+           </span>
+           <span class="ml-auto text-neutral-200" data-toggle-submenu="">
+            <i class="icon icon-carret-right">
+            </i>
+           </span>
+          </a>
+          <div class="submenu absolute lg:group-hover:block p-4">
+           <div class="relative toggle-submenu -mt-4 -mx-4 p-3 mb-4 bg-neutral-50 p-3 font-semibold flex justify-center items-center lg:hidden" data-toggle-submenu="">
+            <span class="">
+             <i class="icon icon-carret-left mr-auto text-neutral-200">
+             </i>
+            </span>
+            <span>
+             Thực phẩm khô
+            </span>
+           </div>
+           <ul class="submenu__list space-y-4">
+            <li class="submenu__item submenu__item--main">
+             <a class="link" href="/collections/do-dung-nha-bep" title="Gạo">
+              Gạo
+             </a>
+            </li>
+            <li class="submenu__item submenu__item--main">
+             <a class="link" href="/collections/do-dung-nha-bep" title="Mì gói">
+              Mì gói
+             </a>
+            </li>
+            <li class="submenu__item submenu__item--main">
+             <a class="link" href="/collections/do-dung-nha-bep" title="Bún gói">
+              Bún gói
+             </a>
+            </li>
+            <li class="submenu__item submenu__item--main">
+             <a class="link" href="/collections/thuc-pham-tuoi-song" title="Miến khô">
+              Miến khô
+             </a>
+            </li>
+           </ul>
+          </div>
+         </li>
+         <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+          <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" href="/collections/do-dung-nha-bep" title="Đồ dùng nhà bếp">
+           <span>
+            Đồ dùng nhà bếp
+           </span>
+           <span class="ml-auto text-neutral-200" data-toggle-submenu="">
+            <i class="icon icon-carret-right">
+            </i>
+           </span>
+          </a>
+          <div class="submenu absolute lg:group-hover:block p-4">
+           <div class="relative toggle-submenu -mt-4 -mx-4 p-3 mb-4 bg-neutral-50 p-3 font-semibold flex justify-center items-center lg:hidden" data-toggle-submenu="">
+            <span class="">
+             <i class="icon icon-carret-left mr-auto text-neutral-200">
+             </i>
+            </span>
+            <span>
+             Đồ dùng nhà bếp
+            </span>
+           </div>
+           <ul class="submenu__list space-y-4">
+            <li class="submenu__item submenu__item--main">
+             <a class="link" href="/collections/do-dung-nha-bep" title="Bếp">
+              Bếp
+             </a>
+            </li>
+            <li class="submenu__item submenu__item--main">
+             <a class="link" href="/collections/do-dung-nha-bep" title="Các loại máy">
+              Các loại máy
+             </a>
+            </li>
+            <li class="submenu__item submenu__item--main">
+             <a class="link" href="/collections/do-dung-nha-bep" title="Dụng cụ bếp">
+              Dụng cụ bếp
+             </a>
+            </li>
+            <li class="submenu__item submenu__item--main">
+             <a class="link" href="/collections/do-dung-nha-bep" title="Gia vị">
+              Gia vị
+             </a>
+            </li>
+           </ul>
+          </div>
+         </li>
+         <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+          <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" href="/collections/cham-soc-gia-dinh" title="Chăm sóc gia đình">
+           <span>
+            Chăm sóc gia đình
+           </span>
+           <span class="ml-auto text-neutral-200" data-toggle-submenu="">
+            <i class="icon icon-carret-right">
+            </i>
+           </span>
+          </a>
+          <div class="submenu absolute lg:group-hover:block p-4">
+           <div class="relative toggle-submenu -mt-4 -mx-4 p-3 mb-4 bg-neutral-50 p-3 font-semibold flex justify-center items-center lg:hidden" data-toggle-submenu="">
+            <span class="">
+             <i class="icon icon-carret-left mr-auto text-neutral-200">
+             </i>
+            </span>
+            <span>
+             Chăm sóc gia đình
+            </span>
+           </div>
+           <ul class="submenu__list space-y-4">
+            <li class="submenu__item submenu__item--main">
+             <a class="link" href="/collections/cham-soc-gia-dinh" title="Dầu gội - sữa tắm">
+              Dầu gội - sữa tắm
+             </a>
+            </li>
+            <li class="submenu__item submenu__item--main">
+             <a class="link" href="/collections/cham-soc-gia-dinh" title="Chất tẩy rửa">
+              Chất tẩy rửa
+             </a>
+            </li>
+            <li class="submenu__item submenu__item--main">
+             <a class="link" href="/collections/cham-soc-gia-dinh" title="Đồ gia dụng">
+              Đồ gia dụng
+             </a>
+            </li>
+            <li class="submenu__item submenu__item--main">
+             <a class="link" href="/collections/cham-soc-gia-dinh" title="Sáp thơm">
+              Sáp thơm
+             </a>
+            </li>
+           </ul>
+          </div>
+         </li>
+         <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+          <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" href="/collections/me-va-be" title="Đồ dùng mẹ và bé">
+           <span>
+            Đồ dùng mẹ và bé
+           </span>
+           <span class="ml-auto text-neutral-200" data-toggle-submenu="">
+            <i class="icon icon-carret-right">
+            </i>
+           </span>
+          </a>
+          <div class="submenu absolute lg:group-hover:block p-4">
+           <div class="relative toggle-submenu -mt-4 -mx-4 p-3 mb-4 bg-neutral-50 p-3 font-semibold flex justify-center items-center lg:hidden" data-toggle-submenu="">
+            <span class="">
+             <i class="icon icon-carret-left mr-auto text-neutral-200">
+             </i>
+            </span>
+            <span>
+             Đồ dùng mẹ và bé
+            </span>
+           </div>
+           <ul class="submenu__list space-y-4">
+            <li class="submenu__item submenu__item--main">
+             <a class="link" href="/collections/me-va-be" title="Đồ dùng bé ngủ">
+              Đồ dùng bé ngủ
+             </a>
+            </li>
+            <li class="submenu__item submenu__item--main">
+             <a class="link" href="/collections/me-va-be" title="Sản phẩm của mẹ">
+              Sản phẩm của mẹ
+             </a>
+            </li>
+            <li class="submenu__item submenu__item--main">
+             <a class="link" href="/collections/me-va-be" title="Khăn ướt - khăn giấy">
+              Khăn ướt - khăn giấy
+             </a>
+            </li>
+            <li class="submenu__item submenu__item--main">
+             <a class="link" href="/collections/me-va-be" title="Bé ăn dặm">
+              Bé ăn dặm
+             </a>
+            </li>
+           </ul>
+          </div>
+         </li>
+         <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+          <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" href="/collections/sua-cac-loai" title="Sữa các loại">
+           <span>
+            Sữa các loại
+           </span>
+           <span class="ml-auto text-neutral-200" data-toggle-submenu="">
+            <i class="icon icon-carret-right">
+            </i>
+           </span>
+          </a>
+          <div class="submenu absolute lg:group-hover:block p-4">
+           <div class="relative toggle-submenu -mt-4 -mx-4 p-3 mb-4 bg-neutral-50 p-3 font-semibold flex justify-center items-center lg:hidden" data-toggle-submenu="">
+            <span class="">
+             <i class="icon icon-carret-left mr-auto text-neutral-200">
+             </i>
+            </span>
+            <span>
+             Sữa các loại
+            </span>
+           </div>
+           <ul class="submenu__list space-y-4">
+            <li class="submenu__item submenu__item--main">
+             <a class="link" href="/collections/sua-cac-loai" title="Sữa tươi">
+              Sữa tươi
+             </a>
+            </li>
+            <li class="submenu__item submenu__item--main">
+             <a class="link" href="/collections/sua-cac-loai" title="Sữa hạt">
+              Sữa hạt
+             </a>
+            </li>
+            <li class="submenu__item submenu__item--main">
+             <a class="link" href="/collections/sua-cac-loai" title="Sữa chua">
+              Sữa chua
+             </a>
+            </li>
+            <li class="submenu__item submenu__item--main">
+             <a class="link" href="/collections/sua-cac-loai" title="Sữa trái cây">
+              Sữa trái cây
+             </a>
+            </li>
+           </ul>
+          </div>
+         </li>
+         <li class="menu-item px-6 group hover:bg-neutral-50 -mt-[1px]">
+          <a class="menu-item__link flex items-center gap-3.5 py-3 font-semibold" href="/collections/van-phong-pham" title="Văn phòng phẩm">
+           <span>
+            Văn phòng phẩm
+           </span>
+          </a>
+         </li>
+        </ul>
+       </nav>
+       <div class="navigation-footer 4 border-t border-neutral-50 flex">
+        <div class="w-1/2">
+         <a class="header-icon-group flex gap-2 items-center hover:bg-neutral-50 transition-all duration-150 px-2 py-4 store-group" href="/pages/he-thong-cua-hang" title="Hệ thống cửa hàng">
+          <div class="header-icon w-[3.6rem] h-[3.6rem] p-2 rounded-sm flex items-center justify-center border border-neutral-50">
+           <i class="icon icon-store">
+           </i>
+          </div>
+          <div>
+           <span class="text-xs">
+            Hệ thống cửa hàng
+           </span>
+          </div>
+         </a>
+        </div>
+        <div class="w-1/2">
+         <a class="header-icon-group flex gap-2 items-center hover:bg-neutral-50 transition-all duration-150 px-2 py-4 phone-group" href="tel:0999999999" title="0999999999">
+          <div class="header-icon w-[3.6rem] h-[3.6rem] p-2 rounded-sm flex items-center justify-center border border-neutral-50">
+           <i class="icon icon-calling-phone">
+           </i>
+          </div>
+          <div>
+           <span class="text-xs">
+            Hotline:
+            <b>
+             099999998
+            </b>
+           </span>
+          </div>
+         </a>
+        </div>
+       </div>
+      </div>
+     </dialog>
+    </menu-drawer>
+   </div>
+   <div class="flex justify-between items-center mx-auto">
+    <div class="navigation--horizontal hidden lg:flex items-center">
+     <div class="navigation-horizontal-wrapper overflow-hidden">
+      <nav>
+       <ul class="navigation-horizontal">
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/pages/about-us" title="Giới thiệu">
+          <span>
+           Giới thiệu
+          </span>
+         </a>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/pages/flash-sale-1-khung-gio" title="Khuyến mãi">
+          <span>
+           Khuyến mãi
+          </span>
+          <i class="icon icon-carret-down" data-toggle-submenu="">
+          </i>
+         </a>
+         <div class="submenu default">
+          <ul class="submenu__list">
+           <li class="submenu__item submenu__item--main">
+            <a class="link" data-prefetch="" href="/pages/flash-sale-1-khung-gio" title="Flash Sale 1 khung giờ">
+             Flash Sale 1 khung giờ
+            </a>
+           </li>
+           <li class="submenu__item submenu__item--main">
+            <a class="link" data-prefetch="" href="/pages/flash-sale-nhieu-khung-gio" title="Flash Sale nhiều khung giờ">
+             Flash Sale nhiều khung giờ
+            </a>
+           </li>
+          </ul>
+         </div>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/blogs/news" title="Tin tức">
+          <span>
+           Tin tức
+          </span>
+         </a>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/pages/kiem-tra-don-hang" title="Kiểm tra đơn hàng">
+          <span>
+           Kiểm tra đơn hàng
+          </span>
+         </a>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="/pages/lien-he" title="Liên hệ">
+          <span>
+           Liên hệ
+          </span>
+         </a>
+        </li>
+        <li class="menu-item group">
+         <a class="menu-item__link hover:text-[var(--color-sub-header-link)] flex items-center gap-3.5 py-3 font-semibold" data-prefetch="" href="https://wiki.egany.com/s/ega-mini-mart-haravan" title="Hướng dẫn thiết lập">
+          <span>
+           Hướng dẫn thiết lập
+          </span>
+         </a>
+        </li>
+       </ul>
+      </nav>
+     </div>
+     <div class="navigation-arrows">
+      <button class="btn prev px-1">
+       <i class="disabled icon icon-carret-left link">
+       </i>
+      </button>
+      <button class="btn next px-1">
+       <i class="icon icon-carret-right link">
+       </i>
+      </button>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<main>
+ <div class="breadcrumbs">
+  <div class="container">
+   <div class="breadcrumb-list">
+    <ol class="breadcrumb py-3 flex flex-wrap items-center text-xs md:text-sm" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+     <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+      <a class="link" href="/" itemprop="item" target="_self">
+       <span itemprop="name">
+        Trang chủ
+       </span>
+      </a>
+      <meta content="1" itemprop="position"/>
+      <span class="mx-1 md:mx-2 inline-block">
+       /
+      </span>
+     </li>
+     <li class="active" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+      <span class="text-neutral-100" content="https://ega-mini-mart.myharavan.com/collections/sua-cac-loai" itemprop="item">
+       <strong class="font-normal" itemprop="name">
+        Sữa các loại
+       </strong>
+      </span>
+      <meta content="2" itemprop="position"/>
+     </li>
+    </ol>
+   </div>
+  </div>
+ </div>
+ <section class="section section-collection-banner">
+ </section>
+ <section class="section section-coupons" style="--section-padding: 0;--section-margin: 30px 0 30px;--section-padding-mb: 0;--section-margin-mb: 0;">
+  <div class="container">
+   <ega-carousel>
+    <div class="swiper overflow-hidden w-full">
+     <div class="swiper-wrapper grid max-w-max h-auto gap-gutter grid-flow-col auto-cols-[100%] grid-cols-[100%] md:grid-cols-[repeat(8,40%)] xl:grid-cols-4">
+      <div class="swiper-slide w-full p-2 g">
+       <coupon-item>
+        <div class="coupon-item flex items-center bg-background px-3 py-3 rounded-lg relative">
+         <div "="" class="border border-dashed border-neutral-50 rounded-lg p-3 h-inhiret w-full h-full">
+          <div class="grid grid-cols-2 justify-between items-center mb-1.5 gap-1">
+           <div class="coupon-item__code font-semibold text-secondary whitespace-nowrap text-ellipsis overflow-hidden">
+            <span class="swiper-no-swiping">
+             Mã: EGA50THANG10
+            </span>
+           </div>
+           <div class="coupon-item__end-date text-sm text-right">
+            <span class="text-neutral-300" data-expired-date="28/01/2024-16:00:00">
+             HSD: 28/01/2024
+            </span>
+           </div>
+          </div>
+          <div class="coupon-item__summary mb-2.5 text-xs">
+           Giảm 15% cho đơn hàng giá trị tối thiểu 500k. Mã giảm tối đa 250K
+          </div>
+          <div class="coupon-item__rules mb-2.5 hidden">
+           - Đồng giá 2 triệu cho nhóm sản phẩm Set combo
+           <br/>
+           - Tổng giá trị sản phẩm từ 5 triệu trở lên
+          </div>
+          <div class="coupon-item__action grid grid-cols-2 gap-3">
+           <button class="btn text-xs font-semibold border border-primary text-primary hover:bg-primary hover:text-white py-1.5" data-portal="#coupon-modal">
+            Điều kiện
+           </button>
+           <copy-button data-copied-text="Đã sao chép">
+            <input type="hidden" value="EGA50THANG10"/>
+            <button class="btn text-xs font-semibold copy-button w-full text-white border border-primary bg-primary py-1.5" type="button">
+             Sao chép
+            </button>
+           </copy-button>
+          </div>
+         </div>
+        </div>
+       </coupon-item>
+      </div>
+      <div class="swiper-slide w-full p-2 g">
+       <coupon-item>
+        <div class="coupon-item flex items-center bg-background px-3 py-3 rounded-lg relative">
+         <div "="" class="border border-dashed border-neutral-50 rounded-lg p-3 h-inhiret w-full h-full">
+          <div class="grid grid-cols-2 justify-between items-center mb-1.5 gap-1">
+           <div class="coupon-item__code font-semibold text-secondary whitespace-nowrap text-ellipsis overflow-hidden">
+            <span class="swiper-no-swiping">
+             Mã: EGA30THANG10
+            </span>
+           </div>
+           <div class="coupon-item__end-date text-sm text-right">
+            <span class="text-neutral-300" data-expired-date="20/02/2024-">
+             HSD: 20/02/2024
+            </span>
+           </div>
+          </div>
+          <div class="coupon-item__summary mb-2.5 text-xs">
+           Giảm 15% cho đơn hàng giá trị tối thiểu 500k. Mã giảm tối đa 250K
+          </div>
+          <div class="coupon-item__rules mb-2.5 hidden">
+          </div>
+          <div class="coupon-item__action grid grid-cols-2 gap-3">
+           <button class="btn text-xs font-semibold border border-primary text-primary hover:bg-primary hover:text-white py-1.5" data-portal="#coupon-modal">
+            Điều kiện
+           </button>
+           <copy-button data-copied-text="Đã sao chép">
+            <input type="hidden" value="EGA30THANG10"/>
+            <button class="btn text-xs font-semibold copy-button w-full text-white border border-primary bg-primary py-1.5" type="button">
+             Sao chép
+            </button>
+           </copy-button>
+          </div>
+         </div>
+        </div>
+       </coupon-item>
+      </div>
+      <div class="swiper-slide w-full p-2 g">
+       <coupon-item>
+        <div class="coupon-item flex items-center bg-background px-3 py-3 rounded-lg relative">
+         <div "="" class="border border-dashed border-neutral-50 rounded-lg p-3 h-inhiret w-full h-full">
+          <div class="grid grid-cols-2 justify-between items-center mb-1.5 gap-1">
+           <div class="coupon-item__code font-semibold text-secondary whitespace-nowrap text-ellipsis overflow-hidden">
+            <span class="swiper-no-swiping">
+             Mã: FREESHIPTHANG10
+            </span>
+           </div>
+           <div class="coupon-item__end-date text-sm text-right">
+            <span class="text-neutral-300" data-expired-date="30/12/2023-20:18:00">
+             HSD: 30/12/2023
+            </span>
+           </div>
+          </div>
+          <div class="coupon-item__summary mb-2.5 text-xs">
+           Mã giảm 99k cho đơn hàng tối thiểu 1 triệu. Tối đa 1 mã giảm giá/đơn hàng.
+          </div>
+          <div class="coupon-item__rules mb-2.5 hidden">
+          </div>
+          <div class="coupon-item__action grid grid-cols-2 gap-3">
+           <button class="btn text-xs font-semibold border border-primary text-primary hover:bg-primary hover:text-white py-1.5" data-portal="#coupon-modal">
+            Điều kiện
+           </button>
+           <copy-button data-copied-text="Đã sao chép">
+            <input type="hidden" value="FREESHIPTHANG10"/>
+            <button class="btn text-xs font-semibold copy-button w-full text-white border border-primary bg-primary py-1.5" type="button">
+             Sao chép
+            </button>
+           </copy-button>
+          </div>
+         </div>
+        </div>
+       </coupon-item>
+      </div>
+      <div class="swiper-slide w-full p-2 g">
+       <coupon-item>
+        <div class="coupon-item flex items-center bg-background px-3 py-3 rounded-lg relative">
+         <div "="" class="border border-dashed border-neutral-50 rounded-lg p-3 h-inhiret w-full h-full">
+          <div class="grid grid-cols-2 justify-between items-center mb-1.5 gap-1">
+           <div class="coupon-item__code font-semibold text-secondary whitespace-nowrap text-ellipsis overflow-hidden">
+            <span class="swiper-no-swiping">
+             Mã: 500KTHANG10
+            </span>
+           </div>
+           <div class="coupon-item__end-date text-sm text-right">
+           </div>
+          </div>
+          <div class="coupon-item__summary mb-2.5 text-xs">
+           Miễn phí vận chuyển cho đơn hàng từ 500k. Áp dụng cho khu vực Tp.HCM
+          </div>
+          <div class="coupon-item__rules mb-2.5 hidden">
+          </div>
+          <div class="coupon-item__action grid grid-cols-2 gap-3">
+           <button class="btn text-xs font-semibold border border-primary text-primary hover:bg-primary hover:text-white py-1.5" data-portal="#coupon-modal">
+            Điều kiện
+           </button>
+           <copy-button data-copied-text="Đã sao chép">
+            <input type="hidden" value="500KTHANG10"/>
+            <button class="btn text-xs font-semibold copy-button w-full text-white border border-primary bg-primary py-1.5" type="button">
+             Sao chép
+            </button>
+           </copy-button>
+          </div>
+         </div>
+        </div>
+       </coupon-item>
+      </div>
+     </div>
+     <div class="swiper-pagination static mt-2">
+     </div>
+    </div>
+   </ega-carousel>
+  </div>
+ </section>
+ <section class="section" id="product-list-1004145267" style="--section-margin: 32px 0 32px 0;--section-margin-mb: 32px 0 32px 0">
+  <div class="container">
+   <div class="grid grid-cols-1 xl:grid-cols-[9fr_3fr] gap-gutter">
+    <div>
+     <h1 class="text-h3 mb-3 md:text-h1 text-center md:text-left font-semibold text-primary">
+      Sữa các loại
+     </h1>
+     <div class="mb-2 py-3 flex flex-wrap items-center gap-3">
+      <div class="flex text-xs w-full md:w-auto md:text-base md:gap-6 items-center justify-between md:ml-auto md:rounded-0 rounded-sm md:p-0">
+       <button class="btn flex xl:hidden gap-1 bg-white border border-neutral-50 items-center" data-toggle-facet="" type="button">
+        <svg class="icon w-4" fill="none" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+         <path clip-rule="evenodd" d="M9.79166 6.45835C9.79166 5.53788 10.5379 4.79169 11.4583 4.79169C12.3788 4.79169 13.125 5.53788 13.125 6.45835C13.125 7.37883 12.3788 8.12502 11.4583 8.12502C10.5379 8.12502 9.79166 7.37883 9.79166 6.45835ZM8.60878 7.08335C8.89489 8.39384 10.062 9.37502 11.4583 9.37502C12.8546 9.37502 14.0218 8.39384 14.3079 7.08335H17.5C17.8452 7.08335 18.125 6.80353 18.125 6.45835C18.125 6.11317 17.8452 5.83335 17.5 5.83335H14.3079C14.0218 4.52286 12.8546 3.54169 11.4583 3.54169C10.062 3.54169 8.89489 4.52286 8.60878 5.83335H2.5C2.15482 5.83335 1.875 6.11317 1.875 6.45835C1.875 6.80353 2.15482 7.08335 2.5 7.08335H8.60878ZM4.79166 13.125C4.79166 12.2045 5.53786 11.4583 6.45833 11.4583C7.3788 11.4583 8.125 12.2045 8.125 13.125C8.125 14.0455 7.3788 14.7917 6.45833 14.7917C5.53786 14.7917 4.79166 14.0455 4.79166 13.125ZM6.45833 16.0417C5.06203 16.0417 3.8949 15.0605 3.60879 13.75H2.5C2.15482 13.75 1.875 13.4702 1.875 13.125C1.875 12.7798 2.15482 12.5 2.5 12.5H3.60879C3.8949 11.1895 5.06203 10.2083 6.45833 10.2083C7.85463 10.2083 9.02176 11.1895 9.30787 12.5H17.5C17.8452 12.5 18.125 12.7798 18.125 13.125C18.125 13.4702 17.8452 13.75 17.5 13.75H9.30787C9.02176 15.0605 7.85463 16.0417 6.45833 16.0417Z" fill="currentColor" fill-opacity="0.1" fill-rule="evenodd">
+         </path>
+        </svg>
+        Lọc
+        <span class="filter-count w-5 h-5 md:w-6 md:h-6 inline-flex items-center justify-center bg-[#EE1926] text-white rounded-full ml-1">
+         0
+        </span>
+       </button>
+       <div class="sort-mobile whitespace-nowrap flex items-center gap-2 ml-auto">
+        <label class="labbel text-neutral-100" for="sort-mobile">
+         Sắp xếp
+        </label>
+        <sort-by data-collection="1004145267">
+         <select class="form-select bg-white rounded-pill border-neutral-50" id="sort-mobile" name="sort_by">
+          <option value="manual">
+           Mặc định
+          </option>
+          <option value="title:product=asc">
+           Tên A → Z
+          </option>
+          <option value="title:product=desc">
+           Tên Z → A
+          </option>
+          <option value="price:product=asc">
+           Giá tăng dần
+          </option>
+          <option value="price:product=desc">
+           Giá giảm dần
+          </option>
+          <option value="updated_at:product=desc">
+           Mới nhất
+          </option>
+         </select>
+        </sort-by>
+       </div>
+      </div>
+      <div class="filter-items overflow-hidden md:order-first">
+      </div>
+     </div>
+     <div class="product-list">
+      <div class="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-2 mt-2">
+       <div class="bg-background p-4 rouded-sm" style="grid-column: 1 / -1">
+        Sản phẩm đang được cập nhật
+       </div>
+       <div class="mt-6 lg:pt-6" style="grid-column: 1 / -1">
+       </div>
+      </div>
+     </div>
+    </div>
+    <facet-drawer data-collection="1004145267">
+     <div class="collection-filter h-full hidden xl:block">
+      <div class="facet-overlay absolute z-0 w-full h-full inset-x-0 xl:hidden bg-[rgba(0,0,0,0.5)]" data-toggle-facet="">
+      </div>
+      <div class="facet-inner overflow-auto bg-background h-full xl:h-auto px-5 md:rounded-sm max-w-[32rem] z-10 relative ml-auto">
+       <form class="facet-form">
+        <div class="filter-container flex flex-col rounded-sm bg-neutral-50">
+         <div class="facet-header xl:hidden flex justify-center items-center md:py-5 py-4 bg-background relative">
+          <button class="absolute left-0 btn border border-neutral-50 rounded-full p-1 inline-flex items-center justify-center w-[3.6rem] h-[3.6rem]" data-toggle-facet="" type="button">
+           <i class="icon icon-arrow-left">
+           </i>
+          </button>
+          <div>
+           Lọc
+           <span class="filter-count w-5 h-5 md:w-6 md:h-6 inline-flex items-center justify-center bg-[#EE1926] text-white rounded-full ml-1">
+            0
+           </span>
+          </div>
+         </div>
+         <aside class="aside-item filter-price md:py-5 py-4" style="order: 4">
+          <div class="aside-title">
+           <h2 class="title-head margin-top-0 text-base font-semibold mb-3">
+            Giá
+           </h2>
+          </div>
+          <div class="aside-content filter-group">
+           <ul class="space-y-3">
+            <li class="filter-item filter-item--check-box link">
+             <label class="custom-radio cursor-pointer flex gap-2 items-center" for="filter-lower-1000000">
+              <input class="form-radio" data-field="price_min" data-group="price" data-operator="OR" data-value="Giá dưới 1,000,000₫" id="filter-lower-1000000" name="price_min" type="radio" value="0:1000000"/>
+              Giá dưới 1,000,000₫
+             </label>
+            </li>
+            <li class="filter-item filter-item--check-box link">
+             <label class="custom-radio cursor-pointer flex gap-2 items-center" for="filter-1000000-2000000">
+              <input class="form-radio" data-field="price_min" data-group="price" data-operator="OR" data-value="1,000,000₫ - 2,000,000₫" id="filter-1000000-2000000" name="price_min" type="radio" value="1000000:2000000"/>
+              1,000,000₫ - 2,000,000₫
+             </label>
+            </li>
+            <li class="filter-item filter-item--check-box link">
+             <label class="custom-radio cursor-pointer flex gap-2 items-center" for="filter-2000000-3000000">
+              <input class="form-radio" data-field="price_min" data-group="price" data-operator="OR" data-value="2,000,000₫ - 3,000,000₫" id="filter-2000000-3000000" name="price_min" type="radio" value="2000000:3000000"/>
+              2,000,000₫ - 3,000,000₫
+             </label>
+            </li>
+            <li class="filter-item filter-item--check-box link">
+             <label class="custom-radio cursor-pointer flex gap-2 items-center" for="filter-3000000-5000000">
+              <input class="form-radio" data-field="price_min" data-group="price" data-operator="OR" data-value="3,000,000₫ - 5,000,000₫" id="filter-3000000-5000000" name="price_min" type="radio" value="3000000:5000000"/>
+              3,000,000₫ - 5,000,000₫
+             </label>
+            </li>
+            <li class="filter-item filter-item--check-box link">
+             <label class="custom-radio cursor-pointer flex gap-2 items-center" for="filter-5000000-7000000">
+              <input class="form-radio" data-field="price_min" data-group="price" data-operator="OR" data-value="5,000,000₫ - 7,000,000₫" id="filter-5000000-7000000" name="price_min" type="radio" value="5000000:7000000"/>
+              5,000,000₫ - 7,000,000₫
+             </label>
+            </li>
+            <li class="filter-item filter-item--check-box link">
+             <label class="custom-radio cursor-pointer flex gap-2 items-center" for="filter-7000000-10000000">
+              <input class="form-radio" data-field="price_min" data-group="price" data-operator="OR" data-value="7,000,000₫ - 10,000,000₫" id="filter-7000000-10000000" name="price_min" type="radio" value="7000000:10000000"/>
+              7,000,000₫ - 10,000,000₫
+             </label>
+            </li>
+            <li class="filter-item filter-item--check-box link">
+             <label class="custom-radio cursor-pointer flex gap-2 items-center" for="filter-upper-10000000">
+              <input class="form-radio" data-field="price_min" data-group="price" data-operator="OR" data-value="Giá trên 10,000,000₫" id="filter-upper-10000000" name="price_min" type="radio" value="10000000:max"/>
+              Giá trên 10,000,000₫
+             </label>
+            </li>
+           </ul>
+          </div>
+         </aside>
+         <aside class="aside-item filter-tag1 md:py-5 py-4" style="order: 0">
+          <div class="aside-title">
+           <h2 class="title-head margin-top-0 text-base font-semibold mb-3">
+            Màu sắc
+           </h2>
+          </div>
+          <div class="aside-content filter-group">
+           <ul class="space-y-3">
+            <li class="filter-item link filter-item--check-box">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-tag1-trang">
+              <input class="form-checkbox" data-field="tag.key" data-group="PRODUCT_TAG" data-operator="OR" data-value="Trắng" id="filter-tag1-trang" name="tag-mau-sac" type="checkbox" value="Trắng"/>
+              Trắng
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-tag1-den">
+              <input class="form-checkbox" data-field="tag.key" data-group="PRODUCT_TAG" data-operator="OR" data-value="Đen" id="filter-tag1-den" name="tag-mau-sac" type="checkbox" value="Đen"/>
+              Đen
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-tag1-xam">
+              <input class="form-checkbox" data-field="tag.key" data-group="PRODUCT_TAG" data-operator="OR" data-value="Xám" id="filter-tag1-xam" name="tag-mau-sac" type="checkbox" value="Xám"/>
+              Xám
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-tag1-xanh-duong">
+              <input class="form-checkbox" data-field="tag.key" data-group="PRODUCT_TAG" data-operator="OR" data-value="Xanh dương" id="filter-tag1-xanh-duong" name="tag-mau-sac" type="checkbox" value="Xanh dương"/>
+              Xanh dương
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-tag1-do">
+              <input class="form-checkbox" data-field="tag.key" data-group="PRODUCT_TAG" data-operator="OR" data-value="Đỏ" id="filter-tag1-do" name="tag-mau-sac" type="checkbox" value="Đỏ"/>
+              Đỏ
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-tag1-hong">
+              <input class="form-checkbox" data-field="tag.key" data-group="PRODUCT_TAG" data-operator="OR" data-value="Hồng" id="filter-tag1-hong" name="tag-mau-sac" type="checkbox" value="Hồng"/>
+              Hồng
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-tag1-tim">
+              <input class="form-checkbox" data-field="tag.key" data-group="PRODUCT_TAG" data-operator="OR" data-value="Tím" id="filter-tag1-tim" name="tag-mau-sac" type="checkbox" value="Tím"/>
+              Tím
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-tag1-xanh-reu">
+              <input class="form-checkbox" data-field="tag.key" data-group="PRODUCT_TAG" data-operator="OR" data-value="Xanh rêu" id="filter-tag1-xanh-reu" name="tag-mau-sac" type="checkbox" value="Xanh rêu"/>
+              Xanh rêu
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-tag1-kem">
+              <input class="form-checkbox" data-field="tag.key" data-group="PRODUCT_TAG" data-operator="OR" data-value="Kem" id="filter-tag1-kem" name="tag-mau-sac" type="checkbox" value="Kem"/>
+              Kem
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box overflow-item">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-tag1-bac">
+              <input class="form-checkbox" data-field="tag.key" data-group="PRODUCT_TAG" data-operator="OR" data-value="Bạc" id="filter-tag1-bac" name="tag-mau-sac" type="checkbox" value="Bạc"/>
+              Bạc
+             </label>
+            </li>
+            <li class="filter-item-toggle link text-secondary font-semibold cursor-pointer flex items-center pl-[var(--spacing-6-5)] gap-2">
+             Xem thêm
+             <i class="icon icon-carret-down">
+             </i>
+            </li>
+           </ul>
+          </div>
+         </aside>
+         <aside class="aside-item filter-tag1 md:py-5 py-4" style="order: 0">
+          <div class="aside-title">
+           <h2 class="title-head margin-top-0 text-base font-semibold mb-3">
+            Tags
+           </h2>
+          </div>
+          <div class="aside-content filter-group">
+           <ul class="space-y-3">
+            <li class="filter-item link filter-item--check-box">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-tag1-flash-sale">
+              <input class="form-checkbox" data-field="tag.key" data-group="PRODUCT_TAG" data-operator="OR" data-value="Flash Sale" id="filter-tag1-flash-sale" name="tag-tags" type="checkbox" value="Flash Sale"/>
+              Flash Sale
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-tag1-giao-nhanh-24h">
+              <input class="form-checkbox" data-field="tag.key" data-group="PRODUCT_TAG" data-operator="OR" data-value="Giao Nhanh 24h" id="filter-tag1-giao-nhanh-24h" name="tag-tags" type="checkbox" value="Giao Nhanh 24h"/>
+              Giao Nhanh 24h
+             </label>
+            </li>
+            <li class="filter-item link filter-item--check-box">
+             <label class="custom-checkbox cursor-pointer flex gap-2 items-center" for="filter-tag1-rau-tuoi">
+              <input class="form-checkbox" data-field="tag.key" data-group="PRODUCT_TAG" data-operator="OR" data-value="Rau Tươi" id="filter-tag1-rau-tuoi" name="tag-tags" type="checkbox" value="Rau Tươi"/>
+              Rau Tươi
+             </label>
+            </li>
+           </ul>
+          </div>
+         </aside>
+        </div>
+       </form>
+      </div>
+     </div>
+    </facet-drawer>
+   </div>
+  </div>
+ </section>
+ <section class="section section-collection-list relative" style="--section-padding: 0;--section-margin: 64px 0 64px;--section-padding-mb: 0;--section-margin-mb: 32px 0 32px;     color: #ffffff;	--color-collection-item: transparent;	--grid-col-desktop:repeat(auto-fit, minmax(calc(100% / 6 - 1px ), 1fr));	--grid-col-mobile:repeat(3,1fr); ">
+  <img alt="collection background" class="absolute w-full h-full object-cover top-0 left-0" loading="lazy" src="//theme.hstatic.net/200000888549/1001374142/14/coll_bg.jpg?v=26"/>
+  <div class="container overflow-hidden md:px-container px-0 relative z-[1] py-[32px] md:py-[40px]">
+   <div class="overflow-auto md:px-0 px-container">
+    <div class="collection-list grid mx-auto grid-cols-[var(--grid-col-mobile)] lg:grid-cols-[var(--grid-col-desktop)] gap-[1px] rounded overflow-auto">
+     <a class="collection-item text-center flex flex-col items-center gap-1 lg:gap-3 p-2 xl:p-2.5 group hover:brightness-[0.98]" href="/collections/cham-soc-gia-dinh" title="Chăm sóc gia đình">
+      <div class="collection-item-thumb w-[5.2rem] h-[5.2rem] lg:w-[8.8rem] lg:h-[8.8rem] flex items-center justify-center rounded-full overflow-hidden">
+       <img alt="Chăm sóc gia đình" class="object-contain transition-transform relative z-10 group-hover:scale-110 duration-200" height="120" loading="lazy" src="//theme.hstatic.net/200000888549/1001374142/14/coll_1.png?v=26" width="120"/>
+      </div>
+      <span class="text-sm font-semibold lg:text-base line-clamp-2">
+       Chăm sóc gia đình
+      </span>
+     </a>
+     <a class="collection-item text-center flex flex-col items-center gap-1 lg:gap-3 p-2 xl:p-2.5 group hover:brightness-[0.98]" href="/collections/me-va-be" title="Đồ dùng mẹ &amp; bé">
+      <div class="collection-item-thumb w-[5.2rem] h-[5.2rem] lg:w-[8.8rem] lg:h-[8.8rem] flex items-center justify-center rounded-full overflow-hidden">
+       <img alt="Đồ dùng mẹ &amp; bé" class="object-contain transition-transform relative z-10 group-hover:scale-110 duration-200" height="120" loading="lazy" src="//theme.hstatic.net/200000888549/1001374142/14/coll_2.png?v=26" width="120"/>
+      </div>
+      <span class="text-sm font-semibold lg:text-base line-clamp-2">
+       Đồ dùng mẹ &amp; bé
+      </span>
+     </a>
+     <a class="collection-item text-center flex flex-col items-center gap-1 lg:gap-3 p-2 xl:p-2.5 group hover:brightness-[0.98]" href="/collections/do-dung-nha-bep" title="Đồ dùng nhà bếp">
+      <div class="collection-item-thumb w-[5.2rem] h-[5.2rem] lg:w-[8.8rem] lg:h-[8.8rem] flex items-center justify-center rounded-full overflow-hidden">
+       <img alt="Đồ dùng nhà bếp" class="object-contain transition-transform relative z-10 group-hover:scale-110 duration-200" height="120" loading="lazy" src="//theme.hstatic.net/200000888549/1001374142/14/coll_3.png?v=26" width="120"/>
+      </div>
+      <span class="text-sm font-semibold lg:text-base line-clamp-2">
+       Đồ dùng nhà bếp
+      </span>
+     </a>
+     <a class="collection-item text-center flex flex-col items-center gap-1 lg:gap-3 p-2 xl:p-2.5 group hover:brightness-[0.98]" href="/collections/thuc-pham-tuoi-song" title="Thực phẩm tươi sống">
+      <div class="collection-item-thumb w-[5.2rem] h-[5.2rem] lg:w-[8.8rem] lg:h-[8.8rem] flex items-center justify-center rounded-full overflow-hidden">
+       <img alt="Thực phẩm tươi sống" class="object-contain transition-transform relative z-10 group-hover:scale-110 duration-200" height="120" loading="lazy" src="//theme.hstatic.net/200000888549/1001374142/14/coll_4.png?v=26" width="120"/>
+      </div>
+      <span class="text-sm font-semibold lg:text-base line-clamp-2">
+       Thực phẩm tươi sống
+      </span>
+     </a>
+     <a class="collection-item text-center flex flex-col items-center gap-1 lg:gap-3 p-2 xl:p-2.5 group hover:brightness-[0.98]" href="/collections/van-phong-pham" title="Văn phòng phẩm">
+      <div class="collection-item-thumb w-[5.2rem] h-[5.2rem] lg:w-[8.8rem] lg:h-[8.8rem] flex items-center justify-center rounded-full overflow-hidden">
+       <img alt="Văn phòng phẩm" class="object-contain transition-transform relative z-10 group-hover:scale-110 duration-200" height="120" loading="lazy" src="//theme.hstatic.net/200000888549/1001374142/14/coll_5.png?v=26" width="120"/>
+      </div>
+      <span class="text-sm font-semibold lg:text-base line-clamp-2">
+       Văn phòng phẩm
+      </span>
+     </a>
+     <a class="collection-item text-center flex flex-col items-center gap-1 lg:gap-3 p-2 xl:p-2.5 group hover:brightness-[0.98]" href="/collections/sua-cac-loai" title="Sữa các loại">
+      <div class="collection-item-thumb w-[5.2rem] h-[5.2rem] lg:w-[8.8rem] lg:h-[8.8rem] flex items-center justify-center rounded-full overflow-hidden">
+       <img alt="Sữa các loại" class="object-contain transition-transform relative z-10 group-hover:scale-110 duration-200" height="120" loading="lazy" src="//theme.hstatic.net/200000888549/1001374142/14/coll_6.png?v=26" width="120"/>
+      </div>
+      <span class="text-sm font-semibold lg:text-base line-clamp-2">
+       Sữa các loại
+      </span>
+     </a>
+    </div>
+   </div>
+  </div>
+ </section>
+</main>
+<link href="//theme.hstatic.net/200000888549/1001374142/14/sales-pop.css?v=26" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript>
+ <link href="//theme.hstatic.net/200000888549/1001374142/14/sales-pop.css?v=26" media="all" rel="stylesheet" type="text/css"/>
+</noscript>
+<div class="sales-pop hidden" id="ega-sale-pop">
+ <div class="sale-pop-wrap">
+ </div>
+ <div class="sale-pop-close">
+  <i class="icon icon-cross">
+  </i>
+ </div>
+</div>
+<link href="//theme.hstatic.net/200000888549/1001374142/14/addthis-sharing.css?v=26" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript>
+ <link href="//theme.hstatic.net/200000888549/1001374142/14/addthis-sharing.css?v=26" media="all" rel="stylesheet" type="text/css"/>
+</noscript>
+<div class="addThis_listSharing hidden">
+ <a class="backtop back-to-top flex items-center justify-center" href="#" id="back-to-top" title="Lên đầu trang">
+  <i class="icon icon-carret-up">
+  </i>
+ </a>
+ <ul class="addThis_listing list-unstyled md:block hidden">
+  <li class="addThis_item">
+   <a class="addThis_item--icon" href="tel:0999999999" rel="nofollow">
+    <img alt="Gọi ngay cho chúng tôi" class="img-fluid" height="44" loading="lazy" src="//theme.hstatic.net/200000888549/1001374142/14/addthis-phone.svg?v=26" width="44"/>
+    <span class="tooltip-text">
+     Gọi ngay cho chúng tôi
+    </span>
+   </a>
+  </li>
+  <li class="addThis_item">
+   <a class="addThis_item--icon" href="https://zalo.me/834141234794359222" rel="nofollow" target="_blank">
+    <img alt="Chat với chúng tôi qua Zalo" class="img-fluid" height="44" loading="lazy" src="//theme.hstatic.net/200000888549/1001374142/14/addthis-zalo.svg?v=26" width="44"/>
+    <span class="tooltip-text">
+     Chat với chúng tôi qua Zalo
+    </span>
+   </a>
+  </li>
+  <li class="addThis_item">
+   <a class="addThis_item--icon" href="https://m.me/168389884826236" rel="nofollow" target="_blank">
+    <img alt="Chat với chúng tôi qua Messenger" class="img-fluid" height="44" loading="lazy" src="//theme.hstatic.net/200000888549/1001374142/14/addthis-messenger.svg?v=26" width="44"/>
+    <span class="tooltip-text">
+     Chat với chúng tôi qua Messenger
+    </span>
+   </a>
+  </li>
+ </ul>
+</div>
+<div class="cro-btns sticky md:hidden block z-10 min-h-[5.6rem] bottom-0 left-0 slide-in-bottom" data-template="collection">
+ <div class="bg-background rounded-t-sm w-full min-h-[5.6rem] px-2 justify-between items-center inline-flex slide-in-bottom" style="box-shadow:var(--shadow-l)">
+  <div class="cro-btns-container w-full h-full justify-center items-center gap-0.5 grid grid-cols-[repeat(auto-fit,minmax(0,1fr))]">
+   <a class="cro-btn-item cro-btn-item--1 w-auto flex-shrink-0 flex-grow-0 h-full py-0.5 px-0.5 text-foreground h-full flex flex-col justify-center items-center gap-0.5" href="/collections/all" style="order:3" title="Khuyến mãi">
+    <div class="w-4 h-4 relative">
+     <img alt="Khuyến mãi" class="w-full h-full object-contain" loading="lazy" src="//theme.hstatic.net/200000888549/1001374142/14/cro-btn-1-icon.png?v=26"/>
+    </div>
+    <div class="text-ellipsis overflow-hidden max-w-full text-xs text-center line-clamp-1">
+     Khuyến mãi
+    </div>
+   </a>
+   <a class="cro-btn-item cro-btn-item--2 w-auto flex-shrink-0 flex-grow-0 h-full py-0.5 px-0.5 text-foreground h-full flex flex-col justify-center items-center gap-0.5" href="/collections/all" style="order:4" title="Sản phẩm">
+    <div class="w-4 h-4 relative">
+     <img alt="Sản phẩm" class="w-full h-full object-contain" loading="lazy" src="//theme.hstatic.net/200000888549/1001374142/14/cro-btn-2-icon.png?v=26"/>
+    </div>
+    <div class="text-ellipsis overflow-hidden max-w-full text-xs text-center line-clamp-1">
+     Sản phẩm
+    </div>
+   </a>
+   <a class="cro-btn-item cro-btn-item--3 w-auto flex-shrink-0 flex-grow-0 h-full py-0.5 px-0.5 text-foreground h-full flex flex-col justify-center items-center gap-0.5" href="/pages/he-thong-cua-hang" style="order:3" title="Cửa hàng">
+    <div class="w-4 h-4 relative">
+     <img alt="Cửa hàng" class="w-full h-full object-contain" loading="lazy" src="//theme.hstatic.net/200000888549/1001374142/14/cro-btn-3-icon.png?v=26"/>
+    </div>
+    <div class="text-ellipsis overflow-hidden max-w-full text-xs text-center line-clamp-1">
+     Cửa hàng
+    </div>
+   </a>
+   <a class="cro-btn-item cro-btn-item--mess w-auto flex-shrink-0 flex-grow-0 h-full py-0.5 px-0.5 text-foreground h-full flex flex-col justify-center items-center gap-0.5" href="https://m.me/168389884826236" style="order:2" title="Nhắn tin">
+    <div class="w-4 h-4 relative">
+     <img alt="Nhắn tin" class="w-full h-full object-contain" loading="lazy" src="//theme.hstatic.net/200000888549/1001374142/14/cro-btn-mess-icon.png?v=26"/>
+    </div>
+    <div class="text-ellipsis overflow-hidden max-w-full text-xs text-center line-clamp-1">
+     Nhắn tin
+    </div>
+   </a>
+   <a class="cro-btn-item cro-btn-item--hotline w-auto flex-shrink-0 flex-grow-0 h-full py-0.5 px-0.5 text-foreground h-full flex flex-col justify-center items-center gap-0.5" href="tel:0999999999" style="order:1" title="Gọi điện">
+    <div class="w-4 h-4 relative">
+     <img alt="Gọi điện" class="w-full h-full object-contain" loading="lazy" src="//theme.hstatic.net/200000888549/1001374142/14/cro-btn-hotline-icon.png?v=26"/>
+    </div>
+    <div class="text-ellipsis overflow-hidden max-w-full text-xs text-center line-clamp-1">
+     Gọi điện
+    </div>
+   </a>
+  </div>
+ </div>
+</div>
+<portal-component class="portal portal--drawer" data-animation="slide-in-right" data-type="drawer" id="search-drawer" style="--dialog-max-width:52rem">
+ <dialog class="portal-dialog">
+  <div class="w-full h-full flex">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner w-full ml-auto bg-background overflow-auto h-screen px-4 animation">
+    <div class="portal-header px-3 pb-3 pt-5">
+     <div class="font-semibold text-h6 md:text-h4 flex items-center gap-2">
+      <i class="icon icon-arrow-left text-h6 md:text-h4" id="PortalClose-search-drawer">
+      </i>
+      Tìm kiếm
+     </div>
+    </div>
+    <div class="search-bar relative">
+     <div class="search-bar relative">
+      <quick-search class="quick-search">
+       <form action="/search" class="m-0 flex bg-background pl-5 py-3 rounded-full items-center relative border border-neutral-50" method="get" role="search">
+        <select aria-label="Danh mục sản phẩm" class="form-select border-0 focus:ring-transparent collection-options">
+         <option value="">
+          Danh mục sản phẩm
+         </option>
+         <option value="1004145268">
+          Thực phẩm tươi sống
+         </option>
+         <option value="1004137173">
+          Thực phẩm khô
+         </option>
+         <option value="1004145271">
+          Đồ dùng nhà bếp
+         </option>
+         <option value="1004145273">
+          Chăm sóc gia đình
+         </option>
+         <option value="1004145272">
+          Đồ dùng mẹ và bé
+         </option>
+         <option value="1004145270">
+          Văn phòng phẩm
+         </option>
+        </select>
+        <div class="search-input-group w-full relative">
+         <input autocomplete="off" class="border-0 bg-transparent focus:ring-transparent p-0 w-full text-base text-foreground" data-placeholder="Tìm theo tên sản phẩm...; Tìm theo thương hiệu...;" name="q" placeholder="Tìm theo tên sản phẩm..." required="" type="text" value=""/>
+         <input name="type" type="hidden" value="product"/>
+         <button aria-label="search" class="search-button btn rounded-0 right-0 flex items-center justify-center text-foreground rounded-tr-full rounded-br-full absolute bg-[var(--color-search)] text-white" type="submit">
+          <i class="icon icon-search">
+          </i>
+         </button>
+        </div>
+       </form>
+       <div class="search-dropdown absolute bottom-0 top-full mt-1 left-0 bg-background rounded-lg py-3 text-foreground w-full px-2">
+        <div class="search-loading absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full z-[1] bg-background flex items-center justify-center">
+         <span class="loading-icon gap-1 hidden items-center justify-center">
+          <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+          </span>
+          <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+          </span>
+          <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+          </span>
+         </span>
+        </div>
+        <div class="search-result space-y-3">
+        </div>
+        <div class="search-history-list border-neutral-50">
+        </div>
+        <div class="search-keywords space-y-2 pt-2 px-2">
+         <span class="text-primary font-semibold">
+          Từ khóa phổ biến
+         </span>
+         <div class="search-keyword-list flex gap-1 items-center flex-wrap">
+          <a class="search-keyword text-secondary px-3 py-1 bg-relative rounded-full inline-flex items-center justify-center hover:border-secondary border border-transparent" href="/search?q=Nước giặt&amp;type=product" title="">
+           Nước giặt
+          </a>
+          <a class="search-keyword text-secondary px-3 py-1 bg-relative rounded-full inline-flex items-center justify-center hover:border-secondary border border-transparent" href="/search?q= Nước lau sàn&amp;type=product" title="">
+           Nước lau sàn
+          </a>
+          <a class="search-keyword text-secondary px-3 py-1 bg-relative rounded-full inline-flex items-center justify-center hover:border-secondary border border-transparent" href="/search?q= Máy đánh trứng&amp;type=product" title="">
+           Máy đánh trứng
+          </a>
+         </div>
+        </div>
+       </div>
+      </quick-search>
+     </div>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</portal-component>
+<quick-view class="portal portal--modal" data-animation="scale-in-hor-left" data-type="modal" id="quick-view-product">
+ <dialog class="portal-dialog">
+  <div class="flex items-center justify-center w-full h-full">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner h-full">
+    <button class="portal-close-button animation rounded-full w-[3.2rem] h-[3.2rem] border border-white text-white flex items-center justify-center active:scale-95 transition-transform hover:animate-spin" data-animation="fade-in" id="PortalClose-quick-view-product" type="button">
+     <i class="icon icon-cross">
+     </i>
+    </button>
+    <div class="product-wrapper animation bg-background w-full h-full md:rounded-lg">
+    </div>
+    <span class="loading-icon gap-1 hidden items-center justify-center">
+     <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+     </span>
+     <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+     </span>
+     <span class="w-1.5 h-1.5 bg-[currentColor] rounded-full animate-pulse">
+     </span>
+    </span>
+   </div>
+  </div>
+ </dialog>
+</quick-view>
+<cart-drawer class="portal portal--drawer" data-animation="slide-in-right" data-type="drawer" id="cart-drawer" style="--dialog-max-width:52rem">
+ <dialog class="portal-dialog">
+  <div class="w-full h-full flex">
+   <div class="portal-overlay">
+   </div>
+   <div class="hidden cart-drawer-related-products animation fade-in lg:flex items-center justify-center" data-animation="fade-in" id="PortalClose-cart-related-drawer">
+    <related-products class="cart-releated-products w-full fade-in" data-limit="4">
+     <ega-carousel>
+      <div class="swiper lg:pb-[var(--spacing-10)]">
+       <h2 class="text-h4 text-center mb-5 font-semibold text-white">
+        Sản phẩm gợi ý
+       </h2>
+       <div class="swiper-wrapper product-list h-inherit">
+       </div>
+       <div class="swiper-button-prev md:flex hidden link" onclick="event.stopPropagation()">
+       </div>
+       <div class="swiper-button-next md:flex hidden link" onclick="event.stopPropagation()">
+       </div>
+      </div>
+     </ega-carousel>
+    </related-products>
+   </div>
+   <div class="portal-inner w-full bg-background animation h-full">
+    <cart-form class="h-full">
+     <form action="/cart" class="cart-form h-full" method="post">
+      <div class="cart grid grid-rows-[auto_1fr_auto]">
+       <div class="portal-header pt-4 px-4 flex justify-between items-center border-b pb-3 border-neutral-50 px-4">
+        <p class="text-h6 md:text-h4">
+         Giỏ hàng
+        </p>
+        <button class="w-[3.2rem] h-[3.2rem] rounded-full border border-neutral-50 text-neutral-200 flex items-center justify-center active:scale-95 transition-transform hover:bg-neutral-50" id="PortalClose-cart-crawer" type="button">
+         <i class="icon icon-cross">
+         </i>
+        </button>
+       </div>
+       <div class="cart-left p-4 overflow-y-auto flex flex-col">
+        <rewards-bar>
+        </rewards-bar>
+        <div class="cart-table">
+        </div>
+        <div class="lg:hidden w-full mt-auto">
+         <related-products class="cart-releated-products" data-product-type="row" data-query="">
+          <div class="mb-2">
+           <h2 class="text-base font-semibold">
+            Sản phẩm gợi ý
+           </h2>
+          </div>
+          <ega-carousel>
+           <div class="swiper">
+            <div class="swiper-wrapper product-list">
+            </div>
+           </div>
+          </ega-carousel>
+         </related-products>
+        </div>
+       </div>
+       <div class="cart-right p-4">
+        <div class="cart-summary">
+        </div>
+       </div>
+       <div class="cart-empty">
+       </div>
+      </div>
+     </form>
+    </cart-form>
+   </div>
+  </div>
+ </dialog>
+</cart-drawer>
+<portal-component class="portal portal--drawer" data-animation="slide-in-right" data-type="drawer" id="cart-note-drawer" style="--dialog-max-width:52rem">
+ <dialog class="portal-dialog">
+  <div class="w-full h-full flex">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner w-full ml-auto bg-background h-screen px-4 animation">
+    <div class="portal-header px-3 pb-3 pt-5">
+     <div class="font-semibold text-h4 flex items-center gap-2">
+      <i class="icon icon-arrow-left cursor-pointer text-h6 md:text-h4" id="PortalClose-cart-note-drawer">
+      </i>
+      Ghi chú đơn hàng
+     </div>
+    </div>
+    <div class="r-bill px-3">
+     <cart-note>
+      <form>
+       <div class="form-group">
+        <label class="label block mb-2">
+         Ghi chú
+        </label>
+        <textarea class="form-textarea" name="note" rows="6"></textarea>
+       </div>
+       <button class="btn w-full mt-5 btn--large font-semibold bg-primary text-white inline-flex justify-center items-center gap-2" type="submit">
+        Lưu thông tin
+       </button>
+      </form>
+     </cart-note>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</portal-component>
+<cart-vat-drawer class="portal portal--drawer" data-animation="slide-in-right" data-type="drawer" id="cart-vat-drawer" style="--dialog-max-width:52rem">
+ <dialog class="portal-dialog">
+  <div class="w-full h-full flex">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner w-full ml-auto bg-background h-screen px-4 animation">
+    <div class="portal-header px-3 pb-3 pt-5">
+     <div class="font-semibold text-h6 md:text-h4 flex items-center gap-2">
+      <i class="icon icon-arrow-left text-h6 md:text-h4 cursor-pointer" id="PortalClose-cart-vat-drawer">
+      </i>
+      Xuất hóa đơn công ty
+     </div>
+    </div>
+    <div class="r-bill px-3">
+     <form>
+      <div class="bill-field space-y-3">
+       <div class="flex items-center">
+        <div class="flex items-center">
+         <input class="invoice" name="attributes[Xuất hóa đơn]" type="hidden" value="không"/>
+         <input class="invoice-checkbox form-checkbox" type="checkbox"/>
+        </div>
+        <div class="ml-2 text-sm">
+         <label>
+          Xuất hóa đơn
+         </label>
+        </div>
+       </div>
+       <div class="form-group">
+        <label class="label block mb-2">
+         Tên công ty
+        </label>
+        <input class="form-input" data-messages="{'required':'Trường này không được bỏ trống' }" data-rules="['required']" name="attributes[Tên công ty]" placeholder="Tên công ty" type="text" value=""/>
+        <span class="error text-error">
+        </span>
+       </div>
+       <div class="form-group">
+        <label class="label block mb-2">
+         Mã số thuế
+        </label>
+        <input class="form-input" data-messages="{ 'minLength:10': 'Số kí tự tối thiểu [size]', 'require':'Trường này không được bỏ trống' }" data-rules="['minLength:10','required']" name="attributes[Mã số thuế]" placeholder="Mã số thuế" type="number" value=""/>
+        <span class="error text-error">
+        </span>
+       </div>
+       <div class="form-group">
+        <label class="label block mb-2">
+         Địa chỉ công ty
+        </label>
+        <textarea class="form-textarea" data-messages="{'required':'Trường này không được bỏ trống' }" data-rules="['required']" name="attributes[Địa chỉ công ty]" placeholder="Địa chỉ công ty"></textarea>
+        <span class="error text-error">
+        </span>
+       </div>
+       <div class="form-group">
+        <label class="label block mb-2">
+         Email nhận hóa đơn
+        </label>
+        <input class="form-input" data-messages="{'required':'Trường này không được bỏ trống', 'email': 'Email không đúng định dạng' }" data-rules="['required','email']" name="attributes[Email nhận hóa đơn]" placeholder="Email nhận hóa đơn" type="email" value=""/>
+        <span class="error text-error">
+        </span>
+       </div>
+      </div>
+      <button class="btn w-full mt-5 btn--large font-semibold bg-primary text-white inline-flex justify-center items-center gap-2" type="submit">
+       Lưu thông tin
+      </button>
+     </form>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</cart-vat-drawer>
+<portal-component class="portal portal--drawer" data-animation="slide-in-right" data-type="drawer" id="cart-delivery-drawer" style="--dialog-max-width:52rem">
+ <dialog class="portal-dialog">
+  <div class="w-full h-full flex">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner w-full ml-auto bg-background h-screen px-4 animation">
+    <div class="portal-header px-3 pb-3 pt-5">
+     <div class="font-semibold text-h6 md:text-h4 flex items-center gap-2">
+      <i class="icon icon-arrow-left text-h4 cursor-pointer" id="PortalClose-cart-delivery-drawer">
+      </i>
+      Hẹn giờ nhận hàng
+     </div>
+    </div>
+    <div class="r-bill px-3">
+     <cart-delivery>
+      <form>
+       <div class="cart-delivery-time py-4">
+        <div class="grid gap-2">
+         <div class="flex items-center">
+          <div class="flex items-center">
+           <input id="use-delivery" name="attributes[Hẹn giờ nhận hàng]" type="hidden" value="cart.attributes[Hẹn giờ nhận hàng]"/>
+           <input class="form-checkbox" id="delivery-enabled" type="checkbox"/>
+          </div>
+          <div class="ml-2 text-sm">
+           <label class="" for="delivery-enabled">
+            Hẹn giờ nhận hàng
+           </label>
+          </div>
+         </div>
+         <div>
+          <label class="label block mb-1 text-base" for="delivery-date-input">
+           Ngày nhận hàng
+          </label>
+          <div class="relative">
+           <i class="icon icon-calendar text-neutral-200 top-1/2 left-2 -translate-y-1/2 absolute">
+           </i>
+           <datepicker-input class="datepicker-input">
+            <input class="form-input pl-2 pl-[var(--spacing-6-5)] py-2.5 min-h-[4rem]" id="delivery-date-input" name="attributes[Ngày nhận hàng]" type="text" value=""/>
+           </datepicker-input>
+          </div>
+         </div>
+         <div>
+          <label class="label block mb-1 text-base" for="delivery-time">
+           Thời gian nhận hàng
+          </label>
+          <select class="form-select min-h-[4rem] px-2 py-2.5 border-neutral-50" id="delivery-time" name="attributes[Thời gian nhận hàng]">
+           <option selected="" value="">
+            Chọn thời gian
+           </option>
+           <option value="08h00 - 12h00">
+            08h00 - 12h00
+           </option>
+           <option value="14h00 - 18h00">
+            14h00 - 18h00
+           </option>
+           <option value="19h00 - 21h00">
+            19h00 - 21h00
+           </option>
+          </select>
+         </div>
+        </div>
+       </div>
+       <button class="btn w-full mt-5 btn--large font-semibold bg-primary text-white inline-flex justify-center items-center gap-2" type="submit">
+        Lưu thông tin
+       </button>
+      </form>
+     </cart-delivery>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</portal-component>
+<coupon-drawer data-animation="slide-in-right" data-type="drawer" id="coupon-drawer" lass="portal portal--drawer" style="--dialog-max-width:52rem">
+ <dialog class="portal-dialog">
+  <div class="w-full h-full flex">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner grid grid-rows-[auto_1fr_auto] w-full ml-auto bg-background h-screen px-4 pb-4 animation">
+    <div class="portal-header px-3 pb-3 pt-5">
+     <div class="font-semibold text-h6 md:text-h4 flex items-center gap-2">
+      <i class="icon icon-arrow-left text-h6 md:text-h4 cursor-pointer" id="PortalClose-coupon-drawer">
+      </i>
+      Chọn mã giảm giá
+     </div>
+    </div>
+    <div class="coupon-list py-4">
+    </div>
+    <div>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</coupon-drawer>
+<coupon-modal class="portal portal--modal portal--modal-sm" data-animation="fade-in" data-type="modal" id="coupon-modal">
+ <dialog class="portal-dialog">
+  <div class="flex items-center justify-center w-full h-full p-3">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner animation">
+    <button class="portal-close-button w-[3.2rem] h-[3.2rem] rounded-full border border-white text-white flex items-center justify-center active:scale-95 transition-transform hover:animate-spin" id="PortalClose-coupon-modal" type="button">
+     <i class="icon icon-cross">
+     </i>
+    </button>
+    <div class="p-3 md:p-5 rounded-lg bg-background h-full grid grid grid-rows-[auto_1fr_auto]">
+     <div class="coupon-header border-b pb-2.5 border-dashed border-neutral-50">
+     </div>
+     <div class="coupon-desc">
+     </div>
+     <div class="coupon-act grid grid-cols-2 gap-3 border-t pt-2.5 border-dashed border-neutral-50">
+      <button class="btn border border-neutral-50 hover:bg-neutral-100 py-1.5" id="PortalClose-coupon-item-modal">
+       Đóng
+      </button>
+      <copy-button data-copied-text="Đã sao chép">
+       <input type="hidden" value=""/>
+       <button class="btn copy-button w-full text-primary border border-primary hover:bg-primary hover:text-white py-1.5" type="button">
+        Sao chép
+       </button>
+      </copy-button>
+     </div>
+    </div>
+   </div>
+  </div>
+ </dialog>
+</coupon-modal>
+<compare-qv class="portal portal--modal" data-animation="slide-in-bottom" data-type="modal" id="quick-view-compare">
+ <dialog class="portal-dialog">
+  <div class="flex items-center justify-center w-full">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner bg-background rounded-sm animation">
+    <button class="absolute active:scale-95 transition-transform right-0 p-3 bg-background rounded-sm flex items-center justify-center gap-2" id="PortalClose-quick-view" type="button">
+     Thu gọn
+     <i class="icon icon-carret-down">
+     </i>
+    </button>
+    <div class="compare-product-list">
+    </div>
+   </div>
+  </div>
+ </dialog>
+</compare-qv>
+<portal-opener class="compare-opener hidden">
+ <div class="cursor-pointer font-semibold btn rounded-full bg-background border border-primary text-primary" data-portal="#quick-view-compare">
+  <p class="flex items-center gap-1">
+   <span class="line-clamp-1">
+    So sánh
+   </span>
+   <span class="compare-count">
+   </span>
+   <i class="ico icon-arrow-swap">
+   </i>
+  </p>
+ </div>
+</portal-opener>
+<promo-popup class="portal portal--modal" data-animation="fade-in" data-type="modal" id="promo-popup">
+ <dialog class="portal-dialog">
+  <div class="flex items-center justify-center w-full h-full">
+   <div class="portal-overlay">
+   </div>
+   <div class="relative z-10 animation p-6 md:p-4">
+    <button class="portal-close-button w-[3.2rem] h-[3.2rem] rounded-full border border-white text-white flex items-center justify-center active:scale-95 transition-transform hover:animate-spin" id="PortalClose-promo-popup" type="button">
+     <i class="icon icon-cross">
+     </i>
+    </button>
+    <a href="/collections/all" title="Click ngay để nhận ưu đãi hot!!">
+     <img alt="Click ngay để nhận ưu đãi hot!!" class="object-contain" height="640" loading="lazy" src="//theme.hstatic.net/200000888549/1001374142/14/banner-popup-img.png?v=26" width="520"/>
+    </a>
+   </div>
+  </div>
+ </dialog>
+</promo-popup>
+<error-popup class="portal portal--modal portal--modal-sm" data-animation="fade-in" data-type="modal" id="error-modal">
+ <dialog class="portal-dialog">
+  <div class="flex items-start justify-end p-3 w-full h-full">
+   <div class="portal-overlay">
+   </div>
+   <div class="portal-inner animation">
+    <div class="error-list flex gap-4 flex-col items-end">
+    </div>
+   </div>
+  </div>
+ </dialog>
+</error-popup>
+
+{%endblock %}
