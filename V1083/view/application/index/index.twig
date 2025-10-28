@@ -1,0 +1,1031 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(translate('Trang chủ')).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ getKeyContentValue('META_KEYWORDS') }}">
+<meta name="description" content="{{ getKeyContentValue('META_DESCRIPTION') }}">
+<meta property="og:title" content="{{ getKeyContentValue('META_TITLE') }}">
+<meta property="og:url" content="{{ getCurrentUrl() }}">
+<meta property="og:image" content="{{ getBusinessLogo() }}">
+<link rel="canonical" href="{{ getCurrentUrl() }}">
+{%endblock %}
+
+{%block body %}
+
+<div class="page-body">
+ <div class="op_login">
+ </div>
+ <!-- Main content -->
+ <div class="main-nav">
+  <div class="container nav-head">
+   <div class="row">
+    <div class="col-lg-11 col-md-11 hidden-sm hidden-xs">
+     <nav class="hidden-sm hidden-xs nav-main">
+      <div class="menu_hed head_1">
+       <ul class="nav nav_1">
+        <li class="nav-item nav-items active">
+         <a class="nav-link" href="/">
+          Trang chủ
+          <span class="label_">
+           <i class="label">
+           </i>
+          </span>
+         </a>
+        </li>
+        <li class="nav-item nav-items">
+         <a class="nav-link" href="/gioi-thieu">
+          Giới thiệu
+          <span class="label_">
+           <i class="label">
+           </i>
+          </span>
+         </a>
+        </li>
+        <li class="nav-item nav-items">
+         <a class="nav-link" href="/khoa-hoc">
+          Khóa học
+          <span class="label_">
+           <i class="label">
+           </i>
+          </span>
+         </a>
+        </li>
+        <li class="nav-item nav-items">
+         <a class="nav-link" href="/goc-chia-se">
+          Góc chia sẻ
+          <span class="label_">
+           <i class="label">
+           </i>
+          </span>
+         </a>
+        </li>
+        <li class="nav-item nav-items">
+         <a class="nav-link" href="/lien-he-tu-van">
+          Liên hệ tư vấn
+          <span class="label_">
+           <i class="label">
+           </i>
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </nav>
+    </div>
+    <div class="col-lg-1 col-md-1 content_search_cart">
+     <div class="search_menu">
+      <div class="search_inner">
+       <i class="fa fa-search">
+       </i>
+       <div class="search-box">
+        <div class="header_search search_form">
+         <form action="/search" class="input-group search-bar search_form" method="get" role="search">
+          <input autocomplete="off" class="input-group-field st-default-search-input search-text" name="query" placeholder="Tìm kiếm khóa học... " type="search" value=""/>
+          <span class="input-group-btn">
+           <button class="btn icon-fallback-text">
+            <i class="fa fa-search">
+            </i>
+           </button>
+          </span>
+         </form>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <!-- Menu mobile -->
+ <div class="menu_mobile max_991 hidden-md hidden-lg" style="display: none;">
+  <ul class="ul_collections">
+   <li class="level0 level-top parent">
+    <a href="/">
+     Trang chủ
+    </a>
+   </li>
+   <li class="level0 level-top parent">
+    <a href="/gioi-thieu">
+     Giới thiệu
+    </a>
+   </li>
+   <li class="level0 level-top parent">
+    <a href="/khoa-hoc">
+     Khóa học
+    </a>
+   </li>
+   <li class="level0 level-top parent">
+    <a href="/goc-chia-se">
+     Góc chia sẻ
+    </a>
+   </li>
+   <li class="level0 level-top parent">
+    <a href="/lien-he-tu-van">
+     Liên hệ tư vấn
+    </a>
+   </li>
+  </ul>
+ </div>
+ <!-- End -->
+ <h1 class="hidden">
+  ANH NGỮ WiLL - ANH NGỮ WiLL - TIẾNG ANH ONLINE 1 THẦY 1 TRÒ
+WiLL - English for Everyone" Hiệu quả. Tiết kiệm! Chuyên các lớp tiếng Anh online 1 Thầy 1 Trò cùng Giáo viên nước ngoài, từ Kids 3 tuổi đến người trưởng thành.
+ </h1>
+ <section class="awe-section-1">
+  <div class="home-slider swiper-container">
+   <div class="swiper-wrapper">
+    <div class="item swiper-slide">
+     <a class="clearfix" href="">
+      <picture>
+       <source media="(min-width: 1200px)" srcset="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/slider_1.png?1675673975161"/>
+       <source media="(min-width: 992px)" srcset="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/slider_1.png?1675673975161"/>
+       <source media="(max-width: 767px)" srcset="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/slidermb_1.png?1675673975161"/>
+       <source media="(max-width: 480px)" srcset="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/slidermb_1.png?1675673975161"/>
+       <img alt="Slide 1" class="img-responsive" src="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/slider_1.png?1675673975161"/>
+      </picture>
+     </a>
+    </div>
+    <div class="item swiper-slide">
+     <a class="clearfix" href="/lien-he-tu-van">
+      <picture>
+       <source media="(min-width: 1200px)" srcset="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/slider_2.png?1675673975161"/>
+       <source media="(min-width: 992px)" srcset="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/slider_2.png?1675673975161"/>
+       <source media="(max-width: 767px)" srcset="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/slidermb_2.png?1675673975161"/>
+       <source media="(max-width: 480px)" srcset="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/slidermb_2.png?1675673975161"/>
+       <img alt="Slide 2" class="img-responsive" src="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/slider_2.png?1675673975161"/>
+      </picture>
+     </a>
+    </div>
+    <div class="item swiper-slide">
+     <a class="clearfix" href="#">
+      <picture>
+       <source media="(min-width: 1200px)" srcset="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/slider_3.png?1675673975161"/>
+       <source media="(min-width: 992px)" srcset="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/slider_3.png?1675673975161"/>
+       <source media="(max-width: 767px)" srcset="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/slidermb_3.png?1675673975161"/>
+       <source media="(max-width: 480px)" srcset="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/slidermb_3.png?1675673975161"/>
+       <img alt="Slide 3" class="img-responsive" src="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/slider_3.png?1675673975161"/>
+      </picture>
+     </a>
+    </div>
+   </div>
+  </div>
+ </section>
+ <section class="awe-section-3">
+  <section class="section_gioithieu">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <div class="title_module_main a-left">
+       <h2>
+        <span>
+         Giới thiệu về ANH NGỮ WiLL
+        </span>
+       </h2>
+      </div>
+      <div class="contentin">
+       <p>
+        Ra đời từ tâm huyết của những Giảng viên trẻ, yêu nghề và đầy tinh thần trách nhiệm. Will mong muốn là cầu nối thiết thực giữa các Giáo viên nước ngoài và Học viên Việt Nam. Giúp Học viên ở mọi miền Tổ quốc, đặc biệt là các Học viên đang sống tại các vùng còn khó khăn, hạn chế về cơ sở học tập có thêm cơ hội tiếp cận phương pháp học Tiếng Anh tiên tiến, hiệu quả nhưng vô cùng tiết kiệm.
+       </p>
+       <p>
+        Anh ngữ Will_100% Giáo viên nước ngoài. Chuyên các lớp Tiếng Anh online 1 Thầy 1 Trò hoặc nhóm (2,4 học viên). Đặc biệt chuyên “đặc trị” những trường hợp mất gốc hoặc bắt đầu trong tiếp cận tiếng Anh. 100% Học viên có cảm giác yêu thích, có động lực và hứng thú học Tiếng Anh ngay trong bài học đầu tiên tại Anh...
+       </p>
+      </div>
+      <a class="button_35px" href="gioi-thieu" title="xem thêm">
+       Xem thêm
+      </a>
+     </div>
+     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 video">
+      <div class="videoframe">
+       <a class="button_play" data-target="#myModalYoutube" data-toggle="modal" data-url="https://www.youtube.com/embed/Zxp-2AToEmw" href="#" title="Xem video">
+        <i class="fa fa-play">
+        </i>
+       </a>
+       <img alt="video giới thiệu" class="img-responsive lazyload" data-src="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/video1.jpg?1675673975161" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <div class="modal fade" id="myModalYoutube" role="dialog">
+   <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+     <div class="modal-body">
+      <div class="wrap_youtube_modal">
+       <iframe allow="autoplay; encrypted-media" allowfullscreen="" height="315" src="#" width="560">
+       </iframe>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </section>
+ <section class="awe-section-4">
+  <section class="section_blogs">
+   <div class="container">
+    <div class="title_module_main a-center">
+     <h2>
+      <a href="khoa-hoc" title="CÁC KHÓA HỌC TẠI ANH NGỮ WiLL">
+       CÁC KHÓA HỌC TẠI ANH NGỮ WiLL
+      </a>
+     </h2>
+    </div>
+    <div class="list-blogs-link">
+     <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+       <div class="owl-blog-dichvu swiper-container">
+        <div class="swiper-wrapper">
+         <div class="swiper-slide item">
+          <div class="item_wrap_blog">
+           <div class="item-blg blog-large">
+            <div class="blog-inner">
+             <div class="blog-img">
+              <a href="/luyen-thi-chung-chi-quoc-te">
+               <img alt="Luyện thi chứng chỉ quốc tế" class="img-responsive lazyload" data-src="//bizweb.dktcdn.net/thumb/large/100/449/073/products/480x480-2.png?v=1647325836400" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+              </a>
+             </div>
+             <div class="content__">
+              <h3>
+               <a class="text2line" href="/luyen-thi-chung-chi-quoc-te" title="Luyện thi chứng chỉ quốc tế">
+                Luyện thi chứng chỉ quốc tế
+               </a>
+              </h3>
+              <p>
+               Sau khi học viên đạt mức độ test đầu vào tại Will, tùy mức độ Will ...
+              </p>
+             </div>
+            </div>
+           </div>
+           <a class="link" href="/luyen-thi-chung-chi-quoc-te" title="Xem chi tiết">
+            Xem chi tiết
+            <i class="fa fa-angle-double-right">
+            </i>
+           </a>
+          </div>
+         </div>
+         <div class="swiper-slide item">
+          <div class="item_wrap_blog">
+           <div class="item-blg blog-large">
+            <div class="blog-inner">
+             <div class="blog-img">
+              <a href="/tieng-anh-nguoi-lon">
+               <img alt="Tiếng Anh người lớn" class="img-responsive lazyload" data-src="//bizweb.dktcdn.net/thumb/large/100/449/073/products/480x480-1.png?v=1647325819597" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+              </a>
+             </div>
+             <div class="content__">
+              <h3>
+               <a class="text2line" href="/tieng-anh-nguoi-lon" title="Tiếng Anh người lớn">
+                Tiếng Anh người lớn
+               </a>
+              </h3>
+              <p>
+               Khóa học giao tiếp dành cho sinh viên, người đi làm, giúp học viên ...
+              </p>
+             </div>
+            </div>
+           </div>
+           <a class="link" href="/tieng-anh-nguoi-lon" title="Xem chi tiết">
+            Xem chi tiết
+            <i class="fa fa-angle-double-right">
+            </i>
+           </a>
+          </div>
+         </div>
+         <div class="swiper-slide item">
+          <div class="item_wrap_blog">
+           <div class="item-blg blog-large">
+            <div class="blog-inner">
+             <div class="blog-img">
+              <a href="/tieng-anh-tre-em">
+               <img alt="Tiếng Anh trẻ em" class="img-responsive lazyload" data-src="//bizweb.dktcdn.net/thumb/large/100/449/073/products/480x480-3.png?v=1647325803967" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+              </a>
+             </div>
+             <div class="content__">
+              <h3>
+               <a class="text2line" href="/tieng-anh-tre-em" title="Tiếng Anh trẻ em">
+                Tiếng Anh trẻ em
+               </a>
+              </h3>
+              <p>
+               Khóa học giao tiếp dành cho các bé từ 6 – 15 tuổi trang bị kiến thứ...
+              </p>
+             </div>
+            </div>
+           </div>
+           <a class="link" href="/tieng-anh-tre-em" title="Xem chi tiết">
+            Xem chi tiết
+            <i class="fa fa-angle-double-right">
+            </i>
+           </a>
+          </div>
+         </div>
+         <div class="swiper-slide item">
+          <div class="item_wrap_blog">
+           <div class="item-blg blog-large">
+            <div class="blog-inner">
+             <div class="blog-img">
+              <a href="/tieng-anh-theo-yeu-cau">
+               <img alt="Tiếng Anh theo yêu cầu" class="img-responsive lazyload" data-src="//bizweb.dktcdn.net/thumb/large/100/449/073/products/03.png?v=1647578148787" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+              </a>
+             </div>
+             <div class="content__">
+              <h3>
+               <a class="text2line" href="/tieng-anh-theo-yeu-cau" title="Tiếng Anh theo yêu cầu">
+                Tiếng Anh theo yêu cầu
+               </a>
+              </h3>
+              <p>
+               Ngoài các khóa học đặc thù về phát âm, giao tiếp, ngữ pháp, viết và...
+              </p>
+             </div>
+            </div>
+           </div>
+           <a class="link" href="/tieng-anh-theo-yeu-cau" title="Xem chi tiết">
+            Xem chi tiết
+            <i class="fa fa-angle-double-right">
+            </i>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+ </section>
+ <section class="awe-section-5">
+  <section class="section_quytrinh">
+   <div class="container">
+    <div class="wrap_quytrinh">
+     <div class="wrap_title_position">
+      <div class="title_module_main a-center">
+       <h2>
+        <span>
+         QUYỀN LỢI CỦA HỌC VIÊN
+        </span>
+       </h2>
+      </div>
+     </div>
+     <div class="row owl_quytrinh">
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 col-12">
+       <div class="swiper-slide item">
+        <div class="img_feature">
+         <span>
+          <img alt="Mức học phí linh hoạt, phù hợp với mọi nhà. Đóng linh động theo tháng." class="img-responsive lazyload" data-src="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/quytrinh1.png?1675673975161" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+         </span>
+        </div>
+        <div class="content_feature">
+         <span class="title">
+          Học phí
+         </span>
+         <span>
+          Mức học phí linh hoạt, phù hợp với mọi nhà. Đóng linh động theo tháng.
+         </span>
+        </div>
+       </div>
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 col-12">
+       <div class="swiper-slide item">
+        <div class="img_feature">
+         <span>
+          <img alt="Mỗi học viên sẽ được nhận một buổi học thử và kiểm tra trình độ miễn phí." class="img-responsive lazyload" data-src="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/quytrinh2.png?1675673975161" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+         </span>
+        </div>
+        <div class="content_feature">
+         <span class="title">
+          Học thử
+         </span>
+         <span>
+          Mỗi học viên sẽ được nhận một buổi học thử và kiểm tra trình độ miễn phí.
+         </span>
+        </div>
+       </div>
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 col-12">
+       <div class="swiper-slide item">
+        <div class="img_feature">
+         <span>
+          <img alt="Học viên được chủ động đăng ký lịch học và đăng ký Giáo viên yêu thích. Dễ dàng thay đổi khi cần." class="img-responsive lazyload" data-src="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/quytrinh3.png?1675673975161" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+         </span>
+        </div>
+        <div class="content_feature">
+         <span class="title">
+          Chủ động
+         </span>
+         <span>
+          Học viên được chủ động đăng ký lịch học và đăng ký Giáo viên yêu thích. Dễ dàng thay đổi khi cần.
+         </span>
+        </div>
+       </div>
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 col-12">
+       <div class="swiper-slide item">
+        <div class="img_feature">
+         <span>
+          <img alt="Phương pháp phản xạ đặc biệt, giúp Học viên: Tự tin --&gt; Chủ động --&gt; Phản xạ linh hoạt." class="img-responsive lazyload" data-src="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/quytrinh4.png?1675673975161" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+         </span>
+        </div>
+        <div class="content_feature">
+         <span class="title">
+          Tiến bộ
+         </span>
+         <span>
+          Phương pháp phản xạ đặc biệt, giúp Học viên: Tự tin --&gt; Chủ động --&gt; Phản xạ linh hoạt.
+         </span>
+        </div>
+       </div>
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 col-12">
+       <div class="swiper-slide item">
+        <div class="img_feature">
+         <span>
+          <img alt="Học online mọi lúc mọi nơi , tiết kiệm thời gian, chi phí đến mức thấp nhất." class="img-responsive lazyload" data-src="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/quytrinh5.png?1675673975161" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+         </span>
+        </div>
+        <div class="content_feature">
+         <span class="title">
+          Tiết kiệm
+         </span>
+         <span>
+          Học online mọi lúc mọi nơi , tiết kiệm thời gian, chi phí đến mức thấp nhất.
+         </span>
+        </div>
+       </div>
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 col-12">
+       <div class="swiper-slide item">
+        <div class="img_feature">
+         <span>
+          <img alt="Đội ngũ nhân viên của Anh Ngữ Will luôn sẵn sàng hỗ trợ Học viên tận tình 24/7." class="img-responsive lazyload" data-src="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/quytrinh6.png?1675673975161" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+         </span>
+        </div>
+        <div class="content_feature">
+         <span class="title">
+          Hỗ trợ 24/7
+         </span>
+         <span>
+          Đội ngũ nhân viên của Anh Ngữ Will luôn sẵn sàng hỗ trợ Học viên tận tình 24/7.
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+ </section>
+ <section class="awe-section-6">
+  <section class="section_lop_mau">
+   <div class="container">
+    <div class="list-blogs-link">
+     <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+       <div class="owl-lopmau swiper-container">
+        <div class="swiper-wrapper">
+         <div class="swiper-slide item">
+          <div class="row">
+           <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
+            <div class="is-divider divider clearfix" style="max-width:100px;height:5px;background-color:rgb(5, 101, 203);">
+            </div>
+            <p class="title_lopmau">
+             LỚP HỌC MẪU
+             <span>
+              Tại Anh ngữ Will
+             </span>
+            </p>
+            <p class="txt_giao_vien">
+             GIÁO VIÊN WiLL
+            </p>
+            <p class="txt_giao_vien">
+             <b>
+              Daisy, 5 tuổi. Bé chưa đến tuổi học viết, chỉ nghe, nói và phản xạ
+             </b>
+            </p>
+            <p class="txt_noi_dung">
+             Bé đến với Will khi còn bỡ ngỡ với tiếng anh, thiếu tự tin và không chủ động trong giao tiếp. Chỉ sau 6 tháng học tại Anh ngữ Will cùng với sự kiên trì rèn luyện theo hướng dẫn sau mỗi bài học, Daisy đã có sự tiến bộ đáng kể về mọi mặt: chuẩn phát âm, phản xạ linh hoạt, tự tin và thoải mái trao đổi, giao tiếp cùng Teacher trong các chủ đề, kể cả các tình huống thực tế ngoài bài học.
+            </p>
+           </div>
+           <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
+            <div class="banner_video">
+             <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/4klYPUrPdZU" title="YouTube video player" width="560">
+             </iframe>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="swiper-slide item">
+          <div class="row">
+           <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
+            <div class="is-divider divider clearfix" style="max-width:100px;height:5px;background-color:rgb(5, 101, 203);">
+            </div>
+            <p class="title_lopmau">
+             LỚP HỌC MẪU
+             <span>
+              Tại Anh ngữ Will
+             </span>
+            </p>
+            <p class="txt_giao_vien">
+             GIÁO VIÊN WILL
+            </p>
+            <p class="txt_giao_vien">
+             <b>
+              Jack 32 tuổi. Biên Hòa. QLDA
+             </b>
+            </p>
+            <p class="txt_noi_dung">
+             Đến với Will với mong muốn cải thiện kỹ năng phát âm và giao tiếp nâng cao. Do tính chất công việc bận rộn nên Anh thường xuyên phải thay đổi lịch học tuy nhiên anh luôn hang say trao đổi, tranh luận, tận dụng tối đa thời gian học cùng giáo viên để đạt hiệu quả tốt nhất. Anh chia sẻ: “hình thức học online này rất hiệu quả, quá phù hợp với người bận rộn như mình. Không chỉ thuận lợi, linh hoạt về thời gian mà chi phí lại rất phải chăng,…”
+            </p>
+           </div>
+           <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
+            <div class="banner_video">
+             <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/0f68VQ-Okss" title="YouTube video player" width="560">
+             </iframe>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="swiper-button-prev">
+        </div>
+        <div class="swiper-button-next">
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+ </section>
+ <section class="awe-section-7">
+  <section class="section_taisao">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-11 col-md-12 col-sm-12 col-xs-12 col-lg-offset-2">
+      <div class="wrap_taisao">
+       <div class="title_module_main a-left">
+        <h2>
+         <span>
+          CAM KẾT CỦA ANH NGỮ WiLL
+         </span>
+        </h2>
+       </div>
+       <p class="blockchain">
+        Anh ngữ WiLL không ngừng nỗ lực, sáng tạo nhằm tìm ra những phương pháp dạy và học hiệu quả, góp phần nâng cao trình độ ngoại ngữ của Học viên bằng những phương thức đơn giản, hiệu quả nhất: Dễ học, Dễ hiểu, Dễ nhớ và Dễ áp dụng.
+       </p>
+       <div class="warp_taisao">
+        <div class="row">
+         <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
+          <div class="wrap_item_taisao">
+           <div class="image_taisao">
+            <img alt="&lt;span&gt;CAM KẾT GIÁO VIÊN&lt;/span&gt;&lt;br&gt;
+Đảm bảo 100% Giáo viên nước ngoài với trình độ chuyên môn đạt chuẩn quốc tế, giỏi phương pháp sư phạm, nhiệt tình tận tâm và luôn luôn có trách nhiệm trong tạo động lực học tập cho mỗi Học viên." class="img-responsive lazyload" data-src="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/img_taisao_1.png?1675673975161" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+           </div>
+           <p>
+            <span>
+             CAM KẾT GIÁO VIÊN
+            </span>
+            <br/>
+            Đảm bảo 100% Giáo viên nước ngoài với trình độ chuyên môn đạt chuẩn quốc tế, giỏi phương pháp sư phạm, nhiệt tình tận tâm và luôn luôn có trách nhiệm trong tạo động lực học tập cho mỗi Học viên.
+           </p>
+          </div>
+         </div>
+         <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
+          <div class="wrap_item_taisao">
+           <div class="image_taisao">
+            <img alt="&lt;span&gt;CAM KẾT CHẤT LƯỢNG&lt;/span&gt;&lt;br&gt;
+Cam kết 100% Học viên sẽ thay đổi quan điểm tích cực trong cách học tiếng anh ngay sau buổi học online đầu tiên tại Anh Ngữ Will: hứng thú, tự tin, không còn cảm giác sợ,… và tiến bộ vượt bậc sau khóa học." class="img-responsive lazyload" data-src="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/img_taisao_2.png?1675673975161" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+           </div>
+           <p>
+            <span>
+             CAM KẾT CHẤT LƯỢNG
+            </span>
+            <br/>
+            Cam kết 100% Học viên sẽ thay đổi quan điểm tích cực trong cách học tiếng anh ngay sau buổi học online đầu tiên tại Anh Ngữ Will: hứng thú, tự tin, không còn cảm giác sợ,… và tiến bộ vượt bậc sau khóa học.
+           </p>
+          </div>
+         </div>
+         <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
+          <div class="wrap_item_taisao">
+           <div class="image_taisao">
+            <img alt="&lt;span&gt;CAM KẾT DỊCH VỤ HỖ TRỢ&lt;/span&gt;&lt;br&gt;
+Hoạt động 24/7, đội ngũ Giáo vụ luôn hướng dẫn tận tình về cách thức luyện tập và thực hiện các bài tập về nhà theo sổ báo bài của Giáo viên nhằm giúp Học viên đạt hiệu quả tốt nhất, đồng thời giúp Học viên tận dụng tối đa quỹ thời gian quý báu học cùng Giáo viên. " class="img-responsive lazyload" data-src="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/img_taisao_3.png?1675673975161" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+           </div>
+           <p>
+            <span>
+             CAM KẾT DỊCH VỤ HỖ TRỢ
+            </span>
+            <br/>
+            Hoạt động 24/7, đội ngũ Giáo vụ luôn hướng dẫn tận tình về cách thức luyện tập và thực hiện các bài tập về nhà theo sổ báo bài của Giáo viên nhằm giúp Học viên đạt hiệu quả tốt nhất, đồng thời giúp Học viên tận dụng tối đa quỹ thời gian quý báu học cùng Giáo viên.
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+ </section>
+ <section class="awe-section-9">
+  <section class="section_danhgia">
+   <div class="wrap_full">
+    <div class="container">
+     <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+       <div class="title_module_main a-center">
+        <h2>
+         <span>
+          CẢM NHẬN CỦA HỌC VIÊN &amp; PHỤ HUYNH
+         </span>
+        </h2>
+       </div>
+       <p class="block a-center">
+        Hãy xem những nhận xét của  một số học viên &amp; phụ huynh về Anh Ngữ Will
+       </p>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+       <div class="owl_danhgia swiper-container">
+        <div class="swiper-wrapper">
+         <div class="swiper-slide item">
+          <div class="content_danhgia">
+           <p>
+            “Trước khi đến với Will thì em là đứa không biết gì về tiếng Anh nhưng sau khi đến với Will thì khả năng nghe, nói, đọc, viết của em đã được cải thiện. Các giáo viên ở Will rất thân thiện, luôn tạo cho học sinh tâm lý thoải mái, vui vẻ cùng những bài học thú vị giúp cho em có thể tiếp thu kiến thức dễ hơn. Em chân thành cảm ơn trung tâm Anh Ngữ Will ạ”
+           </p>
+           <span>
+            <span>
+             Nguyễn Thị Huyền Trang (Helen)
+            </span>
+            - Sinh viên năm nhất trường Cao đẳng Kinh tế đối ngoại.
+           </span>
+          </div>
+          <div class="img_danhgia">
+           <span>
+            <img alt="“Trước khi đến với Will thì em là đứa không biết gì về tiếng Anh nhưng sau khi đến với Will thì khả năng nghe, nói, đọc, viết của em đã được cải thiện. Các giáo viên ở Will rất thân thiện, luôn tạo cho học sinh tâm lý thoải mái, vui vẻ cùng những bài học thú vị giúp cho em có thể tiếp thu kiến thức dễ hơn. Em chân thành cảm ơn trung tâm Anh Ngữ Will ạ”" class="img-responsive lazyload" data-src="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/danhgia1.jpg?1675673975161" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+           </span>
+          </div>
+         </div>
+         <div class="swiper-slide item">
+          <div class="content_danhgia">
+           <p>
+            “Bản thân em ban đầu không mấy tự tin với tiếng anh, thậm chí có cảm giác sợ khi giao tiếp, nhưng sau vài tháng thì em nhận thấy khả năng giao tiếp tiếng Anh của em tiến bộ hẳn, em không còn rụt rè khi nói, phát âm cũng chắc và khỏe hơn. Điều này giúp em tự tin nhiều khi nói. Em cảm ơn Cô giáo Trixie đã tận tâm hướng dẫn trong từng bài học, chỉnh từng lỗi phát âm, đặc biệt Cô rất thân thiện và gần gũi giúp em có tâm lý thoải mái khi học và tiếp thu kiến thức được dễ dàng”
+           </p>
+           <span>
+            <span>
+             Nguyễn Ngọc Bảo Uyên (Anne)
+            </span>
+            - Sinh viên năm hai ngành Dược trường Đại học Nguyễn Tất Thành
+           </span>
+          </div>
+          <div class="img_danhgia">
+           <span>
+            <img alt="“Bản thân em ban đầu không mấy tự tin với tiếng anh, thậm chí có cảm giác sợ khi giao tiếp, nhưng sau vài tháng thì em nhận thấy khả năng giao tiếp tiếng Anh của em tiến bộ hẳn, em không còn rụt rè khi nói, phát âm cũng chắc và khỏe hơn. Điều này giúp em tự tin nhiều khi nói. Em cảm ơn Cô giáo Trixie đã tận tâm hướng dẫn trong từng bài học, chỉnh từng lỗi phát âm, đặc biệt Cô rất thân thiện và gần gũi giúp em có tâm lý thoải mái khi học và tiếp thu kiến thức được dễ dàng”" class="img-responsive lazyload" data-src="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/danhgia2.jpg?1675673975161" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+           </span>
+          </div>
+         </div>
+         <div class="swiper-slide item">
+          <div class="content_danhgia">
+           <p>
+            "Em đến với Will khi một lần lướt face tìm kiếm khóa học phù hợp. Từ test thử rồi yêu thích ngay từ buổi đầu, lần đầu em cảm thấy thích học tiếng Anh thật sự. Em rất cảm ơn Cô Jackie, cùng các Cô Giáo vụ luôn động viên và hướng dẫn nhiệt tình sát sao qua từng buổi học"
+           </p>
+           <span>
+            <span>
+             Võ Thị Thuỳ Dương
+            </span>
+            - SV năm 2 Ngành quản trị kinh doanh - xuất nhập khẩu Trường Cao đẳng Công Thương
+           </span>
+          </div>
+          <div class="img_danhgia">
+           <span>
+            <img alt="" anh="" buổi="" class="img-responsive lazyload" các="" cô="" cùng="" cảm="" data-src="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/danhgia3.jpg?1675673975161" dẫn="" em="" face="" giáo="" hướng="" học="" học""="" hợp.="" jackie,="" khi="" khóa="" kiếm="" luôn="" lướt="" lần="" một="" ngay="" nhiệt="" phù="" qua="" rất="" rồi="" sao="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" sát="" sự.="" test="" thích="" thấy="" thật="" thử="" tiếng="" tìm="" tình="" từ="" từng="" viên="" và="" với="" vụ="" will="" yêu="" đầu="" đầu,="" đến="" động="" ơn=""/>
+           </span>
+          </div>
+         </div>
+         <div class="swiper-slide item">
+          <div class="content_danhgia">
+           <p>
+            “Tôi hiện làm quản lý tại một doanh nghiệp nước ngoài có nhà máy tại VN. Tiếng anh vô cùng quan trọng trong công việc của tôi. Tôi tham gia lớp học tại Will thông qua sự giới thiệu từ một người bạn cũng đang theo học tại đây. Chúng tôi cần nâng cấp kỹ năng cao hơn trong môi trường giao tiếp Anh ngữ. Phương pháp học tiếng anh tại Will vô cùng hiệu quả với những người bận rộn. Thật sự rất hiệu quả, thoải mái và linh hoạt”
+           </p>
+           <span>
+            <span>
+             David Nam
+            </span>
+            - KS
+           </span>
+          </div>
+          <div class="img_danhgia">
+           <span>
+            <img alt="“Tôi hiện làm quản lý tại một doanh nghiệp nước ngoài có nhà máy tại VN. Tiếng anh vô cùng quan trọng trong công việc của tôi. Tôi tham gia lớp học tại Will thông qua sự giới thiệu từ một người bạn cũng đang theo học tại đây. Chúng tôi cần nâng cấp kỹ năng cao hơn trong môi trường giao tiếp Anh ngữ. Phương pháp học tiếng anh tại Will vô cùng hiệu quả với những người bận rộn. Thật sự rất hiệu quả, thoải mái và linh hoạt”" class="img-responsive lazyload" data-src="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/danhgia4.jpg?1675673975161" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+           </span>
+          </div>
+         </div>
+         <div class="swiper-slide item">
+          <div class="content_danhgia">
+           <p>
+            “Nhà mình có hai bé học tại Will, nói chung mình rất hài lòng về phương pháp dạy, cách làm việc chuyên nghiệp, tận tâm, đặc biệt các Teachers vô cùng tâm lý và kiên trì với trẻ con. Bé lớn nay tiến bộ rất nhiều, con tự tin hơn trước nhiều và nói tiếng Anh trôi chảy hơn. Bé nhỏ 4 tuổi nay cũng đã giao tiếp khá ổn, hy vọng một thời gian nữa con sẽ vững vàng như Anh Hai trong giao tiếp tiếng Anh. Chân thành cảm ơn Anh ngữ Will”
+           </p>
+           <span>
+            <span>
+             Chị Hải Yến
+            </span>
+            - Phụ huynh bé Dola và Kitty
+           </span>
+          </div>
+          <div class="img_danhgia">
+           <span>
+            <img alt="“Nhà mình có hai bé học tại Will, nói chung mình rất hài lòng về phương pháp dạy, cách làm việc chuyên nghiệp, tận tâm, đặc biệt các Teachers vô cùng tâm lý và kiên trì với trẻ con. Bé lớn nay tiến bộ rất nhiều, con tự tin hơn trước nhiều và nói tiếng Anh trôi chảy hơn. Bé nhỏ 4 tuổi nay cũng đã giao tiếp khá ổn, hy vọng một thời gian nữa con sẽ vững vàng như Anh Hai trong giao tiếp tiếng Anh. Chân thành cảm ơn Anh ngữ Will” " class="img-responsive lazyload" data-src="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/danhgia5.jpg?1675673975161" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+           </span>
+          </div>
+         </div>
+         <div class="swiper-slide item">
+          <div class="content_danhgia">
+           <p>
+            “Mình là Thu Thủy, Phụ Huynh bé Huỳnh Sơn đến từ Xuyên Mộc Vũng tàu. Mình rất vui khi biết đến Anh Ngữ Will, ở quê mình không có nhiều trung tâm tiếng anh, con học trường làng nên phát âm cực tệ,…vậy mà sau 3 tháng mình đăng ký cho con học với Cô giáo nước ngoài tại trung tâm Will, con hào hứng và tiến bộ hẳn về phát âm, đến nay đã là học sinh nổi trội trong lớp khi giao tiếp tiếng Anh. Hạnh phúc không gì tả được. Mình vô cùng cảm ơn Anh Ngữ Will”
+           </p>
+           <span>
+            <span>
+             Chị Thu Thủy
+            </span>
+            - Phụ Huynh Học Sinh
+           </span>
+          </div>
+          <div class="img_danhgia">
+           <span>
+            <img alt="“Mình là Thu Thủy, Phụ Huynh bé Huỳnh Sơn đến từ Xuyên Mộc Vũng tàu. Mình rất vui khi biết đến Anh Ngữ Will, ở quê mình không có nhiều trung tâm tiếng anh, con học trường làng nên phát âm cực tệ,…vậy mà sau 3 tháng mình đăng ký cho con học với Cô giáo nước ngoài tại trung tâm Will, con hào hứng và tiến bộ hẳn về phát âm, đến nay đã là học sinh nổi trội trong lớp khi giao tiếp tiếng Anh. Hạnh phúc không gì tả được. Mình vô cùng cảm ơn Anh Ngữ Will”" class="img-responsive lazyload" data-src="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/danhgia6.jpg?1675673975161" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+           </span>
+          </div>
+         </div>
+        </div>
+        <div class="swiper-button-prev">
+        </div>
+        <div class="swiper-button-next">
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+ </section>
+ <section class="awe-section-10">
+  <section class="section_blogs blognews">
+   <div class="container">
+    <div class="title_module_main a-center">
+     <h2>
+      <a href="goc-chia-se" title="GÓC CHIA SẺ">
+       GÓC CHIA SẺ
+      </a>
+     </h2>
+    </div>
+    <p class="block a-center">
+    </p>
+    <div class="list-blogs-link">
+     <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+       <div class="owl-blog-index swiper-container">
+        <div class="swiper-wrapper">
+         <div class="swiper-slide item">
+          <div class="item_wrap_blog">
+           <div class="item-blg blog-large">
+            <div class="blog-inner">
+             <div class="blog-img not_radius">
+              <a href="/nhung-moi-nguy-hiem-tiem-tang-khi-an-hau-song-dung-chu-quan-vi-su-tuoi-ngon">
+               <picture>
+                <source media="(max-width: 480px)" srcset="//bizweb.dktcdn.net/thumb/large/100/449/073/articles/small-20200907-083113-129164-hau-max-1800x1800-jpg-8b89e731dd.jpg?v=1761627283513"/>
+                <source media="(min-width: 481px) and (max-width: 767px)" srcset="//bizweb.dktcdn.net/thumb/large/100/449/073/articles/small-20200907-083113-129164-hau-max-1800x1800-jpg-8b89e731dd.jpg?v=1761627283513"/>
+                <source media="(min-width: 768px) and (max-width: 1023px)" srcset="//bizweb.dktcdn.net/thumb/large/100/449/073/articles/small-20200907-083113-129164-hau-max-1800x1800-jpg-8b89e731dd.jpg?v=1761627283513"/>
+                <source media="(min-width: 1024px) and (max-width: 1199px)" srcset="//bizweb.dktcdn.net/thumb/large/100/449/073/articles/small-20200907-083113-129164-hau-max-1800x1800-jpg-8b89e731dd.jpg?v=1761627283513"/>
+                <source media="(min-width: 1200px)" srcset="//bizweb.dktcdn.net/thumb/large/100/449/073/articles/small-20200907-083113-129164-hau-max-1800x1800-jpg-8b89e731dd.jpg?v=1761627283513"/>
+                <img alt="Những mối nguy hiểm tiềm tàng khi ăn hàu sống – đừng chủ quan vì sự “tươi ngon" class="img-responsive lazyload" data-src="https://bizweb.dktcdn.net/100/449/073/articles/small-20200907-083113-129164-hau-max-1800x1800-jpg-8b89e731dd.jpg?v=1761627283513" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" style="max-width:100%;"/>
+               </picture>
+              </a>
+             </div>
+             <div class="content__">
+              <span class="time_post f">
+               <i class="fa fa-calendar">
+               </i>
+               Thứ Tue, 
+													
+													28/10/2025
+              </span>
+              <h3>
+               <a class="text2line" href="/nhung-moi-nguy-hiem-tiem-tang-khi-an-hau-song-dung-chu-quan-vi-su-tuoi-ngon" title="Những mối nguy hiểm tiềm tàng khi ăn hàu sống – đừng chủ quan vì sự “tươi ngon">
+                Những mối nguy hiểm tiềm tàng khi ăn hàu sống – đừng chủ quan vì sự “tươi ngon
+               </a>
+              </h3>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="swiper-slide item">
+          <div class="item_wrap_blog">
+           <div class="item-blg blog-large">
+            <div class="blog-inner">
+             <div class="blog-img not_radius">
+              <a href="/4-thuc-uong-ho-tro-ngua-xo-vua-dong-mach-tang-luu-thong-mau-hieu-qua">
+               <picture>
+                <source media="(max-width: 480px)" srcset="//bizweb.dktcdn.net/thumb/large/100/449/073/articles/z7160423194749-e8434d545c872ceb60b951beb4d75ecd.jpg?v=1761552201340"/>
+                <source media="(min-width: 481px) and (max-width: 767px)" srcset="//bizweb.dktcdn.net/thumb/large/100/449/073/articles/z7160423194749-e8434d545c872ceb60b951beb4d75ecd.jpg?v=1761552201340"/>
+                <source media="(min-width: 768px) and (max-width: 1023px)" srcset="//bizweb.dktcdn.net/thumb/large/100/449/073/articles/z7160423194749-e8434d545c872ceb60b951beb4d75ecd.jpg?v=1761552201340"/>
+                <source media="(min-width: 1024px) and (max-width: 1199px)" srcset="//bizweb.dktcdn.net/thumb/large/100/449/073/articles/z7160423194749-e8434d545c872ceb60b951beb4d75ecd.jpg?v=1761552201340"/>
+                <source media="(min-width: 1200px)" srcset="//bizweb.dktcdn.net/thumb/large/100/449/073/articles/z7160423194749-e8434d545c872ceb60b951beb4d75ecd.jpg?v=1761552201340"/>
+                <img alt="4 Thức Uống Hỗ Trợ Ngừa Xơ Vữa Động Mạch, Tăng Lưu Thông Máu Hiệu Quả" class="img-responsive lazyload" data-src="https://bizweb.dktcdn.net/100/449/073/articles/z7160423194749-e8434d545c872ceb60b951beb4d75ecd.jpg?v=1761552201340" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" style="max-width:100%;"/>
+               </picture>
+              </a>
+             </div>
+             <div class="content__">
+              <span class="time_post f">
+               <i class="fa fa-calendar">
+               </i>
+               Thứ Mon, 
+													
+													27/10/2025
+              </span>
+              <h3>
+               <a class="text2line" href="/4-thuc-uong-ho-tro-ngua-xo-vua-dong-mach-tang-luu-thong-mau-hieu-qua" title="4 Thức Uống Hỗ Trợ Ngừa Xơ Vữa Động Mạch, Tăng Lưu Thông Máu Hiệu Quả">
+                4 Thức Uống Hỗ Trợ Ngừa Xơ Vữa Động Mạch, Tăng Lưu Thông Máu Hiệu Quả
+               </a>
+              </h3>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="swiper-slide item">
+          <div class="item_wrap_blog">
+           <div class="item-blg blog-large">
+            <div class="blog-inner">
+             <div class="blog-img not_radius">
+              <a href="/cong-dung-cua-viec-an-sua-chua-hy-lap-moi-ngay">
+               <picture>
+                <source media="(max-width: 480px)" srcset="//bizweb.dktcdn.net/thumb/large/100/449/073/articles/z7153698382459-aa694a264bedb03754743ffd57974a24.jpg?v=1761368919330"/>
+                <source media="(min-width: 481px) and (max-width: 767px)" srcset="//bizweb.dktcdn.net/thumb/large/100/449/073/articles/z7153698382459-aa694a264bedb03754743ffd57974a24.jpg?v=1761368919330"/>
+                <source media="(min-width: 768px) and (max-width: 1023px)" srcset="//bizweb.dktcdn.net/thumb/large/100/449/073/articles/z7153698382459-aa694a264bedb03754743ffd57974a24.jpg?v=1761368919330"/>
+                <source media="(min-width: 1024px) and (max-width: 1199px)" srcset="//bizweb.dktcdn.net/thumb/large/100/449/073/articles/z7153698382459-aa694a264bedb03754743ffd57974a24.jpg?v=1761368919330"/>
+                <source media="(min-width: 1200px)" srcset="//bizweb.dktcdn.net/thumb/large/100/449/073/articles/z7153698382459-aa694a264bedb03754743ffd57974a24.jpg?v=1761368919330"/>
+                <img alt="Công dụng của việc ăn sữa chua Hy Lạp mỗi ngày" class="img-responsive lazyload" data-src="https://bizweb.dktcdn.net/100/449/073/articles/z7153698382459-aa694a264bedb03754743ffd57974a24.jpg?v=1761368919330" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" style="max-width:100%;"/>
+               </picture>
+              </a>
+             </div>
+             <div class="content__">
+              <span class="time_post f">
+               <i class="fa fa-calendar">
+               </i>
+               Thứ Sat, 
+													
+													25/10/2025
+              </span>
+              <h3>
+               <a class="text2line" href="/cong-dung-cua-viec-an-sua-chua-hy-lap-moi-ngay" title="Công dụng của việc ăn sữa chua Hy Lạp mỗi ngày">
+                Công dụng của việc ăn sữa chua Hy Lạp mỗi ngày
+               </a>
+              </h3>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="swiper-slide item">
+          <div class="item_wrap_blog">
+           <div class="item-blg blog-large">
+            <div class="blog-inner">
+             <div class="blog-img not_radius">
+              <a href="/cong-dung-thai-doc-gan-tuyet-voi-cua-cu-den-bi-quyet-bao-ve-la-gan-khoe-manh">
+               <picture>
+                <source media="(max-width: 480px)" srcset="//bizweb.dktcdn.net/thumb/large/100/449/073/articles/z7150088806065-471d6887e0c97a7e4bba403566e2ac03.jpg?v=1761279749533"/>
+                <source media="(min-width: 481px) and (max-width: 767px)" srcset="//bizweb.dktcdn.net/thumb/large/100/449/073/articles/z7150088806065-471d6887e0c97a7e4bba403566e2ac03.jpg?v=1761279749533"/>
+                <source media="(min-width: 768px) and (max-width: 1023px)" srcset="//bizweb.dktcdn.net/thumb/large/100/449/073/articles/z7150088806065-471d6887e0c97a7e4bba403566e2ac03.jpg?v=1761279749533"/>
+                <source media="(min-width: 1024px) and (max-width: 1199px)" srcset="//bizweb.dktcdn.net/thumb/large/100/449/073/articles/z7150088806065-471d6887e0c97a7e4bba403566e2ac03.jpg?v=1761279749533"/>
+                <source media="(min-width: 1200px)" srcset="//bizweb.dktcdn.net/thumb/large/100/449/073/articles/z7150088806065-471d6887e0c97a7e4bba403566e2ac03.jpg?v=1761279749533"/>
+                <img alt="Công dụng thải độc gan tuyệt vời của củ dền – Bí quyết bảo vệ lá gan khỏe mạnh" class="img-responsive lazyload" data-src="https://bizweb.dktcdn.net/100/449/073/articles/z7150088806065-471d6887e0c97a7e4bba403566e2ac03.jpg?v=1761279749533" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" style="max-width:100%;"/>
+               </picture>
+              </a>
+             </div>
+             <div class="content__">
+              <span class="time_post f">
+               <i class="fa fa-calendar">
+               </i>
+               Thứ Fri, 
+													
+													24/10/2025
+              </span>
+              <h3>
+               <a class="text2line" href="/cong-dung-thai-doc-gan-tuyet-voi-cua-cu-den-bi-quyet-bao-ve-la-gan-khoe-manh" title="Công dụng thải độc gan tuyệt vời của củ dền – Bí quyết bảo vệ lá gan khỏe mạnh">
+                Công dụng thải độc gan tuyệt vời của củ dền – Bí quyết bảo vệ lá gan khỏe mạnh
+               </a>
+              </h3>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+ </section>
+ <div class="toolbox_scroll hidden-xs">
+  <a class="tooltips" href="tel:0937226256">
+   <i class="fa fa-phone">
+   </i>
+   <span>
+    Gọi ngay
+   </span>
+  </a>
+  <a class="tooltips" href="/lien-he-tu-van">
+   <i class="fa fa-calendar">
+   </i>
+   <span>
+    Đăng ký khóa học
+   </span>
+  </a>
+  <a class="tooltips" href="https://www.facebook.com/Will.English.Center">
+   <i class="fa fa-facebook">
+   </i>
+   <span>
+    Fanpage
+   </span>
+  </a>
+ </div>
+ <section class="section_subscribe">
+  <div class="container">
+   <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+     <div class="wrap_ wrap_left">
+      <div class="block_position">
+       <h4>
+        ĐĂNG KÝ HỌC THỬ MIỄN PHÍ
+       </h4>
+       <p>
+        <p style="text-align: center;">
+         Đăng ký ngay để nhận tư vấn miễn phí
+         <br/>
+         Cơ hội nhận hàng ngàn ưu đãi học bổng lên tới
+         <span style="color:#f1c40f;">
+          <strong>
+           3.000.000
+          </strong>
+         </span>
+         đồng
+        </p>
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+     <div class="wrap_ wrap_right">
+      <form accept-charset="UTF-8" action="/postcontact" id="contact" method="post">
+       <input name="FormType" type="hidden" value="contact"/>
+       <input name="utf8" type="hidden" value="true">
+        <input id="Token-76ed928376b14c2c8a467994dc416fe3" name="Token" type="hidden"/>
+        <div class="row">
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+         </div>
+         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <input class="input-control" name="contact[Name]" placeholder="Họ và tên" required="" type="text" value=""/>
+         </div>
+         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 hidden">
+          <input class="input-control" id="email2" name="contact[email]" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email" required="" type="email" value="default@gmail.com"/>
+         </div>
+         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <input class="input-control" id="phone" name="contact[phone]" placeholder="Số điện thoại" required="" type="tel" value=""/>
+         </div>
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <textarea class="input-control" cols="5" name="contact[Body]" placeholder="Bạn đang quan tâm tới khóa học nào?" required="" rows="2"></textarea>
+         </div>
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-15 text-center">
+          <button class="button_custome_35" type="submit">
+           Đăng ký ngay
+          </button>
+         </div>
+        </div>
+       </input>
+      </form>
+     </div>
+    </div>
+   </div>
+  </div>
+ </section>
+ <!-- Messenger Plugin chat Code -->
+ <div id="fb-root">
+ </div>
+ <!-- Your Plugin chat code -->
+ <div class="fb-customerchat" id="fb-customer-chat">
+ </div>
+ <!-- Your SDK code -->
+ <a class="btn-call-now" href="tel:0704489256">
+  <i class="fa fa-phone">
+  </i>
+  <span>
+   0704489256
+  </span>
+ </a>
+ <link as="script" href="//bizweb.dktcdn.net/100/449/073/themes/854230/assets/main.js?1675673975161" rel="preload"/>
+</div>
+
+{%endblock %}
