@@ -1,0 +1,662 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(news.title | striptags).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ news.metaKeywords?:news.name }}">
+<meta name="description" content="{{ news.metaDescription?:news.name }}">
+<meta property="og:title" content="{{ news.metaTitle?:news.name }}">
+<meta property="og:url" content="{{ news.canonicalLink }}">
+<meta property="og:image" content="{{ news.pictureUri }}">
+<link rel="canonical" href="{{ news.canonicalLink }}">
+{%endblock %}
+
+{%block body %}
+
+<div class="opacity_menu">
+</div>
+<div class="bodywrap">
+ <section class="bread-crumb">
+  <div class="container">
+   <ul class="breadcrumb">
+    <li class="home">
+     <a href="/" title="Trang chủ">
+      <span>
+       Trang chủ
+      </span>
+     </a>
+     <span class="mr_lr">
+      <svg aria-hidden="true" class="svg-inline--fa fa-chevron-right fa-w-10" data-icon="chevron-right" data-prefix="fas" focusable="false" role="img" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+       <path class="" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" fill="currentColor">
+       </path>
+      </svg>
+     </span>
+    </li>
+    <li>
+     <a href="/blogs/news" title="Tin tức">
+      <span>
+       Tin tức
+      </span>
+     </a>
+     <span class="mr_lr">
+      <svg aria-hidden="true" class="svg-inline--fa fa-chevron-right fa-w-10" data-icon="chevron-right" data-prefix="fas" focusable="false" role="img" viewbox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
+       <path class="" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" fill="currentColor">
+       </path>
+      </svg>
+     </span>
+    </li>
+    <li>
+     <strong>
+      <span>
+       Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này?
+      </span>
+     </strong>
+    </li>
+   </ul>
+  </div>
+ </section>
+ <section class="blogpage">
+  <div class="container layout-article" itemscope="" itemtype="https://schema.org/Article">
+   <div class="bg_blog">
+    <meta content="/blogs/news/team-phu-nhan-rap-viet-do-sac-voi-bikini-ai-dang-chien-nhat-tren-duon" itemprop="mainEntityOfPage"/>
+    <meta content="Với sức nóng của Rap Việt mùa 3, tất tần tật những điều xoay quanh chương trình đều nhận được sự chú ý của cộng đồng mạng. Đặc biệt là cuộc sống đời thường hay chuyện tình cảm của các rap..." itemprop="description"/>
+    <meta content="Wolf Themes" itemprop="author"/>
+    <meta content="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này?" itemprop="headline"/>
+    <meta content="https:https://cdn.hstatic.net/files/200001089156/article/team_phu_nhan_rap_viet_do_sac_voi_bikini_766647a801dd4eef92d7d3feacb2edb5.jpg" itemprop="image"/>
+    <meta content="10.11.2025" itemprop="datePublished"/>
+    <meta content="10.11.2025" itemprop="dateModified"/>
+    <div itemprop="publisher" itemscope="" itemtype="https://schema.org/Organization">
+     <div itemprop="logo" itemscope="" itemtype="https://schema.org/ImageObject">
+      <img alt="Wolf Bikini" class="d-none" src="//cdn.hstatic.net/themes/200001089156/1001419193/14/logo.png?v=365"/>
+      <meta content="https://cdn.hstatic.net/themes/200001089156/1001419193/14/logo.png?v=365" itemprop="url"/>
+      <meta content="320" itemprop="width"/>
+      <meta content="35" itemprop="height"/>
+     </div>
+     <meta content="Wolf Bikini" itemprop="name"/>
+    </div>
+    <article class="article-main">
+     <div class="row justify-content-center">
+      <div class="right-content col-lg-9 col-12">
+       <div class="article-details clearfix">
+        <h1 class="article-title">
+         Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này?
+        </h1>
+        <div class="posts">
+         <div class="time-post f">
+          10 Tháng 11, 2025
+         </div>
+         <div class="time-post">
+          Wolf Themes
+         </div>
+        </div>
+        <div class="article-image">
+         <img alt="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này?" class="lazyload" data-src="https://cdn.hstatic.net/files/200001089156/article/team_phu_nhan_rap_viet_do_sac_voi_bikini_766647a801dd4eef92d7d3feacb2edb5.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"/>
+        </div>
+        <div class="rte">
+         <p>
+          Với sức nóng của
+          <em>
+           Rap Việt
+          </em>
+          mùa 3, tất tần tật những điều xoay quanh chương trình đều nhận được sự chú ý của cộng đồng mạng. Đặc biệt là cuộc sống đời thường hay chuyện tình cảm của các rapper, HLV cũng “lọt tầm ngắm” của dân tình. Đương nhiên, “team phu nhân” hay còn gọi là “nóc nhà” của các rapper cũng không ngoại lệ.
+         </p>
+         <p>
+          Vốn đều là những cô nàng xinh xắn, sở hữu ngoại hình nóng bỏng, “nóc nhà” của dàn rapper nhận nhiều sự yêu mến từ khán giả. Mỗi người đều toát lên một vẻ đẹp, cá tính riêng quyến rũ. Do vậy màn đọ sắc khi diện bikini của dàn mỹ nhân hẳn sẽ “bất phân thắng bại” lắm đây!
+         </p>
+         <p>
+          <a href="https://kenh14cdn.com/203336854389633024/2023/7/13/photo-14-1689211482978278068497.jpg" target="_blank" title="Mở bát cho cuộc chiến bikini này vẫn phải kể đến Tammy Phạm - bạn gái B Ray. Cô nàng sinh năm 2001 “làm mưa làm gió” trên MXH nhờ gương mặt khả ái, dễ thương.">
+           <img alt="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 1." src="https://kenh14cdn.com/thumb_w/620/203336854389633024/2023/7/13/photo-14-1689211482978278068497.jpg" title="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 1."/>
+          </a>
+         </p>
+         <p>
+          Mở bát cho cuộc chiến bikini này vẫn phải kể đến Tammy Phạm - bạn gái B Ray. Cô nàng sinh năm 2001 “làm mưa làm gió” trên MXH nhờ gương mặt khả ái, dễ thương.
+         </p>
+         <p>
+          <a href="https://kenh14cdn.com/203336854389633024/2023/7/13/photo-13-16892114818711343317768.jpg" target="_blank" title="Mặc dù có vóc dáng nhỏ nhắn nhưng đường cong hình thể của bạn gái B Ray vẫn đẹp miễn chê.">
+           <img alt="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 2." src="https://kenh14cdn.com/thumb_w/620/203336854389633024/2023/7/13/photo-13-16892114818711343317768.jpg" title="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 2."/>
+          </a>
+         </p>
+         <p>
+          Mặc dù có vóc dáng nhỏ nhắn nhưng đường cong hình thể của bạn gái B Ray vẫn đẹp miễn chê.
+         </p>
+         <p>
+          <a href="https://kenh14cdn.com/203336854389633024/2023/7/13/photo-12-16892114807271066620948.jpg" target="_blank" title="Cô nàng cũng rất chịu khó diện bikini để khoe trọn body quyến rũ của mình.">
+           <img alt="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 3." src="https://kenh14cdn.com/thumb_w/620/203336854389633024/2023/7/13/photo-12-16892114807271066620948.jpg" title="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 3."/>
+          </a>
+         </p>
+         <p>
+          Cô nàng cũng rất chịu khó diện bikini để khoe trọn body quyến rũ của mình.
+         </p>
+         <p>
+          <a href="https://kenh14cdn.com/203336854389633024/2023/7/13/photo-11-16892114789661030145862.jpg" target="_blank" title="Nhiều người nhận xét, Tammy Phạm có vẻ ngoài trong trẻo, ngọt ngào nên khi diện trang phục sexy trông vẫn có nét chuẩn “thần tiên tỷ tỷ”.">
+           <img alt="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 4." src="https://kenh14cdn.com/thumb_w/620/203336854389633024/2023/7/13/photo-11-16892114789661030145862.jpg" title="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 4."/>
+          </a>
+         </p>
+         <p>
+          Nhiều người nhận xét, Tammy Phạm có vẻ ngoài trong trẻo, ngọt ngào nên khi diện trang phục sexy trông vẫn có nét chuẩn “thần tiên tỷ tỷ”.
+         </p>
+         <p>
+          <a href="https://kenh14cdn.com/203336854389633024/2023/7/13/photo-10-168921147719188273656.jpg" target="_blank" title="“Gây sốt” không kém thời gian gần đây chính là cô nàng Bảo Hân - người yêu của nam producer Wokeup. Bên cạnh những lời khen xứng đôi, ngoại hình và gu thời trang của Bảo Hân cũng được nhiều người yêu thích.">
+           <img alt="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 5." src="https://kenh14cdn.com/thumb_w/620/203336854389633024/2023/7/13/photo-10-168921147719188273656.jpg" title="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 5."/>
+          </a>
+         </p>
+         <p>
+          “Gây sốt” không kém thời gian gần đây chính là cô nàng Bảo Hân - người yêu của nam producer Wokeup. Bên cạnh những lời khen xứng đôi, ngoại hình và gu thời trang của Bảo Hân cũng được nhiều người yêu thích.
+         </p>
+         <p>
+          <a href="https://kenh14cdn.com/203336854389633024/2023/7/13/photo-9-16892114760431819514948.jpg" target="_blank" title="Có phần trái ngược với Tammy, Bảo Hân theo đuổi hình tượng cá tính, gợi cảm. Cô nàng sở hữu thần thái cuốn hút trong mỗi bức hình khiến ai nấy đều phải chú ý.">
+           <img alt="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 6." src="https://kenh14cdn.com/thumb_w/620/203336854389633024/2023/7/13/photo-9-16892114760431819514948.jpg" title="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 6."/>
+          </a>
+         </p>
+         <p>
+          Có phần trái ngược với Tammy, Bảo Hân theo đuổi hình tượng cá tính, gợi cảm. Cô nàng sở hữu thần thái cuốn hút trong mỗi bức hình khiến ai nấy đều phải chú ý.
+         </p>
+         <p>
+          <a href="https://kenh14cdn.com/203336854389633024/2023/7/13/photo-8-16892114746722010537446.jpg" target="_blank" title="Không những vậy, bạn gái Wokeup khiến nhiều người ghen tị bởi body không chút mỡ thừa. Cô nàng có vòng bụng phẳng lì, vóc dáng đẹp không tì vết.">
+           <img alt="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 7." src="https://kenh14cdn.com/thumb_w/620/203336854389633024/2023/7/13/photo-8-16892114746722010537446.jpg" title="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 7."/>
+          </a>
+         </p>
+         <p>
+          Không những vậy, bạn gái Wokeup khiến nhiều người ghen tị bởi body không chút mỡ thừa. Cô nàng có vòng bụng phẳng lì, vóc dáng đẹp không tì vết.
+         </p>
+         <p>
+          <a href="https://kenh14cdn.com/203336854389633024/2023/7/13/photo-7-1689211473517872592663.jpg" target="_blank" title="Sở hữu 3 vòng bốc lửa, Bảo Hân đều nhận được rất nhiều lượt “thả tim” mỗi khi pose dáng với bikini.">
+           <img alt="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 8." src="https://kenh14cdn.com/thumb_w/620/203336854389633024/2023/7/13/photo-7-1689211473517872592663.jpg" title="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 8."/>
+          </a>
+         </p>
+         <p>
+          Sở hữu 3 vòng bốc lửa, Bảo Hân đều nhận được rất nhiều lượt “thả tim” mỗi khi pose dáng với bikini.
+         </p>
+         <p>
+          <a href="https://kenh14cdn.com/203336854389633024/2023/7/13/photo-6-16892114723861776840617.jpg" target="_blank" title="Emily Nguyễn - vợ BigDaddy cũng không hề kém cạnh đàn em trong khoản diện trang phục khoe dáng vóc vạn người mê.">
+           <img alt="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 9." src="https://kenh14cdn.com/thumb_w/620/203336854389633024/2023/7/13/photo-6-16892114723861776840617.jpg" title="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 9."/>
+          </a>
+         </p>
+         <p>
+          Emily Nguyễn - vợ BigDaddy cũng không hề kém cạnh đàn em trong khoản diện trang phục khoe dáng vóc vạn người mê.
+         </p>
+         <p>
+          <a href="https://kenh14cdn.com/203336854389633024/2023/7/13/photo-5-16892114709281381646322.jpg" target="_blank" title="Dù đã là bà mẹ 2 con nhưng Emily Nguyễn vẫn khiến netizen trầm trồ bởi vòng eo thon gọn, body săn chắc. Bên cạnh đó, tỉ lệ cơ thể hoàn hảo cùng đôi chân dài miên man cũng chính là lợi thế của bà xã BigDaddy.">
+           <img alt="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 10." src="https://kenh14cdn.com/thumb_w/620/203336854389633024/2023/7/13/photo-5-16892114709281381646322.jpg" title="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 10."/>
+          </a>
+         </p>
+         <p>
+          Dù đã là bà mẹ 2 con nhưng Emily Nguyễn vẫn khiến netizen trầm trồ bởi vòng eo thon gọn, body săn chắc. Bên cạnh đó, tỉ lệ cơ thể hoàn hảo cùng đôi chân dài miên man cũng chính là lợi thế của bà xã BigDaddy.
+         </p>
+         <p>
+          <a href="https://kenh14cdn.com/203336854389633024/2023/7/13/photo-4-16892114685642113672259.jpg" target="_blank" title="Không hổ danh là hot girl đời đầu, Emily Nguyễn vẫn giữ vững phong độ của mình trên đường đua nhan sắc.">
+           <img alt="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 11." src="https://kenh14cdn.com/thumb_w/620/203336854389633024/2023/7/13/photo-4-16892114685642113672259.jpg" title="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 11."/>
+          </a>
+         </p>
+         <p>
+          Không hổ danh là hot girl đời đầu, Emily Nguyễn vẫn giữ vững phong độ của mình trên đường đua nhan sắc.
+         </p>
+         <p>
+          <a href="https://kenh14cdn.com/203336854389633024/2023/7/13/photo-3-1689211466873261983967.jpg" target="_blank" title="Vừa là “nóc nhà” của Minh Lai, vừa là thí sinh tại chương trình Rap Việt, Liu Grace đang là cái tên được cộng đồng mạng quan tâm. Cô nàng sinh năm 1999 được yêu mến bởi tài năng vượt trội cùng tính cách vui vẻ, đáng yêu.">
+           <img alt="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 12." src="https://kenh14cdn.com/thumb_w/620/203336854389633024/2023/7/13/photo-3-1689211466873261983967.jpg" title="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 12."/>
+          </a>
+         </p>
+         <p>
+          Vừa là “nóc nhà” của Minh Lai, vừa là thí sinh tại chương trình Rap Việt, Liu Grace đang là cái tên được cộng đồng mạng quan tâm. Cô nàng sinh năm 1999 được yêu mến bởi tài năng vượt trội cùng tính cách vui vẻ, đáng yêu.
+         </p>
+         <p>
+          <a href="https://kenh14cdn.com/203336854389633024/2023/7/13/photo-2-1689211465549325242211.jpeg" target="_blank" title="Liu Grace có vóc dáng nhỏ nhắn, thậm chí còn có nhiều người gọi cô nàng là “bé hạt tiêu”. Tuy nhiên nữ rapper lại toát lên vẻ cá tính, tinh nghịch không lẫn vào đâu.">
+           <img alt="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 13." src="https://kenh14cdn.com/thumb_w/620/203336854389633024/2023/7/13/photo-2-1689211465549325242211.jpeg" title="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 13."/>
+          </a>
+         </p>
+         <p>
+          Liu Grace có vóc dáng nhỏ nhắn, thậm chí còn có nhiều người gọi cô nàng là “bé hạt tiêu”. Tuy nhiên nữ rapper lại toát lên vẻ cá tính, tinh nghịch không lẫn vào đâu.
+         </p>
+         <p>
+          <a href="https://kenh14cdn.com/203336854389633024/2023/7/13/photo-1-1689211461574452747300.jpeg" target="_blank" title="Và khi diện bikini, cô nàng cũng “cực chiến” khiến nhiều người bị thu hút.">
+           <img alt="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 14." src="https://kenh14cdn.com/thumb_w/620/203336854389633024/2023/7/13/photo-1-1689211461574452747300.jpeg" title="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này? - Ảnh 14."/>
+          </a>
+         </p>
+         <p>
+          Và khi diện bikini, cô nàng cũng “cực chiến” khiến nhiều người bị thu hút.
+         </p>
+        </div>
+       </div>
+       <div class="blog_related">
+        <div class="title">
+         Bạn có thể quan tâm
+        </div>
+        <div class="row">
+         <div class="col-lg-4 col-md-4 col-sm-6">
+          <div class="item-blog">
+           <a class="block-thumb thumb" href="/blogs/news/bi-quyet-mac-bikini-hack-chan" title="Bí quyết mặc bikini hack chân">
+            <img alt="Bí quyết mặc bikini hack chân" class="lazyload duration-300" data-src="https://cdn.hstatic.net/files/200001089156/article/bi_quyet_mac_bikini_hack_chan_f51cf45c79954592be49eb132b50ac60.jpg" height="400" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" width="600"/>
+           </a>
+           <div class="block-content">
+            <h4>
+             <a href="/blogs/news/bi-quyet-mac-bikini-hack-chan" title="Bí quyết mặc bikini hack chân">
+              Bí quyết mặc bikini hack chân
+             </a>
+            </h4>
+            <p class="justify line-clamp line-clamp-3">
+             Mặc bikini như thế nào để “ hack chân “ - Các nàng chân ngắn đừng bỏ qua những gợi ý sau nếu muốn diện bikini đẹp chuẩn.Bikini cạp caoVới độ "lừa tình" của bikini cạp cao, phần thân dưới của các nàng chân ngắn sẽ dài ra trông thấy. Ngoài ra phần lưng quần cạp cao còn giúp bạn che được vòng eo không thon gọn để tạo cảm giác thân hình cân đối hơn.Bikini với đường xẻ đùi caoNhững bộ swimsuit với đường xẻ cao là một vị cứu tinh cho những cô nàng lưng dài – chân ngắn. Đường xẻ đùi của những bộ swimsuit này sẽ khiến phần lưng ngắn lại và đôi chân trở nên dài hơn,...
+            </p>
+            <p class="time-post">
+             <span class="date-post">
+              10 Tháng 11, 2025
+             </span>
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="col-lg-4 col-md-4 col-sm-6">
+          <div class="item-blog">
+           <a class="block-thumb thumb" href="/blogs/news/midu-dien-bikini-cuc-chay-flex-duong-cong-nuot-na-dot-mat-nguoi-nhin" title="Midu diện bikini cực cháy, flex đường cong nuột nà đốt mắt người nhìn">
+            <img alt="Midu diện bikini cực cháy, flex đường cong nuột nà đốt mắt người nhìn" class="lazyload duration-300" data-src="https://cdn.hstatic.net/files/200001089156/article/midu_dien_bikini_cuc_chay__flex_duong_cong_nuot_na_dot_mat_nguoi_nhin_06ca945c5f3b45d0ad868e8dec99fdb4.jpg" height="400" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" width="600"/>
+           </a>
+           <div class="block-content">
+            <h4>
+             <a href="/blogs/news/midu-dien-bikini-cuc-chay-flex-duong-cong-nuot-na-dot-mat-nguoi-nhin" title="Midu diện bikini cực cháy, flex đường cong nuột nà đốt mắt người nhìn">
+              Midu diện bikini cực cháy, flex đường cong nuột nà đốt mắt người nhìn
+             </a>
+            </h4>
+            <p class="justify line-clamp line-clamp-3">
+             Để có sắc vóc gợi cảm, Midu đã chăm chỉ tập luyện kết hợp cùng chế độ ăn hợp lý.Mới đây, trên trang cá nhân, Midu khiến cư dân mạng "đứng ngồi không yên" khi chia sẻ loạt ảnh diện bikini cực bốc. Trong bộ áo tắm 2 mảnh màu trắng, nữ diễn viên khoe trọn body nuột nà với "vòng eo con kiến" gợi cảm. Kết hợp cùng chiếc kính trendy, Midu gây xuýt xoa với thần thái sang chảnh.Dù đây không phải lần đầu Midu ăn diện "mát mẻ" nhưng bên dưới bài đăng, netizen vẫn không khỏi rần rần, dành nhiều lời khen có cánh trước sắc vóc gợi cảm của mỹ nhân 34 tuổi. Midu cho biết để...
+            </p>
+            <p class="time-post">
+             <span class="date-post">
+              10 Tháng 11, 2025
+             </span>
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="col-lg-4 col-md-4 col-sm-6">
+          <div class="item-blog">
+           <a class="block-thumb thumb" href="/blogs/news/team-phu-nhan-rap-viet-do-sac-voi-bikini-ai-dang-chien-nhat-tren-duon" title="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này?">
+            <img alt="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này?" class="lazyload duration-300" data-src="https://cdn.hstatic.net/files/200001089156/article/team_phu_nhan_rap_viet_do_sac_voi_bikini_766647a801dd4eef92d7d3feacb2edb5.jpg" height="400" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" width="600"/>
+           </a>
+           <div class="block-content">
+            <h4>
+             <a href="/blogs/news/team-phu-nhan-rap-viet-do-sac-voi-bikini-ai-dang-chien-nhat-tren-duon" title="Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này?">
+              Team phu nhân Rap Việt đọ sắc với bikini: Ai đang chiến nhất trên đường đua này?
+             </a>
+            </h4>
+            <p class="justify line-clamp line-clamp-3">
+             Với sức nóng của Rap Việt mùa 3, tất tần tật những điều xoay quanh chương trình đều nhận được sự chú ý của cộng đồng mạng. Đặc biệt là cuộc sống đời thường hay chuyện tình cảm của các rapper, HLV cũng “lọt tầm ngắm” của dân tình. Đương nhiên, “team phu nhân” hay còn gọi là “nóc nhà” của các rapper cũng không ngoại lệ.Vốn đều là những cô nàng xinh xắn, sở hữu ngoại hình nóng bỏng, “nóc nhà” của dàn rapper nhận nhiều sự yêu mến từ khán giả. Mỗi người đều toát lên một vẻ đẹp, cá tính riêng quyến rũ. Do vậy màn đọ sắc khi diện bikini của dàn mỹ nhân hẳn sẽ “bất phân...
+            </p>
+            <p class="time-post">
+             <span class="date-post">
+              10 Tháng 11, 2025
+             </span>
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="col-lg-4 col-md-4 col-sm-6">
+          <div class="item-blog">
+           <a class="block-thumb thumb" href="/blogs/news/huyen-lizzie-dien-bikini-dung-chuan-gai-mot-con-trong-mon-con-mat" title="Huyền Lizzie diện bikini: Đúng chuẩn gái một con trông mòn con mắt">
+            <img alt="Huyền Lizzie diện bikini: Đúng chuẩn gái một con trông mòn con mắt" class="lazyload duration-300" data-src="https://cdn.hstatic.net/files/200001089156/article/huyen_lizzie_dien_bikini_dung_chuan_gai_mot_con_trong_mon_con_mat_c24e6de3cc6748a7a7a33b9973c1ae0d.jpg" height="400" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" width="600"/>
+           </a>
+           <div class="block-content">
+            <h4>
+             <a href="/blogs/news/huyen-lizzie-dien-bikini-dung-chuan-gai-mot-con-trong-mon-con-mat" title="Huyền Lizzie diện bikini: Đúng chuẩn gái một con trông mòn con mắt">
+              Huyền Lizzie diện bikini: Đúng chuẩn gái một con trông mòn con mắt
+             </a>
+            </h4>
+            <p class="justify line-clamp line-clamp-3">
+             Hình thể nuột nà với những đường cong quyến rũ của Huyền Lizzie khiến nhiều người phải thốt lên: "Đúng là gái một con trông mòn con mắt".Thời gian gần đây Huyền Lizzie liên tục chia sẻ những hình ảnh gợi cảm của bản thân lên trang cá nhân. Trong những bức ảnh mới nhất, người đẹp diện bikini dây khoe trọn những đường cong nóng bỏng.Nữ diễn viên thế hệ 9X sở hữu hình thể cuốn hút, nuột nà khiến người đối diện khó lòng rời mắt. Dù đã trải qua 1 lần sinh nở nhưng vòng eo con kiến cùng cơ bụng săn chắc của Huyền Lizzie vẫn "gây thương nhớ" cho không ít người.Sau cuộc hôn nhân...
+            </p>
+            <p class="time-post">
+             <span class="date-post">
+              10 Tháng 11, 2025
+             </span>
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="col-lg-4 col-md-4 col-sm-6">
+          <div class="item-blog">
+           <a class="block-thumb thumb" href="/blogs/news/bi-quyet-chon-bikini-cho-nang-lep-ve" title="Bí quyết chọn bikini cho nàng lép vế">
+            <img alt="Bí quyết chọn bikini cho nàng lép vế" class="lazyload duration-300" data-src="https://cdn.hstatic.net/files/200001089156/article/bi_quyet_chon_bikini_cho_nang_lep_ve_18cc1a50af374fa0b9987c8a1ad9b08a.jpg" height="400" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" width="600"/>
+           </a>
+           <div class="block-content">
+            <h4>
+             <a href="/blogs/news/bi-quyet-chon-bikini-cho-nang-lep-ve" title="Bí quyết chọn bikini cho nàng lép vế">
+              Bí quyết chọn bikini cho nàng lép vế
+             </a>
+            </h4>
+            <p class="justify line-clamp line-clamp-3">
+             Đừng tưởng rằng vòng một lép vế sẽ khó lựa chọn bikini, Wolf Bikini có rất nhiều gợi ý tuyệt vời cho cô nàng đây.Những tips chọn bikini cho cô nàng có vòng một khiêm tốn vừa đẹp vừa có thể che được khuyết điểm mà vẫn không kém phần thu hút.Bikini có gọngTrang phục bikini có gọng là một trợ thủ đắc lực cho cô nàng có vòng một khiêm tốn nhưng vẫn muốn khoe nét đầy đặn của cơ thể. Nhờ sự hỗ trợ của gọng đấy phối hợp cùng dây cột qua cổ hoặc hai dây, kéo hai bầu ngực lại gần nhau tạo cảm giác đầy đặn cho vòng một. Những thiết kế này thường có thêm...
+            </p>
+            <p class="time-post">
+             <span class="date-post">
+              10 Tháng 11, 2025
+             </span>
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="col-lg-4 col-md-4 col-sm-6">
+          <div class="item-blog">
+           <a class="block-thumb thumb" href="/blogs/news/tung-bi-che-bai-ve-ngoai-hinh-hoa-hau-thien-an-tu-tin-dien-bikini-kho" title="Từng bị chê bai về ngoại hình, Hoa hậu Thiên Ân tự tin diện bikini khoe eo thon">
+            <img alt="Từng bị chê bai về ngoại hình, Hoa hậu Thiên Ân tự tin diện bikini khoe eo thon" class="lazyload duration-300" data-src="https://cdn.hstatic.net/files/200001089156/article/he_bai_ve_ngoai_hinh__hoa_hau_thien_an_tu_tin_dien_bikini_khoe_eo_thon_7fb3dafc71ad44c3a3daec46fa9b5c0c.jpg" height="400" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" width="600"/>
+           </a>
+           <div class="block-content">
+            <h4>
+             <a href="/blogs/news/tung-bi-che-bai-ve-ngoai-hinh-hoa-hau-thien-an-tu-tin-dien-bikini-kho" title="Từng bị chê bai về ngoại hình, Hoa hậu Thiên Ân tự tin diện bikini khoe eo thon">
+              Từng bị chê bai về ngoại hình, Hoa hậu Thiên Ân tự tin diện bikini khoe eo thon
+             </a>
+            </h4>
+            <p class="justify line-clamp line-clamp-3">
+             Bộ ảnh mới nhất của Hoa hậu Thiên Ân nhận về nhiều lời khen ngợi từ cư dân mạng.Trên trang cá nhân, Hoa hậu Đoàn Thiên Ân khiến nhiều người dùng mạng xuýt xoa khi khoe thân hình nuột nà với trang phục bikini màu cam rực rỡ.Người đẹp khéo léo sử dụng đồ bơi với thiết kế lưng quần cao giúp che đi nhược điểm ở phần bụng đồng thời tạo hiệu ứng cân đối hơn về tỷ lệ hình thể, kéo dài đôi chân trước ống kính.Hình thể nuột nà với những đường cong cuốn hút cùng thần thái rạng ngời, tràn đầy sức sống của Hoa hậu Hòa bình Việt Nam 2022 nhận được nhiều lời khen...
+            </p>
+            <p class="time-post">
+             <span class="date-post">
+              10 Tháng 11, 2025
+             </span>
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <form accept-charset="UTF-8" action="/blogs/news/team-phu-nhan-rap-viet-do-sac-voi-bikini-ai-dang-chien-nhat-tren-duon/comments" class="comment-form" id="article--comment-form" method="post">
+        <input name="form_type" type="hidden" value="new_comment"/>
+        <input name="utf8" type="hidden" value="✓"/>
+        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt_vDMNsdFhEE5pObQKlQFYggY9iaKd0MYxJpvbdKh9GP-GptF837PBzYCARo8zZjZR7a2c7KzLKv8lA1w0RQ8KJTJOdN87un7magNZcLcwFl6uqwmhsCeOo8EAUy2T21jE"/>
+        <div class="form-coment">
+         <div class="margin-top-0 w-100">
+          <h5 class="title-form-coment">
+           Viết bình luận của bạn
+          </h5>
+         </div>
+         <div class="row">
+          <div class="col-md-12 col-12">
+           <fieldset class="form-group padding-0">
+            <label>
+             Họ và tên
+            </label>
+            <input class="form-control form-control-lg" id="full-name" name="comment[author]" placeholder="Họ và tên" required="" type="text" value=""/>
+           </fieldset>
+          </div>
+          <div class="col-md-12 col-12">
+           <fieldset class="form-group padding-0">
+            <label>
+             Email
+            </label>
+            <input class="form-control form-control-lg" name="comment[email]" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" placeholder="Email" required="" type="email" value=""/>
+           </fieldset>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+           <label>
+            Nội dung
+           </label>
+           <textarea class="form-control form-control-lg" id="comment" name="comment[body]" placeholder="Nội dung" required="" rows="6"></textarea>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+           <button class="btn btn-primary button_45" type="submit">
+            Gửi bình luận
+           </button>
+          </div>
+         </div>
+        </div>
+        <!-- End form mail -->
+        <input id="1048e8dbdbd94902a632ebc370ce300a" name="g-recaptcha-response" type="hidden"/>
+       </form>
+      </div>
+     </div>
+    </article>
+   </div>
+  </div>
+ </section>
+ <div class="alert alert-success" id="js-global-alert" role="alert">
+  <button class="close" type="button">
+   <span aria-hidden="true">
+    <span aria-hidden="true">
+     ×
+    </span>
+   </span>
+  </button>
+  <h5 class="alert-heading">
+  </h5>
+  <p class="alert-content">
+  </p>
+ </div>
+ <svg style="display: none;">
+  <defs>
+   <g id="iconArrowUp">
+    <path d="M12 6v13M6.999 10L12 4.999 17.001 10" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" vector-effect="non-scaling-stroke">
+    </path>
+   </g>
+   <g id="iconArrowLeft">
+    <path d="M6 12h13M10 7l-5 5 5 5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" vector-effect="non-scaling-stroke">
+    </path>
+   </g>
+   <g id="iconArrowRight">
+    <path d="M18 12H5M13 7l5 5-5 5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" vector-effect="non-scaling-stroke">
+    </path>
+   </g>
+   <g id="iconArrowDown">
+    <path d="M12 18V5M17.001 13.999L12 19l-5.001-5.001" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" vector-effect="non-scaling-stroke">
+    </path>
+   </g>
+   <g id="iconChevronUp">
+    <path d="M18 16l-6-6-6 6" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" vector-effect="non-scaling-stroke">
+    </path>
+   </g>
+   <g id="iconChevronLeft">
+    <path d="M15,6,9,12l6,6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" vector-effect="non-scaling-stroke">
+    </path>
+   </g>
+   <g id="iconChevronRight">
+    <path d="M9,18l6-6L9,6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" vector-effect="non-scaling-stroke">
+    </path>
+   </g>
+   <g id="iconChevronDown">
+    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" vector-effect="non-scaling-stroke">
+    </path>
+   </g>
+   <g id="iconPlus">
+    <path d="M12 6v12M6 12h12" stroke="currentColor" stroke-linecap="round" stroke-width="1.2" vector-effect="non-scaling-stroke">
+    </path>
+   </g>
+   <g id="iconMinus">
+    <path d="M6 12h12" stroke="currentColor" stroke-linecap="round" stroke-width="1.2" vector-effect="non-scaling-stroke">
+    </path>
+   </g>
+   <g id="iconCheck">
+    <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" vector-effect="non-scaling-stroke">
+    </path>
+   </g>
+   <g id="iconBubblePoint">
+    <path d="M0 4V0L12 4.03788e-07L0 4Z" fill="currentColor">
+    </path>
+   </g>
+   <g id="iconIndicator1">
+    <svg aria-label="Beach Club Logo" class="icon icon-beach-club icon--solid" height="32" viewbox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
+     <path d="M14.319,13.993V12.308a1.6,1.6,0,0,1-.6-1.24A2.148,2.148,0,0,1,16,9.121a2.287,2.287,0,0,1,2.073,1.109l.072.1,1.169-.7-.073-.114a3.666,3.666,0,0,0-3.2-1.777c-1.843,0-3.807,1.169-3.807,3.331a3.235,3.235,0,0,0,2.09,2.927Zm2.458-.506V15.1a2.419,2.419,0,0,1,1.513,2.2,2.554,2.554,0,0,1-2.513,2.645,2.671,2.671,0,0,1-1.922-.778,2.459,2.459,0,0,1-.686-1.553l-.012-.15-.144.03c-.12.023-1.121.234-1.23.258l-.126.024.024.127a4.072,4.072,0,0,0,8.09-.609C19.771,15.084,18.3,14.114,16.777,13.487ZM15.639,21.8a4.3,4.3,0,0,1-.832-.078v2.529h1.482V21.759A4.61,4.61,0,0,1,15.639,21.8Z">
+     </path>
+     <path d="M14.807,11.205v8.041a2.239,2.239,0,0,0,.97.211,2.029,2.029,0,0,0,.512-.066V17.772h1.464A2.472,2.472,0,0,0,17.8,17.3a1.663,1.663,0,0,0-.217-.867h-1.3V12.549h4.759V11.205Zm5.446,6.09a4.134,4.134,0,0,1-.024.476h.656V16.428h-.71A4.525,4.525,0,0,1,20.253,17.3Z">
+     </path>
+     <path d="M16,.416a15.577,15.577,0,0,1,11.018,26.6,15.591,15.591,0,0,1-22.036,0A15.467,15.467,0,0,1,1.645,22.06,15.593,15.593,0,0,1,1.639,9.934,15.588,15.588,0,0,1,16,.415ZM16,0A16,16,0,1,0,32,16,16,16,0,0,0,16,0Z">
+     </path>
+     <path d="M16,5.749a10.239,10.239,0,1,1-7.249,3A10.188,10.188,0,0,1,16,5.749Zm0-.417A10.665,10.665,0,1,0,26.662,16,10.666,10.666,0,0,0,16,5.332ZM1.639,15.2l.29-2.372.379.048-.12.969,2.1.259-.054.428-2.09-.26-.12.977ZM4.554,12.6l-2.331-.892.151-.4.885.338.482-1.271-.886-.338.15-.4,2.332.892-.15.4L4.1,10.506l-.483,1.271,1.09.416Zm1.1-4.608L5.1,8.777l.6.415.97-1.384.313.216L5.772,9.759,3.722,8.331,4.886,6.669l.314.217L4.283,8.2l.506.356.548-.789.314.223Zm2.62-1.242L6.832,4.711l1.234-.874a.815.815,0,0,1,.615-.168.552.552,0,0,1,.4.82.6.6,0,0,1,.734.252.7.7,0,0,1,.12.566.852.852,0,0,1-.4.549ZM7.4,4.771l.374.53.842-.6a.361.361,0,0,0,.163-.229.347.347,0,0,0-.06-.265.341.341,0,0,0-.193-.127.348.348,0,0,0-.283.085Zm.573.814.426.6.922-.65a.436.436,0,0,0,.187-.272A.342.342,0,0,0,9.452,5a.362.362,0,0,0-.217-.138.418.418,0,0,0-.332.072l-.926.65ZM11.8,3.506l-.9.343.265.681,1.579-.608.138.355L10.9,5.042l-.9-2.331L11.9,1.989l.139.355-1.5.571.223.579.9-.344Zm2.336-1.963.386-.049L15.97,3.837l-.47.054-.38-.632L13.94,3.4l-.217.705-.445.055Zm-.084,1.5.88-.1-.542-.909h-.025Zm4.789.681a1.721,1.721,0,0,1-1.283.367,1.306,1.306,0,0,1-1.2-1.481,1.31,1.31,0,0,1,1.494-1.157,1.739,1.739,0,0,1,1.107.579l-.324.253a1.318,1.318,0,0,0-.825-.446.9.9,0,0,0-1.006.83.9.9,0,0,0,.8,1.043,1.293,1.293,0,0,0,.983-.308Zm.5.6L20.253,2l.4.157-.344.879,1.265.494.344-.879.4.156L21.4,5.133l-.4-.157.428-1.09-1.265-.5-.428,1.09Zm5.88,3.145a1.719,1.719,0,0,1-1.265-.427,1.326,1.326,0,1,1,1.747-1.995,1.784,1.784,0,0,1,.584,1.109l-.41.024a1.321,1.321,0,0,0-.421-.838.9.9,0,0,0-1.3.109.9.9,0,0,0,.06,1.313,1.3,1.3,0,0,0,.983.308ZM27.572,7.2l-1.73,1.222.887,1.254-.314.223L25.283,8.3l2.036-1.439Zm2.21,4.235-1.493.6a.979.979,0,0,1-1.307-.67.98.98,0,0,1,.482-1.385l1.494-.6.163.4-1.495.6a.592.592,0,0,0-.283.843.6.6,0,0,0,.8.416l1.493-.6Zm-2.1,1.735,2.475-.313.187,1.5a.821.821,0,0,1-.139.621.53.53,0,0,1-.367.217.542.542,0,0,1-.542-.253.607.607,0,0,1-.572.53.69.69,0,0,1-.554-.163.871.871,0,0,1-.3-.614Zm1.168.289-.735.09.139,1.12a.428.428,0,0,0,.15.3.377.377,0,0,0,.266.072.349.349,0,0,0,.223-.126.441.441,0,0,0,.1-.326l-.139-1.127Zm.982-.127-.644.078.126,1.03a.355.355,0,0,0,.126.254.365.365,0,0,0,.259.072.285.285,0,0,0,.2-.114.384.384,0,0,0,.06-.29ZM5.283,25.566l1.741-1.789.988.958a.937.937,0,0,1,.337.692.714.714,0,0,1-.205.5.767.767,0,0,1-.891.133l-.277,1.145-.355-.344L6.9,25.8l-.639-.62-.669.686Zm1.784-1.217L6.53,24.9l.735.711a.413.413,0,0,0,.573.012.353.353,0,0,0,.1-.253.487.487,0,0,0-.186-.367Zm2.7,3.332L8.94,27.2l-.368.633,1.458.85-.193.33L8.012,27.946l1.259-2.157,1.753,1.024-.192.332-1.38-.808-.314.537.832.481Zm2.085-.494.09,1.916.024.006L13,27.476l.295.072.119,1.921.024.006,1-1.637.433.108-1.385,2.222-.415-.1-.12-1.752-.025-.006-.94,1.481-.415-.1L11.4,27.072Zm4.241.687.391-.006,1.205,2.475-.47.012-.313-.669-1.187.024-.283.681-.446.006,1.1-2.523Zm-.23,1.481.88-.018L16.3,28.38h-.024Zm2.97.783-.662-2.409,1.325-.368a.93.93,0,0,1,.765.06.748.748,0,0,1,.325.429.762.762,0,0,1-.343.837l.843.824-.476.133-.77-.782-.856.235.253.927Zm-.145-2.149.2.746.988-.27a.414.414,0,0,0,.3-.489.351.351,0,0,0-.163-.21.491.491,0,0,0-.41-.025l-.922.247ZM22.3,29l-1.26-2.158,1.036-.6a1.173,1.173,0,0,1,.958-.175,1.28,1.28,0,0,1,.754.62,1.306,1.306,0,0,1,.156,1,1.185,1.185,0,0,1-.614.712l-1.03.6Zm.825-.922a.734.734,0,0,0,.4-.458A.957.957,0,0,0,23.4,26.9a.94.94,0,0,0-.536-.446.747.747,0,0,0-.615.114l-.65.38.873,1.5.645-.38Zm2.24-3.754a1.369,1.369,0,0,0-.85.428c-.21.21-.33.464-.15.65s.464-.06.753-.307c.338-.295.874-.753,1.362-.259.422.428.229.952-.2,1.368a1.956,1.956,0,0,1-1.344.584l-.024-.4a1.6,1.6,0,0,0,1.109-.457c.265-.26.386-.555.187-.76-.223-.222-.47-.066-.808.211-.421.362-.9.765-1.325.338s-.149-.934.175-1.254a1.94,1.94,0,0,1,1.072-.547Z">
+     </path>
+    </svg>
+   </g>
+   <g id="iconIndicator2">
+    <svg aria-label="Truck icon" class="icon icon-truck" fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+     <path d="M8.583 18H14V4H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h2M14 9h6a3 3 0 0 1 3 3v6h-3.5" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke">
+     </path>
+     <circle cx="7" cy="19" r="2" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke">
+     </circle>
+     <circle cx="18" cy="19" r="2" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke">
+     </circle>
+    </svg>
+   </g>
+   <g id="iconIndicator3">
+    <svg aria-label="Return icon" class="icon icon-return" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+     <path d="M3,13.4a8.92,8.92,0,0,0,9,8.85,8.92,8.92,0,0,0,9-8.85,8.92,8.92,0,0,0-9-8.85H4.73" fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5" vector-effect="non-scaling-stroke">
+     </path>
+     <path d="M7.48,1.26,4.59,4.1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5" vector-effect="non-scaling-stroke">
+     </path>
+     <path d="M4.59,4.1l-.47.46L4.59,5h0L7.48,7.86h0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5" vector-effect="non-scaling-stroke">
+     </path>
+    </svg>
+   </g>
+  </defs>
+ </svg>
+</div>
+<div class="footer-nav">
+ <a class="item footer-nav-item" href="/" title="Trang chủ">
+  <svg fill="none" height="24px" viewbox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 12.2039V13.725C22 17.6258 22 19.5763 20.8284 20.7881C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.7881C2 19.5763 2 17.6258 2 13.725V12.2039C2 9.91549 2 8.77128 2.5192 7.82274C3.0384 6.87421 3.98695 6.28551 5.88403 5.10813L7.88403 3.86687C9.88939 2.62229 10.8921 2 12 2C13.1079 2 14.1106 2.62229 16.116 3.86687L18.116 5.10812C20.0131 6.28551 20.9616 6.87421 21.4808 7.82274" stroke="#1C274C" stroke-linecap="round" stroke-width="1.5">
+   </path>
+   <path d="M15 18H9" stroke="#1C274C" stroke-linecap="round" stroke-width="1.5">
+   </path>
+  </svg>
+  Trang chủ
+ </a>
+ <div class="button mobile-nav-toggle footer-nav-item" title="Menu">
+  <svg aria-hidden="true" class="feather feather-menu" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+   <line x1="3" x2="21" y1="12" y2="12">
+   </line>
+   <line x1="3" x2="21" y1="6" y2="6">
+   </line>
+   <line x1="3" x2="21" y1="18" y2="18">
+   </line>
+  </svg>
+  <svg aria-label="Cross icon" class="icon icon-cross" fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+   <path d="M17 7L7 17M7 7l10 10" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" vector-effect="non-scaling-stroke">
+   </path>
+  </svg>
+  Danh mục
+ </div>
+ <a class="footer-nav-item" href="/pages/he-thong-cua-hang" title="Cửa hàng">
+  <svg aria-label="Location icon" class="icon icon-location" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+   <path d="M13.41,6.59a2,2,0,1,1-2.77,2.87l-.05-.05a2,2,0,0,1,2.82-2.82Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" vector-effect="non-scaling-stroke">
+   </path>
+   <path d="M15.49,13.24A16,16,0,0,0,12,17.7a16.4,16.4,0,0,0-3.49-4.46C6.76,11.43,5.68,9.94,5.67,8A6.23,6.23,0,0,1,12,1.72,6.23,6.23,0,0,1,18.33,8C18.32,9.94,17.24,11.42,15.49,13.24Z" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke">
+   </path>
+   <path d="M7,16c-2.41.59-4,1.58-4,2.72C3,20.53,7,22,12,22s9-1.47,9-3.28c0-1.14-1.59-2.13-4-2.72" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" vector-effect="non-scaling-stroke">
+   </path>
+  </svg>
+  Cửa hàng
+ </a>
+ <a class="footer-nav-item" href="/pages/lien-he" title="Liên hệ">
+  <svg aria-label="Support icon" class="icon icon-support" fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+   <path d="M9.685 9.685A2.181 2.181 0 0 1 11.9 7.998 2.137 2.137 0 0 1 14.15 10C14.15 11.504 12 12 12 13M12.125 15.752a.125.125 0 1 1-.25 0 .125.125 0 0 1 .25 0" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" vector-effect="non-scaling-stroke">
+   </path>
+   <path clip-rule="evenodd" d="M3.81 17.738a10 10 0 1 1 2.452 2.452l-3.152.7.7-3.152Z" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke">
+   </path>
+  </svg>
+  Liên hệ
+ </a>
+</div>
+<link as="script" href="https://cdn.hstatic.net/shared/option_selection.js" rel="preload"/>
+<link as="script" href="//cdn.hstatic.net/themes/200001089156/1001419193/14/cookie.js?v=365" rel="preload"/>
+<link as="style" href="//cdn.hstatic.net/themes/200001089156/1001419193/14/ajaxcart.scss.css?v=365" rel="preload" type="text/css">
+ <link href="//cdn.hstatic.net/themes/200001089156/1001419193/14/ajaxcart.scss.css?v=365" media="all" rel="stylesheet" type="text/css"/>
+ <div class="backdrop__body-backdrop___1rvky">
+ </div>
+ <div class="popup-cart" id="popup-cart-desktop">
+  <div class="header-popcart">
+   <div class="top-cart-header">
+    <span>
+     <svg aria-hidden="true" class="svg-inline--fa fa-check-circle fa-w-16" data-icon="check-circle" data-prefix="fal" focusable="false" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+      <path class="" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" fill="currentColor">
+      </path>
+     </svg>
+     Bạn đã thêm [
+     <a class="cart-popup-name" href="#">
+     </a>
+     ] vào giỏ hàng
+    </span>
+   </div>
+   <a class="noti-cart-count" href="/cart" title="Giỏ hàng">
+    Giỏ hàng của bạn hiện có
+    <span class="count_item_pr">
+    </span>
+    sản phẩm
+   </a>
+   <a class="cart_btn-close" href="javascript:;" title="Đóng">
+    <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 365.696 365.696" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+     <g>
+      <path class="" d="m243.1875 182.859375 113.132812-113.132813c12.5-12.5 12.5-32.765624 0-45.246093l-15.082031-15.082031c-12.503906-12.503907-32.769531-12.503907-45.25 0l-113.128906 113.128906-113.132813-113.152344c-12.5-12.5-32.765624-12.5-45.246093 0l-15.105469 15.082031c-12.5 12.503907-12.5 32.769531 0 45.25l113.152344 113.152344-113.128906 113.128906c-12.503907 12.503907-12.503907 32.769531 0 45.25l15.082031 15.082031c12.5 12.5 32.765625 12.5 45.246093 0l113.132813-113.132812 113.128906 113.132812c12.503907 12.5 32.769531 12.5 45.25 0l15.082031-15.082031c12.5-12.503906 12.5-32.769531 0-45.25zm0 0" data-original="#000000" fill="#ffffff" style="" xmlns="http://www.w3.org/2000/svg">
+      </path>
+     </g>
+    </svg>
+   </a>
+  </div>
+  <div class="cartPopupContainer">
+  </div>
+ </div>
+ <div class="popup-cart-mobile" id="popup-cart-mobile">
+  <div class="header-popcart">
+   <div class="top-cart-header">
+    <span>
+     <svg height="682.66669pt" viewbox="-21 -21 682.66669 682.66669" width="682.66669pt" xmlns="http://www.w3.org/2000/svg">
+      <path d="m322.820312 387.933594 279.949219-307.273438 36.957031 33.671875-314.339843 345.023438-171.363281-162.902344 34.453124-36.238281zm297.492188-178.867188-38.988281 42.929688c5.660156 21.734375 8.675781 44.523437 8.675781 68.003906 0 148.875-121.125 270-270 270s-270-121.125-270-270 121.125-270 270-270c68.96875 0 131.96875 26.007812 179.746094 68.710938l33.707031-37.113282c-58.761719-52.738281-133.886719-81.597656-213.453125-81.597656-85.472656 0-165.835938 33.285156-226.273438 93.726562-60.441406 60.4375-93.726562 140.800782-93.726562 226.273438s33.285156 165.835938 93.726562 226.273438c60.4375 60.441406 140.800782 93.726562 226.273438 93.726562s165.835938-33.285156 226.273438-93.726562c60.441406-60.4375 93.726562-140.800782 93.726562-226.273438 0-38.46875-6.761719-75.890625-19.6875-110.933594zm0 0">
+      </path>
+     </svg>
+     Mua hàng thành công
+    </span>
+   </div>
+   <div class="media-content bodycart-mobile">
+   </div>
+   <a class="noti-cart-count" href="/cart" title="Giỏ hàng">
+    Giỏ hàng của bạn hiện có
+    <span class="count_item_pr">
+    </span>
+    sản phẩm
+   </a>
+   <a class="cart_btn-close iconclose" href="javascript:;" title="Đóng">
+    <svg id="Capa_1" style="enable-background:new 0 0 512.001 512.001;" version="1.1" viewbox="0 0 512.001 512.001" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+     <g>
+      <g>
+       <path d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717    L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859    c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287    l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285    L284.286,256.002z">
+       </path>
+      </g>
+     </g>
+    </svg>
+   </a>
+   <div class="bottom-action">
+    <div class="cart_btn-close tocontinued">
+     Tiếp tục mua hàng
+    </div>
+    <a class="checkout" href="/checkout" title="Thanh toán ngay">
+     Thanh toán ngay
+    </a>
+   </div>
+  </div>
+ </div>
+ <link as="script" href="//cdn.hstatic.net/themes/200001089156/1001419193/14/main.js?v=365" rel="preload"/>
+ <div class="d-none" id="list-favorite">
+  <div class="list-favorite-right container" data-type="wishlist">
+   <div class="list-favorite-main">
+    <div class="list-favorite-list row">
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="modal fade" id="popupCartModal" role="dialog">
+ </div>
+ <style>
+  .popup-haravan{position:fixed;bottom:80px;left:17px;margin:0;z-index:30;top:auto !important}
+	.popup-haravan .icon{position:relative;z-index:4;height:48px;width:48px;text-align:center;border-radius:50%;border:1px solid #ffffff;cursor:pointer;background:#862714;box-shadow:0 4px 8px rgba(0,0,0,0.15);box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;animation:pulse 2s infinite;animation:pulse 2s infinite;cursor:pointer}
+	.popup-haravan .icon svg{fill:#ffffff;width:20px;height:20px;transition:opacity 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;transition:opacity 0.35s ease-in-out, transform 0.35s ease-in-out;transition:opacity 0.35s ease-in-out, transform 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;animation:iconSkew 1s infinite ease-out;min-height:-webkit-fill-available}
+	.popup-haravan .content{background:#862714;color:#fff;padding:20px 10px 40px;border-radius:10px;width:300px;position:absolute;bottom:27px;left:20px;box-shadow:0 4px 20px rgba(0,0,0,0.2);-webkit-transform-origin:100% bottom;transform-origin:0 bottom;transform:scale(0);-webkit-transform:scale(0);-moz-transform:scale(0);-ms-transform:scale(0);-o-transform:scale(0);transition:-webkit-transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);transition:transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);transition:transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1),-webkit-transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);-webkit-transition:transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1)}
+	@media (max-width: 500px){
+		.popup-haravan .content{width:250px}
+	}
+	.popup-haravan .content .title{font-size:14px;font-weight:500;margin-bottom:12px;margin-top:8px}
+	.popup-haravan .content .close-popup-haravan{position:absolute;right:10px;top:5px;cursor:pointer}
+	.popup-haravan .content .close-popup-haravan svg{width:15px;height:15px}
+	.popup-haravan .content .close-popup-haravan svg path{fill:#fff}
+	.popup-haravan .content ul{margin-bottom:20px}
+	.popup-haravan .content ul li{margin-bottom:10px}
+	.popup-haravan .content ul li svg{margin-right:10px}
+	.popup-haravan .content ul li svg path{fill:#fff}
+	.popup-haravan .content ul li a{color:#fff}
+	.popup-haravan .content ul li a:hover{color:#fff;text-decoration: underline;}
+	.popup-haravan .content .ghichu{font-style:italic;font-size:14px}
+	.popup-haravan.active .content{-ms-transition-delay:0.1s;-webkit-transition-delay:0.15s;transition-delay:0.1s;transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);-o-transform:scale(1)}
+	.wolf-chat-plugin{bottom: 30px; z-index: 99; background-color: rgb(10, 124, 255);align-items: center;border-radius: 60px;display: flex;height: 44px;padding: 0px 16px;position: fixed;width: fit-content;right: 0px;top: auto !important;}
+ </style>
+</link>
+
+{%endblock %}
