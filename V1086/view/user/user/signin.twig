@@ -1,0 +1,867 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(translate('Đăng nhập')).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ getKeyContentValue('META_KEYWORDS') }}">
+<meta name="description" content="{{ getKeyContentValue('META_DESCRIPTION') }}">
+<meta property="og:title" content="{{ getKeyContentValue('META_TITLE') }}">
+<meta property="og:url" content="{{ getCurrentUrl() }}">
+<meta property="og:image" content="{{ getBusinessLogo() }}">
+<link rel="canonical" href="{{ getCurrentUrl() }}">
+{%endblock %}
+
+{%block body %}
+
+<main class="main-layout">
+ <div class="my-account-wrap">
+  <div class="container">
+   <div class="row">
+    <div class="col-12 col-sm-6 col-md-4 offset-sm-3 offset-md-4">
+     <div class="login-layout" id="auth-form">
+      <div class="auth-heading">
+       <i class="lar la-user">
+       </i>
+       <h1>
+        <span class="login-form-heading">
+         Đăng nhập
+        </span>
+        <span class="recover-form-heading">
+         Quên mật khẩu
+        </span>
+       </h1>
+      </div>
+      <div class="auth-form-body">
+       <div class="login-form-body">
+        <form accept-charset="UTF-8" action="/account/login" id="customer_login" method="post">
+         <input name="form_type" type="hidden" value="customer_login"/>
+         <input name="utf8" type="hidden" value="✓"/>
+         <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt9AFNs5Uk9c_VJ9SdqIWRUBydjIgFo7ACZm7SyWAaPA6d_tvi-NdM4GLn5sdwnSSs43AIcxsI0_hohZRM4y-giw8QBwiPjypVpk5nM55ZMfpLpsOQq1OBJQsjeh6fRWibk"/>
+         <div class="form-group">
+          <label for="login-email">
+           Email*
+          </label>
+          <input class="form-control" id="login-email" name="customer[email]" required="" type="email"/>
+         </div>
+         <div class="form-group">
+          <label for="login-password">
+           Mật khẩu*
+          </label>
+          <input class="form-control" id="login-password" name="customer[password]" required="" type="password"/>
+         </div>
+         <div class="auth-recover-btn">
+          <a class="auth-layout-trigger" data-layout="recover-layout" href="#">
+           Quên mật khẩu?
+          </a>
+         </div>
+         <div class="form-group">
+          <button class="btn btn-primary" type="submit">
+           ĐĂNG NHẬP
+          </button>
+         </div>
+         <div class="auth-back-btn">
+          <a href="/account/register">
+           Đăng ký
+          </a>
+         </div>
+        </form>
+       </div>
+       <div class="recover-form-body">
+        <form accept-charset="UTF-8" action="/account/recover" method="post">
+         <input name="form_type" type="hidden" value="recover_customer_password"/>
+         <input name="utf8" type="hidden" value="✓"/>
+         <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt9AFNs5Uk9c_VJ9SdqIWRUBydjIgFo7ACZm7SyWAaPA6d_tvi-NdM4GLn5sdwnSSs43AIcxsI0_hohZRM4y-giw8QBwiPjypVpk5nM55ZMfpLpsOQq1OBJQsjeh6fRWibk"/>
+         <div class="form-group">
+          <label for="recover-email">
+           Email*
+          </label>
+          <input class="form-control" id="recover-email" name="email" required="" type="email"/>
+         </div>
+         <div class="form-group">
+          <button class="btn btn-primary" type="submit">
+           Gửi
+          </button>
+         </div>
+         <div class="auth-back-btn">
+          <a class="auth-layout-trigger" data-layout="login-layout" href="#">
+           Đăng nhập
+          </a>
+         </div>
+        </form>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</main>
+<div class="shop-coupon-popup" id="shop-coupon-popup">
+ <label class="coupon-head">
+  Voucher ưu đãi
+ </label>
+ <div class="coupon-body">
+  <div class="coupon-body-wrap">
+   <div class="coupon-body-left">
+    <span>
+     <img alt="20k đơn hàng đầu tiên" src="//theme.hstatic.net/200000689391/1001102398/14/shop_coupon_item_image_1.png?v=217"/>
+    </span>
+   </div>
+   <div class="coupon-body-right">
+    <strong>
+     20k đơn hàng đầu tiên
+    </strong>
+    <p>
+     Giảm 60k đơn hàng đầu tiên (Nhập mã F1GENZ01) Mã: F1GENZ01
+    </p>
+    <span>
+     Ngày hết hạn: 31/12/2023
+    </span>
+    <button data-coupon="F1GENZ01" data-type="shop-coupon-confirm" type="button">
+     Sao chép
+    </button>
+   </div>
+  </div>
+ </div>
+ <div class="coupon-body">
+  <div class="coupon-body-wrap">
+   <div class="coupon-body-left">
+    <span>
+     <img alt="Freeship 50k" src="//theme.hstatic.net/200000689391/1001102398/14/shop_coupon_item_image_2.png?v=217"/>
+    </span>
+   </div>
+   <div class="coupon-body-right">
+    <strong>
+     Freeship 50k
+    </strong>
+    <p>
+     Miễn phí vận chuyển 50k cho đơn từ 5.000.000đ (Nhập mã F1GENZ02) Mã: F1GENZ02
+    </p>
+    <span>
+     Ngày hết hạn: 31/12/2023
+    </span>
+    <button data-coupon="F1GENZ02" data-type="shop-coupon-confirm" type="button">
+     Sao chép
+    </button>
+   </div>
+  </div>
+ </div>
+ <div class="coupon-body">
+  <div class="coupon-body-wrap">
+   <div class="coupon-body-left">
+    <span>
+     <img alt="Giảm giá 100k" src="//theme.hstatic.net/200000689391/1001102398/14/shop_coupon_item_image_3.png?v=217"/>
+    </span>
+   </div>
+   <div class="coupon-body-right">
+    <strong>
+     Giảm giá 100k
+    </strong>
+    <p>
+     Miễn phí phụ kiện 100k cho đơn từ 10.000.000đ (Nhập mã F1GENZ03) Mã: F1GENZ03
+    </p>
+    <span>
+     Ngày hết hạn: 31/12/2023
+    </span>
+    <button data-coupon="F1GENZ03" data-type="shop-coupon-confirm" type="button">
+     Sao chép
+    </button>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="shop-mobar">
+ <div class="shop-mobar-wrap">
+  <ul>
+   <li>
+    <a class="" href="/" title="Trang chủ">
+     <img alt="Trang chủ" class="lazyload" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_mobar_item_image_1_small.png?v=217" height="64" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="64"/>
+     <span>
+      Trang chủ
+     </span>
+    </a>
+   </li>
+   <li>
+    <a class="" href="https://f1genz-babie.myharavan.com/products/barbie-baby-girl-s-booties" title="Trang chi tiết">
+     <img alt="Trang chi tiết" class="lazyload" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_mobar_item_image_2_small.png?v=217" height="64" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="64"/>
+     <span>
+      Trang chi tiết
+     </span>
+    </a>
+   </li>
+   <li>
+    <a class="" href="/blogs/all" title="Trang tin tức">
+     <img alt="Trang tin tức" class="lazyload" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_mobar_item_image_3_small.png?v=217" height="64" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="64"/>
+     <span>
+      Trang tin tức
+     </span>
+    </a>
+   </li>
+   <li>
+    <a class="tool-contact-popup" href="/account" title="Danh mục trái">
+     <img alt="Danh mục trái" class="lazyload" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_mobar_item_image_4_small.png?v=217" height="64" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="64"/>
+     <span>
+      Đăng ký
+     </span>
+    </a>
+   </li>
+  </ul>
+ </div>
+</div>
+<div class="modal" id="shop-modal-contact" role="dialog" tabindex="-1">
+ <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+   <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+    <span aria-hidden="true">
+     ×
+    </span>
+   </button>
+   <div class="modal-contact" id="shop-modal-contact">
+    <div class="modal-contact-wrap">
+     <div class="modal-contact-wrap-right">
+      <div class="modal-contact-wrap-right-content">
+       <div class="section-title-all">
+        <span>
+         Đăng ký nhận tin
+        </span>
+        <p>
+         Để lại thông tin, để nhận ngay khuyến mãi từ chúng tôi nhé!
+        </p>
+       </div>
+       <form accept-charset="UTF-8" action="/account/contact" class="contact-form" method="post">
+        <input name="form_type" type="hidden" value="customer"/>
+        <input name="utf8" type="hidden" value="✓"/>
+        <input name="contact[tags]" type="hidden" value="khách hàng tiềm năng, bản tin"/>
+        <input name="contact[email]" placeholder="Nhập email của bạn..." required="" type="email" value=""/>
+        <button title="Đăng ký" type="submit">
+         <span>
+          Đăng ký
+         </span>
+        </button>
+        <span>
+         * Tôi đã đồng ý với các
+         <a href="/collections/all">
+          chính sách bảo mật
+         </a>
+         của F1GENZ BABIE
+        </span>
+        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt9AFNs5Uk9c_VJ9SdqIWRUBydjIgFo7ACZm7SyWAaPA6d_tvi-NdM4GLn5sdwnSSs43AIcxsI0_hohZRM4y-giw8QBwiPjypVpk5nM55ZMfpLpsOQq1OBJQsjeh6fRWibk"/>
+        <input id="53f252f3e9ec4a7a859eb1b6b2737cf6" name="g-recaptcha-response" type="hidden"/>
+        <noscript data-src="https://www.google.com/recaptcha/api.js?render=6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s">
+        </noscript>
+        <noscript>
+         let recaptchaElm=document.getElementById('53f252f3e9ec4a7a859eb1b6b2737cf6');let recaptchaForm=recaptchaElm.parentNode;recaptchaForm.addEventListener("submit",function(formEvent){if(!recaptchaElm.value){formEvent.preventDefault();grecaptcha.ready(function(){grecaptcha.execute('6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s',{action:'submit'}).then(function(token){recaptchaElm.value=token;recaptchaForm.requestSubmit(formEvent.submitter)})})}})
+        </noscript>
+       </form>
+      </div>
+     </div>
+     <div class="modal-contact-wrap-left">
+      <img alt=" - Contact" class="lazyload w-100" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_modal_contact_image_large.png?v=217" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="modal-phone" id="shop-modal-phone">
+ <div class="modal-phone-wrap">
+  <div class="section-title-all">
+   <span>
+    Liên hệ ngay với chúng tôi:
+   </span>
+   <p>
+    Nhận ngay voucher giảm giá lên tới
+    <b style="font-weight:bold;color:#f30;font-size:25px;">
+     49%
+    </b>
+    cho tất cả sản phẩm:
+    <b>
+     HOTLINE:
+    </b>
+    <b style="font-weight:bold;color:#f30;">
+     1900.63.60.99
+    </b>
+   </p>
+  </div>
+  <form accept-charset="UTF-8" action="/account/contact" class="contact-form" method="post">
+   <input name="form_type" type="hidden" value="customer"/>
+   <input name="utf8" type="hidden" value="✓"/>
+   <input id="shop-modal-phone-email" name="contact[email]" type="hidden" value=""/>
+   <input id="shop-modal-phone-number" name="contact[tags]" placeholder="Nhập số điện thoại của bạn..." type="number" value=""/>
+   <button title="Đăng ký" type="submit">
+    <span>
+     Đăng ký
+    </span>
+   </button>
+   <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt9AFNs5Uk9c_VJ9SdqIWRUBydjIgFo7ACZm7SyWAaPA6d_tvi-NdM4GLn5sdwnSSs43AIcxsI0_hohZRM4y-giw8QBwiPjypVpk5nM55ZMfpLpsOQq1OBJQsjeh6fRWibk"/>
+   <input id="0b4a8dfc0a914e0c96004396c2ac8c4c" name="g-recaptcha-response" type="hidden"/>
+   <noscript data-src="https://www.google.com/recaptcha/api.js?render=6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s">
+   </noscript>
+   <noscript>
+    let recaptchaElm=document.getElementById('0b4a8dfc0a914e0c96004396c2ac8c4c');let recaptchaForm=recaptchaElm.parentNode;recaptchaForm.addEventListener("submit",function(formEvent){if(!recaptchaElm.value){formEvent.preventDefault();grecaptcha.ready(function(){grecaptcha.execute('6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s',{action:'submit'}).then(function(token){recaptchaElm.value=token;recaptchaForm.requestSubmit(formEvent.submitter)})})}})
+   </noscript>
+  </form>
+ </div>
+</div>
+<div class="shop-menu-mobile">
+ <div class="shop-menu-mobile-head">
+  <label>
+   Menu
+  </label>
+  <button data-type="close-menu-mobile" type="button">
+   <svg class="" height="20" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="20" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+    <g>
+     <path class="" d="m4.59 59.41a2 2 0 0 0 2.83 0l24.58-24.58 24.59 24.58a2 2 0 0 0 2.83-2.83l-24.59-24.58 24.58-24.59a2 2 0 0 0 -2.83-2.83l-24.58 24.59-24.59-24.58a2 2 0 0 0 -2.82 2.82l24.58 24.59-24.58 24.59a2 2 0 0 0 0 2.82z" data-original="#000000" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+     </path>
+    </g>
+   </svg>
+  </button>
+ </div>
+ <ul class="shop-menu-mobile-body">
+  <li class="">
+   <a aria-label="Trang chủ" href="/">
+    Trang chủ
+   </a>
+  </li>
+  <li class="hasChild">
+   <a aria-label="Tất cả sản phẩm" href="/collections/all">
+    Tất cả sản phẩm
+    <span>
+     ›
+    </span>
+   </a>
+   <ul class="menu1">
+    <li class="hasChild">
+     <a aria-label="Áo trẻ em" href="/collections/gloves">
+      Áo trẻ em
+      <span>
+       ›
+      </span>
+     </a>
+     <ul class="menu2">
+      <li class="">
+       <a aria-label="Áo Polo" href="/collections/anchor">
+        Áo Polo
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Áo Thun" href="/collections/gloves">
+        Áo Thun
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Áo Khoác" href="/collections/anchor">
+        Áo Khoác
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Áo Sơ Mi" href="/collections/bag">
+        Áo Sơ Mi
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Áo Len" href="/collections/anchor">
+        Áo Len
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Áo Nỉ" href="/collections/gloves">
+        Áo Nỉ
+       </a>
+      </li>
+     </ul>
+    </li>
+    <li class="hasChild">
+     <a aria-label="Quần trẻ em" href="/collections/anchor">
+      Quần trẻ em
+      <span>
+       ›
+      </span>
+     </a>
+     <ul class="menu2">
+      <li class="">
+       <a aria-label="Quần Jeans" href="/collections/gloves">
+        Quần Jeans
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Quần Kaki" href="/collections/bag">
+        Quần Kaki
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Quần Short" href="/collections/anchor">
+        Quần Short
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Quần Nỉ" href="/collections/anchor">
+        Quần Nỉ
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Quần Legging" href="/collections/baby-seats">
+        Quần Legging
+       </a>
+      </li>
+     </ul>
+    </li>
+    <li class="">
+     <a aria-label="Đồ Bộ Trẻ Em" href="/collections/bag">
+      Đồ Bộ Trẻ Em
+     </a>
+    </li>
+    <li class="">
+     <a aria-label="Đồ Thể Thao Trẻ Em" href="/collections/bag">
+      Đồ Thể Thao Trẻ Em
+     </a>
+    </li>
+    <li class="">
+     <a aria-label="Nổi bật" href="/collections/baby-seats">
+      Nổi bật
+     </a>
+    </li>
+    <li class="">
+     <a aria-label="Phụ kiện trẻ em" href="/collections/baby-seats">
+      Phụ kiện trẻ em
+     </a>
+    </li>
+   </ul>
+  </li>
+  <li class="">
+   <a aria-label="Tin tức" href="/blogs/news">
+    Tin tức
+   </a>
+  </li>
+  <li class="hasChild">
+   <a aria-label="Nhóm sản phẩm" href="/collections/anchor">
+    Nhóm sản phẩm
+    <span>
+     ›
+    </span>
+   </a>
+   <ul class="menu1">
+    <li class="">
+     <a aria-label="Nhóm sản phẩm style 1" href="/collections/all?view=horizontal">
+      Nhóm sản phẩm style 1
+     </a>
+    </li>
+    <li class="">
+     <a aria-label="Nhóm sản phẩm style 2" href="/collections/all?view=vertical">
+      Nhóm sản phẩm style 2
+     </a>
+    </li>
+   </ul>
+  </li>
+  <li class="hasChild">
+   <a aria-label="Chi tiết sản phẩm" href="/products/baby-grow-party-hat?variant=1106081506&amp;view=style1">
+    Chi tiết sản phẩm
+    <span>
+     ›
+    </span>
+   </a>
+   <ul class="menu1">
+    <li class="">
+     <a aria-label="Chi tiết sản phẩm style 1" href="/products/baby-grow-party-hat?variant=1106081506&amp;view=style1">
+      Chi tiết sản phẩm style 1
+     </a>
+    </li>
+    <li class="">
+     <a aria-label="Chi tiết sản phẩm style 2" href="/products/baby-grow-party-hat?variant=1106081506&amp;view=style2">
+      Chi tiết sản phẩm style 2
+     </a>
+    </li>
+    <li class="">
+     <a aria-label="Chi tiết sản phẩm style 3" href="/products/baby-grow-party-hat?variant=1106081506&amp;view=style3">
+      Chi tiết sản phẩm style 3
+     </a>
+    </li>
+   </ul>
+  </li>
+  <li class="">
+   <a aria-label="Liên hệ" href="/pages/lien-he">
+    Liên hệ
+   </a>
+  </li>
+  <li class="">
+   <a aria-label="Đăng nhập" href="/account">
+    Đăng nhập
+   </a>
+   <a aria-label="Đăng ký" href="/account">
+    Đăng ký
+   </a>
+  </li>
+ </ul>
+ <div class="shop-menu-mobile-foot">
+  <div class="section-title-all">
+   <span>
+    Hổ trợ 24/7
+   </span>
+   <p>
+    Đừng ngừng ngại liên hệ chúng tôi, hổ trợ 24/7 từ thứ 2 - thứ 7. Hotline: 1900.63.60.99
+   </p>
+  </div>
+  <form accept-charset="UTF-8" action="/account/contact" class="contact-form" method="post">
+   <input name="form_type" type="hidden" value="customer"/>
+   <input name="utf8" type="hidden" value="✓"/>
+   <input name="contact[tags]" type="hidden" value="Khách hàng đăng ký nhận tin"/>
+   <input name="contact[first_name]" type="hidden" value="Người đăng ký"/>
+   <input name="contact[last_name]" type="hidden" value=""/>
+   <input name="contact[email]" placeholder="Nhập địa chỉ email của bạn..." required="" type="email"/>
+   <button type="submit">
+    <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 512.005 512.005" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+     <path class="" d="m511.658 51.675c2.496-11.619-8.895-21.416-20.007-17.176l-482 184c-5.801 2.215-9.638 7.775-9.65 13.984-.012 6.21 3.803 11.785 9.596 14.022l135.403 52.295v164.713c0 6.948 4.771 12.986 11.531 14.593 6.715 1.597 13.717-1.598 16.865-7.843l56.001-111.128 136.664 101.423c8.313 6.17 20.262 2.246 23.287-7.669 127.599-418.357 122.083-400.163 122.31-401.214zm-118.981 52.718-234.803 167.219-101.028-39.018zm-217.677 191.852 204.668-145.757c-176.114 185.79-166.916 176.011-167.684 177.045-1.141 1.535 1.985-4.448-36.984 72.882zm191.858 127.546-120.296-89.276 217.511-229.462z" data-original="#000000" fill="#000000">
+     </path>
+    </svg>
+   </button>
+   <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt9AFNs5Uk9c_VJ9SdqIWRUBydjIgFo7ACZm7SyWAaPA6d_tvi-NdM4GLn5sdwnSSs43AIcxsI0_hohZRM4y-giw8QBwiPjypVpk5nM55ZMfpLpsOQq1OBJQsjeh6fRWibk"/>
+   <input id="0b14910ba0fc4dcfb124d6ea21b14ac0" name="g-recaptcha-response" type="hidden"/>
+   <noscript data-src="https://www.google.com/recaptcha/api.js?render=6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s">
+   </noscript>
+   <noscript>
+    let recaptchaElm=document.getElementById('0b14910ba0fc4dcfb124d6ea21b14ac0');let recaptchaForm=recaptchaElm.parentNode;recaptchaForm.addEventListener("submit",function(formEvent){if(!recaptchaElm.value){formEvent.preventDefault();grecaptcha.ready(function(){grecaptcha.execute('6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s',{action:'submit'}).then(function(token){recaptchaElm.value=token;recaptchaForm.requestSubmit(formEvent.submitter)})})}})
+   </noscript>
+  </form>
+  <ul class="shop-social">
+   <li>
+    <a aria-label="F1GENZ BABIE - Facebook" href="/collections/all" target="_blank">
+     <img alt="F1GENZ BABIE - Facebook" height="30" loading="lazy" src="https://file.hstatic.net/200000588277/file/facebook__6__53aaa8d352524d3eb025af5203eaa437_icon.png" width="30"/>
+    </a>
+   </li>
+   <li>
+    <a aria-label="F1GENZ BABIE - Youtube" href="/collections/all" target="_blank">
+     <img alt="F1GENZ BABIE - Youtube" height="30" loading="lazy" src="https://file.hstatic.net/200000588277/file/youtube__5__4f04522e10494557a651f53a33ad4d76_icon.png" width="30"/>
+    </a>
+   </li>
+   <li>
+    <a aria-label="F1GENZ BABIE - Pinterest" href="/collections/all" target="_blank">
+     <img alt="F1GENZ BABIE - Youtube" height="30" loading="lazy" src="https://file.hstatic.net/200000588277/file/pinterest_a1a15995132a4275845412deba5f1193_icon.png" width="30"/>
+    </a>
+   </li>
+   <li>
+    <a aria-label="F1GENZ BABIE - TikTok" href="/collections/all" target="_blank">
+     <img alt="F1GENZ BABIE - TikTok" height="30" loading="lazy" src="https://file.hstatic.net/200000588277/file/tik-tok_d85bb4e7468c43ac9ed5437649b7405c_icon.png" width="30"/>
+    </a>
+   </li>
+   <li>
+    <a aria-label="F1GENZ BABIE - Instagram" href="/collections/all" target="_blank">
+     <img alt="F1GENZ BABIE - Instagram" height="30" loading="lazy" src="https://file.hstatic.net/200000588277/file/instagram__3__7de3ebbce1f24003b516ca6c1d7c24d5_icon.png" width="30"/>
+    </a>
+   </li>
+  </ul>
+ </div>
+</div>
+<div class="shop-cart-sidebar">
+ <div class="shop-cart-sidebar-head">
+  <label>
+   Giỏ hàng
+  </label>
+  <button data-type="shop-cart-sidebar-close" type="button">
+   <svg class="Icon Icon--close" height="15" role="presentation" viewbox="0 0 16 14" width="15">
+    <path d="M15 0L1 14m14 0L1 0" fill="none" fill-rule="evenodd" stroke="currentColor">
+    </path>
+   </svg>
+  </button>
+  <div class="shop-cart-sidebar-top-freeship">
+   <div class="shop-freeship" data-freeship-price="5000000000">
+    <div class="shop-freeship-bar">
+     <div class="shop-freeship-bar-main">
+      <span>
+      </span>
+     </div>
+    </div>
+    <div class="shop-freeship-note">
+     Mua thêm
+     <span>
+      50,000,000₫
+     </span>
+     để được miễn phí giao hàng trên toàn quốc
+    </div>
+   </div>
+   <div class="shop-cart-sidebar-top-freeship-label">
+    <img alt=" - Free Ship" class="lazyload" data-src="https://file.hstatic.net/200000306687/file/giphy__1__c91b6f02cea04a969d655681bb73caf8_small.gif" height="62" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="75"/>
+   </div>
+  </div>
+ </div>
+ <div class="shop-cart-sidebar-body">
+  <div class="shop-cart-sidebar-yes">
+  </div>
+  <div class="shop-cart-sidebar-no">
+   Giỏ hàng của bạn còn trống
+  </div>
+ </div>
+ <div class="shop-cart-sidebar-foot">
+  <button data-type="shop-cart-sidebar-note-action" title="Thêm ghi chú" type="button">
+   Thêm ghi chú
+  </button>
+  <a aria-label="Xem chi tiết giỏ hàng" href="/cart">
+   Xem chi tiết giỏ hàng
+  </a>
+  <p>
+   Phí ship &amp; thuế được tính ở Trang Thanh Toán
+  </p>
+  <a aria-label="Thanh toán" href="/checkout">
+   <span>
+    Thanh toán
+   </span>
+   <span>
+   </span>
+   <span>
+    0₫
+   </span>
+  </a>
+  <div class="shop-cart-sidebar-note">
+   <label>
+    Thêm ghi chú
+   </label>
+   <textarea placeholder="Chúng tôi có thể giúp gì cho bạn?"></textarea>
+   <button data-type="shop-cart-sidebar-note-save" type="button">
+    Lưu
+   </button>
+  </div>
+ </div>
+</div>
+<div class="shop-social-sidebar d-none d-sm-block">
+ <a href="/collections/all" style="background-color: #ffffff;" target="_blank" title="Zalo">
+  <img alt="Social Zalo" class="lazyload w-100" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_social_sidebar_item_image_1_icon.png?v=217" height="32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="32"/>
+  Zalo
+ </a>
+ <a href="/collections/all" style="background-color: #ffffff;" target="_blank" title="Snapchat">
+  <img alt="Social Snapchat" class="lazyload w-100" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_social_sidebar_item_image_2_icon.png?v=217" height="32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="32"/>
+  Snapchat
+ </a>
+ <a href="/collections/all" style="background-color: #ffffff;" target="_blank" title="Tiktok">
+  <img alt="Social Tiktok" class="lazyload w-100" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_social_sidebar_item_image_3_icon.png?v=217" height="32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="32"/>
+  Tiktok
+ </a>
+ <a href="/collections/all" style="background-color: #ffffff;" target="_blank" title="Instagram">
+  <img alt="Social Instagram" class="lazyload w-100" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_social_sidebar_item_image_4_icon.png?v=217" height="32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="32"/>
+  Instagram
+ </a>
+ <a href="/collections/all" style="background-color: #ffffff;" target="_blank" title="Youtube">
+  <img alt="Social Youtube" class="lazyload w-100" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_social_sidebar_item_image_5_icon.png?v=217" height="32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="32"/>
+  Youtube
+ </a>
+ <a href="/collections/all" style="background-color: #ffffff;" target="_blank" title="Messenger">
+  <img alt="Social Messenger" class="lazyload w-100" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_social_sidebar_item_image_6_icon.png?v=217" height="32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="32"/>
+  Messenger
+ </a>
+ <button data-fancybox="" data-src="#shop-modal-phone" style="background-color: #ffffff;" title=" - Support">
+  <img alt="Hổ trợ 24/7" class="lazyload w-100" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_social_sidebar_item_image_7_icon.png?v=217" height="32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="32"/>
+  Hổ trợ 24/7
+ </button>
+ <button class="back-to-top" title="Back to top">
+  <img alt="Back to top" class="lazyload w-100" data-src="https://file.hstatic.net/200000588277/file/arrow-up_eb1426bb7fc647eab89f9279695752cd.png" height="32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="32"/>
+  Lên đầu trang
+ </button>
+</div>
+<div class="shop-wishlist-modal" data-name="Yêu thích">
+ <div class="shop-wishlist-modal-head">
+  <div class="container">
+   <label>
+    Danh mục sản phẩm yêu thích
+   </label>
+   <button data-type="shop-wishlist-modal-close" title="Đóng" type="button">
+    <svg class="" height="20" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="20" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+     <g>
+      <path class="" d="m4.59 59.41a2 2 0 0 0 2.83 0l24.58-24.58 24.59 24.58a2 2 0 0 0 2.83-2.83l-24.59-24.58 24.58-24.59a2 2 0 0 0 -2.83-2.83l-24.58 24.59-24.59-24.58a2 2 0 0 0 -2.82 2.82l24.58 24.59-24.58 24.59a2 2 0 0 0 0 2.82z" data-original="#000000" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+      </path>
+     </g>
+    </svg>
+   </button>
+  </div>
+ </div>
+ <div class="container">
+  <div class="shop-wishlist-modal-body">
+   <p class="shop-wishlist-modal-null wcs-null w-100 text-center">
+    Chưa có sản phẩm trong danh sách yêu thích
+   </p>
+  </div>
+ </div>
+</div>
+<div class="shop-compare-modal" data-name="So sánh">
+ <div class="shop-compare-modal-head">
+  <div class="container">
+   <label>
+    Danh mục sản phẩm so sánh
+   </label>
+   <button data-type="shop-compare-modal-close" title="Đóng" type="button">
+    <svg class="" height="20" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="20" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+     <g>
+      <path class="" d="m4.59 59.41a2 2 0 0 0 2.83 0l24.58-24.58 24.59 24.58a2 2 0 0 0 2.83-2.83l-24.59-24.58 24.58-24.59a2 2 0 0 0 -2.83-2.83l-24.58 24.59-24.59-24.58a2 2 0 0 0 -2.82 2.82l24.58 24.59-24.58 24.59a2 2 0 0 0 0 2.82z" data-original="#000000" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+      </path>
+     </g>
+    </svg>
+   </button>
+  </div>
+ </div>
+ <div class="container">
+  <div class="shop-compare-modal-body">
+   <p class="shop-compare-modal-null wcs-null w-100 text-center">
+    Chưa có sản phẩm trong danh sách so sánh
+   </p>
+  </div>
+ </div>
+</div>
+<div aria-hidden="true" aria-labelledby="accountModal" class="modal fade" id="accountModal" role="dialog" tabindex="-1">
+ <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+  <div class="modal-content">
+   <div class="modal-body">
+    <div class="row">
+     <div class="col-lg-3 col-md-3">
+      <div class="modalLogo">
+       <a aria-label="F1GENZ BABIE" href="https://f1genz-babie.myharavan.com">
+        <img alt="F1GENZ BABIE" height="85" loading="lazy" src="//theme.hstatic.net/200000689391/1001102398/14/shop_logo_image_medium.png?v=217" width="240"/>
+       </a>
+      </div>
+      <div aria-orientation="vertical" class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
+       <a aria-controls="modalLogin" aria-selected="true" class="nav-link active" data-toggle="pill" href="#modalLogin" id="modalLoginTab" role="tab">
+        Đăng nhập
+       </a>
+       <a aria-controls="modalForget" aria-selected="false" class="nav-link" data-toggle="pill" href="#modalForget" id="modalForgetTab" role="tab">
+        Quên mật khẩu
+       </a>
+       <a aria-controls="modalRegister" aria-selected="false" class="nav-link" data-toggle="pill" href="#modalRegister" id="modalRegisterTab" role="tab">
+        Đăng ký
+       </a>
+      </div>
+     </div>
+     <div class="col-lg-9 col-md-9">
+      <div class="tab-content" id="v-pills-tabContent">
+       <div aria-labelledby="modalLoginTab" class="tab-pane fade show active" id="modalLogin" role="tabpanel">
+        <label class="text-center">
+         ĐĂNG NHẬP
+        </label>
+        <div class="login-form-body">
+         <form accept-charset="UTF-8" action="/account/login" id="customer_login" method="post">
+          <input name="form_type" type="hidden" value="customer_login"/>
+          <input name="utf8" type="hidden" value="✓"/>
+          <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt9AFNs5Uk9c_VJ9SdqIWRUBydjIgFo7ACZm7SyWAaPA6d_tvi-NdM4GLn5sdwnSSs43AIcxsI0_hohZRM4y-giw8QBwiPjypVpk5nM55ZMfpLpsOQq1OBJQsjeh6fRWibk"/>
+          <div class="form-group">
+           <label for="login-email">
+            Email*
+           </label>
+           <input class="form-control" id="login-email" name="customer[email]" required="" type="email"/>
+          </div>
+          <div class="form-group">
+           <label for="login-password">
+            Mật khẩu*
+           </label>
+           <input class="form-control" id="login-password" name="customer[password]" required="" type="password"/>
+          </div>
+          <div class="form-group">
+           <button class="btn btn-primary hoverOpacity" type="submit">
+            ĐĂNG NHẬP
+           </button>
+          </div>
+         </form>
+        </div>
+       </div>
+       <div aria-labelledby="modalForgetTab" class="tab-pane fade" id="modalForget" role="tabpanel">
+        <label class="text-center">
+         QUÊN MẬT KHẨU
+        </label>
+        <div class="recover-form-body">
+         <form accept-charset="UTF-8" action="/account/recover" method="post">
+          <input name="form_type" type="hidden" value="recover_customer_password"/>
+          <input name="utf8" type="hidden" value="✓"/>
+          <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt9AFNs5Uk9c_VJ9SdqIWRUBydjIgFo7ACZm7SyWAaPA6d_tvi-NdM4GLn5sdwnSSs43AIcxsI0_hohZRM4y-giw8QBwiPjypVpk5nM55ZMfpLpsOQq1OBJQsjeh6fRWibk"/>
+          <div class="form-group">
+           <label for="recover-email">
+            Email*
+           </label>
+           <input class="form-control" id="recover-email" name="email" required="" type="email"/>
+          </div>
+          <div class="form-group">
+           <button class="btn btn-primary hoverOpacity" type="submit">
+            Gửi
+           </button>
+          </div>
+         </form>
+        </div>
+       </div>
+       <div aria-labelledby="modalRegisterTab" class="tab-pane fade" id="modalRegister" role="tabpanel">
+        <label class="text-center">
+         ĐĂNG KÝ
+        </label>
+        <div class="register-form-body">
+         <form accept-charset="UTF-8" action="/account" id="create_customer" method="post">
+          <input name="form_type" type="hidden" value="create_customer"/>
+          <input name="utf8" type="hidden" value="✓"/>
+          <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt9AFNs5Uk9c_VJ9SdqIWRUBydjIgFo7ACZm7SyWAaPA6d_tvi-NdM4GLn5sdwnSSs43AIcxsI0_hohZRM4y-giw8QBwiPjypVpk5nM55ZMfpLpsOQq1OBJQsjeh6fRWibk"/>
+          <div class="form-group">
+           <label for="register-last-name">
+            Họ của bạn*
+           </label>
+           <input class="form-control" id="register-last-name" name="customer[last_name]" required="" type="text"/>
+          </div>
+          <div class="form-group">
+           <label for="register-first-name">
+            Tên của bạn*
+           </label>
+           <input class="form-control" id="register-first-name" name="customer[first_name]" required="" type="text"/>
+          </div>
+          <div class="form-group">
+           <label for="register-phone">
+            Số điện thoại
+           </label>
+           <input class="form-control" id="register-phone" name="customer[phone]" pattern="^\+?\d{0,10}" type="text"/>
+          </div>
+          <div class="form-group">
+           <label>
+            Giới tính
+           </label>
+           <div class="row">
+            <div class="col-2 d-flex align-items-center">
+             <input checked="" id="register-gender-0" name="customer[gender]" type="radio" value="0"/>
+             <label for="register-gender-0">
+              Nữ
+             </label>
+            </div>
+            <div class="col-2 d-flex align-items-center">
+             <input id="register-gender-1" name="customer[gender]" type="radio" value="1"/>
+             <label for="register-gender-1">
+              Nam
+             </label>
+            </div>
+           </div>
+          </div>
+          <div class="form-group">
+           <label for="register-email">
+            Email*
+           </label>
+           <input class="form-control" id="register-email" name="customer[email]" required="" type="email"/>
+          </div>
+          <div class="form-group">
+           <label for="register-password">
+            Mật khẩu*
+           </label>
+           <input class="form-control" id="register-password" name="customer[password]" required="" type="password"/>
+          </div>
+          <div class="form-group">
+           <button class="btn btn-primary hoverOpacity" type="submit">
+            ĐĂNG KÝ
+           </button>
+          </div>
+          <input id="d4d3ec4000f144c391054eb98b068b99" name="g-recaptcha-response" type="hidden"/>
+          <noscript data-src="https://www.google.com/recaptcha/api.js?render=6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s">
+          </noscript>
+          <noscript>
+           let recaptchaElm=document.getElementById('d4d3ec4000f144c391054eb98b068b99');let recaptchaForm=recaptchaElm.parentNode;recaptchaForm.addEventListener("submit",function(formEvent){if(!recaptchaElm.value){formEvent.preventDefault();grecaptcha.ready(function(){grecaptcha.execute('6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s',{action:'submit'}).then(function(token){recaptchaElm.value=token;recaptchaForm.requestSubmit(formEvent.submitter)})})}})
+          </noscript>
+         </form>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <button class="closeModal">
+    <i class="lni lni-close">
+    </i>
+   </button>
+  </div>
+ </div>
+</div>
+<button class="overplay-all" title="Đóng">
+</button>
+
+{%endblock %}
