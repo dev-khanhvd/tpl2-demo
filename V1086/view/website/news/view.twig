@@ -1,0 +1,1551 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(news.title | striptags).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ news.metaKeywords?:news.name }}">
+<meta name="description" content="{{ news.metaDescription?:news.name }}">
+<meta property="og:title" content="{{ news.metaTitle?:news.name }}">
+<meta property="og:url" content="{{ news.canonicalLink }}">
+<meta property="og:image" content="{{ news.pictureUri }}">
+<link rel="canonical" href="{{ news.canonicalLink }}">
+{%endblock %}
+
+{%block body %}
+
+<main class="main-layout">
+ <div class="main-article">
+  <div class="main-article-share">
+   <button class="main-article-share-cta" data-type="main-article-share-menu" title="Mục lục">
+    <svg style="enable-background:new 0 0 377 377;" version="1.1" viewbox="0 0 377 377" x="0px" xml:space="preserve" y="0px">
+     <g>
+      <circle cx="15" cy="88.5" r="15">
+      </circle>
+      <rect height="30" width="302" x="75" y="73.5">
+      </rect>
+      <circle cx="15" cy="288.5" r="15">
+      </circle>
+      <rect height="30" width="302" x="75" y="273.5">
+      </rect>
+      <circle cx="15" cy="188.5" r="15">
+      </circle>
+      <rect height="30" width="302" x="75" y="173.5">
+      </rect>
+     </g>
+    </svg>
+   </button>
+   <button class="main-article-share-cta" data-type="main-article-share-open-popup" title="Chia sẻ">
+    <svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+     <path d="M19 3c-1.652 0-3 1.348-3 3 0 .46.113.895.3 1.285L12.587 11h-4.77A2.999 2.999 0 005 9c-1.652 0-3 1.348-3 3s1.348 3 3 3c1.3 0 2.402-.84 2.816-2h4.77l3.715 3.715c-.188.39-.301.824-.301 1.285 0 1.652 1.348 3 3 3s3-1.348 3-3-1.348-3-3-3c-.46 0-.895.113-1.285.3l-3.3-3.3 3.3-3.3c.39.187.824.3 1.285.3 1.652 0 3-1.348 3-3s-1.348-3-3-3z" fill="#595959">
+     </path>
+    </svg>
+   </button>
+   <button class="main-article-share-cta" data-type="main-article-share-comment" title="Bình luận">
+    <svg class="" fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+     <path d="M12.5 16c.277 0 .5-.223.5-.5v-1c0-.277-.223-.5-.5-.5h-1c-.277 0-.5.223-.5.5v1c0 .277.223.5.5.5h1zM11 13h2c0-.447.412-1.02.863-1.645C14.404 10.603 15 9.776 15 9c0-1.477-1.121-3-3-3-2.047 0-3 1.79-3 3 0 .55.45 1 1 1s1-.45 1-1c0-.164.176-1 1-1 .988 0 1 .988 1 1 0 .537-.52 1.312-1.029 2.072-.49.732-.971 1.45-.971 1.928z" fill="#595959">
+     </path>
+     <path clip-rule="evenodd" d="M2 11c0-5.027 4.547-9 10-9s10 3.973 10 9c0 .324-.02.637-.059.945-.554 5.172-5.238 8.774-7.398 10.16L13 23.095v-3.196c-.12.012-.239.028-.356.044-.211.03-.421.058-.644.058-5.453 0-10-3.973-10-9zm18 0c0-3.809-3.508-7-8-7s-8 3.191-8 7 3.508 7 8 7c.617 0 1.219-.066 1.8-.188l1.2-.238v1.508c2.047-1.637 4.61-4.152 4.953-7.352l.004-.003v-.004c.027-.243.043-.48.043-.723z" fill="#595959" fill-rule="evenodd">
+     </path>
+    </svg>
+    <span>
+     0
+    </span>
+   </button>
+   <button class="main-article-share-cta" data-type="main-article-share-font" title="Kích cỡ chữ">
+    <svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+     <path d="M9 5.5c0 .83.67 1.5 1.5 1.5H14v10.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V7h3.5c.83 0 1.5-.67 1.5-1.5S21.33 4 20.5 4h-10C9.67 4 9 4.67 9 5.5zM4.5 12H6v5.5c0 .83.67 1.5 1.5 1.5S9 18.33 9 17.5V12h1.5c.83 0 1.5-.67 1.5-1.5S11.33 9 10.5 9h-6C3.67 9 3 9.67 3 10.5S3.67 12 4.5 12z" fill="#595959">
+     </path>
+    </svg>
+   </button>
+   <div class="main-article-share-popup">
+    <div class="main-article-share-popup-head">
+     <label>
+      Chia sẻ
+     </label>
+     <a aria-label="Chia sẻ Facebook" href="https://www.facebook.com/sharer.php?u=https://f1genz-babie.myharavan.com/blogs/news/ve-sinh-may-hut-sua-khi-moi-mua" target="_blank">
+      <svg fill="none" height="32" width="32" xmlns="http://www.w3.org/2000/svg">
+       <path d="M27 0H5a5 5 0 00-5 5v22a5 5 0 005 5h22a5 5 0 005-5V5a5 5 0 00-5-5z" fill="#1778F2">
+       </path>
+       <path clip-rule="evenodd" d="M20.314 32V19.499h3.255L24 15.19h-3.686l.006-2.156c0-1.123.1-1.725 1.623-1.725h2.034V7h-3.255c-3.91 0-5.285 2.09-5.285 5.604v2.587H13v4.308h2.437V32h4.877z" fill="#fff" fill-rule="evenodd">
+       </path>
+      </svg>
+     </a>
+     <a aria-label="Chia sẻ Twitter" href="https://twitter.com/intent/tweet?url=https://f1genz-babie.myharavan.com/blogs/news/ve-sinh-may-hut-sua-khi-moi-mua" target="_blank">
+      <svg fill="none" height="32" width="32" xmlns="http://www.w3.org/2000/svg">
+       <rect fill="#1FA1F3" height="32" rx="4" width="32">
+       </rect>
+       <path clip-rule="evenodd" d="M15.73 13.235l.04.634-.674-.077c-2.455-.298-4.6-1.308-6.42-3.004l-.89-.841-.23.621c-.485 1.385-.175 2.848.836 3.832.54.544.419.622-.512.298-.324-.104-.607-.181-.634-.143-.094.091.23 1.27.486 1.735.35.648 1.065 1.282 1.847 1.657l.661.298-.782.013c-.755 0-.782.013-.701.285.27.841 1.335 1.735 2.522 2.123l.836.272-.728.414a7.894 7.894 0 01-3.615.958c-.607.013-1.106.065-1.106.104 0 .13 1.646.854 2.603 1.14 2.873.84 6.285.478 8.848-.959 1.82-1.023 3.642-3.055 4.491-5.023.459-1.049.918-2.965.918-3.884 0-.596.04-.673.795-1.385.445-.415.864-.868.945-.997.134-.246.12-.246-.567-.026-1.146.388-1.308.337-.742-.246.418-.414.917-1.165.917-1.385 0-.04-.202.026-.431.142-.243.13-.783.324-1.187.44l-.729.22-.66-.427c-.364-.233-.877-.492-1.147-.57-.688-.18-1.74-.155-2.36.052-1.686.583-2.752 2.085-2.63 3.729z" fill="#fff" fill-rule="evenodd">
+       </path>
+      </svg>
+     </a>
+     <a aria-label="Chia sẻ WhatsApp" href="https://wa.me/?text=https://f1genz-babie.myharavan.com/blogs/news/ve-sinh-may-hut-sua-khi-moi-mua" target="_blank">
+      <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+       <path d="M116.225-.001c-11.264.512-26.112 1.536-32.768 3.072-10.24 2.048-19.968 5.12-27.648 9.216-9.728 4.608-17.92 10.752-25.088 17.92-7.68 7.68-13.824 15.872-18.432 25.6-4.096 7.68-7.168 17.408-9.216 27.648-1.536 6.656-2.56 21.504-2.56 32.768-.512 4.608-.512 10.752-.512 13.824v265.729c.512 11.264 1.536 26.112 3.072 32.768 2.048 10.24 5.12 19.968 9.216 27.648 4.608 9.728 10.752 17.92 17.92 25.088 7.68 7.68 15.872 13.824 25.6 18.432 7.68 4.096 17.408 7.168 27.648 9.216 6.656 1.536 21.504 2.56 32.768 2.56 4.608.512 10.752.512 13.824.512h265.728c11.264-.512 26.112-1.536 32.768-3.072 10.24-2.048 19.968-5.12 27.648-9.216 9.728-4.608 17.92-10.752 25.088-17.92 7.68-7.68 13.824-15.872 18.432-25.6 4.096-7.68 7.168-17.408 9.216-27.648 1.536-6.656 2.56-21.504 2.56-32.768.512-4.608.512-10.752.512-13.824V116.223c-.512-11.264-1.536-26.112-3.072-32.768-2.048-10.24-5.12-19.968-9.216-27.648-4.608-9.728-10.752-17.92-17.92-25.088-7.68-7.68-15.872-13.824-25.6-18.432-7.68-4.096-17.408-7.168-27.648-9.216-6.656-1.536-21.504-2.56-32.768-2.56-4.608-.512-10.752-.512-13.824-.512H116.225z" fill="url(#whatsApp_svg___Linear1)" fill-rule="nonzero">
+       </path>
+       <path d="M344.754 289.698c-4.56-2.282-26.98-13.311-31.161-14.832-4.18-1.521-7.219-2.282-10.259 2.282-3.041 4.564-11.78 14.832-14.44 17.875-2.66 3.042-5.32 3.423-9.88 1.14-4.561-2.281-19.254-7.095-36.672-22.627-13.556-12.087-22.709-27.017-25.369-31.581s-.283-7.031 2-9.304c2.051-2.041 4.56-5.324 6.84-7.986 2.28-2.662 3.04-4.564 4.56-7.606 1.52-3.042.76-5.705-.38-7.987-1.14-2.282-10.26-24.72-14.06-33.848-3.701-8.889-7.461-7.686-10.26-7.826-2.657-.132-5.7-.16-8.74-.16-3.041 0-7.98 1.141-12.161 5.704-4.18 4.564-15.96 15.594-15.96 38.032 0 22.438 16.34 44.116 18.62 47.159 2.281 3.043 32.157 49.089 77.902 68.836 10.88 4.697 19.374 7.501 25.997 9.603 10.924 3.469 20.866 2.98 28.723 1.806 8.761-1.309 26.98-11.029 30.781-21.677 3.799-10.649 3.799-19.777 2.659-21.678-1.139-1.902-4.179-3.043-8.74-5.325m-83.207 113.573h-.061c-27.22-.011-53.917-7.32-77.207-21.137l-5.539-3.287-57.413 15.056 15.325-55.959-3.608-5.736c-15.184-24.145-23.203-52.051-23.192-80.704.033-83.611 68.083-151.635 151.756-151.635 40.517.016 78.603 15.811 107.243 44.474 28.64 28.663 44.404 66.764 44.389 107.283-.035 83.617-68.083 151.645-151.693 151.645m129.102-280.709c-34.457-34.486-80.281-53.487-129.103-53.507-100.595 0-182.468 81.841-182.508 182.437-.013 32.156 8.39 63.546 24.361 91.212l-25.892 94.545 96.75-25.37c26.657 14.535 56.67 22.194 87.216 22.207h.075c100.586 0 182.465-81.852 182.506-182.448.019-48.751-18.946-94.59-53.405-129.076" fill="#fff">
+       </path>
+       <defs>
+        <lineargradient gradienttransform="matrix(0 -512 -512 0 256.001 512)" gradientunits="userSpaceOnUse" id="whatsApp_svg___Linear1" x1="0" x2="1" y1="0" y2="0">
+         <stop offset="0" stop-color="#25cf43">
+         </stop>
+         <stop offset="1" stop-color="#61fd7d">
+         </stop>
+        </lineargradient>
+       </defs>
+      </svg>
+     </a>
+     <a aria-label="Chia sẻ Linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https://f1genz-babie.myharavan.com/blogs/news/ve-sinh-may-hut-sua-khi-moi-mua" target="_blank">
+      <svg fill="none" height="32" width="32" xmlns="http://www.w3.org/2000/svg">
+       <rect fill="#0077B5" height="32" rx="4" width="32">
+       </rect>
+       <path clip-rule="evenodd" d="M10.857 9.07c-.022-1.094-.744-1.927-1.917-1.927S7 7.976 7 9.07C7 10.142 7.744 11 8.895 11h.022c1.196 0 1.94-.858 1.94-1.93zm0 3.216H7v11.571h3.857V12.286zm9.294 0c2.771 0 4.849 1.616 4.849 5.089v6.482h-4.212V17.81c0-1.52-.609-2.556-2.134-2.556-1.163 0-1.856.698-2.16 1.373-.112.242-.14.58-.14.917v6.314h-4.211s.055-10.244 0-11.305h4.212v1.601c.559-.77 1.56-1.867 3.796-1.867z" fill="#fff" fill-rule="evenodd">
+       </path>
+      </svg>
+     </a>
+    </div>
+    <hr/>
+    <div class="main-article-share-popup-body">
+     <label>
+      Sao chép đường dẫn
+     </label>
+     <form>
+      <input id="main-article-share-copy" readonly="" value="https://f1genz-babie.myharavan.com/blogs/news/ve-sinh-may-hut-sua-khi-moi-mua"/>
+      <button data-type="main-article-share-copy" title="Sao chép" type="button">
+       Sao chép
+      </button>
+     </form>
+    </div>
+   </div>
+  </div>
+  <div class="main-article-breadcrumb" title="Vệ sinh máy hút sữa khi mới mua">
+   <div class="container-fluid">
+    <div class="section-title-all">
+     <h1>
+      Vệ sinh máy hút sữa khi mới mua
+     </h1>
+    </div>
+    <div class="breadcrumb-wrap">
+     <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+       <a href="/">
+        Trang chủ
+       </a>
+      </li>
+      <li class="breadcrumb-item">
+       <a href="/blogs/news">
+        Blog - Mẹ và Bé
+       </a>
+      </li>
+      <li class="breadcrumb-item active">
+       <span>
+        Vệ sinh máy hút sữa khi mới mua
+       </span>
+      </li>
+     </ol>
+    </div>
+   </div>
+  </div>
+  <div class="container-fluid">
+   <div class="main-article-menu sidebar">
+    <label>
+     Mục lục bài viết
+    </label>
+    <div class="main-article-menu-data">
+    </div>
+   </div>
+   <div class="main-article-wrap">
+    <div>
+     Tác giả: Theme - đăng vào 13:33 ngày 18.05.2023
+    </div>
+    <div class="main-article-menu">
+     <label>
+      Mục lục bài viết
+      <span>
+       <svg style="enable-background:new 0 0 377 377;" version="1.1" viewbox="0 0 377 377" x="0px" xml:space="preserve" y="0px">
+        <g>
+         <circle cx="15" cy="88.5" r="15">
+         </circle>
+         <rect height="30" width="302" x="75" y="73.5">
+         </rect>
+         <circle cx="15" cy="288.5" r="15">
+         </circle>
+         <rect height="30" width="302" x="75" y="273.5">
+         </rect>
+         <circle cx="15" cy="188.5" r="15">
+         </circle>
+         <rect height="30" width="302" x="75" y="173.5">
+         </rect>
+        </g>
+       </svg>
+      </span>
+     </label>
+     <div class="main-article-menu-data">
+     </div>
+    </div>
+    <div class="main-article-content" data-size="16" style="--share_font: 16px">
+     <p>
+      <strong>
+       <em>
+        Giải mã gen là công cụ kiểm tra thể chất và tiềm năng bẩm sinh để mở khóa tối đa tiềm năng trong trẻ. Ba mẹ nào có con nhỏ đang mong muốn xây dựng kế hoạch dinh dưỡng và vận động hợp lý, thì hãy theo dõi ngay những thông tin quan trọng về các công dụng tuyệt vời của giải mã gen mà Con Cưng đã tổng hợp được trong bài viết sau nhé!
+       </em>
+      </strong>
+     </p>
+     <p>
+      Ba mẹ có biết, hệ gen đóng vai trò rất quan trọng đối với sự phát triển toàn diện của trẻ, nhất là giai đoạn đầu đời. Kết quả giải mã gen cho trẻ hỗ trợ cha mẹ lập trình chế độ dinh dưỡng, khám phá tiềm năng nhằm xác định phương pháp giáo dục phù hợp. Xét nghiệm gen khá phổ biến tại các nước phát triển và bắt đầu gia nhập vào Việt Nam vài năm trở lại đây.
+     </p>
+     <h2>
+      <strong>
+       Giải mã gen là gì?
+      </strong>
+     </h2>
+     <p>
+      Là yếu tố không thể thay đổi trong suốt cuộc đời mỗi người, gen chứa đựng lượng thông tin khổng lồ của cá nhân. Giải mã gen là dùng các phương pháp trong phòng thí nghiệm để giải mã các hướng dẫn ADN (axit deoxyribonucleic) có trong gen được di truyền từ ba và mẹ có trong các tế bào của cơ thể con người. Từ đó, chúng ta có thể xác định được các thông tin liên quan đến di truyền như: tiềm năng trí tuệ, tiềm năng thể chất, dinh dưỡng, xu hướng hành vi, các nguy cơ sức khỏe trong mỗi người.
+     </p>
+     <p>
+     </p>
+     <p>
+      <img alt="Hình ảnh bài viết" class="w-auto" height="600" loading="lazy" src="//file.hstatic.net/200000689391/file/gen_tai_nang__1__7f330c0c6d024303b0c2d0789377b7ac.jpg" width="600"/>
+     </p>
+     <p>
+     </p>
+     <p>
+      <em>
+       Giải mã gen giúp ba mẹ xác định các thông tin liên quan đến di truyền
+      </em>
+     </p>
+     <p>
+      Tiến hành giải mã gen cho bé hỗ trợ ba mẹ xây dựng được chế độ dinh dưỡng phù hợp, đồng thời khám phá tiềm năng của trẻ nhằm xác định phương pháp giáo dục hợp lý hơn. Xét nghiệm gen chỉ cần làm một lần nhưng kết quả giải mã có thể áp dụng lâu dài, đặc biệt là rất có giá trị trong 1000 ngày đầu đời của bé.
+     </p>
+     <p>
+      [https://f1genz-babie.myharavan.com/products/front-tie-raised]
+     </p>
+     <h2>
+      <strong>
+       Vì sao ba mẹ cần giải mã gen cho bé?
+      </strong>
+     </h2>
+     <p>
+      Khoa học đã cho biết, gen là một kho thông tin ẩn sâu bên trong cơ thể của mỗi người. Do đó, việc ba mẹ tiến hành giải mã gen cho bé được xem như là chiếc chìa khóa vạn năng giúp ba mẹ hiểu được bé. Ở nội dung tiếp theo đây, Con Cưng mời ba mẹ cùng khám phá xem chiếc chìa khóa vạn năng này của gói giải mã gen Baby Well có thể giúp ba mẹ hiểu được những thông tin nào đang ẩn sâu trong bé nhé!
+     </p>
+     <ul>
+      <li>
+       <h3>
+        <strong>
+         <em>
+          Đánh giá nguy cơ dị ứng đạm sữa cho bé
+         </em>
+        </strong>
+       </h3>
+      </li>
+     </ul>
+     <p>
+      Dị ứng đạm sữa bò là hiện tượng dị ứng thực phẩm phổ biến nhất ở nhóm trẻ sơ sinh và trẻ nhỏ. Khi mắc phải tình trạng dị ứng đạm sữa bò, hệ miễn dịch của trẻ sẽ nhận diện sai đạm trong sữa bò là chất có hại, từ đó gây ra một số phản ứng như: phát ban, tiêu chảy, nôn mửa, shock phản vệ,...
+     </p>
+     <p>
+      Nếu sớm biết được nguy cơ dị ứng đạm sữa của con, ba mẹ có thể chủ động hơn trong việc thiết kế thực đơn ăn dặm sao cho phù hợp, đặc biệt là chú ý hơn khi chọn sữa công thức cho con, giúp con phát triển khoẻ mạnh.
+     </p>
+     <ul>
+      <li>
+       <h3>
+        <strong>
+         <em>
+          Hiểu đúng khả năng hấp thu dinh dưỡng của con để nuôi con khỏe mạnh
+         </em>
+        </strong>
+       </h3>
+      </li>
+     </ul>
+     <p>
+      Hấp thu là giai đoạn trung gian giữa tiêu hóa với chuyển hóa. Trẻ nếu kém hấp thu sẽ bị thiếu hụt các chất dinh dưỡng cần thiết để cơ thể phát triển như: kẽm, vitamin nhóm B, lysin,... Từ đó, sức đề kháng của trẻ bị suy giảm, khiến trẻ dễ bị mắc bệnh hơn, ảnh hưởng đến sự phát triển chiều cao và trí não của trẻ. Hội chứng kém hấp thu ở trẻ là tình trạng không hiếm gặp ở trẻ em.
+     </p>
+     <p>
+     </p>
+     <p>
+      <img alt="Hình ảnh bài viết" class="w-auto" height="600" loading="lazy" src="//file.hstatic.net/200000689391/file/dielac-alpha-gold-1-5098__1__2d7db61ee9544d3e96cb2b77c49eff8a.jpg" width="600"/>
+     </p>
+     <p>
+     </p>
+     <p>
+      <em>
+       Hiểu đúng khả năng hấp thụ giúp hành trình nuôi con của ba mẹ dễ dàng và hiệu quả hơn
+      </em>
+     </p>
+     <p>
+      Để đảm bảo bé có thể hấp thụ đầy đủ các dưỡng chất cần thiết cho sự phát triển từ bữa ăn, ba mẹ cần nên hiểu chính xác về cơ thể con, cụ thể là 4 khả năng sau:
+     </p>
+     <ul>
+      <li>
+       Khả năng chuyển hoá đường bột
+      </li>
+      <li>
+       Khả năng chuyển hóa đạm
+      </li>
+      <li>
+       Khả năng chuyển hoá chất béo
+      </li>
+      <li>
+       Khả năng hấp thụ sữa
+      </li>
+     </ul>
+     <p>
+      Từ việc biết chính xác về 4 khả năng này của bé, ba mẹ sẽ biết cách điều chỉnh chế độ dinh dưỡng sao cho phù hợp với con. Hành trình nuôi con khỏe mạnh cũng nhờ vậy trở nên hiệu quả hơn.
+     </p>
+     <p>
+      [https://f1genz-babie.myharavan.com/collections/toys]
+     </p>
+     <ul>
+      <li>
+       <h3>
+        <strong>
+         <em>
+          Hiểu khẩu vị của con để tập con ăn dặm lành mạnh và dễ dàng
+         </em>
+        </strong>
+       </h3>
+      </li>
+     </ul>
+     <p>
+      Ba mẹ có biết, mức độ nhạy cảm vị giác của mỗi bé khác nhau? Để cột mốc mới bắt đầu ăn dặm của con trở nên dễ dàng hơn với mẹ và thú vị hơn với bé, ba mẹ nên tìm hiểu về mức độ nhạy cảm đối với vị ngọt, vị đắng của con. Dựa trên kết quả nhạy cảm vị giác này, ba mẹ có thể cân đối được hương vị trong khẩu phần ăn của con để con nhanh chóng tiếp nhận, ăn dặm dễ dàng.
+     </p>
+     <ul>
+      <li>
+       <h3>
+        <strong>
+         <em>
+          Nhận biết tính cách và đánh giá đúng những tiềm năng học thuật
+         </em>
+        </strong>
+       </h3>
+      </li>
+     </ul>
+     <p>
+      <em>
+       Giải mã gen còn giúp xác định chính xác tính cách và đánh giá tiềm năng học thuật của con
+      </em>
+     </p>
+     <p>
+      Đây là công dụng được rất nhiều ba mẹ tò mò và đặt kỳ vọng. Từ kết quả mà giải mã gen mang lại, ba mẹ có thể hiểu rõ hơn về con, xác định chính xác tính cách và đánh giá tiềm năng học thuật của con như thế nào:
+     </p>
+     <ul>
+      <li>
+       Đặc điểm về Tiềm năng học thuật: IQ, EQ, Ngôn ngữ, Âm nhạc, Năng lực nhận thức,...
+      </li>
+      <li>
+       Đặc điểm về Tính cách: Hướng ngoại/nội, Tính kỷ luật, Nóng tính, Khả năng kiểm soát căng thẳng,...
+      </li>
+     </ul>
+     <p>
+      Cũng từ đó, ba mẹ có cơ sở vững chắc để lựa chọn phương pháp giáo dục tối ưu, đồng thời tự tin định hướng nghề nghiệp phù hợp cho con dựa trên những thế mạnh mà kết quả giải mã gen đã tiết lộ.
+     </p>
+    </div>
+    <div class="main-article-comment">
+     <div class="main-article-comment-form">
+      <div class="section-title-all">
+       <span>
+        Viết bình luận
+       </span>
+      </div>
+      <form accept-charset="UTF-8" action="/blogs/news/ve-sinh-may-hut-sua-khi-moi-mua/comments" class="comment-form" id="article--comment-form" method="post">
+       <input name="form_type" type="hidden" value="new_comment"/>
+       <input name="utf8" type="hidden" value="✓"/>
+       <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt_6ifjU2UQOiuOQzvv-7FaSRq_sIjiiaxpIVG1VJSLDF1Fmy00VYVtd5oDIBCEJR6drAgYc0KO0ORG9On1GmCOC8lLMw1t4XiRERBFnQyQztycKftSB2yJ_JkeTBJdW4yo"/>
+       <input name="comment[author]" placeholder="Tên của bạn " required="" type="text"/>
+       <input name="comment[email]" placeholder="Email của bạn" required="" type="text"/>
+       <textarea name="comment[body]" placeholder="Viết bình luận ..." required=""></textarea>
+       <button type="submit">
+        Gửi bình luận
+       </button>
+       <input id="d9e89d10931346bd93c24941293ccd7e" name="g-recaptcha-response" type="hidden"/>
+       <noscript data-src="https://www.google.com/recaptcha/api.js?render=6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s">
+       </noscript>
+       <noscript>
+        let recaptchaElm=document.getElementById('d9e89d10931346bd93c24941293ccd7e');let recaptchaForm=recaptchaElm.parentNode;recaptchaForm.addEventListener("submit",function(formEvent){if(!recaptchaElm.value){formEvent.preventDefault();grecaptcha.ready(function(){grecaptcha.execute('6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s',{action:'submit'}).then(function(token){recaptchaElm.value=token;recaptchaForm.requestSubmit(formEvent.submitter)})})}})
+       </noscript>
+      </form>
+     </div>
+    </div>
+   </div>
+   <div class="main-article-right">
+    <div class="main-article-right-newest">
+     <div class="section-title-all">
+      <span>
+       Bài viết liên quan
+      </span>
+     </div>
+     <article class="article-item layout-small" data-index="1">
+      <div class="article-item-wrap">
+       <div class="article-item-image">
+        <a href="/blogs/news/goi-y-do-choi-phat-trien-van-dong-cho-be-0-6-tuoi-dam-bao-an-toan-va" rel="nofollow" title="Gợi ý đồ chơi phát triển vận động cho bé 0 - 6 tuổi đảm bảo an toàn và chất lượng">
+         <img alt="Gợi ý đồ chơi phát triển vận động cho bé 0 - 6 tuổi đảm bảo an toàn và chất lượng" height="240" loading="lazy" src="//file.hstatic.net/200000689391/article/5770445_2990168__1___1__8f803b2eeedb4ee2a707e391933e9ac9_medium.jpg" width="240"/>
+         <svg class="" height="512" style="enable-background: new 0 0 512 512" version="1.1" viewbox="0 0 48 48" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+          <path class="" d="m40.8994141 39.4853516-7.8127441-7.8127441c2.3978882-2.734375 3.7209473-6.1942749 3.7209473-9.8649902 0-4.0068359-1.5605469-7.7734375-4.3935547-10.6064453s-6.5996094-4.3935547-10.6064453-4.3935547-7.7734375 1.5605469-10.6064453 4.3935547-4.3935547 6.5996094-4.3935547 10.6064453 1.5605469 7.7734375 4.3935547 10.6064453 6.5996094 4.3935547 10.6064453 4.3935547c3.6707153 0 7.1306152-1.3230591 9.8649902-3.7209473l7.8127441 7.8127441c.1953125.1953125.4511719.2929688.7070313.2929688s.5117188-.0976563.7070313-.2929688c.3906249-.390625.3906249-1.0234375-.0000001-1.4140625zm-28.2841797-8.4853516c-2.4550781-2.4555664-3.8076172-5.7202148-3.8076172-9.1923828s1.3525391-6.7368164 3.8076172-9.1923828c2.4555664-2.4550781 5.7202148-3.8076172 9.1923828-3.8076172s6.7368164 1.3525391 9.1923828 3.8076172c2.4550781 2.4555664 3.8076172 5.7202148 3.8076172 9.1923828s-1.3525391 6.7368164-3.8076172 9.1923828c-2.4555664 2.4550781-5.7202148 3.8076172-9.1923828 3.8076172s-6.7368164-1.3525391-9.1923828-3.8076172z" data-original="#ffffff" fill="#ffffff" style="">
+          </path>
+         </svg>
+        </a>
+       </div>
+       <div class="article-item-detail">
+        <h3 class="article-item-detail-name">
+         <a href="/blogs/news/goi-y-do-choi-phat-trien-van-dong-cho-be-0-6-tuoi-dam-bao-an-toan-va" title="Gợi ý đồ chơi phát triển vận động cho bé 0 - 6 tuổi đảm bảo an toàn và chất lượng">
+          Gợi ý đồ chơi phát triển vận động cho bé 0 - 6 tuổi đảm bảo an toàn và chất lượng
+         </a>
+        </h3>
+        <strong class="article-item-detail-info">
+         18 Thg 5 2023 / Mẹ và Bé
+        </strong>
+        <p class="article-item-detail-des">
+         Giải mã gen là công cụ kiểm tra thể chất và tiềm năng bẩm sinh để mở khóa tối đa tiềm năng trong trẻ. Ba mẹ nào có con nhỏ đang mong muốn xây dựng kế hoạch dinh dưỡng và vận động hợp lý, thì hãy theo dõi ngay những thông tin quan trọng về...
+        </p>
+       </div>
+      </div>
+     </article>
+     <article class="article-item layout-small" data-index="3">
+      <div class="article-item-wrap">
+       <div class="article-item-image">
+        <a href="/blogs/news/6-loi-ich-bat-ngo-tu-do-choi-thong-minh-cho-be" rel="nofollow" title="6 lợi ích bất ngờ từ đồ chơi thông minh cho bé">
+         <img alt="6 lợi ích bất ngờ từ đồ chơi thông minh cho bé" height="240" loading="lazy" src="//file.hstatic.net/200000689391/article/32177694_7914155__1___1__071cf643922f4745b2c502a146dcb39a_medium.jpg" width="240"/>
+         <svg class="" height="512" style="enable-background: new 0 0 512 512" version="1.1" viewbox="0 0 48 48" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+          <path class="" d="m40.8994141 39.4853516-7.8127441-7.8127441c2.3978882-2.734375 3.7209473-6.1942749 3.7209473-9.8649902 0-4.0068359-1.5605469-7.7734375-4.3935547-10.6064453s-6.5996094-4.3935547-10.6064453-4.3935547-7.7734375 1.5605469-10.6064453 4.3935547-4.3935547 6.5996094-4.3935547 10.6064453 1.5605469 7.7734375 4.3935547 10.6064453 6.5996094 4.3935547 10.6064453 4.3935547c3.6707153 0 7.1306152-1.3230591 9.8649902-3.7209473l7.8127441 7.8127441c.1953125.1953125.4511719.2929688.7070313.2929688s.5117188-.0976563.7070313-.2929688c.3906249-.390625.3906249-1.0234375-.0000001-1.4140625zm-28.2841797-8.4853516c-2.4550781-2.4555664-3.8076172-5.7202148-3.8076172-9.1923828s1.3525391-6.7368164 3.8076172-9.1923828c2.4555664-2.4550781 5.7202148-3.8076172 9.1923828-3.8076172s6.7368164 1.3525391 9.1923828 3.8076172c2.4550781 2.4555664 3.8076172 5.7202148 3.8076172 9.1923828s-1.3525391 6.7368164-3.8076172 9.1923828c-2.4555664 2.4550781-5.7202148 3.8076172-9.1923828 3.8076172s-6.7368164-1.3525391-9.1923828-3.8076172z" data-original="#ffffff" fill="#ffffff" style="">
+          </path>
+         </svg>
+        </a>
+       </div>
+       <div class="article-item-detail">
+        <h3 class="article-item-detail-name">
+         <a href="/blogs/news/6-loi-ich-bat-ngo-tu-do-choi-thong-minh-cho-be" title="6 lợi ích bất ngờ từ đồ chơi thông minh cho bé">
+          6 lợi ích bất ngờ từ đồ chơi thông minh cho bé
+         </a>
+        </h3>
+        <strong class="article-item-detail-info">
+         18 Thg 5 2023 / Mẹ và Bé
+        </strong>
+        <p class="article-item-detail-des">
+         Giải mã gen là công cụ kiểm tra thể chất và tiềm năng bẩm sinh để mở khóa tối đa tiềm năng trong trẻ. Ba mẹ nào có con nhỏ đang mong muốn xây dựng kế hoạch dinh dưỡng và vận động hợp lý, thì hãy theo dõi ngay những thông tin quan trọng về...
+        </p>
+       </div>
+      </div>
+     </article>
+     <article class="article-item layout-small" data-index="4">
+      <div class="article-item-wrap">
+       <div class="article-item-image">
+        <a href="/blogs/news/co-nen-mua-xe-day-em-be" rel="nofollow" title="Có nên mua xe đẩy em bé?">
+         <img alt="Có nên mua xe đẩy em bé?" height="240" loading="lazy" src="//file.hstatic.net/200000689391/article/5761454_3008207__1___1__ad93263950904cf29ee6ca3f1268970e_medium.jpg" width="240"/>
+         <svg class="" height="512" style="enable-background: new 0 0 512 512" version="1.1" viewbox="0 0 48 48" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+          <path class="" d="m40.8994141 39.4853516-7.8127441-7.8127441c2.3978882-2.734375 3.7209473-6.1942749 3.7209473-9.8649902 0-4.0068359-1.5605469-7.7734375-4.3935547-10.6064453s-6.5996094-4.3935547-10.6064453-4.3935547-7.7734375 1.5605469-10.6064453 4.3935547-4.3935547 6.5996094-4.3935547 10.6064453 1.5605469 7.7734375 4.3935547 10.6064453 6.5996094 4.3935547 10.6064453 4.3935547c3.6707153 0 7.1306152-1.3230591 9.8649902-3.7209473l7.8127441 7.8127441c.1953125.1953125.4511719.2929688.7070313.2929688s.5117188-.0976563.7070313-.2929688c.3906249-.390625.3906249-1.0234375-.0000001-1.4140625zm-28.2841797-8.4853516c-2.4550781-2.4555664-3.8076172-5.7202148-3.8076172-9.1923828s1.3525391-6.7368164 3.8076172-9.1923828c2.4555664-2.4550781 5.7202148-3.8076172 9.1923828-3.8076172s6.7368164 1.3525391 9.1923828 3.8076172c2.4550781 2.4555664 3.8076172 5.7202148 3.8076172 9.1923828s-1.3525391 6.7368164-3.8076172 9.1923828c-2.4555664 2.4550781-5.7202148 3.8076172-9.1923828 3.8076172s-6.7368164-1.3525391-9.1923828-3.8076172z" data-original="#ffffff" fill="#ffffff" style="">
+          </path>
+         </svg>
+        </a>
+       </div>
+       <div class="article-item-detail">
+        <h3 class="article-item-detail-name">
+         <a href="/blogs/news/co-nen-mua-xe-day-em-be" title="Có nên mua xe đẩy em bé?">
+          Có nên mua xe đẩy em bé?
+         </a>
+        </h3>
+        <strong class="article-item-detail-info">
+         18 Thg 5 2023 / Mẹ và Bé
+        </strong>
+        <p class="article-item-detail-des">
+         Giải mã gen là công cụ kiểm tra thể chất và tiềm năng bẩm sinh để mở khóa tối đa tiềm năng trong trẻ. Ba mẹ nào có con nhỏ đang mong muốn xây dựng kế hoạch dinh dưỡng và vận động hợp lý, thì hãy theo dõi ngay những thông tin quan trọng về...
+        </p>
+       </div>
+      </div>
+     </article>
+     <article class="article-item layout-small" data-index="5">
+      <div class="article-item-wrap">
+       <div class="article-item-image">
+        <a href="/blogs/news/giai-dap-vi-sao-ba-me-can-giai-ma-gen-cho-be" rel="nofollow" title="Vì sao ba mẹ cần giải mã gen cho bé?">
+         <img alt="Vì sao ba mẹ cần giải mã gen cho bé?" height="240" loading="lazy" src="//file.hstatic.net/200000689391/article/13559363_5291565__1___1__da9dab52eba74f2aa38f96dfadb8372f_medium.jpg" width="240"/>
+         <svg class="" height="512" style="enable-background: new 0 0 512 512" version="1.1" viewbox="0 0 48 48" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+          <path class="" d="m40.8994141 39.4853516-7.8127441-7.8127441c2.3978882-2.734375 3.7209473-6.1942749 3.7209473-9.8649902 0-4.0068359-1.5605469-7.7734375-4.3935547-10.6064453s-6.5996094-4.3935547-10.6064453-4.3935547-7.7734375 1.5605469-10.6064453 4.3935547-4.3935547 6.5996094-4.3935547 10.6064453 1.5605469 7.7734375 4.3935547 10.6064453 6.5996094 4.3935547 10.6064453 4.3935547c3.6707153 0 7.1306152-1.3230591 9.8649902-3.7209473l7.8127441 7.8127441c.1953125.1953125.4511719.2929688.7070313.2929688s.5117188-.0976563.7070313-.2929688c.3906249-.390625.3906249-1.0234375-.0000001-1.4140625zm-28.2841797-8.4853516c-2.4550781-2.4555664-3.8076172-5.7202148-3.8076172-9.1923828s1.3525391-6.7368164 3.8076172-9.1923828c2.4555664-2.4550781 5.7202148-3.8076172 9.1923828-3.8076172s6.7368164 1.3525391 9.1923828 3.8076172c2.4550781 2.4555664 3.8076172 5.7202148 3.8076172 9.1923828s-1.3525391 6.7368164-3.8076172 9.1923828c-2.4555664 2.4550781-5.7202148 3.8076172-9.1923828 3.8076172s-6.7368164-1.3525391-9.1923828-3.8076172z" data-original="#ffffff" fill="#ffffff" style="">
+          </path>
+         </svg>
+        </a>
+       </div>
+       <div class="article-item-detail">
+        <h3 class="article-item-detail-name">
+         <a href="/blogs/news/giai-dap-vi-sao-ba-me-can-giai-ma-gen-cho-be" title="Vì sao ba mẹ cần giải mã gen cho bé?">
+          Vì sao ba mẹ cần giải mã gen cho bé?
+         </a>
+        </h3>
+        <strong class="article-item-detail-info">
+         18 Thg 5 2023 / Mẹ và Bé
+        </strong>
+        <p class="article-item-detail-des">
+         Giải mã gen là công cụ kiểm tra thể chất và tiềm năng bẩm sinh để mở khóa tối đa tiềm năng trong trẻ. Ba mẹ nào có con nhỏ đang mong muốn xây dựng kế hoạch dinh dưỡng và vận động hợp lý, thì hãy theo dõi ngay những thông tin quan trọng về...
+        </p>
+       </div>
+      </div>
+     </article>
+    </div>
+    <div class="main-article-right-menu">
+     <div class="section-title-all">
+      <span>
+       Danh mục Blog
+      </span>
+     </div>
+     <ul class="main-article-right-menu-data">
+      <li class="hasChild">
+       <a aria-label="Quần áo sơ sinh" href="/">
+        Quần áo sơ sinh
+        <span>
+         ›
+        </span>
+       </a>
+       <ul class="menu1">
+        <li class="hasChild">
+         <a aria-label="Quần áo mặc nhà" href="/">
+          Quần áo mặc nhà
+          <span>
+           ›
+          </span>
+         </a>
+         <ul class="menu2">
+          <li class="">
+           <a aria-label="Quẩn áo theo bộ" href="/">
+            Quẩn áo theo bộ
+           </a>
+          </li>
+          <li class="">
+           <a aria-label="Bodysuit dạng pack" href="/">
+            Bodysuit dạng pack
+           </a>
+          </li>
+          <li class="">
+           <a aria-label="Sleepsuit dạng pack" href="/">
+            Sleepsuit dạng pack
+           </a>
+          </li>
+          <li class="">
+           <a aria-label="pyjama" href="/">
+            pyjama
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="hasChild">
+         <a aria-label="Quần áo đi chơi" href="/">
+          Quần áo đi chơi
+          <span>
+           ›
+          </span>
+         </a>
+         <ul class="menu2">
+          <li class="">
+           <a aria-label="Quần áo lẻ" href="/">
+            Quần áo lẻ
+           </a>
+          </li>
+          <li class="">
+           <a aria-label="Đầm bé gái" href="/">
+            Đầm bé gái
+           </a>
+          </li>
+          <li class="">
+           <a aria-label="Quần áo theo bộ" href="/">
+            Quần áo theo bộ
+           </a>
+          </li>
+          <li class="">
+           <a aria-label="Áo khoác" href="/">
+            Áo khoác
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="hasChild">
+         <a aria-label="Giày &amp; phụ kiện" href="/">
+          Giày &amp; phụ kiện
+          <span>
+           ›
+          </span>
+         </a>
+         <ul class="menu2">
+          <li class="">
+           <a aria-label="Giày" href="/">
+            Giày
+           </a>
+          </li>
+          <li class="">
+           <a aria-label="Bao tay, mũ thóp và phụ kiện" href="/">
+            Bao tay, mũ thóp và phụ kiện
+           </a>
+          </li>
+         </ul>
+        </li>
+       </ul>
+      </li>
+      <li class="hasChild">
+       <a aria-label="Thời trang bé gái" href="/collections/all">
+        Thời trang bé gái
+        <span>
+         ›
+        </span>
+       </a>
+       <ul class="menu1">
+        <li class="hasChild">
+         <a aria-label="Áo" href="/">
+          Áo
+          <span>
+           ›
+          </span>
+         </a>
+         <ul class="menu2">
+          <li class="">
+           <a aria-label="Áo các loại" href="/">
+            Áo các loại
+           </a>
+          </li>
+          <li class="">
+           <a aria-label="Áo khoác" href="/">
+            Áo khoác
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="hasChild">
+         <a aria-label="Quần" href="/">
+          Quần
+          <span>
+           ›
+          </span>
+         </a>
+         <ul class="menu2">
+          <li class="">
+           <a aria-label="Quần các loại" href="/">
+            Quần các loại
+           </a>
+          </li>
+          <li class="">
+           <a aria-label="Quần short &amp; váy" href="/">
+            Quần short &amp; váy
+           </a>
+          </li>
+          <li class="">
+           <a aria-label="Quần jean" href="/">
+            Quần jean
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="hasChild">
+         <a aria-label="Bộ quần áo" href="/">
+          Bộ quần áo
+          <span>
+           ›
+          </span>
+         </a>
+         <ul class="menu2">
+          <li class="">
+           <a aria-label="Đầm" href="/">
+            Đầm
+           </a>
+          </li>
+          <li class="">
+           <a aria-label="Bộ quần áo" href="/">
+            Bộ quần áo
+           </a>
+          </li>
+          <li class="">
+           <a aria-label="Pyjama" href="/">
+            Pyjama
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="">
+         <a aria-label="Vớ &amp; đồ lót" href="/">
+          Vớ &amp; đồ lót
+         </a>
+        </li>
+        <li class="">
+         <a aria-label="Đồ bơi" href="/">
+          Đồ bơi
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="hasChild">
+       <a aria-label="Thời trang bé trai" href="/blogs/news">
+        Thời trang bé trai
+        <span>
+         ›
+        </span>
+       </a>
+       <ul class="menu1">
+        <li class="hasChild">
+         <a aria-label="Áo" href="/">
+          Áo
+          <span>
+           ›
+          </span>
+         </a>
+         <ul class="menu2">
+          <li class="">
+           <a aria-label="Áo các loại" href="/">
+            Áo các loại
+           </a>
+          </li>
+          <li class="">
+           <a aria-label="Áo khoác" href="/">
+            Áo khoác
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="hasChild">
+         <a aria-label="Quần" href="/">
+          Quần
+          <span>
+           ›
+          </span>
+         </a>
+         <ul class="menu2">
+          <li class="">
+           <a aria-label="Quàn short" href="/">
+            Quàn short
+           </a>
+          </li>
+          <li class="">
+           <a aria-label="Quần jean" href="/">
+            Quần jean
+           </a>
+          </li>
+          <li class="">
+           <a aria-label="Quần các loại" href="/">
+            Quần các loại
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="hasChild">
+         <a aria-label="Bộ quần áo" href="/">
+          Bộ quần áo
+          <span>
+           ›
+          </span>
+         </a>
+         <ul class="menu2">
+          <li class="">
+           <a aria-label="Bộ quần áo" href="/">
+            Bộ quần áo
+           </a>
+          </li>
+          <li class="">
+           <a aria-label="Pyjama" href="/">
+            Pyjama
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="">
+         <a aria-label="Đồ bơi" href="/">
+          Đồ bơi
+         </a>
+        </li>
+        <li class="">
+         <a aria-label="Vớ &amp; đồ lót" href="/">
+          Vớ &amp; đồ lót
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="">
+       <a aria-label="Giày &amp; phụ kiện" href="/collections/toys">
+        Giày &amp; phụ kiện
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Sản phẩm tắm &amp; vệ sinh" href="/collections/baby-seats">
+        Sản phẩm tắm &amp; vệ sinh
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Đồ chơi &amp; học tập" href="/collections/anchor">
+        Đồ chơi &amp; học tập
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Khuyến mãi" class="shop-menu-hot" href="/collections/anchor">
+        Khuyến mãi
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Sức khỏe gia đình" href="/collections/baby-seats">
+        Sức khỏe gia đình
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </div>
+ </div>
+</main>
+<div class="shop-coupon-popup" id="shop-coupon-popup">
+ <label class="coupon-head">
+  Voucher ưu đãi
+ </label>
+ <div class="coupon-body">
+  <div class="coupon-body-wrap">
+   <div class="coupon-body-left">
+    <span>
+     <img alt="20k đơn hàng đầu tiên" src="//theme.hstatic.net/200000689391/1001102398/14/shop_coupon_item_image_1.png?v=217"/>
+    </span>
+   </div>
+   <div class="coupon-body-right">
+    <strong>
+     20k đơn hàng đầu tiên
+    </strong>
+    <p>
+     Giảm 60k đơn hàng đầu tiên (Nhập mã F1GENZ01) Mã: F1GENZ01
+    </p>
+    <span>
+     Ngày hết hạn: 31/12/2023
+    </span>
+    <button data-coupon="F1GENZ01" data-type="shop-coupon-confirm" type="button">
+     Sao chép
+    </button>
+   </div>
+  </div>
+ </div>
+ <div class="coupon-body">
+  <div class="coupon-body-wrap">
+   <div class="coupon-body-left">
+    <span>
+     <img alt="Freeship 50k" src="//theme.hstatic.net/200000689391/1001102398/14/shop_coupon_item_image_2.png?v=217"/>
+    </span>
+   </div>
+   <div class="coupon-body-right">
+    <strong>
+     Freeship 50k
+    </strong>
+    <p>
+     Miễn phí vận chuyển 50k cho đơn từ 5.000.000đ (Nhập mã F1GENZ02) Mã: F1GENZ02
+    </p>
+    <span>
+     Ngày hết hạn: 31/12/2023
+    </span>
+    <button data-coupon="F1GENZ02" data-type="shop-coupon-confirm" type="button">
+     Sao chép
+    </button>
+   </div>
+  </div>
+ </div>
+ <div class="coupon-body">
+  <div class="coupon-body-wrap">
+   <div class="coupon-body-left">
+    <span>
+     <img alt="Giảm giá 100k" src="//theme.hstatic.net/200000689391/1001102398/14/shop_coupon_item_image_3.png?v=217"/>
+    </span>
+   </div>
+   <div class="coupon-body-right">
+    <strong>
+     Giảm giá 100k
+    </strong>
+    <p>
+     Miễn phí phụ kiện 100k cho đơn từ 10.000.000đ (Nhập mã F1GENZ03) Mã: F1GENZ03
+    </p>
+    <span>
+     Ngày hết hạn: 31/12/2023
+    </span>
+    <button data-coupon="F1GENZ03" data-type="shop-coupon-confirm" type="button">
+     Sao chép
+    </button>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="shop-mobar">
+ <div class="shop-mobar-wrap">
+  <ul>
+   <li>
+    <a class="" href="/" title="Trang chủ">
+     <img alt="Trang chủ" class="lazyload" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_mobar_item_image_1_small.png?v=217" height="64" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="64"/>
+     <span>
+      Trang chủ
+     </span>
+    </a>
+   </li>
+   <li>
+    <a class="" href="https://f1genz-babie.myharavan.com/products/barbie-baby-girl-s-booties" title="Trang chi tiết">
+     <img alt="Trang chi tiết" class="lazyload" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_mobar_item_image_2_small.png?v=217" height="64" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="64"/>
+     <span>
+      Trang chi tiết
+     </span>
+    </a>
+   </li>
+   <li>
+    <a class="" href="/blogs/all" title="Trang tin tức">
+     <img alt="Trang tin tức" class="lazyload" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_mobar_item_image_3_small.png?v=217" height="64" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="64"/>
+     <span>
+      Trang tin tức
+     </span>
+    </a>
+   </li>
+   <li>
+    <a class="tool-contact-popup" href="/account" title="Danh mục trái">
+     <img alt="Danh mục trái" class="lazyload" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_mobar_item_image_4_small.png?v=217" height="64" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="64"/>
+     <span>
+      Đăng ký
+     </span>
+    </a>
+   </li>
+  </ul>
+ </div>
+</div>
+<div class="modal" id="shop-modal-contact" role="dialog" tabindex="-1">
+ <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+   <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+    <span aria-hidden="true">
+     ×
+    </span>
+   </button>
+   <div class="modal-contact" id="shop-modal-contact">
+    <div class="modal-contact-wrap">
+     <div class="modal-contact-wrap-right">
+      <div class="modal-contact-wrap-right-content">
+       <div class="section-title-all">
+        <span>
+         Đăng ký nhận tin
+        </span>
+        <p>
+         Để lại thông tin, để nhận ngay khuyến mãi từ chúng tôi nhé!
+        </p>
+       </div>
+       <form accept-charset="UTF-8" action="/account/contact" class="contact-form" method="post">
+        <input name="form_type" type="hidden" value="customer"/>
+        <input name="utf8" type="hidden" value="✓"/>
+        <input name="contact[tags]" type="hidden" value="khách hàng tiềm năng, bản tin"/>
+        <input name="contact[email]" placeholder="Nhập email của bạn..." required="" type="email" value=""/>
+        <button title="Đăng ký" type="submit">
+         <span>
+          Đăng ký
+         </span>
+        </button>
+        <span>
+         * Tôi đã đồng ý với các
+         <a href="/collections/all">
+          chính sách bảo mật
+         </a>
+         của F1GENZ BABIE
+        </span>
+        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt_6ifjU2UQOiuOQzvv-7FaSRq_sIjiiaxpIVG1VJSLDF1Fmy00VYVtd5oDIBCEJR6drAgYc0KO0ORG9On1GmCOC8lLMw1t4XiRERBFnQyQztycKftSB2yJ_JkeTBJdW4yo"/>
+        <input id="8ba7090aadc141aea3d3302be2dc67d5" name="g-recaptcha-response" type="hidden"/>
+        <noscript data-src="https://www.google.com/recaptcha/api.js?render=6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s">
+        </noscript>
+        <noscript>
+         let recaptchaElm=document.getElementById('8ba7090aadc141aea3d3302be2dc67d5');let recaptchaForm=recaptchaElm.parentNode;recaptchaForm.addEventListener("submit",function(formEvent){if(!recaptchaElm.value){formEvent.preventDefault();grecaptcha.ready(function(){grecaptcha.execute('6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s',{action:'submit'}).then(function(token){recaptchaElm.value=token;recaptchaForm.requestSubmit(formEvent.submitter)})})}})
+        </noscript>
+       </form>
+      </div>
+     </div>
+     <div class="modal-contact-wrap-left">
+      <img alt=" - Contact" class="lazyload w-100" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_modal_contact_image_large.png?v=217" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="modal-phone" id="shop-modal-phone">
+ <div class="modal-phone-wrap">
+  <div class="section-title-all">
+   <span>
+    Liên hệ ngay với chúng tôi:
+   </span>
+   <p>
+    Nhận ngay voucher giảm giá lên tới
+    <b style="font-weight:bold;color:#f30;font-size:25px;">
+     49%
+    </b>
+    cho tất cả sản phẩm:
+    <b>
+     HOTLINE:
+    </b>
+    <b style="font-weight:bold;color:#f30;">
+     1900.63.60.99
+    </b>
+   </p>
+  </div>
+  <form accept-charset="UTF-8" action="/account/contact" class="contact-form" method="post">
+   <input name="form_type" type="hidden" value="customer"/>
+   <input name="utf8" type="hidden" value="✓"/>
+   <input id="shop-modal-phone-email" name="contact[email]" type="hidden" value=""/>
+   <input id="shop-modal-phone-number" name="contact[tags]" placeholder="Nhập số điện thoại của bạn..." type="number" value=""/>
+   <button title="Đăng ký" type="submit">
+    <span>
+     Đăng ký
+    </span>
+   </button>
+   <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt_6ifjU2UQOiuOQzvv-7FaSRq_sIjiiaxpIVG1VJSLDF1Fmy00VYVtd5oDIBCEJR6drAgYc0KO0ORG9On1GmCOC8lLMw1t4XiRERBFnQyQztycKftSB2yJ_JkeTBJdW4yo"/>
+   <input id="9da86e8eda554c7384a44e36dcaea0bb" name="g-recaptcha-response" type="hidden"/>
+   <noscript data-src="https://www.google.com/recaptcha/api.js?render=6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s">
+   </noscript>
+   <noscript>
+    let recaptchaElm=document.getElementById('9da86e8eda554c7384a44e36dcaea0bb');let recaptchaForm=recaptchaElm.parentNode;recaptchaForm.addEventListener("submit",function(formEvent){if(!recaptchaElm.value){formEvent.preventDefault();grecaptcha.ready(function(){grecaptcha.execute('6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s',{action:'submit'}).then(function(token){recaptchaElm.value=token;recaptchaForm.requestSubmit(formEvent.submitter)})})}})
+   </noscript>
+  </form>
+ </div>
+</div>
+<div class="shop-menu-mobile">
+ <div class="shop-menu-mobile-head">
+  <label>
+   Menu
+  </label>
+  <button data-type="close-menu-mobile" type="button">
+   <svg class="" height="20" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="20" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+    <g>
+     <path class="" d="m4.59 59.41a2 2 0 0 0 2.83 0l24.58-24.58 24.59 24.58a2 2 0 0 0 2.83-2.83l-24.59-24.58 24.58-24.59a2 2 0 0 0 -2.83-2.83l-24.58 24.59-24.59-24.58a2 2 0 0 0 -2.82 2.82l24.58 24.59-24.58 24.59a2 2 0 0 0 0 2.82z" data-original="#000000" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+     </path>
+    </g>
+   </svg>
+  </button>
+ </div>
+ <ul class="shop-menu-mobile-body">
+  <li class="">
+   <a aria-label="Trang chủ" href="/">
+    Trang chủ
+   </a>
+  </li>
+  <li class="hasChild">
+   <a aria-label="Tất cả sản phẩm" href="/collections/all">
+    Tất cả sản phẩm
+    <span>
+     ›
+    </span>
+   </a>
+   <ul class="menu1">
+    <li class="hasChild">
+     <a aria-label="Áo trẻ em" href="/collections/gloves">
+      Áo trẻ em
+      <span>
+       ›
+      </span>
+     </a>
+     <ul class="menu2">
+      <li class="">
+       <a aria-label="Áo Polo" href="/collections/anchor">
+        Áo Polo
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Áo Thun" href="/collections/gloves">
+        Áo Thun
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Áo Khoác" href="/collections/anchor">
+        Áo Khoác
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Áo Sơ Mi" href="/collections/bag">
+        Áo Sơ Mi
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Áo Len" href="/collections/anchor">
+        Áo Len
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Áo Nỉ" href="/collections/gloves">
+        Áo Nỉ
+       </a>
+      </li>
+     </ul>
+    </li>
+    <li class="hasChild">
+     <a aria-label="Quần trẻ em" href="/collections/anchor">
+      Quần trẻ em
+      <span>
+       ›
+      </span>
+     </a>
+     <ul class="menu2">
+      <li class="">
+       <a aria-label="Quần Jeans" href="/collections/gloves">
+        Quần Jeans
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Quần Kaki" href="/collections/bag">
+        Quần Kaki
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Quần Short" href="/collections/anchor">
+        Quần Short
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Quần Nỉ" href="/collections/anchor">
+        Quần Nỉ
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Quần Legging" href="/collections/baby-seats">
+        Quần Legging
+       </a>
+      </li>
+     </ul>
+    </li>
+    <li class="">
+     <a aria-label="Đồ Bộ Trẻ Em" href="/collections/bag">
+      Đồ Bộ Trẻ Em
+     </a>
+    </li>
+    <li class="">
+     <a aria-label="Đồ Thể Thao Trẻ Em" href="/collections/bag">
+      Đồ Thể Thao Trẻ Em
+     </a>
+    </li>
+    <li class="">
+     <a aria-label="Nổi bật" href="/collections/baby-seats">
+      Nổi bật
+     </a>
+    </li>
+    <li class="">
+     <a aria-label="Phụ kiện trẻ em" href="/collections/baby-seats">
+      Phụ kiện trẻ em
+     </a>
+    </li>
+   </ul>
+  </li>
+  <li class="">
+   <a aria-label="Tin tức" href="/blogs/news">
+    Tin tức
+   </a>
+  </li>
+  <li class="hasChild">
+   <a aria-label="Nhóm sản phẩm" href="/collections/anchor">
+    Nhóm sản phẩm
+    <span>
+     ›
+    </span>
+   </a>
+   <ul class="menu1">
+    <li class="">
+     <a aria-label="Nhóm sản phẩm style 1" href="/collections/all?view=horizontal">
+      Nhóm sản phẩm style 1
+     </a>
+    </li>
+    <li class="">
+     <a aria-label="Nhóm sản phẩm style 2" href="/collections/all?view=vertical">
+      Nhóm sản phẩm style 2
+     </a>
+    </li>
+   </ul>
+  </li>
+  <li class="hasChild">
+   <a aria-label="Chi tiết sản phẩm" href="/products/baby-grow-party-hat?variant=1106081506&amp;view=style1">
+    Chi tiết sản phẩm
+    <span>
+     ›
+    </span>
+   </a>
+   <ul class="menu1">
+    <li class="">
+     <a aria-label="Chi tiết sản phẩm style 1" href="/products/baby-grow-party-hat?variant=1106081506&amp;view=style1">
+      Chi tiết sản phẩm style 1
+     </a>
+    </li>
+    <li class="">
+     <a aria-label="Chi tiết sản phẩm style 2" href="/products/baby-grow-party-hat?variant=1106081506&amp;view=style2">
+      Chi tiết sản phẩm style 2
+     </a>
+    </li>
+    <li class="">
+     <a aria-label="Chi tiết sản phẩm style 3" href="/products/baby-grow-party-hat?variant=1106081506&amp;view=style3">
+      Chi tiết sản phẩm style 3
+     </a>
+    </li>
+   </ul>
+  </li>
+  <li class="">
+   <a aria-label="Liên hệ" href="/pages/lien-he">
+    Liên hệ
+   </a>
+  </li>
+  <li class="">
+   <a aria-label="Đăng nhập" href="/account">
+    Đăng nhập
+   </a>
+   <a aria-label="Đăng ký" href="/account">
+    Đăng ký
+   </a>
+  </li>
+ </ul>
+ <div class="shop-menu-mobile-foot">
+  <div class="section-title-all">
+   <span>
+    Hổ trợ 24/7
+   </span>
+   <p>
+    Đừng ngừng ngại liên hệ chúng tôi, hổ trợ 24/7 từ thứ 2 - thứ 7. Hotline: 1900.63.60.99
+   </p>
+  </div>
+  <form accept-charset="UTF-8" action="/account/contact" class="contact-form" method="post">
+   <input name="form_type" type="hidden" value="customer"/>
+   <input name="utf8" type="hidden" value="✓"/>
+   <input name="contact[tags]" type="hidden" value="Khách hàng đăng ký nhận tin"/>
+   <input name="contact[first_name]" type="hidden" value="Người đăng ký"/>
+   <input name="contact[last_name]" type="hidden" value=""/>
+   <input name="contact[email]" placeholder="Nhập địa chỉ email của bạn..." required="" type="email"/>
+   <button type="submit">
+    <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 512.005 512.005" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+     <path class="" d="m511.658 51.675c2.496-11.619-8.895-21.416-20.007-17.176l-482 184c-5.801 2.215-9.638 7.775-9.65 13.984-.012 6.21 3.803 11.785 9.596 14.022l135.403 52.295v164.713c0 6.948 4.771 12.986 11.531 14.593 6.715 1.597 13.717-1.598 16.865-7.843l56.001-111.128 136.664 101.423c8.313 6.17 20.262 2.246 23.287-7.669 127.599-418.357 122.083-400.163 122.31-401.214zm-118.981 52.718-234.803 167.219-101.028-39.018zm-217.677 191.852 204.668-145.757c-176.114 185.79-166.916 176.011-167.684 177.045-1.141 1.535 1.985-4.448-36.984 72.882zm191.858 127.546-120.296-89.276 217.511-229.462z" data-original="#000000" fill="#000000">
+     </path>
+    </svg>
+   </button>
+   <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt_6ifjU2UQOiuOQzvv-7FaSRq_sIjiiaxpIVG1VJSLDF1Fmy00VYVtd5oDIBCEJR6drAgYc0KO0ORG9On1GmCOC8lLMw1t4XiRERBFnQyQztycKftSB2yJ_JkeTBJdW4yo"/>
+   <input id="5f1515b8498545b98b73aed3e0275063" name="g-recaptcha-response" type="hidden"/>
+   <noscript data-src="https://www.google.com/recaptcha/api.js?render=6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s">
+   </noscript>
+   <noscript>
+    let recaptchaElm=document.getElementById('5f1515b8498545b98b73aed3e0275063');let recaptchaForm=recaptchaElm.parentNode;recaptchaForm.addEventListener("submit",function(formEvent){if(!recaptchaElm.value){formEvent.preventDefault();grecaptcha.ready(function(){grecaptcha.execute('6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s',{action:'submit'}).then(function(token){recaptchaElm.value=token;recaptchaForm.requestSubmit(formEvent.submitter)})})}})
+   </noscript>
+  </form>
+  <ul class="shop-social">
+   <li>
+    <a aria-label="F1GENZ BABIE - Facebook" href="/collections/all" target="_blank">
+     <img alt="F1GENZ BABIE - Facebook" height="30" loading="lazy" src="https://file.hstatic.net/200000588277/file/facebook__6__53aaa8d352524d3eb025af5203eaa437_icon.png" width="30"/>
+    </a>
+   </li>
+   <li>
+    <a aria-label="F1GENZ BABIE - Youtube" href="/collections/all" target="_blank">
+     <img alt="F1GENZ BABIE - Youtube" height="30" loading="lazy" src="https://file.hstatic.net/200000588277/file/youtube__5__4f04522e10494557a651f53a33ad4d76_icon.png" width="30"/>
+    </a>
+   </li>
+   <li>
+    <a aria-label="F1GENZ BABIE - Pinterest" href="/collections/all" target="_blank">
+     <img alt="F1GENZ BABIE - Youtube" height="30" loading="lazy" src="https://file.hstatic.net/200000588277/file/pinterest_a1a15995132a4275845412deba5f1193_icon.png" width="30"/>
+    </a>
+   </li>
+   <li>
+    <a aria-label="F1GENZ BABIE - TikTok" href="/collections/all" target="_blank">
+     <img alt="F1GENZ BABIE - TikTok" height="30" loading="lazy" src="https://file.hstatic.net/200000588277/file/tik-tok_d85bb4e7468c43ac9ed5437649b7405c_icon.png" width="30"/>
+    </a>
+   </li>
+   <li>
+    <a aria-label="F1GENZ BABIE - Instagram" href="/collections/all" target="_blank">
+     <img alt="F1GENZ BABIE - Instagram" height="30" loading="lazy" src="https://file.hstatic.net/200000588277/file/instagram__3__7de3ebbce1f24003b516ca6c1d7c24d5_icon.png" width="30"/>
+    </a>
+   </li>
+  </ul>
+ </div>
+</div>
+<div class="shop-cart-sidebar">
+ <div class="shop-cart-sidebar-head">
+  <label>
+   Giỏ hàng
+  </label>
+  <button data-type="shop-cart-sidebar-close" type="button">
+   <svg class="Icon Icon--close" height="15" role="presentation" viewbox="0 0 16 14" width="15">
+    <path d="M15 0L1 14m14 0L1 0" fill="none" fill-rule="evenodd" stroke="currentColor">
+    </path>
+   </svg>
+  </button>
+  <div class="shop-cart-sidebar-top-freeship">
+   <div class="shop-freeship" data-freeship-price="5000000000">
+    <div class="shop-freeship-bar">
+     <div class="shop-freeship-bar-main">
+      <span>
+      </span>
+     </div>
+    </div>
+    <div class="shop-freeship-note">
+     Mua thêm
+     <span>
+      50,000,000₫
+     </span>
+     để được miễn phí giao hàng trên toàn quốc
+    </div>
+   </div>
+   <div class="shop-cart-sidebar-top-freeship-label">
+    <img alt=" - Free Ship" class="lazyload" data-src="https://file.hstatic.net/200000306687/file/giphy__1__c91b6f02cea04a969d655681bb73caf8_small.gif" height="62" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="75"/>
+   </div>
+  </div>
+ </div>
+ <div class="shop-cart-sidebar-body">
+  <div class="shop-cart-sidebar-yes">
+  </div>
+  <div class="shop-cart-sidebar-no">
+   Giỏ hàng của bạn còn trống
+  </div>
+ </div>
+ <div class="shop-cart-sidebar-foot">
+  <button data-type="shop-cart-sidebar-note-action" title="Thêm ghi chú" type="button">
+   Thêm ghi chú
+  </button>
+  <a aria-label="Xem chi tiết giỏ hàng" href="/cart">
+   Xem chi tiết giỏ hàng
+  </a>
+  <p>
+   Phí ship &amp; thuế được tính ở Trang Thanh Toán
+  </p>
+  <a aria-label="Thanh toán" href="/checkout">
+   <span>
+    Thanh toán
+   </span>
+   <span>
+   </span>
+   <span>
+    0₫
+   </span>
+  </a>
+  <div class="shop-cart-sidebar-note">
+   <label>
+    Thêm ghi chú
+   </label>
+   <textarea placeholder="Chúng tôi có thể giúp gì cho bạn?"></textarea>
+   <button data-type="shop-cart-sidebar-note-save" type="button">
+    Lưu
+   </button>
+  </div>
+ </div>
+</div>
+<div class="shop-social-sidebar d-none d-sm-block">
+ <a href="/collections/all" style="background-color: #ffffff;" target="_blank" title="Zalo">
+  <img alt="Social Zalo" class="lazyload w-100" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_social_sidebar_item_image_1_icon.png?v=217" height="32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="32"/>
+  Zalo
+ </a>
+ <a href="/collections/all" style="background-color: #ffffff;" target="_blank" title="Snapchat">
+  <img alt="Social Snapchat" class="lazyload w-100" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_social_sidebar_item_image_2_icon.png?v=217" height="32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="32"/>
+  Snapchat
+ </a>
+ <a href="/collections/all" style="background-color: #ffffff;" target="_blank" title="Tiktok">
+  <img alt="Social Tiktok" class="lazyload w-100" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_social_sidebar_item_image_3_icon.png?v=217" height="32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="32"/>
+  Tiktok
+ </a>
+ <a href="/collections/all" style="background-color: #ffffff;" target="_blank" title="Instagram">
+  <img alt="Social Instagram" class="lazyload w-100" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_social_sidebar_item_image_4_icon.png?v=217" height="32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="32"/>
+  Instagram
+ </a>
+ <a href="/collections/all" style="background-color: #ffffff;" target="_blank" title="Youtube">
+  <img alt="Social Youtube" class="lazyload w-100" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_social_sidebar_item_image_5_icon.png?v=217" height="32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="32"/>
+  Youtube
+ </a>
+ <a href="/collections/all" style="background-color: #ffffff;" target="_blank" title="Messenger">
+  <img alt="Social Messenger" class="lazyload w-100" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_social_sidebar_item_image_6_icon.png?v=217" height="32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="32"/>
+  Messenger
+ </a>
+ <button data-fancybox="" data-src="#shop-modal-phone" style="background-color: #ffffff;" title=" - Support">
+  <img alt="Hổ trợ 24/7" class="lazyload w-100" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_social_sidebar_item_image_7_icon.png?v=217" height="32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="32"/>
+  Hổ trợ 24/7
+ </button>
+ <button class="back-to-top" title="Back to top">
+  <img alt="Back to top" class="lazyload w-100" data-src="https://file.hstatic.net/200000588277/file/arrow-up_eb1426bb7fc647eab89f9279695752cd.png" height="32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="32"/>
+  Lên đầu trang
+ </button>
+</div>
+<div class="shop-wishlist-modal" data-name="Yêu thích">
+ <div class="shop-wishlist-modal-head">
+  <div class="container">
+   <label>
+    Danh mục sản phẩm yêu thích
+   </label>
+   <button data-type="shop-wishlist-modal-close" title="Đóng" type="button">
+    <svg class="" height="20" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="20" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+     <g>
+      <path class="" d="m4.59 59.41a2 2 0 0 0 2.83 0l24.58-24.58 24.59 24.58a2 2 0 0 0 2.83-2.83l-24.59-24.58 24.58-24.59a2 2 0 0 0 -2.83-2.83l-24.58 24.59-24.59-24.58a2 2 0 0 0 -2.82 2.82l24.58 24.59-24.58 24.59a2 2 0 0 0 0 2.82z" data-original="#000000" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+      </path>
+     </g>
+    </svg>
+   </button>
+  </div>
+ </div>
+ <div class="container">
+  <div class="shop-wishlist-modal-body">
+   <p class="shop-wishlist-modal-null wcs-null w-100 text-center">
+    Chưa có sản phẩm trong danh sách yêu thích
+   </p>
+  </div>
+ </div>
+</div>
+<div class="shop-compare-modal" data-name="So sánh">
+ <div class="shop-compare-modal-head">
+  <div class="container">
+   <label>
+    Danh mục sản phẩm so sánh
+   </label>
+   <button data-type="shop-compare-modal-close" title="Đóng" type="button">
+    <svg class="" height="20" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="20" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+     <g>
+      <path class="" d="m4.59 59.41a2 2 0 0 0 2.83 0l24.58-24.58 24.59 24.58a2 2 0 0 0 2.83-2.83l-24.59-24.58 24.58-24.59a2 2 0 0 0 -2.83-2.83l-24.58 24.59-24.59-24.58a2 2 0 0 0 -2.82 2.82l24.58 24.59-24.58 24.59a2 2 0 0 0 0 2.82z" data-original="#000000" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+      </path>
+     </g>
+    </svg>
+   </button>
+  </div>
+ </div>
+ <div class="container">
+  <div class="shop-compare-modal-body">
+   <p class="shop-compare-modal-null wcs-null w-100 text-center">
+    Chưa có sản phẩm trong danh sách so sánh
+   </p>
+  </div>
+ </div>
+</div>
+<div aria-hidden="true" aria-labelledby="accountModal" class="modal fade" id="accountModal" role="dialog" tabindex="-1">
+ <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+  <div class="modal-content">
+   <div class="modal-body">
+    <div class="row">
+     <div class="col-lg-3 col-md-3">
+      <div class="modalLogo">
+       <a aria-label="F1GENZ BABIE" href="https://f1genz-babie.myharavan.com">
+        <img alt="F1GENZ BABIE" height="85" loading="lazy" src="//theme.hstatic.net/200000689391/1001102398/14/shop_logo_image_medium.png?v=217" width="240"/>
+       </a>
+      </div>
+      <div aria-orientation="vertical" class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
+       <a aria-controls="modalLogin" aria-selected="true" class="nav-link active" data-toggle="pill" href="#modalLogin" id="modalLoginTab" role="tab">
+        Đăng nhập
+       </a>
+       <a aria-controls="modalForget" aria-selected="false" class="nav-link" data-toggle="pill" href="#modalForget" id="modalForgetTab" role="tab">
+        Quên mật khẩu
+       </a>
+       <a aria-controls="modalRegister" aria-selected="false" class="nav-link" data-toggle="pill" href="#modalRegister" id="modalRegisterTab" role="tab">
+        Đăng ký
+       </a>
+      </div>
+     </div>
+     <div class="col-lg-9 col-md-9">
+      <div class="tab-content" id="v-pills-tabContent">
+       <div aria-labelledby="modalLoginTab" class="tab-pane fade show active" id="modalLogin" role="tabpanel">
+        <label class="text-center">
+         ĐĂNG NHẬP
+        </label>
+        <div class="login-form-body">
+         <form accept-charset="UTF-8" action="/account/login" id="customer_login" method="post">
+          <input name="form_type" type="hidden" value="customer_login"/>
+          <input name="utf8" type="hidden" value="✓"/>
+          <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt_6ifjU2UQOiuOQzvv-7FaSRq_sIjiiaxpIVG1VJSLDF1Fmy00VYVtd5oDIBCEJR6drAgYc0KO0ORG9On1GmCOC8lLMw1t4XiRERBFnQyQztycKftSB2yJ_JkeTBJdW4yo"/>
+          <div class="form-group">
+           <label for="login-email">
+            Email*
+           </label>
+           <input class="form-control" id="login-email" name="customer[email]" required="" type="email"/>
+          </div>
+          <div class="form-group">
+           <label for="login-password">
+            Mật khẩu*
+           </label>
+           <input class="form-control" id="login-password" name="customer[password]" required="" type="password"/>
+          </div>
+          <div class="form-group">
+           <button class="btn btn-primary hoverOpacity" type="submit">
+            ĐĂNG NHẬP
+           </button>
+          </div>
+         </form>
+        </div>
+       </div>
+       <div aria-labelledby="modalForgetTab" class="tab-pane fade" id="modalForget" role="tabpanel">
+        <label class="text-center">
+         QUÊN MẬT KHẨU
+        </label>
+        <div class="recover-form-body">
+         <form accept-charset="UTF-8" action="/account/recover" method="post">
+          <input name="form_type" type="hidden" value="recover_customer_password"/>
+          <input name="utf8" type="hidden" value="✓"/>
+          <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt_6ifjU2UQOiuOQzvv-7FaSRq_sIjiiaxpIVG1VJSLDF1Fmy00VYVtd5oDIBCEJR6drAgYc0KO0ORG9On1GmCOC8lLMw1t4XiRERBFnQyQztycKftSB2yJ_JkeTBJdW4yo"/>
+          <div class="form-group">
+           <label for="recover-email">
+            Email*
+           </label>
+           <input class="form-control" id="recover-email" name="email" required="" type="email"/>
+          </div>
+          <div class="form-group">
+           <button class="btn btn-primary hoverOpacity" type="submit">
+            Gửi
+           </button>
+          </div>
+         </form>
+        </div>
+       </div>
+       <div aria-labelledby="modalRegisterTab" class="tab-pane fade" id="modalRegister" role="tabpanel">
+        <label class="text-center">
+         ĐĂNG KÝ
+        </label>
+        <div class="register-form-body">
+         <form accept-charset="UTF-8" action="/account" id="create_customer" method="post">
+          <input name="form_type" type="hidden" value="create_customer"/>
+          <input name="utf8" type="hidden" value="✓"/>
+          <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt_6ifjU2UQOiuOQzvv-7FaSRq_sIjiiaxpIVG1VJSLDF1Fmy00VYVtd5oDIBCEJR6drAgYc0KO0ORG9On1GmCOC8lLMw1t4XiRERBFnQyQztycKftSB2yJ_JkeTBJdW4yo"/>
+          <div class="form-group">
+           <label for="register-last-name">
+            Họ của bạn*
+           </label>
+           <input class="form-control" id="register-last-name" name="customer[last_name]" required="" type="text"/>
+          </div>
+          <div class="form-group">
+           <label for="register-first-name">
+            Tên của bạn*
+           </label>
+           <input class="form-control" id="register-first-name" name="customer[first_name]" required="" type="text"/>
+          </div>
+          <div class="form-group">
+           <label for="register-phone">
+            Số điện thoại
+           </label>
+           <input class="form-control" id="register-phone" name="customer[phone]" pattern="^\+?\d{0,10}" type="text"/>
+          </div>
+          <div class="form-group">
+           <label>
+            Giới tính
+           </label>
+           <div class="row">
+            <div class="col-2 d-flex align-items-center">
+             <input checked="" id="register-gender-0" name="customer[gender]" type="radio" value="0"/>
+             <label for="register-gender-0">
+              Nữ
+             </label>
+            </div>
+            <div class="col-2 d-flex align-items-center">
+             <input id="register-gender-1" name="customer[gender]" type="radio" value="1"/>
+             <label for="register-gender-1">
+              Nam
+             </label>
+            </div>
+           </div>
+          </div>
+          <div class="form-group">
+           <label for="register-email">
+            Email*
+           </label>
+           <input class="form-control" id="register-email" name="customer[email]" required="" type="email"/>
+          </div>
+          <div class="form-group">
+           <label for="register-password">
+            Mật khẩu*
+           </label>
+           <input class="form-control" id="register-password" name="customer[password]" required="" type="password"/>
+          </div>
+          <div class="form-group">
+           <button class="btn btn-primary hoverOpacity" type="submit">
+            ĐĂNG KÝ
+           </button>
+          </div>
+          <input id="5dc824c6a11b46088cebb0ce2309e968" name="g-recaptcha-response" type="hidden"/>
+          <noscript data-src="https://www.google.com/recaptcha/api.js?render=6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s">
+          </noscript>
+          <noscript>
+           let recaptchaElm=document.getElementById('5dc824c6a11b46088cebb0ce2309e968');let recaptchaForm=recaptchaElm.parentNode;recaptchaForm.addEventListener("submit",function(formEvent){if(!recaptchaElm.value){formEvent.preventDefault();grecaptcha.ready(function(){grecaptcha.execute('6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s',{action:'submit'}).then(function(token){recaptchaElm.value=token;recaptchaForm.requestSubmit(formEvent.submitter)})})}})
+          </noscript>
+         </form>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <button class="closeModal">
+    <i class="lni lni-close">
+    </i>
+   </button>
+  </div>
+ </div>
+</div>
+<button class="overplay-all" title="Đóng">
+</button>
+
+{%endblock %}
