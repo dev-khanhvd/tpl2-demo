@@ -1,0 +1,2051 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(product.name).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ product.metaKeywords?:product.name }}">
+<meta name="description" content="{{ product.metaDescription?:product.name }}">
+<meta property="og:title" content="{{ product.metaTitle?:product.name }}">
+<meta property="og:url" content="{{ product.canonicalLink }}">
+<meta property="og:image" content="{{ product.imageUri }}">
+<link rel="canonical" href="{{ product.canonicalLink }}">
+{%endblock %}
+
+{%block body %}
+  {% set wishlist = jsonDecode(getCookies('WISHLIST_STORE_PRODUCT')) %}
+                            {% set ivt = 0 %}
+                            {% if product.inventory().calcAvailable() > 0 %}
+                                {% set ivt = product.inventory().calcAvailable() %}
+                            {% elseif product.available > 0 %}
+                                {% set ivt = product.available %}
+                            {% endif %}
+                            {% set variableAttributes = product.variableAttributes %}
+                            {% set flag = 0 %}
+<main class="main-layout">
+ <div class="main-product">
+  <div class="main-product-breadcrumb" title="">
+   <div class="container-fluid">
+    <div class="section-title-all">
+     <h1>
+      GM Sting Kashmir Willow
+     </h1>
+    </div>
+    <div class="breadcrumb-wrap">
+     <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+       <a href="/">
+        Trang chủ
+       </a>
+      </li>
+      <li class="breadcrumb-item">
+       <a href="/collections/bag">
+        Bag &amp; Clothes
+       </a>
+      </li>
+      <li class="breadcrumb-item active">
+       <span>
+        GM Sting Kashmir Willow
+       </span>
+      </li>
+     </ol>
+    </div>
+   </div>
+  </div>
+  <div class="container-fluid">
+   <div class="main-product-wrap">
+    <div class="main-product-left main-product-feature" data-style="style1">
+     <!-- Style 1 -->
+     <div class="main-product-feature-featured">
+      <a aria-label="GM Sting Kashmir Willow" data-index="1" href="#" onclick="return false;" title="GM Sting Kashmir Willow">
+       <picture>
+        <source media="(max-width: 480px)" srcset="//product.hstatic.net/200000689391/product/upload_4908984490de4807be064eb750142cb9_grande.jpg"/>
+        <source media="(min-width: 481px)" srcset="//product.hstatic.net/200000689391/product/upload_4908984490de4807be064eb750142cb9_master.jpg"/>
+        <img alt="GM Sting Kashmir Willow" class="w-auto" height="600" loading="lazy" src="https://product.hstatic.net/200000689391/product/upload_4908984490de4807be064eb750142cb9.jpg" width="600"/>
+       </picture>
+      </a>
+     </div>
+     <!-- End Style 1 -->
+    </div>
+    <div class="main-product-right">
+     <div class="main-product-share">
+      <button class="main-product-share-overplay" data-type="main-product-share-overplay" type="button">
+      </button>
+      <button class="main-product-share-cta" data-type="main-product-share-open-popup" title="Chia sẻ" type="button">
+       <svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 3c-1.652 0-3 1.348-3 3 0 .46.113.895.3 1.285L12.587 11h-4.77A2.999 2.999 0 005 9c-1.652 0-3 1.348-3 3s1.348 3 3 3c1.3 0 2.402-.84 2.816-2h4.77l3.715 3.715c-.188.39-.301.824-.301 1.285 0 1.652 1.348 3 3 3s3-1.348 3-3-1.348-3-3-3c-.46 0-.895.113-1.285.3l-3.3-3.3 3.3-3.3c.39.187.824.3 1.285.3 1.652 0 3-1.348 3-3s-1.348-3-3-3z" fill="#595959">
+        </path>
+       </svg>
+      </button>
+      <div class="main-product-share-popup">
+       <div class="main-product-share-popup-head">
+        <label>
+         Chia sẻ
+        </label>
+        <a aria-label="Chia sẻ Facebook" href="https://www.facebook.com/sharer.php?u=https://f1genz-babie.myharavan.com/products/gm-sting-kashmir-willow" target="_blank">
+         <svg fill="none" height="32" width="32" xmlns="http://www.w3.org/2000/svg">
+          <path d="M27 0H5a5 5 0 00-5 5v22a5 5 0 005 5h22a5 5 0 005-5V5a5 5 0 00-5-5z" fill="#1778F2">
+          </path>
+          <path clip-rule="evenodd" d="M20.314 32V19.499h3.255L24 15.19h-3.686l.006-2.156c0-1.123.1-1.725 1.623-1.725h2.034V7h-3.255c-3.91 0-5.285 2.09-5.285 5.604v2.587H13v4.308h2.437V32h4.877z" fill="#fff" fill-rule="evenodd">
+          </path>
+         </svg>
+        </a>
+        <a aria-label="Chia sẻ Twitter" href="https://twitter.com/intent/tweet?url=https://f1genz-babie.myharavan.com/products/gm-sting-kashmir-willow" target="_blank">
+         <svg fill="none" height="32" width="32" xmlns="http://www.w3.org/2000/svg">
+          <rect fill="#1FA1F3" height="32" rx="4" width="32">
+          </rect>
+          <path clip-rule="evenodd" d="M15.73 13.235l.04.634-.674-.077c-2.455-.298-4.6-1.308-6.42-3.004l-.89-.841-.23.621c-.485 1.385-.175 2.848.836 3.832.54.544.419.622-.512.298-.324-.104-.607-.181-.634-.143-.094.091.23 1.27.486 1.735.35.648 1.065 1.282 1.847 1.657l.661.298-.782.013c-.755 0-.782.013-.701.285.27.841 1.335 1.735 2.522 2.123l.836.272-.728.414a7.894 7.894 0 01-3.615.958c-.607.013-1.106.065-1.106.104 0 .13 1.646.854 2.603 1.14 2.873.84 6.285.478 8.848-.959 1.82-1.023 3.642-3.055 4.491-5.023.459-1.049.918-2.965.918-3.884 0-.596.04-.673.795-1.385.445-.415.864-.868.945-.997.134-.246.12-.246-.567-.026-1.146.388-1.308.337-.742-.246.418-.414.917-1.165.917-1.385 0-.04-.202.026-.431.142-.243.13-.783.324-1.187.44l-.729.22-.66-.427c-.364-.233-.877-.492-1.147-.57-.688-.18-1.74-.155-2.36.052-1.686.583-2.752 2.085-2.63 3.729z" fill="#fff" fill-rule="evenodd">
+          </path>
+         </svg>
+        </a>
+        <a aria-label="Chia sẻ WhatsApp" href="https://wa.me/?text=https://f1genz-babie.myharavan.com/products/gm-sting-kashmir-willow" target="_blank">
+         <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+          <path d="M116.225-.001c-11.264.512-26.112 1.536-32.768 3.072-10.24 2.048-19.968 5.12-27.648 9.216-9.728 4.608-17.92 10.752-25.088 17.92-7.68 7.68-13.824 15.872-18.432 25.6-4.096 7.68-7.168 17.408-9.216 27.648-1.536 6.656-2.56 21.504-2.56 32.768-.512 4.608-.512 10.752-.512 13.824v265.729c.512 11.264 1.536 26.112 3.072 32.768 2.048 10.24 5.12 19.968 9.216 27.648 4.608 9.728 10.752 17.92 17.92 25.088 7.68 7.68 15.872 13.824 25.6 18.432 7.68 4.096 17.408 7.168 27.648 9.216 6.656 1.536 21.504 2.56 32.768 2.56 4.608.512 10.752.512 13.824.512h265.728c11.264-.512 26.112-1.536 32.768-3.072 10.24-2.048 19.968-5.12 27.648-9.216 9.728-4.608 17.92-10.752 25.088-17.92 7.68-7.68 13.824-15.872 18.432-25.6 4.096-7.68 7.168-17.408 9.216-27.648 1.536-6.656 2.56-21.504 2.56-32.768.512-4.608.512-10.752.512-13.824V116.223c-.512-11.264-1.536-26.112-3.072-32.768-2.048-10.24-5.12-19.968-9.216-27.648-4.608-9.728-10.752-17.92-17.92-25.088-7.68-7.68-15.872-13.824-25.6-18.432-7.68-4.096-17.408-7.168-27.648-9.216-6.656-1.536-21.504-2.56-32.768-2.56-4.608-.512-10.752-.512-13.824-.512H116.225z" fill="url(#whatsApp_svg___Linear1)" fill-rule="nonzero">
+          </path>
+          <path d="M344.754 289.698c-4.56-2.282-26.98-13.311-31.161-14.832-4.18-1.521-7.219-2.282-10.259 2.282-3.041 4.564-11.78 14.832-14.44 17.875-2.66 3.042-5.32 3.423-9.88 1.14-4.561-2.281-19.254-7.095-36.672-22.627-13.556-12.087-22.709-27.017-25.369-31.581s-.283-7.031 2-9.304c2.051-2.041 4.56-5.324 6.84-7.986 2.28-2.662 3.04-4.564 4.56-7.606 1.52-3.042.76-5.705-.38-7.987-1.14-2.282-10.26-24.72-14.06-33.848-3.701-8.889-7.461-7.686-10.26-7.826-2.657-.132-5.7-.16-8.74-.16-3.041 0-7.98 1.141-12.161 5.704-4.18 4.564-15.96 15.594-15.96 38.032 0 22.438 16.34 44.116 18.62 47.159 2.281 3.043 32.157 49.089 77.902 68.836 10.88 4.697 19.374 7.501 25.997 9.603 10.924 3.469 20.866 2.98 28.723 1.806 8.761-1.309 26.98-11.029 30.781-21.677 3.799-10.649 3.799-19.777 2.659-21.678-1.139-1.902-4.179-3.043-8.74-5.325m-83.207 113.573h-.061c-27.22-.011-53.917-7.32-77.207-21.137l-5.539-3.287-57.413 15.056 15.325-55.959-3.608-5.736c-15.184-24.145-23.203-52.051-23.192-80.704.033-83.611 68.083-151.635 151.756-151.635 40.517.016 78.603 15.811 107.243 44.474 28.64 28.663 44.404 66.764 44.389 107.283-.035 83.617-68.083 151.645-151.693 151.645m129.102-280.709c-34.457-34.486-80.281-53.487-129.103-53.507-100.595 0-182.468 81.841-182.508 182.437-.013 32.156 8.39 63.546 24.361 91.212l-25.892 94.545 96.75-25.37c26.657 14.535 56.67 22.194 87.216 22.207h.075c100.586 0 182.465-81.852 182.506-182.448.019-48.751-18.946-94.59-53.405-129.076" fill="#fff">
+          </path>
+          <defs>
+           <lineargradient gradienttransform="matrix(0 -512 -512 0 256.001 512)" gradientunits="userSpaceOnUse" id="whatsApp_svg___Linear1" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="#25cf43">
+            </stop>
+            <stop offset="1" stop-color="#61fd7d">
+            </stop>
+           </lineargradient>
+          </defs>
+         </svg>
+        </a>
+        <a aria-label="Chia sẻ Linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https://f1genz-babie.myharavan.com/products/gm-sting-kashmir-willow" target="_blank">
+         <svg fill="none" height="32" width="32" xmlns="http://www.w3.org/2000/svg">
+          <rect fill="#0077B5" height="32" rx="4" width="32">
+          </rect>
+          <path clip-rule="evenodd" d="M10.857 9.07c-.022-1.094-.744-1.927-1.917-1.927S7 7.976 7 9.07C7 10.142 7.744 11 8.895 11h.022c1.196 0 1.94-.858 1.94-1.93zm0 3.216H7v11.571h3.857V12.286zm9.294 0c2.771 0 4.849 1.616 4.849 5.089v6.482h-4.212V17.81c0-1.52-.609-2.556-2.134-2.556-1.163 0-1.856.698-2.16 1.373-.112.242-.14.58-.14.917v6.314h-4.211s.055-10.244 0-11.305h4.212v1.601c.559-.77 1.56-1.867 3.796-1.867z" fill="#fff" fill-rule="evenodd">
+          </path>
+         </svg>
+        </a>
+       </div>
+       <hr/>
+       <div class="main-product-share-popup-body">
+        <label>
+         Sao chép đường dẫn
+        </label>
+        <form>
+         <input id="main-product-share-copy" readonly="" value="https://f1genz-babie.myharavan.com/products/gm-sting-kashmir-willow"/>
+         <button data-type="main-product-share-copy" type="button">
+          Sao chép
+         </button>
+        </form>
+       </div>
+      </div>
+     </div>
+     <h1 class="main-product-title">
+      GM Sting Kashmir Willow
+     </h1>
+     <div class="main-product-info">
+      <div class="main-product-info-sku">
+       <strong>
+        Mã sản phẩm:
+       </strong>
+       <span>
+        584611291
+       </span>
+      </div>
+      <div class="main-product-info-barcode">
+       <strong>
+        Barcode:
+       </strong>
+       <span>
+        394746236
+       </span>
+      </div>
+      <div class="main-product-info-vendor">
+       <strong>
+        Thương hiệu:
+       </strong>
+       <span>
+        F1GENZ Babies
+       </span>
+      </div>
+      <div class="main-product-info-type">
+       <strong>
+        Dòng sản phẩm:
+       </strong>
+       <span>
+        Clothes
+       </span>
+      </div>
+     </div>
+     <div class="main-product-price">
+      <div class="main-product-price-wrap">
+       <del class="main-product-price-compare">
+        6,500,000₫
+       </del>
+       <span class="main-product-price-this">
+        1,350,000₫
+       </span>
+       <span class="main-product-price-discount">
+        Tiết kiệm 5,150,000₫
+       </span>
+      </div>
+      <div class="haravan-product-reviews-badge" data-id="1046971360">
+      </div>
+     </div>
+     <!-- Flash Sale -->
+     <div class="main-product-fsale" style="display: none;">
+      <img alt=" - Flash Sale" height="33" loading="lazy" src="https://file.hstatic.net/200000306687/file/ezgif.com-gif-maker_40e5c36d115b4904babbebc78c90c34e.gif" width="150"/>
+      <label>
+       Bắt đầu sau
+      </label>
+      <div class="main-product-fsale-countdown" data-end="22/11/2023 16:00:00" data-start="22/11/2023 12:00:00">
+      </div>
+     </div>
+     <!-- End Flash Sale -->
+     <div class="d-none">
+      <select id="main-product-select" name="id">
+       <option value="1106081237">
+        Đỏ / 20cm
+       </option>
+       <option value="1106081238">
+        Đỏ / 40cm
+       </option>
+       <option value="1106081239">
+        Đỏ / 60cm
+       </option>
+       <option value="1106081240">
+        Đen / 20cm
+       </option>
+       <option value="1106081241">
+        Đen / 40cm
+       </option>
+       <option value="1106081242">
+        Đen / 60cm
+       </option>
+       <option value="1106081243">
+        Vàng / 20cm
+       </option>
+       <option value="1106081244">
+        Vàng / 40cm
+       </option>
+       <option value="1106081245">
+        Vàng / 60cm
+       </option>
+       <option value="1106081246">
+        Hồng / 60cm
+       </option>
+       <option value="1106081247">
+        Hồng / 20cm
+       </option>
+       <option value="1106081248">
+        Cam / 80cm
+       </option>
+      </select>
+     </div>
+     <div class="main-product-swatch">
+      <div class="product-sw-line">
+       <div class="product-sw-select">
+        <div class="product-sw-title">
+         Màu sắc
+        </div>
+        <span class="product-sw-select-item sw-color">
+         <span class="colorHover">
+         </span>
+         <input class="trigger-option-sw d-none" data-name="option1" data-value="Đỏ" id="product-choose-mau-sac-1" name="product-choose-mau-sac" type="radio" value="Đỏ"/>
+         <label class="product-sw-select-item-span sw-color-do-label" for="product-choose-mau-sac-1">
+          <span class="sw-color-do" style="background-image: url(//product.hstatic.net/200000689391/product/upload_4908984490de4807be064eb750142cb9_small.jpg)">
+          </span>
+         </label>
+        </span>
+        <span class="product-sw-select-item sw-color">
+         <span class="colorHover">
+         </span>
+         <input class="trigger-option-sw d-none" data-name="option1" data-value="Đen" id="product-choose-mau-sac-2" name="product-choose-mau-sac" type="radio" value="Đen"/>
+         <label class="product-sw-select-item-span sw-color-den-label" for="product-choose-mau-sac-2">
+          <span class="sw-color-den" style="background-image: url(//product.hstatic.net/200000689391/product/upload_4908984490de4807be064eb750142cb9_small.jpg)">
+          </span>
+         </label>
+        </span>
+        <span class="product-sw-select-item sw-color">
+         <span class="colorHover">
+         </span>
+         <input class="trigger-option-sw d-none" data-name="option1" data-value="Vàng" id="product-choose-mau-sac-3" name="product-choose-mau-sac" type="radio" value="Vàng"/>
+         <label class="product-sw-select-item-span sw-color-vang-label" for="product-choose-mau-sac-3">
+          <span class="sw-color-vang" style="background-image: url(//product.hstatic.net/200000689391/product/upload_4908984490de4807be064eb750142cb9_small.jpg)">
+          </span>
+         </label>
+        </span>
+        <span class="product-sw-select-item sw-color">
+         <span class="colorHover">
+         </span>
+         <input class="trigger-option-sw d-none" data-name="option1" data-value="Hồng" id="product-choose-mau-sac-4" name="product-choose-mau-sac" type="radio" value="Hồng"/>
+         <label class="product-sw-select-item-span sw-color-hong-label" for="product-choose-mau-sac-4">
+          <span class="sw-color-hong" style="background-image: url(//product.hstatic.net/200000689391/product/upload_4908984490de4807be064eb750142cb9_small.jpg)">
+          </span>
+         </label>
+        </span>
+        <span class="product-sw-select-item sw-color">
+         <span class="colorHover">
+         </span>
+         <input class="trigger-option-sw d-none" data-name="option1" data-value="Cam" id="product-choose-mau-sac-5" name="product-choose-mau-sac" type="radio" value="Cam"/>
+         <label class="product-sw-select-item-span sw-color-cam-label" for="product-choose-mau-sac-5">
+          <span class="sw-color-cam" style="background-image: url(//product.hstatic.net/200000689391/product/upload_4908984490de4807be064eb750142cb9_small.jpg)">
+          </span>
+         </label>
+        </span>
+       </div>
+      </div>
+      <div class="product-sw-line">
+       <div class="product-sw-select">
+        <div class="product-sw-title">
+         Kích thước
+        </div>
+        <span class="product-sw-select-item">
+         <input class="trigger-option-sw d-none" data-name="option2" data-value="20cm" id="product-choose-kich-thuoc-1" name="product-choose-kich-thuoc" type="radio" value="20cm"/>
+         <label class="product-sw-select-item-span" for="product-choose-kich-thuoc-1">
+          20cm
+         </label>
+        </span>
+        <span class="product-sw-select-item">
+         <input class="trigger-option-sw d-none" data-name="option2" data-value="40cm" id="product-choose-kich-thuoc-2" name="product-choose-kich-thuoc" type="radio" value="40cm"/>
+         <label class="product-sw-select-item-span" for="product-choose-kich-thuoc-2">
+          40cm
+         </label>
+        </span>
+        <span class="product-sw-select-item">
+         <input class="trigger-option-sw d-none" data-name="option2" data-value="60cm" id="product-choose-kich-thuoc-3" name="product-choose-kich-thuoc" type="radio" value="60cm"/>
+         <label class="product-sw-select-item-span" for="product-choose-kich-thuoc-3">
+          60cm
+         </label>
+        </span>
+        <span class="product-sw-select-item">
+         <input class="trigger-option-sw d-none" data-name="option2" data-value="80cm" id="product-choose-kich-thuoc-4" name="product-choose-kich-thuoc" type="radio" value="80cm"/>
+         <label class="product-sw-select-item-span" for="product-choose-kich-thuoc-4">
+          80cm
+         </label>
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="main-product-quantity shop-quantity-wrap">
+      <label>
+       Số lượng
+      </label>
+      <div class="shop-quantity">
+       <button data-type="shop-quantity-minus" title="Giảm" type="button">
+        -
+       </button>
+       <input min="1" name="quantity" readonly="" title="Số lượng" type="number" value="1"/>
+       <button data-type="shop-quantity-plus" title="Tăng" type="button">
+        +
+       </button>
+      </div>
+     </div>
+     <div class="main-product-coupon">
+      <div class="shop-coupon" data-fancybox="" data-src="#shop-coupon-popup">
+       <label>
+        Voucher ưu đãi:
+        <img alt="coupon" height="25" loading="lazy" src="https://bizweb.dktcdn.net/100/453/837/files/757cf2944edb87314287b95cd98fd731-1.gif?v=1654078396653" width="25"/>
+       </label>
+       <ul>
+        <li class="shop-coupon-modal">
+         <img alt="cusPro-coupon-1" class="lazyload" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_coupon_item_image_1.png?v=217" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+        </li>
+        <li class="shop-coupon-modal">
+         <img alt="cusPro-coupon-2" class="lazyload" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_coupon_item_image_2.png?v=217" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+        </li>
+        <li class="shop-coupon-modal">
+         <img alt="cusPro-coupon-3" class="lazyload" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_coupon_item_image_3.png?v=217" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="main-product-freeship">
+      <div class="shop-freeship" data-freeship-price="5000000000">
+       <div class="shop-freeship-bar">
+        <div class="shop-freeship-bar-main">
+         <span>
+         </span>
+        </div>
+       </div>
+       <div class="shop-freeship-note">
+        Mua thêm
+        <span>
+         50,000,000₫
+        </span>
+        để được miễn phí giao hàng trên toàn quốc
+       </div>
+      </div>
+     </div>
+     <div class="main-product-cta">
+      <button data-type="main-product-add" title="Thêm vào giỏ" type="button">
+       <strong>
+        Thêm vào giỏ
+       </strong>
+       <span>
+        Chọn ngay sản phẩm bạn yêu thích
+       </span>
+      </button>
+      <button data-type="main-product-send-help" title="Tư vấn" type="button">
+       <strong>
+        Tư vấn
+       </strong>
+       <span>
+        Tư vấn thiết kế nội thất tùy chọn
+       </span>
+      </button>
+      <button data-type="main-product-send-info" onclick="window.open('/pages/lien-he')" title="Liên hệ" type="button">
+       <strong>
+        Liên hệ
+       </strong>
+       <span>
+        Chúng tôi luôn bên bạn 24/7
+       </span>
+      </button>
+     </div>
+    </div>
+   </div>
+   <div class="main-product-description">
+    <div class="main-product-description-left">
+     <ul class="main-product-description-left-head">
+      <li class="active" data-type="des">
+       <span>
+        Mô tả sản phẩm
+       </span>
+      </li>
+      <li data-type="page1">
+       <span>
+        Chính sách bảo mật
+       </span>
+      </li>
+      <li data-type="page2">
+       <span>
+        Chính sách đổi trả
+       </span>
+      </li>
+      <li data-type="page3">
+       <span>
+        Điều khoản dịch vụ
+       </span>
+      </li>
+     </ul>
+     <div class="main-product-description-left-item" data-type="des">
+      <div class="main-product-description-item-data">
+       <p>
+        Xe đẩy ConCung Good Compact Elite màu đỏ dưới đây sẽ là sự lựa chọn tuyệt vời cho bố mẹ và yêu trong mỗi lần đi dạo phố hoặc đi dã ngoại dài ngày. Sản phẩm với thiết kế thông minh dễ dàng tạo nên nhiều tư thế ngả lưng cho bé cùng đệm ngồi được làm từ chất liệu vải cao cấp, đảm bảo độ thông thoáng và dễ chịu, êm ái, mang tới cho bé yêu cảm giác thoải mái như đang được ôm ấp trong vòng tay của mẹ. Đặc biệt, xe dễ dàng gập gọn.
+       </p>
+       <p>
+        <img alt="" class="w-auto" height="1" src="https://concung.com/storage/images/TOY-T11/9fdc64fc39123aeed3f6605a58031988.jpg" width="1"/>
+       </p>
+       <p>
+        - Xe thiết kế cải tiến cao cấp tiện lợi cho bố mẹ
+       </p>
+       <p>
+        - Dễ dàng xếp gọn bằng một tay, siêu nhẹ, tiện lợi và thoải mái
+       </p>
+       <p>
+        - Thiết kế khung xe hiện đại được làm từ nhôm chất lượng cao.
+       </p>
+       <p>
+        - Dễ dàng gấp gọn, vừa vặn cất vào khoang hành lý trên máy bay, nhờ thế bố mẹ có thể yên tâm mang theo xe đi du lịch hoặc dã ngoại.
+       </p>
+       <p>
+        - Xe đẩy có túi đựng đồ lớn có thể chứa tải trọng lên đến 3 kg thuận tiện cho ba mẹ chuẩn bị đồ dùng cho bé trước khi ra ngoài.
+       </p>
+       <p>
+        - Thiết kế tân tiến, tăng cảm giác thoải mái cho bé.
+       </p>
+       <p>
+        - Phần tựa lưng có thể điều chỉnh nhiều vị trí ngồi, nằm, kết hợp cùng đệm lưng, đệm ngồi êm ái giúp bé cảm thấy thoải mái khi di chuyển.
+       </p>
+       <p>
+        - Dây đai an toàn 5 điểm chắc chắn, bảo vệ bé tốt hơn và dễ dàng điều chỉnh để phù hợp với từng giai đoạn phát triển của bé.
+       </p>
+       <p>
+        - Vòm xe rộng tăng cường mức độ che chắn giúp bé tránh nắng và gió lớn nhằm bảo vệ sức khỏe bé tốt hơn. Với thiết kế khung lưới bên trên vòm xe, không khí có thể lưu thông tốt hơn, vì thế bé sẽ cảm thấy thông thoáng, dễ chịu hơn.
+       </p>
+       <p>
+        - Phần đệm chân dễ dàng điều chỉnh nhằm hỗ trợ tư thế tốt nhất cho bé, mang lại cảm giác thoải mái tối đa
+       </p>
+       <p>
+        Hệ thống bánh xe an toàn, linh hoạt:
+       </p>
+       <p>
+        - Hai bánh trước có thể xoay 360 độ, linh hoạt trong việc đổi hướng và được thiết kế chốt khóa xoay thuận tiện giúp bố mẹ điều khiển xe dễ dàng hơn trong việc đi thẳng hay vòng trái, phải.
+       </p>
+       <p>
+        - Bánh xe sau có hệ thống phanh liên kết và giảm xóc đảm bảo xe được cố định chắc chắn.
+       </p>
+       <p>
+        - Xe đẩy đơn, đẩy 1 chiều.
+       </p>
+       <p>
+        - Phần đệm chân điều chỉnh được 2 nấc là ngang chân và gập xuống phía dưới
+       </p>
+       <p>
+        <img alt="" class="w-auto" height="1" src="https://concung.com/storage/images/TOY-T11/e8a95b05fadfcd0315a55b48c8d48ae8.jpg" width="1"/>
+       </p>
+       <p>
+        <strong>
+         THÔNG TIN ĐÓNG GÓI, TẢI TRỌNG:
+        </strong>
+       </p>
+       <p>
+        Trọng lượng đóng thùng: 6.2 kg
+       </p>
+       <p>
+        Kích thước đóng thùng: Dài x Rộng X Cao=  47 x 22 x 50 (cm)
+       </p>
+       <p>
+        Kích thước khi gấp: Dài x Rộng x Cao = 48.9 x 46 x 20.2(cm)
+       </p>
+       <p>
+        Chiều ngang đệm nằm: 35 cm
+       </p>
+       <p>
+        Tải trọng tối đa: 15kg
+       </p>
+      </div>
+      <a aria-label="Xem đầy đủ Mô tả sản phẩm" class="main-product-description-item-readmore" href="#" onclick="return false;">
+       Xem thêm
+      </a>
+     </div>
+     <div class="main-product-description-left-item" data-type="page1">
+      <div class="main-product-description-item-data">
+       <p>
+        Chính sách bảo mật này nhằm giúp Quý khách hiểu về cách website thu thập và sử dụng thông tin cá nhân của mình thông qua việc sử dụng trang web, bao gồm mọi thông tin có thể cung cấp thông qua trang web khi Quý khách đăng ký tài khoản, đăng ký nhận thông tin liên lạc từ chúng tôi, hoặc khi Quý khách mua sản phẩm, dịch vụ, yêu cầu thêm thông tin dịch vụ từ chúng tôi.
+       </p>
+       <p>
+        Chúng tôi sử dụng thông tin cá nhân của Quý khách để liên lạc khi cần thiết liên quan đến việc Quý khách sử dụng website của chúng tôi, để trả lời các câu hỏi hoặc gửi tài liệu và thông tin Quý khách yêu cầu.
+       </p>
+       <p>
+        <span class="wysiwyg-font-size-medium">
+         Trang web của chúng tôi coi trọng việc bảo mật thông tin và sử dụng các biện pháp tốt nhất để bảo vệ thông tin cũng như việc thanh toán của khách hàng.
+        </span>
+       </p>
+       <p>
+        <span class="wysiwyg-font-size-medium">
+         Mọi thông tin giao dịch sẽ được bảo mật ngoại trừ trong trường hợp cơ quan pháp luật yêu cầu.
+        </span>
+       </p>
+      </div>
+      <a aria-label="Xem đầy đủ Chính sách bảo mật" class="main-product-description-item-readmore" href="#" onclick="return false;">
+       Xem thêm
+      </a>
+     </div>
+     <div class="main-product-description-left-item" data-type="page2">
+      <div class="main-product-description-item-data">
+       <p>
+        <strong>
+         1. Điều kiện đổi trả
+        </strong>
+       </p>
+       <p>
+        Quý Khách hàng cần kiểm tra tình trạng hàng hóa và có thể đổi hàng/ trả lại hàng ngay tại thời điểm giao/nhận hàng trong những trường hợp sau:
+       </p>
+       <ul>
+        <li>
+         Hàng không đúng chủng loại, mẫu mã trong đơn hàng đã đặt hoặc như trên website tại thời điểm đặt hàng.
+        </li>
+        <li>
+         Không đủ số lượng, không đủ bộ như trong đơn hàng.
+        </li>
+        <li>
+         Tình trạng bên ngoài bị ảnh hưởng như rách bao bì, bong tróc, bể vỡ…
+        </li>
+       </ul>
+       <p>
+        Khách hàng có trách nhiệm trình giấy tờ liên quan chứng minh sự thiếu sót trên để hoàn thành việc hoàn trả/đổi trả hàng hóa.
+       </p>
+       <p>
+        <br/>
+       </p>
+       <p>
+        <strong>
+         2. Quy định về thời gian thông báo và gửi sản phẩm đổi trả
+        </strong>
+       </p>
+       <ul>
+        <li>
+         <strong>
+          Thời gian thông báo đổi trả
+         </strong>
+         : trong vòng 48h kể từ khi nhận sản phẩm đối với trường hợp sản phẩm thiếu phụ kiện, quà tặng hoặc bể vỡ.
+        </li>
+        <li>
+         <strong>
+          Thời gian gửi chuyển trả sản phẩm
+         </strong>
+         : trong vòng 14 ngày kể từ khi nhận sản phẩm.
+        </li>
+        <li>
+         <strong>
+          Địa điểm đổi trả sản phẩm
+         </strong>
+         : Khách hàng có thể mang hàng trực tiếp đến văn phòng/ cửa hàng của chúng tôi hoặc chuyển qua đường bưu điện.
+        </li>
+       </ul>
+       <p>
+        Trong trường hợp Quý Khách hàng có ý kiến đóng góp/khiếu nại liên quan đến chất lượng sản phẩm, Quý Khách hàng vui lòng liên hệ đường dây chăm sóc khách hàng của chúng tôi.
+       </p>
+      </div>
+      <a aria-label="Xem đầy đủ Chính sách đổi trả" class="main-product-description-item-readmore" href="#" onclick="return false;">
+       Xem thêm
+      </a>
+     </div>
+     <div class="main-product-description-left-item" data-type="page3">
+      <div class="main-product-description-item-data">
+       <p>
+        <span class="wysiwyg-font-size-medium">
+         <strong>
+          1. Giới thiệu
+         </strong>
+        </span>
+       </p>
+       <p>
+        <span class="wysiwyg-font-size-medium">
+         Chào mừng quý khách hàng đến với website chúng tôi.
+        </span>
+       </p>
+       <p>
+        <span class="wysiwyg-font-size-medium">
+         Khi quý khách hàng truy cập vào trang website của chúng tôi có nghĩa là quý khách đồng ý với các điều khoản này. Trang web có quyền thay đổi, chỉnh sửa, thêm hoặc lược bỏ bất kỳ phần nào trong Điều khoản mua bán hàng hóa này, vào bất cứ lúc nào. Các thay đổi có hiệu lực ngay khi được đăng trên trang web mà không cần thông báo trước. Và khi quý khách tiếp tục sử dụng trang web, sau khi các thay đổi về Điều khoản này được đăng tải, có nghĩa là quý khách chấp nhận với những thay đổi đó.
+        </span>
+       </p>
+       <p>
+        <span class="wysiwyg-font-size-medium">
+         Quý khách hàng vui lòng kiểm tra thường xuyên để cập nhật những thay đổi của chúng tôi.
+        </span>
+       </p>
+       <p>
+        <span class="wysiwyg-font-size-medium">
+         <strong>
+          2. Hướng dẫn sử dụng website
+         </strong>
+        </span>
+       </p>
+       <p>
+        <span class="wysiwyg-font-size-medium">
+         Khi vào web của chúng tôi, khách hàng phải đảm bảo đủ 18 tuổi, hoặc truy cập dưới sự giám sát của cha mẹ hay người giám hộ hợp pháp. Khách hàng đảm bảo có đầy đủ hành vi dân sự để thực hiện các giao dịch mua bán hàng hóa theo quy định hiện hành của pháp luật Việt Nam.
+        </span>
+       </p>
+       <p>
+        <span class="wysiwyg-font-size-medium">
+         Trong suốt quá trình đăng ký, quý khách đồng ý nhận email quảng cáo từ website. Nếu không muốn tiếp tục nhận mail, quý khách có thể từ chối bằng cách nhấp vào đường link ở dưới cùng trong mọi email quảng cáo.
+        </span>
+        <span class="wysiwyg-font-size-medium">
+         <strong>
+         </strong>
+        </span>
+        <span class="wysiwyg-font-size-medium">
+        </span>
+        <span class="wysiwyg-font-size-medium">
+         <strong>
+         </strong>
+        </span>
+        <span class="wysiwyg-font-size-medium">
+        </span>
+        <span class="wysiwyg-font-size-medium">
+         <strong>
+         </strong>
+        </span>
+        <span class="wysiwyg-font-size-medium">
+        </span>
+       </p>
+       <p>
+        <span class="wysiwyg-font-size-medium">
+        </span>
+        <span class="wysiwyg-font-size-medium">
+        </span>
+        <br/>
+       </p>
+       <p>
+        <span class="wysiwyg-font-size-medium">
+         <strong>
+          3. Thanh toán an toàn và tiện lợi
+         </strong>
+        </span>
+       </p>
+       <p>
+        <span class="wysiwyg-font-size-medium">
+         Người mua có thể tham khảo các phương thức thanh toán sau đây và lựa chọn áp dụng phương thức phù hợp:
+        </span>
+       </p>
+       <p>
+        <span class="wysiwyg-font-size-medium">
+         <strong>
+          <u>
+           Cách 1
+          </u>
+         </strong>
+         : Thanh toán trực tiếp (người mua nhận hàng tại địa chỉ người bán)
+         <br/>
+        </span>
+        <span class="wysiwyg-font-size-medium">
+         <strong>
+          <u>
+           Cách 2
+          </u>
+         </strong>
+         <strong>
+          :
+         </strong>
+         Thanh toán sau (COD – giao hàng và thu tiền tận nơi)
+         <br/>
+        </span>
+        <span class="wysiwyg-font-size-medium">
+         <strong>
+          <u>
+           Cách 3
+          </u>
+         </strong>
+         <strong>
+          :
+         </strong>
+         Thanh toán online qua thẻ tín dụng, chuyển khoản
+        </span>
+       </p>
+      </div>
+      <a aria-label="Xem đầy đủ Điều khoản dịch vụ" class="main-product-description-item-readmore" href="#" onclick="return false;">
+       Xem thêm
+      </a>
+     </div>
+    </div>
+    <div class="main-product-description-right">
+     <label>
+      <span>
+       Thông số kỹ thuật
+      </span>
+     </label>
+     <div class="main-product-description-item-data">
+      <table>
+       <tbody>
+        <tr>
+         <td>
+          Thương hiệu
+         </td>
+         <td>
+          F1GENZ
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Xuất xứ sản phẩm
+         </td>
+         <td>
+          Trung Quốc
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Kích thước (Dài x Rộng x Cao)
+         </td>
+         <td>
+          76.8 x 46 x 100(cm)
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Trọng lượng sản phẩm (kg)
+         </td>
+         <td>
+          5.37 kg
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Chất liệu
+         </td>
+         <td>
+          <br/>
+          Khung xe: Nhôm
+          <br/>
+          Bánh xe: EVA
+          <br/>
+          Vải chính: 300D Melange fabric and 300D Oxford Black
+          <br/>
+          Thành phần nhựa: PP+PA+ABS
+          <br/>
+          Lưới: A003
+          <br/>
+          Bảo hành khung, sườn xe 12 tháng.
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Độ tuổi phù hợp
+         </td>
+         <td>
+          Dành cho bé từ 6-36 tháng tuổi
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Trọng lượng thùng
+         </td>
+         <td>
+          6.2 kg
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <p>
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="hrv-product-reviews" data-id="1046971360" id="hrv-product-reviews">
+    <div id="hrv-product-reviews-sub" style="width:100%">
+     <div class="section-title-all">
+      <span>
+       Đánh giá sản phẩm
+      </span>
+     </div>
+     <div class="hrv-product-reviews-summary" id="hrv-product-reviews-summary">
+     </div>
+     <div class="hrv-product-reviews-list" id="hrv-product-reviews-list">
+     </div>
+    </div>
+   </div>
+   <div class="main-product-relate">
+    <div class="section-title-all">
+     <span>
+      Sản phẩm liên quan
+     </span>
+    </div>
+    <div class="main-product-relate-data">
+     <div class="product-item" data-handle="crinkle-leaf" data-id="1106081361">
+      <div class="product-item-wrap">
+       <div class="product-item-image hasThumbs hasThumbsIcon">
+        <span class="product-item-discount">
+         -90%
+        </span>
+        <a aria-label="Crinkle Leaf" class="product-item-link" href="/products/crinkle-leaf">
+         <img alt="Crinkle Leaf" class="w-auto" height="480" loading="lazy" src="//product.hstatic.net/200000689391/product/upload_552405d594e1478bae5387f34c02f902_large.jpg" title="Crinkle Leaf" width="480"/>
+         <img alt="Crinkle Leaf" class="w-auto" height="480" loading="lazy" src="//product.hstatic.net/200000689391/product/upload_ebf57657c90640689d5ae9ee4844c677_large.jpg" title="Crinkle Leaf" width="480"/>
+        </a>
+       </div>
+       <div class="product-item-action">
+        <button class="shop-wishlist-button-add" data-type="shop-wishlist-button-add" title="Yêu thích" type="button">
+         <svg class="" height="128" style="enable-background: new 0 0 512 512" version="1.1" viewbox="0 0 512 512" width="128" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+          <path d="M359.511,37.984c-38.907,0-75.282,14.653-103.511,41.478c-28.229-26.825-64.605-41.478-103.511-41.478 C68.406,37.984,0,108.033,0,194.135c0,49.918,42.543,112.126,126.449,184.895c61.346,53.204,123.555,93.023,124.176,93.419 c1.639,1.045,3.507,1.567,5.375,1.567c1.868,0,3.736-0.523,5.376-1.568c0.621-0.396,62.83-40.215,124.176-93.419 C469.457,306.26,512,244.052,512,194.135C512,108.033,443.594,37.984,359.511,37.984z M372.62,363.771 c-49.885,43.284-100.379,77.567-116.62,88.301c-16.216-10.715-66.578-44.903-116.448-88.153C61.34,296.089,20,237.378,20,194.135 C20,119.06,79.435,57.984,152.489,57.984c36.726,0,70.877,15.094,96.161,42.501c1.893,2.052,4.558,3.219,7.35,3.219 s5.457-1.167,7.35-3.219c25.285-27.406,59.435-42.5,96.161-42.5C432.565,57.984,492,119.06,492,194.135 C492,237.344,450.719,296.003,372.62,363.771z" data-original="#000000" fill="#000000">
+          </path>
+          <path d="M347.379,93.307l-0.376,0.065c-5.438,0.966-9.063,6.157-8.097,11.595c0.861,4.846,5.078,8.252,9.834,8.252 c0.581,0,1.17-0.051,1.76-0.156l0.199-0.034c5.446-0.917,9.118-6.075,8.201-11.521C357.983,96.06,352.82,92.393,347.379,93.307z" data-original="#000000" fill="#000000">
+          </path>
+          <path d="M439.056,131.382c-12.278-16.867-29.718-29.43-49.106-35.375c-5.281-1.621-10.873,1.349-12.492,6.629 c-1.619,5.28,1.349,10.873,6.629,12.492c31.959,9.8,54.279,41.078,54.279,76.063c0,5.523,4.477,10,10,10s10-4.477,9.999-10.001 C458.365,169.416,451.688,148.735,439.056,131.382z" data-original="#000000" fill="#000000">
+          </path>
+         </svg>
+        </button>
+        <button class="shop-quickview-button" data-type="shop-quickview-button" title="Xem nhanh" type="button">
+         <svg class="" height="512" style="enable-background: new 0 0 512 512" version="1.1" viewbox="0 0 612.01 612.01" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+          <path class="" d="M606.209,578.714L448.198,423.228C489.576,378.272,515,318.817,515,253.393C514.98,113.439,399.704,0,257.493,0 C115.282,0,0.006,113.439,0.006,253.393s115.276,253.393,257.487,253.393c61.445,0,117.801-21.253,162.068-56.586 l158.624,156.099c7.729,7.614,20.277,7.614,28.006,0C613.938,598.686,613.938,586.328,606.209,578.714z M257.493,467.8 c-120.326,0-217.869-95.993-217.869-214.407S137.167,38.986,257.493,38.986c120.327,0,217.869,95.993,217.869,214.407 S377.82,467.8,257.493,467.8z" data-original="#000000" fill="#000000">
+          </path>
+         </svg>
+        </button>
+        <button class="shop-addLoop-button" data-type="shop-addLoop-button" title="Thêm vào giỏ" type="button">
+         <svg class="" height="128" style="enable-background: new 0 0 512 512" version="1.1" viewbox="0 0 459.361 459.361" width="128" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+          <path d="M371.2,325.731c19.1-0.2,35.8-13.1,40.7-31.6l47.1-175.4c1.5-5.7-1.8-11.5-7.5-13.1c-0.9-0.2-1.8-0.4-2.7-0.4H94.5 l-24.1-89c-1.2-4.6-5.4-7.9-10.2-7.9H0v21.3h51.8l23.3,87c-0.1,0.7-0.1,1.4,0,2.1l48,176c0.3,1.4,0.8,2.9,1.3,4.3l16.2,59 c-15.6,8.3-26.2,24.7-26.2,43.6c0,27.3,22.1,49.4,49.4,49.4c27.3,0,49.4-22.1,49.4-49.4c0-8.5-2.2-16.6-6-23.6 c-0.9-1.6-1.8-3.2-2.9-4.8H330c-5.6,8-9,17.8-9,28.4c0,27.3,22.1,49.4,49.4,49.4s49.4-22.1,49.4-49.4c0-12.9-4.9-24.6-13-33.4 c-8.7-9.9-21.5-16.2-35.8-16.3H161.9l-7.5-27.5c3.2,0.8,6.5,1.3,9.8,1.3H371.2z M370.5,373.231c15.7,0,28.4,12.7,28.4,28.4 s-12.7,28.4-28.4,28.4c-15.7,0-28.4-12.7-28.4-28.4S354.8,373.231,370.5,373.231z M163.8,373.231c15.7,0,28.3,12.8,28.3,28.4 c0,15.7-12.7,28.4-28.4,28.4c-15.7,0-28.3-12.7-28.3-28.4S148.1,373.231,163.8,373.231z M144.8,290.931l-23.9-87.4l-21.3-76.8 h334.9l-43.3,162.6c-2.4,9.3-10.7,15.8-20.3,16H164C155.3,304.831,147.7,299.231,144.8,290.931z" data-original="#000000" fill="#000000">
+          </path>
+         </svg>
+        </button>
+       </div>
+       <div class="product-item-detail">
+        <div class="product-item-detail-info">
+         <span class="product-item-detail-info-vendor">
+          <a href="/collections/vendors?q=f1genz-babies" title="Show vendor">
+           F1GENZ Babies
+          </a>
+         </span>
+        </div>
+        <h3 class="product-item-detail-name">
+         <a aria-label="Crinkle Leaf" href="/products/crinkle-leaf">
+          Crinkle Leaf
+         </a>
+        </h3>
+        <div class="product-item-detail-price">
+         <span>
+          500,000₫
+         </span>
+         <del>
+          5,000,000₫
+         </del>
+        </div>
+        <div class="haravan-product-reviews-badge" data-id="1046971371">
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="product-item" data-handle="deuter-black-tour-bag" data-id="1106081345">
+      <div class="product-item-wrap">
+       <div class="product-item-image hasThumbs">
+        <span class="product-item-discount">
+         -91%
+        </span>
+        <a aria-label="Deuter Black Tour Bag" class="product-item-link" href="/products/deuter-black-tour-bag">
+         <img alt="Deuter Black Tour Bag" class="w-auto" height="480" loading="lazy" src="//product.hstatic.net/200000689391/product/upload_50cc78d5e9144b03ac3b86a8811917cf_large.jpg" title="Deuter Black Tour Bag" width="480"/>
+         <img alt="Deuter Black Tour Bag" class="w-auto" height="480" loading="lazy" src="//product.hstatic.net/200000689391/product/upload_cb22fca0867a42f9a3847aa277829607_large.jpg" title="Deuter Black Tour Bag" width="480"/>
+        </a>
+       </div>
+       <div class="product-item-action">
+        <button class="shop-wishlist-button-add" data-type="shop-wishlist-button-add" title="Yêu thích" type="button">
+         <svg class="" height="128" style="enable-background: new 0 0 512 512" version="1.1" viewbox="0 0 512 512" width="128" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+          <path d="M359.511,37.984c-38.907,0-75.282,14.653-103.511,41.478c-28.229-26.825-64.605-41.478-103.511-41.478 C68.406,37.984,0,108.033,0,194.135c0,49.918,42.543,112.126,126.449,184.895c61.346,53.204,123.555,93.023,124.176,93.419 c1.639,1.045,3.507,1.567,5.375,1.567c1.868,0,3.736-0.523,5.376-1.568c0.621-0.396,62.83-40.215,124.176-93.419 C469.457,306.26,512,244.052,512,194.135C512,108.033,443.594,37.984,359.511,37.984z M372.62,363.771 c-49.885,43.284-100.379,77.567-116.62,88.301c-16.216-10.715-66.578-44.903-116.448-88.153C61.34,296.089,20,237.378,20,194.135 C20,119.06,79.435,57.984,152.489,57.984c36.726,0,70.877,15.094,96.161,42.501c1.893,2.052,4.558,3.219,7.35,3.219 s5.457-1.167,7.35-3.219c25.285-27.406,59.435-42.5,96.161-42.5C432.565,57.984,492,119.06,492,194.135 C492,237.344,450.719,296.003,372.62,363.771z" data-original="#000000" fill="#000000">
+          </path>
+          <path d="M347.379,93.307l-0.376,0.065c-5.438,0.966-9.063,6.157-8.097,11.595c0.861,4.846,5.078,8.252,9.834,8.252 c0.581,0,1.17-0.051,1.76-0.156l0.199-0.034c5.446-0.917,9.118-6.075,8.201-11.521C357.983,96.06,352.82,92.393,347.379,93.307z" data-original="#000000" fill="#000000">
+          </path>
+          <path d="M439.056,131.382c-12.278-16.867-29.718-29.43-49.106-35.375c-5.281-1.621-10.873,1.349-12.492,6.629 c-1.619,5.28,1.349,10.873,6.629,12.492c31.959,9.8,54.279,41.078,54.279,76.063c0,5.523,4.477,10,10,10s10-4.477,9.999-10.001 C458.365,169.416,451.688,148.735,439.056,131.382z" data-original="#000000" fill="#000000">
+          </path>
+         </svg>
+        </button>
+        <button class="shop-quickview-button" data-type="shop-quickview-button" title="Xem nhanh" type="button">
+         <svg class="" height="512" style="enable-background: new 0 0 512 512" version="1.1" viewbox="0 0 612.01 612.01" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+          <path class="" d="M606.209,578.714L448.198,423.228C489.576,378.272,515,318.817,515,253.393C514.98,113.439,399.704,0,257.493,0 C115.282,0,0.006,113.439,0.006,253.393s115.276,253.393,257.487,253.393c61.445,0,117.801-21.253,162.068-56.586 l158.624,156.099c7.729,7.614,20.277,7.614,28.006,0C613.938,598.686,613.938,586.328,606.209,578.714z M257.493,467.8 c-120.326,0-217.869-95.993-217.869-214.407S137.167,38.986,257.493,38.986c120.327,0,217.869,95.993,217.869,214.407 S377.82,467.8,257.493,467.8z" data-original="#000000" fill="#000000">
+          </path>
+         </svg>
+        </button>
+        <button class="shop-addLoop-button" data-type="shop-addLoop-button" title="Thêm vào giỏ" type="button">
+         <svg class="" height="128" style="enable-background: new 0 0 512 512" version="1.1" viewbox="0 0 459.361 459.361" width="128" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+          <path d="M371.2,325.731c19.1-0.2,35.8-13.1,40.7-31.6l47.1-175.4c1.5-5.7-1.8-11.5-7.5-13.1c-0.9-0.2-1.8-0.4-2.7-0.4H94.5 l-24.1-89c-1.2-4.6-5.4-7.9-10.2-7.9H0v21.3h51.8l23.3,87c-0.1,0.7-0.1,1.4,0,2.1l48,176c0.3,1.4,0.8,2.9,1.3,4.3l16.2,59 c-15.6,8.3-26.2,24.7-26.2,43.6c0,27.3,22.1,49.4,49.4,49.4c27.3,0,49.4-22.1,49.4-49.4c0-8.5-2.2-16.6-6-23.6 c-0.9-1.6-1.8-3.2-2.9-4.8H330c-5.6,8-9,17.8-9,28.4c0,27.3,22.1,49.4,49.4,49.4s49.4-22.1,49.4-49.4c0-12.9-4.9-24.6-13-33.4 c-8.7-9.9-21.5-16.2-35.8-16.3H161.9l-7.5-27.5c3.2,0.8,6.5,1.3,9.8,1.3H371.2z M370.5,373.231c15.7,0,28.4,12.7,28.4,28.4 s-12.7,28.4-28.4,28.4c-15.7,0-28.4-12.7-28.4-28.4S354.8,373.231,370.5,373.231z M163.8,373.231c15.7,0,28.3,12.8,28.3,28.4 c0,15.7-12.7,28.4-28.4,28.4c-15.7,0-28.3-12.7-28.3-28.4S148.1,373.231,163.8,373.231z M144.8,290.931l-23.9-87.4l-21.3-76.8 h334.9l-43.3,162.6c-2.4,9.3-10.7,15.8-20.3,16H164C155.3,304.831,147.7,299.231,144.8,290.931z" data-original="#000000" fill="#000000">
+          </path>
+         </svg>
+        </button>
+       </div>
+       <div class="product-item-detail">
+        <div class="product-item-detail-info">
+         <span class="product-item-detail-info-vendor">
+          <a href="/collections/vendors?q=f1genz-babies" title="Show vendor">
+           F1GENZ Babies
+          </a>
+         </span>
+        </div>
+        <h3 class="product-item-detail-name">
+         <a aria-label="Deuter Black Tour Bag" href="/products/deuter-black-tour-bag">
+          Deuter Black Tour Bag
+         </a>
+        </h3>
+        <div class="product-item-detail-price">
+         <span>
+          800,000₫
+         </span>
+         <del>
+          8,500,000₫
+         </del>
+        </div>
+        <div class="haravan-product-reviews-badge" data-id="1046971369">
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="product-item" data-handle="flip-surprise-caterpillar" data-id="1106081321">
+      <div class="product-item-wrap">
+       <div class="product-item-image">
+        <span class="product-item-discount">
+         -89%
+        </span>
+        <a aria-label="Flip &amp; Surprise Caterpillar" class="product-item-link" href="/products/flip-surprise-caterpillar">
+         <img alt="Flip &amp; Surprise Caterpillar" class="w-auto" height="480" loading="lazy" src="//product.hstatic.net/200000689391/product/upload_f3cb390b7dcd443d84bdcbb1d6093a7b_large.jpg" title="Flip &amp; Surprise Caterpillar" width="480"/>
+        </a>
+       </div>
+       <div class="product-item-action">
+        <button class="shop-wishlist-button-add" data-type="shop-wishlist-button-add" title="Yêu thích" type="button">
+         <svg class="" height="128" style="enable-background: new 0 0 512 512" version="1.1" viewbox="0 0 512 512" width="128" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+          <path d="M359.511,37.984c-38.907,0-75.282,14.653-103.511,41.478c-28.229-26.825-64.605-41.478-103.511-41.478 C68.406,37.984,0,108.033,0,194.135c0,49.918,42.543,112.126,126.449,184.895c61.346,53.204,123.555,93.023,124.176,93.419 c1.639,1.045,3.507,1.567,5.375,1.567c1.868,0,3.736-0.523,5.376-1.568c0.621-0.396,62.83-40.215,124.176-93.419 C469.457,306.26,512,244.052,512,194.135C512,108.033,443.594,37.984,359.511,37.984z M372.62,363.771 c-49.885,43.284-100.379,77.567-116.62,88.301c-16.216-10.715-66.578-44.903-116.448-88.153C61.34,296.089,20,237.378,20,194.135 C20,119.06,79.435,57.984,152.489,57.984c36.726,0,70.877,15.094,96.161,42.501c1.893,2.052,4.558,3.219,7.35,3.219 s5.457-1.167,7.35-3.219c25.285-27.406,59.435-42.5,96.161-42.5C432.565,57.984,492,119.06,492,194.135 C492,237.344,450.719,296.003,372.62,363.771z" data-original="#000000" fill="#000000">
+          </path>
+          <path d="M347.379,93.307l-0.376,0.065c-5.438,0.966-9.063,6.157-8.097,11.595c0.861,4.846,5.078,8.252,9.834,8.252 c0.581,0,1.17-0.051,1.76-0.156l0.199-0.034c5.446-0.917,9.118-6.075,8.201-11.521C357.983,96.06,352.82,92.393,347.379,93.307z" data-original="#000000" fill="#000000">
+          </path>
+          <path d="M439.056,131.382c-12.278-16.867-29.718-29.43-49.106-35.375c-5.281-1.621-10.873,1.349-12.492,6.629 c-1.619,5.28,1.349,10.873,6.629,12.492c31.959,9.8,54.279,41.078,54.279,76.063c0,5.523,4.477,10,10,10s10-4.477,9.999-10.001 C458.365,169.416,451.688,148.735,439.056,131.382z" data-original="#000000" fill="#000000">
+          </path>
+         </svg>
+        </button>
+        <button class="shop-quickview-button" data-type="shop-quickview-button" title="Xem nhanh" type="button">
+         <svg class="" height="512" style="enable-background: new 0 0 512 512" version="1.1" viewbox="0 0 612.01 612.01" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+          <path class="" d="M606.209,578.714L448.198,423.228C489.576,378.272,515,318.817,515,253.393C514.98,113.439,399.704,0,257.493,0 C115.282,0,0.006,113.439,0.006,253.393s115.276,253.393,257.487,253.393c61.445,0,117.801-21.253,162.068-56.586 l158.624,156.099c7.729,7.614,20.277,7.614,28.006,0C613.938,598.686,613.938,586.328,606.209,578.714z M257.493,467.8 c-120.326,0-217.869-95.993-217.869-214.407S137.167,38.986,257.493,38.986c120.327,0,217.869,95.993,217.869,214.407 S377.82,467.8,257.493,467.8z" data-original="#000000" fill="#000000">
+          </path>
+         </svg>
+        </button>
+        <button class="shop-addLoop-button" data-type="shop-addLoop-button" title="Thêm vào giỏ" type="button">
+         <svg class="" height="128" style="enable-background: new 0 0 512 512" version="1.1" viewbox="0 0 459.361 459.361" width="128" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+          <path d="M371.2,325.731c19.1-0.2,35.8-13.1,40.7-31.6l47.1-175.4c1.5-5.7-1.8-11.5-7.5-13.1c-0.9-0.2-1.8-0.4-2.7-0.4H94.5 l-24.1-89c-1.2-4.6-5.4-7.9-10.2-7.9H0v21.3h51.8l23.3,87c-0.1,0.7-0.1,1.4,0,2.1l48,176c0.3,1.4,0.8,2.9,1.3,4.3l16.2,59 c-15.6,8.3-26.2,24.7-26.2,43.6c0,27.3,22.1,49.4,49.4,49.4c27.3,0,49.4-22.1,49.4-49.4c0-8.5-2.2-16.6-6-23.6 c-0.9-1.6-1.8-3.2-2.9-4.8H330c-5.6,8-9,17.8-9,28.4c0,27.3,22.1,49.4,49.4,49.4s49.4-22.1,49.4-49.4c0-12.9-4.9-24.6-13-33.4 c-8.7-9.9-21.5-16.2-35.8-16.3H161.9l-7.5-27.5c3.2,0.8,6.5,1.3,9.8,1.3H371.2z M370.5,373.231c15.7,0,28.4,12.7,28.4,28.4 s-12.7,28.4-28.4,28.4c-15.7,0-28.4-12.7-28.4-28.4S354.8,373.231,370.5,373.231z M163.8,373.231c15.7,0,28.3,12.8,28.3,28.4 c0,15.7-12.7,28.4-28.4,28.4c-15.7,0-28.3-12.7-28.3-28.4S148.1,373.231,163.8,373.231z M144.8,290.931l-23.9-87.4l-21.3-76.8 h334.9l-43.3,162.6c-2.4,9.3-10.7,15.8-20.3,16H164C155.3,304.831,147.7,299.231,144.8,290.931z" data-original="#000000" fill="#000000">
+          </path>
+         </svg>
+        </button>
+       </div>
+       <div class="product-item-detail">
+        <div class="product-item-detail-info">
+         <span class="product-item-detail-info-vendor">
+          <a href="/collections/vendors?q=f1genz-babies" title="Show vendor">
+           F1GENZ Babies
+          </a>
+         </span>
+        </div>
+        <h3 class="product-item-detail-name">
+         <a aria-label="Flip &amp; Surprise Caterpillar" href="/products/flip-surprise-caterpillar">
+          Flip &amp; Surprise Caterpillar
+         </a>
+        </h3>
+        <div class="product-item-detail-price">
+         <span>
+          600,000₫
+         </span>
+         <del>
+          5,500,000₫
+         </del>
+        </div>
+        <div class="haravan-product-reviews-badge" data-id="1046971367">
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="product-item" data-handle="flowy-open-back-shirt" data-id="1106081309">
+      <div class="product-item-wrap">
+       <div class="product-item-image hasThumbs hasThumbsIcon">
+        <span class="product-item-discount">
+         -74%
+        </span>
+        <a aria-label="Flowy Open-Back Shirt" class="product-item-link" href="/products/flowy-open-back-shirt">
+         <img alt="Flowy Open-Back Shirt" class="w-auto" height="480" loading="lazy" src="//product.hstatic.net/200000689391/product/upload_caa0a885f4f848c1b35667795e9183c4_large.jpg" title="Flowy Open-Back Shirt" width="480"/>
+         <img alt="Flowy Open-Back Shirt" class="w-auto" height="480" loading="lazy" src="//product.hstatic.net/200000689391/product/upload_1300d30edf7d454eb684eff17840d78e_large.jpg" title="Flowy Open-Back Shirt" width="480"/>
+        </a>
+       </div>
+       <div class="product-item-action">
+        <button class="shop-wishlist-button-add" data-type="shop-wishlist-button-add" title="Yêu thích" type="button">
+         <svg class="" height="128" style="enable-background: new 0 0 512 512" version="1.1" viewbox="0 0 512 512" width="128" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+          <path d="M359.511,37.984c-38.907,0-75.282,14.653-103.511,41.478c-28.229-26.825-64.605-41.478-103.511-41.478 C68.406,37.984,0,108.033,0,194.135c0,49.918,42.543,112.126,126.449,184.895c61.346,53.204,123.555,93.023,124.176,93.419 c1.639,1.045,3.507,1.567,5.375,1.567c1.868,0,3.736-0.523,5.376-1.568c0.621-0.396,62.83-40.215,124.176-93.419 C469.457,306.26,512,244.052,512,194.135C512,108.033,443.594,37.984,359.511,37.984z M372.62,363.771 c-49.885,43.284-100.379,77.567-116.62,88.301c-16.216-10.715-66.578-44.903-116.448-88.153C61.34,296.089,20,237.378,20,194.135 C20,119.06,79.435,57.984,152.489,57.984c36.726,0,70.877,15.094,96.161,42.501c1.893,2.052,4.558,3.219,7.35,3.219 s5.457-1.167,7.35-3.219c25.285-27.406,59.435-42.5,96.161-42.5C432.565,57.984,492,119.06,492,194.135 C492,237.344,450.719,296.003,372.62,363.771z" data-original="#000000" fill="#000000">
+          </path>
+          <path d="M347.379,93.307l-0.376,0.065c-5.438,0.966-9.063,6.157-8.097,11.595c0.861,4.846,5.078,8.252,9.834,8.252 c0.581,0,1.17-0.051,1.76-0.156l0.199-0.034c5.446-0.917,9.118-6.075,8.201-11.521C357.983,96.06,352.82,92.393,347.379,93.307z" data-original="#000000" fill="#000000">
+          </path>
+          <path d="M439.056,131.382c-12.278-16.867-29.718-29.43-49.106-35.375c-5.281-1.621-10.873,1.349-12.492,6.629 c-1.619,5.28,1.349,10.873,6.629,12.492c31.959,9.8,54.279,41.078,54.279,76.063c0,5.523,4.477,10,10,10s10-4.477,9.999-10.001 C458.365,169.416,451.688,148.735,439.056,131.382z" data-original="#000000" fill="#000000">
+          </path>
+         </svg>
+        </button>
+        <button class="shop-quickview-button" data-type="shop-quickview-button" title="Xem nhanh" type="button">
+         <svg class="" height="512" style="enable-background: new 0 0 512 512" version="1.1" viewbox="0 0 612.01 612.01" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+          <path class="" d="M606.209,578.714L448.198,423.228C489.576,378.272,515,318.817,515,253.393C514.98,113.439,399.704,0,257.493,0 C115.282,0,0.006,113.439,0.006,253.393s115.276,253.393,257.487,253.393c61.445,0,117.801-21.253,162.068-56.586 l158.624,156.099c7.729,7.614,20.277,7.614,28.006,0C613.938,598.686,613.938,586.328,606.209,578.714z M257.493,467.8 c-120.326,0-217.869-95.993-217.869-214.407S137.167,38.986,257.493,38.986c120.327,0,217.869,95.993,217.869,214.407 S377.82,467.8,257.493,467.8z" data-original="#000000" fill="#000000">
+          </path>
+         </svg>
+        </button>
+        <button class="shop-addLoop-button" data-type="shop-addLoop-button" title="Thêm vào giỏ" type="button">
+         <svg class="" height="128" style="enable-background: new 0 0 512 512" version="1.1" viewbox="0 0 459.361 459.361" width="128" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+          <path d="M371.2,325.731c19.1-0.2,35.8-13.1,40.7-31.6l47.1-175.4c1.5-5.7-1.8-11.5-7.5-13.1c-0.9-0.2-1.8-0.4-2.7-0.4H94.5 l-24.1-89c-1.2-4.6-5.4-7.9-10.2-7.9H0v21.3h51.8l23.3,87c-0.1,0.7-0.1,1.4,0,2.1l48,176c0.3,1.4,0.8,2.9,1.3,4.3l16.2,59 c-15.6,8.3-26.2,24.7-26.2,43.6c0,27.3,22.1,49.4,49.4,49.4c27.3,0,49.4-22.1,49.4-49.4c0-8.5-2.2-16.6-6-23.6 c-0.9-1.6-1.8-3.2-2.9-4.8H330c-5.6,8-9,17.8-9,28.4c0,27.3,22.1,49.4,49.4,49.4s49.4-22.1,49.4-49.4c0-12.9-4.9-24.6-13-33.4 c-8.7-9.9-21.5-16.2-35.8-16.3H161.9l-7.5-27.5c3.2,0.8,6.5,1.3,9.8,1.3H371.2z M370.5,373.231c15.7,0,28.4,12.7,28.4,28.4 s-12.7,28.4-28.4,28.4c-15.7,0-28.4-12.7-28.4-28.4S354.8,373.231,370.5,373.231z M163.8,373.231c15.7,0,28.3,12.8,28.3,28.4 c0,15.7-12.7,28.4-28.4,28.4c-15.7,0-28.3-12.7-28.3-28.4S148.1,373.231,163.8,373.231z M144.8,290.931l-23.9-87.4l-21.3-76.8 h334.9l-43.3,162.6c-2.4,9.3-10.7,15.8-20.3,16H164C155.3,304.831,147.7,299.231,144.8,290.931z" data-original="#000000" fill="#000000">
+          </path>
+         </svg>
+        </button>
+       </div>
+       <div class="product-item-detail">
+        <div class="product-item-detail-info">
+         <span class="product-item-detail-info-vendor">
+          <a href="/collections/vendors?q=f1genz-babies" title="Show vendor">
+           F1GENZ Babies
+          </a>
+         </span>
+        </div>
+        <h3 class="product-item-detail-name">
+         <a aria-label="Flowy Open-Back Shirt" href="/products/flowy-open-back-shirt">
+          Flowy Open-Back Shirt
+         </a>
+        </h3>
+        <div class="product-item-detail-price">
+         <span>
+          1,300,000₫
+         </span>
+         <del>
+          5,000,000₫
+         </del>
+        </div>
+        <div class="haravan-product-reviews-badge" data-id="1046971366">
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="product-item" data-handle="flutter-sleeve-geo-print-tee" data-id="1106081297">
+      <div class="product-item-wrap">
+       <div class="product-item-image hasThumbs hasThumbsIcon">
+        <span class="product-item-discount">
+         -74%
+        </span>
+        <a aria-label="Flutter-Sleeve Geo Print Tee" class="product-item-link" href="/products/flutter-sleeve-geo-print-tee">
+         <img alt="Flutter-Sleeve Geo Print Tee" class="w-auto" height="480" loading="lazy" src="//product.hstatic.net/200000689391/product/upload_c5f318ef397d496883c737fe78ce80fd_large.jpg" title="Flutter-Sleeve Geo Print Tee" width="480"/>
+         <img alt="Flutter-Sleeve Geo Print Tee" class="w-auto" height="480" loading="lazy" src="//product.hstatic.net/200000689391/product/upload_8e50e5c0c55b40098cd363954021cbe8_large.jpg" title="Flutter-Sleeve Geo Print Tee" width="480"/>
+        </a>
+       </div>
+       <div class="product-item-action">
+        <button class="shop-wishlist-button-add" data-type="shop-wishlist-button-add" title="Yêu thích" type="button">
+         <svg class="" height="128" style="enable-background: new 0 0 512 512" version="1.1" viewbox="0 0 512 512" width="128" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+          <path d="M359.511,37.984c-38.907,0-75.282,14.653-103.511,41.478c-28.229-26.825-64.605-41.478-103.511-41.478 C68.406,37.984,0,108.033,0,194.135c0,49.918,42.543,112.126,126.449,184.895c61.346,53.204,123.555,93.023,124.176,93.419 c1.639,1.045,3.507,1.567,5.375,1.567c1.868,0,3.736-0.523,5.376-1.568c0.621-0.396,62.83-40.215,124.176-93.419 C469.457,306.26,512,244.052,512,194.135C512,108.033,443.594,37.984,359.511,37.984z M372.62,363.771 c-49.885,43.284-100.379,77.567-116.62,88.301c-16.216-10.715-66.578-44.903-116.448-88.153C61.34,296.089,20,237.378,20,194.135 C20,119.06,79.435,57.984,152.489,57.984c36.726,0,70.877,15.094,96.161,42.501c1.893,2.052,4.558,3.219,7.35,3.219 s5.457-1.167,7.35-3.219c25.285-27.406,59.435-42.5,96.161-42.5C432.565,57.984,492,119.06,492,194.135 C492,237.344,450.719,296.003,372.62,363.771z" data-original="#000000" fill="#000000">
+          </path>
+          <path d="M347.379,93.307l-0.376,0.065c-5.438,0.966-9.063,6.157-8.097,11.595c0.861,4.846,5.078,8.252,9.834,8.252 c0.581,0,1.17-0.051,1.76-0.156l0.199-0.034c5.446-0.917,9.118-6.075,8.201-11.521C357.983,96.06,352.82,92.393,347.379,93.307z" data-original="#000000" fill="#000000">
+          </path>
+          <path d="M439.056,131.382c-12.278-16.867-29.718-29.43-49.106-35.375c-5.281-1.621-10.873,1.349-12.492,6.629 c-1.619,5.28,1.349,10.873,6.629,12.492c31.959,9.8,54.279,41.078,54.279,76.063c0,5.523,4.477,10,10,10s10-4.477,9.999-10.001 C458.365,169.416,451.688,148.735,439.056,131.382z" data-original="#000000" fill="#000000">
+          </path>
+         </svg>
+        </button>
+        <button class="shop-quickview-button" data-type="shop-quickview-button" title="Xem nhanh" type="button">
+         <svg class="" height="512" style="enable-background: new 0 0 512 512" version="1.1" viewbox="0 0 612.01 612.01" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+          <path class="" d="M606.209,578.714L448.198,423.228C489.576,378.272,515,318.817,515,253.393C514.98,113.439,399.704,0,257.493,0 C115.282,0,0.006,113.439,0.006,253.393s115.276,253.393,257.487,253.393c61.445,0,117.801-21.253,162.068-56.586 l158.624,156.099c7.729,7.614,20.277,7.614,28.006,0C613.938,598.686,613.938,586.328,606.209,578.714z M257.493,467.8 c-120.326,0-217.869-95.993-217.869-214.407S137.167,38.986,257.493,38.986c120.327,0,217.869,95.993,217.869,214.407 S377.82,467.8,257.493,467.8z" data-original="#000000" fill="#000000">
+          </path>
+         </svg>
+        </button>
+        <button class="shop-addLoop-button" data-type="shop-addLoop-button" title="Thêm vào giỏ" type="button">
+         <svg class="" height="128" style="enable-background: new 0 0 512 512" version="1.1" viewbox="0 0 459.361 459.361" width="128" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+          <path d="M371.2,325.731c19.1-0.2,35.8-13.1,40.7-31.6l47.1-175.4c1.5-5.7-1.8-11.5-7.5-13.1c-0.9-0.2-1.8-0.4-2.7-0.4H94.5 l-24.1-89c-1.2-4.6-5.4-7.9-10.2-7.9H0v21.3h51.8l23.3,87c-0.1,0.7-0.1,1.4,0,2.1l48,176c0.3,1.4,0.8,2.9,1.3,4.3l16.2,59 c-15.6,8.3-26.2,24.7-26.2,43.6c0,27.3,22.1,49.4,49.4,49.4c27.3,0,49.4-22.1,49.4-49.4c0-8.5-2.2-16.6-6-23.6 c-0.9-1.6-1.8-3.2-2.9-4.8H330c-5.6,8-9,17.8-9,28.4c0,27.3,22.1,49.4,49.4,49.4s49.4-22.1,49.4-49.4c0-12.9-4.9-24.6-13-33.4 c-8.7-9.9-21.5-16.2-35.8-16.3H161.9l-7.5-27.5c3.2,0.8,6.5,1.3,9.8,1.3H371.2z M370.5,373.231c15.7,0,28.4,12.7,28.4,28.4 s-12.7,28.4-28.4,28.4c-15.7,0-28.4-12.7-28.4-28.4S354.8,373.231,370.5,373.231z M163.8,373.231c15.7,0,28.3,12.8,28.3,28.4 c0,15.7-12.7,28.4-28.4,28.4c-15.7,0-28.3-12.7-28.3-28.4S148.1,373.231,163.8,373.231z M144.8,290.931l-23.9-87.4l-21.3-76.8 h334.9l-43.3,162.6c-2.4,9.3-10.7,15.8-20.3,16H164C155.3,304.831,147.7,299.231,144.8,290.931z" data-original="#000000" fill="#000000">
+          </path>
+         </svg>
+        </button>
+       </div>
+       <div class="product-item-detail">
+        <div class="product-item-detail-info">
+         <span class="product-item-detail-info-vendor">
+          <a href="/collections/vendors?q=f1genz-babies" title="Show vendor">
+           F1GENZ Babies
+          </a>
+         </span>
+        </div>
+        <h3 class="product-item-detail-name">
+         <a aria-label="Flutter-Sleeve Geo Print Tee" href="/products/flutter-sleeve-geo-print-tee">
+          Flutter-Sleeve Geo Print Tee
+         </a>
+        </h3>
+        <div class="product-item-detail-price">
+         <span>
+          1,300,000₫
+         </span>
+         <del>
+          5,000,000₫
+         </del>
+        </div>
+        <div class="haravan-product-reviews-badge" data-id="1046971365">
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="product-item" data-handle="honey-bee-teether" data-id="1106081225">
+      <div class="product-item-wrap">
+       <div class="product-item-image">
+        <span class="product-item-discount">
+         -93%
+        </span>
+        <a aria-label="Honey Bee Teether" class="product-item-link" href="/products/honey-bee-teether">
+         <img alt="Honey Bee Teether" class="w-auto" height="480" loading="lazy" src="//product.hstatic.net/200000689391/product/upload_bbe6ed0d8e11498f82b932fbcdda4778_large.jpg" title="Honey Bee Teether" width="480"/>
+        </a>
+       </div>
+       <div class="product-item-action">
+        <button class="shop-wishlist-button-add" data-type="shop-wishlist-button-add" title="Yêu thích" type="button">
+         <svg class="" height="128" style="enable-background: new 0 0 512 512" version="1.1" viewbox="0 0 512 512" width="128" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+          <path d="M359.511,37.984c-38.907,0-75.282,14.653-103.511,41.478c-28.229-26.825-64.605-41.478-103.511-41.478 C68.406,37.984,0,108.033,0,194.135c0,49.918,42.543,112.126,126.449,184.895c61.346,53.204,123.555,93.023,124.176,93.419 c1.639,1.045,3.507,1.567,5.375,1.567c1.868,0,3.736-0.523,5.376-1.568c0.621-0.396,62.83-40.215,124.176-93.419 C469.457,306.26,512,244.052,512,194.135C512,108.033,443.594,37.984,359.511,37.984z M372.62,363.771 c-49.885,43.284-100.379,77.567-116.62,88.301c-16.216-10.715-66.578-44.903-116.448-88.153C61.34,296.089,20,237.378,20,194.135 C20,119.06,79.435,57.984,152.489,57.984c36.726,0,70.877,15.094,96.161,42.501c1.893,2.052,4.558,3.219,7.35,3.219 s5.457-1.167,7.35-3.219c25.285-27.406,59.435-42.5,96.161-42.5C432.565,57.984,492,119.06,492,194.135 C492,237.344,450.719,296.003,372.62,363.771z" data-original="#000000" fill="#000000">
+          </path>
+          <path d="M347.379,93.307l-0.376,0.065c-5.438,0.966-9.063,6.157-8.097,11.595c0.861,4.846,5.078,8.252,9.834,8.252 c0.581,0,1.17-0.051,1.76-0.156l0.199-0.034c5.446-0.917,9.118-6.075,8.201-11.521C357.983,96.06,352.82,92.393,347.379,93.307z" data-original="#000000" fill="#000000">
+          </path>
+          <path d="M439.056,131.382c-12.278-16.867-29.718-29.43-49.106-35.375c-5.281-1.621-10.873,1.349-12.492,6.629 c-1.619,5.28,1.349,10.873,6.629,12.492c31.959,9.8,54.279,41.078,54.279,76.063c0,5.523,4.477,10,10,10s10-4.477,9.999-10.001 C458.365,169.416,451.688,148.735,439.056,131.382z" data-original="#000000" fill="#000000">
+          </path>
+         </svg>
+        </button>
+        <button class="shop-quickview-button" data-type="shop-quickview-button" title="Xem nhanh" type="button">
+         <svg class="" height="512" style="enable-background: new 0 0 512 512" version="1.1" viewbox="0 0 612.01 612.01" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+          <path class="" d="M606.209,578.714L448.198,423.228C489.576,378.272,515,318.817,515,253.393C514.98,113.439,399.704,0,257.493,0 C115.282,0,0.006,113.439,0.006,253.393s115.276,253.393,257.487,253.393c61.445,0,117.801-21.253,162.068-56.586 l158.624,156.099c7.729,7.614,20.277,7.614,28.006,0C613.938,598.686,613.938,586.328,606.209,578.714z M257.493,467.8 c-120.326,0-217.869-95.993-217.869-214.407S137.167,38.986,257.493,38.986c120.327,0,217.869,95.993,217.869,214.407 S377.82,467.8,257.493,467.8z" data-original="#000000" fill="#000000">
+          </path>
+         </svg>
+        </button>
+        <button class="shop-addLoop-button" data-type="shop-addLoop-button" title="Thêm vào giỏ" type="button">
+         <svg class="" height="128" style="enable-background: new 0 0 512 512" version="1.1" viewbox="0 0 459.361 459.361" width="128" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+          <path d="M371.2,325.731c19.1-0.2,35.8-13.1,40.7-31.6l47.1-175.4c1.5-5.7-1.8-11.5-7.5-13.1c-0.9-0.2-1.8-0.4-2.7-0.4H94.5 l-24.1-89c-1.2-4.6-5.4-7.9-10.2-7.9H0v21.3h51.8l23.3,87c-0.1,0.7-0.1,1.4,0,2.1l48,176c0.3,1.4,0.8,2.9,1.3,4.3l16.2,59 c-15.6,8.3-26.2,24.7-26.2,43.6c0,27.3,22.1,49.4,49.4,49.4c27.3,0,49.4-22.1,49.4-49.4c0-8.5-2.2-16.6-6-23.6 c-0.9-1.6-1.8-3.2-2.9-4.8H330c-5.6,8-9,17.8-9,28.4c0,27.3,22.1,49.4,49.4,49.4s49.4-22.1,49.4-49.4c0-12.9-4.9-24.6-13-33.4 c-8.7-9.9-21.5-16.2-35.8-16.3H161.9l-7.5-27.5c3.2,0.8,6.5,1.3,9.8,1.3H371.2z M370.5,373.231c15.7,0,28.4,12.7,28.4,28.4 s-12.7,28.4-28.4,28.4c-15.7,0-28.4-12.7-28.4-28.4S354.8,373.231,370.5,373.231z M163.8,373.231c15.7,0,28.3,12.8,28.3,28.4 c0,15.7-12.7,28.4-28.4,28.4c-15.7,0-28.3-12.7-28.3-28.4S148.1,373.231,163.8,373.231z M144.8,290.931l-23.9-87.4l-21.3-76.8 h334.9l-43.3,162.6c-2.4,9.3-10.7,15.8-20.3,16H164C155.3,304.831,147.7,299.231,144.8,290.931z" data-original="#000000" fill="#000000">
+          </path>
+         </svg>
+        </button>
+       </div>
+       <div class="product-item-detail">
+        <div class="product-item-detail-info">
+         <span class="product-item-detail-info-vendor">
+          <a href="/collections/vendors?q=f1genz-babies" title="Show vendor">
+           F1GENZ Babies
+          </a>
+         </span>
+        </div>
+        <h3 class="product-item-detail-name">
+         <a aria-label="Honey Bee Teether" href="/products/honey-bee-teether">
+          Honey Bee Teether
+         </a>
+        </h3>
+        <div class="product-item-detail-price">
+         <span>
+          550,000₫
+         </span>
+         <del>
+          8,000,000₫
+         </del>
+        </div>
+        <div class="haravan-product-reviews-badge" data-id="1046971359">
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="product-item" data-handle="kick-play-piano" data-id="1106081189">
+      <div class="product-item-wrap">
+       <div class="product-item-image">
+        <span class="product-item-discount">
+         -79%
+        </span>
+        <a aria-label="Kick &amp; Play Piano" class="product-item-link" href="/products/kick-play-piano">
+         <img alt="Kick &amp; Play Piano" class="w-auto" height="480" loading="lazy" src="//product.hstatic.net/200000689391/product/upload_3876c061f9c746bbb89a8aed7968f0e8_large.jpg" title="Kick &amp; Play Piano" width="480"/>
+        </a>
+       </div>
+       <div class="product-item-action">
+        <button class="shop-wishlist-button-add" data-type="shop-wishlist-button-add" title="Yêu thích" type="button">
+         <svg class="" height="128" style="enable-background: new 0 0 512 512" version="1.1" viewbox="0 0 512 512" width="128" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+          <path d="M359.511,37.984c-38.907,0-75.282,14.653-103.511,41.478c-28.229-26.825-64.605-41.478-103.511-41.478 C68.406,37.984,0,108.033,0,194.135c0,49.918,42.543,112.126,126.449,184.895c61.346,53.204,123.555,93.023,124.176,93.419 c1.639,1.045,3.507,1.567,5.375,1.567c1.868,0,3.736-0.523,5.376-1.568c0.621-0.396,62.83-40.215,124.176-93.419 C469.457,306.26,512,244.052,512,194.135C512,108.033,443.594,37.984,359.511,37.984z M372.62,363.771 c-49.885,43.284-100.379,77.567-116.62,88.301c-16.216-10.715-66.578-44.903-116.448-88.153C61.34,296.089,20,237.378,20,194.135 C20,119.06,79.435,57.984,152.489,57.984c36.726,0,70.877,15.094,96.161,42.501c1.893,2.052,4.558,3.219,7.35,3.219 s5.457-1.167,7.35-3.219c25.285-27.406,59.435-42.5,96.161-42.5C432.565,57.984,492,119.06,492,194.135 C492,237.344,450.719,296.003,372.62,363.771z" data-original="#000000" fill="#000000">
+          </path>
+          <path d="M347.379,93.307l-0.376,0.065c-5.438,0.966-9.063,6.157-8.097,11.595c0.861,4.846,5.078,8.252,9.834,8.252 c0.581,0,1.17-0.051,1.76-0.156l0.199-0.034c5.446-0.917,9.118-6.075,8.201-11.521C357.983,96.06,352.82,92.393,347.379,93.307z" data-original="#000000" fill="#000000">
+          </path>
+          <path d="M439.056,131.382c-12.278-16.867-29.718-29.43-49.106-35.375c-5.281-1.621-10.873,1.349-12.492,6.629 c-1.619,5.28,1.349,10.873,6.629,12.492c31.959,9.8,54.279,41.078,54.279,76.063c0,5.523,4.477,10,10,10s10-4.477,9.999-10.001 C458.365,169.416,451.688,148.735,439.056,131.382z" data-original="#000000" fill="#000000">
+          </path>
+         </svg>
+        </button>
+        <button class="shop-quickview-button" data-type="shop-quickview-button" title="Xem nhanh" type="button">
+         <svg class="" height="512" style="enable-background: new 0 0 512 512" version="1.1" viewbox="0 0 612.01 612.01" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+          <path class="" d="M606.209,578.714L448.198,423.228C489.576,378.272,515,318.817,515,253.393C514.98,113.439,399.704,0,257.493,0 C115.282,0,0.006,113.439,0.006,253.393s115.276,253.393,257.487,253.393c61.445,0,117.801-21.253,162.068-56.586 l158.624,156.099c7.729,7.614,20.277,7.614,28.006,0C613.938,598.686,613.938,586.328,606.209,578.714z M257.493,467.8 c-120.326,0-217.869-95.993-217.869-214.407S137.167,38.986,257.493,38.986c120.327,0,217.869,95.993,217.869,214.407 S377.82,467.8,257.493,467.8z" data-original="#000000" fill="#000000">
+          </path>
+         </svg>
+        </button>
+        <button class="shop-addLoop-button" data-type="shop-addLoop-button" title="Thêm vào giỏ" type="button">
+         <svg class="" height="128" style="enable-background: new 0 0 512 512" version="1.1" viewbox="0 0 459.361 459.361" width="128" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+          <path d="M371.2,325.731c19.1-0.2,35.8-13.1,40.7-31.6l47.1-175.4c1.5-5.7-1.8-11.5-7.5-13.1c-0.9-0.2-1.8-0.4-2.7-0.4H94.5 l-24.1-89c-1.2-4.6-5.4-7.9-10.2-7.9H0v21.3h51.8l23.3,87c-0.1,0.7-0.1,1.4,0,2.1l48,176c0.3,1.4,0.8,2.9,1.3,4.3l16.2,59 c-15.6,8.3-26.2,24.7-26.2,43.6c0,27.3,22.1,49.4,49.4,49.4c27.3,0,49.4-22.1,49.4-49.4c0-8.5-2.2-16.6-6-23.6 c-0.9-1.6-1.8-3.2-2.9-4.8H330c-5.6,8-9,17.8-9,28.4c0,27.3,22.1,49.4,49.4,49.4s49.4-22.1,49.4-49.4c0-12.9-4.9-24.6-13-33.4 c-8.7-9.9-21.5-16.2-35.8-16.3H161.9l-7.5-27.5c3.2,0.8,6.5,1.3,9.8,1.3H371.2z M370.5,373.231c15.7,0,28.4,12.7,28.4,28.4 s-12.7,28.4-28.4,28.4c-15.7,0-28.4-12.7-28.4-28.4S354.8,373.231,370.5,373.231z M163.8,373.231c15.7,0,28.3,12.8,28.3,28.4 c0,15.7-12.7,28.4-28.4,28.4c-15.7,0-28.3-12.7-28.3-28.4S148.1,373.231,163.8,373.231z M144.8,290.931l-23.9-87.4l-21.3-76.8 h334.9l-43.3,162.6c-2.4,9.3-10.7,15.8-20.3,16H164C155.3,304.831,147.7,299.231,144.8,290.931z" data-original="#000000" fill="#000000">
+          </path>
+         </svg>
+        </button>
+       </div>
+       <div class="product-item-detail">
+        <div class="product-item-detail-info">
+         <span class="product-item-detail-info-vendor">
+          <a href="/collections/vendors?q=f1genz-babies" title="Show vendor">
+           F1GENZ Babies
+          </a>
+         </span>
+        </div>
+        <h3 class="product-item-detail-name">
+         <a aria-label="Kick &amp; Play Piano" href="/products/kick-play-piano">
+          Kick &amp; Play Piano
+         </a>
+        </h3>
+        <div class="product-item-detail-price">
+         <span>
+          1,900,000₫
+         </span>
+         <del>
+          9,000,000₫
+         </del>
+        </div>
+        <div class="haravan-product-reviews-badge" data-id="1046971356">
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="main-product-seen">
+    <div class="section-title-all">
+     <span>
+      Sản phẩm đã xem
+     </span>
+    </div>
+    <div class="main-product-seen-data">
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="modal fade" id="preOrder-modal" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+   <div class="modal-content">
+    <div class="modal-body">
+     <h5>
+      Tư vấn thiết kế giao diện
+     </h5>
+     <div class="preOrder-modal-wrap">
+      <form accept-charset="UTF-8" action="/contact" class="contact-form" method="post">
+       <input name="form_type" type="hidden" value="contact"/>
+       <input name="utf8" type="hidden" value="✓"/>
+       <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt-xaNWtWj4IzsAJbM-MKKL4rHFQDDb7nCp9Deg_Jp7RYSWfI-pcl18MQrmXiSw-98KLnGiF369QKdysczW-JA3WXkyMY6kHb_eo5nEV4LDilJkfEdt06M6r8XOztkZp_FI"/>
+       <input name="contact[name]" placeholder="Họ tên của bạn" required="" type="text" value=""/>
+       <input name="contact[email]" placeholder="Email của bạn" required="" type="email" value=""/>
+       <input name="contact[phone]" placeholder="Số điện thoại của bạn" required="" type="number" value=""/>
+       <input id="preOrder-hard" readonly="" type="text" value=""/>
+       <textarea name="contact[body]" placeholder="Nhập nội dung bạn cần tư vấn"></textarea>
+       <button type="submit">
+        Đăng ký
+       </button>
+       <input id="0996eea737cb4938818e6b78ff081207" name="g-recaptcha-response" type="hidden"/>
+       <noscript data-src="https://www.google.com/recaptcha/api.js?render=6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s">
+       </noscript>
+       <noscript>
+        let recaptchaElm=document.getElementById('0996eea737cb4938818e6b78ff081207');let recaptchaForm=recaptchaElm.parentNode;recaptchaForm.addEventListener("submit",function(formEvent){if(!recaptchaElm.value){formEvent.preventDefault();grecaptcha.ready(function(){grecaptcha.execute('6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s',{action:'submit'}).then(function(token){recaptchaElm.value=token;recaptchaForm.requestSubmit(formEvent.submitter)})})}})
+       </noscript>
+      </form>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</main>
+<div class="shop-coupon-popup" id="shop-coupon-popup">
+ <label class="coupon-head">
+  Voucher ưu đãi
+ </label>
+ <div class="coupon-body">
+  <div class="coupon-body-wrap">
+   <div class="coupon-body-left">
+    <span>
+     <img alt="20k đơn hàng đầu tiên" src="//theme.hstatic.net/200000689391/1001102398/14/shop_coupon_item_image_1.png?v=217"/>
+    </span>
+   </div>
+   <div class="coupon-body-right">
+    <strong>
+     20k đơn hàng đầu tiên
+    </strong>
+    <p>
+     Giảm 60k đơn hàng đầu tiên (Nhập mã F1GENZ01) Mã: F1GENZ01
+    </p>
+    <span>
+     Ngày hết hạn: 31/12/2023
+    </span>
+    <button data-coupon="F1GENZ01" data-type="shop-coupon-confirm" type="button">
+     Sao chép
+    </button>
+   </div>
+  </div>
+ </div>
+ <div class="coupon-body">
+  <div class="coupon-body-wrap">
+   <div class="coupon-body-left">
+    <span>
+     <img alt="Freeship 50k" src="//theme.hstatic.net/200000689391/1001102398/14/shop_coupon_item_image_2.png?v=217"/>
+    </span>
+   </div>
+   <div class="coupon-body-right">
+    <strong>
+     Freeship 50k
+    </strong>
+    <p>
+     Miễn phí vận chuyển 50k cho đơn từ 5.000.000đ (Nhập mã F1GENZ02) Mã: F1GENZ02
+    </p>
+    <span>
+     Ngày hết hạn: 31/12/2023
+    </span>
+    <button data-coupon="F1GENZ02" data-type="shop-coupon-confirm" type="button">
+     Sao chép
+    </button>
+   </div>
+  </div>
+ </div>
+ <div class="coupon-body">
+  <div class="coupon-body-wrap">
+   <div class="coupon-body-left">
+    <span>
+     <img alt="Giảm giá 100k" src="//theme.hstatic.net/200000689391/1001102398/14/shop_coupon_item_image_3.png?v=217"/>
+    </span>
+   </div>
+   <div class="coupon-body-right">
+    <strong>
+     Giảm giá 100k
+    </strong>
+    <p>
+     Miễn phí phụ kiện 100k cho đơn từ 10.000.000đ (Nhập mã F1GENZ03) Mã: F1GENZ03
+    </p>
+    <span>
+     Ngày hết hạn: 31/12/2023
+    </span>
+    <button data-coupon="F1GENZ03" data-type="shop-coupon-confirm" type="button">
+     Sao chép
+    </button>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="shop-mobar">
+ <div class="shop-mobar-wrap">
+  <ul>
+   <li>
+    <a class="" href="/" title="Trang chủ">
+     <img alt="Trang chủ" class="lazyload" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_mobar_item_image_1_small.png?v=217" height="64" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="64"/>
+     <span>
+      Trang chủ
+     </span>
+    </a>
+   </li>
+   <li>
+    <a class="" href="https://f1genz-babie.myharavan.com/products/barbie-baby-girl-s-booties" title="Trang chi tiết">
+     <img alt="Trang chi tiết" class="lazyload" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_mobar_item_image_2_small.png?v=217" height="64" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="64"/>
+     <span>
+      Trang chi tiết
+     </span>
+    </a>
+   </li>
+   <li>
+    <a class="" href="/blogs/all" title="Trang tin tức">
+     <img alt="Trang tin tức" class="lazyload" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_mobar_item_image_3_small.png?v=217" height="64" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="64"/>
+     <span>
+      Trang tin tức
+     </span>
+    </a>
+   </li>
+   <li>
+    <a class="tool-contact-popup" href="/account" title="Danh mục trái">
+     <img alt="Danh mục trái" class="lazyload" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_mobar_item_image_4_small.png?v=217" height="64" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="64"/>
+     <span>
+      Đăng ký
+     </span>
+    </a>
+   </li>
+  </ul>
+ </div>
+</div>
+<div class="modal" id="shop-modal-contact" role="dialog" tabindex="-1">
+ <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+   <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+    <span aria-hidden="true">
+     ×
+    </span>
+   </button>
+   <div class="modal-contact" id="shop-modal-contact">
+    <div class="modal-contact-wrap">
+     <div class="modal-contact-wrap-right">
+      <div class="modal-contact-wrap-right-content">
+       <div class="section-title-all">
+        <span>
+         Đăng ký nhận tin
+        </span>
+        <p>
+         Để lại thông tin, để nhận ngay khuyến mãi từ chúng tôi nhé!
+        </p>
+       </div>
+       <form accept-charset="UTF-8" action="/account/contact" class="contact-form" method="post">
+        <input name="form_type" type="hidden" value="customer"/>
+        <input name="utf8" type="hidden" value="✓"/>
+        <input name="contact[tags]" type="hidden" value="khách hàng tiềm năng, bản tin"/>
+        <input name="contact[email]" placeholder="Nhập email của bạn..." required="" type="email" value=""/>
+        <button title="Đăng ký" type="submit">
+         <span>
+          Đăng ký
+         </span>
+        </button>
+        <span>
+         * Tôi đã đồng ý với các
+         <a href="/collections/all">
+          chính sách bảo mật
+         </a>
+         của F1GENZ BABIE
+        </span>
+        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt-xaNWtWj4IzsAJbM-MKKL4rHFQDDb7nCp9Deg_Jp7RYSWfI-pcl18MQrmXiSw-98KLnGiF369QKdysczW-JA3WXkyMY6kHb_eo5nEV4LDilJkfEdt06M6r8XOztkZp_FI"/>
+        <input id="87b8e6201d884dff8f9abfa0e381546d" name="g-recaptcha-response" type="hidden"/>
+        <noscript data-src="https://www.google.com/recaptcha/api.js?render=6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s">
+        </noscript>
+        <noscript>
+         let recaptchaElm=document.getElementById('87b8e6201d884dff8f9abfa0e381546d');let recaptchaForm=recaptchaElm.parentNode;recaptchaForm.addEventListener("submit",function(formEvent){if(!recaptchaElm.value){formEvent.preventDefault();grecaptcha.ready(function(){grecaptcha.execute('6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s',{action:'submit'}).then(function(token){recaptchaElm.value=token;recaptchaForm.requestSubmit(formEvent.submitter)})})}})
+        </noscript>
+       </form>
+      </div>
+     </div>
+     <div class="modal-contact-wrap-left">
+      <img alt=" - Contact" class="lazyload w-100" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_modal_contact_image_large.png?v=217" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="modal-phone" id="shop-modal-phone">
+ <div class="modal-phone-wrap">
+  <div class="section-title-all">
+   <span>
+    Liên hệ ngay với chúng tôi:
+   </span>
+   <p>
+    Nhận ngay voucher giảm giá lên tới
+    <b style="font-weight:bold;color:#f30;font-size:25px;">
+     49%
+    </b>
+    cho tất cả sản phẩm:
+    <b>
+     HOTLINE:
+    </b>
+    <b style="font-weight:bold;color:#f30;">
+     1900.63.60.99
+    </b>
+   </p>
+  </div>
+  <form accept-charset="UTF-8" action="/account/contact" class="contact-form" method="post">
+   <input name="form_type" type="hidden" value="customer"/>
+   <input name="utf8" type="hidden" value="✓"/>
+   <input id="shop-modal-phone-email" name="contact[email]" type="hidden" value=""/>
+   <input id="shop-modal-phone-number" name="contact[tags]" placeholder="Nhập số điện thoại của bạn..." type="number" value=""/>
+   <button title="Đăng ký" type="submit">
+    <span>
+     Đăng ký
+    </span>
+   </button>
+   <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt-xaNWtWj4IzsAJbM-MKKL4rHFQDDb7nCp9Deg_Jp7RYSWfI-pcl18MQrmXiSw-98KLnGiF369QKdysczW-JA3WXkyMY6kHb_eo5nEV4LDilJkfEdt06M6r8XOztkZp_FI"/>
+   <input id="9ce7d199888a4180894b5b01a5679da9" name="g-recaptcha-response" type="hidden"/>
+   <noscript data-src="https://www.google.com/recaptcha/api.js?render=6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s">
+   </noscript>
+   <noscript>
+    let recaptchaElm=document.getElementById('9ce7d199888a4180894b5b01a5679da9');let recaptchaForm=recaptchaElm.parentNode;recaptchaForm.addEventListener("submit",function(formEvent){if(!recaptchaElm.value){formEvent.preventDefault();grecaptcha.ready(function(){grecaptcha.execute('6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s',{action:'submit'}).then(function(token){recaptchaElm.value=token;recaptchaForm.requestSubmit(formEvent.submitter)})})}})
+   </noscript>
+  </form>
+ </div>
+</div>
+<div class="shop-menu-mobile">
+ <div class="shop-menu-mobile-head">
+  <label>
+   Menu
+  </label>
+  <button data-type="close-menu-mobile" type="button">
+   <svg class="" height="20" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="20" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+    <g>
+     <path class="" d="m4.59 59.41a2 2 0 0 0 2.83 0l24.58-24.58 24.59 24.58a2 2 0 0 0 2.83-2.83l-24.59-24.58 24.58-24.59a2 2 0 0 0 -2.83-2.83l-24.58 24.59-24.59-24.58a2 2 0 0 0 -2.82 2.82l24.58 24.59-24.58 24.59a2 2 0 0 0 0 2.82z" data-original="#000000" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+     </path>
+    </g>
+   </svg>
+  </button>
+ </div>
+ <ul class="shop-menu-mobile-body">
+  <li class="">
+   <a aria-label="Trang chủ" href="/">
+    Trang chủ
+   </a>
+  </li>
+  <li class="hasChild">
+   <a aria-label="Tất cả sản phẩm" href="/collections/all">
+    Tất cả sản phẩm
+    <span>
+     ›
+    </span>
+   </a>
+   <ul class="menu1">
+    <li class="hasChild">
+     <a aria-label="Áo trẻ em" href="/collections/gloves">
+      Áo trẻ em
+      <span>
+       ›
+      </span>
+     </a>
+     <ul class="menu2">
+      <li class="">
+       <a aria-label="Áo Polo" href="/collections/anchor">
+        Áo Polo
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Áo Thun" href="/collections/gloves">
+        Áo Thun
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Áo Khoác" href="/collections/anchor">
+        Áo Khoác
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Áo Sơ Mi" href="/collections/bag">
+        Áo Sơ Mi
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Áo Len" href="/collections/anchor">
+        Áo Len
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Áo Nỉ" href="/collections/gloves">
+        Áo Nỉ
+       </a>
+      </li>
+     </ul>
+    </li>
+    <li class="hasChild">
+     <a aria-label="Quần trẻ em" href="/collections/anchor">
+      Quần trẻ em
+      <span>
+       ›
+      </span>
+     </a>
+     <ul class="menu2">
+      <li class="">
+       <a aria-label="Quần Jeans" href="/collections/gloves">
+        Quần Jeans
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Quần Kaki" href="/collections/bag">
+        Quần Kaki
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Quần Short" href="/collections/anchor">
+        Quần Short
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Quần Nỉ" href="/collections/anchor">
+        Quần Nỉ
+       </a>
+      </li>
+      <li class="">
+       <a aria-label="Quần Legging" href="/collections/baby-seats">
+        Quần Legging
+       </a>
+      </li>
+     </ul>
+    </li>
+    <li class="">
+     <a aria-label="Đồ Bộ Trẻ Em" href="/collections/bag">
+      Đồ Bộ Trẻ Em
+     </a>
+    </li>
+    <li class="">
+     <a aria-label="Đồ Thể Thao Trẻ Em" href="/collections/bag">
+      Đồ Thể Thao Trẻ Em
+     </a>
+    </li>
+    <li class="">
+     <a aria-label="Nổi bật" href="/collections/baby-seats">
+      Nổi bật
+     </a>
+    </li>
+    <li class="">
+     <a aria-label="Phụ kiện trẻ em" href="/collections/baby-seats">
+      Phụ kiện trẻ em
+     </a>
+    </li>
+   </ul>
+  </li>
+  <li class="">
+   <a aria-label="Tin tức" href="/blogs/news">
+    Tin tức
+   </a>
+  </li>
+  <li class="hasChild">
+   <a aria-label="Nhóm sản phẩm" href="/collections/anchor">
+    Nhóm sản phẩm
+    <span>
+     ›
+    </span>
+   </a>
+   <ul class="menu1">
+    <li class="">
+     <a aria-label="Nhóm sản phẩm style 1" href="/collections/all?view=horizontal">
+      Nhóm sản phẩm style 1
+     </a>
+    </li>
+    <li class="">
+     <a aria-label="Nhóm sản phẩm style 2" href="/collections/all?view=vertical">
+      Nhóm sản phẩm style 2
+     </a>
+    </li>
+   </ul>
+  </li>
+  <li class="hasChild">
+   <a aria-label="Chi tiết sản phẩm" href="/products/baby-grow-party-hat?variant=1106081506&amp;view=style1">
+    Chi tiết sản phẩm
+    <span>
+     ›
+    </span>
+   </a>
+   <ul class="menu1">
+    <li class="">
+     <a aria-label="Chi tiết sản phẩm style 1" href="/products/baby-grow-party-hat?variant=1106081506&amp;view=style1">
+      Chi tiết sản phẩm style 1
+     </a>
+    </li>
+    <li class="">
+     <a aria-label="Chi tiết sản phẩm style 2" href="/products/baby-grow-party-hat?variant=1106081506&amp;view=style2">
+      Chi tiết sản phẩm style 2
+     </a>
+    </li>
+    <li class="">
+     <a aria-label="Chi tiết sản phẩm style 3" href="/products/baby-grow-party-hat?variant=1106081506&amp;view=style3">
+      Chi tiết sản phẩm style 3
+     </a>
+    </li>
+   </ul>
+  </li>
+  <li class="">
+   <a aria-label="Liên hệ" href="/pages/lien-he">
+    Liên hệ
+   </a>
+  </li>
+  <li class="">
+   <a aria-label="Đăng nhập" href="/account">
+    Đăng nhập
+   </a>
+   <a aria-label="Đăng ký" href="/account">
+    Đăng ký
+   </a>
+  </li>
+ </ul>
+ <div class="shop-menu-mobile-foot">
+  <div class="section-title-all">
+   <span>
+    Hổ trợ 24/7
+   </span>
+   <p>
+    Đừng ngừng ngại liên hệ chúng tôi, hổ trợ 24/7 từ thứ 2 - thứ 7. Hotline: 1900.63.60.99
+   </p>
+  </div>
+  <form accept-charset="UTF-8" action="/account/contact" class="contact-form" method="post">
+   <input name="form_type" type="hidden" value="customer"/>
+   <input name="utf8" type="hidden" value="✓"/>
+   <input name="contact[tags]" type="hidden" value="Khách hàng đăng ký nhận tin"/>
+   <input name="contact[first_name]" type="hidden" value="Người đăng ký"/>
+   <input name="contact[last_name]" type="hidden" value=""/>
+   <input name="contact[email]" placeholder="Nhập địa chỉ email của bạn..." required="" type="email"/>
+   <button type="submit">
+    <svg class="" height="512" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 512.005 512.005" width="512" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+     <path class="" d="m511.658 51.675c2.496-11.619-8.895-21.416-20.007-17.176l-482 184c-5.801 2.215-9.638 7.775-9.65 13.984-.012 6.21 3.803 11.785 9.596 14.022l135.403 52.295v164.713c0 6.948 4.771 12.986 11.531 14.593 6.715 1.597 13.717-1.598 16.865-7.843l56.001-111.128 136.664 101.423c8.313 6.17 20.262 2.246 23.287-7.669 127.599-418.357 122.083-400.163 122.31-401.214zm-118.981 52.718-234.803 167.219-101.028-39.018zm-217.677 191.852 204.668-145.757c-176.114 185.79-166.916 176.011-167.684 177.045-1.141 1.535 1.985-4.448-36.984 72.882zm191.858 127.546-120.296-89.276 217.511-229.462z" data-original="#000000" fill="#000000">
+     </path>
+    </svg>
+   </button>
+   <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt-xaNWtWj4IzsAJbM-MKKL4rHFQDDb7nCp9Deg_Jp7RYSWfI-pcl18MQrmXiSw-98KLnGiF369QKdysczW-JA3WXkyMY6kHb_eo5nEV4LDilJkfEdt06M6r8XOztkZp_FI"/>
+   <input id="a0bcb164c7ee4b1598f57513565fd2cb" name="g-recaptcha-response" type="hidden"/>
+   <noscript data-src="https://www.google.com/recaptcha/api.js?render=6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s">
+   </noscript>
+   <noscript>
+    let recaptchaElm=document.getElementById('a0bcb164c7ee4b1598f57513565fd2cb');let recaptchaForm=recaptchaElm.parentNode;recaptchaForm.addEventListener("submit",function(formEvent){if(!recaptchaElm.value){formEvent.preventDefault();grecaptcha.ready(function(){grecaptcha.execute('6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s',{action:'submit'}).then(function(token){recaptchaElm.value=token;recaptchaForm.requestSubmit(formEvent.submitter)})})}})
+   </noscript>
+  </form>
+  <ul class="shop-social">
+   <li>
+    <a aria-label="F1GENZ BABIE - Facebook" href="/collections/all" target="_blank">
+     <img alt="F1GENZ BABIE - Facebook" height="30" loading="lazy" src="https://file.hstatic.net/200000588277/file/facebook__6__53aaa8d352524d3eb025af5203eaa437_icon.png" width="30"/>
+    </a>
+   </li>
+   <li>
+    <a aria-label="F1GENZ BABIE - Youtube" href="/collections/all" target="_blank">
+     <img alt="F1GENZ BABIE - Youtube" height="30" loading="lazy" src="https://file.hstatic.net/200000588277/file/youtube__5__4f04522e10494557a651f53a33ad4d76_icon.png" width="30"/>
+    </a>
+   </li>
+   <li>
+    <a aria-label="F1GENZ BABIE - Pinterest" href="/collections/all" target="_blank">
+     <img alt="F1GENZ BABIE - Youtube" height="30" loading="lazy" src="https://file.hstatic.net/200000588277/file/pinterest_a1a15995132a4275845412deba5f1193_icon.png" width="30"/>
+    </a>
+   </li>
+   <li>
+    <a aria-label="F1GENZ BABIE - TikTok" href="/collections/all" target="_blank">
+     <img alt="F1GENZ BABIE - TikTok" height="30" loading="lazy" src="https://file.hstatic.net/200000588277/file/tik-tok_d85bb4e7468c43ac9ed5437649b7405c_icon.png" width="30"/>
+    </a>
+   </li>
+   <li>
+    <a aria-label="F1GENZ BABIE - Instagram" href="/collections/all" target="_blank">
+     <img alt="F1GENZ BABIE - Instagram" height="30" loading="lazy" src="https://file.hstatic.net/200000588277/file/instagram__3__7de3ebbce1f24003b516ca6c1d7c24d5_icon.png" width="30"/>
+    </a>
+   </li>
+  </ul>
+ </div>
+</div>
+<div class="shop-cart-sidebar">
+ <div class="shop-cart-sidebar-head">
+  <label>
+   Giỏ hàng
+  </label>
+  <button data-type="shop-cart-sidebar-close" type="button">
+   <svg class="Icon Icon--close" height="15" role="presentation" viewbox="0 0 16 14" width="15">
+    <path d="M15 0L1 14m14 0L1 0" fill="none" fill-rule="evenodd" stroke="currentColor">
+    </path>
+   </svg>
+  </button>
+  <div class="shop-cart-sidebar-top-freeship">
+   <div class="shop-freeship" data-freeship-price="5000000000">
+    <div class="shop-freeship-bar">
+     <div class="shop-freeship-bar-main">
+      <span>
+      </span>
+     </div>
+    </div>
+    <div class="shop-freeship-note">
+     Mua thêm
+     <span>
+      50,000,000₫
+     </span>
+     để được miễn phí giao hàng trên toàn quốc
+    </div>
+   </div>
+   <div class="shop-cart-sidebar-top-freeship-label">
+    <img alt=" - Free Ship" class="lazyload" data-src="https://file.hstatic.net/200000306687/file/giphy__1__c91b6f02cea04a969d655681bb73caf8_small.gif" height="62" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="75"/>
+   </div>
+  </div>
+ </div>
+ <div class="shop-cart-sidebar-body">
+  <div class="shop-cart-sidebar-yes">
+  </div>
+  <div class="shop-cart-sidebar-no">
+   Giỏ hàng của bạn còn trống
+  </div>
+ </div>
+ <div class="shop-cart-sidebar-foot">
+  <button data-type="shop-cart-sidebar-note-action" title="Thêm ghi chú" type="button">
+   Thêm ghi chú
+  </button>
+  <a aria-label="Xem chi tiết giỏ hàng" href="/cart">
+   Xem chi tiết giỏ hàng
+  </a>
+  <p>
+   Phí ship &amp; thuế được tính ở Trang Thanh Toán
+  </p>
+  <a aria-label="Thanh toán" href="/checkout">
+   <span>
+    Thanh toán
+   </span>
+   <span>
+   </span>
+   <span>
+    0₫
+   </span>
+  </a>
+  <div class="shop-cart-sidebar-note">
+   <label>
+    Thêm ghi chú
+   </label>
+   <textarea placeholder="Chúng tôi có thể giúp gì cho bạn?"></textarea>
+   <button data-type="shop-cart-sidebar-note-save" type="button">
+    Lưu
+   </button>
+  </div>
+ </div>
+</div>
+<div class="shop-social-sidebar d-none d-sm-block">
+ <a href="/collections/all" style="background-color: #ffffff;" target="_blank" title="Zalo">
+  <img alt="Social Zalo" class="lazyload w-100" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_social_sidebar_item_image_1_icon.png?v=217" height="32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="32"/>
+  Zalo
+ </a>
+ <a href="/collections/all" style="background-color: #ffffff;" target="_blank" title="Snapchat">
+  <img alt="Social Snapchat" class="lazyload w-100" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_social_sidebar_item_image_2_icon.png?v=217" height="32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="32"/>
+  Snapchat
+ </a>
+ <a href="/collections/all" style="background-color: #ffffff;" target="_blank" title="Tiktok">
+  <img alt="Social Tiktok" class="lazyload w-100" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_social_sidebar_item_image_3_icon.png?v=217" height="32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="32"/>
+  Tiktok
+ </a>
+ <a href="/collections/all" style="background-color: #ffffff;" target="_blank" title="Instagram">
+  <img alt="Social Instagram" class="lazyload w-100" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_social_sidebar_item_image_4_icon.png?v=217" height="32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="32"/>
+  Instagram
+ </a>
+ <a href="/collections/all" style="background-color: #ffffff;" target="_blank" title="Youtube">
+  <img alt="Social Youtube" class="lazyload w-100" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_social_sidebar_item_image_5_icon.png?v=217" height="32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="32"/>
+  Youtube
+ </a>
+ <a href="/collections/all" style="background-color: #ffffff;" target="_blank" title="Messenger">
+  <img alt="Social Messenger" class="lazyload w-100" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_social_sidebar_item_image_6_icon.png?v=217" height="32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="32"/>
+  Messenger
+ </a>
+ <button data-fancybox="" data-src="#shop-modal-phone" style="background-color: #ffffff;" title=" - Support">
+  <img alt="Hổ trợ 24/7" class="lazyload w-100" data-src="//theme.hstatic.net/200000689391/1001102398/14/shop_social_sidebar_item_image_7_icon.png?v=217" height="32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="32"/>
+  Hổ trợ 24/7
+ </button>
+ <button class="back-to-top" title="Back to top">
+  <img alt="Back to top" class="lazyload w-100" data-src="https://file.hstatic.net/200000588277/file/arrow-up_eb1426bb7fc647eab89f9279695752cd.png" height="32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" width="32"/>
+  Lên đầu trang
+ </button>
+</div>
+<div class="shop-wishlist-modal" data-name="Yêu thích">
+ <div class="shop-wishlist-modal-head">
+  <div class="container">
+   <label>
+    Danh mục sản phẩm yêu thích
+   </label>
+   <button data-type="shop-wishlist-modal-close" title="Đóng" type="button">
+    <svg class="" height="20" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="20" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+     <g>
+      <path class="" d="m4.59 59.41a2 2 0 0 0 2.83 0l24.58-24.58 24.59 24.58a2 2 0 0 0 2.83-2.83l-24.59-24.58 24.58-24.59a2 2 0 0 0 -2.83-2.83l-24.58 24.59-24.59-24.58a2 2 0 0 0 -2.82 2.82l24.58 24.59-24.58 24.59a2 2 0 0 0 0 2.82z" data-original="#000000" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+      </path>
+     </g>
+    </svg>
+   </button>
+  </div>
+ </div>
+ <div class="container">
+  <div class="shop-wishlist-modal-body">
+   <p class="shop-wishlist-modal-null wcs-null w-100 text-center">
+    Chưa có sản phẩm trong danh sách yêu thích
+   </p>
+  </div>
+ </div>
+</div>
+<div class="shop-compare-modal" data-name="So sánh">
+ <div class="shop-compare-modal-head">
+  <div class="container">
+   <label>
+    Danh mục sản phẩm so sánh
+   </label>
+   <button data-type="shop-compare-modal-close" title="Đóng" type="button">
+    <svg class="" height="20" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="20" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+     <g>
+      <path class="" d="m4.59 59.41a2 2 0 0 0 2.83 0l24.58-24.58 24.59 24.58a2 2 0 0 0 2.83-2.83l-24.59-24.58 24.58-24.59a2 2 0 0 0 -2.83-2.83l-24.58 24.59-24.59-24.58a2 2 0 0 0 -2.82 2.82l24.58 24.59-24.58 24.59a2 2 0 0 0 0 2.82z" data-original="#000000" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+      </path>
+     </g>
+    </svg>
+   </button>
+  </div>
+ </div>
+ <div class="container">
+  <div class="shop-compare-modal-body">
+   <p class="shop-compare-modal-null wcs-null w-100 text-center">
+    Chưa có sản phẩm trong danh sách so sánh
+   </p>
+  </div>
+ </div>
+</div>
+<div aria-hidden="true" aria-labelledby="accountModal" class="modal fade" id="accountModal" role="dialog" tabindex="-1">
+ <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+  <div class="modal-content">
+   <div class="modal-body">
+    <div class="row">
+     <div class="col-lg-3 col-md-3">
+      <div class="modalLogo">
+       <a aria-label="F1GENZ BABIE" href="https://f1genz-babie.myharavan.com">
+        <img alt="F1GENZ BABIE" height="85" loading="lazy" src="//theme.hstatic.net/200000689391/1001102398/14/shop_logo_image_medium.png?v=217" width="240"/>
+       </a>
+      </div>
+      <div aria-orientation="vertical" class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
+       <a aria-controls="modalLogin" aria-selected="true" class="nav-link active" data-toggle="pill" href="#modalLogin" id="modalLoginTab" role="tab">
+        Đăng nhập
+       </a>
+       <a aria-controls="modalForget" aria-selected="false" class="nav-link" data-toggle="pill" href="#modalForget" id="modalForgetTab" role="tab">
+        Quên mật khẩu
+       </a>
+       <a aria-controls="modalRegister" aria-selected="false" class="nav-link" data-toggle="pill" href="#modalRegister" id="modalRegisterTab" role="tab">
+        Đăng ký
+       </a>
+      </div>
+     </div>
+     <div class="col-lg-9 col-md-9">
+      <div class="tab-content" id="v-pills-tabContent">
+       <div aria-labelledby="modalLoginTab" class="tab-pane fade show active" id="modalLogin" role="tabpanel">
+        <label class="text-center">
+         ĐĂNG NHẬP
+        </label>
+        <div class="login-form-body">
+         <form accept-charset="UTF-8" action="/account/login" id="customer_login" method="post">
+          <input name="form_type" type="hidden" value="customer_login"/>
+          <input name="utf8" type="hidden" value="✓"/>
+          <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt-xaNWtWj4IzsAJbM-MKKL4rHFQDDb7nCp9Deg_Jp7RYSWfI-pcl18MQrmXiSw-98KLnGiF369QKdysczW-JA3WXkyMY6kHb_eo5nEV4LDilJkfEdt06M6r8XOztkZp_FI"/>
+          <div class="form-group">
+           <label for="login-email">
+            Email*
+           </label>
+           <input class="form-control" id="login-email" name="customer[email]" required="" type="email"/>
+          </div>
+          <div class="form-group">
+           <label for="login-password">
+            Mật khẩu*
+           </label>
+           <input class="form-control" id="login-password" name="customer[password]" required="" type="password"/>
+          </div>
+          <div class="form-group">
+           <button class="btn btn-primary hoverOpacity" type="submit">
+            ĐĂNG NHẬP
+           </button>
+          </div>
+         </form>
+        </div>
+       </div>
+       <div aria-labelledby="modalForgetTab" class="tab-pane fade" id="modalForget" role="tabpanel">
+        <label class="text-center">
+         QUÊN MẬT KHẨU
+        </label>
+        <div class="recover-form-body">
+         <form accept-charset="UTF-8" action="/account/recover" method="post">
+          <input name="form_type" type="hidden" value="recover_customer_password"/>
+          <input name="utf8" type="hidden" value="✓"/>
+          <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt-xaNWtWj4IzsAJbM-MKKL4rHFQDDb7nCp9Deg_Jp7RYSWfI-pcl18MQrmXiSw-98KLnGiF369QKdysczW-JA3WXkyMY6kHb_eo5nEV4LDilJkfEdt06M6r8XOztkZp_FI"/>
+          <div class="form-group">
+           <label for="recover-email">
+            Email*
+           </label>
+           <input class="form-control" id="recover-email" name="email" required="" type="email"/>
+          </div>
+          <div class="form-group">
+           <button class="btn btn-primary hoverOpacity" type="submit">
+            Gửi
+           </button>
+          </div>
+         </form>
+        </div>
+       </div>
+       <div aria-labelledby="modalRegisterTab" class="tab-pane fade" id="modalRegister" role="tabpanel">
+        <label class="text-center">
+         ĐĂNG KÝ
+        </label>
+        <div class="register-form-body">
+         <form accept-charset="UTF-8" action="/account" id="create_customer" method="post">
+          <input name="form_type" type="hidden" value="create_customer"/>
+          <input name="utf8" type="hidden" value="✓"/>
+          <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt-xaNWtWj4IzsAJbM-MKKL4rHFQDDb7nCp9Deg_Jp7RYSWfI-pcl18MQrmXiSw-98KLnGiF369QKdysczW-JA3WXkyMY6kHb_eo5nEV4LDilJkfEdt06M6r8XOztkZp_FI"/>
+          <div class="form-group">
+           <label for="register-last-name">
+            Họ của bạn*
+           </label>
+           <input class="form-control" id="register-last-name" name="customer[last_name]" required="" type="text"/>
+          </div>
+          <div class="form-group">
+           <label for="register-first-name">
+            Tên của bạn*
+           </label>
+           <input class="form-control" id="register-first-name" name="customer[first_name]" required="" type="text"/>
+          </div>
+          <div class="form-group">
+           <label for="register-phone">
+            Số điện thoại
+           </label>
+           <input class="form-control" id="register-phone" name="customer[phone]" pattern="^\+?\d{0,10}" type="text"/>
+          </div>
+          <div class="form-group">
+           <label>
+            Giới tính
+           </label>
+           <div class="row">
+            <div class="col-2 d-flex align-items-center">
+             <input checked="" id="register-gender-0" name="customer[gender]" type="radio" value="0"/>
+             <label for="register-gender-0">
+              Nữ
+             </label>
+            </div>
+            <div class="col-2 d-flex align-items-center">
+             <input id="register-gender-1" name="customer[gender]" type="radio" value="1"/>
+             <label for="register-gender-1">
+              Nam
+             </label>
+            </div>
+           </div>
+          </div>
+          <div class="form-group">
+           <label for="register-email">
+            Email*
+           </label>
+           <input class="form-control" id="register-email" name="customer[email]" required="" type="email"/>
+          </div>
+          <div class="form-group">
+           <label for="register-password">
+            Mật khẩu*
+           </label>
+           <input class="form-control" id="register-password" name="customer[password]" required="" type="password"/>
+          </div>
+          <div class="form-group">
+           <button class="btn btn-primary hoverOpacity" type="submit">
+            ĐĂNG KÝ
+           </button>
+          </div>
+          <input id="6781e7852b554e7387f5a2776bdde883" name="g-recaptcha-response" type="hidden"/>
+          <noscript data-src="https://www.google.com/recaptcha/api.js?render=6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s">
+          </noscript>
+          <noscript>
+           let recaptchaElm=document.getElementById('6781e7852b554e7387f5a2776bdde883');let recaptchaForm=recaptchaElm.parentNode;recaptchaForm.addEventListener("submit",function(formEvent){if(!recaptchaElm.value){formEvent.preventDefault();grecaptcha.ready(function(){grecaptcha.execute('6LchSLkqAAAAABVHBpeFgg8N-WgkYsr5fO6GUF_s',{action:'submit'}).then(function(token){recaptchaElm.value=token;recaptchaForm.requestSubmit(formEvent.submitter)})})}})
+          </noscript>
+         </form>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <button class="closeModal">
+    <i class="lni lni-close">
+    </i>
+   </button>
+  </div>
+ </div>
+</div>
+<button class="overplay-all" title="Đóng">
+</button>
+
+{%endblock %}
