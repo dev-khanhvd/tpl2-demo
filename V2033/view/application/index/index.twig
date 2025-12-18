@@ -1,0 +1,2663 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(translate('Trang chủ')).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ getKeyContentValue('META_KEYWORDS') }}">
+<meta name="description" content="{{ getKeyContentValue('META_DESCRIPTION') }}">
+<meta property="og:title" content="{{ getKeyContentValue('META_TITLE') }}">
+<meta property="og:url" content="{{ getCurrentUrl() }}">
+<meta property="og:image" content="{{ getBusinessLogo() }}">
+<link rel="canonical" href="{{ getCurrentUrl() }}">
+{%endblock %}
+
+{%block body %}
+
+<div class="nav-overlay" onclick="initNav('close')">
+</div>
+<nav class="hidden" id="menu-mobile">
+ <ul>
+  <li>
+   <a href="/">
+    Trang chủ
+   </a>
+  </li>
+  <li class="has-children">
+   <a href="/collections/all">
+    Sản phẩm
+   </a>
+   <ul class="child count-nav-3">
+    <li>
+     <a href="/collections/all">
+      Tât cả sản phẩm
+     </a>
+    </li>
+    <li>
+     <a href="/collections/all">
+      Sản phẩm mới
+     </a>
+    </li>
+    <li>
+     <a href="/collections/all">
+      Sản phẩm nổi bật
+     </a>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <a href="/blogs/news">
+    Tin tức
+   </a>
+  </li>
+  <li>
+   <a href="/pages/about-us">
+    Giới thiệu
+   </a>
+  </li>
+  <li>
+   <a href="/pages/he-thong-cua-hang">
+    Hệ thống cửa hàng
+   </a>
+  </li>
+  <li>
+   <a href="/pages/lien-he">
+    Liên hệ
+   </a>
+  </li>
+ </ul>
+</nav>
+<svg class="hidden" xmlns="http://www.w3.org/2000/svg">
+ <symbol id="icon-add-cart">
+  <svg enable-background="new 0 0 512 512" viewbox="0 0 512 512" x="0px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+   <g>
+    <g>
+     <polygon points="447.992,336 181.555,336 69.539,80 0.008,80 0.008,48 90.477,48 202.492,304 447.992,304 		">
+     </polygon>
+    </g>
+    <path d="M287.992,416c0,26.5-21.5,48-48,48s-48-21.5-48-48s21.5-48,48-48S287.992,389.5,287.992,416z">
+    </path>
+    <path d="M447.992,416c0,26.5-21.5,48-48,48s-48-21.5-48-48s21.5-48,48-48S447.992,389.5,447.992,416z">
+    </path>
+    <g>
+     <polygon points="499.18,144 511.992,112 160.008,112 172.805,144 		">
+     </polygon>
+     <polygon points="211.195,240 223.992,272 447.992,272 460.805,240 		">
+     </polygon>
+     <polygon points="486.398,176 185.602,176 198.398,208 473.586,208 		">
+     </polygon>
+    </g>
+   </g>
+  </svg>
+ </symbol>
+ <symbol id="icon-list-switch">
+  <svg style="enable-background:new 0 0 194.828 194.828;" viewbox="0 0 194.828 194.828" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+   <g>
+    <g>
+     <g>
+      <path d="M190.931,17.534H3.897C1.745,17.534,0,19.279,0,21.431v19.483c0,2.152,1.745,3.897,3.897,3.897h187.034
+										 c2.152,0,3.897-1.745,3.897-3.897V21.431C194.828,19.279,193.083,17.534,190.931,17.534z M187.034,37.017H7.793v-11.69h179.241
+										 V37.017z">
+      </path>
+      <path d="M190.931,64.293H3.897C1.745,64.293,0,66.038,0,68.19v31.172c0,2.152,1.745,3.897,3.897,3.897h187.034
+										 c2.152,0,3.897-1.745,3.897-3.897V68.19C194.828,66.038,193.083,64.293,190.931,64.293z M187.034,95.466H7.793v-23.38h179.241
+										 V95.466z">
+      </path>
+      <path d="M190.931,122.741H3.897c-2.152,0-3.897,1.745-3.897,3.897v46.759c0,2.152,1.745,3.897,3.897,3.897h187.034
+										 c2.152,0,3.897-1.745,3.897-3.897v-46.759C194.828,124.486,193.083,122.741,190.931,122.741z M187.034,169.5H7.793v-38.966
+										 h179.241V169.5z">
+      </path>
+     </g>
+    </g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+  </svg>
+ </symbol>
+ <symbol id="icon-sort-by">
+  <svg style="enable-background:new 0 0 490 490;" viewbox="0 0 490 490" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+   <g>
+    <polygon points="85.877,154.014 85.877,428.309 131.706,428.309 131.706,154.014 180.497,221.213 217.584,194.27 108.792,44.46 
+												 0,194.27 37.087,221.213 	">
+    </polygon>
+    <polygon points="404.13,335.988 404.13,61.691 358.301,61.691 358.301,335.99 309.503,268.787 272.416,295.73 381.216,445.54 
+												 490,295.715 452.913,268.802 	">
+    </polygon>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+  </svg>
+ </symbol>
+ <symbol id="icon-search_white" viewbox="0 0 1024 1024">
+  <path class="path1" d="M1014.176 968.256l-264.32-260.128c69.184-75.264 111.68-174.688 111.68-284.128 0-234.080-192.8-423.872-430.688-423.872s-430.72 189.792-430.72 423.872c0 234.112 192.864 423.872 430.72 423.872 102.752 0 197.088-35.552 271.072-94.688l265.376 261.12c12.928 12.736 33.952 12.736 46.88 0 12.96-12.672 12.96-33.376 0-46.048zM430.848 782.688c-201.312 0-364.48-160.64-364.48-358.688 0-198.080 163.168-358.656 364.48-358.656 201.28 0 364.448 160.576 364.448 358.656 0.032 198.048-163.168 358.688-364.448 358.688z">
+  </path>
+ </symbol>
+ <symbol id="icon-user" viewbox="0 0 1024 1024">
+  <title>
+   user
+  </title>
+  <path class="path1" d="M622.826 702.736c-22.11-3.518-22.614-64.314-22.614-64.314s64.968-64.316 79.128-150.802c38.090 0 61.618-91.946 23.522-124.296 1.59-34.054 48.96-267.324-190.862-267.324s-192.45 233.27-190.864 267.324c-38.094 32.35-14.57 124.296 23.522 124.296 14.158 86.486 79.128 150.802 79.128 150.802s-0.504 60.796-22.614 64.314c-71.22 11.332-337.172 128.634-337.172 257.264h896c0-128.63-265.952-245.932-337.174-257.264z">
+  </path>
+ </symbol>
+</svg>
+<div class="main-body">
+ <div class="topbar">
+  <div class="container">
+   <div class="topbar-wrap d-flex align-items-center justify-content-between">
+    <div class="header-contact d-none d-lg-flex flex-grow-1">
+     <div class="item d-flex align-items-center">
+      <div class="icon">
+       <i class="fal fa-phone-volume">
+       </i>
+      </div>
+      <div class="info">
+       <a href="tel:0936342986">
+        0936342986
+       </a>
+      </div>
+     </div>
+     <div class="item d-flex align-items-center">
+      <div class="icon">
+       <i class="fal fa-envelope">
+       </i>
+      </div>
+      <div class="info">
+       <a href="mailto:theme.hogwarts@gmail.com">
+        theme.hogwarts@gmail.com
+       </a>
+      </div>
+     </div>
+     <div class="item d-flex align-items-center">
+      <div class="icon">
+       <i class="fal fa-map-marker-alt">
+       </i>
+      </div>
+      <div class="info">
+       <a href="/">
+        quận 11, Tp. Hồ Chí Minh
+       </a>
+      </div>
+     </div>
+    </div>
+    <div class="header-account ml-5">
+     <a class="mr-3 text-uppercase font-weight-bold d-none d-md-inline-block" href="/blogs/news">
+      Tin tức
+     </a>
+     <a class="mr-3 text-uppercase font-weight-bold d-none d-md-inline-block" href="/pages/he-thong-cua-hang">
+      Hệ thống cửa hàng
+     </a>
+     <a class="mr-3 text-uppercase font-weight-bold d-none d-md-inline-block" href="/pages/lien-he">
+      Liên hệ
+     </a>
+     <a class="mr-3 text-uppercase font-weight-bold" href="/account/login">
+      Đăng nhập
+     </a>
+     <a class="mr-3 text-uppercase font-weight-bold" href="/account/register">
+      Đăng ký
+     </a>
+    </div>
+    <div class="header-action_cart">
+     <div aria-expanded="false" aria-haspopup="true" class="header-action_text cursor-pointer" data-toggle="dropdown" id="dropdownCartButton">
+      <div aria-label="Giỏ hàng" class="header-action__link header-action-toggle" title="Giỏ hàng">
+       <span class="box-icon">
+        <i class="fal fa-shopping-cart">
+        </i>
+        <span class="count-holder">
+         <span class="count">
+          0
+         </span>
+        </span>
+       </span>
+      </div>
+     </div>
+     <div aria-labelledby="dropdownCartButton" class="header-action_dropdown dropdown-menu dropdown-menu-right">
+      <span class="box-triangle">
+       <svg viewbox="0 0 20 9">
+        <path d="M.47108938 9c.2694725-.26871321.57077721-.56867841.90388257-.89986354C3.12384116 6.36134886 5.74788116 3.76338565 9.2467995.30653888c.4145057-.4095171 1.0844277-.40860098 1.4977971.00205122L19.4935156 9H.47108938z" fill="#ffffff">
+        </path>
+       </svg>
+      </span>
+      <div class="header-dropdown_content">
+       <div class="site-cart">
+        <div class="cart-view clearfix">
+         <div class="cart-view-scroll">
+          <table class="table-clone-cart" id="clone-item-cart">
+           <tr class="item_2 hidden" data-variant-id="">
+            <td class="img">
+             <a href="" title="">
+              <img alt="" src="//theme.hstatic.net/200000317851/1000697347/14/1x1.jpg?v=1174"/>
+             </a>
+            </td>
+            <td>
+             <p class="pro-title">
+              <a class="pro-title-view" href="" title="">
+              </a>
+              <span class="variant">
+              </span>
+             </p>
+             <div class="mini-cart_quantity">
+              <div class="pro-quantity-view">
+               <span class="qty-value">
+               </span>
+              </div>
+              <div class="pro-price-view">
+              </div>
+             </div>
+             <div class="remove_link remove-cart">
+             </div>
+            </td>
+           </tr>
+          </table>
+          <table id="cart-view">
+           <tr class="item-cart_empty">
+            <td>
+             <div class="svgico-mini-cart">
+              <i class="fal fa-shopping-cart">
+              </i>
+             </div>
+             Hiện chưa có sản phẩm
+            </td>
+           </tr>
+          </table>
+         </div>
+         <div class="line">
+         </div>
+         <div class="cart-view-total">
+          <table class="table-total">
+           <tr>
+            <td class="text-left">
+             TỔNG TIỀN:
+            </td>
+            <td class="text-right" id="total-view-cart">
+             0₫
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <a class="linktocart btn btn-primary btn-sm text-uppercase" href="/cart">
+              Xem giỏ hàng
+             </a>
+            </td>
+            <td>
+             <a class="linktocheckout btn btn-primary btn-sm text-uppercase" href="/checkout">
+              Thanh toán
+             </a>
+            </td>
+           </tr>
+          </table>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <h1 class="hidden entry-title">
+  Hogwarts Book
+ </h1>
+ <div class="container">
+  <div class="row flex-row-reverse">
+   <div class="col-12 col-lg-9">
+    <div class="mb-30" id="home-slider">
+     <div class="owl-carousel owl-theme owl-nav-style-3 dark" data-dot="false" data-lg-items="1" data-md-items="1" data-nav="true" data-sm-items="1" data-xs-items="1">
+      <div class="item">
+       <div class="image">
+        <picture>
+         <source media="(min-width: 768px)" srcset="//theme.hstatic.net/200000317851/1000697347/14/home_slider_image_1.jpg?v=1174"/>
+         <source media="(max-width: 767px)" srcset="//theme.hstatic.net/200000317851/1000697347/14/home_slider_image_1_large.jpg?v=1174"/>
+         <img alt="" loading="lazy" src="//theme.hstatic.net/200000317851/1000697347/14/home_slider_image_1_small.jpg?v=1174"/>
+        </picture>
+       </div>
+      </div>
+      <div class="item">
+       <div class="image">
+        <picture>
+         <source media="(min-width: 768px)" srcset="//theme.hstatic.net/200000317851/1000697347/14/home_slider_image_2.jpg?v=1174"/>
+         <source media="(max-width: 767px)" srcset="//theme.hstatic.net/200000317851/1000697347/14/home_slider_image_2_large.jpg?v=1174"/>
+         <img alt="" loading="lazy" src="//theme.hstatic.net/200000317851/1000697347/14/home_slider_image_2_small.jpg?v=1174"/>
+        </picture>
+       </div>
+      </div>
+     </div>
+    </div>
+    <section class="home-two-banner home-section-mg">
+     <div class="row">
+      <div class="col-12 col-md-6">
+       <div class="item banner-effect">
+        <a href="">
+         <picture>
+          <source media="(min-width: 768px)" srcset="//theme.hstatic.net/200000317851/1000697347/14/htb_img_1.jpg?v=1174"/>
+          <source media="(max-width: 767px)" srcset="//theme.hstatic.net/200000317851/1000697347/14/htb_img_1_large.jpg?v=1174"/>
+          <img alt="" loading="lazy" src="//theme.hstatic.net/200000317851/1000697347/14/htb_img_1_small.jpg?v=1174"/>
+         </picture>
+         <span class="hover hover1">
+         </span>
+         <span class="hover hover2">
+         </span>
+         <span class="hover hover3">
+         </span>
+         <span class="hover hover4">
+         </span>
+        </a>
+       </div>
+      </div>
+      <div class="col-12 col-md-6">
+       <div class="item banner-effect">
+        <a href="">
+         <picture>
+          <source media="(min-width: 768px)" srcset="//theme.hstatic.net/200000317851/1000697347/14/htb_img_2.jpg?v=1174"/>
+          <source media="(max-width: 767px)" srcset="//theme.hstatic.net/200000317851/1000697347/14/htb_img_2_large.jpg?v=1174"/>
+          <img alt="" loading="lazy" src="//theme.hstatic.net/200000317851/1000697347/14/htb_img_2_small.jpg?v=1174"/>
+         </picture>
+         <span class="hover hover1">
+         </span>
+         <span class="hover hover2">
+         </span>
+         <span class="hover hover3">
+         </span>
+         <span class="hover hover4">
+         </span>
+        </a>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="home-tab-product mb-30">
+     <div class="inner">
+      <div class="htp-tabs-wrapper">
+       <div class="htp-tablinks">
+        <button class="htp-tablink active" data-id="htp-tab-1">
+         Mới
+        </button>
+        <button class="htp-tablink" data-id="htp-tab-2">
+         Nổi bật
+        </button>
+        <button class="htp-tablink" data-id="htp-tab-3">
+         Khuyến mãi
+        </button>
+       </div>
+       <div class="htp-tabcontents section-box-bg">
+        <div class="htp-tabcontent active" data-id="htp-tab-1">
+         <div class="row">
+          <div class="col-6 col-md-4 col-lg-3">
+           <div class="product-item">
+            <div class="product-img">
+             <div class="product-sale">
+              <span>
+               -27%
+              </span>
+             </div>
+             <a href="/products/30-ngay-thay-doi-ban-than">
+              <img alt=" 30 Ngày Thay Đổi Bản Thân " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_067f29306fa3464083542d803c94f2af_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+             </a>
+             <div class="button-add d-none d-md-flex">
+              <button class="btnQuickView quick-view" data-handle="/products/30-ngay-thay-doi-ban-than" data-tooltip="Xem nhanh" type="button">
+               <i aria-hidden="true" class="fal fa-search-plus">
+               </i>
+              </button>
+              <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1075081540');" title="Thêm vào giỏ">
+               <i class="fal fa-cart-plus">
+               </i>
+              </button>
+              <a data-tooltip="Chi tiết" href="/products/30-ngay-thay-doi-ban-than">
+               <i class="fal fa-eye">
+               </i>
+              </a>
+             </div>
+            </div>
+            <div class="product-detail">
+             <h3 class="pro-name">
+              <a href="/products/30-ngay-thay-doi-ban-than" title="30 Ngày Thay Đổi Bản Thân">
+               30 Ngày Thay Đổi Bản Thân
+              </a>
+             </h3>
+             <p class="pro-price highlight">
+              <del class="compare-price">
+               135,000₫
+              </del>
+              <span class="current-price">
+               99,000₫
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+           <div class="product-item">
+            <div class="product-img">
+             <a href="/products/boc-dan-tuyet-dinh-cac-em-be-dong-vat">
+              <img alt=" Bóc dán tuyệt đỉnh - Các em bé động vật " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_13646c3e1cab40b0aa8ef804af5c62ef_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+             </a>
+             <div class="button-add d-none d-md-flex">
+              <button class="btnQuickView quick-view" data-handle="/products/boc-dan-tuyet-dinh-cac-em-be-dong-vat" data-tooltip="Xem nhanh" type="button">
+               <i aria-hidden="true" class="fal fa-search-plus">
+               </i>
+              </button>
+              <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839472');" title="Thêm vào giỏ">
+               <i class="fal fa-cart-plus">
+               </i>
+              </button>
+              <a data-tooltip="Chi tiết" href="/products/boc-dan-tuyet-dinh-cac-em-be-dong-vat">
+               <i class="fal fa-eye">
+               </i>
+              </a>
+             </div>
+            </div>
+            <div class="product-detail">
+             <h3 class="pro-name">
+              <a href="/products/boc-dan-tuyet-dinh-cac-em-be-dong-vat" title="Bóc dán tuyệt đỉnh - Các em bé động vật">
+               Bóc dán tuyệt đỉnh - Các em bé động vật
+              </a>
+             </h3>
+             <p class="pro-price">
+              <span class="current-price">
+               159,000₫
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+           <div class="product-item">
+            <div class="product-img">
+             <div class="product-sale">
+              <span>
+               -42%
+              </span>
+             </div>
+             <a href="/products/com-cuon-sach-boc-dan-dau-tien-cua-to-4t">
+              <img alt=" Com Cuốn sách bóc dán đầu tiên của tớ 4T " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_a7a2360e873947a6a8e05d7b23de8112_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+             </a>
+             <div class="button-add d-none d-md-flex">
+              <button class="btnQuickView quick-view" data-handle="/products/com-cuon-sach-boc-dan-dau-tien-cua-to-4t" data-tooltip="Xem nhanh" type="button">
+               <i aria-hidden="true" class="fal fa-search-plus">
+               </i>
+              </button>
+              <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839368');" title="Thêm vào giỏ">
+               <i class="fal fa-cart-plus">
+               </i>
+              </button>
+              <a data-tooltip="Chi tiết" href="/products/com-cuon-sach-boc-dan-dau-tien-cua-to-4t">
+               <i class="fal fa-eye">
+               </i>
+              </a>
+             </div>
+            </div>
+            <div class="product-detail">
+             <h3 class="pro-name">
+              <a href="/products/com-cuon-sach-boc-dan-dau-tien-cua-to-4t" title="Com Cuốn sách bóc dán đầu tiên của tớ 4T">
+               Com Cuốn sách bóc dán đầu tiên của tớ 4T
+              </a>
+             </h3>
+             <p class="pro-price highlight">
+              <del class="compare-price">
+               500,000₫
+              </del>
+              <span class="current-price">
+               292,000₫
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+           <div class="product-item">
+            <div class="product-img">
+             <div class="product-sale">
+              <span>
+               -29%
+              </span>
+             </div>
+             <a href="/products/combo-boc-dan-tuyet-dinh-6t">
+              <img alt=" Combo Bóc dán tuyệt đỉnh 6T " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_4afbaa310b254c34b178ec6460498577_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+             </a>
+             <div class="button-add d-none d-md-flex">
+              <button class="btnQuickView quick-view" data-handle="/products/combo-boc-dan-tuyet-dinh-6t" data-tooltip="Xem nhanh" type="button">
+               <i aria-hidden="true" class="fal fa-search-plus">
+               </i>
+              </button>
+              <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839436');" title="Thêm vào giỏ">
+               <i class="fal fa-cart-plus">
+               </i>
+              </button>
+              <a data-tooltip="Chi tiết" href="/products/combo-boc-dan-tuyet-dinh-6t">
+               <i class="fal fa-eye">
+               </i>
+              </a>
+             </div>
+            </div>
+            <div class="product-detail">
+             <h3 class="pro-name">
+              <a href="/products/combo-boc-dan-tuyet-dinh-6t" title="Combo Bóc dán tuyệt đỉnh 6T">
+               Combo Bóc dán tuyệt đỉnh 6T
+              </a>
+             </h3>
+             <p class="pro-price highlight">
+              <del class="compare-price">
+               700,000₫
+              </del>
+              <span class="current-price">
+               500,000₫
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+           <div class="product-item">
+            <div class="product-img">
+             <a href="/products/hello-english-xin-chao-tieng-anh-bai-tap-tieng-anh">
+              <img alt=" Hello English! - Xin chào tiếng Anh!- Bài tập tiếng Anh " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_834de600ca8246acbadb3d9bb361cb5f_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+             </a>
+             <div class="button-add d-none d-md-flex">
+              <button class="btnQuickView quick-view" data-handle="/products/hello-english-xin-chao-tieng-anh-bai-tap-tieng-anh" data-tooltip="Xem nhanh" type="button">
+               <i aria-hidden="true" class="fal fa-search-plus">
+               </i>
+              </button>
+              <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839081');" title="Thêm vào giỏ">
+               <i class="fal fa-cart-plus">
+               </i>
+              </button>
+              <a data-tooltip="Chi tiết" href="/products/hello-english-xin-chao-tieng-anh-bai-tap-tieng-anh">
+               <i class="fal fa-eye">
+               </i>
+              </a>
+             </div>
+            </div>
+            <div class="product-detail">
+             <h3 class="pro-name">
+              <a href="/products/hello-english-xin-chao-tieng-anh-bai-tap-tieng-anh" title="Hello English! - Xin chào tiếng Anh!- Bài tập tiếng Anh">
+               Hello English! - Xin chào tiếng Anh!- Bài tập tiếng Anh
+              </a>
+             </h3>
+             <p class="pro-price">
+              <span class="current-price">
+               100,000₫
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+           <div class="product-item">
+            <div class="product-img">
+             <a href="/products/hello-english-xin-chao-tieng-anh-tieng-anh-cho-nguoi-moi-hoc">
+              <img alt=" Hello English! - Xin chào tiếng Anh!- Tiếng Anh cho người mới học " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_b9077542b49844309e9723d50b9ecd8f_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+             </a>
+             <div class="button-add d-none d-md-flex">
+              <button class="btnQuickView quick-view" data-handle="/products/hello-english-xin-chao-tieng-anh-tieng-anh-cho-nguoi-moi-hoc" data-tooltip="Xem nhanh" type="button">
+               <i aria-hidden="true" class="fal fa-search-plus">
+               </i>
+              </button>
+              <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839254');" title="Thêm vào giỏ">
+               <i class="fal fa-cart-plus">
+               </i>
+              </button>
+              <a data-tooltip="Chi tiết" href="/products/hello-english-xin-chao-tieng-anh-tieng-anh-cho-nguoi-moi-hoc">
+               <i class="fal fa-eye">
+               </i>
+              </a>
+             </div>
+            </div>
+            <div class="product-detail">
+             <h3 class="pro-name">
+              <a href="/products/hello-english-xin-chao-tieng-anh-tieng-anh-cho-nguoi-moi-hoc" title="Hello English! - Xin chào tiếng Anh!- Tiếng Anh cho người mới học">
+               Hello English! - Xin chào tiếng Anh!- Tiếng Anh cho người mới học
+              </a>
+             </h3>
+             <p class="pro-price">
+              <span class="current-price">
+               160,000₫
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+           <div class="product-item">
+            <div class="product-img">
+             <a href="/products/hello-english-xin-chao-tieng-anh-to-mau-cung-tieng-anh">
+              <img alt=" Hello English! - Xin chào tiếng Anh!- Tô màu cùng tiếng Anh " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_03407228ce004ae3a34c41812a342de9_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+             </a>
+             <div class="button-add d-none d-md-flex">
+              <button class="btnQuickView quick-view" data-handle="/products/hello-english-xin-chao-tieng-anh-to-mau-cung-tieng-anh" data-tooltip="Xem nhanh" type="button">
+               <i aria-hidden="true" class="fal fa-search-plus">
+               </i>
+              </button>
+              <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839164');" title="Thêm vào giỏ">
+               <i class="fal fa-cart-plus">
+               </i>
+              </button>
+              <a data-tooltip="Chi tiết" href="/products/hello-english-xin-chao-tieng-anh-to-mau-cung-tieng-anh">
+               <i class="fal fa-eye">
+               </i>
+              </a>
+             </div>
+            </div>
+            <div class="product-detail">
+             <h3 class="pro-name">
+              <a href="/products/hello-english-xin-chao-tieng-anh-to-mau-cung-tieng-anh" title="Hello English! - Xin chào tiếng Anh!- Tô màu cùng tiếng Anh">
+               Hello English! - Xin chào tiếng Anh!- Tô màu cùng tiếng Anh
+              </a>
+             </h3>
+             <p class="pro-price">
+              <span class="current-price">
+               139,000₫
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+           <div class="product-item">
+            <div class="product-img">
+             <a href="/products/hello-english-xin-chao-tieng-anh-tu-dien-tieng-anh-bang-hinh">
+              <img alt=" Hello English! - Xin chào tiếng Anh!- Từ điển tiếng Anh bằng hình " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_08253c28898c4d02b0ce2871ba06ba75_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+             </a>
+             <div class="button-add d-none d-md-flex">
+              <button class="btnQuickView quick-view" data-handle="/products/hello-english-xin-chao-tieng-anh-tu-dien-tieng-anh-bang-hinh" data-tooltip="Xem nhanh" type="button">
+               <i aria-hidden="true" class="fal fa-search-plus">
+               </i>
+              </button>
+              <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839208');" title="Thêm vào giỏ">
+               <i class="fal fa-cart-plus">
+               </i>
+              </button>
+              <a data-tooltip="Chi tiết" href="/products/hello-english-xin-chao-tieng-anh-tu-dien-tieng-anh-bang-hinh">
+               <i class="fal fa-eye">
+               </i>
+              </a>
+             </div>
+            </div>
+            <div class="product-detail">
+             <h3 class="pro-name">
+              <a href="/products/hello-english-xin-chao-tieng-anh-tu-dien-tieng-anh-bang-hinh" title="Hello English! - Xin chào tiếng Anh!- Từ điển tiếng Anh bằng hình">
+               Hello English! - Xin chào tiếng Anh!- Từ điển tiếng Anh bằng hình
+              </a>
+             </h3>
+             <p class="pro-price">
+              <span class="current-price">
+               155,000₫
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="htp-tabcontent" data-id="htp-tab-2">
+         <div class="row">
+          <div class="col-6 col-md-4 col-lg-3">
+           <div class="product-item">
+            <div class="product-img">
+             <div class="product-sale">
+              <span>
+               -27%
+              </span>
+             </div>
+             <a href="/products/30-ngay-thay-doi-ban-than">
+              <img alt=" 30 Ngày Thay Đổi Bản Thân " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_067f29306fa3464083542d803c94f2af_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+             </a>
+             <div class="button-add d-none d-md-flex">
+              <button class="btnQuickView quick-view" data-handle="/products/30-ngay-thay-doi-ban-than" data-tooltip="Xem nhanh" type="button">
+               <i aria-hidden="true" class="fal fa-search-plus">
+               </i>
+              </button>
+              <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1075081540');" title="Thêm vào giỏ">
+               <i class="fal fa-cart-plus">
+               </i>
+              </button>
+              <a data-tooltip="Chi tiết" href="/products/30-ngay-thay-doi-ban-than">
+               <i class="fal fa-eye">
+               </i>
+              </a>
+             </div>
+            </div>
+            <div class="product-detail">
+             <h3 class="pro-name">
+              <a href="/products/30-ngay-thay-doi-ban-than" title="30 Ngày Thay Đổi Bản Thân">
+               30 Ngày Thay Đổi Bản Thân
+              </a>
+             </h3>
+             <p class="pro-price highlight">
+              <del class="compare-price">
+               135,000₫
+              </del>
+              <span class="current-price">
+               99,000₫
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+           <div class="product-item">
+            <div class="product-img">
+             <a href="/products/boc-dan-tuyet-dinh-cac-em-be-dong-vat">
+              <img alt=" Bóc dán tuyệt đỉnh - Các em bé động vật " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_13646c3e1cab40b0aa8ef804af5c62ef_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+             </a>
+             <div class="button-add d-none d-md-flex">
+              <button class="btnQuickView quick-view" data-handle="/products/boc-dan-tuyet-dinh-cac-em-be-dong-vat" data-tooltip="Xem nhanh" type="button">
+               <i aria-hidden="true" class="fal fa-search-plus">
+               </i>
+              </button>
+              <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839472');" title="Thêm vào giỏ">
+               <i class="fal fa-cart-plus">
+               </i>
+              </button>
+              <a data-tooltip="Chi tiết" href="/products/boc-dan-tuyet-dinh-cac-em-be-dong-vat">
+               <i class="fal fa-eye">
+               </i>
+              </a>
+             </div>
+            </div>
+            <div class="product-detail">
+             <h3 class="pro-name">
+              <a href="/products/boc-dan-tuyet-dinh-cac-em-be-dong-vat" title="Bóc dán tuyệt đỉnh - Các em bé động vật">
+               Bóc dán tuyệt đỉnh - Các em bé động vật
+              </a>
+             </h3>
+             <p class="pro-price">
+              <span class="current-price">
+               159,000₫
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+           <div class="product-item">
+            <div class="product-img">
+             <div class="product-sale">
+              <span>
+               -42%
+              </span>
+             </div>
+             <a href="/products/com-cuon-sach-boc-dan-dau-tien-cua-to-4t">
+              <img alt=" Com Cuốn sách bóc dán đầu tiên của tớ 4T " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_a7a2360e873947a6a8e05d7b23de8112_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+             </a>
+             <div class="button-add d-none d-md-flex">
+              <button class="btnQuickView quick-view" data-handle="/products/com-cuon-sach-boc-dan-dau-tien-cua-to-4t" data-tooltip="Xem nhanh" type="button">
+               <i aria-hidden="true" class="fal fa-search-plus">
+               </i>
+              </button>
+              <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839368');" title="Thêm vào giỏ">
+               <i class="fal fa-cart-plus">
+               </i>
+              </button>
+              <a data-tooltip="Chi tiết" href="/products/com-cuon-sach-boc-dan-dau-tien-cua-to-4t">
+               <i class="fal fa-eye">
+               </i>
+              </a>
+             </div>
+            </div>
+            <div class="product-detail">
+             <h3 class="pro-name">
+              <a href="/products/com-cuon-sach-boc-dan-dau-tien-cua-to-4t" title="Com Cuốn sách bóc dán đầu tiên của tớ 4T">
+               Com Cuốn sách bóc dán đầu tiên của tớ 4T
+              </a>
+             </h3>
+             <p class="pro-price highlight">
+              <del class="compare-price">
+               500,000₫
+              </del>
+              <span class="current-price">
+               292,000₫
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+           <div class="product-item">
+            <div class="product-img">
+             <div class="product-sale">
+              <span>
+               -29%
+              </span>
+             </div>
+             <a href="/products/combo-boc-dan-tuyet-dinh-6t">
+              <img alt=" Combo Bóc dán tuyệt đỉnh 6T " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_4afbaa310b254c34b178ec6460498577_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+             </a>
+             <div class="button-add d-none d-md-flex">
+              <button class="btnQuickView quick-view" data-handle="/products/combo-boc-dan-tuyet-dinh-6t" data-tooltip="Xem nhanh" type="button">
+               <i aria-hidden="true" class="fal fa-search-plus">
+               </i>
+              </button>
+              <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839436');" title="Thêm vào giỏ">
+               <i class="fal fa-cart-plus">
+               </i>
+              </button>
+              <a data-tooltip="Chi tiết" href="/products/combo-boc-dan-tuyet-dinh-6t">
+               <i class="fal fa-eye">
+               </i>
+              </a>
+             </div>
+            </div>
+            <div class="product-detail">
+             <h3 class="pro-name">
+              <a href="/products/combo-boc-dan-tuyet-dinh-6t" title="Combo Bóc dán tuyệt đỉnh 6T">
+               Combo Bóc dán tuyệt đỉnh 6T
+              </a>
+             </h3>
+             <p class="pro-price highlight">
+              <del class="compare-price">
+               700,000₫
+              </del>
+              <span class="current-price">
+               500,000₫
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+           <div class="product-item">
+            <div class="product-img">
+             <a href="/products/hello-english-xin-chao-tieng-anh-bai-tap-tieng-anh">
+              <img alt=" Hello English! - Xin chào tiếng Anh!- Bài tập tiếng Anh " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_834de600ca8246acbadb3d9bb361cb5f_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+             </a>
+             <div class="button-add d-none d-md-flex">
+              <button class="btnQuickView quick-view" data-handle="/products/hello-english-xin-chao-tieng-anh-bai-tap-tieng-anh" data-tooltip="Xem nhanh" type="button">
+               <i aria-hidden="true" class="fal fa-search-plus">
+               </i>
+              </button>
+              <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839081');" title="Thêm vào giỏ">
+               <i class="fal fa-cart-plus">
+               </i>
+              </button>
+              <a data-tooltip="Chi tiết" href="/products/hello-english-xin-chao-tieng-anh-bai-tap-tieng-anh">
+               <i class="fal fa-eye">
+               </i>
+              </a>
+             </div>
+            </div>
+            <div class="product-detail">
+             <h3 class="pro-name">
+              <a href="/products/hello-english-xin-chao-tieng-anh-bai-tap-tieng-anh" title="Hello English! - Xin chào tiếng Anh!- Bài tập tiếng Anh">
+               Hello English! - Xin chào tiếng Anh!- Bài tập tiếng Anh
+              </a>
+             </h3>
+             <p class="pro-price">
+              <span class="current-price">
+               100,000₫
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+           <div class="product-item">
+            <div class="product-img">
+             <a href="/products/hello-english-xin-chao-tieng-anh-tieng-anh-cho-nguoi-moi-hoc">
+              <img alt=" Hello English! - Xin chào tiếng Anh!- Tiếng Anh cho người mới học " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_b9077542b49844309e9723d50b9ecd8f_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+             </a>
+             <div class="button-add d-none d-md-flex">
+              <button class="btnQuickView quick-view" data-handle="/products/hello-english-xin-chao-tieng-anh-tieng-anh-cho-nguoi-moi-hoc" data-tooltip="Xem nhanh" type="button">
+               <i aria-hidden="true" class="fal fa-search-plus">
+               </i>
+              </button>
+              <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839254');" title="Thêm vào giỏ">
+               <i class="fal fa-cart-plus">
+               </i>
+              </button>
+              <a data-tooltip="Chi tiết" href="/products/hello-english-xin-chao-tieng-anh-tieng-anh-cho-nguoi-moi-hoc">
+               <i class="fal fa-eye">
+               </i>
+              </a>
+             </div>
+            </div>
+            <div class="product-detail">
+             <h3 class="pro-name">
+              <a href="/products/hello-english-xin-chao-tieng-anh-tieng-anh-cho-nguoi-moi-hoc" title="Hello English! - Xin chào tiếng Anh!- Tiếng Anh cho người mới học">
+               Hello English! - Xin chào tiếng Anh!- Tiếng Anh cho người mới học
+              </a>
+             </h3>
+             <p class="pro-price">
+              <span class="current-price">
+               160,000₫
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+           <div class="product-item">
+            <div class="product-img">
+             <a href="/products/hello-english-xin-chao-tieng-anh-to-mau-cung-tieng-anh">
+              <img alt=" Hello English! - Xin chào tiếng Anh!- Tô màu cùng tiếng Anh " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_03407228ce004ae3a34c41812a342de9_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+             </a>
+             <div class="button-add d-none d-md-flex">
+              <button class="btnQuickView quick-view" data-handle="/products/hello-english-xin-chao-tieng-anh-to-mau-cung-tieng-anh" data-tooltip="Xem nhanh" type="button">
+               <i aria-hidden="true" class="fal fa-search-plus">
+               </i>
+              </button>
+              <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839164');" title="Thêm vào giỏ">
+               <i class="fal fa-cart-plus">
+               </i>
+              </button>
+              <a data-tooltip="Chi tiết" href="/products/hello-english-xin-chao-tieng-anh-to-mau-cung-tieng-anh">
+               <i class="fal fa-eye">
+               </i>
+              </a>
+             </div>
+            </div>
+            <div class="product-detail">
+             <h3 class="pro-name">
+              <a href="/products/hello-english-xin-chao-tieng-anh-to-mau-cung-tieng-anh" title="Hello English! - Xin chào tiếng Anh!- Tô màu cùng tiếng Anh">
+               Hello English! - Xin chào tiếng Anh!- Tô màu cùng tiếng Anh
+              </a>
+             </h3>
+             <p class="pro-price">
+              <span class="current-price">
+               139,000₫
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+           <div class="product-item">
+            <div class="product-img">
+             <a href="/products/hello-english-xin-chao-tieng-anh-tu-dien-tieng-anh-bang-hinh">
+              <img alt=" Hello English! - Xin chào tiếng Anh!- Từ điển tiếng Anh bằng hình " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_08253c28898c4d02b0ce2871ba06ba75_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+             </a>
+             <div class="button-add d-none d-md-flex">
+              <button class="btnQuickView quick-view" data-handle="/products/hello-english-xin-chao-tieng-anh-tu-dien-tieng-anh-bang-hinh" data-tooltip="Xem nhanh" type="button">
+               <i aria-hidden="true" class="fal fa-search-plus">
+               </i>
+              </button>
+              <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839208');" title="Thêm vào giỏ">
+               <i class="fal fa-cart-plus">
+               </i>
+              </button>
+              <a data-tooltip="Chi tiết" href="/products/hello-english-xin-chao-tieng-anh-tu-dien-tieng-anh-bang-hinh">
+               <i class="fal fa-eye">
+               </i>
+              </a>
+             </div>
+            </div>
+            <div class="product-detail">
+             <h3 class="pro-name">
+              <a href="/products/hello-english-xin-chao-tieng-anh-tu-dien-tieng-anh-bang-hinh" title="Hello English! - Xin chào tiếng Anh!- Từ điển tiếng Anh bằng hình">
+               Hello English! - Xin chào tiếng Anh!- Từ điển tiếng Anh bằng hình
+              </a>
+             </h3>
+             <p class="pro-price">
+              <span class="current-price">
+               155,000₫
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="htp-tabcontent" data-id="htp-tab-3">
+         <div class="row">
+          <div class="col-6 col-md-4 col-lg-3">
+           <div class="product-item">
+            <div class="product-img">
+             <div class="product-sale">
+              <span>
+               -27%
+              </span>
+             </div>
+             <a href="/products/30-ngay-thay-doi-ban-than">
+              <img alt=" 30 Ngày Thay Đổi Bản Thân " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_067f29306fa3464083542d803c94f2af_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+             </a>
+             <div class="button-add d-none d-md-flex">
+              <button class="btnQuickView quick-view" data-handle="/products/30-ngay-thay-doi-ban-than" data-tooltip="Xem nhanh" type="button">
+               <i aria-hidden="true" class="fal fa-search-plus">
+               </i>
+              </button>
+              <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1075081540');" title="Thêm vào giỏ">
+               <i class="fal fa-cart-plus">
+               </i>
+              </button>
+              <a data-tooltip="Chi tiết" href="/products/30-ngay-thay-doi-ban-than">
+               <i class="fal fa-eye">
+               </i>
+              </a>
+             </div>
+            </div>
+            <div class="product-detail">
+             <h3 class="pro-name">
+              <a href="/products/30-ngay-thay-doi-ban-than" title="30 Ngày Thay Đổi Bản Thân">
+               30 Ngày Thay Đổi Bản Thân
+              </a>
+             </h3>
+             <p class="pro-price highlight">
+              <del class="compare-price">
+               135,000₫
+              </del>
+              <span class="current-price">
+               99,000₫
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+           <div class="product-item">
+            <div class="product-img">
+             <a href="/products/boc-dan-tuyet-dinh-cac-em-be-dong-vat">
+              <img alt=" Bóc dán tuyệt đỉnh - Các em bé động vật " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_13646c3e1cab40b0aa8ef804af5c62ef_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+             </a>
+             <div class="button-add d-none d-md-flex">
+              <button class="btnQuickView quick-view" data-handle="/products/boc-dan-tuyet-dinh-cac-em-be-dong-vat" data-tooltip="Xem nhanh" type="button">
+               <i aria-hidden="true" class="fal fa-search-plus">
+               </i>
+              </button>
+              <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839472');" title="Thêm vào giỏ">
+               <i class="fal fa-cart-plus">
+               </i>
+              </button>
+              <a data-tooltip="Chi tiết" href="/products/boc-dan-tuyet-dinh-cac-em-be-dong-vat">
+               <i class="fal fa-eye">
+               </i>
+              </a>
+             </div>
+            </div>
+            <div class="product-detail">
+             <h3 class="pro-name">
+              <a href="/products/boc-dan-tuyet-dinh-cac-em-be-dong-vat" title="Bóc dán tuyệt đỉnh - Các em bé động vật">
+               Bóc dán tuyệt đỉnh - Các em bé động vật
+              </a>
+             </h3>
+             <p class="pro-price">
+              <span class="current-price">
+               159,000₫
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+           <div class="product-item">
+            <div class="product-img">
+             <div class="product-sale">
+              <span>
+               -42%
+              </span>
+             </div>
+             <a href="/products/com-cuon-sach-boc-dan-dau-tien-cua-to-4t">
+              <img alt=" Com Cuốn sách bóc dán đầu tiên của tớ 4T " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_a7a2360e873947a6a8e05d7b23de8112_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+             </a>
+             <div class="button-add d-none d-md-flex">
+              <button class="btnQuickView quick-view" data-handle="/products/com-cuon-sach-boc-dan-dau-tien-cua-to-4t" data-tooltip="Xem nhanh" type="button">
+               <i aria-hidden="true" class="fal fa-search-plus">
+               </i>
+              </button>
+              <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839368');" title="Thêm vào giỏ">
+               <i class="fal fa-cart-plus">
+               </i>
+              </button>
+              <a data-tooltip="Chi tiết" href="/products/com-cuon-sach-boc-dan-dau-tien-cua-to-4t">
+               <i class="fal fa-eye">
+               </i>
+              </a>
+             </div>
+            </div>
+            <div class="product-detail">
+             <h3 class="pro-name">
+              <a href="/products/com-cuon-sach-boc-dan-dau-tien-cua-to-4t" title="Com Cuốn sách bóc dán đầu tiên của tớ 4T">
+               Com Cuốn sách bóc dán đầu tiên của tớ 4T
+              </a>
+             </h3>
+             <p class="pro-price highlight">
+              <del class="compare-price">
+               500,000₫
+              </del>
+              <span class="current-price">
+               292,000₫
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+           <div class="product-item">
+            <div class="product-img">
+             <div class="product-sale">
+              <span>
+               -29%
+              </span>
+             </div>
+             <a href="/products/combo-boc-dan-tuyet-dinh-6t">
+              <img alt=" Combo Bóc dán tuyệt đỉnh 6T " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_4afbaa310b254c34b178ec6460498577_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+             </a>
+             <div class="button-add d-none d-md-flex">
+              <button class="btnQuickView quick-view" data-handle="/products/combo-boc-dan-tuyet-dinh-6t" data-tooltip="Xem nhanh" type="button">
+               <i aria-hidden="true" class="fal fa-search-plus">
+               </i>
+              </button>
+              <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839436');" title="Thêm vào giỏ">
+               <i class="fal fa-cart-plus">
+               </i>
+              </button>
+              <a data-tooltip="Chi tiết" href="/products/combo-boc-dan-tuyet-dinh-6t">
+               <i class="fal fa-eye">
+               </i>
+              </a>
+             </div>
+            </div>
+            <div class="product-detail">
+             <h3 class="pro-name">
+              <a href="/products/combo-boc-dan-tuyet-dinh-6t" title="Combo Bóc dán tuyệt đỉnh 6T">
+               Combo Bóc dán tuyệt đỉnh 6T
+              </a>
+             </h3>
+             <p class="pro-price highlight">
+              <del class="compare-price">
+               700,000₫
+              </del>
+              <span class="current-price">
+               500,000₫
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+           <div class="product-item">
+            <div class="product-img">
+             <a href="/products/hello-english-xin-chao-tieng-anh-bai-tap-tieng-anh">
+              <img alt=" Hello English! - Xin chào tiếng Anh!- Bài tập tiếng Anh " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_834de600ca8246acbadb3d9bb361cb5f_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+             </a>
+             <div class="button-add d-none d-md-flex">
+              <button class="btnQuickView quick-view" data-handle="/products/hello-english-xin-chao-tieng-anh-bai-tap-tieng-anh" data-tooltip="Xem nhanh" type="button">
+               <i aria-hidden="true" class="fal fa-search-plus">
+               </i>
+              </button>
+              <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839081');" title="Thêm vào giỏ">
+               <i class="fal fa-cart-plus">
+               </i>
+              </button>
+              <a data-tooltip="Chi tiết" href="/products/hello-english-xin-chao-tieng-anh-bai-tap-tieng-anh">
+               <i class="fal fa-eye">
+               </i>
+              </a>
+             </div>
+            </div>
+            <div class="product-detail">
+             <h3 class="pro-name">
+              <a href="/products/hello-english-xin-chao-tieng-anh-bai-tap-tieng-anh" title="Hello English! - Xin chào tiếng Anh!- Bài tập tiếng Anh">
+               Hello English! - Xin chào tiếng Anh!- Bài tập tiếng Anh
+              </a>
+             </h3>
+             <p class="pro-price">
+              <span class="current-price">
+               100,000₫
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+           <div class="product-item">
+            <div class="product-img">
+             <a href="/products/hello-english-xin-chao-tieng-anh-tieng-anh-cho-nguoi-moi-hoc">
+              <img alt=" Hello English! - Xin chào tiếng Anh!- Tiếng Anh cho người mới học " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_b9077542b49844309e9723d50b9ecd8f_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+             </a>
+             <div class="button-add d-none d-md-flex">
+              <button class="btnQuickView quick-view" data-handle="/products/hello-english-xin-chao-tieng-anh-tieng-anh-cho-nguoi-moi-hoc" data-tooltip="Xem nhanh" type="button">
+               <i aria-hidden="true" class="fal fa-search-plus">
+               </i>
+              </button>
+              <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839254');" title="Thêm vào giỏ">
+               <i class="fal fa-cart-plus">
+               </i>
+              </button>
+              <a data-tooltip="Chi tiết" href="/products/hello-english-xin-chao-tieng-anh-tieng-anh-cho-nguoi-moi-hoc">
+               <i class="fal fa-eye">
+               </i>
+              </a>
+             </div>
+            </div>
+            <div class="product-detail">
+             <h3 class="pro-name">
+              <a href="/products/hello-english-xin-chao-tieng-anh-tieng-anh-cho-nguoi-moi-hoc" title="Hello English! - Xin chào tiếng Anh!- Tiếng Anh cho người mới học">
+               Hello English! - Xin chào tiếng Anh!- Tiếng Anh cho người mới học
+              </a>
+             </h3>
+             <p class="pro-price">
+              <span class="current-price">
+               160,000₫
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+           <div class="product-item">
+            <div class="product-img">
+             <a href="/products/hello-english-xin-chao-tieng-anh-to-mau-cung-tieng-anh">
+              <img alt=" Hello English! - Xin chào tiếng Anh!- Tô màu cùng tiếng Anh " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_03407228ce004ae3a34c41812a342de9_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+             </a>
+             <div class="button-add d-none d-md-flex">
+              <button class="btnQuickView quick-view" data-handle="/products/hello-english-xin-chao-tieng-anh-to-mau-cung-tieng-anh" data-tooltip="Xem nhanh" type="button">
+               <i aria-hidden="true" class="fal fa-search-plus">
+               </i>
+              </button>
+              <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839164');" title="Thêm vào giỏ">
+               <i class="fal fa-cart-plus">
+               </i>
+              </button>
+              <a data-tooltip="Chi tiết" href="/products/hello-english-xin-chao-tieng-anh-to-mau-cung-tieng-anh">
+               <i class="fal fa-eye">
+               </i>
+              </a>
+             </div>
+            </div>
+            <div class="product-detail">
+             <h3 class="pro-name">
+              <a href="/products/hello-english-xin-chao-tieng-anh-to-mau-cung-tieng-anh" title="Hello English! - Xin chào tiếng Anh!- Tô màu cùng tiếng Anh">
+               Hello English! - Xin chào tiếng Anh!- Tô màu cùng tiếng Anh
+              </a>
+             </h3>
+             <p class="pro-price">
+              <span class="current-price">
+               139,000₫
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3">
+           <div class="product-item">
+            <div class="product-img">
+             <a href="/products/hello-english-xin-chao-tieng-anh-tu-dien-tieng-anh-bang-hinh">
+              <img alt=" Hello English! - Xin chào tiếng Anh!- Từ điển tiếng Anh bằng hình " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_08253c28898c4d02b0ce2871ba06ba75_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+             </a>
+             <div class="button-add d-none d-md-flex">
+              <button class="btnQuickView quick-view" data-handle="/products/hello-english-xin-chao-tieng-anh-tu-dien-tieng-anh-bang-hinh" data-tooltip="Xem nhanh" type="button">
+               <i aria-hidden="true" class="fal fa-search-plus">
+               </i>
+              </button>
+              <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839208');" title="Thêm vào giỏ">
+               <i class="fal fa-cart-plus">
+               </i>
+              </button>
+              <a data-tooltip="Chi tiết" href="/products/hello-english-xin-chao-tieng-anh-tu-dien-tieng-anh-bang-hinh">
+               <i class="fal fa-eye">
+               </i>
+              </a>
+             </div>
+            </div>
+            <div class="product-detail">
+             <h3 class="pro-name">
+              <a href="/products/hello-english-xin-chao-tieng-anh-tu-dien-tieng-anh-bang-hinh" title="Hello English! - Xin chào tiếng Anh!- Từ điển tiếng Anh bằng hình">
+               Hello English! - Xin chào tiếng Anh!- Từ điển tiếng Anh bằng hình
+              </a>
+             </h3>
+             <p class="pro-price">
+              <span class="current-price">
+               155,000₫
+              </span>
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="home-two-banner home-section-mg">
+     <div class="row">
+      <div class="col-12 col-md-3">
+       <div class="item banner-effect">
+        <a href="">
+         <picture>
+          <source media="(min-width: 768px)" srcset="//theme.hstatic.net/200000317851/1000697347/14/col2_htb_img_1.jpg?v=1174"/>
+          <source media="(max-width: 767px)" srcset="//theme.hstatic.net/200000317851/1000697347/14/col2_htb_img_1_large.jpg?v=1174"/>
+          <img alt="" loading="lazy" src="//theme.hstatic.net/200000317851/1000697347/14/col2_htb_img_1_small.jpg?v=1174"/>
+         </picture>
+         <span class="hover hover1">
+         </span>
+         <span class="hover hover2">
+         </span>
+         <span class="hover hover3">
+         </span>
+         <span class="hover hover4">
+         </span>
+        </a>
+       </div>
+      </div>
+      <div class="col-12 col-md-9">
+       <div class="item banner-effect">
+        <a href="">
+         <picture>
+          <source media="(min-width: 768px)" srcset="//theme.hstatic.net/200000317851/1000697347/14/col2_htb_img_2.jpg?v=1174"/>
+          <source media="(max-width: 767px)" srcset="//theme.hstatic.net/200000317851/1000697347/14/col2_htb_img_2_large.jpg?v=1174"/>
+          <img alt="" loading="lazy" src="//theme.hstatic.net/200000317851/1000697347/14/col2_htb_img_2_small.jpg?v=1174"/>
+         </picture>
+         <span class="hover hover1">
+         </span>
+         <span class="hover hover2">
+         </span>
+         <span class="hover hover3">
+         </span>
+         <span class="hover hover4">
+         </span>
+        </a>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="home-featured-product mb-30">
+     <div class="section-heading">
+      <h2 class="section-title">
+       <span>
+        Sản phẩm nổi bật
+       </span>
+      </h2>
+     </div>
+     <div class="section-box-bg">
+      <div class="owl-carousel owl-theme owl-nav-style-1" data-auto-play="false" data-dot="false" data-lg-items="4" data-md-items="4" data-nav="true" data-sm-items="3" data-xs-items="2">
+       <div class="item">
+        <div class="product-item">
+         <div class="product-img">
+          <div class="product-sale">
+           <span>
+            -27%
+           </span>
+          </div>
+          <a href="/products/30-ngay-thay-doi-ban-than">
+           <img alt=" 30 Ngày Thay Đổi Bản Thân " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_067f29306fa3464083542d803c94f2af_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+          </a>
+          <div class="button-add d-none d-md-flex">
+           <button class="btnQuickView quick-view" data-handle="/products/30-ngay-thay-doi-ban-than" data-tooltip="Xem nhanh" type="button">
+            <i aria-hidden="true" class="fal fa-search-plus">
+            </i>
+           </button>
+           <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1075081540');" title="Thêm vào giỏ">
+            <i class="fal fa-cart-plus">
+            </i>
+           </button>
+           <a data-tooltip="Chi tiết" href="/products/30-ngay-thay-doi-ban-than">
+            <i class="fal fa-eye">
+            </i>
+           </a>
+          </div>
+         </div>
+         <div class="product-detail">
+          <h3 class="pro-name">
+           <a href="/products/30-ngay-thay-doi-ban-than" title="30 Ngày Thay Đổi Bản Thân">
+            30 Ngày Thay Đổi Bản Thân
+           </a>
+          </h3>
+          <p class="pro-price highlight">
+           <del class="compare-price">
+            135,000₫
+           </del>
+           <span class="current-price">
+            99,000₫
+           </span>
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="item">
+        <div class="product-item">
+         <div class="product-img">
+          <a href="/products/boc-dan-tuyet-dinh-cac-em-be-dong-vat">
+           <img alt=" Bóc dán tuyệt đỉnh - Các em bé động vật " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_13646c3e1cab40b0aa8ef804af5c62ef_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+          </a>
+          <div class="button-add d-none d-md-flex">
+           <button class="btnQuickView quick-view" data-handle="/products/boc-dan-tuyet-dinh-cac-em-be-dong-vat" data-tooltip="Xem nhanh" type="button">
+            <i aria-hidden="true" class="fal fa-search-plus">
+            </i>
+           </button>
+           <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839472');" title="Thêm vào giỏ">
+            <i class="fal fa-cart-plus">
+            </i>
+           </button>
+           <a data-tooltip="Chi tiết" href="/products/boc-dan-tuyet-dinh-cac-em-be-dong-vat">
+            <i class="fal fa-eye">
+            </i>
+           </a>
+          </div>
+         </div>
+         <div class="product-detail">
+          <h3 class="pro-name">
+           <a href="/products/boc-dan-tuyet-dinh-cac-em-be-dong-vat" title="Bóc dán tuyệt đỉnh - Các em bé động vật">
+            Bóc dán tuyệt đỉnh - Các em bé động vật
+           </a>
+          </h3>
+          <p class="pro-price">
+           <span class="current-price">
+            159,000₫
+           </span>
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="item">
+        <div class="product-item">
+         <div class="product-img">
+          <div class="product-sale">
+           <span>
+            -42%
+           </span>
+          </div>
+          <a href="/products/com-cuon-sach-boc-dan-dau-tien-cua-to-4t">
+           <img alt=" Com Cuốn sách bóc dán đầu tiên của tớ 4T " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_a7a2360e873947a6a8e05d7b23de8112_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+          </a>
+          <div class="button-add d-none d-md-flex">
+           <button class="btnQuickView quick-view" data-handle="/products/com-cuon-sach-boc-dan-dau-tien-cua-to-4t" data-tooltip="Xem nhanh" type="button">
+            <i aria-hidden="true" class="fal fa-search-plus">
+            </i>
+           </button>
+           <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839368');" title="Thêm vào giỏ">
+            <i class="fal fa-cart-plus">
+            </i>
+           </button>
+           <a data-tooltip="Chi tiết" href="/products/com-cuon-sach-boc-dan-dau-tien-cua-to-4t">
+            <i class="fal fa-eye">
+            </i>
+           </a>
+          </div>
+         </div>
+         <div class="product-detail">
+          <h3 class="pro-name">
+           <a href="/products/com-cuon-sach-boc-dan-dau-tien-cua-to-4t" title="Com Cuốn sách bóc dán đầu tiên của tớ 4T">
+            Com Cuốn sách bóc dán đầu tiên của tớ 4T
+           </a>
+          </h3>
+          <p class="pro-price highlight">
+           <del class="compare-price">
+            500,000₫
+           </del>
+           <span class="current-price">
+            292,000₫
+           </span>
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="item">
+        <div class="product-item">
+         <div class="product-img">
+          <div class="product-sale">
+           <span>
+            -29%
+           </span>
+          </div>
+          <a href="/products/combo-boc-dan-tuyet-dinh-6t">
+           <img alt=" Combo Bóc dán tuyệt đỉnh 6T " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_4afbaa310b254c34b178ec6460498577_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+          </a>
+          <div class="button-add d-none d-md-flex">
+           <button class="btnQuickView quick-view" data-handle="/products/combo-boc-dan-tuyet-dinh-6t" data-tooltip="Xem nhanh" type="button">
+            <i aria-hidden="true" class="fal fa-search-plus">
+            </i>
+           </button>
+           <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839436');" title="Thêm vào giỏ">
+            <i class="fal fa-cart-plus">
+            </i>
+           </button>
+           <a data-tooltip="Chi tiết" href="/products/combo-boc-dan-tuyet-dinh-6t">
+            <i class="fal fa-eye">
+            </i>
+           </a>
+          </div>
+         </div>
+         <div class="product-detail">
+          <h3 class="pro-name">
+           <a href="/products/combo-boc-dan-tuyet-dinh-6t" title="Combo Bóc dán tuyệt đỉnh 6T">
+            Combo Bóc dán tuyệt đỉnh 6T
+           </a>
+          </h3>
+          <p class="pro-price highlight">
+           <del class="compare-price">
+            700,000₫
+           </del>
+           <span class="current-price">
+            500,000₫
+           </span>
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="item">
+        <div class="product-item">
+         <div class="product-img">
+          <a href="/products/hello-english-xin-chao-tieng-anh-bai-tap-tieng-anh">
+           <img alt=" Hello English! - Xin chào tiếng Anh!- Bài tập tiếng Anh " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_834de600ca8246acbadb3d9bb361cb5f_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+          </a>
+          <div class="button-add d-none d-md-flex">
+           <button class="btnQuickView quick-view" data-handle="/products/hello-english-xin-chao-tieng-anh-bai-tap-tieng-anh" data-tooltip="Xem nhanh" type="button">
+            <i aria-hidden="true" class="fal fa-search-plus">
+            </i>
+           </button>
+           <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839081');" title="Thêm vào giỏ">
+            <i class="fal fa-cart-plus">
+            </i>
+           </button>
+           <a data-tooltip="Chi tiết" href="/products/hello-english-xin-chao-tieng-anh-bai-tap-tieng-anh">
+            <i class="fal fa-eye">
+            </i>
+           </a>
+          </div>
+         </div>
+         <div class="product-detail">
+          <h3 class="pro-name">
+           <a href="/products/hello-english-xin-chao-tieng-anh-bai-tap-tieng-anh" title="Hello English! - Xin chào tiếng Anh!- Bài tập tiếng Anh">
+            Hello English! - Xin chào tiếng Anh!- Bài tập tiếng Anh
+           </a>
+          </h3>
+          <p class="pro-price">
+           <span class="current-price">
+            100,000₫
+           </span>
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="item">
+        <div class="product-item">
+         <div class="product-img">
+          <a href="/products/hello-english-xin-chao-tieng-anh-tieng-anh-cho-nguoi-moi-hoc">
+           <img alt=" Hello English! - Xin chào tiếng Anh!- Tiếng Anh cho người mới học " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_b9077542b49844309e9723d50b9ecd8f_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+          </a>
+          <div class="button-add d-none d-md-flex">
+           <button class="btnQuickView quick-view" data-handle="/products/hello-english-xin-chao-tieng-anh-tieng-anh-cho-nguoi-moi-hoc" data-tooltip="Xem nhanh" type="button">
+            <i aria-hidden="true" class="fal fa-search-plus">
+            </i>
+           </button>
+           <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839254');" title="Thêm vào giỏ">
+            <i class="fal fa-cart-plus">
+            </i>
+           </button>
+           <a data-tooltip="Chi tiết" href="/products/hello-english-xin-chao-tieng-anh-tieng-anh-cho-nguoi-moi-hoc">
+            <i class="fal fa-eye">
+            </i>
+           </a>
+          </div>
+         </div>
+         <div class="product-detail">
+          <h3 class="pro-name">
+           <a href="/products/hello-english-xin-chao-tieng-anh-tieng-anh-cho-nguoi-moi-hoc" title="Hello English! - Xin chào tiếng Anh!- Tiếng Anh cho người mới học">
+            Hello English! - Xin chào tiếng Anh!- Tiếng Anh cho người mới học
+           </a>
+          </h3>
+          <p class="pro-price">
+           <span class="current-price">
+            160,000₫
+           </span>
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="item">
+        <div class="product-item">
+         <div class="product-img">
+          <a href="/products/hello-english-xin-chao-tieng-anh-to-mau-cung-tieng-anh">
+           <img alt=" Hello English! - Xin chào tiếng Anh!- Tô màu cùng tiếng Anh " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_03407228ce004ae3a34c41812a342de9_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+          </a>
+          <div class="button-add d-none d-md-flex">
+           <button class="btnQuickView quick-view" data-handle="/products/hello-english-xin-chao-tieng-anh-to-mau-cung-tieng-anh" data-tooltip="Xem nhanh" type="button">
+            <i aria-hidden="true" class="fal fa-search-plus">
+            </i>
+           </button>
+           <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839164');" title="Thêm vào giỏ">
+            <i class="fal fa-cart-plus">
+            </i>
+           </button>
+           <a data-tooltip="Chi tiết" href="/products/hello-english-xin-chao-tieng-anh-to-mau-cung-tieng-anh">
+            <i class="fal fa-eye">
+            </i>
+           </a>
+          </div>
+         </div>
+         <div class="product-detail">
+          <h3 class="pro-name">
+           <a href="/products/hello-english-xin-chao-tieng-anh-to-mau-cung-tieng-anh" title="Hello English! - Xin chào tiếng Anh!- Tô màu cùng tiếng Anh">
+            Hello English! - Xin chào tiếng Anh!- Tô màu cùng tiếng Anh
+           </a>
+          </h3>
+          <p class="pro-price">
+           <span class="current-price">
+            139,000₫
+           </span>
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="item">
+        <div class="product-item">
+         <div class="product-img">
+          <a href="/products/hello-english-xin-chao-tieng-anh-tu-dien-tieng-anh-bang-hinh">
+           <img alt=" Hello English! - Xin chào tiếng Anh!- Từ điển tiếng Anh bằng hình " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_08253c28898c4d02b0ce2871ba06ba75_medium.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+          </a>
+          <div class="button-add d-none d-md-flex">
+           <button class="btnQuickView quick-view" data-handle="/products/hello-english-xin-chao-tieng-anh-tu-dien-tieng-anh-bang-hinh" data-tooltip="Xem nhanh" type="button">
+            <i aria-hidden="true" class="fal fa-search-plus">
+            </i>
+           </button>
+           <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839208');" title="Thêm vào giỏ">
+            <i class="fal fa-cart-plus">
+            </i>
+           </button>
+           <a data-tooltip="Chi tiết" href="/products/hello-english-xin-chao-tieng-anh-tu-dien-tieng-anh-bang-hinh">
+            <i class="fal fa-eye">
+            </i>
+           </a>
+          </div>
+         </div>
+         <div class="product-detail">
+          <h3 class="pro-name">
+           <a href="/products/hello-english-xin-chao-tieng-anh-tu-dien-tieng-anh-bang-hinh" title="Hello English! - Xin chào tiếng Anh!- Từ điển tiếng Anh bằng hình">
+            Hello English! - Xin chào tiếng Anh!- Từ điển tiếng Anh bằng hình
+           </a>
+          </h3>
+          <p class="pro-price">
+           <span class="current-price">
+            155,000₫
+           </span>
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="home-articles mb-30">
+     <div class="section-heading">
+      <h2 class="section-title">
+       <span>
+        Tin tức mới nhất
+       </span>
+      </h2>
+     </div>
+     <div class="home-articles-slider section-box-bg">
+      <div class="owl-carousel owl-theme owl-nav-style-1" data-dot="false" data-lg-items="3" data-md-items="2" data-nav="true" data-sm-items="2" data-xs-items="1">
+       <article class="article-item article-item-index">
+        <div class="article-item__background">
+         <div class="article-item__background--wrapper">
+          <a class="article-item__background--main">
+           <picture>
+            <source media="(min-width: 768px)" srcset="https://file.hstatic.net/200000317851/article/3_075a6cc2027e4fa2858f3dae4baff0fe.jpg"/>
+            <source media="(max-width: 767px)" srcset="//file.hstatic.net/200000317851/article/3_075a6cc2027e4fa2858f3dae4baff0fe_large.jpg"/>
+            <img alt="" loading="lazy" src="//file.hstatic.net/200000317851/article/3_075a6cc2027e4fa2858f3dae4baff0fe_small.jpg"/>
+           </picture>
+           <span class="article-item__background--layer">
+           </span>
+          </a>
+          <span class="article-item__link">
+           <a href="/blogs/news/tri-thoi-an-va-voi-phuong-phap-cuc-ki-don-gian">
+            <i class="fal fa-search">
+            </i>
+           </a>
+          </span>
+         </div>
+        </div>
+        <div class="article-item__info">
+         <div class="article-item__date">
+          <span class="date__box">
+           <span class="date__day">
+            12
+           </span>
+           <span class="date__month">
+            Thg 4
+           </span>
+          </span>
+          <span class="icon-link">
+           <i class="fal fa-pencil">
+           </i>
+           test
+          </span>
+         </div>
+         <h5 class="text1line">
+          <a href="/blogs/news/tri-thoi-an-va-voi-phuong-phap-cuc-ki-don-gian" title="Trị thói ăn vạ với phương pháp cực kì đơn giản">
+           Trị thói ăn vạ với phương pháp cực kì đơn giản
+          </a>
+         </h5>
+         <p class="article-item__desc">
+          Khi trẻ có những biểu hiện khóc lóc, mè nheo, đòi hỏi,... đó là một trong những dấu hiệu của thói ăn vạ. Vì vậy, cách...
+         </p>
+         <a class="btn btn--with-icon" href="/blogs/news/tri-thoi-an-va-voi-phuong-phap-cuc-ki-don-gian">
+          Xem thêm
+          <i class="btn-icon fa fa-angle-right">
+          </i>
+         </a>
+        </div>
+       </article>
+       <article class="article-item article-item-index">
+        <div class="article-item__background">
+         <div class="article-item__background--wrapper">
+          <a class="article-item__background--main">
+           <picture>
+            <source media="(min-width: 768px)" srcset="https://file.hstatic.net/200000317851/article/2_3306f8b9f8024960b4f00d17da28f8d6.jpg"/>
+            <source media="(max-width: 767px)" srcset="//file.hstatic.net/200000317851/article/2_3306f8b9f8024960b4f00d17da28f8d6_large.jpg"/>
+            <img alt="" loading="lazy" src="//file.hstatic.net/200000317851/article/2_3306f8b9f8024960b4f00d17da28f8d6_small.jpg"/>
+           </picture>
+           <span class="article-item__background--layer">
+           </span>
+          </a>
+          <span class="article-item__link">
+           <a href="/blogs/news/tai-sao-cac-be-gai-thuong-thich-hoa-than-thanh-cong-chua-trong-truyen">
+            <i class="fal fa-search">
+            </i>
+           </a>
+          </span>
+         </div>
+        </div>
+        <div class="article-item__info">
+         <div class="article-item__date">
+          <span class="date__box">
+           <span class="date__day">
+            12
+           </span>
+           <span class="date__month">
+            Thg 4
+           </span>
+          </span>
+          <span class="icon-link">
+           <i class="fal fa-pencil">
+           </i>
+           test
+          </span>
+         </div>
+         <h5 class="text1line">
+          <a href="/blogs/news/tai-sao-cac-be-gai-thuong-thich-hoa-than-thanh-cong-chua-trong-truyen" title="Tại sao các bé gái thường thích hóa thân thành công chúa trong truyện cổ tích?">
+           Tại sao các bé gái thường thích hóa thân thành công chúa trong truyện cổ tích?
+          </a>
+         </h5>
+         <p class="article-item__desc">
+          Các bé gái từ lâu đã bị hình tượng công chúa mê hoặc, đây là một xu hướng được Peggy Orenstein ghi nhận trong bộ phim...
+         </p>
+         <a class="btn btn--with-icon" href="/blogs/news/tai-sao-cac-be-gai-thuong-thich-hoa-than-thanh-cong-chua-trong-truyen">
+          Xem thêm
+          <i class="btn-icon fa fa-angle-right">
+          </i>
+         </a>
+        </div>
+       </article>
+       <article class="article-item article-item-index">
+        <div class="article-item__background">
+         <div class="article-item__background--wrapper">
+          <a class="article-item__background--main">
+           <picture>
+            <source media="(min-width: 768px)" srcset="https://file.hstatic.net/200000317851/article/1_e5ac298df6c744f3bc58ddee8f9b4797.jpg"/>
+            <source media="(max-width: 767px)" srcset="//file.hstatic.net/200000317851/article/1_e5ac298df6c744f3bc58ddee8f9b4797_large.jpg"/>
+            <img alt="" loading="lazy" src="//file.hstatic.net/200000317851/article/1_e5ac298df6c744f3bc58ddee8f9b4797_small.jpg"/>
+           </picture>
+           <span class="article-item__background--layer">
+           </span>
+          </a>
+          <span class="article-item__link">
+           <a href="/blogs/news/truyen-co-tich-duoc-tai-hien-voi-phong-cach-hoan-toan-moi-la">
+            <i class="fal fa-search">
+            </i>
+           </a>
+          </span>
+         </div>
+        </div>
+        <div class="article-item__info">
+         <div class="article-item__date">
+          <span class="date__box">
+           <span class="date__day">
+            12
+           </span>
+           <span class="date__month">
+            Thg 4
+           </span>
+          </span>
+          <span class="icon-link">
+           <i class="fal fa-pencil">
+           </i>
+           test
+          </span>
+         </div>
+         <h5 class="text1line">
+          <a href="/blogs/news/truyen-co-tich-duoc-tai-hien-voi-phong-cach-hoan-toan-moi-la" title="Truyện cổ tích được tái hiện với phong cách hoàn toàn mới lạ">
+           Truyện cổ tích được tái hiện với phong cách hoàn toàn mới lạ
+          </a>
+         </h5>
+         <p class="article-item__desc">
+          [Vietnamnet] Kết hợp những ưu điểm tuyệt vời của cả truyện cổ tích và dòng sách tương tác, Truyện cổ tích hình n...
+         </p>
+         <a class="btn btn--with-icon" href="/blogs/news/truyen-co-tich-duoc-tai-hien-voi-phong-cach-hoan-toan-moi-la">
+          Xem thêm
+          <i class="btn-icon fa fa-angle-right">
+          </i>
+         </a>
+        </div>
+       </article>
+      </div>
+     </div>
+    </section>
+    <section class="home-brands mb-30">
+     <div class="section-heading">
+      <h2 class="section-title">
+       <span>
+        Đối tác
+       </span>
+      </h2>
+     </div>
+     <div class="section-box-bg">
+      <div class="owl-brands-slider owl-carousel owl-theme owl-nav-style-1" data-dot="false" data-lg-items="5" data-md-items="4" data-nav="true" data-sm-items="4" data-xs-items="2">
+       <div class="item grid__item">
+        <a class="text-center" href="/">
+         <img alt="Logo hãng 1" src="//theme.hstatic.net/200000317851/1000697347/14/brand_img1.png?v=1174"/>
+        </a>
+       </div>
+       <div class="item grid__item">
+        <a class="text-center" href="/">
+         <img alt="Logo hãng 2" src="//theme.hstatic.net/200000317851/1000697347/14/brand_img2.png?v=1174"/>
+        </a>
+       </div>
+       <div class="item grid__item">
+        <a class="text-center" href="/">
+         <img alt="Logo hãng 3" src="//theme.hstatic.net/200000317851/1000697347/14/brand_img3.png?v=1174"/>
+        </a>
+       </div>
+       <div class="item grid__item">
+        <a class="text-center" href="/">
+         <img alt="Logo hãng 4" src="//theme.hstatic.net/200000317851/1000697347/14/brand_img4.png?v=1174"/>
+        </a>
+       </div>
+       <div class="item grid__item">
+        <a class="text-center" href="/">
+         <img alt="Logo hãng 5" src="//theme.hstatic.net/200000317851/1000697347/14/brand_img5.png?v=1174"/>
+        </a>
+       </div>
+       <div class="item grid__item">
+        <a class="text-center" href="/">
+         <img alt="Logo hãng 6" src="//theme.hstatic.net/200000317851/1000697347/14/brand_img6.png?v=1174"/>
+        </a>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div>
+   <div class="col-12 col-lg-3">
+    <div class="sidebar">
+     <div class="widget widget_menu d-none d-md-block">
+      <h3 class="sidebar-title">
+       Danh mục
+      </h3>
+      <div class="sidebar-menu">
+       <ul>
+        <li class="has-child megamenu">
+         <a href="/collections/all">
+          Truyện
+          <i class="fal fa-angle-right">
+          </i>
+         </a>
+         <div class="megamenu-content">
+          <ul class="d-flex">
+           <li class="has-child col-md-4">
+            <a href="/">
+             Kinh dị
+            </a>
+            <ul>
+             <li>
+              <a href="/">
+               Dân gian
+              </a>
+              <li>
+               <a href="/">
+                Huyền bí
+               </a>
+              </li>
+             </li>
+            </ul>
+           </li>
+           <li class="has-child col-md-4">
+            <a href="/">
+             Truyện chữ
+            </a>
+            <ul>
+             <li>
+              <a href="/">
+               Kiếm hiệp
+              </a>
+              <li>
+               <a href="/">
+                Tu tiên
+               </a>
+               <li>
+                <a href="/">
+                 Xuyện không
+                </a>
+               </li>
+              </li>
+             </li>
+            </ul>
+           </li>
+           <li class="has-child col-md-4">
+            <a href="/">
+             Lịch sử
+            </a>
+            <ul>
+             <li>
+              <a href="/">
+               Việt Nam
+              </a>
+              <li>
+               <a href="/">
+                Trung Quốc
+               </a>
+               <li>
+                <a href="/">
+                 Nước ngoài
+                </a>
+               </li>
+              </li>
+             </li>
+            </ul>
+           </li>
+          </ul>
+          <div class="banner mt-20">
+           <div class="banner-effect">
+            <a href="/collections/all">
+             <img alt="banner" src="//theme.hstatic.net/200000317851/1000697347/14/mega_menu_1_banner_image.jpg?v=1174"/>
+             <span class="hover hover1">
+             </span>
+             <span class="hover hover2">
+             </span>
+             <span class="hover hover3">
+             </span>
+             <span class="hover hover4">
+             </span>
+            </a>
+           </div>
+          </div>
+         </div>
+        </li>
+        <li class="">
+         <a href="/collections/all">
+          Tiểu sử
+         </a>
+        </li>
+        <li class="">
+         <a href="/collections/all">
+          Khoa học viễn tưởng
+         </a>
+        </li>
+        <li class="">
+         <a href="/collections/all">
+          Truyện ngắn
+         </a>
+        </li>
+        <li class="">
+         <a href="/collections/all">
+          Dịch vụ
+         </a>
+        </li>
+        <li class="">
+         <a href="/collections/all">
+          Địa lý
+         </a>
+        </li>
+        <li class="">
+         <a href="/collections/all">
+          Kinh dị
+         </a>
+        </li>
+        <li class="has-child dropdown">
+         <a href="/collections/all">
+          Thiếu nhi
+          <i class="fal fa-angle-right">
+          </i>
+         </a>
+         <ul>
+          <li class="">
+           <a href="/">
+            Dân gian
+           </a>
+          </li>
+          <li class="">
+           <a href="/">
+            Việt Nam
+           </a>
+          </li>
+          <li class="">
+           <a href="/">
+            Nước ngoài
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="">
+         <a href="/collections/all">
+          Kinh doanh
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="widget widget_banner banner-effect">
+      <a href="">
+       <img alt="" src="//theme.hstatic.net/200000317851/1000697347/14/widget_banner.jpg?v=1174"/>
+       <span class="hover hover1">
+       </span>
+       <span class="hover hover2">
+       </span>
+       <span class="hover hover3">
+       </span>
+       <span class="hover hover4">
+       </span>
+      </a>
+     </div>
+     <div class="widget widget_policy">
+      <div class="item">
+       <div class="icon">
+        <img alt="" src="//theme.hstatic.net/200000317851/1000697347/14/widget_policy_icon_1.jpg?v=1174"/>
+       </div>
+       <div class="info">
+        <div class="title">
+         Miễn phí vận chuyện
+        </div>
+        <p class="para">
+         Giao hàng tận nơi
+        </p>
+       </div>
+      </div>
+      <div class="item">
+       <div class="icon">
+        <img alt="" src="//theme.hstatic.net/200000317851/1000697347/14/widget_policy_icon_2.jpg?v=1174"/>
+       </div>
+       <div class="info">
+        <div class="title">
+         Hỗ trợ 24/7
+        </div>
+        <p class="para">
+         nhanh chóng, kịp thời
+        </p>
+       </div>
+      </div>
+      <div class="item">
+       <div class="icon">
+        <img alt="" src="//theme.hstatic.net/200000317851/1000697347/14/widget_policy_icon_3.jpg?v=1174"/>
+       </div>
+       <div class="info">
+        <div class="title">
+         Tiết kiệm
+        </div>
+        <p class="para">
+         Giá tốt nhất
+        </p>
+       </div>
+      </div>
+      <div class="item">
+       <div class="icon">
+        <img alt="" src="//theme.hstatic.net/200000317851/1000697347/14/widget_policy_icon_4.jpg?v=1174"/>
+       </div>
+       <div class="info">
+        <div class="title">
+         Hoàn tiền
+        </div>
+        <p class="para">
+         Dễ dàng đổi trả
+        </p>
+       </div>
+      </div>
+      <div class="item">
+       <div class="icon">
+        <img alt="" src="//theme.hstatic.net/200000317851/1000697347/14/widget_policy_icon_5.jpg?v=1174"/>
+       </div>
+       <div class="info">
+        <div class="title">
+         Mua sắm trực tuyến
+        </div>
+        <p class="para">
+         thương hiệu lớn
+        </p>
+       </div>
+      </div>
+      <div class="item">
+       <div class="icon">
+        <img alt="" src="//theme.hstatic.net/200000317851/1000697347/14/widget_policy_icon_6.jpg?v=1174"/>
+       </div>
+       <div class="info">
+        <div class="title">
+         Giải thưởng
+        </div>
+        <p class="para">
+         cho dịch vụ tốt nhất
+        </p>
+       </div>
+      </div>
+     </div>
+     <div class="widget widget_testi">
+      <div class="widget-title">
+       Nhận xét khách hàng
+      </div>
+      <div class="owl-carousel owl-theme owl-nav-style-2" data-dot="false" data-lg-items="1" data-md-items="1" data-nav="true" data-sm-items="1" data-xs-items="1">
+       <div class="widget_testi_item">
+        <div class="photo">
+         <img alt="Ngọc Trinh" class="lazy" data-srcset="//theme.hstatic.net/200000317851/1000697347/14/home_client_image_1.png?v=1174" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+        </div>
+        <div class="info">
+         <p class="title">
+          Ngọc Trinh
+         </p>
+         <p class="job">
+          Người mẫu
+         </p>
+        </div>
+        <p class="desc">
+         Đời sống phát triển, con người trở nên quan tâm, chăm sóc sức khỏe của mình kĩ càng hơn.Nhờ vậy, xu hướng tiêu thụ thực phẩm sạch ngày càng phổ biến. Khách hàng sẵn sàng bỏ ra số tiền cao hơn để mua được đồ tự nhiên, lành mạnh, xuất xứ rõ ràng.
+        </p>
+       </div>
+       <div class="widget_testi_item">
+        <div class="photo">
+         <img alt="Elly Trần" class="lazy" data-srcset="//theme.hstatic.net/200000317851/1000697347/14/home_client_image_2.png?v=1174" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+        </div>
+        <div class="info">
+         <p class="title">
+          Elly Trần
+         </p>
+         <p class="job">
+          Ngưỡi mẫu
+         </p>
+        </div>
+        <p class="desc">
+         Đời sống phát triển, con người trở nên quan tâm, chăm sóc sức khỏe của mình kĩ càng hơn.Nhờ vậy, xu hướng tiêu thụ thực phẩm sạch ngày càng phổ biến. Khách hàng sẵn sàng bỏ ra số tiền cao hơn để mua được đồ tự nhiên, lành mạnh, xuất xứ rõ ràng.
+        </p>
+       </div>
+       <div class="widget_testi_item">
+        <div class="photo">
+         <img alt="Ninh Dương Lan Ngọc" class="lazy" data-srcset="//theme.hstatic.net/200000317851/1000697347/14/home_client_image_3.png?v=1174" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+        </div>
+        <div class="info">
+         <p class="title">
+          Ninh Dương Lan Ngọc
+         </p>
+         <p class="job">
+          Diễn viên
+         </p>
+        </div>
+        <p class="desc">
+         Đời sống phát triển, con người trở nên quan tâm, chăm sóc sức khỏe của mình kĩ càng hơn.Nhờ vậy, xu hướng tiêu thụ thực phẩm sạch ngày càng phổ biến. Khách hàng sẵn sàng bỏ ra số tiền cao hơn để mua được đồ tự nhiên, lành mạnh, xuất xứ rõ ràng.
+        </p>
+       </div>
+       <div class="widget_testi_item">
+        <div class="photo">
+         <img alt="Minh Hằng" class="lazy" data-srcset="//theme.hstatic.net/200000317851/1000697347/14/home_client_image_4.png?v=1174" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+        </div>
+        <div class="info">
+         <p class="title">
+          Minh Hằng
+         </p>
+         <p class="job">
+          Ca sĩ
+         </p>
+        </div>
+        <p class="desc">
+         Đời sống phát triển, con người trở nên quan tâm, chăm sóc sức khỏe của mình kĩ càng hơn.Nhờ vậy, xu hướng tiêu thụ thực phẩm sạch ngày càng phổ biến. Khách hàng sẵn sàng bỏ ra số tiền cao hơn để mua được đồ tự nhiên, lành mạnh, xuất xứ rõ ràng.
+        </p>
+       </div>
+      </div>
+     </div>
+     <div class="widget widget_collection d-none d-md-block">
+      <div class="widget-title">
+       Sản phẩm mới
+      </div>
+      <div class="widget_collection_list">
+       <div class="product-item-mini">
+        <div class="product-img">
+         <div class="product-sale">
+          <span>
+           -27%
+          </span>
+         </div>
+         <a href="/products/30-ngay-thay-doi-ban-than">
+          <img alt=" 30 Ngày Thay Đổi Bản Thân " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_067f29306fa3464083542d803c94f2af_small.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+         </a>
+        </div>
+        <div class="product-content">
+         <h3 class="product-title">
+          <a href="/products/30-ngay-thay-doi-ban-than" title="30 Ngày Thay Đổi Bản Thân">
+           30 Ngày Thay Đổi Bản Thân
+          </a>
+         </h3>
+         <div class="box-pro-prices">
+          <p class="pro-price highlight">
+           <span class="current-price">
+            99,000₫
+           </span>
+           <span class="pro-price-del">
+            <del class="compare-price">
+             135,000₫
+            </del>
+           </span>
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="product-item-mini">
+        <div class="product-img">
+         <a href="/products/boc-dan-tuyet-dinh-cac-em-be-dong-vat">
+          <img alt=" Bóc dán tuyệt đỉnh - Các em bé động vật " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_13646c3e1cab40b0aa8ef804af5c62ef_small.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+         </a>
+        </div>
+        <div class="product-content">
+         <h3 class="product-title">
+          <a href="/products/boc-dan-tuyet-dinh-cac-em-be-dong-vat" title="Bóc dán tuyệt đỉnh - Các em bé động vật">
+           Bóc dán tuyệt đỉnh - Các em bé động vật
+          </a>
+         </h3>
+         <div class="box-pro-prices">
+          <p class="pro-price">
+           <span class="current-price">
+            159,000₫
+           </span>
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="product-item-mini">
+        <div class="product-img">
+         <div class="product-sale">
+          <span>
+           -42%
+          </span>
+         </div>
+         <a href="/products/com-cuon-sach-boc-dan-dau-tien-cua-to-4t">
+          <img alt=" Com Cuốn sách bóc dán đầu tiên của tớ 4T " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_a7a2360e873947a6a8e05d7b23de8112_small.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+         </a>
+        </div>
+        <div class="product-content">
+         <h3 class="product-title">
+          <a href="/products/com-cuon-sach-boc-dan-dau-tien-cua-to-4t" title="Com Cuốn sách bóc dán đầu tiên của tớ 4T">
+           Com Cuốn sách bóc dán đầu tiên của tớ 4T
+          </a>
+         </h3>
+         <div class="box-pro-prices">
+          <p class="pro-price highlight">
+           <span class="current-price">
+            292,000₫
+           </span>
+           <span class="pro-price-del">
+            <del class="compare-price">
+             500,000₫
+            </del>
+           </span>
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="product-item-mini">
+        <div class="product-img">
+         <div class="product-sale">
+          <span>
+           -29%
+          </span>
+         </div>
+         <a href="/products/combo-boc-dan-tuyet-dinh-6t">
+          <img alt=" Combo Bóc dán tuyệt đỉnh 6T " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_4afbaa310b254c34b178ec6460498577_small.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+         </a>
+        </div>
+        <div class="product-content">
+         <h3 class="product-title">
+          <a href="/products/combo-boc-dan-tuyet-dinh-6t" title="Combo Bóc dán tuyệt đỉnh 6T">
+           Combo Bóc dán tuyệt đỉnh 6T
+          </a>
+         </h3>
+         <div class="box-pro-prices">
+          <p class="pro-price highlight">
+           <span class="current-price">
+            500,000₫
+           </span>
+           <span class="pro-price-del">
+            <del class="compare-price">
+             700,000₫
+            </del>
+           </span>
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="widget widget_collection mb-30">
+      <div class="widget-title">
+       Sản phẩm
+      </div>
+      <div class="widget_collection_list">
+       <div class="product-item-mini">
+        <div class="product-img">
+         <div class="product-sale">
+          <span>
+           -27%
+          </span>
+         </div>
+         <a href="/products/30-ngay-thay-doi-ban-than">
+          <img alt=" 30 Ngày Thay Đổi Bản Thân " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_067f29306fa3464083542d803c94f2af_small.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+         </a>
+        </div>
+        <div class="product-content">
+         <h3 class="product-title">
+          <a href="/products/30-ngay-thay-doi-ban-than" title="30 Ngày Thay Đổi Bản Thân">
+           30 Ngày Thay Đổi Bản Thân
+          </a>
+         </h3>
+         <div class="box-pro-prices">
+          <p class="pro-price highlight">
+           <span class="current-price">
+            99,000₫
+           </span>
+           <span class="pro-price-del">
+            <del class="compare-price">
+             135,000₫
+            </del>
+           </span>
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="product-item-mini">
+        <div class="product-img">
+         <a href="/products/boc-dan-tuyet-dinh-cac-em-be-dong-vat">
+          <img alt=" Bóc dán tuyệt đỉnh - Các em bé động vật " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_13646c3e1cab40b0aa8ef804af5c62ef_small.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+         </a>
+        </div>
+        <div class="product-content">
+         <h3 class="product-title">
+          <a href="/products/boc-dan-tuyet-dinh-cac-em-be-dong-vat" title="Bóc dán tuyệt đỉnh - Các em bé động vật">
+           Bóc dán tuyệt đỉnh - Các em bé động vật
+          </a>
+         </h3>
+         <div class="box-pro-prices">
+          <p class="pro-price">
+           <span class="current-price">
+            159,000₫
+           </span>
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="product-item-mini">
+        <div class="product-img">
+         <div class="product-sale">
+          <span>
+           -42%
+          </span>
+         </div>
+         <a href="/products/com-cuon-sach-boc-dan-dau-tien-cua-to-4t">
+          <img alt=" Com Cuốn sách bóc dán đầu tiên của tớ 4T " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_a7a2360e873947a6a8e05d7b23de8112_small.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+         </a>
+        </div>
+        <div class="product-content">
+         <h3 class="product-title">
+          <a href="/products/com-cuon-sach-boc-dan-dau-tien-cua-to-4t" title="Com Cuốn sách bóc dán đầu tiên của tớ 4T">
+           Com Cuốn sách bóc dán đầu tiên của tớ 4T
+          </a>
+         </h3>
+         <div class="box-pro-prices">
+          <p class="pro-price highlight">
+           <span class="current-price">
+            292,000₫
+           </span>
+           <span class="pro-price-del">
+            <del class="compare-price">
+             500,000₫
+            </del>
+           </span>
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="product-item-mini">
+        <div class="product-img">
+         <div class="product-sale">
+          <span>
+           -29%
+          </span>
+         </div>
+         <a href="/products/combo-boc-dan-tuyet-dinh-6t">
+          <img alt=" Combo Bóc dán tuyệt đỉnh 6T " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_4afbaa310b254c34b178ec6460498577_small.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+         </a>
+        </div>
+        <div class="product-content">
+         <h3 class="product-title">
+          <a href="/products/combo-boc-dan-tuyet-dinh-6t" title="Combo Bóc dán tuyệt đỉnh 6T">
+           Combo Bóc dán tuyệt đỉnh 6T
+          </a>
+         </h3>
+         <div class="box-pro-prices">
+          <p class="pro-price highlight">
+           <span class="current-price">
+            500,000₫
+           </span>
+           <span class="pro-price-del">
+            <del class="compare-price">
+             700,000₫
+            </del>
+           </span>
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="site-overlay" id="site-overlay">
+ </div>
+</div>
+<div class="overlay-filter">
+</div>
+<link as="script" href="https://cdn.hstatic.net/shared/option_selection.js" rel="preload"/>
+<link as="script" href="https://cdn.hstatic.net/shared/api.jquery.js" rel="preload"/>
+<link as="script" href="//theme.hstatic.net/200000317851/1000697347/14/plugins.js?v=1174" rel="preload"/>
+<link as="script" href="//theme.hstatic.net/200000317851/1000697347/14/scripts.js?v=1174" rel="preload"/>
+popup loaded 
+
+ quick view
+<style>
+ .modal-content {
+	background-color: #fefefe;
+	margin: 5% auto !important;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+	max-width: 780px;
+	transform: translatey(-30px);
+	transition: all .5s;
+	}
+
+	.close {
+	color: #aaa;
+	font-size: 28px;
+	font-weight: bold;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 40px;
+	text-align: center;
+	}
+
+	.close:hover,
+	.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+	}
+</style>
+<div class="modal" id="productQuickView">
+ <div class="modal-content">
+  <span class="close" id="close">
+   ×
+  </span>
+  <form class="row" id="form-quick-view">
+   <div class="col-12 col-md-6">
+    <div class="image-zoom">
+     <img alt="" class="p-product-image-feature" id="p-product-image-feature" src=""/>
+     <div class="flexslider" id="p-sliderproduct">
+      <ul class="slides">
+      </ul>
+     </div>
+    </div>
+   </div>
+   <div class="col-12 col-md-6">
+    <h4 class="p-title modal-title" id="">
+     Tên sản phẩm
+    </h4>
+    <p class="product-more-info">
+     <span class="product-sku">
+      Mã sản phẩm:
+      <span id="ProductSku">
+       01923123
+      </span>
+     </span>
+    </p>
+    <div class="form-input product-price-wrapper">
+     <div class="product-price">
+      <span class="p-price">
+      </span>
+      <del>
+      </del>
+     </div>
+     <em id="PriceSaving">
+     </em>
+    </div>
+    <div class="p-option-wrapper">
+     <select class="" id="p-select-quickview" name="id">
+     </select>
+    </div>
+    <div class="select-swatch" id="swatch-quick-view">
+    </div>
+    <div class="form-input">
+     <label>
+      Số lượng
+     </label>
+     <div class="quantity-area clearfix">
+      <input class="qty-btn" onclick="minusQuantity2()" type="button" value="-"/>
+      <input class="quantity-selector" id="quantity_qv" name="quantity_qv" type="text" value="1"/>
+      <input class="qty-btn" onclick="plusQuantity2()" type="button" value="+"/>
+     </div>
+    </div>
+    <div class="form-input" style="width: 100%">
+     <button class="btn btn-addcart" id="AddToCardQuickView" type="submit">
+      Thêm vào giỏ
+     </button>
+     <button class="btn btn-soldout" disabled="">
+      Hết hàng
+     </button>
+     <div class="qv-readmore">
+      <span>
+       hoặc
+      </span>
+      <a class="read-more p-url" href="" role="button">
+       Xem chi tiết
+      </a>
+     </div>
+    </div>
+   </div>
+  </form>
+ </div>
+ <div id="loading">
+  <div>
+  </div>
+ </div>
+</div>
+<div id="modalAddComplete">
+</div>
+<button id="modalAddCompleteBtn" style="display: none;" type="button">
+</button>
+<div class="d-none d-sm-block" id="fixed-social-network">
+ <a class="zalo-icon" href="https://zalo.me/1900.636.099" target="_blank">
+  <img alt="Icon-Zalo" class="img-fluid" src="https://file.hstatic.net/200000259495/file/zalo_d9dc3417eb744b91a44643f29b8c7161.svg"/>
+  Zalo
+ </a>
+ <a class="messenger-icon" href="https://facebook.com/facebook" target="_blank">
+  <img alt="Icon-Messager" class="img-fluid" src="https://file.hstatic.net/200000259495/file/messager_208d7389c4ac46b5a01afad457684cd6.svg"/>
+  Messenger
+ </a>
+ <a href="https://youtube.com" target="_blank">
+  <img alt="Icon-Youtube" class="img-fluid" src="https://file.hstatic.net/200000259495/file/youtube_479e81022bcb432f89376b2fea8f08ef.svg"/>
+  Youtube
+ </a>
+ <a href="https://instagram.com" target="_blank">
+  <img alt="Icon-Instagram" class="img-fluid" src="https://file.hstatic.net/200000259495/file/instagram_81b9ae8829a940a7aa5b7926152ed378.svg"/>
+  Instagram
+ </a>
+ <a href="" target="_blank">
+  <img alt="Icon-Twitter" class="img-fluid" src="https://file.hstatic.net/200000259495/file/twitter_87a4097176de4ee48ab97ee2113a6540.svg"/>
+  Twitter
+ </a>
+ <a href="javascript:;" id="back-to-top">
+  <i class="fal fa-angle-up">
+  </i>
+  Lên đầu trang
+ </a>
+</div>
+<div class="back-to-top hidden">
+ <a href="javascript:void(0);">
+  <div class="btt-back">
+   <span class="btt-label-back">
+    back to top
+   </span>
+   <span class="btt-icon-back">
+    <i class="fa fa-long-arrow-up">
+    </i>
+   </span>
+  </div>
+ </a>
+</div>
+
+{%endblock %}
