@@ -1,0 +1,1612 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(translate('Danh sách sản phẩm')).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ getKeyContentValue('META_KEYWORDS') }}">
+<meta name="description" content="{{ getKeyContentValue('META_DESCRIPTION') }}">
+<meta property="og:title" content="{{ getKeyContentValue('META_TITLE') }}">
+<meta property="og:url" content="{{ getCurrentUrl() }}">
+<meta property="og:image" content="{{ getBusinessLogo() }}">
+<link rel="canonical" href="{{ getCurrentUrl() }}">
+{%endblock %}
+
+{%block body %}
+
+<div class="nav-overlay" onclick="initNav('close')">
+</div>
+<nav class="hidden" id="menu-mobile">
+ <ul>
+  <li>
+   <a href="/">
+    Trang chủ
+   </a>
+  </li>
+  <li class="has-children">
+   <a href="/collections/all">
+    Sản phẩm
+   </a>
+   <ul class="child count-nav-3">
+    <li>
+     <a href="/collections/all">
+      Tât cả sản phẩm
+     </a>
+    </li>
+    <li>
+     <a href="/collections/all">
+      Sản phẩm mới
+     </a>
+    </li>
+    <li>
+     <a href="/collections/all">
+      Sản phẩm nổi bật
+     </a>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <a href="/blogs/news">
+    Tin tức
+   </a>
+  </li>
+  <li>
+   <a href="/pages/about-us">
+    Giới thiệu
+   </a>
+  </li>
+  <li>
+   <a href="/pages/he-thong-cua-hang">
+    Hệ thống cửa hàng
+   </a>
+  </li>
+  <li>
+   <a href="/pages/lien-he">
+    Liên hệ
+   </a>
+  </li>
+ </ul>
+</nav>
+<svg class="hidden" xmlns="http://www.w3.org/2000/svg">
+ <symbol id="icon-add-cart">
+  <svg enable-background="new 0 0 512 512" viewbox="0 0 512 512" x="0px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+   <g>
+    <g>
+     <polygon points="447.992,336 181.555,336 69.539,80 0.008,80 0.008,48 90.477,48 202.492,304 447.992,304 		">
+     </polygon>
+    </g>
+    <path d="M287.992,416c0,26.5-21.5,48-48,48s-48-21.5-48-48s21.5-48,48-48S287.992,389.5,287.992,416z">
+    </path>
+    <path d="M447.992,416c0,26.5-21.5,48-48,48s-48-21.5-48-48s21.5-48,48-48S447.992,389.5,447.992,416z">
+    </path>
+    <g>
+     <polygon points="499.18,144 511.992,112 160.008,112 172.805,144 		">
+     </polygon>
+     <polygon points="211.195,240 223.992,272 447.992,272 460.805,240 		">
+     </polygon>
+     <polygon points="486.398,176 185.602,176 198.398,208 473.586,208 		">
+     </polygon>
+    </g>
+   </g>
+  </svg>
+ </symbol>
+ <symbol id="icon-list-switch">
+  <svg style="enable-background:new 0 0 194.828 194.828;" viewbox="0 0 194.828 194.828" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+   <g>
+    <g>
+     <g>
+      <path d="M190.931,17.534H3.897C1.745,17.534,0,19.279,0,21.431v19.483c0,2.152,1.745,3.897,3.897,3.897h187.034
+										 c2.152,0,3.897-1.745,3.897-3.897V21.431C194.828,19.279,193.083,17.534,190.931,17.534z M187.034,37.017H7.793v-11.69h179.241
+										 V37.017z">
+      </path>
+      <path d="M190.931,64.293H3.897C1.745,64.293,0,66.038,0,68.19v31.172c0,2.152,1.745,3.897,3.897,3.897h187.034
+										 c2.152,0,3.897-1.745,3.897-3.897V68.19C194.828,66.038,193.083,64.293,190.931,64.293z M187.034,95.466H7.793v-23.38h179.241
+										 V95.466z">
+      </path>
+      <path d="M190.931,122.741H3.897c-2.152,0-3.897,1.745-3.897,3.897v46.759c0,2.152,1.745,3.897,3.897,3.897h187.034
+										 c2.152,0,3.897-1.745,3.897-3.897v-46.759C194.828,124.486,193.083,122.741,190.931,122.741z M187.034,169.5H7.793v-38.966
+										 h179.241V169.5z">
+      </path>
+     </g>
+    </g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+  </svg>
+ </symbol>
+ <symbol id="icon-sort-by">
+  <svg style="enable-background:new 0 0 490 490;" viewbox="0 0 490 490" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+   <g>
+    <polygon points="85.877,154.014 85.877,428.309 131.706,428.309 131.706,154.014 180.497,221.213 217.584,194.27 108.792,44.46 
+												 0,194.27 37.087,221.213 	">
+    </polygon>
+    <polygon points="404.13,335.988 404.13,61.691 358.301,61.691 358.301,335.99 309.503,268.787 272.416,295.73 381.216,445.54 
+												 490,295.715 452.913,268.802 	">
+    </polygon>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+  </svg>
+ </symbol>
+ <symbol id="icon-search_white" viewbox="0 0 1024 1024">
+  <path class="path1" d="M1014.176 968.256l-264.32-260.128c69.184-75.264 111.68-174.688 111.68-284.128 0-234.080-192.8-423.872-430.688-423.872s-430.72 189.792-430.72 423.872c0 234.112 192.864 423.872 430.72 423.872 102.752 0 197.088-35.552 271.072-94.688l265.376 261.12c12.928 12.736 33.952 12.736 46.88 0 12.96-12.672 12.96-33.376 0-46.048zM430.848 782.688c-201.312 0-364.48-160.64-364.48-358.688 0-198.080 163.168-358.656 364.48-358.656 201.28 0 364.448 160.576 364.448 358.656 0.032 198.048-163.168 358.688-364.448 358.688z">
+  </path>
+ </symbol>
+ <symbol id="icon-user" viewbox="0 0 1024 1024">
+  <title>
+   user
+  </title>
+  <path class="path1" d="M622.826 702.736c-22.11-3.518-22.614-64.314-22.614-64.314s64.968-64.316 79.128-150.802c38.090 0 61.618-91.946 23.522-124.296 1.59-34.054 48.96-267.324-190.862-267.324s-192.45 233.27-190.864 267.324c-38.094 32.35-14.57 124.296 23.522 124.296 14.158 86.486 79.128 150.802 79.128 150.802s-0.504 60.796-22.614 64.314c-71.22 11.332-337.172 128.634-337.172 257.264h896c0-128.63-265.952-245.932-337.174-257.264z">
+  </path>
+ </symbol>
+</svg>
+<div class="main-body">
+ <div class="topbar">
+  <div class="container">
+   <div class="topbar-wrap d-flex align-items-center justify-content-between">
+    <div class="header-contact d-none d-lg-flex flex-grow-1">
+     <div class="item d-flex align-items-center">
+      <div class="icon">
+       <i class="fal fa-phone-volume">
+       </i>
+      </div>
+      <div class="info">
+       <a href="tel:0936342986">
+        0936342986
+       </a>
+      </div>
+     </div>
+     <div class="item d-flex align-items-center">
+      <div class="icon">
+       <i class="fal fa-envelope">
+       </i>
+      </div>
+      <div class="info">
+       <a href="mailto:theme.hogwarts@gmail.com">
+        theme.hogwarts@gmail.com
+       </a>
+      </div>
+     </div>
+     <div class="item d-flex align-items-center">
+      <div class="icon">
+       <i class="fal fa-map-marker-alt">
+       </i>
+      </div>
+      <div class="info">
+       <a href="/">
+        quận 11, Tp. Hồ Chí Minh
+       </a>
+      </div>
+     </div>
+    </div>
+    <div class="header-account ml-5">
+     <a class="mr-3 text-uppercase font-weight-bold d-none d-md-inline-block" href="/blogs/news">
+      Tin tức
+     </a>
+     <a class="mr-3 text-uppercase font-weight-bold d-none d-md-inline-block" href="/pages/he-thong-cua-hang">
+      Hệ thống cửa hàng
+     </a>
+     <a class="mr-3 text-uppercase font-weight-bold d-none d-md-inline-block" href="/pages/lien-he">
+      Liên hệ
+     </a>
+     <a class="mr-3 text-uppercase font-weight-bold" href="/account/login">
+      Đăng nhập
+     </a>
+     <a class="mr-3 text-uppercase font-weight-bold" href="/account/register">
+      Đăng ký
+     </a>
+    </div>
+    <div class="header-action_cart">
+     <div aria-expanded="false" aria-haspopup="true" class="header-action_text cursor-pointer" data-toggle="dropdown" id="dropdownCartButton">
+      <div aria-label="Giỏ hàng" class="header-action__link header-action-toggle" title="Giỏ hàng">
+       <span class="box-icon">
+        <i class="fal fa-shopping-cart">
+        </i>
+        <span class="count-holder">
+         <span class="count">
+          0
+         </span>
+        </span>
+       </span>
+      </div>
+     </div>
+     <div aria-labelledby="dropdownCartButton" class="header-action_dropdown dropdown-menu dropdown-menu-right">
+      <span class="box-triangle">
+       <svg viewbox="0 0 20 9">
+        <path d="M.47108938 9c.2694725-.26871321.57077721-.56867841.90388257-.89986354C3.12384116 6.36134886 5.74788116 3.76338565 9.2467995.30653888c.4145057-.4095171 1.0844277-.40860098 1.4977971.00205122L19.4935156 9H.47108938z" fill="#ffffff">
+        </path>
+       </svg>
+      </span>
+      <div class="header-dropdown_content">
+       <div class="site-cart">
+        <div class="cart-view clearfix">
+         <div class="cart-view-scroll">
+          <table class="table-clone-cart" id="clone-item-cart">
+           <tr class="item_2 hidden" data-variant-id="">
+            <td class="img">
+             <a href="" title="">
+              <img alt="" src="//theme.hstatic.net/200000317851/1000697347/14/1x1.jpg?v=1174"/>
+             </a>
+            </td>
+            <td>
+             <p class="pro-title">
+              <a class="pro-title-view" href="" title="">
+              </a>
+              <span class="variant">
+              </span>
+             </p>
+             <div class="mini-cart_quantity">
+              <div class="pro-quantity-view">
+               <span class="qty-value">
+               </span>
+              </div>
+              <div class="pro-price-view">
+              </div>
+             </div>
+             <div class="remove_link remove-cart">
+             </div>
+            </td>
+           </tr>
+          </table>
+          <table id="cart-view">
+           <tr class="item-cart_empty">
+            <td>
+             <div class="svgico-mini-cart">
+              <i class="fal fa-shopping-cart">
+              </i>
+             </div>
+             Hiện chưa có sản phẩm
+            </td>
+           </tr>
+          </table>
+         </div>
+         <div class="line">
+         </div>
+         <div class="cart-view-total">
+          <table class="table-total">
+           <tr>
+            <td class="text-left">
+             TỔNG TIỀN:
+            </td>
+            <td class="text-right" id="total-view-cart">
+             0₫
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <a class="linktocart btn btn-primary btn-sm text-uppercase" href="/cart">
+              Xem giỏ hàng
+             </a>
+            </td>
+            <td>
+             <a class="linktocheckout btn btn-primary btn-sm text-uppercase" href="/checkout">
+              Thanh toán
+             </a>
+            </td>
+           </tr>
+          </table>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="collection-page" id="collection">
+  <div class="breadcrumb-shop">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pd5">
+      <ol class="breadcrumb breadcrumb-arrows" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+       <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+        <a href="/" itemprop="item" target="_self">
+         <span itemprop="name">
+          Trang chủ
+         </span>
+        </a>
+        <meta content="1" itemprop="position"/>
+       </li>
+       <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+        <a href="/collections" itemprop="item" target="_self">
+         <span itemprop="name">
+          Danh mục
+         </span>
+        </a>
+        <meta content="2" itemprop="position"/>
+       </li>
+       <li class="active" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+        <span content="https://hogwarts-book.myharavan.com/collections/all" itemprop="item">
+         <span itemprop="name">
+          Tất cả sản phẩm
+         </span>
+        </span>
+        <meta content="3" itemprop="position"/>
+       </li>
+      </ol>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="main-content">
+   <div class="container">
+    <div class="py-5" id="collection-body">
+     <div class="row">
+      <div class="col-12 col-lg-3">
+       <div class="wrap-filter">
+        <div class="box_sidebar">
+         <div class="block left-module">
+          <div class="filter_xs">
+           <div class="layered">
+            <div class="sidebar-block group-menu">
+             <div class="sidebar-title">
+              <h3>
+               Danh mục
+               <i class="fal fa-angle-down">
+               </i>
+              </h3>
+             </div>
+             <div class="block_content layered layered-category">
+              <div class="layered-content">
+               <ul class="tree-menu">
+                <li class="tree-menu-lv1 active has-child menu-uncollap">
+                 <a class="active" href="javascript:void(0)" target="_self" title="Truyện">
+                  <i class="fal fa-angle-right">
+                  </i>
+                  <span class="">
+                   Truyện
+                  </span>
+                  <span class="icon-control">
+                   <i class="fal fa-angle-down">
+                   </i>
+                  </span>
+                 </a>
+                 <ul class="tree-menu-sub">
+                  <li>
+                   <span>
+                   </span>
+                   <a href="/" title="Kinh dị">
+                    Kinh dị
+                   </a>
+                  </li>
+                  <li>
+                   <span>
+                   </span>
+                   <a href="/" title="Truyện chữ">
+                    Truyện chữ
+                   </a>
+                  </li>
+                  <li>
+                   <span>
+                   </span>
+                   <a href="/" title="Lịch sử">
+                    Lịch sử
+                   </a>
+                  </li>
+                 </ul>
+                </li>
+                <li class="active">
+                 <span>
+                 </span>
+                 <a class="current" href="/collections/all" target="_self" title="Tiểu sử">
+                  <i class="fal fa-angle-right">
+                  </i>
+                  <span>
+                   Tiểu sử
+                  </span>
+                 </a>
+                </li>
+                <li class="active">
+                 <span>
+                 </span>
+                 <a class="current" href="/collections/all" target="_self" title="Khoa học viễn tưởng">
+                  <i class="fal fa-angle-right">
+                  </i>
+                  <span>
+                   Khoa học viễn tưởng
+                  </span>
+                 </a>
+                </li>
+                <li class="active">
+                 <span>
+                 </span>
+                 <a class="current" href="/collections/all" target="_self" title="Truyện ngắn">
+                  <i class="fal fa-angle-right">
+                  </i>
+                  <span>
+                   Truyện ngắn
+                  </span>
+                 </a>
+                </li>
+                <li class="active">
+                 <span>
+                 </span>
+                 <a class="current" href="/collections/all" target="_self" title="Dịch vụ">
+                  <i class="fal fa-angle-right">
+                  </i>
+                  <span>
+                   Dịch vụ
+                  </span>
+                 </a>
+                </li>
+                <li class="active">
+                 <span>
+                 </span>
+                 <a class="current" href="/collections/all" target="_self" title="Địa lý">
+                  <i class="fal fa-angle-right">
+                  </i>
+                  <span>
+                   Địa lý
+                  </span>
+                 </a>
+                </li>
+                <li class="active">
+                 <span>
+                 </span>
+                 <a class="current" href="/collections/all" target="_self" title="Kinh dị">
+                  <i class="fal fa-angle-right">
+                  </i>
+                  <span>
+                   Kinh dị
+                  </span>
+                 </a>
+                </li>
+                <li class="tree-menu-lv1 active has-child menu-collap">
+                 <a class="active" href="javascript:void(0)" target="_self" title="Thiếu nhi">
+                  <i class="fal fa-angle-right">
+                  </i>
+                  <span class="">
+                   Thiếu nhi
+                  </span>
+                  <span class="icon-control">
+                   <i class="fal fa-angle-down">
+                   </i>
+                  </span>
+                 </a>
+                 <ul class="tree-menu-sub">
+                  <li>
+                   <span>
+                   </span>
+                   <a href="/" title="Dân gian">
+                    Dân gian
+                   </a>
+                  </li>
+                  <li>
+                   <span>
+                   </span>
+                   <a href="/" title="Việt Nam">
+                    Việt Nam
+                   </a>
+                  </li>
+                  <li>
+                   <span>
+                   </span>
+                   <a href="/" title="Nước ngoài">
+                    Nước ngoài
+                   </a>
+                  </li>
+                 </ul>
+                </li>
+                <li class="active">
+                 <span>
+                 </span>
+                 <a class="current" href="/collections/all" target="_self" title="Kinh doanh">
+                  <i class="fal fa-angle-right">
+                  </i>
+                  <span>
+                   Kinh doanh
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </div>
+             </div>
+            </div>
+            <div class="sidebar-block block_content">
+             <!-- ./filter brand -->
+             <div aria-expanded="false" class="group-filter">
+              <div class="layered_subtitle dropdown-filter">
+               <span>
+                Nhà xuất bản
+               </span>
+               <span class="icon-control">
+                <i class="fal fa-angle-up">
+                </i>
+               </span>
+              </div>
+              <div class="layered-content bl-filter filter-brand">
+               <ul class="check-box-list">
+                <li>
+                 <input data-vendor="(vendor:product contains NXB Thanh Niên)" id="data-brand-p1" name="brand-filter" type="checkbox" value="NXB Thanh Niên"/>
+                 <label for="data-brand-p1">
+                  NXB Thanh Niên
+                 </label>
+                </li>
+                <li>
+                 <input data-vendor="(vendor:product contains NXB Hà Nội)" id="data-brand-p2" name="brand-filter" type="checkbox" value="NXB Hà Nội"/>
+                 <label for="data-brand-p2">
+                  NXB Hà Nội
+                 </label>
+                </li>
+                <li>
+                 <input data-vendor="(vendor:product contains Phụ Nữ Việt Nam)" id="data-brand-p3" name="brand-filter" type="checkbox" value="Phụ Nữ Việt Nam"/>
+                 <label for="data-brand-p3">
+                  Phụ Nữ Việt Nam
+                 </label>
+                </li>
+                <li>
+                 <input data-vendor="(vendor:product contains First News)" id="data-brand-p4" name="brand-filter" type="checkbox" value="First News"/>
+                 <label for="data-brand-p4">
+                  First News
+                 </label>
+                </li>
+               </ul>
+              </div>
+             </div>
+             <div aria-expanded="false" class="group-filter">
+              <div class="layered_subtitle dropdown-filter">
+               <span>
+                Loại sách
+               </span>
+               <span class="icon-control">
+                <i class="fal fa-angle-up">
+                </i>
+               </span>
+              </div>
+              <div class="layered-content bl-filter filter-type">
+               <ul class="check-box-list">
+                <li>
+                 <input data-type="(product_type:product contains Thiếu nhi)" id="data-type-p1" name="type-filter" type="checkbox" value="Thiếu nhi"/>
+                 <label for="data-type-p1">
+                  Thiếu nhi
+                 </label>
+                </li>
+                <li>
+                 <input data-type="(product_type:product contains Ngoại ngữ)" id="data-type-p2" name="type-filter" type="checkbox" value="Ngoại ngữ"/>
+                 <label for="data-type-p2">
+                  Ngoại ngữ
+                 </label>
+                </li>
+                <li>
+                 <input data-type="(product_type:product contains Phát Triển Bản Thân)" id="data-type-p3" name="type-filter" type="checkbox" value="Phát Triển Bản Thân"/>
+                 <label for="data-type-p3">
+                  Phát Triển Bản Thân
+                 </label>
+                </li>
+                <li>
+                 <input data-type="(product_type:product contains Hướng nghiệp)" id="data-type-p4" name="type-filter" type="checkbox" value="Hướng nghiệp"/>
+                 <label for="data-type-p4">
+                  Hướng nghiệp
+                 </label>
+                </li>
+               </ul>
+              </div>
+             </div>
+             <!-- ./filter price -->
+             <div aria-expanded="false" class="group-filter">
+              <div class="layered_subtitle dropdown-filter">
+               <span>
+                Giá sản phẩm
+               </span>
+               <span class="icon-control">
+                <i class="fal fa-angle-up">
+                </i>
+               </span>
+              </div>
+              <div class="layered-content bl-filter filter-price">
+               <ul class="check-box-list">
+                <li>
+                 <input data-price="(price:product&lt;=500000)" id="p1" name="cc" type="checkbox"/>
+                 <label for="p1">
+                  <span>
+                   Dưới
+                  </span>
+                  500,000₫
+                 </label>
+                </li>
+                <li>
+                 <input data-price="((price:product&gt;500000)&amp;&amp;(price:product&lt;=1000000))" id="p2" name="cc" type="checkbox"/>
+                 <label for="p2">
+                  500,000₫ - 1,000,000₫
+                 </label>
+                </li>
+                <li>
+                 <input data-price="((price:product&gt;1000000)&amp;&amp;(price:product&lt;=1500000))" id="p3" name="cc" type="checkbox"/>
+                 <label for="p3">
+                  1,000,000₫ - 1,500,000₫
+                 </label>
+                </li>
+                <li>
+                 <input data-price="((price:product&gt;2000000)&amp;&amp;(price:product&lt;=5000000))" id="p4" name="cc" type="checkbox"/>
+                 <label for="p4">
+                  2,000,000₫ - 5,000,000₫
+                 </label>
+                </li>
+                <li>
+                 <input data-price="(price:product&gt;=5000000)" id="p5" name="cc" type="checkbox"/>
+                 <label for="p5">
+                  <span>
+                   Trên
+                  </span>
+                  5,000,000₫
+                 </label>
+                </li>
+               </ul>
+              </div>
+             </div>
+             <!-- ./filter color -->
+             <!-- ./filter size -->
+             <div aria-expanded="false" class="group-filter">
+              <div class="layered_subtitle dropdown-filter">
+               <span>
+                Tác giả
+               </span>
+               <span class="icon-control">
+                <i class="fal fa-angle-up">
+                </i>
+               </span>
+              </div>
+              <div class="layered-content filter-size s-filter">
+               <ul class="check-box-list clearfix">
+                <li>
+                 <input data-size="(tag:product contains Minh Niệm)" id="data-size-p1" name="size-filter" type="checkbox" value="Minh Niệm"/>
+                 <label for="data-size-p1">
+                  Minh Niệm
+                 </label>
+                </li>
+                <li>
+                 <input data-size="(tag:product contains Đinh Tị)" id="data-size-p2" name="size-filter" type="checkbox" value="Đinh Tị"/>
+                 <label for="data-size-p2">
+                  Đinh Tị
+                 </label>
+                </li>
+                <li>
+                 <input data-size="(tag:product contains Thùy Dương)" id="data-size-p3" name="size-filter" type="checkbox" value="Thùy Dương"/>
+                 <label for="data-size-p3">
+                  Thùy Dương
+                 </label>
+                </li>
+                <li>
+                 <input data-size="(tag:product contains Damon Zahariades)" id="data-size-p4" name="size-filter" type="checkbox" value="Damon Zahariades"/>
+                 <label for="data-size-p4">
+                  Damon Zahariades
+                 </label>
+                </li>
+                <li>
+                 <input data-size="(tag:product contains Ở Đây Zui Nè)" id="data-size-p5" name="size-filter" type="checkbox" value="Ở Đây Zui Nè"/>
+                 <label for="data-size-p5">
+                  Ở Đây Zui Nè
+                 </label>
+                </li>
+               </ul>
+              </div>
+             </div>
+            </div>
+            <div class="sidebar-block sidebar-product">
+             <div class="sidebar-title">
+              <h3>
+               Sản phẩm nổi bật
+              </h3>
+             </div>
+             <div class="sidebar-content">
+              <div class="product-item-mini">
+               <div class="product-img">
+                <div class="product-sale">
+                 <span>
+                  -27%
+                 </span>
+                </div>
+                <a href="/products/30-ngay-thay-doi-ban-than">
+                 <img alt=" 30 Ngày Thay Đổi Bản Thân " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_067f29306fa3464083542d803c94f2af_small.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                </a>
+               </div>
+               <div class="product-content">
+                <h3 class="product-title">
+                 <a href="/products/30-ngay-thay-doi-ban-than" title="30 Ngày Thay Đổi Bản Thân">
+                  30 Ngày Thay Đổi Bản Thân
+                 </a>
+                </h3>
+                <div class="box-pro-prices">
+                 <p class="pro-price highlight">
+                  <span class="current-price">
+                   99,000₫
+                  </span>
+                  <span class="pro-price-del">
+                   <del class="compare-price">
+                    135,000₫
+                   </del>
+                  </span>
+                 </p>
+                </div>
+               </div>
+              </div>
+              <div class="product-item-mini">
+               <div class="product-img">
+                <a href="/products/boc-dan-tuyet-dinh-cac-em-be-dong-vat">
+                 <img alt=" Bóc dán tuyệt đỉnh - Các em bé động vật " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_13646c3e1cab40b0aa8ef804af5c62ef_small.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                </a>
+               </div>
+               <div class="product-content">
+                <h3 class="product-title">
+                 <a href="/products/boc-dan-tuyet-dinh-cac-em-be-dong-vat" title="Bóc dán tuyệt đỉnh - Các em bé động vật">
+                  Bóc dán tuyệt đỉnh - Các em bé động vật
+                 </a>
+                </h3>
+                <div class="box-pro-prices">
+                 <p class="pro-price">
+                  <span class="current-price">
+                   159,000₫
+                  </span>
+                 </p>
+                </div>
+               </div>
+              </div>
+              <div class="product-item-mini">
+               <div class="product-img">
+                <div class="product-sale">
+                 <span>
+                  -42%
+                 </span>
+                </div>
+                <a href="/products/com-cuon-sach-boc-dan-dau-tien-cua-to-4t">
+                 <img alt=" Com Cuốn sách bóc dán đầu tiên của tớ 4T " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_a7a2360e873947a6a8e05d7b23de8112_small.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                </a>
+               </div>
+               <div class="product-content">
+                <h3 class="product-title">
+                 <a href="/products/com-cuon-sach-boc-dan-dau-tien-cua-to-4t" title="Com Cuốn sách bóc dán đầu tiên của tớ 4T">
+                  Com Cuốn sách bóc dán đầu tiên của tớ 4T
+                 </a>
+                </h3>
+                <div class="box-pro-prices">
+                 <p class="pro-price highlight">
+                  <span class="current-price">
+                   292,000₫
+                  </span>
+                  <span class="pro-price-del">
+                   <del class="compare-price">
+                    500,000₫
+                   </del>
+                  </span>
+                 </p>
+                </div>
+               </div>
+              </div>
+              <div class="product-item-mini">
+               <div class="product-img">
+                <div class="product-sale">
+                 <span>
+                  -29%
+                 </span>
+                </div>
+                <a href="/products/combo-boc-dan-tuyet-dinh-6t">
+                 <img alt=" Combo Bóc dán tuyệt đỉnh 6T " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_4afbaa310b254c34b178ec6460498577_small.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                </a>
+               </div>
+               <div class="product-content">
+                <h3 class="product-title">
+                 <a href="/products/combo-boc-dan-tuyet-dinh-6t" title="Combo Bóc dán tuyệt đỉnh 6T">
+                  Combo Bóc dán tuyệt đỉnh 6T
+                 </a>
+                </h3>
+                <div class="box-pro-prices">
+                 <p class="pro-price highlight">
+                  <span class="current-price">
+                   500,000₫
+                  </span>
+                  <span class="pro-price-del">
+                   <del class="compare-price">
+                    700,000₫
+                   </del>
+                  </span>
+                 </p>
+                </div>
+               </div>
+              </div>
+              <div class="product-item-mini">
+               <div class="product-img">
+                <a href="/products/hello-english-xin-chao-tieng-anh-bai-tap-tieng-anh">
+                 <img alt=" Hello English! - Xin chào tiếng Anh!- Bài tập tiếng Anh " class="lazy" data-srcset="//product.hstatic.net/200000317851/product/1_834de600ca8246acbadb3d9bb361cb5f_small.jpg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                </a>
+               </div>
+               <div class="product-content">
+                <h3 class="product-title">
+                 <a href="/products/hello-english-xin-chao-tieng-anh-bai-tap-tieng-anh" title="Hello English! - Xin chào tiếng Anh!- Bài tập tiếng Anh">
+                  Hello English! - Xin chào tiếng Anh!- Bài tập tiếng Anh
+                 </a>
+                </h3>
+                <div class="box-pro-prices">
+                 <p class="pro-price">
+                  <span class="current-price">
+                   100,000₫
+                  </span>
+                 </p>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="sidebar-block box_image d-none d-md-block p-0">
+             <div class="banner">
+              <a href="">
+               <img alt="Hogwarts Book" src="//theme.hstatic.net/200000317851/1000697347/14/collection_banner_img.jpg?v=1174"/>
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="col-lg-9 col-12">
+       <div class="banner-collection-header mb-30">
+        <img alt="Products" class="w-100" src="//theme.hstatic.net/200000317851/1000697347/14/collection_banner.jpg?v=1174"/>
+       </div>
+       <div class="wrap-collection-title">
+        <div class="heading-collection">
+         <div class="row">
+          <div class="col-12 col-md-8">
+           <h1 class="title">
+            Tất cả sản phẩm
+           </h1>
+           <div class="alert-no-filter">
+           </div>
+          </div>
+          <div class="col-12 col-md-4 mb-sort">
+           <div class="filter-mb">
+            <button class="filter-mb-btn btn borderFilterMobile">
+             <span>
+              Bộ lọc
+             </span>
+             <span class="filter-icon">
+              <i class="fa fa-filter">
+              </i>
+             </span>
+            </button>
+           </div>
+           <div class="option browse-tags">
+            <label class="lb-filter hide" for="sort-by">
+             Sắp xếp theo:
+            </label>
+            <span class="custom-dropdown custom-dropdown--grey borderFilterMobile">
+             <select class="sort-by custom-dropdown__select">
+              <option data-filter="&amp;sortby=(price:product=asc)" value="price-ascending">
+               Giá: Tăng dần
+              </option>
+              <option data-filter="&amp;sortby=(price:product=desc)" value="price-descending">
+               Giá: Giảm dần
+              </option>
+              <option data-filter="&amp;sortby=(title:product=asc)" value="title-ascending">
+               Tên: A-Z
+              </option>
+              <option data-filter="&amp;sortby=(price:product=desc)" value="title-descending">
+               Tên: Z-A
+              </option>
+              <option data-filter="&amp;sortby=(updated_at:product=desc)" value="created-ascending">
+               Cũ nhất
+              </option>
+              <option data-filter="&amp;sortby=(updated_at:product=asc)" value="created-descending">
+               Mới nhất
+              </option>
+              <option data-filter="&amp;sortby=(sold_quantity:product=desc)" value="best-selling">
+               Bán chạy nhất
+              </option>
+              <option value="quantity-descending">
+               Tồn kho: Giảm dần
+              </option>
+             </select>
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="filter-here section-box-bg">
+        <div class="row content-product-list product-list filter clearfix">
+         <div class="col-md-4 col-6">
+          <div class="product-item">
+           <div class="product-img">
+            <div class="product-sale">
+             <span>
+              -38%
+             </span>
+            </div>
+            <a href="/products/sach-vui-ve-khong-quau-nha">
+             <img alt=" Sách - Vui Vẻ Không Quạu Nha " src="//product.hstatic.net/200000317851/product/1_04666d31151b49e69983e0b4095c2282_medium.jpg"/>
+            </a>
+            <div class="button-add d-none d-md-flex">
+             <button class="btnQuickView quick-view" data-handle="/products/sach-vui-ve-khong-quau-nha" data-tooltip="Xem nhanh" type="button">
+              <i aria-hidden="true" class="fal fa-search-plus">
+              </i>
+             </button>
+             <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1075081568');" title="Thêm vào giỏ">
+              <i class="fal fa-cart-plus">
+              </i>
+             </button>
+             <a data-tooltip="Chi tiết" href="/products/sach-vui-ve-khong-quau-nha">
+              <i class="fal fa-eye">
+              </i>
+             </a>
+            </div>
+           </div>
+           <div class="product-detail">
+            <h3 class="pro-name">
+             <a href="/products/sach-vui-ve-khong-quau-nha" title="Sách - Vui Vẻ Không Quạu Nha">
+              Sách - Vui Vẻ Không Quạu Nha
+             </a>
+            </h3>
+            <p class="pro-price highlight">
+             <del class="compare-price">
+              69,000₫
+             </del>
+             <span class="current-price">
+              42,780₫
+             </span>
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="col-md-4 col-6">
+          <div class="product-item">
+           <div class="product-img">
+            <div class="product-sale">
+             <span>
+              -27%
+             </span>
+            </div>
+            <a href="/products/30-ngay-thay-doi-ban-than">
+             <img alt=" 30 Ngày Thay Đổi Bản Thân " src="//product.hstatic.net/200000317851/product/1_067f29306fa3464083542d803c94f2af_medium.jpg"/>
+            </a>
+            <div class="button-add d-none d-md-flex">
+             <button class="btnQuickView quick-view" data-handle="/products/30-ngay-thay-doi-ban-than" data-tooltip="Xem nhanh" type="button">
+              <i aria-hidden="true" class="fal fa-search-plus">
+              </i>
+             </button>
+             <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1075081540');" title="Thêm vào giỏ">
+              <i class="fal fa-cart-plus">
+              </i>
+             </button>
+             <a data-tooltip="Chi tiết" href="/products/30-ngay-thay-doi-ban-than">
+              <i class="fal fa-eye">
+              </i>
+             </a>
+            </div>
+           </div>
+           <div class="product-detail">
+            <h3 class="pro-name">
+             <a href="/products/30-ngay-thay-doi-ban-than" title="30 Ngày Thay Đổi Bản Thân">
+              30 Ngày Thay Đổi Bản Thân
+             </a>
+            </h3>
+            <p class="pro-price highlight">
+             <del class="compare-price">
+              135,000₫
+             </del>
+             <span class="current-price">
+              99,000₫
+             </span>
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="col-md-4 col-6">
+          <div class="product-item">
+           <div class="product-img">
+            <div class="product-sale">
+             <span>
+              -15%
+             </span>
+            </div>
+            <a href="/products/sach-hieu-ve-trai-tim-firstnews">
+             <img alt=" Sách - Hiểu về trái tim - FirstNews " src="//product.hstatic.net/200000317851/product/1_4217fe6b6237409ca90f5c44cb5ca319_medium.jpg"/>
+            </a>
+            <div class="button-add d-none d-md-flex">
+             <button class="btnQuickView quick-view" data-handle="/products/sach-hieu-ve-trai-tim-firstnews" data-tooltip="Xem nhanh" type="button">
+              <i aria-hidden="true" class="fal fa-search-plus">
+              </i>
+             </button>
+             <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1075079823');" title="Thêm vào giỏ">
+              <i class="fal fa-cart-plus">
+              </i>
+             </button>
+             <a data-tooltip="Chi tiết" href="/products/sach-hieu-ve-trai-tim-firstnews">
+              <i class="fal fa-eye">
+              </i>
+             </a>
+            </div>
+           </div>
+           <div class="product-detail">
+            <h3 class="pro-name">
+             <a href="/products/sach-hieu-ve-trai-tim-firstnews" title="Sách - Hiểu về trái tim - FirstNews">
+              Sách - Hiểu về trái tim - FirstNews
+             </a>
+            </h3>
+            <p class="pro-price highlight">
+             <del class="compare-price">
+              138,000₫
+             </del>
+             <span class="current-price">
+              117,300₫
+             </span>
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="col-md-4 col-6">
+          <div class="product-item">
+           <div class="product-img">
+            <a href="/products/boc-dan-tuyet-dinh-cac-em-be-dong-vat">
+             <img alt=" Bóc dán tuyệt đỉnh - Các em bé động vật " src="//product.hstatic.net/200000317851/product/1_13646c3e1cab40b0aa8ef804af5c62ef_medium.jpg"/>
+            </a>
+            <div class="button-add d-none d-md-flex">
+             <button class="btnQuickView quick-view" data-handle="/products/boc-dan-tuyet-dinh-cac-em-be-dong-vat" data-tooltip="Xem nhanh" type="button">
+              <i aria-hidden="true" class="fal fa-search-plus">
+              </i>
+             </button>
+             <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839472');" title="Thêm vào giỏ">
+              <i class="fal fa-cart-plus">
+              </i>
+             </button>
+             <a data-tooltip="Chi tiết" href="/products/boc-dan-tuyet-dinh-cac-em-be-dong-vat">
+              <i class="fal fa-eye">
+              </i>
+             </a>
+            </div>
+           </div>
+           <div class="product-detail">
+            <h3 class="pro-name">
+             <a href="/products/boc-dan-tuyet-dinh-cac-em-be-dong-vat" title="Bóc dán tuyệt đỉnh - Các em bé động vật">
+              Bóc dán tuyệt đỉnh - Các em bé động vật
+             </a>
+            </h3>
+            <p class="pro-price">
+             <span class="current-price">
+              159,000₫
+             </span>
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="col-md-4 col-6">
+          <div class="product-item">
+           <div class="product-img">
+            <div class="product-sale">
+             <span>
+              -29%
+             </span>
+            </div>
+            <a href="/products/combo-boc-dan-tuyet-dinh-6t">
+             <img alt=" Combo Bóc dán tuyệt đỉnh 6T " src="//product.hstatic.net/200000317851/product/1_4afbaa310b254c34b178ec6460498577_medium.jpg"/>
+            </a>
+            <div class="button-add d-none d-md-flex">
+             <button class="btnQuickView quick-view" data-handle="/products/combo-boc-dan-tuyet-dinh-6t" data-tooltip="Xem nhanh" type="button">
+              <i aria-hidden="true" class="fal fa-search-plus">
+              </i>
+             </button>
+             <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839436');" title="Thêm vào giỏ">
+              <i class="fal fa-cart-plus">
+              </i>
+             </button>
+             <a data-tooltip="Chi tiết" href="/products/combo-boc-dan-tuyet-dinh-6t">
+              <i class="fal fa-eye">
+              </i>
+             </a>
+            </div>
+           </div>
+           <div class="product-detail">
+            <h3 class="pro-name">
+             <a href="/products/combo-boc-dan-tuyet-dinh-6t" title="Combo Bóc dán tuyệt đỉnh 6T">
+              Combo Bóc dán tuyệt đỉnh 6T
+             </a>
+            </h3>
+            <p class="pro-price highlight">
+             <del class="compare-price">
+              700,000₫
+             </del>
+             <span class="current-price">
+              500,000₫
+             </span>
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="col-md-4 col-6">
+          <div class="product-item">
+           <div class="product-img">
+            <div class="product-sale">
+             <span>
+              -42%
+             </span>
+            </div>
+            <a href="/products/com-cuon-sach-boc-dan-dau-tien-cua-to-4t">
+             <img alt=" Com Cuốn sách bóc dán đầu tiên của tớ 4T " src="//product.hstatic.net/200000317851/product/1_a7a2360e873947a6a8e05d7b23de8112_medium.jpg"/>
+            </a>
+            <div class="button-add d-none d-md-flex">
+             <button class="btnQuickView quick-view" data-handle="/products/com-cuon-sach-boc-dan-dau-tien-cua-to-4t" data-tooltip="Xem nhanh" type="button">
+              <i aria-hidden="true" class="fal fa-search-plus">
+              </i>
+             </button>
+             <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839368');" title="Thêm vào giỏ">
+              <i class="fal fa-cart-plus">
+              </i>
+             </button>
+             <a data-tooltip="Chi tiết" href="/products/com-cuon-sach-boc-dan-dau-tien-cua-to-4t">
+              <i class="fal fa-eye">
+              </i>
+             </a>
+            </div>
+           </div>
+           <div class="product-detail">
+            <h3 class="pro-name">
+             <a href="/products/com-cuon-sach-boc-dan-dau-tien-cua-to-4t" title="Com Cuốn sách bóc dán đầu tiên của tớ 4T">
+              Com Cuốn sách bóc dán đầu tiên của tớ 4T
+             </a>
+            </h3>
+            <p class="pro-price highlight">
+             <del class="compare-price">
+              500,000₫
+             </del>
+             <span class="current-price">
+              292,000₫
+             </span>
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="col-md-4 col-6">
+          <div class="product-item">
+           <div class="product-img">
+            <a href="/products/hello-english-xin-chao-tieng-anh-tieng-anh-cho-nguoi-moi-hoc">
+             <img alt=" Hello English! - Xin chào tiếng Anh!- Tiếng Anh cho người mới học " src="//product.hstatic.net/200000317851/product/1_b9077542b49844309e9723d50b9ecd8f_medium.jpg"/>
+            </a>
+            <div class="button-add d-none d-md-flex">
+             <button class="btnQuickView quick-view" data-handle="/products/hello-english-xin-chao-tieng-anh-tieng-anh-cho-nguoi-moi-hoc" data-tooltip="Xem nhanh" type="button">
+              <i aria-hidden="true" class="fal fa-search-plus">
+              </i>
+             </button>
+             <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839254');" title="Thêm vào giỏ">
+              <i class="fal fa-cart-plus">
+              </i>
+             </button>
+             <a data-tooltip="Chi tiết" href="/products/hello-english-xin-chao-tieng-anh-tieng-anh-cho-nguoi-moi-hoc">
+              <i class="fal fa-eye">
+              </i>
+             </a>
+            </div>
+           </div>
+           <div class="product-detail">
+            <h3 class="pro-name">
+             <a href="/products/hello-english-xin-chao-tieng-anh-tieng-anh-cho-nguoi-moi-hoc" title="Hello English! - Xin chào tiếng Anh!- Tiếng Anh cho người mới học">
+              Hello English! - Xin chào tiếng Anh!- Tiếng Anh cho người mới học
+             </a>
+            </h3>
+            <p class="pro-price">
+             <span class="current-price">
+              160,000₫
+             </span>
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="col-md-4 col-6">
+          <div class="product-item">
+           <div class="product-img">
+            <a href="/products/hello-english-xin-chao-tieng-anh-tu-dien-tieng-anh-bang-hinh">
+             <img alt=" Hello English! - Xin chào tiếng Anh!- Từ điển tiếng Anh bằng hình " src="//product.hstatic.net/200000317851/product/1_08253c28898c4d02b0ce2871ba06ba75_medium.jpg"/>
+            </a>
+            <div class="button-add d-none d-md-flex">
+             <button class="btnQuickView quick-view" data-handle="/products/hello-english-xin-chao-tieng-anh-tu-dien-tieng-anh-bang-hinh" data-tooltip="Xem nhanh" type="button">
+              <i aria-hidden="true" class="fal fa-search-plus">
+              </i>
+             </button>
+             <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839208');" title="Thêm vào giỏ">
+              <i class="fal fa-cart-plus">
+              </i>
+             </button>
+             <a data-tooltip="Chi tiết" href="/products/hello-english-xin-chao-tieng-anh-tu-dien-tieng-anh-bang-hinh">
+              <i class="fal fa-eye">
+              </i>
+             </a>
+            </div>
+           </div>
+           <div class="product-detail">
+            <h3 class="pro-name">
+             <a href="/products/hello-english-xin-chao-tieng-anh-tu-dien-tieng-anh-bang-hinh" title="Hello English! - Xin chào tiếng Anh!- Từ điển tiếng Anh bằng hình">
+              Hello English! - Xin chào tiếng Anh!- Từ điển tiếng Anh bằng hình
+             </a>
+            </h3>
+            <p class="pro-price">
+             <span class="current-price">
+              155,000₫
+             </span>
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="col-md-4 col-6">
+          <div class="product-item">
+           <div class="product-img">
+            <a href="/products/hello-english-xin-chao-tieng-anh-to-mau-cung-tieng-anh">
+             <img alt=" Hello English! - Xin chào tiếng Anh!- Tô màu cùng tiếng Anh " src="//product.hstatic.net/200000317851/product/1_03407228ce004ae3a34c41812a342de9_medium.jpg"/>
+            </a>
+            <div class="button-add d-none d-md-flex">
+             <button class="btnQuickView quick-view" data-handle="/products/hello-english-xin-chao-tieng-anh-to-mau-cung-tieng-anh" data-tooltip="Xem nhanh" type="button">
+              <i aria-hidden="true" class="fal fa-search-plus">
+              </i>
+             </button>
+             <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839164');" title="Thêm vào giỏ">
+              <i class="fal fa-cart-plus">
+              </i>
+             </button>
+             <a data-tooltip="Chi tiết" href="/products/hello-english-xin-chao-tieng-anh-to-mau-cung-tieng-anh">
+              <i class="fal fa-eye">
+              </i>
+             </a>
+            </div>
+           </div>
+           <div class="product-detail">
+            <h3 class="pro-name">
+             <a href="/products/hello-english-xin-chao-tieng-anh-to-mau-cung-tieng-anh" title="Hello English! - Xin chào tiếng Anh!- Tô màu cùng tiếng Anh">
+              Hello English! - Xin chào tiếng Anh!- Tô màu cùng tiếng Anh
+             </a>
+            </h3>
+            <p class="pro-price">
+             <span class="current-price">
+              139,000₫
+             </span>
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="col-md-4 col-6">
+          <div class="product-item">
+           <div class="product-img">
+            <a href="/products/hello-english-xin-chao-tieng-anh-bai-tap-tieng-anh">
+             <img alt=" Hello English! - Xin chào tiếng Anh!- Bài tập tiếng Anh " src="//product.hstatic.net/200000317851/product/1_834de600ca8246acbadb3d9bb361cb5f_medium.jpg"/>
+            </a>
+            <div class="button-add d-none d-md-flex">
+             <button class="btnQuickView quick-view" data-handle="/products/hello-english-xin-chao-tieng-anh-bai-tap-tieng-anh" data-tooltip="Xem nhanh" type="button">
+              <i aria-hidden="true" class="fal fa-search-plus">
+              </i>
+             </button>
+             <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069839081');" title="Thêm vào giỏ">
+              <i class="fal fa-cart-plus">
+              </i>
+             </button>
+             <a data-tooltip="Chi tiết" href="/products/hello-english-xin-chao-tieng-anh-bai-tap-tieng-anh">
+              <i class="fal fa-eye">
+              </i>
+             </a>
+            </div>
+           </div>
+           <div class="product-detail">
+            <h3 class="pro-name">
+             <a href="/products/hello-english-xin-chao-tieng-anh-bai-tap-tieng-anh" title="Hello English! - Xin chào tiếng Anh!- Bài tập tiếng Anh">
+              Hello English! - Xin chào tiếng Anh!- Bài tập tiếng Anh
+             </a>
+            </h3>
+            <p class="pro-price">
+             <span class="current-price">
+              100,000₫
+             </span>
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="col-md-4 col-6">
+          <div class="product-item">
+           <div class="product-img">
+            <a href="/products/sach-chieu-bong-than-ky-cay-khe">
+             <img alt=" Sách chiếu bóng thần kỳ - Cây khế " src="//product.hstatic.net/200000317851/product/1_c057eecf052b4c4eba4c6491fda9beee_medium.jpg"/>
+            </a>
+            <div class="button-add d-none d-md-flex">
+             <button class="btnQuickView quick-view" data-handle="/products/sach-chieu-bong-than-ky-cay-khe" data-tooltip="Xem nhanh" type="button">
+              <i aria-hidden="true" class="fal fa-search-plus">
+              </i>
+             </button>
+             <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069838978');" title="Thêm vào giỏ">
+              <i class="fal fa-cart-plus">
+              </i>
+             </button>
+             <a data-tooltip="Chi tiết" href="/products/sach-chieu-bong-than-ky-cay-khe">
+              <i class="fal fa-eye">
+              </i>
+             </a>
+            </div>
+           </div>
+           <div class="product-detail">
+            <h3 class="pro-name">
+             <a href="/products/sach-chieu-bong-than-ky-cay-khe" title="Sách chiếu bóng thần kỳ - Cây khế">
+              Sách chiếu bóng thần kỳ - Cây khế
+             </a>
+            </h3>
+            <p class="pro-price">
+             <span class="current-price">
+              500,000₫
+             </span>
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="col-md-4 col-6">
+          <div class="product-item">
+           <div class="product-img">
+            <a href="/products/sach-chieu-bong-than-ky-su-tich-banh-chung-banh-giay">
+             <img alt=" Sách chiếu bóng thần kỳ - Sự tích Bánh Chưng Bánh Giầy " src="//product.hstatic.net/200000317851/product/1_7371509cf4924429a58b08efc439f321_medium.jpg"/>
+            </a>
+            <div class="button-add d-none d-md-flex">
+             <button class="btnQuickView quick-view" data-handle="/products/sach-chieu-bong-than-ky-su-tich-banh-chung-banh-giay" data-tooltip="Xem nhanh" type="button">
+              <i aria-hidden="true" class="fal fa-search-plus">
+              </i>
+             </button>
+             <button class="action" data-tooltip="Thêm vào giỏ" onclick="add_to_cart('1069838918');" title="Thêm vào giỏ">
+              <i class="fal fa-cart-plus">
+              </i>
+             </button>
+             <a data-tooltip="Chi tiết" href="/products/sach-chieu-bong-than-ky-su-tich-banh-chung-banh-giay">
+              <i class="fal fa-eye">
+              </i>
+             </a>
+            </div>
+           </div>
+           <div class="product-detail">
+            <h3 class="pro-name">
+             <a href="/products/sach-chieu-bong-than-ky-su-tich-banh-chung-banh-giay" title="Sách chiếu bóng thần kỳ - Sự tích Bánh Chưng Bánh Giầy">
+              Sách chiếu bóng thần kỳ - Sự tích Bánh Chưng Bánh Giầy
+             </a>
+            </h3>
+            <p class="pro-price">
+             <span class="current-price">
+              300,000₫
+             </span>
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="sortpagibar pagi clearfix text-center">
+         <div class="clearfix" id="pagination">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+           <span class="page-node current">
+            1
+           </span>
+           <a class="page-node" href="/collections/all?page=2">
+            2
+           </a>
+           <a class="next" href="/collections/all?page=2">
+            <svg style="enable-background:new 0 0 31 10; width: 31px; height: 10px;" version="1.1" viewbox="0 0 31 10" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+             <polygon points="31,5 25,0 25,4 0,4 0,6 25,6 25,10 ">
+             </polygon>
+            </svg>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <input class="hidden" id="coll-handle" type="text" value="(collectionid:product&gt;0)"/>
+ </div>
+ <div class="site-overlay" id="site-overlay">
+ </div>
+</div>
+<div class="overlay-filter">
+</div>
+<link as="script" href="https://cdn.hstatic.net/shared/option_selection.js" rel="preload"/>
+<link as="script" href="https://cdn.hstatic.net/shared/api.jquery.js" rel="preload"/>
+<link as="script" href="//theme.hstatic.net/200000317851/1000697347/14/plugins.js?v=1174" rel="preload"/>
+<link as="script" href="//theme.hstatic.net/200000317851/1000697347/14/scripts.js?v=1174" rel="preload"/>
+popup loaded 
+
+ quick view
+<style>
+ .modal-content {
+	background-color: #fefefe;
+	margin: 5% auto !important;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+	max-width: 780px;
+	transform: translatey(-30px);
+	transition: all .5s;
+	}
+
+	.close {
+	color: #aaa;
+	font-size: 28px;
+	font-weight: bold;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 40px;
+	text-align: center;
+	}
+
+	.close:hover,
+	.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+	}
+</style>
+<div class="modal" id="productQuickView">
+ <div class="modal-content">
+  <span class="close" id="close">
+   ×
+  </span>
+  <form class="row" id="form-quick-view">
+   <div class="col-12 col-md-6">
+    <div class="image-zoom">
+     <img alt="" class="p-product-image-feature" id="p-product-image-feature" src=""/>
+     <div class="flexslider" id="p-sliderproduct">
+      <ul class="slides">
+      </ul>
+     </div>
+    </div>
+   </div>
+   <div class="col-12 col-md-6">
+    <h4 class="p-title modal-title" id="">
+     Tên sản phẩm
+    </h4>
+    <p class="product-more-info">
+     <span class="product-sku">
+      Mã sản phẩm:
+      <span id="ProductSku">
+       01923123
+      </span>
+     </span>
+    </p>
+    <div class="form-input product-price-wrapper">
+     <div class="product-price">
+      <span class="p-price">
+      </span>
+      <del>
+      </del>
+     </div>
+     <em id="PriceSaving">
+     </em>
+    </div>
+    <div class="p-option-wrapper">
+     <select class="" id="p-select-quickview" name="id">
+     </select>
+    </div>
+    <div class="select-swatch" id="swatch-quick-view">
+    </div>
+    <div class="form-input">
+     <label>
+      Số lượng
+     </label>
+     <div class="quantity-area clearfix">
+      <input class="qty-btn" onclick="minusQuantity2()" type="button" value="-"/>
+      <input class="quantity-selector" id="quantity_qv" name="quantity_qv" type="text" value="1"/>
+      <input class="qty-btn" onclick="plusQuantity2()" type="button" value="+"/>
+     </div>
+    </div>
+    <div class="form-input" style="width: 100%">
+     <button class="btn btn-addcart" id="AddToCardQuickView" type="submit">
+      Thêm vào giỏ
+     </button>
+     <button class="btn btn-soldout" disabled="">
+      Hết hàng
+     </button>
+     <div class="qv-readmore">
+      <span>
+       hoặc
+      </span>
+      <a class="read-more p-url" href="" role="button">
+       Xem chi tiết
+      </a>
+     </div>
+    </div>
+   </div>
+  </form>
+ </div>
+ <div id="loading">
+  <div>
+  </div>
+ </div>
+</div>
+<div id="modalAddComplete">
+</div>
+<button id="modalAddCompleteBtn" style="display: none;" type="button">
+</button>
+<div class="d-none d-sm-block" id="fixed-social-network">
+ <a class="zalo-icon" href="https://zalo.me/1900.636.099" target="_blank">
+  <img alt="Icon-Zalo" class="img-fluid" src="https://file.hstatic.net/200000259495/file/zalo_d9dc3417eb744b91a44643f29b8c7161.svg"/>
+  Zalo
+ </a>
+ <a class="messenger-icon" href="https://facebook.com/facebook" target="_blank">
+  <img alt="Icon-Messager" class="img-fluid" src="https://file.hstatic.net/200000259495/file/messager_208d7389c4ac46b5a01afad457684cd6.svg"/>
+  Messenger
+ </a>
+ <a href="https://youtube.com" target="_blank">
+  <img alt="Icon-Youtube" class="img-fluid" src="https://file.hstatic.net/200000259495/file/youtube_479e81022bcb432f89376b2fea8f08ef.svg"/>
+  Youtube
+ </a>
+ <a href="https://instagram.com" target="_blank">
+  <img alt="Icon-Instagram" class="img-fluid" src="https://file.hstatic.net/200000259495/file/instagram_81b9ae8829a940a7aa5b7926152ed378.svg"/>
+  Instagram
+ </a>
+ <a href="" target="_blank">
+  <img alt="Icon-Twitter" class="img-fluid" src="https://file.hstatic.net/200000259495/file/twitter_87a4097176de4ee48ab97ee2113a6540.svg"/>
+  Twitter
+ </a>
+ <a href="javascript:;" id="back-to-top">
+  <i class="fal fa-angle-up">
+  </i>
+  Lên đầu trang
+ </a>
+</div>
+<div class="back-to-top hidden">
+ <a href="javascript:void(0);">
+  <div class="btt-back">
+   <span class="btt-label-back">
+    back to top
+   </span>
+   <span class="btt-icon-back">
+    <i class="fa fa-long-arrow-up">
+    </i>
+   </span>
+  </div>
+ </a>
+</div>
+
+{%endblock %}
