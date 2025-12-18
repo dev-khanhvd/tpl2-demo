@@ -1,0 +1,805 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(news.title | striptags).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ news.metaKeywords?:news.name }}">
+<meta name="description" content="{{ news.metaDescription?:news.name }}">
+<meta property="og:title" content="{{ news.metaTitle?:news.name }}">
+<meta property="og:url" content="{{ news.canonicalLink }}">
+<meta property="og:image" content="{{ news.pictureUri }}">
+<link rel="canonical" href="{{ news.canonicalLink }}">
+{%endblock %}
+
+{%block body %}
+
+<div class="nav-overlay" onclick="initNav('close')">
+</div>
+<nav class="hidden" id="menu-mobile">
+ <ul>
+  <li>
+   <a href="/">
+    Trang chủ
+   </a>
+  </li>
+  <li class="has-children">
+   <a href="/collections/all">
+    Sản phẩm
+   </a>
+   <ul class="child count-nav-3">
+    <li>
+     <a href="/collections/all">
+      Tât cả sản phẩm
+     </a>
+    </li>
+    <li>
+     <a href="/collections/all">
+      Sản phẩm mới
+     </a>
+    </li>
+    <li>
+     <a href="/collections/all">
+      Sản phẩm nổi bật
+     </a>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <a href="/blogs/news">
+    Tin tức
+   </a>
+  </li>
+  <li>
+   <a href="/pages/about-us">
+    Giới thiệu
+   </a>
+  </li>
+  <li>
+   <a href="/pages/he-thong-cua-hang">
+    Hệ thống cửa hàng
+   </a>
+  </li>
+  <li>
+   <a href="/pages/lien-he">
+    Liên hệ
+   </a>
+  </li>
+ </ul>
+</nav>
+<svg class="hidden" xmlns="http://www.w3.org/2000/svg">
+ <symbol id="icon-add-cart">
+  <svg enable-background="new 0 0 512 512" viewbox="0 0 512 512" x="0px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+   <g>
+    <g>
+     <polygon points="447.992,336 181.555,336 69.539,80 0.008,80 0.008,48 90.477,48 202.492,304 447.992,304 		">
+     </polygon>
+    </g>
+    <path d="M287.992,416c0,26.5-21.5,48-48,48s-48-21.5-48-48s21.5-48,48-48S287.992,389.5,287.992,416z">
+    </path>
+    <path d="M447.992,416c0,26.5-21.5,48-48,48s-48-21.5-48-48s21.5-48,48-48S447.992,389.5,447.992,416z">
+    </path>
+    <g>
+     <polygon points="499.18,144 511.992,112 160.008,112 172.805,144 		">
+     </polygon>
+     <polygon points="211.195,240 223.992,272 447.992,272 460.805,240 		">
+     </polygon>
+     <polygon points="486.398,176 185.602,176 198.398,208 473.586,208 		">
+     </polygon>
+    </g>
+   </g>
+  </svg>
+ </symbol>
+ <symbol id="icon-list-switch">
+  <svg style="enable-background:new 0 0 194.828 194.828;" viewbox="0 0 194.828 194.828" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+   <g>
+    <g>
+     <g>
+      <path d="M190.931,17.534H3.897C1.745,17.534,0,19.279,0,21.431v19.483c0,2.152,1.745,3.897,3.897,3.897h187.034
+										 c2.152,0,3.897-1.745,3.897-3.897V21.431C194.828,19.279,193.083,17.534,190.931,17.534z M187.034,37.017H7.793v-11.69h179.241
+										 V37.017z">
+      </path>
+      <path d="M190.931,64.293H3.897C1.745,64.293,0,66.038,0,68.19v31.172c0,2.152,1.745,3.897,3.897,3.897h187.034
+										 c2.152,0,3.897-1.745,3.897-3.897V68.19C194.828,66.038,193.083,64.293,190.931,64.293z M187.034,95.466H7.793v-23.38h179.241
+										 V95.466z">
+      </path>
+      <path d="M190.931,122.741H3.897c-2.152,0-3.897,1.745-3.897,3.897v46.759c0,2.152,1.745,3.897,3.897,3.897h187.034
+										 c2.152,0,3.897-1.745,3.897-3.897v-46.759C194.828,124.486,193.083,122.741,190.931,122.741z M187.034,169.5H7.793v-38.966
+										 h179.241V169.5z">
+      </path>
+     </g>
+    </g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+  </svg>
+ </symbol>
+ <symbol id="icon-sort-by">
+  <svg style="enable-background:new 0 0 490 490;" viewbox="0 0 490 490" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+   <g>
+    <polygon points="85.877,154.014 85.877,428.309 131.706,428.309 131.706,154.014 180.497,221.213 217.584,194.27 108.792,44.46 
+												 0,194.27 37.087,221.213 	">
+    </polygon>
+    <polygon points="404.13,335.988 404.13,61.691 358.301,61.691 358.301,335.99 309.503,268.787 272.416,295.73 381.216,445.54 
+												 490,295.715 452.913,268.802 	">
+    </polygon>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+  </svg>
+ </symbol>
+ <symbol id="icon-search_white" viewbox="0 0 1024 1024">
+  <path class="path1" d="M1014.176 968.256l-264.32-260.128c69.184-75.264 111.68-174.688 111.68-284.128 0-234.080-192.8-423.872-430.688-423.872s-430.72 189.792-430.72 423.872c0 234.112 192.864 423.872 430.72 423.872 102.752 0 197.088-35.552 271.072-94.688l265.376 261.12c12.928 12.736 33.952 12.736 46.88 0 12.96-12.672 12.96-33.376 0-46.048zM430.848 782.688c-201.312 0-364.48-160.64-364.48-358.688 0-198.080 163.168-358.656 364.48-358.656 201.28 0 364.448 160.576 364.448 358.656 0.032 198.048-163.168 358.688-364.448 358.688z">
+  </path>
+ </symbol>
+ <symbol id="icon-user" viewbox="0 0 1024 1024">
+  <title>
+   user
+  </title>
+  <path class="path1" d="M622.826 702.736c-22.11-3.518-22.614-64.314-22.614-64.314s64.968-64.316 79.128-150.802c38.090 0 61.618-91.946 23.522-124.296 1.59-34.054 48.96-267.324-190.862-267.324s-192.45 233.27-190.864 267.324c-38.094 32.35-14.57 124.296 23.522 124.296 14.158 86.486 79.128 150.802 79.128 150.802s-0.504 60.796-22.614 64.314c-71.22 11.332-337.172 128.634-337.172 257.264h896c0-128.63-265.952-245.932-337.174-257.264z">
+  </path>
+ </symbol>
+</svg>
+<div class="main-body">
+ <div class="topbar">
+  <div class="container">
+   <div class="topbar-wrap d-flex align-items-center justify-content-between">
+    <div class="header-contact d-none d-lg-flex flex-grow-1">
+     <div class="item d-flex align-items-center">
+      <div class="icon">
+       <i class="fal fa-phone-volume">
+       </i>
+      </div>
+      <div class="info">
+       <a href="tel:0936342986">
+        0936342986
+       </a>
+      </div>
+     </div>
+     <div class="item d-flex align-items-center">
+      <div class="icon">
+       <i class="fal fa-envelope">
+       </i>
+      </div>
+      <div class="info">
+       <a href="mailto:theme.hogwarts@gmail.com">
+        theme.hogwarts@gmail.com
+       </a>
+      </div>
+     </div>
+     <div class="item d-flex align-items-center">
+      <div class="icon">
+       <i class="fal fa-map-marker-alt">
+       </i>
+      </div>
+      <div class="info">
+       <a href="/">
+        quận 11, Tp. Hồ Chí Minh
+       </a>
+      </div>
+     </div>
+    </div>
+    <div class="header-account ml-5">
+     <a class="mr-3 text-uppercase font-weight-bold d-none d-md-inline-block" href="/blogs/news">
+      Tin tức
+     </a>
+     <a class="mr-3 text-uppercase font-weight-bold d-none d-md-inline-block" href="/pages/he-thong-cua-hang">
+      Hệ thống cửa hàng
+     </a>
+     <a class="mr-3 text-uppercase font-weight-bold d-none d-md-inline-block" href="/pages/lien-he">
+      Liên hệ
+     </a>
+     <a class="mr-3 text-uppercase font-weight-bold" href="/account/login">
+      Đăng nhập
+     </a>
+     <a class="mr-3 text-uppercase font-weight-bold" href="/account/register">
+      Đăng ký
+     </a>
+    </div>
+    <div class="header-action_cart">
+     <div aria-expanded="false" aria-haspopup="true" class="header-action_text cursor-pointer" data-toggle="dropdown" id="dropdownCartButton">
+      <div aria-label="Giỏ hàng" class="header-action__link header-action-toggle" title="Giỏ hàng">
+       <span class="box-icon">
+        <i class="fal fa-shopping-cart">
+        </i>
+        <span class="count-holder">
+         <span class="count">
+          0
+         </span>
+        </span>
+       </span>
+      </div>
+     </div>
+     <div aria-labelledby="dropdownCartButton" class="header-action_dropdown dropdown-menu dropdown-menu-right">
+      <span class="box-triangle">
+       <svg viewbox="0 0 20 9">
+        <path d="M.47108938 9c.2694725-.26871321.57077721-.56867841.90388257-.89986354C3.12384116 6.36134886 5.74788116 3.76338565 9.2467995.30653888c.4145057-.4095171 1.0844277-.40860098 1.4977971.00205122L19.4935156 9H.47108938z" fill="#ffffff">
+        </path>
+       </svg>
+      </span>
+      <div class="header-dropdown_content">
+       <div class="site-cart">
+        <div class="cart-view clearfix">
+         <div class="cart-view-scroll">
+          <table class="table-clone-cart" id="clone-item-cart">
+           <tr class="item_2 hidden" data-variant-id="">
+            <td class="img">
+             <a href="" title="">
+              <img alt="" src="//theme.hstatic.net/200000317851/1000697347/14/1x1.jpg?v=1174"/>
+             </a>
+            </td>
+            <td>
+             <p class="pro-title">
+              <a class="pro-title-view" href="" title="">
+              </a>
+              <span class="variant">
+              </span>
+             </p>
+             <div class="mini-cart_quantity">
+              <div class="pro-quantity-view">
+               <span class="qty-value">
+               </span>
+              </div>
+              <div class="pro-price-view">
+              </div>
+             </div>
+             <div class="remove_link remove-cart">
+             </div>
+            </td>
+           </tr>
+          </table>
+          <table id="cart-view">
+           <tr class="item-cart_empty">
+            <td>
+             <div class="svgico-mini-cart">
+              <i class="fal fa-shopping-cart">
+              </i>
+             </div>
+             Hiện chưa có sản phẩm
+            </td>
+           </tr>
+          </table>
+         </div>
+         <div class="line">
+         </div>
+         <div class="cart-view-total">
+          <table class="table-total">
+           <tr>
+            <td class="text-left">
+             TỔNG TIỀN:
+            </td>
+            <td class="text-right" id="total-view-cart">
+             0₫
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <a class="linktocart btn btn-primary btn-sm text-uppercase" href="/cart">
+              Xem giỏ hàng
+             </a>
+            </td>
+            <td>
+             <a class="linktocheckout btn btn-primary btn-sm text-uppercase" href="/checkout">
+              Thanh toán
+             </a>
+            </td>
+           </tr>
+          </table>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div id="article">
+  <div class="breadcrumb-shop">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pd5 blog-breadcrumb">
+      <ol class="breadcrumb breadcrumb-arrows" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+       <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+        <a href="/" itemprop="item" target="_self">
+         <span itemprop="name">
+          Trang chủ
+         </span>
+        </a>
+        <meta content="1" itemprop="position"/>
+       </li>
+       <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+        <a href="/blogs/news" itemprop="item">
+         <span itemprop="name">
+          Tin tức
+         </span>
+        </a>
+        <meta content="2" itemprop="position"/>
+       </li>
+       <li class="active" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+        <span content="https://hogwarts-book.myharavan.com/blogs/news/truyen-co-tich-duoc-tai-hien-voi-phong-cach-hoan-toan-moi-la" itemprop="item">
+         <span itemprop="name">
+          Truyện cổ tích được tái hiện với phong cách hoàn toàn mới lạ
+         </span>
+        </span>
+        <meta content="3" itemprop="position"/>
+       </li>
+      </ol>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="wrapper-row pd-page py-5">
+   <div class="container">
+    <div class="row">
+     <div class="col-12 col-lg-9">
+      <div class="content-page">
+       <div class="article-content">
+        <div class="box-article-heading clearfix">
+         <div class="background-img">
+          <img alt="Truyện cổ tích được tái hiện với phong cách hoàn toàn mới lạ" src="//file.hstatic.net/200000317851/article/1_e5ac298df6c744f3bc58ddee8f9b4797_1024x1024.jpg"/>
+         </div>
+         <h1 class="sb-title-article">
+          Truyện cổ tích được tái hiện với phong cách hoàn toàn mới lạ
+         </h1>
+         <ul class="article-info-more">
+          <li>
+           Người viết: test lúc
+           <time datetime="2021-04-12" pubdate="">
+            12.04.2021
+           </time>
+          </li>
+          <li>
+           <i class="fa fa-file-text-o">
+           </i>
+           <a href="#">
+            Tin tức
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div class="article-pages">
+         <p>
+          <em>
+           [Vietnamnet]
+          </em>
+          Kết hợp những ưu điểm tuyệt vời của cả truyện cổ tích và dòng sách tương tác,
+          <em>
+           Truyện cổ tích hình nổi
+          </em>
+          không chỉ đơn thuần là sách mà còn là món “đồ chơi tri thức” đầy sáng tạo.
+         </p>
+         <p>
+          Truyện cổ tích qua bao thế hệ vẫn luôn là món ăn tinh thần không thể thiếu đối với các bạn nhỏ. Và truyện cổ tích hình nổi lại càng hấp dẫn hơn nhiều lần vì hình thức thể hiện mới lạ, giúp phát huy tối đa các giác quan và trí tưởng tượng phong phú của trẻ em.
+         </p>
+         <p>
+          Vẫn là những câu văn, lời thoại vô cùng quen thuộc từ những câu chuyện cổ tích kinh điển, bộ Truyện cổ tích hình nổi với hai tập vừa ra mắt là Chú mèo đi hia và Vịt con xấu xí sẽ tái hiện lại không gian cổ tích đầy kỳ ảo, đưa trẻ vào những hành trình phiêu lưu cùng nhân vật, từ đó được trải qua mọi cung bậc cảm xúc một cách tự nhiên, phát triển tư duy lành mạnh, trong sáng và bồi dưỡng những phẩm chất tốt đẹp. Đặc biệt, truyện được viết bằng cả hai ngôn ngữ Việt - Anh sẽ cực kỳ hữu ích trong việc làm giàu vốn từ vựng, phát triển ngôn ngữ ở trẻ.
+         </p>
+         <p>
+          Trẻ em vốn luôn thích những điều kỳ diệu, dễ dàng bị thu hút bởi những hình ảnh bắt mắt, sinh động, đặc biệt là các hình thức tương tác mới lạ để bé vừa đọc vừa sờ chạm và cảm nhận. Truyện cổ tích hình nổi chính là bộ sách độc đáo “có một không hai” như thế. Với hình vẽ sắc nét, màu sắc nổi bật, cảnh quan, nhân vật được minh họa bằng hình nổi, sống động như thật, chắc chắn các bạn nhỏ sẽ không thể rời mắt khỏi những trang truyện hấp dẫn, giúp ích cho trí tưởng tượng và ghi nhớ nội dung câu chuyện nhanh hơn, sâu hơn, ấn tượng hơn.
+         </p>
+         <p>
+          <img src="https://file.hstatic.net/1000186499/file/dti02222_5a95dd1dc7fe425a9cdf65aaa3e5e6d6_grande.jpg"/>
+         </p>
+         <p>
+          Kết hợp những ưu điểm tuyệt vời của cả truyện cổ tích và dòng sách tương tác, Truyện cổ tích hình nổi không chỉ đơn thuần là sách nữa mà còn là món “đồ chơi tri thức” đầy sáng tạo giúp bé thỏa sức tìm tòi, khám phá và phát huy sự chủ động của mình. Đôi tai được lắng nghe giọng đọc truyền cảm của cha mẹ, đôi mắt được ngắm nhìn những hình ảnh tuyệt đẹp còn đôi tay thì được thỏa sức sờ, chạm, cảm nhận các hình khối, kích thước, con vật, đồ vật... Giờ đây, đọc sách sẽ chẳng bao giờ nhàm chán nữa mà trở nên đầy lôi cuốn và đem lại những phút giây vui vẻ, hứng khởi vô cùng tận cho các bạn nhỏ.
+         </p>
+         <p>
+          Vẫn giữ được những giá trị cũ của truyện cổ tích nhưng hình thức và nội dung đều được làm mới gần gũi và tươi mới phù hợp với bối cảnh hiện đại nên những câu chuyện cổ tích này chắc chắn sẽ khiến các bạn nhỏ thích thú. Bộ sách phù hợp cho những bạn nhỏ từ 2 tuổi trở lên, hứa hẹn sẽ là bộ sách cổ tích đầu đời giúp phát triển tư duy ngôn ngữ, tư duy hình ảnh và vận động tinh ở trẻ nhỏ.
+         </p>
+        </div>
+        <div class="post-navigation">
+         <span class="left">
+          <a href="/blogs/news/tai-sao-cac-be-gai-thuong-thich-hoa-than-thanh-cong-chua-trong-truyen" title="">
+           ← Bài trước
+          </a>
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="col-12 col-lg-3">
+      <div class="sidebar-blog">
+       <div class="news-latest sidebar-block">
+        <div class="sidebar-title title_block">
+         <h3>
+          Bài viết mới nhất
+          <span class="fal fa-angle-down">
+          </span>
+         </h3>
+        </div>
+        <div class="list-news-latest layered">
+         <div class="item-article clearfix abc">
+          <div class="post-image">
+           <a href="/blogs/news/tri-thoi-an-va-voi-phuong-phap-cuc-ki-don-gian">
+            <img alt="Trị thói ăn vạ với phương pháp cực kì đơn giản" src="//file.hstatic.net/200000317851/article/3_075a6cc2027e4fa2858f3dae4baff0fe_large.jpg"/>
+           </a>
+          </div>
+          <div class="post-content">
+           <h3>
+            <a href="/blogs/news/tri-thoi-an-va-voi-phuong-phap-cuc-ki-don-gian">
+             Trị thói ăn vạ với phương pháp cực kì đơn giản
+            </a>
+           </h3>
+           <span class="date">
+            12.04.2021
+           </span>
+          </div>
+         </div>
+         <div class="item-article clearfix abc">
+          <div class="post-image">
+           <a href="/blogs/news/tai-sao-cac-be-gai-thuong-thich-hoa-than-thanh-cong-chua-trong-truyen">
+            <img alt="Tại sao các bé gái thường thích hóa thân thành công chúa trong truyện cổ tích?" src="//file.hstatic.net/200000317851/article/2_3306f8b9f8024960b4f00d17da28f8d6_large.jpg"/>
+           </a>
+          </div>
+          <div class="post-content">
+           <h3>
+            <a href="/blogs/news/tai-sao-cac-be-gai-thuong-thich-hoa-than-thanh-cong-chua-trong-truyen">
+             Tại sao các bé gái thường thích hóa thân thành công chúa trong truyện cổ tích?
+            </a>
+           </h3>
+           <span class="date">
+            12.04.2021
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="menu-blog sidebar-block">
+        <div class="group-menu">
+         <div class="sidebar-title title_block">
+          <h3>
+           Tin tức
+           <span class="fal fa-angle-down">
+           </span>
+          </h3>
+         </div>
+         <div class="layered layered-category">
+          <div class="layered-content">
+           <ul class="tree-menu">
+            <li class="tree-menu-lv1 has-child menu-uncollap">
+             <a class="" href="javascript:void(0)" target="_self" title="Truyện">
+              <span class="">
+               Truyện
+              </span>
+              <span class="icon-control">
+               <i class="fal fa-angle-down">
+               </i>
+              </span>
+             </a>
+             <ul class="tree-menu-sub">
+              <li>
+               <span>
+               </span>
+               <a href="/" title="Kinh dị">
+                Kinh dị
+               </a>
+              </li>
+              <li>
+               <span>
+               </span>
+               <a href="/" title="Truyện chữ">
+                Truyện chữ
+               </a>
+              </li>
+              <li>
+               <span>
+               </span>
+               <a href="/" title="Lịch sử">
+                Lịch sử
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li class="">
+             <span>
+             </span>
+             <a class="" href="/collections/all" target="_self" title="Tiểu sử">
+              Tiểu sử
+             </a>
+            </li>
+            <li class="">
+             <span>
+             </span>
+             <a class="" href="/collections/all" target="_self" title="Khoa học viễn tưởng">
+              Khoa học viễn tưởng
+             </a>
+            </li>
+            <li class="">
+             <span>
+             </span>
+             <a class="" href="/collections/all" target="_self" title="Truyện ngắn">
+              Truyện ngắn
+             </a>
+            </li>
+            <li class="">
+             <span>
+             </span>
+             <a class="" href="/collections/all" target="_self" title="Dịch vụ">
+              Dịch vụ
+             </a>
+            </li>
+            <li class="">
+             <span>
+             </span>
+             <a class="" href="/collections/all" target="_self" title="Địa lý">
+              Địa lý
+             </a>
+            </li>
+            <li class="">
+             <span>
+             </span>
+             <a class="" href="/collections/all" target="_self" title="Kinh dị">
+              Kinh dị
+             </a>
+            </li>
+            <li class="tree-menu-lv1 has-child menu-collap">
+             <a class="" href="javascript:void(0)" target="_self" title="Thiếu nhi">
+              <span class="">
+               Thiếu nhi
+              </span>
+              <span class="icon-control">
+               <i class="fal fa-angle-down">
+               </i>
+              </span>
+             </a>
+             <ul class="tree-menu-sub">
+              <li>
+               <span>
+               </span>
+               <a href="/" title="Dân gian">
+                Dân gian
+               </a>
+              </li>
+              <li>
+               <span>
+               </span>
+               <a href="/" title="Việt Nam">
+                Việt Nam
+               </a>
+              </li>
+              <li>
+               <span>
+               </span>
+               <a href="/" title="Nước ngoài">
+                Nước ngoài
+               </a>
+              </li>
+             </ul>
+            </li>
+            <li class="">
+             <span>
+             </span>
+             <a class="" href="/collections/all" target="_self" title="Kinh doanh">
+              Kinh doanh
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="site-overlay" id="site-overlay">
+ </div>
+</div>
+<div class="overlay-filter">
+</div>
+<link as="script" href="https://cdn.hstatic.net/shared/option_selection.js" rel="preload"/>
+<link as="script" href="https://cdn.hstatic.net/shared/api.jquery.js" rel="preload"/>
+<link as="script" href="//theme.hstatic.net/200000317851/1000697347/14/plugins.js?v=1174" rel="preload"/>
+<link as="script" href="//theme.hstatic.net/200000317851/1000697347/14/scripts.js?v=1174" rel="preload"/>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" rel="stylesheet"/>
+<!-- popup loaded -->
+<!-- quick view -->
+<style>
+ .modal-content {
+	background-color: #fefefe;
+	margin: 5% auto !important;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+	max-width: 780px;
+	transform: translatey(-30px);
+	transition: all .5s;
+	}
+
+	.close {
+	color: #aaa;
+	font-size: 28px;
+	font-weight: bold;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 40px;
+	text-align: center;
+	}
+
+	.close:hover,
+	.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+	}
+</style>
+<div class="modal" id="productQuickView">
+ <div class="modal-content">
+  <span class="close" id="close">
+   ×
+  </span>
+  <form class="row" id="form-quick-view">
+   <div class="col-12 col-md-6">
+    <div class="image-zoom">
+     <img alt="" class="p-product-image-feature" id="p-product-image-feature" src=""/>
+     <div class="flexslider" id="p-sliderproduct">
+      <ul class="slides">
+      </ul>
+     </div>
+    </div>
+   </div>
+   <div class="col-12 col-md-6">
+    <h4 class="p-title modal-title" id="">
+     Tên sản phẩm
+    </h4>
+    <p class="product-more-info">
+     <span class="product-sku">
+      Mã sản phẩm:
+      <span id="ProductSku">
+       01923123
+      </span>
+     </span>
+    </p>
+    <div class="form-input product-price-wrapper">
+     <div class="product-price">
+      <span class="p-price">
+      </span>
+      <del>
+      </del>
+     </div>
+     <em id="PriceSaving">
+     </em>
+    </div>
+    <div class="p-option-wrapper">
+     <select class="" id="p-select-quickview" name="id">
+     </select>
+    </div>
+    <div class="select-swatch" id="swatch-quick-view">
+    </div>
+    <div class="form-input">
+     <label>
+      Số lượng
+     </label>
+     <div class="quantity-area clearfix">
+      <input class="qty-btn" onclick="minusQuantity2()" type="button" value="-"/>
+      <input class="quantity-selector" id="quantity_qv" name="quantity_qv" type="text" value="1"/>
+      <input class="qty-btn" onclick="plusQuantity2()" type="button" value="+"/>
+     </div>
+    </div>
+    <div class="form-input" style="width: 100%">
+     <button class="btn btn-addcart" id="AddToCardQuickView" type="submit">
+      Thêm vào giỏ
+     </button>
+     <button class="btn btn-soldout" disabled="">
+      Hết hàng
+     </button>
+     <div class="qv-readmore">
+      <span>
+       hoặc
+      </span>
+      <a class="read-more p-url" href="" role="button">
+       Xem chi tiết
+      </a>
+     </div>
+    </div>
+   </div>
+  </form>
+ </div>
+ <div id="loading">
+  <div>
+  </div>
+ </div>
+</div>
+<div id="modalAddComplete">
+</div>
+<button id="modalAddCompleteBtn" style="display: none;" type="button">
+</button>
+<div class="d-none d-sm-block" id="fixed-social-network">
+ <a class="zalo-icon" href="https://zalo.me/1900.636.099" target="_blank">
+  <img alt="Icon-Zalo" class="img-fluid" src="https://file.hstatic.net/200000259495/file/zalo_d9dc3417eb744b91a44643f29b8c7161.svg"/>
+  Zalo
+ </a>
+ <a class="messenger-icon" href="https://facebook.com/facebook" target="_blank">
+  <img alt="Icon-Messager" class="img-fluid" src="https://file.hstatic.net/200000259495/file/messager_208d7389c4ac46b5a01afad457684cd6.svg"/>
+  Messenger
+ </a>
+ <a href="https://youtube.com" target="_blank">
+  <img alt="Icon-Youtube" class="img-fluid" src="https://file.hstatic.net/200000259495/file/youtube_479e81022bcb432f89376b2fea8f08ef.svg"/>
+  Youtube
+ </a>
+ <a href="https://instagram.com" target="_blank">
+  <img alt="Icon-Instagram" class="img-fluid" src="https://file.hstatic.net/200000259495/file/instagram_81b9ae8829a940a7aa5b7926152ed378.svg"/>
+  Instagram
+ </a>
+ <a href="" target="_blank">
+  <img alt="Icon-Twitter" class="img-fluid" src="https://file.hstatic.net/200000259495/file/twitter_87a4097176de4ee48ab97ee2113a6540.svg"/>
+  Twitter
+ </a>
+ <a href="javascript:;" id="back-to-top">
+  <i class="fal fa-angle-up">
+  </i>
+  Lên đầu trang
+ </a>
+</div>
+<div class="back-to-top hidden">
+ <a href="javascript:void(0);">
+  <div class="btt-back">
+   <span class="btt-label-back">
+    back to top
+   </span>
+   <span class="btt-icon-back">
+    <i class="fa fa-long-arrow-up">
+    </i>
+   </span>
+  </div>
+ </a>
+</div>
+
+{%endblock %}
