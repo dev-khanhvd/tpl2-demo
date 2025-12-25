@@ -1,0 +1,148 @@
+.greenweave-index-slider a {
+  color: #ffffff;
+  text-decoration: none;
+  outline: none;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  .greenweave-index-slider a:hover {
+    text-decoration: none; }
+
+.greenweave-index-slider img {
+  max-width: 100%;
+  vertical-align: middle;
+  border-style: none; }
+
+.greenweave-index-slider .button {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+  padding: 18px 45px;
+  line-height: normal;
+  color: #ffffff;
+  background-color: #6464bc;
+  border: 0;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 1px;
+  outline: none !important;
+  -webkit-transition: all 0.45s;
+  transition: all 0.45s; }
+  .greenweave-index-slider .button:before {
+    content: '';
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.4s ease-in-out;
+    border-radius: 100px; }
+  @media (min-width: 992px) {
+    .greenweave-index-slider .button:hover, .greenweave-index-slider .button.has-hover, .greenweave-index-slider .button:focus {
+      border-color: transparent; }
+    .greenweave-index-slider .button:hover:before, .greenweave-index-slider .button.has-hover:before, .greenweave-index-slider .button:focus:before {
+      opacity: 1; } }
+  @media (max-width: 767px) {
+    .greenweave-index-slider .button {
+      font-size: 12px;
+      padding: 8px 15px;
+      min-height: 35px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center; } }
+
+.greenweave-index-slider .index-slider {
+  padding: 0; }
+
+.greenweave-index-slider .slider-item {
+  position: relative; }
+  .greenweave-index-slider .slider-item .slide--content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff; }
+    .greenweave-index-slider .slider-item .slide--content .content {
+      max-width: 90%;
+      margin: 0 auto; }
+    .greenweave-index-slider .slider-item .slide--content .title {
+      font-size: 85px; }
+    .greenweave-index-slider .slider-item .slide--content .desc {
+      font-size: 18px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.8);
+      margin-top: 20px; }
+    .greenweave-index-slider .slider-item .slide--content .btn-more {
+      margin-top: 30px; }
+
+.greenweave-index-slider .swiper .swiper-nav {
+  position: absolute;
+  top: calc(50% - 23px);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1; }
+  .greenweave-index-slider .swiper .swiper-nav svg {
+    width: 20px;
+    height: 20px;
+    fill: currentcolor; }
+    .greenweave-index-slider .swiper .swiper-nav svg polyline,
+    .greenweave-index-slider .swiper .swiper-nav svg line {
+      stroke: currentcolor; }
+  .greenweave-index-slider .swiper .swiper-nav.swiper-next {
+    right: 15px; }
+  .greenweave-index-slider .swiper .swiper-nav.swiper-prev {
+    left: 15px; }
+  .greenweave-index-slider .swiper .swiper-nav:hover {
+    background: rgba(255, 255, 255, 0.2); }
+
+@media (max-width: 1199px) and (min-width: 768px) {
+  .greenweave-index-slider .slider-item .slide--content .title {
+    font-size: 58px; } }
+
+@media (max-width: 767px) {
+  .greenweave-index-slider .slider-item .slide--content .title br,
+  .greenweave-index-slider .slider-item .slide--content .desc br {
+    content: ''; }
+    .greenweave-index-slider .slider-item .slide--content .title br:after,
+    .greenweave-index-slider .slider-item .slide--content .desc br:after {
+      content: ' '; }
+  .greenweave-index-slider .slider-item .slide--content .title {
+    font-size: 35px; }
+  .greenweave-index-slider .slider-item .slide--content .desc {
+    font-size: 14px; }
+  .greenweave-index-slider .swiper .swiper-nav {
+    top: calc(50% - 20px);
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2); }
+    .greenweave-index-slider .swiper .swiper-nav.swiper-next {
+      right: 5px; }
+    .greenweave-index-slider .swiper .swiper-nav.swiper-prev {
+      left: 5px; } }
+
+.hrv-pus-promotion:empty,
+.section-home-pus-promotion:empty,
+.hrv-pmo-discount:empty,
+.hrv-pmo-coupon:empty,
+.section-home-hrvpmo:empty {
+  padding: 0; }
