@@ -1,0 +1,102 @@
+.greenweave-smart-search-wrapper {
+  width: 100%; }
+
+.greenweave-smart-search-wrapper .item-ult {
+  padding: 12px 0;
+  border-bottom: 1px dotted #dfe0e1;
+  clear: both;
+  width: 100%;
+  float: left; }
+
+.greenweave-smart-search-wrapper .item-ult .thumbs {
+  width: 40px;
+  display: inline-block;
+  text-align: right; }
+
+.greenweave-smart-search-wrapper .item-ult .title {
+  width: calc(100% - 40px);
+  padding-right: 5px;
+  float: left;
+  line-height: 20px;
+  position: relative;
+  margin-top: 0px !important; }
+
+.greenweave-smart-search-wrapper .item-ult .title a {
+  font-size: 13px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: pre;
+  float: left;
+  width: 100%;
+  margin: 10px 0 5px; }
+
+.greenweave-smart-search-wrapper .item-ult .title p {
+  line-height: 15px;
+  font-size: 12px;
+  font-weight: 500;
+  float: left;
+  margin: 0; }
+
+.greenweave-smart-search-wrapper .item-ult .title p del {
+  font-size: 11px;
+  font-weight: 400;
+  margin-left: 7px;
+  color: #797979; }
+
+.greenweave-smart-search-wrapper .resultsMore {
+  width: 100%;
+  float: left; }
+
+.greenweave-smart-search-wrapper .resultsMore a {
+  text-align: center;
+  display: block;
+  font-size: 13px;
+  padding: 10px 0; }
+
+.greenweave-smart-search-wrapper .dataEmpty {
+  text-align: center;
+  padding: 20px 0; }
+
+.greenweave-sitenav-search {
+  margin-bottom: 20px; }
+  .greenweave-sitenav-search form.greenweave-searchform {
+    position: relative;
+    padding: 0; }
+  .greenweave-sitenav-search form.greenweave-searchform input.greenweave-input-search {
+    height: 44px;
+    line-height: 28px;
+    padding: 8px 50px 8px 20px;
+    width: 100%;
+    background: #f6f6f6;
+    border: 1px solid #e6e6e6;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+    display: inline-block;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none; }
+  .greenweave-sitenav-search form.greenweave-searchform .greenweave-btn-search {
+    width: 50px;
+    height: 44px;
+    line-height: 40px;
+    position: absolute;
+    padding: 0;
+    top: 0px;
+    right: 0px;
+    background: transparent;
+    transition: opacity 150ms linear; }
+  .greenweave-sitenav-search form.greenweave-searchform .greenweave-btn-search svg {
+    width: 18px;
+    height: 44px;
+    opacity: 0.4; }
+  .greenweave-sitenav-search form.greenweave-searchform input.greenweave-input-search:focus {
+    background: #f2f5fa;
+    outline: none;
+    border-color: #e6e6e6; }
+  .greenweave-sitenav-search form.greenweave-searchform.expanded .greenweave-btn-search svg {
+    opacity: 1; }
+  .greenweave-sitenav-search .greenweave-smart-search-wrapper .dataEmpty {
+    padding-bottom: 0px; }
