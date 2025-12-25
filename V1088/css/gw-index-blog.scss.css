@@ -1,0 +1,115 @@
+@media (min-width: 992px) {
+  .greenweave-index-blog .container {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px; } }
+
+@media (min-width: 1200px) {
+  .greenweave-index-blog .container {
+    max-width: 1170px; } }
+
+@media (min-width: 1366px) {
+  .greenweave-index-blog .container {
+    max-width: 1290px; } }
+
+@media (min-width: 1600px) {
+  .greenweave-index-blog .container {
+    max-width: 1410px; }
+  .greenweave-index-blog .container-fluid {
+    max-width: 1800px; } }
+
+.greenweave-index-blog .heading-title {
+  color: #111915;
+  text-align: center; }
+
+.greenweave-index-blog .button {
+  color: #ffffff;
+  background-color: #6464bc; }
+
+.greenweave-index-blog {
+  padding: 80px 0;
+  background-image: url("//cdn.hstatic.net/themes/200001079142/1001411659/14/greenweave_index_blog_bg.jpg?v=3824");
+  background-size: cover;
+  background-position: center; }
+  .greenweave-index-blog .item-article {
+    border-radius: 16px;
+    background: #ffffff;
+    color: #111915;
+    border: 1px solid rgba(17, 25, 21, 0.2);
+    overflow: hidden; }
+    .greenweave-index-blog .item-article .info-article {
+      padding: 40px 50px; }
+    .greenweave-index-blog .item-article .article-post-meta {
+      font-size: 14px;
+      margin-bottom: 15px; }
+      .greenweave-index-blog .item-article .article-post-meta .author {
+        text-transform: uppercase;
+        font-weight: 600; }
+      .greenweave-index-blog .item-article .article-post-meta .date {
+        color: rgba(17, 25, 21, 0.6);
+        padding-left: 20px;
+        position: relative; }
+        .greenweave-index-blog .item-article .article-post-meta .date:before {
+          content: '\f111';
+          font-family: "FontAwesome";
+          font-size: 5px;
+          position: absolute;
+          top: 5px;
+          left: 8px;
+          color: rgba(17, 25, 21, 0.3); }
+    .greenweave-index-blog .item-article .title-article h4 {
+      font-size: 28px;
+      margin-bottom: 15px; }
+      .greenweave-index-blog .item-article .title-article h4 a {
+        color: #111915; }
+    .greenweave-index-blog .item-article .short-article {
+      color: rgba(17, 25, 21, 0.6); }
+    .greenweave-index-blog .item-article .btn-link {
+      margin-top: 20px; }
+      .greenweave-index-blog .item-article .btn-link .arrow-link {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        position: relative; }
+        .greenweave-index-blog .item-article .btn-link .arrow-link .arrow {
+          position: relative;
+          display: inline-block;
+          width: 18px;
+          height: 2px;
+          background-color: #111915;
+          transition: width 0.3s ease; }
+        .greenweave-index-blog .item-article .btn-link .arrow-link:after {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%) rotate(45deg);
+          width: 8px;
+          height: 8px;
+          border-top: 2px solid #111915;
+          border-right: 2px solid #111915;
+          transition: right 0.3s ease; }
+    .greenweave-index-blog .item-article:hover .btn-link .arrow-link .arrow {
+      width: 36px; }
+      .greenweave-index-blog .item-article:hover .btn-link .arrow-link .arrow:after {
+        right: -4px; }
+  .greenweave-index-blog .txt-noArticle, .greenweave-index-blog .btn-more {
+    text-align: center; }
+  .greenweave-index-blog .btn-more {
+    margin-top: 30px; }
+  @media (max-width: 991px) {
+    .greenweave-index-blog .list-blog {
+      gap: 15px; } }
+  @media (max-width: 767px) {
+    .greenweave-index-blog {
+      padding: 40px 0; }
+      .greenweave-index-blog .item-article .info-article {
+        padding: 30px 20px; }
+      .greenweave-index-blog .item-article .article-post-meta {
+        font-size: 12px;
+        margin-bottom: 10px; }
+      .greenweave-index-blog .item-article .title-article h4 {
+        font-size: 20px;
+        margin-bottom: 10px; }
+      .greenweave-index-blog .item-article .btn-link {
+        margin-top: 15px; } }
