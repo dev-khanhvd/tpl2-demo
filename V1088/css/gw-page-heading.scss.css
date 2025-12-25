@@ -1,0 +1,59 @@
+.heading-title {
+  margin-bottom: 40px;
+  position: relative; }
+  .heading-title .title1 {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 15px; }
+  .heading-title .title2 {
+    font-size: 58px;
+    margin-bottom: 20px;
+    line-height: 1.1; }
+  .heading-title .desc {
+    font-size: 18px;
+    opacity: 0.6; }
+  @media (max-width: 767px) {
+    .heading-title {
+      margin-bottom: 25px; }
+      .heading-title .title1 {
+        margin-bottom: 8px; }
+      .heading-title .title2 {
+        font-size: 24px;
+        margin-bottom: 10px; }
+      .heading-title .title2 br, .heading-title .desc br {
+        content: ''; }
+        .heading-title .title2 br:after, .heading-title .desc br:after {
+          content: ' '; }
+      .heading-title .desc {
+        font-size: 14px; } }
+
+.button {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+  padding: 18px 45px;
+  line-height: normal;
+  color: var(--shop-color-button-text);
+  background-color: var(--shop-color-button);
+  border: none;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 1px;
+  outline: none !important;
+  -webkit-transition: all 0.45s;
+  transition: all 0.45s; }
+  @media (min-width: 992px) {
+    .button:hover, .button.has-hover, .button:focus {
+      opacity: 0.8; } }
+  @media (max-width: 767px) {
+    .button {
+      font-size: 12px;
+      padding: 8px 15px;
+      min-height: 35px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center; } }
