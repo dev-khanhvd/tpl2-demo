@@ -1,0 +1,82 @@
+@media (min-width: 992px) {
+  .greenweave-index-about-1 .container {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px; } }
+
+@media (min-width: 1200px) {
+  .greenweave-index-about-1 .container {
+    max-width: 1170px; } }
+
+@media (min-width: 1366px) {
+  .greenweave-index-about-1 .container {
+    max-width: 1290px; } }
+
+@media (min-width: 1600px) {
+  .greenweave-index-about-1 .container {
+    max-width: 1410px; }
+  .greenweave-index-about-1 .container-fluid {
+    max-width: 1800px; } }
+
+.greenweave-index-about-1 .heading-title {
+  color: #111915; }
+
+.greenweave-index-about-1 .button {
+  color: #ffffff;
+  background-color: #6464bc; }
+
+.greenweave-index-about-1 {
+  padding: 80px 0;
+  background-image: url("//cdn.hstatic.net/themes/200001079142/1001411659/14/greenweave_index_about_1_bg.jpg?v=3824");
+  background-size: cover;
+  background-position: center; }
+  .greenweave-index-about-1 .banner {
+    position: relative;
+    padding-bottom: 15%; }
+    .greenweave-index-about-1 .banner .img img {
+      border-radius: 14px; }
+    .greenweave-index-about-1 .banner .img--1 {
+      width: 70%; }
+    .greenweave-index-about-1 .banner .img--2 {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 63%;
+      height: auto; }
+  .greenweave-index-about-1 .list-logo {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 100px 0 30px; }
+    .greenweave-index-about-1 .list-logo .item {
+      -ms-flex: 0 0 calc(100% / 6 - 25px);
+      flex: 0 0 calc(100% / 6 - 25px);
+      max-width: calc(100% / 6 - 25px);
+      text-align: center; }
+      .greenweave-index-about-1 .list-logo .item img {
+        opacity: 0.5;
+        transition: all 0.3s; }
+      .greenweave-index-about-1 .list-logo .item:hover img {
+        opacity: 1; }
+  @media (min-width: 1200px) {
+    .greenweave-index-about-1 .row > div:last-child {
+      padding-left: 100px; } }
+  @media (max-width: 991px) {
+    .greenweave-index-about-1 {
+      padding-top: 40px; }
+      .greenweave-index-about-1 .row {
+        gap: 20px; }
+      .greenweave-index-about-1 .list-logo {
+        padding: 70px 0 0; } }
+  @media (max-width: 767px) {
+    .greenweave-index-about-1 {
+      padding: 40px 0; }
+      .greenweave-index-about-1 .list-logo {
+        padding: 40px 0 0;
+        gap: 15px 30px; }
+        .greenweave-index-about-1 .list-logo .item {
+          -ms-flex: 0 0 calc(100% / 3 - 20px);
+          flex: 0 0 calc(100% / 3 - 20px);
+          max-width: calc(100% / 3 - 20px); } }
