@@ -1,0 +1,171 @@
+.hidden {
+  display: none !important; }
+
+@media (min-width: 992px) {
+  .greenweave-index-service .container {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px; } }
+
+@media (min-width: 1200px) {
+  .greenweave-index-service .container {
+    max-width: 1170px; } }
+
+@media (min-width: 1366px) {
+  .greenweave-index-service .container {
+    max-width: 1290px; } }
+
+@media (min-width: 1600px) {
+  .greenweave-index-service .container {
+    max-width: 1410px; }
+  .greenweave-index-service .container-fluid {
+    max-width: 1800px; } }
+
+.greenweave-index-service .heading-title {
+  color: #111915; }
+
+.greenweave-index-service {
+  padding: 80px 0;
+  background-image: url("//cdn.hstatic.net/themes/200001079142/1001411659/14/greenweave_index_service_bg.jpg?v=3824");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden; }
+  .greenweave-index-service .service-item {
+    padding: 50px 50px 60px;
+    background: #ffffff;
+    color: #111915;
+    border-radius: 14px;
+    transition: all 0.3s;
+    height: 100%; }
+    .greenweave-index-service .service-item .img {
+      margin-bottom: 30px;
+      width: 70px;
+      height: 70px; }
+      .greenweave-index-service .service-item .img img {
+        transition: all 0.3s; }
+    .greenweave-index-service .service-item .title {
+      font-size: 30px;
+      margin-bottom: 15px;
+      color: #111915; }
+    .greenweave-index-service .service-item .desc {
+      font-size: 18px;
+      color: rgba(17, 25, 21, 0.6); }
+    .greenweave-index-service .service-item .icon {
+      margin-top: 40px; }
+      .greenweave-index-service .service-item .icon svg {
+        width: 20px;
+        height: 20px;
+        fill: #111915; }
+        .greenweave-index-service .service-item .icon svg polyline,
+        .greenweave-index-service .service-item .icon svg line {
+          stroke: #111915; }
+  .greenweave-index-service .service-nav button {
+    width: 46px;
+    height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-radius: 50%;
+    border: 1px solid rgba(17, 25, 21, 0.3);
+    outline: none;
+    color: #111915;
+    transition: all 0.3s; }
+    .greenweave-index-service .service-nav button svg {
+      width: 20px;
+      height: 20px;
+      fill: #111915;
+      transition: all 0.3s; }
+      .greenweave-index-service .service-nav button svg polyline,
+      .greenweave-index-service .service-nav button svg line {
+        stroke: #111915;
+        transition: all 0.3s; }
+    .greenweave-index-service .service-nav button.swiper-button-disabled {
+      opacity: 0.5;
+      pointer-events: none; }
+    .greenweave-index-service .service-nav button:hover {
+      background: #fff;
+      color: #333;
+      border-color: #fff; }
+      .greenweave-index-service .service-nav button:hover svg {
+        fill: #333; }
+        .greenweave-index-service .service-nav button:hover svg polyline,
+        .greenweave-index-service .service-nav button:hover svg line {
+          stroke: #333; }
+  .greenweave-index-service .swiper:not(.swiper-initialized) .swiper-wrapper {
+    display: flex;
+    gap: 30px; }
+    .greenweave-index-service .swiper:not(.swiper-initialized) .swiper-wrapper .swiper-slide {
+      flex: 0 0 calc(100%/3); }
+      @media (max-width: 992px) {
+        .greenweave-index-service .swiper:not(.swiper-initialized) .swiper-wrapper .swiper-slide {
+          flex: 0 0 calc(100%); } }
+  .greenweave-index-service .swiper .swiper-slide {
+    height: auto; }
+  @media (min-width: 992px) {
+    .greenweave-index-service .heading-col {
+      display: flex;
+      gap: 30px; }
+      .greenweave-index-service .heading-col .title2 {
+        margin: 0; }
+      .greenweave-index-service .heading-col .heading-left {
+        -ms-flex: 0 0 32%;
+        flex: 0 0 32%;
+        max-width: 32%; }
+      .greenweave-index-service .heading-col .heading-center {
+        -ms-flex: 0 0 calc(45% - 30px);
+        flex: 0 0 calc(45% - 30px);
+        max-width: calc(45% - 30px); }
+      .greenweave-index-service .heading-col .heading-right {
+        -ms-flex: 0 0 calc(23% - 30px);
+        flex: 0 0 calc(23% - 30px);
+        max-width: calc(23% - 30px); }
+    .greenweave-index-service .service-item:hover {
+      background: #bc8556;
+      color: #ffffff; }
+      .greenweave-index-service .service-item:hover .img {
+        background: #ffffff;
+        -webkit-mask: var(--bg-img) center/contain;
+        mask: var(--bg-img) center/contain;
+        mask-repeat: no-repeat; }
+        .greenweave-index-service .service-item:hover .img img {
+          opacity: 0; }
+      .greenweave-index-service .service-item:hover .title,
+      .greenweave-index-service .service-item:hover .desc {
+        color: #ffffff; }
+      .greenweave-index-service .service-item:hover .icon svg {
+        fill: #ffffff; }
+        .greenweave-index-service .service-item:hover .icon svg polyline,
+        .greenweave-index-service .service-item:hover .icon svg line {
+          stroke: #ffffff; } }
+  @media (min-width: 1200px) {
+    .greenweave-index-service .swiper {
+      overflow: visible; } }
+  @media (max-width: 991px) {
+    .greenweave-index-service {
+      padding-bottom: 40px; }
+      .greenweave-index-service .service-nav {
+        margin-top: 20px; } }
+  @media (max-width: 767px) {
+    .greenweave-index-service {
+      padding: 40px 0; }
+      .greenweave-index-service .service-item {
+        padding: 30px 20px; }
+        .greenweave-index-service .service-item .img {
+          margin-bottom: 20px; }
+          .greenweave-index-service .service-item .img img {
+            max-height: 50px; }
+        .greenweave-index-service .service-item .title {
+          font-size: 22px; }
+        .greenweave-index-service .service-item .desc {
+          font-size: 14px; }
+        .greenweave-index-service .service-item .icon {
+          margin-top: 15px; }
+      .greenweave-index-service .owl-nav button,
+      .greenweave-index-service .service-nav button {
+        width: 36px;
+        height: 36px; }
+        .greenweave-index-service .owl-nav button svg,
+        .greenweave-index-service .service-nav button svg {
+          width: 15px;
+          height: 15px; } }
