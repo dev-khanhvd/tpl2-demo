@@ -1,0 +1,343 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(translate('Liên hệ')).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ getKeyContentValue('META_KEYWORDS') }}">
+<meta name="description" content="{{ getKeyContentValue('META_DESCRIPTION') }}">
+<meta property="og:title" content="{{ getKeyContentValue('META_TITLE') }}">
+<meta property="og:url" content="{{ getCurrentUrl() }}">
+<meta property="og:image" content="{{ getBusinessLogo() }}">
+<link rel="canonical" href="{{ getCurrentUrl() }}">
+{%endblock %}
+
+{%block body %}
+
+HEADER : begin 
+
+ wrapper
+<div id="wrapper">
+ <!-- CORE : begin -->
+ <div id="core">
+  <div id="page-header">
+   <div class="container">
+    <h1>
+     Liên hệ
+    </h1>
+    <div class="">
+     <ul class="breadcrumbs hidden-sm hidden-xs">
+      <li>
+       <a href="/" target="_self">
+        Trang chủ
+       </a>
+      </li>
+      <li class="active">
+       <span>
+        Liên hệ
+       </span>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="container">
+  <!-- PAGE CONTENT : begin -->
+  <div id="page-content">
+   <div class="various-content">
+    <section>
+     <h2>
+      Địa chỉ liên hệ
+     </h2>
+     <div class="row">
+      <div class="col-lg-12">
+       <!-- MAP : begin -->
+       <div class="c-map">
+        <iframe frameborder="0" height="350" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3919.1002874613655!2d106.6639852!3d10.8036306!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175293ac91a2f9b%3A0xd75c965212390aed!2zNjUgVHLhuqduIFF14buRYyBIb8OgbiwgNCwgVMOibiBCw6xuaCwgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1422245977374" style="border:0" width="800">
+        </iframe>
+       </div>
+      </div>
+      <div class="col-lg-4">
+       <!-- ICON BLOCK : begin -->
+       <div class="c-icon-block">
+        <i class="ico fa fa-map-marker">
+        </i>
+        <div class="icon-block-inner">
+         <p>
+          <strong>
+           Net dep Spa
+          </strong>
+          <br/>
+          <span class="ent">
+           65 Trần Quốc Hoàn, Q. Tân Bình, Tp.HCM
+          </span>
+          <span class="ent">
+           hi@haravan.com
+          </span>
+          <span class="ent">
+           1900.636.099
+          </span>
+         </p>
+        </div>
+       </div>
+       <div class="c-icon-block">
+        <i class="ico fa fa-clock-o">
+        </i>
+        <div class="icon-block-inner">
+         <dl>
+          <dt>
+           Sáng:
+          </dt>
+          <dd>
+           8:00 - 10:00
+          </dd>
+          <dt>
+           Chiều:
+          </dt>
+          <dd>
+           2:00 - 4:00
+          </dd>
+          <dt>
+           Tối:
+          </dt>
+          <dd>
+           6:00 - 22:00
+          </dd>
+         </dl>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <!-- FORM SECTION : begin -->
+    <section>
+     <h2>
+      Gửi tin nhắn cho chúng tôi
+     </h2>
+     <div class="row">
+      <div class="col-lg-12 default-form">
+       <form accept-charset="UTF-8" action="/contact" class="contact-form" method="post">
+        <input name="form_type" type="hidden" value="contact"/>
+        <input name="utf8" type="hidden" value="✓"/>
+        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt-eiC4gPjV2sSBeDMwgeHuR2ms9dYAHt5WTeq3pg5Dm7jWBpWN8KhP2dwig8WjfKQ5mWyQ64LIFBO7vq6APYhBnEhBssTE0VHNkEfN2k8fBxc6c9JmsYdsH6e0l_9hdi9o"/>
+        <div class="row">
+         <div class="col-sm-6">
+          <div class="form-field">
+           <label for="contact-name">
+            Tên bạn
+            <span>
+             *
+            </span>
+           </label>
+           <input autocapitalize="words" class="form-control input-lg" id="contactFormName" name="contact[name]" placeholder="Tên của bạn" required="" type="text" value=""/>
+          </div>
+          <div class="form-field">
+           <label for="contact-email">
+            Email
+            <span>
+             *
+            </span>
+           </label>
+           <input autocapitalize="off" autocorrect="off" class="form-control input-lg" id="contactFormEmail" name="contact[email]" placeholder="Email của bạn" required="" type="email" value=""/>
+          </div>
+         </div>
+         <div class="col-sm-6">
+          <div class="form-field">
+           <label for="contact-message">
+            Nội dung
+            <span>
+             *
+            </span>
+           </label>
+           <textarea class="form-control" id="contactFormMessage" name="contact[body]" placeholder="Viết bình luận" required="" rows="6"></textarea>
+          </div>
+          <div class="form-field">
+           <button class="c-button" type="submit" value="">
+            Gửi tin nhắn
+           </button>
+          </div>
+          <!-- SUBMIT BUTTON : end -->
+         </div>
+        </div>
+        <input id="ad6e703c29e841d7a94735e8de2e2400" name="g-recaptcha-response" type="hidden"/>
+       </form>
+      </div>
+     </div>
+    </section>
+    <!-- FOOTER : begin -->
+   </div>
+   <!--end wrapper -->
+   <div aria-hidden="true" aria-labelledby="myLargeModalLabel" class="modal fade bs-example-modal-lg" id="myCart" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title" id="exampleModalLabel">
+        Bạn có
+        <b>
+        </b>
+        sản phẩm trong giỏ hàng
+       </h4>
+       <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+        <a aria-hidden="true">
+        </a>
+       </button>
+      </div>
+      <form action="/cart" id="cartform" method="post">
+       <div class="modal-body">
+        <table id="cart-table" style="width:100%;">
+         <tr>
+          <th>
+          </th>
+          <th>
+           Tên sản phẩm
+          </th>
+          <th>
+           Số lượng
+          </th>
+          <th>
+           Giá tiền
+          </th>
+          <th>
+          </th>
+         </tr>
+         <tr class="line-item original">
+          <td class="item-image">
+          </td>
+          <td class="item-title">
+           <a>
+           </a>
+          </td>
+          <td class="item-quantity">
+          </td>
+          <td class="item-price">
+          </td>
+          <td class="item-delete">
+          </td>
+         </tr>
+        </table>
+       </div>
+       <div class="modal-footer">
+        <div class="row">
+         <div class="col-lg-3">
+          <div class="modal-title-note">
+           Ghi chú đơn hàng :
+          </div>
+         </div>
+         <div class="col-lg-4">
+          <div class="modal-note">
+           <textarea cols="50" id="note" name="note" placeholder="Viết ghi chú" rows="5"></textarea>
+          </div>
+         </div>
+         <div class="col-lg-5">
+          <div class="total-price-modal">
+           Tổng cộng :
+           <span class="item-total">
+           </span>
+          </div>
+         </div>
+        </div>
+        <div class="row" style="margin-top:10px;">
+         <div class="col-lg-6">
+          <div class="comeback">
+           <a href="/">
+            <img src="//hstatic.net/0/0/global/design/theme-default/icon-tieptuc.png"/>
+            Tiếp tục mua hàng
+           </a>
+          </div>
+         </div>
+         <div class="col-lg-6 text-right">
+          <div class="buttons btn-modal-cart">
+           <button class="button-default" id="checkout" name="checkout" type="submit">
+            Đặt hàng
+           </button>
+          </div>
+          <div class="buttons btn-modal-cart">
+           <button class="button-default" id="update-cart-modal" name="" type="submit">
+            Cập nhật
+           </button>
+          </div>
+         </div>
+        </div>
+       </div>
+      </form>
+     </div>
+    </div>
+   </div>
+   <!-- Quick view -->
+   <div aria-hidden="false" aria-labelledby="myLargeModalLabel" class="modal fade hidden-xs" id="quick-view-modal" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="p-title modal-title" id="">
+        Tên sản phẩm
+       </h4>
+       <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+        <a aria-hidden="true">
+        </a>
+       </button>
+      </div>
+      <div class="modal-body">
+       <div class="container-fluid">
+        <div class="row">
+         <form action="/cart/add" method="post">
+          <div class="col-lg-5 col-md-6">
+           <div class="image-zoom row">
+            <img class="p-product-image-feature" src=""/>
+            <div class="flexslider" id="p-sliderproduct">
+             <ul class="slides">
+             </ul>
+            </div>
+           </div>
+          </div>
+          <div class="col-lg-7 col-md-6 pull-right">
+           <div class="form-input">
+            <div class="product-price">
+             <span class="p-price">
+             </span>
+             <del>
+             </del>
+            </div>
+           </div>
+           <div class="p-option-wrapper">
+            <select class="" id="p-select" name="id">
+            </select>
+           </div>
+           <div class="form-input">
+            <label>
+             Số lượng
+            </label>
+            <input min="1" name="quantity" type="number" value="1"/>
+           </div>
+           <div class="form-input" style="width: 100%">
+            <button class="btn-detail btn-color-add btn-min-width btn-mgt btn-addcart" type="submit">
+             Thêm vào giỏ
+            </button>
+            <button class="btn-detail addtocart btn-color-add btn-min-width btn-mgt btn-soldout" disabled="">
+             Hết hàng
+            </button>
+            <div class="qv-readmore">
+             <span>
+              hoặc
+             </span>
+             <a class="read-more p-url" href="" role="button">
+              Xem chi tiết
+             </a>
+            </div>
+           </div>
+          </div>
+          <div class="col-lg-7 col-md-6 pull-right">
+          </div>
+         </form>
+        </div>
+       </div>
+      </div>
+     </div>
+     <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+   </div>
+   <!-- /.modal -->
+   <!-- Quick view -->
+  </div>
+ </div>
+</div>
+
+{%endblock %}
