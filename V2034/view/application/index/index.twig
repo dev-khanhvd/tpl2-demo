@@ -1,0 +1,571 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(translate('Trang chủ')).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ getKeyContentValue('META_KEYWORDS') }}">
+<meta name="description" content="{{ getKeyContentValue('META_DESCRIPTION') }}">
+<meta property="og:title" content="{{ getKeyContentValue('META_TITLE') }}">
+<meta property="og:url" content="{{ getCurrentUrl() }}">
+<meta property="og:image" content="{{ getBusinessLogo() }}">
+<link rel="canonical" href="{{ getCurrentUrl() }}">
+{%endblock %}
+
+{%block body %}
+
+HEADER : begin 
+
+ wrapper
+<div id="wrapper">
+ <h1 class="hidden">
+  Nét đẹp spaheader_bg_default.png true
+ </h1>
+ <!-- 1 slide -->
+ <!-- MAIN SLIDER : begin -->
+ <div class="m-has-hover-stop" data-interval="8000" id="main-slider">
+  <div class="slide-list">
+   <!-- SLIDE 1 : begin -->
+   <div class="slide slide-1 m-bg-align-right" data-label="Welcome to Nét Đẹp spa" style="background-image: url( //hstatic.net/987/1000028987/1000046629/slideshow_1.jpg?v=902 );">
+    <div class="slide-bg">
+     <div class="container">
+      <div class="slide-inner">
+       <div class="slide-content various-content textalign-left valign-middle">
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- SLIDE 1 : end -->
+   <!-- SLIDE 1 : begin -->
+   <div class="slide slide-2 m-bg-align-left" data-label="Khuyến mãi 20%" style="background-image: url( //hstatic.net/987/1000028987/1000046629/slideshow_2.jpg?v=902 );">
+    <div class="slide-bg">
+     <div class="container">
+      <div class="slide-inner">
+       <div class="slide-content various-content textalign-right valign-middle">
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- SLIDE 1 : end -->
+   <!-- SLIDE 1 : begin -->
+   <div class="slide slide-3 m-bg-align-right" data-label="Shop mỹ phẩm" style="background-image: url( //hstatic.net/987/1000028987/1000046629/slideshow_3.jpg?v=902 );">
+    <div class="slide-bg">
+     <div class="container">
+      <div class="slide-inner">
+       <div class="slide-content various-content textalign-left valign-middle">
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- SLIDE 1 : end -->
+  </div>
+ </div>
+ <!-- MAIN SLIDER : end -->
+ <!-- 2 core -->
+ <!-- CORE : begin -->
+ <div id="core">
+  <!-- PAGE CONTENT : begin -->
+  <div id="page-content">
+   <div class="various-content">
+    <!-- dịch vụ -->
+    <!-- SERVICES SECTION : begin -->
+    <section>
+     <!-- SECTION HEADER : begin -->
+     <!-- SECTION HEADER : end -->
+     <!-- SERVICE LIST : begin -->
+     <div class="c-service-list m-paginated" data-items="4" data-items-desktop="4" data-items-desktop-small="3" data-items-mobile="1" data-items-tablet="2">
+      <div class="container">
+       <div class="service-list-inner">
+        <div class="service-list-item">
+         <!-- SERVICE : begin -->
+         <div class="c-service">
+          <div class="service-image">
+           <a href="pages/dich-vu/#1">
+            <img alt="" src="https://hstatic.net/987/1000028987/2/2015/8-6/service_01.jpg"/>
+           </a>
+          </div>
+          <h3 class="service-title">
+           <a href="pages/dich-vu/#1">
+            Mỹ phẩm
+           </a>
+          </h3>
+          <div class="service-description">
+           <p>
+            Nét đẹp spa cung cấp các sản phẩm chăm dóc da mặt, mắt, lông mày,...
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="service-list-item">
+         <!-- SERVICE : begin -->
+         <div class="c-service">
+          <div class="service-image">
+           <a href="pages/dich-vu/#2">
+            <img alt="" src="https://hstatic.net/987/1000028987/2/2015/8-6/service_02.jpg"/>
+           </a>
+          </div>
+          <h3 class="service-title">
+           <a href="pages/dich-vu/#2">
+            Chăm sóc tóc
+           </a>
+          </h3>
+          <div class="service-description">
+           <p>
+            Spa cho tóc có xa xỉ quá không? Có. Nhưng đó là sự đền bù...
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="service-list-item">
+         <!-- SERVICE : begin -->
+         <div class="c-service">
+          <div class="service-image">
+           <a href="pages/dich-vu/#3">
+            <img alt="" src="https://hstatic.net/987/1000028987/2/2015/8-6/service_05.jpg"/>
+           </a>
+          </div>
+          <h3 class="service-title">
+           <a href="pages/dich-vu/#3">
+            Chăm sóc da
+           </a>
+          </h3>
+          <div class="service-description">
+           <p>
+            Nét đẹp spa cung cấp các sản phẩm chăm dóc da mặt, mắt, lông mày,...
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="service-list-item">
+         <!-- SERVICE : begin -->
+         <div class="c-service">
+          <div class="service-image">
+           <a href="pages/dich-vu/#4">
+            <img alt="" src="https://hstatic.net/987/1000028987/2/2015/8-6/service_04_3af124de-1894-4cb1-4016-cf10a2ae2682.jpg"/>
+           </a>
+          </div>
+          <h3 class="service-title">
+           <a href="pages/dich-vu/#4">
+            Massages
+           </a>
+          </h3>
+          <div class="service-description">
+           <p>
+            Nét đẹp spa cung cấp các sản phẩm chăm dóc da mặt, mắt, lông mày,...
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <!-- 2 GALLERY SECTION : begin -->
+    <section>
+     <!-- SECTION HEADER : begin -->
+     <!-- SECTION HEADER : end -->
+     <!-- GALLERY : begin -->
+     <div class="c-gallery m-paginated" data-items="4" data-items-desktop="4" data-items-desktop-small="3" data-items-mobile="1" data-items-tablet="2">
+      <div class="thumb-list">
+       <div class="thumb">
+        <a class="lightbox" data-lightbox-group="gallery" href="//hstatic.net/987/1000028987/10/2015/7-31/gallery_08.jpg">
+         <img alt="" src="//hstatic.net/987/1000028987/10/2015/7-31/gallery_08.jpg"/>
+        </a>
+       </div>
+       <div class="thumb">
+        <a class="lightbox" data-lightbox-group="gallery" href="//hstatic.net/987/1000028987/10/2015/7-31/gallery_07.jpg">
+         <img alt="" src="//hstatic.net/987/1000028987/10/2015/7-31/gallery_07.jpg"/>
+        </a>
+       </div>
+       <div class="thumb">
+        <a class="lightbox" data-lightbox-group="gallery" href="//hstatic.net/987/1000028987/10/2015/7-31/gallery_06.jpg">
+         <img alt="" src="//hstatic.net/987/1000028987/10/2015/7-31/gallery_06.jpg"/>
+        </a>
+       </div>
+       <div class="thumb">
+        <a class="lightbox" data-lightbox-group="gallery" href="//hstatic.net/987/1000028987/10/2015/7-31/gallery_05.jpg">
+         <img alt="" src="//hstatic.net/987/1000028987/10/2015/7-31/gallery_05.jpg"/>
+        </a>
+       </div>
+       <div class="thumb">
+        <a class="lightbox" data-lightbox-group="gallery" href="//hstatic.net/987/1000028987/10/2015/7-31/gallery_04.jpg">
+         <img alt="" src="//hstatic.net/987/1000028987/10/2015/7-31/gallery_04.jpg"/>
+        </a>
+       </div>
+       <div class="thumb">
+        <a class="lightbox" data-lightbox-group="gallery" href="//hstatic.net/987/1000028987/10/2015/7-31/gallery_03.jpg">
+         <img alt="" src="//hstatic.net/987/1000028987/10/2015/7-31/gallery_03.jpg"/>
+        </a>
+       </div>
+       <div class="thumb">
+        <a class="lightbox" data-lightbox-group="gallery" href="//hstatic.net/987/1000028987/10/2015/7-31/gallery_01.jpg">
+         <img alt="" src="//hstatic.net/987/1000028987/10/2015/7-31/gallery_01.jpg"/>
+        </a>
+       </div>
+      </div>
+     </div>
+     <!-- GALLERY : end -->
+    </section>
+    <!-- 2 GALLERY SECTION : end -->
+    <!--3 BLOG SECTION : begin -->
+    <section>
+     <div class="container">
+      <div class="row">
+       <div class="col-sm-3">
+        <article class="c-article">
+         <div class="article-image">
+          <a href="/blogs/news/1000036389-my-pham-duong-da-cho-cac-ban-tu-lam-dep-tai-nha">
+           <img alt="" src="//hstatic.net/987/1000028987/10/2015/7-31/article_image.jpg"/>
+          </a>
+         </div>
+         <h3 class="article-title">
+          <a href="/blogs/news/1000036389-my-pham-duong-da-cho-cac-ban-tu-lam-dep-tai-nha">
+           Mỹ phẩm dưỡng da, cho các bạn tự làm đẹp tại nhà
+          </a>
+         </h3>
+        </article>
+       </div>
+       <div class="col-sm-3">
+        <article class="c-article">
+         <div class="article-image">
+          <a href="/blogs/news/1000036387-cac-kieu-toc-phu-hop-voi-cac-ban-nua-co-khuon-mat-v-line">
+           <img alt="" src="//hstatic.net/987/1000028987/10/2015/7-31/article_thumb_03.jpg"/>
+          </a>
+         </div>
+         <h3 class="article-title">
+          <a href="/blogs/news/1000036387-cac-kieu-toc-phu-hop-voi-cac-ban-nua-co-khuon-mat-v-line">
+           Các kiểu tóc phù hợp với các bạn nữa có khuôn mặt V-line
+          </a>
+         </h3>
+        </article>
+       </div>
+       <div class="col-sm-3">
+        <article class="c-article">
+         <div class="article-image">
+          <a href="/blogs/news/1000036386-giu-am-lam-sach-da-trong-thoi-tiet-khac-nghiet">
+           <img alt="" src="//hstatic.net/987/1000028987/10/2015/7-31/article_thumb_02.jpg"/>
+          </a>
+         </div>
+         <h3 class="article-title">
+          <a href="/blogs/news/1000036386-giu-am-lam-sach-da-trong-thoi-tiet-khac-nghiet">
+           Giữ ẩm, làm sạch da trong thời tiết khắc nghiệt
+          </a>
+         </h3>
+        </article>
+       </div>
+       <div class="col-sm-3">
+        <article class="c-article">
+         <div class="article-image">
+          <a href="/blogs/news/1000036385-cac-phuong-phap-massage-tai-net-dep-spa">
+           <img alt="" src="//hstatic.net/987/1000028987/10/2015/7-31/article_image.jpg"/>
+          </a>
+         </div>
+         <h3 class="article-title">
+          <a href="/blogs/news/1000036385-cac-phuong-phap-massage-tai-net-dep-spa">
+           Các phương pháp massage tại Nét đẹp spa
+          </a>
+         </h3>
+        </article>
+       </div>
+      </div>
+     </div>
+    </section>
+    <!--3 BLOG SECTION : end -->
+    <!-- 4 TESTIMONIALS SECTION : begin -->
+    <section>
+     <!-- SECTION HEADER : begin -->
+     <div class="c-testimonial-list m-paginated">
+      <div class="container">
+       <div class="testimonial-list-inner">
+        <div class="testimonial-list-item">
+         <div class="c-testimonial m-has-portrait">
+          <div class="testimonial-inner">
+           <p class="testimonial-portrait">
+            <span>
+             <img alt="" src="//hstatic.net/987/1000028987/1000046629/testimonial_1.png?v=902"/>
+            </span>
+           </p>
+           <blockquote>
+            <p>
+             Mình thường ghé qua spa này mỗi tuần 1 lần để chăm sóc, làm đẹp bản thân sau những thời gian làm việc căng thẳng, mình hoàn toàn hài lòng với dịch vụ tại Nét Đẹp spa.
+            </p>
+           </blockquote>
+          </div>
+         </div>
+        </div>
+        <div class="testimonial-list-item">
+         <div class="c-testimonial m-has-portrait">
+          <div class="testimonial-inner">
+           <p class="testimonial-portrait">
+            <span>
+             <img alt="" src="//hstatic.net/987/1000028987/1000046629/testimonial_2.png?v=902"/>
+            </span>
+           </p>
+           <blockquote>
+            <p>
+             Mình thường ghé qua spa này mỗi tuần 1 lần để chăm sóc, làm đẹp bản thân sau những thời gian làm việc căng thẳng, mình hoàn toàn hài lòng với dịch vụ tại Nét Đẹp spa.
+            </p>
+           </blockquote>
+          </div>
+         </div>
+        </div>
+        <div class="testimonial-list-item">
+         <div class="c-testimonial m-has-portrait">
+          <div class="testimonial-inner">
+           <p class="testimonial-portrait">
+            <span>
+             <img alt="" src="//hstatic.net/987/1000028987/1000046629/testimonial_3.png?v=902"/>
+            </span>
+           </p>
+           <blockquote>
+            <p>
+             Mình thường ghé qua spa này mỗi tuần 1 lần để chăm sóc, làm đẹp bản thân sau những thời gian làm việc căng thẳng, mình hoàn toàn hài lòng với dịch vụ tại Nét Đẹp spa.
+            </p>
+           </blockquote>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div>
+  </div>
+ </div>
+ <!-- PAGE CONTENT : end -->
+ <!-- 3 BOTTOM PANEL : begin -->
+ <div id="bottom-panel">
+  <div class="bottom-panel-inner">
+   <div class="container">
+    <div class="row">
+     <div class="col-md-6">
+      <!-- BOTTOM TEXT : begin -->
+      <div class="bottom-text various-content">
+       <h3>
+        Sơ lượt về NÉT ĐẸP spa
+       </h3>
+       <p>
+        <strong>
+         NÉT ĐẸP spa
+        </strong>
+        là nơi chăm sóc, nghỉ dưỡng cho bạn với các dịc vụ
+        <strong>
+         massage toàn thân, chăm sóc tóc, hay spa
+        </strong>
+        . Ngoài ra, chúng tôi còn cung cấp các sản phẩm
+        <strong>
+         làm đẹp, dưỡng da
+        </strong>
+        cho các bạn tự làm đẹp tại nhà.
+        <br/>
+        Chúng tôi luôn hân hạnh được phục vụ các bạn.
+       </p>
+      </div>
+      <!-- BOTTOM TEXT : end -->
+     </div>
+     <div class="col-md-6">
+      <!-- BOTTOM SUBSCRIBE : begin -->
+      <div class="bottom-subscribe various-content">
+       <h3>
+        Đăng kí nhận bảng tin
+       </h3>
+       <p>
+        Đăng ký email để cập nhật các chương trình khuyến mãi của chúng tôi.
+       </p>
+       <form accept-charset="UTF-8" action="/account/contact" class="contact-form" method="post">
+        <input name="form_type" type="hidden" value="customer"/>
+        <input name="utf8" type="hidden" value="✓"/>
+        <p class="footer_form form-fields">
+         <input id="contact_tags" name="contact[tags]" type="hidden" value="khách hàng tiềm năng, bản tin"/>
+         <input class="newsletter-input" id="contact_email" name="contact[email]" placeholder="Nhập email của bạn" required="required" type="email"/>
+         <input class="newsletter-btn btn c-button" type="submit" value="Đăng ký">
+         </input>
+        </p>
+        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt_W06woFClyWZX9-AXeekjSPmOAv1zZ2B8PR_ZL-t-tKdb1-2dcTuQXCPZkOGiQJ2BaY7-Zs_bG6QW-Ht-mWQAqTN00Ks4xwDFQ6K6ECpf-OINsrWUWB8IoR-rEW9OGHZQ"/>
+        <input id="73dae44af949487b84a7152669e678b5" name="g-recaptcha-response" type="hidden"/>
+       </form>
+      </div>
+      <!-- BOTTOM SUBSCRIBE : end -->
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <!-- 3 bottom panel :end -->
+ <!-- FOOTER : begin -->
+</div>
+end wrapper
+<div aria-hidden="true" aria-labelledby="myLargeModalLabel" class="modal fade bs-example-modal-lg" id="myCart" role="dialog" tabindex="-1">
+ <div class="modal-dialog modal-lg">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h4 class="modal-title" id="exampleModalLabel">
+     Bạn có
+     <b>
+     </b>
+     sản phẩm trong giỏ hàng
+    </h4>
+    <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+     <a aria-hidden="true">
+     </a>
+    </button>
+   </div>
+   <form action="/cart" id="cartform" method="post">
+    <div class="modal-body">
+     <table id="cart-table" style="width:100%;">
+      <tr>
+       <th>
+       </th>
+       <th>
+        Tên sản phẩm
+       </th>
+       <th>
+        Số lượng
+       </th>
+       <th>
+        Giá tiền
+       </th>
+       <th>
+       </th>
+      </tr>
+      <tr class="line-item original">
+       <td class="item-image">
+       </td>
+       <td class="item-title">
+        <a>
+        </a>
+       </td>
+       <td class="item-quantity">
+       </td>
+       <td class="item-price">
+       </td>
+       <td class="item-delete">
+       </td>
+      </tr>
+     </table>
+    </div>
+    <div class="modal-footer">
+     <div class="row">
+      <div class="col-lg-3">
+       <div class="modal-title-note">
+        Ghi chú đơn hàng :
+       </div>
+      </div>
+      <div class="col-lg-4">
+       <div class="modal-note">
+        <textarea cols="50" id="note" name="note" placeholder="Viết ghi chú" rows="5"></textarea>
+       </div>
+      </div>
+      <div class="col-lg-5">
+       <div class="total-price-modal">
+        Tổng cộng :
+        <span class="item-total">
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="row" style="margin-top:10px;">
+      <div class="col-lg-6">
+       <div class="comeback">
+        <a href="/">
+         <img src="//hstatic.net/0/0/global/design/theme-default/icon-tieptuc.png"/>
+         Tiếp tục mua hàng
+        </a>
+       </div>
+      </div>
+      <div class="col-lg-6 text-right">
+       <div class="buttons btn-modal-cart">
+        <button class="button-default" id="checkout" name="checkout" type="submit">
+         Đặt hàng
+        </button>
+       </div>
+       <div class="buttons btn-modal-cart">
+        <button class="button-default" id="update-cart-modal" name="" type="submit">
+         Cập nhật
+        </button>
+       </div>
+      </div>
+     </div>
+    </div>
+   </form>
+  </div>
+ </div>
+</div>
+Quick view
+<div aria-hidden="false" aria-labelledby="myLargeModalLabel" class="modal fade hidden-xs" id="quick-view-modal" role="dialog" tabindex="-1">
+ <div class="modal-dialog modal-lg">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h4 class="p-title modal-title" id="">
+     Tên sản phẩm
+    </h4>
+    <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+     <a aria-hidden="true">
+     </a>
+    </button>
+   </div>
+   <div class="modal-body">
+    <div class="container-fluid">
+     <div class="row">
+      <form action="/cart/add" method="post">
+       <div class="col-lg-5 col-md-6">
+        <div class="image-zoom row">
+         <img class="p-product-image-feature" src=""/>
+         <div class="flexslider" id="p-sliderproduct">
+          <ul class="slides">
+          </ul>
+         </div>
+        </div>
+       </div>
+       <div class="col-lg-7 col-md-6 pull-right">
+        <div class="form-input">
+         <div class="product-price">
+          <span class="p-price">
+          </span>
+          <del>
+          </del>
+         </div>
+        </div>
+        <div class="p-option-wrapper">
+         <select class="" id="p-select" name="id">
+         </select>
+        </div>
+        <div class="form-input">
+         <label>
+          Số lượng
+         </label>
+         <input min="1" name="quantity" type="number" value="1"/>
+        </div>
+        <div class="form-input" style="width: 100%">
+         <button class="btn-detail btn-color-add btn-min-width btn-mgt btn-addcart" type="submit">
+          Thêm vào giỏ
+         </button>
+         <button class="btn-detail addtocart btn-color-add btn-min-width btn-mgt btn-soldout" disabled="">
+          Hết hàng
+         </button>
+         <div class="qv-readmore">
+          <span>
+           hoặc
+          </span>
+          <a class="read-more p-url" href="" role="button">
+           Xem chi tiết
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="col-lg-7 col-md-6 pull-right">
+       </div>
+      </form>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- /.modal-content -->
+ </div>
+ <!-- /.modal-dialog -->
+</div>
+/.modal 
+
+ Quick view
+
+{%endblock %}
