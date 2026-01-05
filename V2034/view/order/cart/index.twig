@@ -1,0 +1,251 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(translate('Giỏ hàng')).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ translate('Giỏ hàng') }}">
+<meta name="description" content="{{ translate('Giỏ hàng') }}">
+<meta property="og:title" content="{{ translate('Giỏ hàng') }}">
+<meta property="og:url" content="{{ getCurrentUrl() }}">
+<meta property="og:image" content="{{ getBusinessLogo() }}">
+<link rel="canonical" href="{{ getCurrentUrl() }}">
+{%endblock %}
+
+{%block body %}
+ {% set products = serviceCart().productList %}
+                           {% set totalCartMoney = serviceCart().totalMoney %}
+                           {% set latestProduct = products|last %}
+HEADER : begin 
+
+ wrapper
+<div id="wrapper">
+ <div id="core">
+  <!-- PAGE HEADER : begin -->
+  <div id="page-header">
+   <div class="container">
+    <h1>
+     Giỏ hàng
+    </h1>
+    <div class="">
+     <ul class="breadcrumbs hidden-sm hidden-xs">
+      <li>
+       <a href="/" target="_self">
+        Trang chủ
+       </a>
+      </li>
+      <li class="active">
+       Giỏ hàng:
+       <span id="ajax-breadcrumb-cart-item-count">
+        0
+       </span>
+       <span id="ajax-breadcrumb-cart-item-text">
+        sản phẩm
+       </span>
+       -
+       <span id="ajax-breadcrumb-cart-total-price">
+        0₫
+       </span>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </div>
+  <!-- PAGE HEADER : begin -->
+  <div class="container" id="cart">
+   <!-- PAGE CONTENT : begin -->
+   <div id="page-content">
+    <!-- SHOP CART : begin -->
+    <div class="shop-cart">
+     <!-- Begin empty cart -->
+     <p class="text-center">
+      Không có sản phẩm nào trong giỏ hàng!
+     </p>
+     <p class="text-center">
+      <a href="/collections/all">
+       <i class="fa fa-reply">
+       </i>
+       Tiếp tục mua hàng
+      </a>
+     </p>
+     <!-- End empty cart -->
+     <!-- Begin cart -->
+     <!-- End cart -->
+    </div>
+   </div>
+  </div>
+ </div>
+ <!-- FOOTER : begin -->
+</div>
+end wrapper
+<div aria-hidden="true" aria-labelledby="myLargeModalLabel" class="modal fade bs-example-modal-lg" id="myCart" role="dialog" tabindex="-1">
+ <div class="modal-dialog modal-lg">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h4 class="modal-title" id="exampleModalLabel">
+     Bạn có
+     <b>
+     </b>
+     sản phẩm trong giỏ hàng
+    </h4>
+    <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+     <a aria-hidden="true">
+     </a>
+    </button>
+   </div>
+   <form action="/cart" id="cartform" method="post">
+    <div class="modal-body">
+     <table id="cart-table" style="width:100%;">
+      <tr>
+       <th>
+       </th>
+       <th>
+        Tên sản phẩm
+       </th>
+       <th>
+        Số lượng
+       </th>
+       <th>
+        Giá tiền
+       </th>
+       <th>
+       </th>
+      </tr>
+      <tr class="line-item original">
+       <td class="item-image">
+       </td>
+       <td class="item-title">
+        <a>
+        </a>
+       </td>
+       <td class="item-quantity">
+       </td>
+       <td class="item-price">
+       </td>
+       <td class="item-delete">
+       </td>
+      </tr>
+     </table>
+    </div>
+    <div class="modal-footer">
+     <div class="row">
+      <div class="col-lg-3">
+       <div class="modal-title-note">
+        Ghi chú đơn hàng :
+       </div>
+      </div>
+      <div class="col-lg-4">
+       <div class="modal-note">
+        <textarea cols="50" id="note" name="note" placeholder="Viết ghi chú" rows="5"></textarea>
+       </div>
+      </div>
+      <div class="col-lg-5">
+       <div class="total-price-modal">
+        Tổng cộng :
+        <span class="item-total">
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="row" style="margin-top:10px;">
+      <div class="col-lg-6">
+       <div class="comeback">
+        <a href="/">
+         <img src="//hstatic.net/0/0/global/design/theme-default/icon-tieptuc.png"/>
+         Tiếp tục mua hàng
+        </a>
+       </div>
+      </div>
+      <div class="col-lg-6 text-right">
+       <div class="buttons btn-modal-cart">
+        <button class="button-default" id="checkout" name="checkout" type="submit">
+         Đặt hàng
+        </button>
+       </div>
+       <div class="buttons btn-modal-cart">
+        <button class="button-default" id="update-cart-modal" name="" type="submit">
+         Cập nhật
+        </button>
+       </div>
+      </div>
+     </div>
+    </div>
+   </form>
+  </div>
+ </div>
+</div>
+Quick view
+<div aria-hidden="false" aria-labelledby="myLargeModalLabel" class="modal fade hidden-xs" id="quick-view-modal" role="dialog" tabindex="-1">
+ <div class="modal-dialog modal-lg">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h4 class="p-title modal-title" id="">
+     Tên sản phẩm
+    </h4>
+    <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+     <a aria-hidden="true">
+     </a>
+    </button>
+   </div>
+   <div class="modal-body">
+    <div class="container-fluid">
+     <div class="row">
+      <form action="/cart/add" method="post">
+       <div class="col-lg-5 col-md-6">
+        <div class="image-zoom row">
+         <img class="p-product-image-feature" src=""/>
+         <div class="flexslider" id="p-sliderproduct">
+          <ul class="slides">
+          </ul>
+         </div>
+        </div>
+       </div>
+       <div class="col-lg-7 col-md-6 pull-right">
+        <div class="form-input">
+         <div class="product-price">
+          <span class="p-price">
+          </span>
+          <del>
+          </del>
+         </div>
+        </div>
+        <div class="p-option-wrapper">
+         <select class="" id="p-select" name="id">
+         </select>
+        </div>
+        <div class="form-input">
+         <label>
+          Số lượng
+         </label>
+         <input min="1" name="quantity" type="number" value="1"/>
+        </div>
+        <div class="form-input" style="width: 100%">
+         <button class="btn-detail btn-color-add btn-min-width btn-mgt btn-addcart" type="submit">
+          Thêm vào giỏ
+         </button>
+         <button class="btn-detail addtocart btn-color-add btn-min-width btn-mgt btn-soldout" disabled="">
+          Hết hàng
+         </button>
+         <div class="qv-readmore">
+          <span>
+           hoặc
+          </span>
+          <a class="read-more p-url" href="" role="button">
+           Xem chi tiết
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="col-lg-7 col-md-6 pull-right">
+       </div>
+      </form>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- /.modal-content -->
+ </div>
+ <!-- /.modal-dialog -->
+</div>
+/.modal 
+
+ Quick view
+
+{%endblock %}
