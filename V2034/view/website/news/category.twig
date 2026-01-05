@@ -1,0 +1,437 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(newsCategory.name).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ newsCategory.metaKeywords?:newsCategory.name }}">
+<meta name="description" content="{{ newsCategory.metaDescription?:newsCategory.name }}">
+<meta property="og:title" content="{{ newsCategory.metaTitle?:newsCategory.name }}">
+<meta property="og:url" content="{{ newsCategory.canonicalLink }}">
+<meta property="og:image" content="{{ newsCategory.imgUri }}">
+<link rel="canonical" href="{{ newsCategory.canonicalLink }}">
+{%endblock %}
+
+{%block body %}
+
+HEADER : begin 
+
+ wrapper
+<div id="wrapper">
+ <!-- CORE : begin -->
+ <div id="core">
+  <!-- PAGE HEADER : begin -->
+  <div id="page-header">
+   <div class="container">
+    <h1>
+     Tin tức
+    </h1>
+    <div class="">
+     <ul class="breadcrumbs hidden-sm hidden-xs">
+      <li>
+       <a href="/" target="_self">
+        Trang chủ
+       </a>
+      </li>
+      <li class="active">
+       <span>
+        Blog - Tin tức
+       </span>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </div>
+  <!-- PAGE HEADER : end -->
+  <div class="container">
+   <div class="row">
+    <div class="col-md-8">
+     <!-- PAGE CONTENT : begin -->
+     <div id="page-content">
+      <!-- BLOG LIST : begin -->
+      <div class="blog-list">
+       <!-- Begin: Nội dung blog -->
+       <!-- IMAGE ARTICLE : begin -->
+       <article class="image">
+        <div class="article-image">
+         <a href="/blogs/news/1000036389-my-pham-duong-da-cho-cac-ban-tu-lam-dep-tai-nha">
+          <img alt="Mỹ phẩm dưỡng da, cho các bạn tự làm đẹp tại nhà" src="//hstatic.net/987/1000028987/10/2015/7-31/article_image.jpg"/>
+         </a>
+        </div>
+        <div class="article-content various-content">
+         <p class="lead">
+          Massage là một trong những biện pháp giảm mệt mỏi hiệu quả nhất. Để giảm mệt mỏi sâu bên trong cơ thể, bạn thực hiện theo hướng dẫn sauBước 1:...
+         </p>
+        </div>
+       </article>
+       <!-- IMAGE ARTICLE : begin -->
+       <article class="image">
+        <div class="article-image">
+         <a href="/blogs/news/1000036387-cac-kieu-toc-phu-hop-voi-cac-ban-nua-co-khuon-mat-v-line">
+          <img alt="Các kiểu tóc phù hợp với các bạn nữa có khuôn mặt V-line" src="//hstatic.net/987/1000028987/10/2015/7-31/article_thumb_03.jpg"/>
+         </a>
+        </div>
+        <div class="article-content various-content">
+         <p class="lead">
+          Massage là một trong những biện pháp giảm mệt mỏi hiệu quả nhất. Để giảm mệt mỏi sâu bên trong cơ thể, bạn thực hiện theo hướng dẫn sauBước 1:...
+         </p>
+        </div>
+       </article>
+       <!-- IMAGE ARTICLE : begin -->
+       <article class="image">
+        <div class="article-image">
+         <a href="/blogs/news/1000036386-giu-am-lam-sach-da-trong-thoi-tiet-khac-nghiet">
+          <img alt="Giữ ẩm, làm sạch da trong thời tiết khắc nghiệt" src="//hstatic.net/987/1000028987/10/2015/7-31/article_thumb_02.jpg"/>
+         </a>
+        </div>
+        <div class="article-content various-content">
+         <p class="lead">
+          Massage là một trong những biện pháp giảm mệt mỏi hiệu quả nhất. Để giảm mệt mỏi sâu bên trong cơ thể, bạn thực hiện theo hướng dẫn sauBước 1:...
+         </p>
+        </div>
+       </article>
+      </div>
+      <!-- BLOG LIST : begin -->
+      <ul class="c-pagination" id="pagination">
+       <li class="m-active">
+        <a class="disabled page-node" href="#" onclick="return false;">
+         1
+        </a>
+       </li>
+       <li>
+        <a class="page-node" href="/blogs/news?page=2">
+         2
+        </a>
+       </li>
+       <li class="next">
+        <a href="/blogs/news?page=2">
+         <i class="fa fa-angle-right">
+         </i>
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div class="col-md-4">
+     <aside id="sidebar">
+      <div class="sidebar-widget sidebar-links">
+       <h3 class="widget-title">
+        Danh mục blog
+       </h3>
+       <div class="widget-content">
+        <ul>
+         <li class="active">
+          <a href="/blogs/news/">
+           Tin tức
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="sidebar-widget sidebar-articles">
+       <h3 class="widget-title">
+        Bài viết mới nhất
+       </h3>
+       <div class="widget-content">
+        <ul>
+         <li>
+          <h4 class="article-title">
+           <a href="/blogs/news/1000036389-my-pham-duong-da-cho-cac-ban-tu-lam-dep-tai-nha">
+            Mỹ phẩm dưỡng da, cho các bạn tự làm đẹp tại nhà
+           </a>
+          </h4>
+          <p class="article-date">
+           <i class="time-date">
+           </i>
+           31/07/2015
+          </p>
+         </li>
+         <li>
+          <h4 class="article-title">
+           <a href="/blogs/news/1000036387-cac-kieu-toc-phu-hop-voi-cac-ban-nua-co-khuon-mat-v-line">
+            Các kiểu tóc phù hợp với các bạn nữa có khuôn mặt V-line
+           </a>
+          </h4>
+          <p class="article-date">
+           <i class="time-date">
+           </i>
+           31/07/2015
+          </p>
+         </li>
+         <li>
+          <h4 class="article-title">
+           <a href="/blogs/news/1000036386-giu-am-lam-sach-da-trong-thoi-tiet-khac-nghiet">
+            Giữ ẩm, làm sạch da trong thời tiết khắc nghiệt
+           </a>
+          </h4>
+          <p class="article-date">
+           <i class="time-date">
+           </i>
+           31/07/2015
+          </p>
+         </li>
+         <li>
+          <h4 class="article-title">
+           <a href="/blogs/news/1000036385-cac-phuong-phap-massage-tai-net-dep-spa">
+            Các phương pháp massage tại Nét đẹp spa
+           </a>
+          </h4>
+          <p class="article-date">
+           <i class="time-date">
+           </i>
+           31/07/2015
+          </p>
+         </li>
+         <li>
+          <h4 class="article-title">
+           <a href="/blogs/news/1000033179-bai-viet-mau">
+            Bài viết mẫu
+           </a>
+          </h4>
+          <p class="article-date">
+           <i class="time-date">
+           </i>
+           09/07/2015
+          </p>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </aside>
+    </div>
+   </div>
+  </div>
+ </div>
+ <!-- BOTTOM PANEL : begin -->
+ <div id="bottom-panel">
+  <div class="bottom-panel-inner">
+   <div class="container">
+    <div class="row">
+     <div class="col-md-6">
+      <!-- BOTTOM TEXT : begin -->
+      <div class="bottom-text various-content">
+       <h3>
+        Sơ lượt về NÉT ĐẸP spa
+       </h3>
+       <p>
+        <strong>
+         NÉT ĐẸP spa
+        </strong>
+        là nơi chăm sóc, nghỉ dưỡng cho bạn với các dịc vụ
+        <strong>
+         massage toàn thân, chăm sóc tóc, hay spa
+        </strong>
+        . Ngoài ra, chúng tôi còn cung cấp các sản phẩm
+        <strong>
+         làm đẹp, dưỡng da
+        </strong>
+        cho các bạn tự làm đẹp tại nhà.
+        <br/>
+        Chúng tôi luôn hân hạnh được phục vụ các bạn.
+       </p>
+      </div>
+      <!-- BOTTOM TEXT : end -->
+     </div>
+     <div class="col-md-6">
+      <!-- BOTTOM SUBSCRIBE : begin -->
+      <div class="bottom-subscribe various-content">
+       <h3>
+        Đăng kí nhận bảng tin
+       </h3>
+       <p>
+        Đăng ký email để cập nhật các chương trình khuyến mãi của chúng tôi.
+       </p>
+       <form accept-charset="UTF-8" action="/account/contact" class="contact-form" method="post">
+        <input name="form_type" type="hidden" value="customer"/>
+        <input name="utf8" type="hidden" value="✓"/>
+        <p class="footer_form form-fields">
+         <input id="contact_tags" name="contact[tags]" type="hidden" value="khách hàng tiềm năng, bản tin"/>
+         <input class="newsletter-input" id="contact_email" name="contact[email]" placeholder="Nhập email của bạn" required="required" type="email"/>
+         <input class="newsletter-btn btn c-button" type="submit" value="Đăng ký">
+         </input>
+        </p>
+        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt--fVL-oSipTL3dd5pSLN9Tj43hvEKRHYUq9DQnSOumPQyO4tuTiiaWpqehc9fgSugCCpsOTb6bnOzN0LJWiwEIu0UkwHLyVqPUmVguVtEjK2V_-UMzLJyI1eqoUgqi75Q"/>
+        <input id="ac8e30746baf4d60a63d5b27b1f3b894" name="g-recaptcha-response" type="hidden"/>
+       </form>
+      </div>
+      <!-- BOTTOM SUBSCRIBE : end -->
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <!-- BOTTOM PANEL : end -->
+ <!-- FOOTER : begin -->
+</div>
+end wrapper
+<div aria-hidden="true" aria-labelledby="myLargeModalLabel" class="modal fade bs-example-modal-lg" id="myCart" role="dialog" tabindex="-1">
+ <div class="modal-dialog modal-lg">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h4 class="modal-title" id="exampleModalLabel">
+     Bạn có
+     <b>
+     </b>
+     sản phẩm trong giỏ hàng
+    </h4>
+    <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+     <a aria-hidden="true">
+     </a>
+    </button>
+   </div>
+   <form action="/cart" id="cartform" method="post">
+    <div class="modal-body">
+     <table id="cart-table" style="width:100%;">
+      <tr>
+       <th>
+       </th>
+       <th>
+        Tên sản phẩm
+       </th>
+       <th>
+        Số lượng
+       </th>
+       <th>
+        Giá tiền
+       </th>
+       <th>
+       </th>
+      </tr>
+      <tr class="line-item original">
+       <td class="item-image">
+       </td>
+       <td class="item-title">
+        <a>
+        </a>
+       </td>
+       <td class="item-quantity">
+       </td>
+       <td class="item-price">
+       </td>
+       <td class="item-delete">
+       </td>
+      </tr>
+     </table>
+    </div>
+    <div class="modal-footer">
+     <div class="row">
+      <div class="col-lg-3">
+       <div class="modal-title-note">
+        Ghi chú đơn hàng :
+       </div>
+      </div>
+      <div class="col-lg-4">
+       <div class="modal-note">
+        <textarea cols="50" id="note" name="note" placeholder="Viết ghi chú" rows="5"></textarea>
+       </div>
+      </div>
+      <div class="col-lg-5">
+       <div class="total-price-modal">
+        Tổng cộng :
+        <span class="item-total">
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="row" style="margin-top:10px;">
+      <div class="col-lg-6">
+       <div class="comeback">
+        <a href="/">
+         <img src="//hstatic.net/0/0/global/design/theme-default/icon-tieptuc.png"/>
+         Tiếp tục mua hàng
+        </a>
+       </div>
+      </div>
+      <div class="col-lg-6 text-right">
+       <div class="buttons btn-modal-cart">
+        <button class="button-default" id="checkout" name="checkout" type="submit">
+         Đặt hàng
+        </button>
+       </div>
+       <div class="buttons btn-modal-cart">
+        <button class="button-default" id="update-cart-modal" name="" type="submit">
+         Cập nhật
+        </button>
+       </div>
+      </div>
+     </div>
+    </div>
+   </form>
+  </div>
+ </div>
+</div>
+Quick view
+<div aria-hidden="false" aria-labelledby="myLargeModalLabel" class="modal fade hidden-xs" id="quick-view-modal" role="dialog" tabindex="-1">
+ <div class="modal-dialog modal-lg">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h4 class="p-title modal-title" id="">
+     Tên sản phẩm
+    </h4>
+    <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+     <a aria-hidden="true">
+     </a>
+    </button>
+   </div>
+   <div class="modal-body">
+    <div class="container-fluid">
+     <div class="row">
+      <form action="/cart/add" method="post">
+       <div class="col-lg-5 col-md-6">
+        <div class="image-zoom row">
+         <img class="p-product-image-feature" src=""/>
+         <div class="flexslider" id="p-sliderproduct">
+          <ul class="slides">
+          </ul>
+         </div>
+        </div>
+       </div>
+       <div class="col-lg-7 col-md-6 pull-right">
+        <div class="form-input">
+         <div class="product-price">
+          <span class="p-price">
+          </span>
+          <del>
+          </del>
+         </div>
+        </div>
+        <div class="p-option-wrapper">
+         <select class="" id="p-select" name="id">
+         </select>
+        </div>
+        <div class="form-input">
+         <label>
+          Số lượng
+         </label>
+         <input min="1" name="quantity" type="number" value="1"/>
+        </div>
+        <div class="form-input" style="width: 100%">
+         <button class="btn-detail btn-color-add btn-min-width btn-mgt btn-addcart" type="submit">
+          Thêm vào giỏ
+         </button>
+         <button class="btn-detail addtocart btn-color-add btn-min-width btn-mgt btn-soldout" disabled="">
+          Hết hàng
+         </button>
+         <div class="qv-readmore">
+          <span>
+           hoặc
+          </span>
+          <a class="read-more p-url" href="" role="button">
+           Xem chi tiết
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="col-lg-7 col-md-6 pull-right">
+       </div>
+      </form>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- /.modal-content -->
+ </div>
+ <!-- /.modal-dialog -->
+</div>
+/.modal 
+
+ Quick view
+
+{%endblock %}
