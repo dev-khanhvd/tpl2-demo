@@ -1,0 +1,632 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(category.name).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ category.metaKeywords?:category.name }}">
+<meta name="description" content="{{ category.metaDescription?:category.name }}">
+<meta property="og:title" content="{{ category.metaTitle?:category.name }}">
+<meta property="og:url" content="{{ category.canonicalLink }}">
+<meta property="og:image" content="{{ category.imageUri }}">
+<link rel="canonical" href="{{ category.canonicalLink }}">
+{%endblock %}
+
+{%block body %}
+
+HEADER : begin 
+
+ wrapper
+<div id="wrapper">
+ <div class="core-bg-2" id="core">
+  <div id="collection">
+   <!-- CORE : begin -->
+   <!-- Begin collection info -->
+   <!-- Content-->
+   <!-- PAGE HEADER : begin -->
+   <div id="page-header">
+    <div class="container">
+     <h1>
+      Tất cả sản phẩm
+     </h1>
+     <div class="">
+      <ul class="breadcrumbs hidden-sm hidden-xs">
+       <li>
+        <a href="/" target="_self">
+         Trang chủ
+        </a>
+       </li>
+       <li>
+        <a href="/collections" target="_self">
+         Danh mục
+        </a>
+       </li>
+       <li class="active">
+        <span>
+         Tất cả sản phẩm
+        </span>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+   <!-- PAGE HEADER : end -->
+   <!-- PAGE CONTENT : begin -->
+   <div class="container">
+    <div class="row">
+     <div class="col-md-8">
+      <!-- CONTENT: begin -->
+      <div id="page-content">
+       <!-- PRODUCT LIST TOOLS : begin -->
+       <div class="product-list-tools">
+        <div class="row">
+         <div class="col-sm-6">
+          <h2 class="product-list-title">
+          </h2>
+         </div>
+         <div class="col-sm-6">
+          <div class="browse-tags">
+           <span>
+            Sắp xếp theo:
+           </span>
+           <span class="custom-dropdown custom-dropdown--white">
+            <select class="sort-by custom-dropdown__select custom-dropdown__select--white">
+             <option value="price-ascending">
+              Giá: Tăng dần
+             </option>
+             <option value="price-descending">
+              Giá: Giảm dần
+             </option>
+             <option value="title-ascending">
+              Tên: A-Z
+             </option>
+             <option value="title-descending">
+              Tên: Z-A
+             </option>
+             <option value="created-ascending">
+              Cũ nhất
+             </option>
+             <option value="created-descending">
+              Mới nhất
+             </option>
+             <option value="best-selling">
+              Bán chạy nhất
+             </option>
+            </select>
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <!-- PRODUCT LIST TOOLS : end -->
+       <!-- PRODUCT LIST : begin -->
+       <ul class="product-list">
+        <li class="product pro-loop">
+         <!--sử dụng  -->
+         <div class="product-inner product-block product-resize">
+          <h3 class="product-title">
+           <a href="/products/microdermabrasion" title="MICRODERMABRASION">
+            MICRODERMABRASION
+           </a>
+          </h3>
+          <div class="product-img image-resize view view-third product-image">
+           <a href="/products/microdermabrasion" title="MICRODERMABRASION">
+            <img alt="" src="//hstatic.net/987/1000028987/1/2015/8-6/product_05_large.jpg"/>
+           </a>
+          </div>
+          <div class="product-info product-detail clearfix">
+           <!-- sử dụng pull-left -->
+           <div class="product-price">
+            <span class="old-price">
+             1,780,000₫
+            </span>
+            1,470,560₫
+           </div>
+           <a class="product-btn c-button m-type-2 m-small" href="/products/microdermabrasion">
+            Mua
+           </a>
+          </div>
+         </div>
+        </li>
+        <li class="product pro-loop">
+         <!--sử dụng  -->
+         <div class="product-inner product-block product-resize">
+          <h3 class="product-title">
+           <a href="/products/facials" title="FACIALS">
+            FACIALS
+           </a>
+          </h3>
+          <div class="product-img image-resize view view-third product-image">
+           <a href="/products/facials" title="FACIALS">
+            <img alt="" src="//hstatic.net/987/1000028987/1/2015/8-6/product_10_large.jpg"/>
+           </a>
+          </div>
+          <div class="product-info product-detail clearfix">
+           <!-- sử dụng pull-right -->
+           <div class="product-price">
+            <span class="old-price">
+             1,608,700₫
+            </span>
+            1,046,070₫
+           </div>
+           <a class="product-btn c-button m-type-2 m-small" href="/products/facials">
+            Mua
+           </a>
+          </div>
+         </div>
+        </li>
+        <li class="product pro-loop">
+         <!--sử dụng end -->
+         <div class="product-inner product-block product-resize">
+          <h3 class="product-title">
+           <a href="/products/swedish-massage" title="SWEDISH MASSAGE">
+            SWEDISH MASSAGE
+           </a>
+          </h3>
+          <div class="product-img image-resize view view-third product-image">
+           <a href="/products/swedish-massage" title="SWEDISH MASSAGE">
+            <img alt="" src="//hstatic.net/987/1000028987/1/2015/8-6/product_09_large.jpg"/>
+           </a>
+          </div>
+          <div class="product-info product-detail clearfix">
+           <!-- sử dụng pull-left -->
+           <div class="product-price">
+            1,590,000₫
+           </div>
+           <a class="product-btn c-button m-type-2 m-small" href="/products/swedish-massage">
+            Mua
+           </a>
+          </div>
+         </div>
+        </li>
+        <li class="product pro-loop">
+         <!--sử dụng  -->
+         <div class="product-inner product-block product-resize">
+          <h3 class="product-title">
+           <a href="/products/exotic-massages" title="EXOTIC MASSAGES">
+            EXOTIC MASSAGES
+           </a>
+          </h3>
+          <div class="product-img image-resize view view-third product-image">
+           <a href="/products/exotic-massages" title="EXOTIC MASSAGES">
+            <img alt="" src="//hstatic.net/987/1000028987/1/2015/8-6/product_06_large.jpg"/>
+           </a>
+          </div>
+          <div class="product-info product-detail clearfix">
+           <!-- sử dụng pull-right -->
+           <div class="product-price">
+            1,700,000₫
+           </div>
+           <a class="product-btn c-button m-type-2 m-small" href="/products/exotic-massages">
+            Mua
+           </a>
+          </div>
+         </div>
+        </li>
+        <li class="product pro-loop">
+         <!--sử dụng  -->
+         <div class="product-inner product-block product-resize">
+          <h3 class="product-title">
+           <a href="/products/body-exfoliation-treatments" title="BODY EXFOLIATION TREATMENTS">
+            BODY EXFOLIATION TREATMENTS
+           </a>
+          </h3>
+          <div class="product-img image-resize view view-third product-image">
+           <a href="/products/body-exfoliation-treatments" title="BODY EXFOLIATION TREATMENTS">
+            <img alt="" src="//hstatic.net/987/1000028987/1/2015/8-6/product_11_large.jpg"/>
+           </a>
+          </div>
+          <div class="product-info product-detail clearfix">
+           <!-- sử dụng pull-left -->
+           <div class="product-price">
+            1,950,000₫
+           </div>
+           <a class="product-btn c-button m-type-2 m-small" href="/products/body-exfoliation-treatments">
+            Mua
+           </a>
+          </div>
+         </div>
+        </li>
+        <li class="product pro-loop">
+         <!--sử dụng end -->
+         <div class="product-inner product-block product-resize">
+          <h3 class="product-title">
+           <a href="/products/body-wraps" title="Body wraps">
+            Body wraps
+           </a>
+          </h3>
+          <div class="product-img image-resize view view-third product-image">
+           <a href="/products/body-wraps" title="Body wraps">
+            <img alt="" src="//hstatic.net/987/1000028987/1/2015/8-6/product_01_large.jpg"/>
+           </a>
+          </div>
+          <div class="product-info product-detail clearfix">
+           <!-- sử dụng pull-right -->
+           <div class="product-price">
+            1,500,000₫
+           </div>
+           <a class="product-btn c-button m-type-2 m-small" href="/products/body-wraps">
+            Mua
+           </a>
+          </div>
+         </div>
+        </li>
+       </ul>
+       <!-- PRODUCT LIST : end -->
+       <ul class="c-pagination" id="pagination">
+        <li class="m-active">
+         <a class="disabled page-node" href="#" onclick="return false;">
+          1
+         </a>
+        </li>
+        <li>
+         <a class="page-node" href="/collections/all?page=2">
+          2
+         </a>
+        </li>
+        <li>
+         <a class="page-node" href="/collections/all?page=3">
+          3
+         </a>
+        </li>
+        <li>
+         <a class="page-node" href="/collections/all?page=4">
+          4
+         </a>
+        </li>
+        <li class="next">
+         <a href="/collections/all?page=2">
+          <i class="fa fa-angle-right">
+          </i>
+         </a>
+        </li>
+       </ul>
+      </div>
+      <!-- CONTENT: end -->
+     </div>
+     <div class="col-md-4">
+      <aside id="sidebar">
+       <!-- side cart :begin -->
+       <div class="sidebar-widget sidebar-cart">
+        <h3 class="widget-title">
+         Giỏ hàng
+        </h3>
+        <div class="widget-content">
+         <!-- CART PRODUCT LIST : begin -->
+         <ul class="cart-product-list">
+         </ul>
+         <!-- CART PRODUCT LIST : end -->
+        </div>
+       </div>
+       <!-- side cart :end -->
+       <!-- side link :begin -->
+       <div class="sidebar-widget sidebar-links">
+        <h3 class="widget-title">
+         Danh mục sản phẩm
+        </h3>
+        <div class="widget-content">
+         <ul>
+          <li>
+           <a href="/collections/body" title="Xem danh mục Body">
+            Body
+           </a>
+          </li>
+          <li>
+           <a href="/collections/massages" title="Xem danh mục Massages">
+            Massages
+           </a>
+          </li>
+          <li>
+           <a href="/collections/cham-soc-da" title="Xem danh mục Chăm sóc da">
+            Chăm sóc da
+           </a>
+          </li>
+          <li>
+           <a href="/collections/toc-dep" title="Xem danh mục Tóc đẹp">
+            Tóc đẹp
+           </a>
+          </li>
+          <li>
+           <a href="/collections/hot-products" title="Xem danh mục Sản phẩm nổi bật">
+            Sản phẩm nổi bật
+           </a>
+          </li>
+          <li>
+           <a href="/collections/onsale" title="Xem danh mục Sản phẩm khuyến mãi">
+            Sản phẩm khuyến mãi
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <!-- side link :end  -->
+       <!-- side search :begin -->
+       <div class="sidebar-widget sidebar-search">
+        <h3 class="widget-title">
+         Tìm kiếm
+        </h3>
+        <div class="widget-content">
+         <form action="/search" class="c-search-form">
+          <div class="form-fields">
+           <input name="type" type="hidden" value="product"/>
+           <input name="q" placeholder="Tìm kiếm..." type="text"/>
+           <button class="c-button" type="submit">
+            <i class="fa fa-search">
+            </i>
+           </button>
+          </div>
+         </form>
+        </div>
+       </div>
+       <!-- side search :end -->
+       <!-- side review : begin -->
+       <div class="sidebar-widget sidebar-products hidden-xs">
+        <h3 class="widget-title">
+         Sản phẩm vừa xem
+        </h3>
+        <div class="widget-content">
+         <ul class="menu-side clone-item" id="last_viewed_prs">
+          <div id="clone-item">
+           <li class="item_2 clearfix hidden">
+            <a class="products-block-image css_boxImgTop" href="#">
+             <img alt="" src=""/>
+            </a>
+            <div class="product-content-des">
+             <h4 class="product-title">
+              <a class="product-name" href="" title="">
+               <span class="pro-title-recent">
+               </span>
+              </a>
+             </h4>
+             <p class="product-price">
+              <span class="pro-price-compare-recent old-price" data-old="">
+              </span>
+              <span class="price-cur" data-cur="">
+              </span>
+             </p>
+            </div>
+           </li>
+          </div>
+         </ul>
+        </div>
+       </div>
+       <!-- side review :end -->
+      </aside>
+     </div>
+    </div>
+   </div>
+   <!-- End no products -->
+  </div>
+  <!-- CORE : end -->
+ </div>
+ <div id="bottom-panel">
+  <div class="bottom-panel-inner">
+   <div class="container">
+    <div class="row">
+     <div class="col-md-6">
+      <!-- BOTTOM TEXT : begin -->
+      <div class="bottom-text various-content">
+       <h3>
+        Sơ lượt về NÉT ĐẸP spa
+       </h3>
+       <p>
+        <strong>
+         NÉT ĐẸP spa
+        </strong>
+        là nơi chăm sóc, nghỉ dưỡng cho bạn với các dịc vụ
+        <strong>
+         massage toàn thân, chăm sóc tóc, hay spa
+        </strong>
+        . Ngoài ra, chúng tôi còn cung cấp các sản phẩm
+        <strong>
+         làm đẹp, dưỡng da
+        </strong>
+        cho các bạn tự làm đẹp tại nhà.
+        <br/>
+        Chúng tôi luôn hân hạnh được phục vụ các bạn.
+       </p>
+      </div>
+      <!-- BOTTOM TEXT : end -->
+     </div>
+     <div class="col-md-6">
+      <!-- BOTTOM SUBSCRIBE : begin -->
+      <div class="bottom-subscribe various-content">
+       <h3>
+        Đăng kí nhận bảng tin
+       </h3>
+       <p>
+        Đăng ký email để cập nhật các chương trình khuyến mãi của chúng tôi.
+       </p>
+       <form accept-charset="UTF-8" action="/account/contact" class="contact-form" method="post">
+        <input name="form_type" type="hidden" value="customer"/>
+        <input name="utf8" type="hidden" value="✓"/>
+        <p class="footer_form form-fields">
+         <input id="contact_tags" name="contact[tags]" type="hidden" value="khách hàng tiềm năng, bản tin"/>
+         <input class="newsletter-input" id="contact_email" name="contact[email]" placeholder="Nhập email của bạn" required="required" type="email"/>
+         <input class="newsletter-btn btn c-button" type="submit" value="Đăng ký">
+         </input>
+        </p>
+        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FyFPV59mBtNhmQGz0fYZt9uvNtRKu5tQLyz_ob5hpo3Kav08nM_3KSTuFsg8N2QwqFqwUwadDU68oIwcANbLLPY7A0jXjgL8zkwzzovqFITe_W_rtd4TWZgBNfGFeiK48cBDsJGZ5_-Y82YO4Tiw3k"/>
+        <input id="79786d949fd4459bb6e80e046035aa69" name="g-recaptcha-response" type="hidden"/>
+       </form>
+      </div>
+      <!-- BOTTOM SUBSCRIBE : end -->
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <!-- FOOTER : begin -->
+</div>
+end wrapper
+<div aria-hidden="true" aria-labelledby="myLargeModalLabel" class="modal fade bs-example-modal-lg" id="myCart" role="dialog" tabindex="-1">
+ <div class="modal-dialog modal-lg">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h4 class="modal-title" id="exampleModalLabel">
+     Bạn có
+     <b>
+     </b>
+     sản phẩm trong giỏ hàng
+    </h4>
+    <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+     <a aria-hidden="true">
+     </a>
+    </button>
+   </div>
+   <form action="/cart" id="cartform" method="post">
+    <div class="modal-body">
+     <table id="cart-table" style="width:100%;">
+      <tr>
+       <th>
+       </th>
+       <th>
+        Tên sản phẩm
+       </th>
+       <th>
+        Số lượng
+       </th>
+       <th>
+        Giá tiền
+       </th>
+       <th>
+       </th>
+      </tr>
+      <tr class="line-item original">
+       <td class="item-image">
+       </td>
+       <td class="item-title">
+        <a>
+        </a>
+       </td>
+       <td class="item-quantity">
+       </td>
+       <td class="item-price">
+       </td>
+       <td class="item-delete">
+       </td>
+      </tr>
+     </table>
+    </div>
+    <div class="modal-footer">
+     <div class="row">
+      <div class="col-lg-3">
+       <div class="modal-title-note">
+        Ghi chú đơn hàng :
+       </div>
+      </div>
+      <div class="col-lg-4">
+       <div class="modal-note">
+        <textarea cols="50" id="note" name="note" placeholder="Viết ghi chú" rows="5"></textarea>
+       </div>
+      </div>
+      <div class="col-lg-5">
+       <div class="total-price-modal">
+        Tổng cộng :
+        <span class="item-total">
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="row" style="margin-top:10px;">
+      <div class="col-lg-6">
+       <div class="comeback">
+        <a href="/">
+         <img src="//hstatic.net/0/0/global/design/theme-default/icon-tieptuc.png"/>
+         Tiếp tục mua hàng
+        </a>
+       </div>
+      </div>
+      <div class="col-lg-6 text-right">
+       <div class="buttons btn-modal-cart">
+        <button class="button-default" id="checkout" name="checkout" type="submit">
+         Đặt hàng
+        </button>
+       </div>
+       <div class="buttons btn-modal-cart">
+        <button class="button-default" id="update-cart-modal" name="" type="submit">
+         Cập nhật
+        </button>
+       </div>
+      </div>
+     </div>
+    </div>
+   </form>
+  </div>
+ </div>
+</div>
+Quick view
+<div aria-hidden="false" aria-labelledby="myLargeModalLabel" class="modal fade hidden-xs" id="quick-view-modal" role="dialog" tabindex="-1">
+ <div class="modal-dialog modal-lg">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h4 class="p-title modal-title" id="">
+     Tên sản phẩm
+    </h4>
+    <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+     <a aria-hidden="true">
+     </a>
+    </button>
+   </div>
+   <div class="modal-body">
+    <div class="container-fluid">
+     <div class="row">
+      <form action="/cart/add" method="post">
+       <div class="col-lg-5 col-md-6">
+        <div class="image-zoom row">
+         <img class="p-product-image-feature" src=""/>
+         <div class="flexslider" id="p-sliderproduct">
+          <ul class="slides">
+          </ul>
+         </div>
+        </div>
+       </div>
+       <div class="col-lg-7 col-md-6 pull-right">
+        <div class="form-input">
+         <div class="product-price">
+          <span class="p-price">
+          </span>
+          <del>
+          </del>
+         </div>
+        </div>
+        <div class="p-option-wrapper">
+         <select class="" id="p-select" name="id">
+         </select>
+        </div>
+        <div class="form-input">
+         <label>
+          Số lượng
+         </label>
+         <input min="1" name="quantity" type="number" value="1"/>
+        </div>
+        <div class="form-input" style="width: 100%">
+         <button class="btn-detail btn-color-add btn-min-width btn-mgt btn-addcart" type="submit">
+          Thêm vào giỏ
+         </button>
+         <button class="btn-detail addtocart btn-color-add btn-min-width btn-mgt btn-soldout" disabled="">
+          Hết hàng
+         </button>
+         <div class="qv-readmore">
+          <span>
+           hoặc
+          </span>
+          <a class="read-more p-url" href="" role="button">
+           Xem chi tiết
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="col-lg-7 col-md-6 pull-right">
+       </div>
+      </form>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- /.modal-content -->
+ </div>
+ <!-- /.modal-dialog -->
+</div>
+/.modal 
+
+ Quick view
+
+{%endblock %}
