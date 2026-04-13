@@ -1,0 +1,2332 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(newsCategory.name).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ newsCategory.metaKeywords?:newsCategory.name }}">
+<meta name="description" content="{{ newsCategory.metaDescription?:newsCategory.name }}">
+<meta property="og:title" content="{{ newsCategory.metaTitle?:newsCategory.name }}">
+<meta property="og:url" content="{{ newsCategory.canonicalLink }}">
+<meta property="og:image" content="{{ newsCategory.imgUri }}">
+<link rel="canonical" href="{{ newsCategory.canonicalLink }}">
+{%endblock %}
+
+{%block body %}
+
+Google Tag Manager (noscript) - Container 1
+<noscript>
+ <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-5PJQ72RM" style="display:none;visibility:hidden" width="0">
+ </iframe>
+</noscript>
+Google Tag Manager (noscript) - Container 2
+<noscript>
+ <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-T6CL46QT" style="display:none;visibility:hidden" width="0">
+ </iframe>
+</noscript>
+<a class="screen-reader-shortcut" href="#main-content">
+ Skip to content
+</a>
+<modal-dialog class="thb-localization-forms-modal" data-moved="true" id="LocalizationModal--locale">
+ <div aria-modal="true" class="thb-localization-forms-modal__content" role="dialog" tabindex="-1">
+  <div class="thb-localization-forms-modal__content-header">
+   <span class="h5 body-font">
+    Select your language
+   </span>
+   <button aria-label="Close" class="thb-localization-forms-modal__toggle" id="ModalClose-LocalizationModal--locale" type="button">
+    <svg fill="none" height="14" viewbox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+     <path d="M13 1L1 13M13 13L1 1" stroke="var(--color-body)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+     </path>
+    </svg>
+   </button>
+  </div>
+  <div class="thb-localization-forms-modal__content-info">
+   <p>
+    Your currently selected language is English.
+   </p>
+   <form accept-charset="UTF-8" action="/localization" class="shopify-localization-form" enctype="multipart/form-data" id="LocalizationModal--locale-form" method="post">
+    <input name="form_type" type="hidden" value="localization"/>
+    <input name="utf8" type="hidden" value="✓"/>
+    <input name="_method" type="hidden" value="put"/>
+    <input name="return_to" type="hidden" value="/blogs/our-commitment"/>
+    <div class="select">
+     <select class="thb-language-code full" name="locale_code">
+      <option selected="selected" value="en">
+       English
+      </option>
+      <option value="ja">
+       日本語
+      </option>
+      <option value="fr">
+       français
+      </option>
+      <option value="th">
+       ภาษาไทย
+      </option>
+      <option value="de">
+       Deutsch
+      </option>
+      <option value="ar">
+       العربية
+      </option>
+     </select>
+     <div class="select-arrow">
+      <svg fill="none" height="6" viewbox="0 0 8 6" width="8" xmlns="http://www.w3.org/2000/svg">
+       <path d="M6.75 1.5L3.75 4.5L0.75 1.5" stroke="var(--color-body)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.1">
+       </path>
+      </svg>
+     </div>
+    </div>
+    <button class="button">
+     <span data-content="Update language">
+     </span>
+    </button>
+   </form>
+  </div>
+ </div>
+</modal-dialog>
+<modal-dialog class="thb-localization-forms-modal" data-moved="true" id="LocalizationModal--country">
+ <div aria-modal="true" class="thb-localization-forms-modal__content" role="dialog" tabindex="-1">
+  <div class="thb-localization-forms-modal__content-header">
+   <span class="h5 body-font">
+    Select your country or region
+   </span>
+   <button aria-label="Close" class="thb-localization-forms-modal__toggle" id="ModalClose-LocalizationModal--country" type="button">
+    <svg fill="none" height="14" viewbox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+     <path d="M13 1L1 13M13 13L1 1" stroke="var(--color-body)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+     </path>
+    </svg>
+   </button>
+  </div>
+  <div class="thb-localization-forms-modal__content-info">
+   <p>
+    Your currently selected location is the United States and your order will be billed in USD. The delivery methods, conditions of sale and delivery points will be updated when you change the country.
+   </p>
+   <form accept-charset="UTF-8" action="/localization" class="js-country-localization-form" enctype="multipart/form-data" id="LocalizationModal--country-form" method="post">
+    <input name="form_type" type="hidden" value="localization"/>
+    <input name="utf8" type="hidden" value="✓"/>
+    <input name="_method" type="hidden" value="put"/>
+    <input name="return_to" type="hidden" value="/blogs/our-commitment"/>
+    <div class="select">
+     <select class="thb-currency-code full" name="country_code">
+      <option value="AF">
+       Afghanistan (AFN ؋)
+      </option>
+      <option value="AX">
+       Åland Islands (EUR €)
+      </option>
+      <option value="DZ">
+       Algeria (DZD د.ج)
+      </option>
+      <option value="AD">
+       Andorra (EUR €)
+      </option>
+      <option value="AO">
+       Angola (USD $)
+      </option>
+      <option value="AI">
+       Anguilla (XCD $)
+      </option>
+      <option value="AG">
+       Antigua &amp; Barbuda (XCD $)
+      </option>
+      <option value="AR">
+       Argentina (USD $)
+      </option>
+      <option value="AM">
+       Armenia (AMD դր.)
+      </option>
+      <option value="AW">
+       Aruba (AWG ƒ)
+      </option>
+      <option value="AU">
+       Australia (AUD $)
+      </option>
+      <option value="AT">
+       Austria (EUR €)
+      </option>
+      <option value="AZ">
+       Azerbaijan (AZN ₼)
+      </option>
+      <option value="BS">
+       Bahamas (BSD $)
+      </option>
+      <option value="BH">
+       Bahrain (USD $)
+      </option>
+      <option value="BD">
+       Bangladesh (BDT ৳)
+      </option>
+      <option value="BB">
+       Barbados (BBD $)
+      </option>
+      <option value="BY">
+       Belarus (USD $)
+      </option>
+      <option value="BE">
+       Belgium (EUR €)
+      </option>
+      <option value="BZ">
+       Belize (BZD $)
+      </option>
+      <option value="BJ">
+       Benin (XOF Fr)
+      </option>
+      <option value="BM">
+       Bermuda (USD $)
+      </option>
+      <option value="BT">
+       Bhutan (USD $)
+      </option>
+      <option value="BO">
+       Bolivia (BOB Bs.)
+      </option>
+      <option value="BA">
+       Bosnia &amp; Herzegovina (BAM КМ)
+      </option>
+      <option value="BW">
+       Botswana (BWP P)
+      </option>
+      <option value="BV">
+       Bouvet Island (USD $)
+      </option>
+      <option value="BR">
+       Brazil (USD $)
+      </option>
+      <option value="IO">
+       British Indian Ocean Territory (USD $)
+      </option>
+      <option value="VG">
+       British Virgin Islands (USD $)
+      </option>
+      <option value="BN">
+       Brunei (BND $)
+      </option>
+      <option value="BG">
+       Bulgaria (EUR €)
+      </option>
+      <option value="BF">
+       Burkina Faso (XOF Fr)
+      </option>
+      <option value="BI">
+       Burundi (BIF Fr)
+      </option>
+      <option value="KH">
+       Cambodia (KHR ៛)
+      </option>
+      <option value="CM">
+       Cameroon (XAF CFA)
+      </option>
+      <option value="CA">
+       Canada (CAD $)
+      </option>
+      <option value="CV">
+       Cape Verde (CVE $)
+      </option>
+      <option value="BQ">
+       Caribbean Netherlands (EUR €)
+      </option>
+      <option value="KY">
+       Cayman Islands (KYD $)
+      </option>
+      <option value="CF">
+       Central African Republic (XAF CFA)
+      </option>
+      <option value="TD">
+       Chad (XAF CFA)
+      </option>
+      <option value="CL">
+       Chile (USD $)
+      </option>
+      <option value="CN">
+       China (CNY ¥)
+      </option>
+      <option value="CX">
+       Christmas Island (AUD $)
+      </option>
+      <option value="CC">
+       Cocos (Keeling) Islands (AUD $)
+      </option>
+      <option value="CO">
+       Colombia (USD $)
+      </option>
+      <option value="KM">
+       Comoros (KMF Fr)
+      </option>
+      <option value="CG">
+       Congo - Brazzaville (XAF CFA)
+      </option>
+      <option value="CD">
+       Congo - Kinshasa (CDF Fr)
+      </option>
+      <option value="CK">
+       Cook Islands (NZD $)
+      </option>
+      <option value="CR">
+       Costa Rica (CRC ₡)
+      </option>
+      <option value="CI">
+       Côte d’Ivoire (XOF Fr)
+      </option>
+      <option value="HR">
+       Croatia (EUR €)
+      </option>
+      <option value="CW">
+       Curaçao (ANG ƒ)
+      </option>
+      <option value="CY">
+       Cyprus (EUR €)
+      </option>
+      <option value="CZ">
+       Czechia (EUR €)
+      </option>
+      <option value="DK">
+       Denmark (EUR €)
+      </option>
+      <option value="DJ">
+       Djibouti (DJF Fdj)
+      </option>
+      <option value="DM">
+       Dominica (XCD $)
+      </option>
+      <option value="DO">
+       Dominican Republic (DOP $)
+      </option>
+      <option value="EC">
+       Ecuador (USD $)
+      </option>
+      <option value="EG">
+       Egypt (EGP ج.م)
+      </option>
+      <option value="SV">
+       El Salvador (USD $)
+      </option>
+      <option value="GQ">
+       Equatorial Guinea (XAF CFA)
+      </option>
+      <option value="ER">
+       Eritrea (USD $)
+      </option>
+      <option value="EE">
+       Estonia (EUR €)
+      </option>
+      <option value="SZ">
+       Eswatini (USD $)
+      </option>
+      <option value="ET">
+       Ethiopia (ETB Br)
+      </option>
+      <option value="FK">
+       Falkland Islands (FKP £)
+      </option>
+      <option value="FO">
+       Faroe Islands (DKK kr.)
+      </option>
+      <option value="FJ">
+       Fiji (FJD $)
+      </option>
+      <option value="FI">
+       Finland (EUR €)
+      </option>
+      <option value="FR">
+       France (EUR €)
+      </option>
+      <option value="GF">
+       French Guiana (EUR €)
+      </option>
+      <option value="PF">
+       French Polynesia (XPF Fr)
+      </option>
+      <option value="GA">
+       Gabon (XOF Fr)
+      </option>
+      <option value="GM">
+       Gambia (GMD D)
+      </option>
+      <option value="GE">
+       Georgia (USD $)
+      </option>
+      <option value="DE">
+       Germany (EUR €)
+      </option>
+      <option value="GH">
+       Ghana (USD $)
+      </option>
+      <option value="GI">
+       Gibraltar (GBP £)
+      </option>
+      <option value="GR">
+       Greece (EUR €)
+      </option>
+      <option value="GL">
+       Greenland (DKK kr.)
+      </option>
+      <option value="GD">
+       Grenada (XCD $)
+      </option>
+      <option value="GP">
+       Guadeloupe (EUR €)
+      </option>
+      <option value="GT">
+       Guatemala (GTQ Q)
+      </option>
+      <option value="GG">
+       Guernsey (GBP £)
+      </option>
+      <option value="GN">
+       Guinea (GNF Fr)
+      </option>
+      <option value="GW">
+       Guinea-Bissau (XOF Fr)
+      </option>
+      <option value="GY">
+       Guyana (GYD $)
+      </option>
+      <option value="HT">
+       Haiti (USD $)
+      </option>
+      <option value="HN">
+       Honduras (HNL L)
+      </option>
+      <option value="HK">
+       Hong Kong SAR (HKD $)
+      </option>
+      <option value="HU">
+       Hungary (EUR €)
+      </option>
+      <option value="IS">
+       Iceland (EUR €)
+      </option>
+      <option value="IN">
+       India (INR ₹)
+      </option>
+      <option value="ID">
+       Indonesia (IDR Rp)
+      </option>
+      <option value="IQ">
+       Iraq (USD $)
+      </option>
+      <option value="IE">
+       Ireland (EUR €)
+      </option>
+      <option value="IM">
+       Isle of Man (GBP £)
+      </option>
+      <option value="IL">
+       Israel (ILS ₪)
+      </option>
+      <option value="IT">
+       Italy (EUR €)
+      </option>
+      <option value="JM">
+       Jamaica (JMD $)
+      </option>
+      <option value="JP">
+       Japan (JPY ¥)
+      </option>
+      <option value="JE">
+       Jersey (USD $)
+      </option>
+      <option value="JO">
+       Jordan (USD $)
+      </option>
+      <option value="KZ">
+       Kazakhstan (KZT ₸)
+      </option>
+      <option value="KE">
+       Kenya (KES KSh)
+      </option>
+      <option value="KI">
+       Kiribati (USD $)
+      </option>
+      <option value="XK">
+       Kosovo (EUR €)
+      </option>
+      <option value="KW">
+       Kuwait (USD $)
+      </option>
+      <option value="KG">
+       Kyrgyzstan (KGS som)
+      </option>
+      <option value="LA">
+       Laos (LAK ₭)
+      </option>
+      <option value="LV">
+       Latvia (EUR €)
+      </option>
+      <option value="LB">
+       Lebanon (LBP ل.ل)
+      </option>
+      <option value="LS">
+       Lesotho (USD $)
+      </option>
+      <option value="LR">
+       Liberia (USD $)
+      </option>
+      <option value="LY">
+       Libya (USD $)
+      </option>
+      <option value="LI">
+       Liechtenstein (CHF CHF)
+      </option>
+      <option value="LT">
+       Lithuania (EUR €)
+      </option>
+      <option value="LU">
+       Luxembourg (EUR €)
+      </option>
+      <option value="MO">
+       Macao SAR (CNY ¥)
+      </option>
+      <option value="MG">
+       Madagascar (USD $)
+      </option>
+      <option value="MW">
+       Malawi (MWK MK)
+      </option>
+      <option value="MY">
+       Malaysia (USD $)
+      </option>
+      <option value="MV">
+       Maldives (MVR MVR)
+      </option>
+      <option value="ML">
+       Mali (XOF Fr)
+      </option>
+      <option value="MT">
+       Malta (EUR €)
+      </option>
+      <option value="MQ">
+       Martinique (EUR €)
+      </option>
+      <option value="MR">
+       Mauritania (USD $)
+      </option>
+      <option value="MU">
+       Mauritius (MUR ₨)
+      </option>
+      <option value="YT">
+       Mayotte (EUR €)
+      </option>
+      <option value="MX">
+       Mexico (USD $)
+      </option>
+      <option value="MD">
+       Moldova (MDL L)
+      </option>
+      <option value="MC">
+       Monaco (EUR €)
+      </option>
+      <option value="MN">
+       Mongolia (MNT ₮)
+      </option>
+      <option value="ME">
+       Montenegro (EUR €)
+      </option>
+      <option value="MS">
+       Montserrat (XCD $)
+      </option>
+      <option value="MA">
+       Morocco (MAD د.م.)
+      </option>
+      <option value="MZ">
+       Mozambique (USD $)
+      </option>
+      <option value="MM">
+       Myanmar (Burma) (MMK K)
+      </option>
+      <option value="NA">
+       Namibia (USD $)
+      </option>
+      <option value="NR">
+       Nauru (AUD $)
+      </option>
+      <option value="NP">
+       Nepal (NPR Rs.)
+      </option>
+      <option value="NL">
+       Netherlands (EUR €)
+      </option>
+      <option value="AN">
+       Netherlands Antilles (ANG ƒ)
+      </option>
+      <option value="NC">
+       New Caledonia (XPF Fr)
+      </option>
+      <option value="NZ">
+       New Zealand (NZD $)
+      </option>
+      <option value="NI">
+       Nicaragua (NIO C$)
+      </option>
+      <option value="NE">
+       Niger (XOF Fr)
+      </option>
+      <option value="NG">
+       Nigeria (NGN ₦)
+      </option>
+      <option value="NU">
+       Niue (NZD $)
+      </option>
+      <option value="NF">
+       Norfolk Island (AUD $)
+      </option>
+      <option value="MK">
+       North Macedonia (MKD ден)
+      </option>
+      <option value="NO">
+       Norway (USD $)
+      </option>
+      <option value="OM">
+       Oman (USD $)
+      </option>
+      <option value="PK">
+       Pakistan (PKR ₨)
+      </option>
+      <option value="PS">
+       Palestinian Territories (ILS ₪)
+      </option>
+      <option value="PA">
+       Panama (USD $)
+      </option>
+      <option value="PG">
+       Papua New Guinea (PGK K)
+      </option>
+      <option value="PY">
+       Paraguay (PYG ₲)
+      </option>
+      <option value="PE">
+       Peru (PEN S/)
+      </option>
+      <option value="PH">
+       Philippines (PHP ₱)
+      </option>
+      <option value="PN">
+       Pitcairn Islands (NZD $)
+      </option>
+      <option value="PL">
+       Poland (EUR €)
+      </option>
+      <option value="PT">
+       Portugal (EUR €)
+      </option>
+      <option value="QA">
+       Qatar (QAR ر.ق)
+      </option>
+      <option value="RE">
+       Réunion (EUR €)
+      </option>
+      <option value="RO">
+       Romania (EUR €)
+      </option>
+      <option value="RU">
+       Russia (USD $)
+      </option>
+      <option value="RW">
+       Rwanda (RWF FRw)
+      </option>
+      <option value="WS">
+       Samoa (WST T)
+      </option>
+      <option value="SM">
+       San Marino (EUR €)
+      </option>
+      <option value="ST">
+       São Tomé &amp; Príncipe (STD Db)
+      </option>
+      <option value="SA">
+       Saudi Arabia (SAR ر.س)
+      </option>
+      <option value="SN">
+       Senegal (XOF Fr)
+      </option>
+      <option value="RS">
+       Serbia (RSD РСД)
+      </option>
+      <option value="SC">
+       Seychelles (USD $)
+      </option>
+      <option value="SL">
+       Sierra Leone (SLL Le)
+      </option>
+      <option value="SG">
+       Singapore (SGD $)
+      </option>
+      <option value="SX">
+       Sint Maarten (ANG ƒ)
+      </option>
+      <option value="SK">
+       Slovakia (EUR €)
+      </option>
+      <option value="SI">
+       Slovenia (EUR €)
+      </option>
+      <option value="SB">
+       Solomon Islands (SBD $)
+      </option>
+      <option value="SO">
+       Somalia (USD $)
+      </option>
+      <option value="ZA">
+       South Africa (USD $)
+      </option>
+      <option value="KR">
+       South Korea (KRW ₩)
+      </option>
+      <option value="ES">
+       Spain (EUR €)
+      </option>
+      <option value="LK">
+       Sri Lanka (LKR ₨)
+      </option>
+      <option value="BL">
+       St. Barthélemy (EUR €)
+      </option>
+      <option value="SH">
+       St. Helena (SHP £)
+      </option>
+      <option value="KN">
+       St. Kitts &amp; Nevis (XCD $)
+      </option>
+      <option value="LC">
+       St. Lucia (XCD $)
+      </option>
+      <option value="MF">
+       St. Martin (EUR €)
+      </option>
+      <option value="PM">
+       St. Pierre &amp; Miquelon (EUR €)
+      </option>
+      <option value="VC">
+       St. Vincent &amp; Grenadines (XCD $)
+      </option>
+      <option value="SR">
+       Suriname (USD $)
+      </option>
+      <option value="SJ">
+       Svalbard &amp; Jan Mayen (USD $)
+      </option>
+      <option value="SE">
+       Sweden (EUR €)
+      </option>
+      <option value="CH">
+       Switzerland (CHF CHF)
+      </option>
+      <option value="TW">
+       Taiwan (CNY ¥)
+      </option>
+      <option value="TZ">
+       Tanzania (TZS Sh)
+      </option>
+      <option value="TH">
+       Thailand (THB ฿)
+      </option>
+      <option value="TL">
+       Timor-Leste (USD $)
+      </option>
+      <option value="TG">
+       Togo (XOF Fr)
+      </option>
+      <option value="TK">
+       Tokelau (NZD $)
+      </option>
+      <option value="TO">
+       Tonga (TOP T$)
+      </option>
+      <option value="TT">
+       Trinidad &amp; Tobago (TTD $)
+      </option>
+      <option value="TN">
+       Tunisia (USD $)
+      </option>
+      <option value="TM">
+       Turkmenistan (USD $)
+      </option>
+      <option value="TC">
+       Turks &amp; Caicos Islands (USD $)
+      </option>
+      <option value="TV">
+       Tuvalu (AUD $)
+      </option>
+      <option value="UM">
+       U.S. Outlying Islands (USD $)
+      </option>
+      <option value="UG">
+       Uganda (UGX USh)
+      </option>
+      <option value="UA">
+       Ukraine (UAH ₴)
+      </option>
+      <option value="AE">
+       United Arab Emirates (AED د.إ)
+      </option>
+      <option value="GB">
+       United Kingdom (GBP £)
+      </option>
+      <option selected="selected" value="US">
+       United States (USD $)
+      </option>
+      <option value="UY">
+       Uruguay (UYU $U)
+      </option>
+      <option value="UZ">
+       Uzbekistan (UZS so'm)
+      </option>
+      <option value="VU">
+       Vanuatu (VUV Vt)
+      </option>
+      <option value="VA">
+       Vatican City (EUR €)
+      </option>
+      <option value="VE">
+       Venezuela (USD $)
+      </option>
+      <option value="VN">
+       Vietnam (VND ₫)
+      </option>
+      <option value="WF">
+       Wallis &amp; Futuna (XPF Fr)
+      </option>
+      <option value="EH">
+       Western Sahara (MAD د.م.)
+      </option>
+      <option value="YE">
+       Yemen (YER ﷼)
+      </option>
+      <option value="ZM">
+       Zambia (USD $)
+      </option>
+      <option value="ZW">
+       Zimbabwe (USD $)
+      </option>
+     </select>
+     <div class="select-arrow">
+      <svg fill="none" height="6" viewbox="0 0 8 6" width="8" xmlns="http://www.w3.org/2000/svg">
+       <path d="M6.75 1.5L3.75 4.5L0.75 1.5" stroke="var(--color-body)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.1">
+       </path>
+      </svg>
+     </div>
+    </div>
+    <button class="button">
+     <span data-content="Update country/region">
+     </span>
+    </button>
+   </form>
+  </div>
+ </div>
+</modal-dialog>
+<div id="wrapper">
+ <!-- BEGIN sections: header-group -->
+ <div class="shopify-section shopify-section-group-header-group announcement-bar-section" id="shopify-section-sections--18485842444479__announcement-bar">
+  <link href="//songmontofficial.com/cdn/shop/t/105/assets/announcement-bar.css?v=157148682788223654121773916370" media="all" rel="stylesheet" type="text/css"/>
+  <div class="announcement-bar announcement-bar--has-border-true">
+   <div class="announcement-bar--social">
+    <ul class="social-links">
+     <li>
+      <a class="social facebook" href="https://www.facebook.com/people/Songmont/100071615434492/" rel="noreferrer" target="_blank" title="Facebook">
+       <svg aria-hidden="true" class="icon icon-facebook" focusable="false" role="presentation" viewbox="0 0 18 18">
+        <path d="M16.42.61c.27 0 .5.1.69.28.19.2.28.42.28.7v15.44c0 .27-.1.5-.28.69a.94.94 0 01-.7.28h-4.39v-6.7h2.25l.31-2.65h-2.56v-1.7c0-.4.1-.72.28-.93.18-.2.5-.32 1-.32h1.37V3.35c-.6-.06-1.27-.1-2.01-.1-1.01 0-1.83.3-2.45.9-.62.6-.93 1.44-.93 2.53v1.97H7.04v2.65h2.24V18H.98c-.28 0-.5-.1-.7-.28a.94.94 0 01-.28-.7V1.59c0-.27.1-.5.28-.69a.94.94 0 01.7-.28h15.44z" fill="var(--color-body)">
+        </path>
+       </svg>
+      </a>
+     </li>
+     <li>
+      <a class="social instagram" href="https://www.instagram.com/songmont_official/" rel="noreferrer" target="_blank" title="Instagram">
+       <svg aria-hidden="true" class="icon icon-instagram" focusable="false" role="presentation" viewbox="0 0 18 18">
+        <path d="M8.77 1.58c2.34 0 2.62.01 3.54.05.86.04 1.32.18 1.63.3.41.17.7.35 1.01.66.3.3.5.6.65 1 .12.32.27.78.3 1.64.05.92.06 1.2.06 3.54s-.01 2.62-.05 3.54a4.79 4.79 0 01-.3 1.63c-.17.41-.35.7-.66 1.01-.3.3-.6.5-1.01.66-.31.12-.77.26-1.63.3-.92.04-1.2.05-3.54.05s-2.62 0-3.55-.05a4.79 4.79 0 01-1.62-.3c-.42-.16-.7-.35-1.01-.66-.31-.3-.5-.6-.66-1a4.87 4.87 0 01-.3-1.64c-.04-.92-.05-1.2-.05-3.54s0-2.62.05-3.54c.04-.86.18-1.32.3-1.63.16-.41.35-.7.66-1.01.3-.3.6-.5 1-.65.32-.12.78-.27 1.63-.3.93-.05 1.2-.06 3.55-.06zm0-1.58C6.39 0 6.09.01 5.15.05c-.93.04-1.57.2-2.13.4-.57.23-1.06.54-1.55 1.02C1 1.96.7 2.45.46 3.02c-.22.56-.37 1.2-.4 2.13C0 6.1 0 6.4 0 8.77s.01 2.68.05 3.61c.04.94.2 1.57.4 2.13.23.58.54 1.07 1.02 1.56.49.48.98.78 1.55 1.01.56.22 1.2.37 2.13.4.94.05 1.24.06 3.62.06 2.39 0 2.68-.01 3.62-.05.93-.04 1.57-.2 2.13-.41a4.27 4.27 0 001.55-1.01c.49-.49.79-.98 1.01-1.56.22-.55.37-1.19.41-2.13.04-.93.05-1.23.05-3.61 0-2.39 0-2.68-.05-3.62a6.47 6.47 0 00-.4-2.13 4.27 4.27 0 00-1.02-1.55A4.35 4.35 0 0014.52.46a6.43 6.43 0 00-2.13-.41A69 69 0 008.77 0z" fill="var(--color-body)">
+        </path>
+        <path d="M8.8 4a4.5 4.5 0 100 9 4.5 4.5 0 000-9zm0 7.43a2.92 2.92 0 110-5.85 2.92 2.92 0 010 5.85zM13.43 5a1.05 1.05 0 100-2.1 1.05 1.05 0 000 2.1z" fill="var(--color-body)">
+        </path>
+       </svg>
+      </a>
+     </li>
+     <li>
+      <a class="social pinterest" href="https://www.pinterest.com/songmont/" rel="noreferrer" target="_blank" title="Pinterest">
+       <svg aria-hidden="true" class="icon icon-pinterest" focusable="false" role="presentation" viewbox="0 0 17 18">
+        <path d="M8.48.58a8.42 8.42 0 015.9 2.45 8.42 8.42 0 011.33 10.08 8.28 8.28 0 01-7.23 4.16 8.5 8.5 0 01-2.37-.32c.42-.68.7-1.29.85-1.8l.59-2.29c.14.28.41.52.8.73.4.2.8.31 1.24.31.87 0 1.65-.25 2.34-.75a4.87 4.87 0 001.6-2.05 7.3 7.3 0 00.56-2.93c0-1.3-.5-2.41-1.49-3.36a5.27 5.27 0 00-3.8-1.43c-.93 0-1.8.16-2.58.48A5.23 5.23 0 002.85 8.6c0 .75.14 1.41.43 1.98.28.56.7.96 1.27 1.2.1.04.19.04.26 0 .07-.03.12-.1.15-.2l.18-.68c.05-.15.02-.3-.11-.45a2.35 2.35 0 01-.57-1.63A3.96 3.96 0 018.6 4.8c1.09 0 1.94.3 2.54.89.61.6.92 1.37.92 2.32 0 .8-.11 1.54-.33 2.21a3.97 3.97 0 01-.93 1.62c-.4.4-.87.6-1.4.6-.43 0-.78-.15-1.06-.47-.27-.32-.36-.7-.26-1.13a111.14 111.14 0 01.47-1.6l.18-.73c.06-.26.09-.47.09-.65 0-.36-.1-.66-.28-.89-.2-.23-.47-.35-.83-.35-.45 0-.83.2-1.13.62-.3.41-.46.93-.46 1.56a4.1 4.1 0 00.18 1.15l.06.15c-.6 2.58-.95 4.1-1.08 4.54-.12.55-.16 1.2-.13 1.94a8.4 8.4 0 01-5-7.65c0-2.3.81-4.28 2.44-5.9A8.04 8.04 0 018.48.57z" fill="var(--color-body)">
+        </path>
+       </svg>
+      </a>
+     </li>
+     <li>
+      <a class="social tiktok" href="https://www.tiktok.com/@songmontofficial" rel="noreferrer" target="_blank" title="TikTok">
+       <svg class="icon icon-tiktok" focusable="false" height="27" role="presentation" viewbox="0 0 23 23" width="27">
+        <path d="M20.027 10.168a5.125 5.125 0 0 1-4.76-2.294v7.893a5.833 5.833 0 1 1-5.834-5.834c.122 0 .241.011.361.019v2.874c-.12-.014-.237-.036-.36-.036a2.977 2.977 0 0 0 0 5.954c1.644 0 3.096-1.295 3.096-2.94L12.56 2.4h2.75a5.122 5.122 0 0 0 4.72 4.573v3.195" fill="var(--color-body)">
+        </path>
+       </svg>
+      </a>
+     </li>
+     <li>
+      <a class="social youtube" href="https://www.youtube.com/@songmontofficial/videos" rel="noreferrer" target="_blank" title="YouTube">
+       <svg aria-hidden="true" class="icon icon-youtube" focusable="false" role="presentation" viewbox="0 0 100 70">
+        <path d="M98 11c2 7.7 2 24 2 24s0 16.3-2 24a12.5 12.5 0 01-9 9c-7.7 2-39 2-39 2s-31.3 0-39-2a12.5 12.5 0 01-9-9c-2-7.7-2-24-2-24s0-16.3 2-24c1.2-4.4 4.6-7.8 9-9 7.7-2 39-2 39-2s31.3 0 39 2c4.4 1.2 7.8 4.6 9 9zM40 50l26-15-26-15v30z" fill="var(--color-body)">
+        </path>
+       </svg>
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="announcement-bar--inner">
+    <div class="announcement-bar--carousel">
+     <slide-show class="carousel" data-autoplay="5000">
+      <div class="announcement-bar--item carousel__slide">
+       <a href="/pages/shipping" target="_blank">
+        <svg aria-hidden="true" class="icon icon-accordion color-foreground-" focusable="false" height="20" role="presentation" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+         <path d="M16.4116 2.07871C16.3845 2.09721 16.3574 2.11565 16.3303 2.13411C16.1517 2.25559 15.9719 2.37791 15.7837 2.52296L15.7773 2.52789C14.8355 3.23007 13.6039 4.27066 12.2818 5.4955C12.1614 5.60703 11.994 5.65239 11.8338 5.61687L3.68598 3.81033C3.60396 3.80009 3.57101 3.79608 3.53891 3.79608C3.32198 3.79608 3.11893 3.92321 3.0302 4.12886C2.92673 4.39247 3.02138 4.67552 3.23628 4.81149L3.24111 4.81454L8.61434 8.30083C8.741 8.38301 8.82374 8.51802 8.83947 8.66819C8.8552 8.81836 8.80223 8.96759 8.69534 9.07423L8.66991 9.09961C7.38122 10.4798 6.31043 11.7361 5.58838 12.7137C5.47003 12.8747 5.36378 13.0195 5.27879 13.1514C5.16553 13.3272 4.95486 13.4139 4.75068 13.3689L2.19767 12.8052C2.11507 12.7948 2.08257 12.7908 2.05053 12.7908C1.83353 12.7908 1.6304 12.918 1.54169 13.1236C1.44423 13.3719 1.52255 13.6375 1.71155 13.7811L4.70992 14.8869C4.84334 14.9361 4.9495 15.0398 5.00183 15.172L6.23217 18.2805C6.33749 18.4229 6.50021 18.5 6.6743 18.5C6.68974 18.5 6.70318 18.4991 6.71409 18.4977C6.75433 18.4624 6.80008 18.4337 6.84965 18.4128C7.09772 18.3083 7.23368 18.0443 7.17792 17.7789L7.17755 17.7772L6.60833 15.2112C6.56292 15.0066 6.65004 14.7953 6.82652 14.6821C6.90797 14.6299 6.97089 14.584 7.04582 14.5293C7.10751 14.4844 7.17733 14.4334 7.27233 14.3682C8.25973 13.6492 9.5053 12.5837 10.8878 11.2987L10.9132 11.2733C11.0198 11.1669 11.1687 11.1143 11.3185 11.13C11.4683 11.1457 11.603 11.2281 11.6853 11.3542L15.1827 16.7203C15.2864 16.8837 15.4603 16.9728 15.6474 16.9728C15.7137 16.9728 15.7958 16.9563 15.866 16.9273C16.1134 16.8225 16.2489 16.5588 16.1933 16.294L14.3782 8.1444C14.3425 7.9844 14.3876 7.8171 14.4987 7.69663C15.7202 6.37288 16.7705 5.15757 17.4604 4.21249L17.4689 4.20111C17.614 4.01381 17.7363 3.83484 17.8578 3.65697C17.8763 3.6299 17.8948 3.60285 17.9133 3.5758C18.0978 3.29428 18.3328 2.929 18.4428 2.55475C18.5482 2.19592 18.5158 1.92451 18.2922 1.70148C18.1713 1.58082 17.9849 1.5 17.7692 1.5C17.4882 1.5 17.1061 1.62056 16.4116 2.07871ZM11.1716 12.3976C9.92929 13.5361 8.79171 14.4994 7.85517 15.1808L7.84395 15.1889C7.79752 15.2208 7.73884 15.2628 7.67606 15.308C7.66979 15.3125 7.66348 15.3171 7.65713 15.3216L8.15558 17.5686C8.30356 18.2625 7.96934 18.9767 7.32384 19.2951C7.10254 19.4742 6.82781 19.5 6.6743 19.5C6.16465 19.5 5.66279 19.2521 5.36533 18.7835C5.34846 18.7569 5.33414 18.7288 5.32255 18.6996L4.15425 15.7478L1.30743 14.6979C1.27444 14.6858 1.24282 14.6701 1.2131 14.6513C0.56351 14.2403 0.341328 13.4303 0.615189 12.7472L0.618547 12.7388C0.868584 12.1463 1.44556 11.7908 2.05053 11.7908C2.15024 11.7908 2.24946 11.8035 2.31873 11.8124C2.32791 11.8136 2.33656 11.8147 2.34462 11.8157C2.36005 11.8177 2.37537 11.8203 2.39055 11.8237L4.63775 12.3198C4.68444 12.255 4.73137 12.1912 4.77648 12.1298L4.78291 12.1211L4.78359 12.1202C5.46491 11.1976 6.42874 10.0567 7.57005 8.81531L2.69897 5.65488C2.05143 5.24337 1.8302 4.43467 2.1037 3.75248L2.10706 3.74411C2.35707 3.15168 2.93387 2.79608 3.53891 2.79608C3.63888 2.79608 3.73821 2.8088 3.80785 2.81773C3.81678 2.81887 3.82523 2.81996 3.83313 2.82094C3.8487 2.82288 3.86417 2.82556 3.87949 2.82895L11.795 4.58399C13.0596 3.4216 14.2446 2.42349 15.1764 1.72853C15.3888 1.56496 15.5937 1.42564 15.7706 1.30538C15.7981 1.28666 15.8249 1.26841 15.851 1.2506L15.8574 1.24625C16.5966 0.758201 17.1851 0.5 17.7692 0.5C18.2292 0.5 18.6761 0.671867 18.9985 0.99357C19.5773 1.57101 19.566 2.27912 19.4022 2.83663C19.2467 3.36596 18.9337 3.8433 18.7575 4.11215L18.7411 4.13711C18.7231 4.16341 18.7045 4.19042 18.6855 4.21819C18.5656 4.39374 18.4268 4.59704 18.2639 4.80777C17.5744 5.7516 16.563 6.92641 15.411 8.182L17.1709 16.0836C17.3254 16.8078 16.9545 17.5539 16.2531 17.8493L16.2509 17.8503C16.0679 17.9263 15.8552 17.9728 15.6474 17.9728C15.1387 17.9728 14.6379 17.7259 14.3402 17.2591L11.1716 12.3976Z">
+         </path>
+        </svg>
+        Free shipping on orders over $100 USD, a $30 fee for orders below $100.
+       </a>
+      </div>
+     </slide-show>
+    </div>
+   </div>
+   <div class="announcement-bar--localization">
+    <localization-form class="thb-localization-forms">
+     <modal-opener class="thb-localization-forms__opener no-js-hidden" data-modal="#LocalizationModal--locale">
+      <button aria-haspopup="dialog" class="thb-localization-forms__button" type="button">
+       English
+      </button>
+     </modal-opener>
+     <modal-opener class="thb-localization-forms__opener no-js-hidden" data-modal="#LocalizationModal--country">
+      <button aria-haspopup="dialog" class="thb-localization-forms__button" type="button">
+       <img alt="United States" class="thb-localization-forms__flag" height="28" loading="lazy" sizes="14px" src="//cdn.shopify.com/static/images/flags/us.svg?crop=center&amp;format=jpg&amp;height=28&amp;width=28" srcset="//cdn.shopify.com/static/images/flags/us.svg?crop=center&amp;format=jpg&amp;height=28&amp;width=28 28w" width="28"/>
+       United states
+       <span class="thb-localization-forms--currency">
+        (USD $)
+       </span>
+      </button>
+     </modal-opener>
+    </localization-form>
+   </div>
+  </div>
+ </div>
+ <div class="shopify-section shopify-section-group-header-group header-section" id="shopify-section-sections--18485842444479__header">
+  <theme-header class="header style1 fixed--true transparent--true header--use-drawer-false header-sticky--active" id="header">
+   <div class="row expanded">
+    <div class="small-12 columns">
+     <div class="thb-header-mobile-left">
+      <details class="mobile-toggle-wrapper">
+       <summary class="mobile-toggle">
+        <span>
+        </span>
+        <span>
+        </span>
+        <span>
+        </span>
+       </summary>
+       <nav class="mobile-menu-drawer" id="mobile-menu" role="dialog" tabindex="-1">
+        <div class="mobile-menu-drawer--inner">
+         <ul class="mobile-menu">
+          <li>
+           <a href="/collections/new-arrivals" title="New">
+            New
+           </a>
+          </li>
+          <li>
+           <details class="link-container">
+            <summary class="parent-link">
+             Bags
+             <span class="link-forward">
+              <svg fill="none" height="14" viewbox="0 0 7 14" width="7" xmlns="http://www.w3.org/2000/svg">
+               <path d="M0.5 1L6.5 7L0.5 13" stroke="var(--color-header-links, --color-accent)" stroke-linecap="round" stroke-linejoin="round">
+               </path>
+              </svg>
+             </span>
+            </summary>
+            <ul class="sub-menu">
+             <li class="parent-link-back">
+              <button class="parent-link-back--button">
+               <span>
+                <svg fill="none" height="10" viewbox="0 0 14 10" width="14" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M13 5H1M1 5L4.98864 1M1 5L4.98864 9" stroke="var(--color-header-links, --color-accent)" stroke-linecap="round" stroke-linejoin="round">
+                 </path>
+                </svg>
+               </span>
+               Bags
+              </button>
+             </li>
+             <li>
+              <a href="/collections/all-bags" title="All Bags">
+               All Bags
+              </a>
+             </li>
+             <li>
+              <a href="/collections/best-seller" title="Best Sellers">
+               Best Sellers
+              </a>
+             </li>
+             <li>
+              <details class="link-container">
+               <summary>
+                Bags By Collection
+                <span class="link-forward">
+                 <svg fill="none" height="14" viewbox="0 0 7 14" width="7" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.5 1L6.5 7L0.5 13" stroke="var(--color-header-links, --color-accent)" stroke-linecap="round" stroke-linejoin="round">
+                  </path>
+                 </svg>
+                </span>
+               </summary>
+               <ul class="sub-menu" tabindex="-1">
+                <li class="parent-link-back">
+                 <button class="parent-link-back--button">
+                  <span>
+                   <svg fill="none" height="10" viewbox="0 0 14 10" width="14" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 5H1M1 5L4.98864 1M1 5L4.98864 9" stroke="var(--color-header-links, --color-accent)" stroke-linecap="round" stroke-linejoin="round">
+                    </path>
+                   </svg>
+                  </span>
+                  Bags By Collection
+                 </button>
+                </li>
+                <li>
+                 <a href="/collections/gather-collection" role="menuitem" title="Gather">
+                  Gather
+                 </a>
+                </li>
+                <li>
+                 <a href="/collections/yore-collection" role="menuitem" title="Yore">
+                  Yore
+                 </a>
+                </li>
+                <li>
+                 <a href="/collections/lattice-collection" role="menuitem" title="Lattice">
+                  Lattice
+                 </a>
+                </li>
+                <li>
+                 <a href="/collections/essense-collection" role="menuitem" title="Luna">
+                  Luna
+                 </a>
+                </li>
+                <li>
+                 <a href="/collections/song-collection" role="menuitem" title="Song">
+                  Song
+                 </a>
+                </li>
+                <li>
+                 <a href="/collections/drippy-bag" role="menuitem" title="Drippy">
+                  Drippy
+                 </a>
+                </li>
+                <li>
+                 <a href="/collections/shan-collection" role="menuitem" title="Shan">
+                  Shan
+                 </a>
+                </li>
+                <li>
+                 <a href="/collections/shopall-chocolate-collection" role="menuitem" title="Chocolate">
+                  Chocolate
+                 </a>
+                </li>
+                <li>
+                 <a href="/collections/vegan-collection" role="menuitem" title="Vegan">
+                  Vegan
+                 </a>
+                </li>
+                <li>
+                 <a href="/collections/reset-collection" role="menuitem" title="Reset">
+                  Reset
+                 </a>
+                </li>
+               </ul>
+              </details>
+             </li>
+             <li>
+              <details class="link-container">
+               <summary>
+                Bags By Category
+                <span class="link-forward">
+                 <svg fill="none" height="14" viewbox="0 0 7 14" width="7" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.5 1L6.5 7L0.5 13" stroke="var(--color-header-links, --color-accent)" stroke-linecap="round" stroke-linejoin="round">
+                  </path>
+                 </svg>
+                </span>
+               </summary>
+               <ul class="sub-menu" tabindex="-1">
+                <li class="parent-link-back">
+                 <button class="parent-link-back--button">
+                  <span>
+                   <svg fill="none" height="10" viewbox="0 0 14 10" width="14" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 5H1M1 5L4.98864 1M1 5L4.98864 9" stroke="var(--color-header-links, --color-accent)" stroke-linecap="round" stroke-linejoin="round">
+                    </path>
+                   </svg>
+                  </span>
+                  Bags By Category
+                 </button>
+                </li>
+                <li>
+                 <a href="/collections/bucket" role="menuitem" title="Bucket Bags">
+                  Bucket Bags
+                 </a>
+                </li>
+                <li>
+                 <a href="/collections/tote-bags" role="menuitem" title="Tote Bags">
+                  Tote Bags
+                 </a>
+                </li>
+                <li>
+                 <a href="/collections/crossbody-bags" role="menuitem" title="Crossbody Bags">
+                  Crossbody Bags
+                 </a>
+                </li>
+                <li>
+                 <a href="/collections/shoulder-bag" role="menuitem" title="Shoulder Bags">
+                  Shoulder Bags
+                 </a>
+                </li>
+                <li>
+                 <a href="/collections/duffle-bags" role="menuitem" title="Duffle Bags">
+                  Duffle Bags
+                 </a>
+                </li>
+               </ul>
+              </details>
+             </li>
+             <li>
+              <a href="/collections/spring-edit" title="Spring Edit">
+               Spring Edit
+              </a>
+             </li>
+            </ul>
+           </details>
+          </li>
+          <li>
+           <details class="link-container">
+            <summary class="parent-link">
+             Accessories
+             <span class="link-forward">
+              <svg fill="none" height="14" viewbox="0 0 7 14" width="7" xmlns="http://www.w3.org/2000/svg">
+               <path d="M0.5 1L6.5 7L0.5 13" stroke="var(--color-header-links, --color-accent)" stroke-linecap="round" stroke-linejoin="round">
+               </path>
+              </svg>
+             </span>
+            </summary>
+            <ul class="sub-menu">
+             <li class="parent-link-back">
+              <button class="parent-link-back--button">
+               <span>
+                <svg fill="none" height="10" viewbox="0 0 14 10" width="14" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M13 5H1M1 5L4.98864 1M1 5L4.98864 9" stroke="var(--color-header-links, --color-accent)" stroke-linecap="round" stroke-linejoin="round">
+                 </path>
+                </svg>
+               </span>
+               Accessories
+              </button>
+             </li>
+             <li>
+              <a href="/collections/charms" title="Charms">
+               Charms
+              </a>
+             </li>
+             <li>
+              <a href="/collections/small-leather-goods" title="Small Leathers Goods">
+               Small Leathers Goods
+              </a>
+             </li>
+            </ul>
+           </details>
+          </li>
+          <li>
+           <details class="link-container">
+            <summary class="parent-link">
+             Song of Mont
+             <span class="link-forward">
+              <svg fill="none" height="14" viewbox="0 0 7 14" width="7" xmlns="http://www.w3.org/2000/svg">
+               <path d="M0.5 1L6.5 7L0.5 13" stroke="var(--color-header-links, --color-accent)" stroke-linecap="round" stroke-linejoin="round">
+               </path>
+              </svg>
+             </span>
+            </summary>
+            <ul class="sub-menu">
+             <li class="parent-link-back">
+              <button class="parent-link-back--button">
+               <span>
+                <svg fill="none" height="10" viewbox="0 0 14 10" width="14" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M13 5H1M1 5L4.98864 1M1 5L4.98864 9" stroke="var(--color-header-links, --color-accent)" stroke-linecap="round" stroke-linejoin="round">
+                 </path>
+                </svg>
+               </span>
+               Song of Mont
+              </button>
+             </li>
+             <li>
+              <a href="/blogs/our-community" title="Our Community">
+               Our Community
+              </a>
+             </li>
+             <li>
+              <a href="/blogs/our-commitment" title="Our Commitment">
+               Our Commitment
+              </a>
+             </li>
+             <li>
+              <a href="/pages/our-locations" title="Our Locations">
+               Our Locations
+              </a>
+             </li>
+             <li>
+              <a href="/blogs/sustainability" title="Sustainability">
+               Sustainability
+              </a>
+             </li>
+             <li>
+              <a href="/blogs/journal" title="Journal">
+               Journal
+              </a>
+             </li>
+            </ul>
+           </details>
+          </li>
+         </ul>
+         <ul class="social-links">
+          <li>
+           <a class="social facebook" href="https://www.facebook.com/people/Songmont/100071615434492/" rel="noreferrer" target="_blank" title="Facebook">
+            <svg aria-hidden="true" class="icon icon-facebook" focusable="false" role="presentation" viewbox="0 0 18 18">
+             <path d="M16.42.61c.27 0 .5.1.69.28.19.2.28.42.28.7v15.44c0 .27-.1.5-.28.69a.94.94 0 01-.7.28h-4.39v-6.7h2.25l.31-2.65h-2.56v-1.7c0-.4.1-.72.28-.93.18-.2.5-.32 1-.32h1.37V3.35c-.6-.06-1.27-.1-2.01-.1-1.01 0-1.83.3-2.45.9-.62.6-.93 1.44-.93 2.53v1.97H7.04v2.65h2.24V18H.98c-.28 0-.5-.1-.7-.28a.94.94 0 01-.28-.7V1.59c0-.27.1-.5.28-.69a.94.94 0 01.7-.28h15.44z" fill="var(--color-body)">
+             </path>
+            </svg>
+           </a>
+          </li>
+          <li>
+           <a class="social instagram" href="https://www.instagram.com/songmont_official/" rel="noreferrer" target="_blank" title="Instagram">
+            <svg aria-hidden="true" class="icon icon-instagram" focusable="false" role="presentation" viewbox="0 0 18 18">
+             <path d="M8.77 1.58c2.34 0 2.62.01 3.54.05.86.04 1.32.18 1.63.3.41.17.7.35 1.01.66.3.3.5.6.65 1 .12.32.27.78.3 1.64.05.92.06 1.2.06 3.54s-.01 2.62-.05 3.54a4.79 4.79 0 01-.3 1.63c-.17.41-.35.7-.66 1.01-.3.3-.6.5-1.01.66-.31.12-.77.26-1.63.3-.92.04-1.2.05-3.54.05s-2.62 0-3.55-.05a4.79 4.79 0 01-1.62-.3c-.42-.16-.7-.35-1.01-.66-.31-.3-.5-.6-.66-1a4.87 4.87 0 01-.3-1.64c-.04-.92-.05-1.2-.05-3.54s0-2.62.05-3.54c.04-.86.18-1.32.3-1.63.16-.41.35-.7.66-1.01.3-.3.6-.5 1-.65.32-.12.78-.27 1.63-.3.93-.05 1.2-.06 3.55-.06zm0-1.58C6.39 0 6.09.01 5.15.05c-.93.04-1.57.2-2.13.4-.57.23-1.06.54-1.55 1.02C1 1.96.7 2.45.46 3.02c-.22.56-.37 1.2-.4 2.13C0 6.1 0 6.4 0 8.77s.01 2.68.05 3.61c.04.94.2 1.57.4 2.13.23.58.54 1.07 1.02 1.56.49.48.98.78 1.55 1.01.56.22 1.2.37 2.13.4.94.05 1.24.06 3.62.06 2.39 0 2.68-.01 3.62-.05.93-.04 1.57-.2 2.13-.41a4.27 4.27 0 001.55-1.01c.49-.49.79-.98 1.01-1.56.22-.55.37-1.19.41-2.13.04-.93.05-1.23.05-3.61 0-2.39 0-2.68-.05-3.62a6.47 6.47 0 00-.4-2.13 4.27 4.27 0 00-1.02-1.55A4.35 4.35 0 0014.52.46a6.43 6.43 0 00-2.13-.41A69 69 0 008.77 0z" fill="var(--color-body)">
+             </path>
+             <path d="M8.8 4a4.5 4.5 0 100 9 4.5 4.5 0 000-9zm0 7.43a2.92 2.92 0 110-5.85 2.92 2.92 0 010 5.85zM13.43 5a1.05 1.05 0 100-2.1 1.05 1.05 0 000 2.1z" fill="var(--color-body)">
+             </path>
+            </svg>
+           </a>
+          </li>
+          <li>
+           <a class="social pinterest" href="https://www.pinterest.com/songmont/" rel="noreferrer" target="_blank" title="Pinterest">
+            <svg aria-hidden="true" class="icon icon-pinterest" focusable="false" role="presentation" viewbox="0 0 17 18">
+             <path d="M8.48.58a8.42 8.42 0 015.9 2.45 8.42 8.42 0 011.33 10.08 8.28 8.28 0 01-7.23 4.16 8.5 8.5 0 01-2.37-.32c.42-.68.7-1.29.85-1.8l.59-2.29c.14.28.41.52.8.73.4.2.8.31 1.24.31.87 0 1.65-.25 2.34-.75a4.87 4.87 0 001.6-2.05 7.3 7.3 0 00.56-2.93c0-1.3-.5-2.41-1.49-3.36a5.27 5.27 0 00-3.8-1.43c-.93 0-1.8.16-2.58.48A5.23 5.23 0 002.85 8.6c0 .75.14 1.41.43 1.98.28.56.7.96 1.27 1.2.1.04.19.04.26 0 .07-.03.12-.1.15-.2l.18-.68c.05-.15.02-.3-.11-.45a2.35 2.35 0 01-.57-1.63A3.96 3.96 0 018.6 4.8c1.09 0 1.94.3 2.54.89.61.6.92 1.37.92 2.32 0 .8-.11 1.54-.33 2.21a3.97 3.97 0 01-.93 1.62c-.4.4-.87.6-1.4.6-.43 0-.78-.15-1.06-.47-.27-.32-.36-.7-.26-1.13a111.14 111.14 0 01.47-1.6l.18-.73c.06-.26.09-.47.09-.65 0-.36-.1-.66-.28-.89-.2-.23-.47-.35-.83-.35-.45 0-.83.2-1.13.62-.3.41-.46.93-.46 1.56a4.1 4.1 0 00.18 1.15l.06.15c-.6 2.58-.95 4.1-1.08 4.54-.12.55-.16 1.2-.13 1.94a8.4 8.4 0 01-5-7.65c0-2.3.81-4.28 2.44-5.9A8.04 8.04 0 018.48.57z" fill="var(--color-body)">
+             </path>
+            </svg>
+           </a>
+          </li>
+          <li>
+           <a class="social tiktok" href="https://www.tiktok.com/@songmontofficial" rel="noreferrer" target="_blank" title="TikTok">
+            <svg class="icon icon-tiktok" focusable="false" height="27" role="presentation" viewbox="0 0 23 23" width="27">
+             <path d="M20.027 10.168a5.125 5.125 0 0 1-4.76-2.294v7.893a5.833 5.833 0 1 1-5.834-5.834c.122 0 .241.011.361.019v2.874c-.12-.014-.237-.036-.36-.036a2.977 2.977 0 0 0 0 5.954c1.644 0 3.096-1.295 3.096-2.94L12.56 2.4h2.75a5.122 5.122 0 0 0 4.72 4.573v3.195" fill="var(--color-body)">
+             </path>
+            </svg>
+           </a>
+          </li>
+          <li>
+           <a class="social youtube" href="https://www.youtube.com/@songmontofficial/videos" rel="noreferrer" target="_blank" title="YouTube">
+            <svg aria-hidden="true" class="icon icon-youtube" focusable="false" role="presentation" viewbox="0 0 100 70">
+             <path d="M98 11c2 7.7 2 24 2 24s0 16.3-2 24a12.5 12.5 0 01-9 9c-7.7 2-39 2-39 2s-31.3 0-39-2a12.5 12.5 0 01-9-9c-2-7.7-2-24-2-24s0-16.3 2-24c1.2-4.4 4.6-7.8 9-9 7.7-2 39-2 39-2s31.3 0 39 2c4.4 1.2 7.8 4.6 9 9zM40 50l26-15-26-15v30z" fill="var(--color-body)">
+             </path>
+            </svg>
+           </a>
+          </li>
+         </ul>
+         <div class="thb-mobile-menu-footer">
+          <a class="thb-mobile-account-link" href="https://songmontofficial.com/customer_authentication/redirect?locale=en&amp;region_country=US" title="Login
+">
+           <svg fill="none" height="21" viewbox="0 0 20 21" width="20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 20V17.7778C19 15.3222 16.9863 13.3333 14.5 13.3333H5.5C3.01375 13.3333 1 15.3222 1 17.7778V20" stroke="var(--color-header-icons, --color-accent)" stroke-linecap="round" stroke-linejoin="round">
+            </path>
+            <path d="M10 9C12.2091 9 14 7.20914 14 5C14 2.79086 12.2091 1 10 1C7.79086 1 6 2.79086 6 5C6 7.20914 7.79086 9 10 9Z" stroke="var(--color-header-icons, --color-accent)" stroke-linecap="round" stroke-linejoin="round">
+            </path>
+           </svg>
+           Login
+          </a>
+          <div class="no-js-hidden">
+           <localization-form class="thb-localization-forms">
+            <modal-opener class="thb-localization-forms__opener no-js-hidden" data-modal="#LocalizationModal--locale">
+             <button aria-haspopup="dialog" class="thb-localization-forms__button" type="button">
+              English
+             </button>
+            </modal-opener>
+            <modal-opener class="thb-localization-forms__opener no-js-hidden" data-modal="#LocalizationModal--country">
+             <button aria-haspopup="dialog" class="thb-localization-forms__button" type="button">
+              <img alt="United States" class="thb-localization-forms__flag" height="28" loading="lazy" sizes="14px" src="//cdn.shopify.com/static/images/flags/us.svg?crop=center&amp;format=jpg&amp;height=28&amp;width=28" srcset="//cdn.shopify.com/static/images/flags/us.svg?crop=center&amp;format=jpg&amp;height=28&amp;width=28 28w" width="28"/>
+              United states
+              <span class="thb-localization-forms--currency">
+               (USD $)
+              </span>
+             </button>
+            </modal-opener>
+           </localization-form>
+          </div>
+         </div>
+        </div>
+       </nav>
+       <link href="//songmontofficial.com/cdn/shop/t/105/assets/mobile-menu.css?v=8143507457929365321773023259" media="print" onload="this.media='all'" rel="stylesheet"/>
+       <noscript>
+        <link href="//songmontofficial.com/cdn/shop/t/105/assets/mobile-menu.css?v=8143507457929365321773023259" media="all" rel="stylesheet" type="text/css"/>
+       </noscript>
+      </details>
+     </div>
+     <div class="menu-logo-container">
+      <full-menu class="full-menu">
+       <button class="full-menu--toggle mobile-toggle">
+        <span>
+        </span>
+        <span>
+        </span>
+        <span>
+        </span>
+       </button>
+       <div class="full-menu--menu">
+        <ul class="full-menu--menu-primary" role="menubar">
+         <li role="menuitem">
+          <a class="full-menu--link-parent" data-target="#menu-" href="/collections/new-arrivals" title="New">
+           New
+          </a>
+         </li>
+         <li role="menuitem">
+          <a class="full-menu--link-parent has-sub-menu" data-target="#menu-2" href="#" title="Bags">
+           Bags
+          </a>
+         </li>
+         <li role="menuitem">
+          <a class="full-menu--link-parent has-sub-menu" data-target="#menu-3" href="#" title="Accessories">
+           Accessories
+          </a>
+         </li>
+         <li role="menuitem">
+          <a class="full-menu--link-parent has-sub-menu" data-target="#menu-4" href="#" title="Song of Mont">
+           Song of Mont
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div class="full-menu--panel" tabindex="-1">
+        <div class="full-menu--panel--level">
+        </div>
+        <div class="full-menu--panel--level full-menu--panel--level-1">
+         <div class="full-menu--subpanel" id="menu-2">
+          <ul class="full-menu--submenu sub-menu" tabindex="-1">
+           <li role="none">
+            <a class="full-menu--link-child" data-target="#" href="/collections/all-bags" role="menuitem" title="All Bags">
+             All Bags
+            </a>
+           </li>
+           <li role="none">
+            <a class="full-menu--link-child" data-target="#menu-2" href="/collections/best-seller" role="menuitem" title="Best Sellers">
+             Best Sellers
+            </a>
+           </li>
+           <li role="none">
+            <a class="full-menu--link-child has-sub-menu" data-target="#menu-2-3" href="/" role="menuitem" title="Bags By Collection">
+             Bags By Collection
+             <svg fill="none" height="12" viewbox="0 0 6 12" width="6" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.5 1L5.5 6L0.5 11" stroke="var(--color-header-links, --color-accent)" stroke-linecap="round" stroke-linejoin="round">
+              </path>
+             </svg>
+            </a>
+           </li>
+           <li role="none">
+            <a class="full-menu--link-child has-sub-menu" data-target="#menu-2-4" href="/" role="menuitem" title="Bags By Category">
+             Bags By Category
+             <svg fill="none" height="12" viewbox="0 0 6 12" width="6" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.5 1L5.5 6L0.5 11" stroke="var(--color-header-links, --color-accent)" stroke-linecap="round" stroke-linejoin="round">
+              </path>
+             </svg>
+            </a>
+           </li>
+           <li role="none">
+            <a class="full-menu--link-child" data-target="#menu-2" href="/collections/spring-edit" role="menuitem" title="Spring Edit">
+             Spring Edit
+            </a>
+           </li>
+          </ul>
+         </div>
+         <div class="full-menu--subpanel" id="menu-3">
+          <ul class="full-menu--submenu sub-menu" tabindex="-1">
+           <li role="none">
+            <a class="full-menu--link-child" data-target="#menu-2" href="/collections/charms" role="menuitem" title="Charms">
+             Charms
+            </a>
+           </li>
+           <li role="none">
+            <a class="full-menu--link-child" data-target="#menu-3" href="/collections/small-leather-goods" role="menuitem" title="Small Leathers Goods">
+             Small Leathers Goods
+            </a>
+           </li>
+          </ul>
+         </div>
+         <div class="full-menu--subpanel" id="menu-4">
+          <ul class="full-menu--submenu sub-menu" tabindex="-1">
+           <li role="none">
+            <a class="full-menu--link-child" data-target="#menu-3" href="/blogs/our-community" role="menuitem" title="Our Community">
+             Our Community
+            </a>
+           </li>
+           <li role="none">
+            <a class="full-menu--link-child" data-target="#menu-4" href="/blogs/our-commitment" role="menuitem" title="Our Commitment">
+             Our Commitment
+            </a>
+           </li>
+           <li role="none">
+            <a class="full-menu--link-child" data-target="#menu-4" href="/pages/our-locations" role="menuitem" title="Our Locations">
+             Our Locations
+            </a>
+           </li>
+           <li role="none">
+            <a class="full-menu--link-child" data-target="#menu-4" href="/blogs/sustainability" role="menuitem" title="Sustainability">
+             Sustainability
+            </a>
+           </li>
+           <li role="none">
+            <a class="full-menu--link-child" data-target="#menu-4" href="/blogs/journal" role="menuitem" title="Journal">
+             Journal
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+        <div class="full-menu--panel--level full-menu--panel--level-2">
+         <div class="full-menu--subpanel" id="menu-2-3">
+          <ul class="full-menu--submenu sub-menu" role="menu">
+           <li class="" role="none">
+            <a href="/collections/gather-collection" role="menuitem" title="Gather">
+             Gather
+            </a>
+           </li>
+           <li class="" role="none">
+            <a href="/collections/yore-collection" role="menuitem" title="Yore">
+             Yore
+            </a>
+           </li>
+           <li class="" role="none">
+            <a href="/collections/lattice-collection" role="menuitem" title="Lattice">
+             Lattice
+            </a>
+           </li>
+           <li class="" role="none">
+            <a href="/collections/essense-collection" role="menuitem" title="Luna">
+             Luna
+            </a>
+           </li>
+           <li class="" role="none">
+            <a href="/collections/song-collection" role="menuitem" title="Song">
+             Song
+            </a>
+           </li>
+           <li class="" role="none">
+            <a href="/collections/drippy-bag" role="menuitem" title="Drippy">
+             Drippy
+            </a>
+           </li>
+           <li class="" role="none">
+            <a href="/collections/shan-collection" role="menuitem" title="Shan">
+             Shan
+            </a>
+           </li>
+           <li class="" role="none">
+            <a href="/collections/shopall-chocolate-collection" role="menuitem" title="Chocolate">
+             Chocolate
+            </a>
+           </li>
+           <li class="" role="none">
+            <a href="/collections/vegan-collection" role="menuitem" title="Vegan">
+             Vegan
+            </a>
+           </li>
+           <li class="" role="none">
+            <a href="/collections/reset-collection" role="menuitem" title="Reset">
+             Reset
+            </a>
+           </li>
+          </ul>
+         </div>
+         <div class="full-menu--subpanel" id="menu-2-4">
+          <ul class="full-menu--submenu sub-menu" role="menu">
+           <li class="" role="none">
+            <a href="/collections/bucket" role="menuitem" title="Bucket Bags">
+             Bucket Bags
+            </a>
+           </li>
+           <li class="" role="none">
+            <a href="/collections/tote-bags" role="menuitem" title="Tote Bags">
+             Tote Bags
+            </a>
+           </li>
+           <li class="" role="none">
+            <a href="/collections/crossbody-bags" role="menuitem" title="Crossbody Bags">
+             Crossbody Bags
+            </a>
+           </li>
+           <li class="" role="none">
+            <a href="/collections/shoulder-bag" role="menuitem" title="Shoulder Bags">
+             Shoulder Bags
+            </a>
+           </li>
+           <li class="" role="none">
+            <a href="/collections/duffle-bags" role="menuitem" title="Duffle Bags">
+             Duffle Bags
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+       <div class="full-menu--cc">
+       </div>
+      </full-menu>
+      <a class="logolink" href="/">
+       <img alt="Songmont" class="logoimg" height="379" src="//songmontofficial.com/cdn/shop/files/songmont_logo_black_2026.png?v=1771912780" width="1920"/>
+       <img alt="Songmont" class="logoimg logoimg--light" height="379" src="//songmontofficial.com/cdn/shop/files/songmont_logo_white_2026.png?v=1771912846" width="1920"/>
+      </a>
+     </div>
+     <div class="thb-secondary-area thb-header-right">
+      <a class="thb-secondary-area-item thb-secondary-myaccount" href="https://songmontofficial.com/customer_authentication/redirect?locale=en&amp;region_country=US" title="My Account">
+       <svg fill="none" height="21" viewbox="0 0 20 21" width="20" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 20V17.7778C19 15.3222 16.9863 13.3333 14.5 13.3333H5.5C3.01375 13.3333 1 15.3222 1 17.7778V20" stroke="var(--color-header-icons, --color-accent)" stroke-linecap="round" stroke-linejoin="round">
+        </path>
+        <path d="M10 9C12.2091 9 14 7.20914 14 5C14 2.79086 12.2091 1 10 1C7.79086 1 6 2.79086 6 5C6 7.20914 7.79086 9 10 9Z" stroke="var(--color-header-icons, --color-accent)" stroke-linecap="round" stroke-linejoin="round">
+        </path>
+       </svg>
+      </a>
+      <div class="gw-wl-header-icon-placeholder" style="display: block">
+      </div>
+      <a class="thb-secondary-area-item thb-quick-search" href="/search" title="Search">
+       <svg fill="none" height="19" viewbox="0 0 19 19" width="19" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13.6969 13.9469L18 18.25M15.875 8.6875C15.875 12.7951 12.5451 16.125 8.4375 16.125C4.32988 16.125 1 12.7951 1 8.6875C1 4.57988 4.32988 1.25 8.4375 1.25C12.5451 1.25 15.875 4.57988 15.875 8.6875Z" stroke="var(--color-header-icons, --color-accent)" stroke-linecap="round" stroke-linejoin="round">
+        </path>
+       </svg>
+      </a>
+      <a class="thb-secondary-area-item thb-secondary-cart" href="/cart" id="cart-drawer-toggle">
+       <span class="thb-secondary-area--item-icon">
+        <svg fill="none" height="22" viewbox="0 0 20 22" width="20" xmlns="http://www.w3.org/2000/svg">
+         <path d="M18.25 7H1.75C1 7 1 7 1 7.82353V19.1765C1 20.5 2.33579 21 2.75 21H17.25C17.6642 21 19 20.5 19 19.1765V7.82353C19 7 19 7 18.25 7Z" stroke="var(--color-header-icons, --color-accent)" stroke-linecap="round" stroke-linejoin="round">
+         </path>
+         <path d="M6 10V5.44444C6 4.2657 6.42143 3.13524 7.17157 2.30175C7.92172 1.46825 8.93913 1 10 1C11.0609 1 12.0783 1.46825 12.8284 2.30175C13.5786 3.13524 14 4.2657 14 5.44444V10" stroke="var(--color-header-icons, --color-accent)" stroke-linecap="round" stroke-linejoin="round">
+         </path>
+        </svg>
+        <span class="thb-item-count">
+         0
+        </span>
+       </span>
+      </a>
+     </div>
+    </div>
+   </div>
+   <style data-shopify="">
+    :root {
+			--logo-height: 28px;
+			--logo-height-mobile: 24px;
+		}
+   </style>
+  </theme-header>
+ </div>
+ <!-- END sections: header-group -->
+ <div class="shopify-section cart-drawer-section" id="shopify-section-cart-drawer">
+  <cart-drawer class="side-panel cart-drawer" id="Cart-Drawer" tabindex="-1">
+   <div class="side-panel-inner cart-drawer-inner">
+    <div class="side-panel-header">
+     <div>
+      <span class="h5 body-font">
+       Cart
+       <span class="thb-item-count">
+        0
+       </span>
+      </span>
+      <side-panel-close class="side-panel-close" tabindex="0">
+       <svg fill="none" height="14" viewbox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13 1L1 13M13 13L1 1" stroke="var(--color-body)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+        </path>
+       </svg>
+      </side-panel-close>
+     </div>
+    </div>
+    <div class="side-panel-content">
+     <div class="cart-drawer__empty-cart">
+      <svg fill="none" height="82" viewbox="0 0 82 82" width="82" xmlns="http://www.w3.org/2000/svg">
+       <path d="M63.2133 82.0001C58.4983 82.0001 54.6765 78.1637 54.6765 73.4633C54.6765 68.7483 58.5129 64.9265 63.2133 64.9265C67.9137 64.9265 71.7501 68.7629 71.7501 73.4633C71.7501 78.1637 67.9137 82.0001 63.2133 82.0001ZM63.2133 68.3383C60.3872 68.3383 58.0883 70.6372 58.0883 73.4633C58.0883 76.2894 60.3872 78.5883 63.2133 78.5883C66.0394 78.5883 68.3383 76.2894 68.3383 73.4633C68.3383 70.6372 66.0394 68.3383 63.2133 68.3383Z" fill="var(--color-accent)">
+       </path>
+       <path d="M29.0368 82.0001C24.3218 82.0001 20.5 78.1637 20.5 73.4633C20.5 68.7483 24.3364 64.9265 29.0368 64.9265C33.7372 64.9265 37.5736 68.7629 37.5736 73.4633C37.5882 78.1637 33.7518 82.0001 29.0368 82.0001ZM29.0368 68.3383C26.2107 68.3383 23.9118 70.6372 23.9118 73.4633C23.9118 76.2894 26.2107 78.5883 29.0368 78.5883C31.8629 78.5883 34.1618 76.2894 34.1618 73.4633C34.1618 70.6372 31.8629 68.3383 29.0368 68.3383Z" fill="var(--color-accent)">
+       </path>
+       <path d="M70.0368 61.4999H30.6036C24.9221 61.4999 20.0021 57.4585 18.8746 51.8942L10.5575 10.2499H1.71321C0.761429 10.2499 0 9.48849 0 8.5367C0 7.59956 0.761429 6.82349 1.71321 6.82349H11.9632C12.7832 6.82349 13.4714 7.39456 13.6325 8.19991L22.2425 51.206C23.0332 55.1888 26.5621 58.0735 30.6182 58.0735H70.0514C70.9886 58.0735 71.7646 58.8349 71.7646 59.7867C71.75 60.7385 70.9886 61.4999 70.0368 61.4999Z" fill="var(--color-accent)">
+       </path>
+       <path d="M67.4304 47.8383H20.5001C19.5629 47.8383 18.7869 47.0768 18.7869 46.125C18.7869 45.1733 19.5483 44.4118 20.5001 44.4118H67.4304C70.0076 44.4118 72.204 42.479 72.5115 39.9165C72.6286 38.9793 73.5365 38.3204 74.4151 38.4376C75.3522 38.5547 76.0111 39.404 75.894 40.3411C75.3668 44.6168 71.7208 47.8383 67.4304 47.8383Z" fill="var(--color-accent)">
+       </path>
+       <path d="M39.2869 20.4999H15.3751C14.4379 20.4999 13.6619 19.7385 13.6619 18.7867C13.6619 17.8496 14.4233 17.0735 15.3751 17.0735H39.2869C40.224 17.0735 41.0001 17.8349 41.0001 18.7867C41.0001 19.7385 40.2386 20.4999 39.2869 20.4999Z" fill="var(--color-accent)">
+       </path>
+       <path d="M63.2133 37.5882C52.8608 37.5882 44.4265 29.1539 44.4265 18.8014C44.4265 8.44893 52.8462 0 63.2133 0C73.5658 0 82.0001 8.43429 82.0001 18.7868C82.0001 29.1393 73.5658 37.5882 63.2133 37.5882ZM63.2133 3.41179C54.7351 3.41179 47.8383 10.3086 47.8383 18.7868C47.8383 27.265 54.7351 34.1618 63.2133 34.1618C71.6915 34.1618 78.5883 27.265 78.5883 18.7868C78.5883 10.3086 71.6915 3.41179 63.2133 3.41179Z" fill="var(--color-accent)">
+       </path>
+       <path d="M70.0368 27.3382C69.5976 27.3382 69.1583 27.1771 68.8215 26.8404L55.1597 13.1786C54.4861 12.505 54.4861 11.4361 55.1597 10.7625C55.8333 10.0889 56.9022 10.0889 57.5758 10.7625L71.2376 24.4243C71.9111 25.0979 71.9111 26.1668 71.2376 26.8404C70.9154 27.1625 70.4761 27.3382 70.0368 27.3382Z" fill="var(--color-accent)">
+       </path>
+       <path d="M56.3751 27.3382C55.9358 27.3382 55.4965 27.1771 55.1597 26.8404C54.4861 26.1668 54.4861 25.0979 55.1597 24.4243L68.8215 10.7625C69.4951 10.0889 70.564 10.0889 71.2376 10.7625C71.9111 11.4361 71.9111 12.505 71.2376 13.1786L57.5758 26.8404C57.2536 27.1625 56.8144 27.3382 56.3751 27.3382Z" fill="var(--color-accent)">
+       </path>
+      </svg>
+      <p>
+       Your cart is currently empty.
+      </p>
+      <a aria-label="Start Shopping" class="button" href="/collections/all">
+       <span data-content="Start Shopping">
+       </span>
+      </a>
+     </div>
+    </div>
+   </div>
+  </cart-drawer>
+ </div>
+ <div id="main-content" role="main">
+  <div class="shopify-section section-slideshow" id="shopify-section-template--20086292578495__slideshow_nz8xqH">
+   <link href="//songmontofficial.com/cdn/shop/t/105/assets/slideshow.css?v=182519588519620724631773023259" media="all" rel="stylesheet" type="text/css"/>
+   <slide-show class="slideshow main-slideshow carousel custom-dots change-header--true mobile-height-image desktop-height-image section-spacing section-spacing--disable-top section-spacing--disable-bottom transition--swipe dots--center" data-autoplay="5000" data-dots="false" data-fade="true" data-section-index="1" data-transition="swipe" style="--dot-speed: 5s; --color-text: #ffffff; --color-text-rgb: 255,255,255;">
+    <div class="slideshow__slide carousel__slide mobile-height-image desktop-height-image text-center content-size-medium is-initial-selected slide--dark" style="--color-text: #ffffff; --color-text-rgb: 255,255,255; --overlay-color-rgb: 0,0,0; --overlay-opacity: 0.7;">
+     <div class="slideshow__slide-adapt-to-image">
+      <img alt="" class="lazyload slideshow-image--desktop" data-src="//songmontofficial.com/cdn/shop/files/our-commitment-desktop-cover-image-blog.jpg?v=1770558047" height="1418" width="3844"/>
+      <img alt="" class="lazyload slideshow-image--mobile" data-src="//songmontofficial.com/cdn/shop/files/our-commitment-mobile-cover-image-blog.jpg?v=1770558049" height="1417" width="1773"/>
+     </div>
+     <div class="slideshow__slide-bg">
+      <img alt="" class="lazyload slideshow-image--desktop" data-sizes="auto" data-srcset="//songmontofficial.com/cdn/shop/files/our-commitment-desktop-cover-image-blog_900x_crop_center.jpg?v=1770558047 900w,//songmontofficial.com/cdn/shop/files/our-commitment-desktop-cover-image-blog_1000x_crop_center.jpg?v=1770558047 1000w,//songmontofficial.com/cdn/shop/files/our-commitment-desktop-cover-image-blog_1100x_crop_center.jpg?v=1770558047 1100w,//songmontofficial.com/cdn/shop/files/our-commitment-desktop-cover-image-blog_1200x_crop_center.jpg?v=1770558047 1200w,//songmontofficial.com/cdn/shop/files/our-commitment-desktop-cover-image-blog_1400x_crop_center.jpg?v=1770558047 1400w,//songmontofficial.com/cdn/shop/files/our-commitment-desktop-cover-image-blog_1600x_crop_center.jpg?v=1770558047 1600w,//songmontofficial.com/cdn/shop/files/our-commitment-desktop-cover-image-blog_3844x1418_crop_center.jpg?v=1770558047 3844w" fetchpriority="high" height="1418" src="//songmontofficial.com/cdn/shop/files/our-commitment-desktop-cover-image-blog_20x7_crop_center.jpg?v=1770558047" style="object-position: 50.0% 50.0%;" width="3844"/>
+      <noscript>
+       <img alt="" fetchpriority="high" height="1418" loading="lazy" sizes="auto" src="//songmontofficial.com/cdn/shop/files/our-commitment-desktop-cover-image-blog_900x_crop_center.jpg?v=1770558047" srcset="//songmontofficial.com/cdn/shop/files/our-commitment-desktop-cover-image-blog_900x_crop_center.jpg?v=1770558047 900w,//songmontofficial.com/cdn/shop/files/our-commitment-desktop-cover-image-blog_1000x_crop_center.jpg?v=1770558047 1000w,//songmontofficial.com/cdn/shop/files/our-commitment-desktop-cover-image-blog_1100x_crop_center.jpg?v=1770558047 1100w,//songmontofficial.com/cdn/shop/files/our-commitment-desktop-cover-image-blog_1200x_crop_center.jpg?v=1770558047 1200w,//songmontofficial.com/cdn/shop/files/our-commitment-desktop-cover-image-blog_1400x_crop_center.jpg?v=1770558047 1400w,//songmontofficial.com/cdn/shop/files/our-commitment-desktop-cover-image-blog_1600x_crop_center.jpg?v=1770558047 1600w,//songmontofficial.com/cdn/shop/files/our-commitment-desktop-cover-image-blog_3844x1418_crop_center.jpg?v=1770558047 3844w" style="object-position: 50.0% 50.0%;" width="3844"/>
+      </noscript>
+      <img alt="" class="lazyload slideshow-image--mobile" data-sizes="auto" data-srcset="//songmontofficial.com/cdn/shop/files/our-commitment-mobile-cover-image-blog_375x500_crop_center.jpg?v=1770558049 375w,//songmontofficial.com/cdn/shop/files/our-commitment-mobile-cover-image-blog_1773x1417_crop_center.jpg?v=1770558049 1773w" fetchpriority="high" height="1417" src="//songmontofficial.com/cdn/shop/files/our-commitment-mobile-cover-image-blog_20x15_crop_center.jpg?v=1770558049" style="object-position: 50.0% 50.0%;" width="1773">
+       <noscript>
+        <img alt="" fetchpriority="high" height="1417" loading="lazy" sizes="auto" src="//songmontofficial.com/cdn/shop/files/our-commitment-mobile-cover-image-blog_375x500_crop_center.jpg?v=1770558049" srcset="//songmontofficial.com/cdn/shop/files/our-commitment-mobile-cover-image-blog_375x500_crop_center.jpg?v=1770558049 375w,//songmontofficial.com/cdn/shop/files/our-commitment-mobile-cover-image-blog_1773x1417_crop_center.jpg?v=1770558049 1773w" style="object-position: 50.0% 50.0%;" width="1773"/>
+       </noscript>
+      </img>
+     </div>
+     <div class="slideshow__slide-overlay" style="background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4) 100%)">
+     </div>
+     <div class="slideshow__slide-inner content-bottom-center">
+      <div class="slideshow__slide-content">
+       <h1 class="split-text slideshow__slide-heading h1">
+        Our Commitment
+       </h1>
+      </div>
+     </div>
+    </div>
+   </slide-show>
+   <style>
+    @media only screen and (max-width: 1067px) {#shopify-section-template--20086292578495__slideshow_nz8xqH .slideshow__slide-heading {font-size: calc(var(--font-heading-scale) * 28px); line-height: calc( var(--font-heading-line-height-scale) * calc(var(--font-heading-scale) * 48px) ); letter-spacing: var(--font-heading-letter-spacing, normal); }}
+   </style>
+  </div>
+  <div class="shopify-section blog-header-section" id="shopify-section-template--20086292578495__main-blog-header">
+   <link href="//songmontofficial.com/cdn/shop/t/105/assets/template-header.css?v=79945687421985133161773023255" media="all" rel="stylesheet" type="text/css"/>
+   <link href="//songmontofficial.com/cdn/shop/t/105/assets/blog-header.css?v=4972883669610588301754380438" media="all" rel="stylesheet" type="text/css"/>
+   <div class="blog-header template-header">
+    <div class="row">
+     <div class="small-12 columns">
+      <div class="template-header--content">
+       <h2 class="template-header--title">
+       </h2>
+       <div class="template-header--description rte">
+        <p>
+         We are committed to transforming the spirit of Eastern people, landscapes, culture, and architecture into modern design. From the curves of ancient temples and the craftsmanship of mortise-and-tenon joints to the artistry of high-plateau weavers and the colors that echo the Silk Road across Central Asia, we preserve heritage through contemporary craftsmanship. Each piece merges timeless beauty with thoughtful function — created to accompany modern life with quiet strength and enduring grace.
+        </p>
+       </div>
+       <div class="blog-header--tags">
+        <scroll-shadow>
+         <div class="blog-header--tags--inner">
+          <a class="active" href="/blogs/our-commitment" title="All">
+           All
+          </a>
+          <a class="" href="/blogs/our-commitment/tagged/icons">
+           Icons
+          </a>
+          <a class="" href="/blogs/our-commitment/tagged/inspiration">
+           Inspiration
+          </a>
+          <a class="" href="/blogs/our-commitment/tagged/locale">
+           Locale
+          </a>
+         </div>
+        </scroll-shadow>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <style>
+    #shopify-section-template--20086292578495__main-blog-header h1 {font-size: 26px;}
+   </style>
+  </div>
+  <div class="shopify-section blog-section" id="shopify-section-template--20086292578495__main-blog">
+   <link href="//songmontofficial.com/cdn/shop/t/105/assets/blog.css?v=68016001333114881451774955888" media="all" rel="stylesheet" type="text/css"/>
+   <div class="section-spacing-bottom">
+    <div class="row full-width-row">
+     <div class="small-12 medium-4 columns">
+      <div class="blog-post">
+       <figure class="featured-image aspect-ratio" style="--ratio-percent: 62.5%;">
+        <a class="featured-image--link" href="/blogs/our-commitment/the-mont" title="The Mont">
+         <img alt="The Mont" class="lazyload" data-sizes="auto" data-srcset="//songmontofficial.com/cdn/shop/articles/the-mont-mobile-cover-image_7c537367-07a9-43ab-a98a-258ae99c6673_320x200_crop_center.jpg?v=1772446572 320w,//songmontofficial.com/cdn/shop/articles/the-mont-mobile-cover-image_7c537367-07a9-43ab-a98a-258ae99c6673_640x400_crop_center.jpg?v=1772446572 640w" fetchpriority="auto" height="628" src="//songmontofficial.com/cdn/shop/articles/the-mont-mobile-cover-image_7c537367-07a9-43ab-a98a-258ae99c6673_20x12_crop_center.jpg?v=1772446572" width="786"/>
+         <noscript>
+          <img alt="The Mont" fetchpriority="auto" height="628" loading="lazy" sizes="auto" src="//songmontofficial.com/cdn/shop/articles/the-mont-mobile-cover-image_7c537367-07a9-43ab-a98a-258ae99c6673_320x200_crop_center.jpg?v=1772446572" srcset="//songmontofficial.com/cdn/shop/articles/the-mont-mobile-cover-image_7c537367-07a9-43ab-a98a-258ae99c6673_320x200_crop_center.jpg?v=1772446572 320w,//songmontofficial.com/cdn/shop/articles/the-mont-mobile-cover-image_7c537367-07a9-43ab-a98a-258ae99c6673_640x400_crop_center.jpg?v=1772446572 640w" width="786"/>
+         </noscript>
+        </a>
+       </figure>
+       <aside class="post-meta">
+        January 29 2026
+       </aside>
+       <h5>
+        <a href="/blogs/our-commitment/the-mont" title="The Mont">
+         The Mont
+        </a>
+       </h5>
+       <div class="post-excerpt">
+        <p>
+         The Mont Collection, also known as the "Half-Day Leisure" collection, takes its name from the ancient verse "to steal half a day of leisure from fleeting life." 您的浏览器不支持 video 标签。...
+        </p>
+       </div>
+       <a aria-label="Read more" class="text-button read-more" href="/blogs/our-commitment/the-mont" title="The Mont">
+        Read more
+       </a>
+      </div>
+     </div>
+     <div class="small-12 medium-4 columns">
+      <div class="blog-post">
+       <figure class="featured-image aspect-ratio" style="--ratio-percent: 62.5%;">
+        <a class="featured-image--link" href="/blogs/our-commitment/the-shan" title="The Shan">
+         <img alt="The Shan" class="lazyload" data-sizes="auto" data-srcset="//songmontofficial.com/cdn/shop/articles/the-shan-mobile-cover-image_b0f4d29e-a786-4f8c-a44c-5796e6f479c1_320x200_crop_center.jpg?v=1772446584 320w,//songmontofficial.com/cdn/shop/articles/the-shan-mobile-cover-image_b0f4d29e-a786-4f8c-a44c-5796e6f479c1_640x400_crop_center.jpg?v=1772446584 640w" fetchpriority="auto" height="628" src="//songmontofficial.com/cdn/shop/articles/the-shan-mobile-cover-image_b0f4d29e-a786-4f8c-a44c-5796e6f479c1_20x12_crop_center.jpg?v=1772446584" width="786"/>
+         <noscript>
+          <img alt="The Shan" fetchpriority="auto" height="628" loading="lazy" sizes="auto" src="//songmontofficial.com/cdn/shop/articles/the-shan-mobile-cover-image_b0f4d29e-a786-4f8c-a44c-5796e6f479c1_320x200_crop_center.jpg?v=1772446584" srcset="//songmontofficial.com/cdn/shop/articles/the-shan-mobile-cover-image_b0f4d29e-a786-4f8c-a44c-5796e6f479c1_320x200_crop_center.jpg?v=1772446584 320w,//songmontofficial.com/cdn/shop/articles/the-shan-mobile-cover-image_b0f4d29e-a786-4f8c-a44c-5796e6f479c1_640x400_crop_center.jpg?v=1772446584 640w" width="786"/>
+         </noscript>
+        </a>
+       </figure>
+       <aside class="post-meta">
+        January 29 2026
+       </aside>
+       <h5>
+        <a href="/blogs/our-commitment/the-shan" title="The Shan">
+         The Shan
+        </a>
+       </h5>
+       <div class="post-excerpt">
+        <p>
+         The collection is inspired by the 'book satchels' carried by wandering monks in ancient times to store their books and belongings. The modern design adds an ergonomic piece: the back...
+        </p>
+       </div>
+       <a aria-label="Read more" class="text-button read-more" href="/blogs/our-commitment/the-shan" title="The Shan">
+        Read more
+       </a>
+      </div>
+     </div>
+     <div class="small-12 medium-4 columns">
+      <div class="blog-post">
+       <figure class="featured-image aspect-ratio" style="--ratio-percent: 62.5%;">
+        <a class="featured-image--link" href="/blogs/our-commitment/the-reset" title="The Reset">
+         <img alt="The Reset" class="lazyload" data-sizes="auto" data-srcset="//songmontofficial.com/cdn/shop/articles/the-reset-mobile-cover-image_7aabd774-0de4-4536-b2de-fce3901dc63e_320x200_crop_center.jpg?v=1772446606 320w,//songmontofficial.com/cdn/shop/articles/the-reset-mobile-cover-image_7aabd774-0de4-4536-b2de-fce3901dc63e_640x400_crop_center.jpg?v=1772446606 640w" fetchpriority="auto" height="628" src="//songmontofficial.com/cdn/shop/articles/the-reset-mobile-cover-image_7aabd774-0de4-4536-b2de-fce3901dc63e_20x12_crop_center.jpg?v=1772446606" width="786"/>
+         <noscript>
+          <img alt="The Reset" fetchpriority="auto" height="628" loading="lazy" sizes="auto" src="//songmontofficial.com/cdn/shop/articles/the-reset-mobile-cover-image_7aabd774-0de4-4536-b2de-fce3901dc63e_320x200_crop_center.jpg?v=1772446606" srcset="//songmontofficial.com/cdn/shop/articles/the-reset-mobile-cover-image_7aabd774-0de4-4536-b2de-fce3901dc63e_320x200_crop_center.jpg?v=1772446606 320w,//songmontofficial.com/cdn/shop/articles/the-reset-mobile-cover-image_7aabd774-0de4-4536-b2de-fce3901dc63e_640x400_crop_center.jpg?v=1772446606 640w" width="786"/>
+         </noscript>
+        </a>
+       </figure>
+       <aside class="post-meta">
+        January 29 2026
+       </aside>
+       <h5>
+        <a href="/blogs/our-commitment/the-reset" title="The Reset">
+         The Reset
+        </a>
+       </h5>
+       <div class="post-excerpt">
+        <p>
+         The Reset Collection breathes new life into Songmont's timeless designs, carrying forward the essence of the past with a renewed form. Rooted in the structural beauty of Eastern objects, it...
+        </p>
+       </div>
+       <a aria-label="Read more" class="text-button read-more" href="/blogs/our-commitment/the-reset" title="The Reset">
+        Read more
+       </a>
+      </div>
+     </div>
+     <div class="small-12 medium-4 large-6 columns">
+      <div class="blog-post">
+       <figure class="featured-image aspect-ratio" style="--ratio-percent: 62.5%;">
+        <a class="featured-image--link" href="/blogs/our-commitment/the-song" title="The Song">
+         <img alt="The Song" class="lazyload" data-sizes="auto" data-srcset="//songmontofficial.com/cdn/shop/articles/the-song-mobile-cover-image_55c228a2-c217-49eb-9d14-25d7e8387350_480x300_crop_center.jpg?v=1772446630 480w,//songmontofficial.com/cdn/shop/articles/the-song-mobile-cover-image_55c228a2-c217-49eb-9d14-25d7e8387350_960x600_crop_center.jpg?v=1772446630 960w" fetchpriority="auto" height="628" src="//songmontofficial.com/cdn/shop/articles/the-song-mobile-cover-image_55c228a2-c217-49eb-9d14-25d7e8387350_20x12_crop_center.jpg?v=1772446630" width="786"/>
+         <noscript>
+          <img alt="The Song" fetchpriority="auto" height="628" loading="lazy" sizes="auto" src="//songmontofficial.com/cdn/shop/articles/the-song-mobile-cover-image_55c228a2-c217-49eb-9d14-25d7e8387350_480x300_crop_center.jpg?v=1772446630" srcset="//songmontofficial.com/cdn/shop/articles/the-song-mobile-cover-image_55c228a2-c217-49eb-9d14-25d7e8387350_480x300_crop_center.jpg?v=1772446630 480w,//songmontofficial.com/cdn/shop/articles/the-song-mobile-cover-image_55c228a2-c217-49eb-9d14-25d7e8387350_960x600_crop_center.jpg?v=1772446630 960w" width="786"/>
+         </noscript>
+        </a>
+       </figure>
+       <aside class="post-meta">
+        January 29 2026
+       </aside>
+       <h5>
+        <a href="/blogs/our-commitment/the-song" title="The Song">
+         The Song
+        </a>
+       </h5>
+       <div class="post-excerpt">
+        <p>
+         After countless rounds of design and co-creation with our community, we finally arrived at our Song collection. The design inspiration for the silhouette of the Song bag comes from the...
+        </p>
+       </div>
+       <a aria-label="Read more" class="text-button read-more" href="/blogs/our-commitment/the-song" title="The Song">
+        Read more
+       </a>
+      </div>
+     </div>
+     <div class="small-12 medium-4 large-6 columns">
+      <div class="blog-post">
+       <figure class="featured-image aspect-ratio" style="--ratio-percent: 62.5%;">
+        <a class="featured-image--link" href="/blogs/our-commitment/the-drippy" title="The Drippy">
+         <img alt="The Drippy" class="lazyload" data-sizes="auto" data-srcset="//songmontofficial.com/cdn/shop/articles/the-drippy-moobile-cover-image_5bca4c3b-240f-4ae4-bf84-8851efa344af_480x300_crop_center.jpg?v=1772446626 480w,//songmontofficial.com/cdn/shop/articles/the-drippy-moobile-cover-image_5bca4c3b-240f-4ae4-bf84-8851efa344af_960x600_crop_center.jpg?v=1772446626 960w" fetchpriority="auto" height="628" src="//songmontofficial.com/cdn/shop/articles/the-drippy-moobile-cover-image_5bca4c3b-240f-4ae4-bf84-8851efa344af_20x12_crop_center.jpg?v=1772446626" width="786"/>
+         <noscript>
+          <img alt="The Drippy" fetchpriority="auto" height="628" loading="lazy" sizes="auto" src="//songmontofficial.com/cdn/shop/articles/the-drippy-moobile-cover-image_5bca4c3b-240f-4ae4-bf84-8851efa344af_480x300_crop_center.jpg?v=1772446626" srcset="//songmontofficial.com/cdn/shop/articles/the-drippy-moobile-cover-image_5bca4c3b-240f-4ae4-bf84-8851efa344af_480x300_crop_center.jpg?v=1772446626 480w,//songmontofficial.com/cdn/shop/articles/the-drippy-moobile-cover-image_5bca4c3b-240f-4ae4-bf84-8851efa344af_960x600_crop_center.jpg?v=1772446626 960w" width="786"/>
+         </noscript>
+        </a>
+       </figure>
+       <aside class="post-meta">
+        January 29 2026
+       </aside>
+       <h5>
+        <a href="/blogs/our-commitment/the-drippy" title="The Drippy">
+         The Drippy
+        </a>
+       </h5>
+       <div class="post-excerpt">
+        <p>
+         The design of the Drippy Roof Bags draws inspiration from the roof and eaves of the ancient Nanchan Temple (The Southern-facing Temple of Zen) in Shanxi—the oldest surviving wooden structure...
+        </p>
+       </div>
+       <a aria-label="Read more" class="text-button read-more" href="/blogs/our-commitment/the-drippy" title="The Drippy">
+        Read more
+       </a>
+      </div>
+     </div>
+     <div class="small-12 medium-4 columns">
+      <div class="blog-post">
+       <figure class="featured-image aspect-ratio" style="--ratio-percent: 62.5%;">
+        <a class="featured-image--link" href="/blogs/our-commitment/the-chocolate" title="The Chocolate">
+         <img alt="The Chocolate" class="lazyload" data-sizes="auto" data-srcset="//songmontofficial.com/cdn/shop/articles/the-chocolate-mobile-cover-image_2b066c57-4cf2-4464-8031-7508d9f3df7c_320x200_crop_center.jpg?v=1772446600 320w,//songmontofficial.com/cdn/shop/articles/the-chocolate-mobile-cover-image_2b066c57-4cf2-4464-8031-7508d9f3df7c_640x400_crop_center.jpg?v=1772446600 640w" fetchpriority="auto" height="628" src="//songmontofficial.com/cdn/shop/articles/the-chocolate-mobile-cover-image_2b066c57-4cf2-4464-8031-7508d9f3df7c_20x12_crop_center.jpg?v=1772446600" width="786"/>
+         <noscript>
+          <img alt="The Chocolate" fetchpriority="auto" height="628" loading="lazy" sizes="auto" src="//songmontofficial.com/cdn/shop/articles/the-chocolate-mobile-cover-image_2b066c57-4cf2-4464-8031-7508d9f3df7c_320x200_crop_center.jpg?v=1772446600" srcset="//songmontofficial.com/cdn/shop/articles/the-chocolate-mobile-cover-image_2b066c57-4cf2-4464-8031-7508d9f3df7c_320x200_crop_center.jpg?v=1772446600 320w,//songmontofficial.com/cdn/shop/articles/the-chocolate-mobile-cover-image_2b066c57-4cf2-4464-8031-7508d9f3df7c_640x400_crop_center.jpg?v=1772446600 640w" width="786"/>
+         </noscript>
+        </a>
+       </figure>
+       <aside class="post-meta">
+        January 29 2026
+       </aside>
+       <h5>
+        <a href="/blogs/our-commitment/the-chocolate" title="The Chocolate">
+         The Chocolate
+        </a>
+       </h5>
+       <div class="post-excerpt">
+        <p>
+         Like a piece of rich dark chocolate, this collection blends elegant design with intricate craftsmanship. Made from full-grain leather, it feels light and soothing to the touch. The Yellow River–inspired...
+        </p>
+       </div>
+       <a aria-label="Read more" class="text-button read-more" href="/blogs/our-commitment/the-chocolate" title="The Chocolate">
+        Read more
+       </a>
+      </div>
+     </div>
+     <div class="small-12 medium-4 columns">
+      <div class="blog-post">
+       <figure class="featured-image aspect-ratio" style="--ratio-percent: 62.5%;">
+        <a class="featured-image--link" href="/blogs/our-commitment/the-yore" title="The Yore">
+         <img alt="The Yore" class="lazyload" data-sizes="auto" data-srcset="//songmontofficial.com/cdn/shop/articles/the-yore-mobile-cover-image_31f3754f-d02f-4078-864c-6da75e52a7c4_320x200_crop_center.jpg?v=1772446581 320w,//songmontofficial.com/cdn/shop/articles/the-yore-mobile-cover-image_31f3754f-d02f-4078-864c-6da75e52a7c4_640x400_crop_center.jpg?v=1772446581 640w" fetchpriority="auto" height="628" src="//songmontofficial.com/cdn/shop/articles/the-yore-mobile-cover-image_31f3754f-d02f-4078-864c-6da75e52a7c4_20x12_crop_center.jpg?v=1772446581" width="786"/>
+         <noscript>
+          <img alt="The Yore" fetchpriority="auto" height="628" loading="lazy" sizes="auto" src="//songmontofficial.com/cdn/shop/articles/the-yore-mobile-cover-image_31f3754f-d02f-4078-864c-6da75e52a7c4_320x200_crop_center.jpg?v=1772446581" srcset="//songmontofficial.com/cdn/shop/articles/the-yore-mobile-cover-image_31f3754f-d02f-4078-864c-6da75e52a7c4_320x200_crop_center.jpg?v=1772446581 320w,//songmontofficial.com/cdn/shop/articles/the-yore-mobile-cover-image_31f3754f-d02f-4078-864c-6da75e52a7c4_640x400_crop_center.jpg?v=1772446581 640w" width="786"/>
+         </noscript>
+        </a>
+       </figure>
+       <aside class="post-meta">
+        January 29 2026
+       </aside>
+       <h5>
+        <a href="/blogs/our-commitment/the-yore" title="The Yore">
+         The Yore
+        </a>
+       </h5>
+       <div class="post-excerpt">
+        <p>
+         The journey of retracing our steps to the Tibetan plateau along the upper reaches of the Yellow River was a meditative trip that sought inner fulfillment, strengthening both body and...
+        </p>
+       </div>
+       <a aria-label="Read more" class="text-button read-more" href="/blogs/our-commitment/the-yore" title="The Yore">
+        Read more
+       </a>
+      </div>
+     </div>
+     <div class="small-12 medium-4 columns">
+      <div class="blog-post">
+       <figure class="featured-image aspect-ratio" style="--ratio-percent: 62.5%;">
+        <a class="featured-image--link" href="/blogs/our-commitment/the-gather" title="The Gather">
+         <img alt="The Gather" class="lazyload" data-sizes="auto" data-srcset="//songmontofficial.com/cdn/shop/articles/the-gather-mobile-cover-image_38398e63-1ffa-4e06-bcb9-d706549000fc_320x200_crop_center.png?v=1772446590 320w,//songmontofficial.com/cdn/shop/articles/the-gather-mobile-cover-image_38398e63-1ffa-4e06-bcb9-d706549000fc_640x400_crop_center.png?v=1772446590 640w" fetchpriority="auto" height="314" src="//songmontofficial.com/cdn/shop/articles/the-gather-mobile-cover-image_38398e63-1ffa-4e06-bcb9-d706549000fc_20x12_crop_center.png?v=1772446590" width="393"/>
+         <noscript>
+          <img alt="The Gather" fetchpriority="auto" height="314" loading="lazy" sizes="auto" src="//songmontofficial.com/cdn/shop/articles/the-gather-mobile-cover-image_38398e63-1ffa-4e06-bcb9-d706549000fc_320x200_crop_center.png?v=1772446590" srcset="//songmontofficial.com/cdn/shop/articles/the-gather-mobile-cover-image_38398e63-1ffa-4e06-bcb9-d706549000fc_320x200_crop_center.png?v=1772446590 320w,//songmontofficial.com/cdn/shop/articles/the-gather-mobile-cover-image_38398e63-1ffa-4e06-bcb9-d706549000fc_640x400_crop_center.png?v=1772446590 640w" width="393"/>
+         </noscript>
+        </a>
+       </figure>
+       <aside class="post-meta">
+        January 29 2026
+       </aside>
+       <h5>
+        <a href="/blogs/our-commitment/the-gather" title="The Gather">
+         The Gather
+        </a>
+       </h5>
+       <div class="post-excerpt">
+        <p>
+         West of the Yellow River lies the vital passage of the ancient Silk Road. Here, caravans once crossed deserts and towns, carrying their needs in camel packs — gathering along...
+        </p>
+       </div>
+       <a aria-label="Read more" class="text-button read-more" href="/blogs/our-commitment/the-gather" title="The Gather">
+        Read more
+       </a>
+      </div>
+     </div>
+    </div>
+    <link href="//songmontofficial.com/cdn/shop/t/105/assets/pagination.css?v=98974090855965772601773807989" media="all" rel="stylesheet" type="text/css"/>
+    <div class="pagination--wrapper">
+     <pagination-theme class="pagination pagination-type--paginated" data-section="">
+      <div class="row">
+       <div class="small-12 columns">
+        <ul class="page-numbers nav-links">
+         <li class="prev disabled">
+          <a disabled="" href="">
+           <svg fill="none" height="14" viewbox="0 0 7 14" width="7" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.5 1L0.5 7L6.5 13" stroke="var(--color-accent)" stroke-linecap="round" stroke-linejoin="round">
+            </path>
+           </svg>
+          </a>
+         </li>
+         <li class="current">
+          <span class="page">
+           1
+          </span>
+         </li>
+         <li class="page">
+          <a href="/blogs/our-commitment?page=2">
+           2
+          </a>
+         </li>
+         <li class="page">
+          <a href="/blogs/our-commitment?page=3">
+           3
+          </a>
+         </li>
+         <li class="next">
+          <a href="/blogs/our-commitment?page=2">
+           <svg fill="none" height="14" viewbox="0 0 7 14" width="7" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.499999 1L6.5 7L0.5 13" stroke="var(--color-accent)" stroke-linecap="round" stroke-linejoin="round">
+            </path>
+           </svg>
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </pagination-theme>
+    </div>
+   </div>
+  </div>
+ </div>
+ <!-- BEGIN sections: footer-group -->
+ <div class="shopify-section shopify-section-group-footer-group" id="shopify-section-sections--18485842411711__footer">
+  <link href="//songmontofficial.com/cdn/shop/t/105/assets/footer.css?v=126149687790167262061775026322" media="print" onload="this.media='all'" rel="stylesheet"/>
+  <noscript>
+   <link href="//songmontofficial.com/cdn/shop/t/105/assets/footer.css?v=126149687790167262061775026322" media="all" rel="stylesheet" type="text/css"/>
+  </noscript>
+  <style>
+   #shopify-section-sections--18485842411711__footer .widget--text {margin-bottom: 0px;}
+  </style>
+ </div>
+ <!-- END sections: footer-group -->
+ <div class="search-drawer" id="Search-Drawer" tabindex="-1">
+  <side-panel-close class="side-panel-close" tabindex="0">
+   <svg fill="none" height="14" viewbox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg">
+    <path d="M13 1L1 13M13 13L1 1" stroke="var(--color-body)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+    </path>
+   </svg>
+  </side-panel-close>
+  <form action="/search" class="search-drawer--searchform" method="get" role="search">
+   <fieldset>
+    <label class="search-drawer--searchform-label" for="search-drawer--searchform-input">
+     Search
+    </label>
+    <input autocomplete="off" class="search-drawer--searchform-input" id="search-drawer--searchform-input" name="q" placeholder="Search for anything" type="search" value=""/>
+   </fieldset>
+  </form>
+  <div class="search-drawer--inner">
+   <div class="search-drawer--popular">
+    <span class="search-drawer--label">
+     POPULAR SEARCHES
+    </span>
+    <div>
+     <a href="/pages/contact-us" title="Contact Us">
+      Contact Us
+     </a>
+     <a href="https://songmontofficial.com/apps/17TRACK" title="Track Your Order">
+      Track Your Order
+     </a>
+     <a href="/pages/joy-loyalty-page" title="Loyalty Program">
+      Loyalty Program
+     </a>
+     <a href="/blogs/other" title="Other">
+      Other
+     </a>
+     <a href="/pages/faqs" title="FAQ">
+      FAQ
+     </a>
+    </div>
+   </div>
+   <div class="thb-predictive-search">
+    <span class="loading-overlay">
+     <svg aria-hidden="true" class="spinner" focusable="false" role="presentation" viewbox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+      <circle class="spinner-path" cx="33" cy="33" fill="none" r="30" stroke="var(--color-accent)" stroke-width="6">
+      </circle>
+     </svg>
+    </span>
+   </div>
+  </div>
+ </div>
+ <link href="//songmontofficial.com/cdn/shop/t/105/assets/product-grid.css?v=84566939685972442251774519448" media="print" onload="this.media='all'" rel="stylesheet"/>
+ <link href="//songmontofficial.com/cdn/shop/t/105/assets/predictive-search.css?v=36403775245613219131773023259" media="print" onload="this.media='all'" rel="stylesheet"/>
+ <noscript>
+  <link href="//songmontofficial.com/cdn/shop/t/105/assets/product-grid.css?v=84566939685972442251774519448" media="all" rel="stylesheet" type="text/css"/>
+  <link href="//songmontofficial.com/cdn/shop/t/105/assets/predictive-search.css?v=36403775245613219131773023259" media="all" rel="stylesheet" type="text/css"/>
+ </noscript>
+ <div class="click-capture">
+ </div>
+ <div class="click-capture--product">
+ </div>
+</div>
+<link href="//songmontofficial.com/cdn/shop/t/105/assets/free-shipping.css?v=80850689356663061771754380437" media="all" rel="stylesheet" type="text/css"/>
+<back-to-top class="back-to-top">
+ <svg fill="none" height="16" viewbox="0 0 11 16" width="11" xmlns="http://www.w3.org/2000/svg">
+  <path class="back-to-top--bar" d="M4.87654 2.34497C4.87654 1.99178 5.16285 1.70547 5.51604 1.70547C5.86922 1.70547 6.15554 1.99179 6.15554 2.34497V15.5613C6.15554 15.9144 5.86922 16.2008 5.51604 16.2008C5.16285 16.2008 4.87654 15.9144 4.87654 15.5613V2.34497Z" fill="var(--color-accent)">
+  </path>
+  <path class="back-to-top--handle" d="M0.197525 5.0502L5.02195 0.225769C5.14739 0.100345 5.32293 0.0251028 5.48588 0C5.66143 -7.67342e-09 5.83696 0.0752197 5.96239 0.200647L10.7994 5.03761C10.9373 5.17554 11 5.33858 11 5.51412C11 5.68967 10.9248 5.8652 10.7994 5.99063C10.5486 6.254 10.1223 6.254 9.85892 5.99063L6.16301 2.30726C5.72921 2.1318 5.72921 1.70547 4.83387 2.29472L1.13796 5.99063C0.887198 6.254 0.460891 6.254 0.197525 5.99063C-0.0658415 5.73987 -0.0658415 5.31356 0.197525 5.0502Z" fill="var(--color-accent)">
+  </path>
+ </svg>
+</back-to-top>
+<link href="//songmontofficial.com/cdn/shop/t/105/assets/back-to-top.css?v=140614930035959457961754380439" media="print" onload="this.media='all'" rel="stylesheet">
+ <div class="custom-quickcep-launcher" id="custom-quickcep-launcher">
+  <button aria-label="Open Chat">
+   <svg height="64" viewbox="-5 0 30 35" width="64" xmlns="http://www.w3.org/2000/svg">
+    <path d="M -3 24 Q 1 23 2 24 Q 4 26 6 27 Q 9 28 12 28 A 1 1 0 0 0 12 5 Q 9 5 7 6 Q 5 7 4 8 Q 2 10 1 13 Q 0 16 0 19 Q 0 21 -3 24" fill="#faf7f4" stroke="#faf7f4">
+    </path>
+    <g transform="translate(5.5, 11.5) scale(0.11)">
+     <g fill="#54534d">
+      <path d="M21.7 78.2 l-20.8 -20.8 2.4 -2.2 2.3 -2.1 20.7 20.7 20.8 20.8 -2.4 2.2 -2.3 2.1 -20.7 -20.7z">
+      </path>
+      <path d="M66.2 96.7 l-2.1 -2.3 20.9 -20.9 20.9 -20.9 2.6 2.4 2.6 2.4 -20.8 20.8 c-11.4 11.4 -21 20.8 -21.4 20.8 -0.3 0 -1.5 -1 -2.7 -2.3z">
+      </path>
+      <path d="M42.8 73.2 c-5.3 -20.1 -5.4 -20.7 -3.4 -21.5 4.3 -1.7 4.8 -0.7 10.2 19.8 3 10.9 5 20.2 4.6 20.6 -0.4 0.3 -1.9 0.9 -3.3 1.2 l-2.6 0.7 -5.5 -20.8z">
+      </path>
+      <path d="M60.2 93.2 c-1.3 -0.2 -2.5 -0.9 -2.8 -1.7 -0.3 -0.7 1.8 -10.1 4.7 -21 l5.3 -19.7 3 0.6 c1.6 0.4 3.1 0.8 3.3 1 0.5 0.5 -9.6 38.6 -10.6 40.1 -0.3 0.6 -1.6 0.9 -2.9 0.7z">
+      </path>
+      <path d="M3.3 48.8 l-2.2 -2.2 14.5 -14.8 c12.5 -12.8 24.4 -27.9 24.4 -30.9 0 -0.5 6.9 -0.9 15.4 -0.9 l15.4 0 2.8 4.7 c4.6 8 8.1 12.2 23.1 27.3 l14.4 14.6 -2.7 2.4 -2.6 2.5 -15.6 -16.1 c-8.7 -8.8 -17.3 -18.6 -19.2 -21.7 l-3.5 -5.6 -11.6 -0.1 -11.5 0 -4.7 6.8 c-2.5 3.7 -11.3 13.3 -19.4 21.5 l-14.8 14.7 -2.2 -2.2z">
+      </path>
+     </g>
+    </g>
+   </svg>
+  </button>
+ </div>
+ <style>
+  .gw-wl-go-to-wishlist-header-widget {color: #fff !important; position: relative !important; display: inline-flex !important;}
+ </style>
+ <div class="shopify-block shopify-app-block" id="shopify-block-ARTBUa1NacDJ4Q2NDM__18208872656243357035">
+  <div class="joy-points-calculator__block--embed">
+   <input class="points-calculator__alignment" type="hidden" value="left"/>
+  </div>
+ </div>
+ <div class="shopify-block shopify-app-block" id="shopify-block-ARHFCdkJEU1Mzd0U5T__7872257831342662540">
+  <!-- BEGIN app snippet: seel-widget-loader -->
+  <!-- END app snippet -->
+  <div aria-hidden="true" data-seel-widget="worry-free" data-shop="songmont.myshopify.com" style="display:none">
+  </div>
+ </div>
+ <div class="shopify-block shopify-app-block" id="shopify-block-AVnZLR2NaY1ZMbVFxc__3409074178882204272">
+ </div>
+ <div class="shopify-block shopify-app-block bogos-shopify-block" id="shopify-block-AdjkraUk3aFVvenQ3d__8605505498557855500">
+  <div data-version="3.0" id="secomapp_freegifts_version">
+  </div>
+  <!-- BEGIN app snippet: freegifts-snippet -->
+  <link href="//cdn.shopify.com/extensions/019d76c9-263e-7b16-942c-49dfd17e2872/freegifts-190/assets/glider.min.css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="//cdn.shopify.com/extensions/019d76c9-263e-7b16-942c-49dfd17e2872/freegifts-190/assets/freegifts-main.min.css" media="all" rel="stylesheet" type="text/css"/>
+  <style id="sca_fg_custom_style">
+   .freegifts-main-container .fg-section-title, .freegifts-main-container .bogos-slider-info-title { color: #121212; }
+        .freegifts-main-container .product-title, .freegifts-main-container .bogos-gift-product-title { color: #000000; }
+        .freegifts-main-container .original-price, .freegifts-main-container .bogos-gift-item-compare-price { color: #121212; }
+        .freegifts-main-container .gift-price, .freegifts-main-container .bogos-gift-item-price { color: #ea5455; }
+        .freegifts-main-container .btn-add-to-cart { color: #FFFFFF; background-color: #7367f0; }
+        .freegifts-main-container .bogos-slider-offer-badge { background: #FFEF9D }
+        .freegifts-main-container .bogos-slider-offer-badge.success { background: #CDFEE1 }
+        .freegifts-main-container .bogos-slider-offer-title { color: #000000 }
+        .freegifts-main-container .btn-add-to-cart svg path { fill: #FFFFFF; }
+        .bogos-gift-select-variant-title { color: #005BD3; }
+        .bogos-gift-select-variant-title-contain::after { border-color: #005BD3; }
+        
+        .fg-gift-thumbnail-offer-title { color: #000000; }
+        .fg-gift-thumbnail-container { border-color: #8A8A8A; }
+        .fg-gift-thumbnail-offer-time { background-color: #000000; }
+        #sca-gift-thumbnail .sca-gift-image { width: 50px; max-height: 50px; }
+
+        #sca-gift-icon .sca-gift-icon-img { width: 50px; max-height: 50px; }
+        .sca-gift-icon-collection-page .sca-gift-icon-collection-img { width: 50px; max-height: 50px; }
+
+        #sca-promotion-glider { color: #ffffff; background-color: #F72119; }
+        
+        
+        
+        .bogos-bundles-widget { background-color: #F3F3F3;  }
+        .bogos-bundles-widget-body .bogos-bundle-item { background-color: #FFFFFF; }
+        .bogos-bundles-widget .bogos-bundles-widget-title { color: #303030; }
+        .bogos-bundles-widget .bogos-bundles-widget-description { color: #616161; }
+        .bogos-bundle-item .bogos-bundle-item-title { color: #303030; }
+        .bogos-bundle-item .bogos-bundle-item-discount-price, .bogos-bundles-widget .bogos-bundles-total-discount-price { color: #005BD3; }
+        .bogos-bundle-item .bogos-bundle-item-original-price, .bogos-bundles-widget .bogos-bundles-total-original-price { color: #005BD3; }
+        .bogos-bundles-widget-footer .bogos-bundles-button-add { color: #FFFFFF; background-color: #303030; }
+        .bogos-bundles-widget .bogos-bundle-shipping-discount-container { background-color: #DEE6FF; }
+        .bogos-bundles-widget .bogos-bundle-shipping-discount-title { color: #2332D5; }
+        
+        .bogos-bundles-quantity-break-widget { background-color: #F3F3F3;  }
+        .bogos-bundles-quantity-break-widget-title { color: #303030; }
+        .bogos-bundles-quantity-break-widget-description { color: #303030; }
+        .bogos-bundle-quantity-break-item-original-price, .bogos-bundles-quantity-break-origin-price { color: #B5B5B5; }
+        .bogos-bundles-quantity-break-button-add { background: #303030; color: #FFFFFF; }
+        .bogos-bundle-quantity-break_item-container { background: #FFFFFF; }
+        .bogos-bundle-quantity-break-label { background: #303030; color: #FFFFFF; }
+        .bogos-bundle-quantity-break-tag { background: #F1F1F1; color: #303030; }
+        .bogos-bundle-quantity-break-sub-title { color: #616161; }
+        .bogos-bundles-quantity-break-discount-price { color: #303030; }
+        .bogos-bundle-quantity-break-title { color: #303030; }
+        .bogos-bundle-quantity-break-item-discount-price { color: #303030; }
+
+        .bogos-volume-discount-widget.default-layout { background-color: #F3F3F3;  }
+        .bogos-volume-discount-widget.default-layout .bogos-volume-discount-widget-title { color: #303030; }
+        .bogos-volume-discount-widget.default-layout .bogos-volume-discount-widget-description { color: #303030; }
+        .bogos-volume-discount-widget.default-layout .bogos-volume-discount-item-original-price , .bogos-volume-discount-origin-price { color: #303030; }
+        .bogos-volume-discount-widget.default-layout .bogos-volume-discount-button-add { background: #303030; color: #FFFFFF; }
+        .bogos-volume-discount-widget.default-layout .bogos-volume-discount_item-container { background: #FFFFFF; }
+        .bogos-volume-discount-widget.default-layout .bogos-volume-discount-label { background: #303030; color: #FFFFFF; }
+        .bogos-volume-discount-widget.default-layout .bogos-volume-discount-tag { background: #F1F1F1; color: #303030; }
+        .bogos-volume-discount-widget.default-layout .bogos-volume-discount-sub-title { color: #616161; }
+        .bogos-volume-discount-widget.default-layout .bogos-volume-discount-item-discount-price { color: #303030; }
+        .bogos-volume-discount-widget.default-layout .bogos-volume-discount-discount-price { color: #303030; }
+        .bogos-volume-discount-widget.default-layout .bogos-volume-discount-title { color: #303030; }
+        .bogos-volume-discount-widget.default-layout .bogos-volume-discount-origin-price, .bogos-volume-discount-widget.default-layout .bogos-volume-discount-item-original-price { color: #B5B5B5; }
+        .bogos-volume-discount-widget.table-layout .bogos-volume-discount-widget-header { background-color: #F3F3F3; }
+        .bogos-volume-discount-widget.table-layout .bogos-volume-discount-widget-title { color: #303030; }
+        .bogos-volume-discount-widget.table-layout .bogos-volume-discount-widget-description { color: #303030; }
+        .bogos-volume-discount-table-container.line-style .bogos-volume-discount-item { background-color: #FFFFFF; }
+        .bogos-volume-discount-widget.table-layout, .bogos-volume-discount-widget.table-layout .bogos-volume-discount-item, .bogos-volume-discount-widget-body .bogos-volume-discount-tier-info, .bogos-volume-discount-widget.table-layout .bogos-volume-discount-widget-header { border-color: #E0E0E0; }
+        .bogos-volume-discount-widget.table-layout .bogos-volume-discount-title { color: #303030; }
+        .bogos-volume-discount-widget.table-layout .bogos-volume-discount-description { color: #616161; }
+        .bogos-volume-discount-widget.table-layout .bogos-volume-discount-tag { background-color: #F1F1F1; color: #303030; }
+        .bogos-volume-discount-widget.table-layout .bogos-volume-discount-tier-discount-text { color: #303030; }
+        .bogos-volume-discount-widget.table-layout .bogos-volume-discount-tier-label { color: #FFFFFF; background-color: #303030; }
+        .bogos-volume-discount-widget.table-layout .bogos-volume-discount-tier-discount-price { color: #303030; }
+        .bogos-volume-discount-widget.table-layout .bogos-volume-discount-tier-origin-price { color: #B5B5B5; }
+        .bogos-volume-discount-table-container.is-hidden-line .bogos-volume-discount-tier-info { border-color: transparent; }
+        .bogos-volume-discount-widget.table-layout .bogos-volume-discount-table-container.zebra-style .bogos-volume-discount-item:nth-child(odd) { background-color: #FFFFFF; }
+        .bogos-volume-discount-widget.table-layout .bogos-volume-discount-table-container.zebra-style  .bogos-volume-discount-item:nth-child(even) { background-color: #F5F5F5; }
+        .bogos-volume-discount-widget .bogos-vl-tb-shipping-label { color: #2332D5; }
+        .bogos-volume-discount-widget .bogos-vl-shipping-label { color: #2332D5; }
+        .bogos-volume-discount-widget .bogos-vl-shipping-container { background-color: DEE6FF; }
+        .bogos-volume-discount-widget.default-layout .bogos-vl-subscription-option-title { color: #303030; }
+        .bogos-volume-discount-widget.default-layout .bogos-vl-subscription-section-title { color: #303030; }
+        .bogos-volume-discount-widget.default-layout .bogos-vl-subscription-input-checkbox:checked { background-color: #8051FF; border-color: #8051FF;}
+        .bogos-volume-discount-widget.default-layout input[type=radio]:checked { background-color: #8051FF; border-color: #8051FF;}
+        
+        .bogos-mix-match-widget { background-color: #F3F3F3; ; }
+        .bogos-mix-match-widget .bogos-mix-item { background-color: #FFFFFF; }
+        .bogos-mix-match-widget .bogos-mix-match-widget-title { color: #303030; }
+        .bogos-mix-match-widget .bogos-mix-match-widget-description { color: #616161; }
+        .bogos-mix-match-widget .bogos-mix-item-title { color: #303030; }
+        .bogos-mix-match-widget .bogos-mix-item-discount-price { color: #303030; }
+        .bogos-mix-match-widget .bogos-mix-item-original-price { color: #B5B5B5; }
+        .bogos-mix-match-widget .bogos-mix-match-button-add { color: #FFFFFF; background-color: #303030; }
+        .bogos-mix-match-widget .bogos-mix-match-badge-item { background-color: #FFF8DB; }
+        .bogos-mix-match-widget .bogos-mix-match-badge-item.success { background-color: #CDFEE1; }
+        .bogos-mix-match-widget .bogos-mix-match-badge-item .bogos-mix-match-badge-title { color: #4F4700; }
+        .bogos-mix-match-widget .bogos-mix-match-badge-item.success .bogos-mix-match-badge-title { color: #29845A; }
+        .bogos-mix-match-widget .bogos-mix-match-shipping-discount-container { background-color: #DEE6FF; }
+        .bogos-mix-match-widget .bogos-mix-match-shipping-discount-title { color: #2332D5; }
+        
+        .bogos-bundle-page-container .bogos-bp-steps-bar, .bogos-bundle-page-container .bogos-bp-step-bar-single { background-color: #F3F3F3; }
+        .bogos-bundle-page-container .bogos-bp-step-title { color: #303030; }
+        .bogos-bp-steps-container .bogos-bp-step-item.active { border-bottom: solid 3px #303030; }
+        .bogos-bundle-page-container .bogos-bp-header-title { color: #303030; }
+        .bogos-bundle-page-container .bogos-bp-header-subtitle { color: #303030; }
+        .bogos-bundle-page-container .bogos-bp-step-header-title { color: #303030; }
+        .bogos-bundle-page-container .bogos-bp-step-header-subtitle { color: #616161; }
+        .bogos-bundle-page-container .bogos-bp-product-title, .bogos-step-item .bogos-step-item-title, .bogos-product-detail-modal .bogos-product-title { color:  #303030; }
+        .bogos-step-items-container .bogos-step-item-variant-title { color: #616161; }
+        .bogos-bundle-page-container .bogos-bp-product-price, .bogos-step-item .bogos-step-item-discount-price, .bogos-bp-widget-footer .bogos-bp-total-discount-price {  color:  #303030; }
+        .bogos-step-item .bogos-step-item-original-price, .bogos-bp-widget-footer .bogos-bp-total-original-price { color:  #808080; }
+        .bogos-bundle-page-container .bogos-bp-btn-add-product, .bogos-product-detail-modal .bogos-product-add-btn { background-color: #303030; color: #FFFFFF }
+        .bogos-bp-widget-container .bogos-bp-widget { background-color: #F3F3F3; ; }
+        .bogos-bp-widget .bogos-bp-widget-title { color: #303030; }
+        .bogos-bp-widget .bogos-bp-widget-description { color: #303030; }
+        .bogos-step-items-product-require.success .bogos-step-items-product-require-title { color: #2332D5; }
+        .bogos-bp-widget .bogos-bp-button-add { background-color: #303030; color: #FFFFFF; }
+        .bogos-bp-widget-badges-container .bogos-bp-widget-badge-item { background-color: #FFF8DB; }
+        .bogos-bp-widget-badges-container .bogos-bp-widget-badge-item.success { background-color: #CDFEE1; }
+        .bogos-bp-widget-badges-container .bogos-bp-widget-badge-title { color: #4F4700; }
+        .bogos-bp-widget-badge-item.success .bogos-bp-widget-badge-title { color: #29845A; }
+        .bogos-bp-widget .bogos-bundle-page-shipping-discount-container { background-color: #DEE6FF; }
+        .bogos-bp-widget .bogos-bundle-page-shipping-discount-title { color: #2332D5; }
+        
+        .bogos-fbt-upsell-container { background: #F6F6F6; }
+        .bogos-fbt-header-title { color: #303030; }
+        .bogos-fbt-header-description { color: #303030; }
+        .bogos-fbt-footer-discounted-price { color: #303030; }
+        .bogos-fbt-footer-original-price { color: #616161; }
+        .bogos-fbt-footer-button-add { background: #303030; color: #FFFFFF; }
+        .bogos-fbt-product-title {color: #303030; }
+        .bogos-fbt-upsell-product-discounted-price {color: #303030; }
+        .bogos-fbt-upsell-product-original-price {color: #808080; }
+        .is-cheapest-free-label {color: #FFFFFF ;background-color: #FFAA00;}
+        .is-cheapest-free {background-color: rgba(255, 170, 0, 0.2);}
+        .bogos-fbt-this-item {background-color: #D1D1D1;color: #303030;}
+        .bogos-fbt-upsell-body-item-checkbox {border-color: #303030;}
+        .bogos-fbt-upsell-body-item-checkbox:checked {border-color: #303030; background-color: #303030;}
+        .bogos-fbt-shipping-discount-container { background-color: #DEE6FF; }
+        .bogos-fbt-shipping-discount-title { color: #2332D5; }
+        
+        .bogos-cheapest-discount {background-color: #ffffff; border-color: #888888;}
+        .bogos-cheapest-discount .bogos-cheapest-title { color: #303030; }
+        .bogos-cheapest-list-product-modal .bogos-cheapest-title { color: #303030; }
+        .bogos-cheapest-discount .bogos-cheapest-description { color: #616161; }
+        .bogos-cheapest-product-card .bogos-cheapest-product-title { color: #303030; }
+        .bogos-cheapest-product-card .bogos-cheapest-product-price { color: #303030; }
+        .bogos-cheapest-product-card .bogos-cheapest-select-variant-title { color: #303030; }
+        .bogos-cheapest-product-card .bogos-cheapest-product-add-btn { color: #ffffff; background-color: #303030}
+        .bogos-cheapest-label-item.active .bogos-cheapest-label { color: #303030; }
+        .bogos-cheapest-label-item.active #bogos-active-icon path { fill: #303030; }
+        .bogos-cheapest-label-item.excluded .bogos-cheapest-label { color: #CCCCCC; }
+        .bogos-cheapest-label-item.excluded #bogos-excluded-icon path { fill: #CCCCCC; }
+        .bogos-cheapest-label-item:not(.active):not(.excluded) #bogos-uncheck-icon path { fill: #4A4A4A; }
+        .bogos-cheapest-label-item:not(.active):not(.excluded) .bogos-cheapest-label { color: #303030; }
+        .bogos-cheapest-discount .bogos-cheapest-label-container:not(:has(.bogos-cheapest-discount-bullet-items)) {background-color: #F6F6F6;}
+        .bogos-cheapest-discount .bogos-cheapest-discount-bullet-item {color: #808080;}
+        .bogos-cheapest-discount .bogos-cheapest-products-describe {color: #616161;}
+        .bogos-cheapest-discount .bogos-cheapest-products-more-btn {color: #303030;}
+        
+        .bogos-select-option-custom-item:not(.bogos-option-default):not(.bogos-active):not(has(.sca-d-none)) {background-color: #F0F0F0; color: #303030;}
+        .bogos-select-option-custom-item:not(.bogos-option-default).bogos-active:not(has(.sca-d-none)) {background-color: #F0F0F0; color: #303030;}
+        .bogos-select-option-custom-item:not(.bogos-option-default).bogos-active {border: 0.5px solid #303030;}
+        .bogos-select-option-custom-item.bogos-option-default:not(.bogos-active) .bogos-option-value-title {background-color: #F0F0F0; color: #303030;}
+        .bogos-select-option-custom-item.bogos-option-default.bogos-active .bogos-option-value-title {background-color: #F0F0F0; color: #303030;}
+        .bogos-select-option-custom-item.bogos-option-default.bogos-active {border: 0.5px solid #303030;}
+        .bogos-mix-item-select-variant-option:hover, .bogos-gift-select-variant-option:hover, .bogos-bundle-select-variant-option:hover, .bogos-vl-select-variant-option:hover, .bogos-fbt-variant-item:hover {background-color: #F0F0F0;}
+  </style>
+  <div class="freegifts-main-container sca-modal-fg" data-animation="slideInOutTop" id="freegifts-main-popup-container">
+  </div>
+  <div class="sca-fg-notifications" id="sca-fg-notifications">
+  </div>
+  <div id="bogos-to-widget-icon-wrap">
+  </div>
+  <div id="bogos-to-widget-iframe">
+  </div>
+  <div id="sca-fg-today-offer-widget">
+  </div>
+  <div id="sca-fg-today-offer-iframe">
+  </div>
+  <div class="sca-modal-fg" id="bogos-mix-match-main-collection-popup-container">
+  </div>
+  <div data-animation="slideInOutTop" id="bogos-main-popup-product-detail-container">
+  </div>
+  <div data-animation="slideInOutTop" id="bogos-main-popup-more-product-container">
+  </div>
+  <div id="bogos-cart-discount-congrats-msg-wrap">
+  </div>
+  <div data-url="https://cdn.bogos.io/c29uZ21vbnQubXlzaG9waWZ5LmNvbQ==/freegifts_data_1775653567.min.js" id="secomapp_freegifts_url">
+  </div>
+  <div data-url="https://cdn.shopify.com/extensions/019d76c9-263e-7b16-942c-49dfd17e2872/freegifts-190/assets/gift.min.js" id="bogos-gift-script">
+  </div>
+  <div data-url="https://cdn.shopify.com/extensions/019d76c9-263e-7b16-942c-49dfd17e2872/freegifts-190/assets/bundle.min.js" id="bogos-bundle-script">
+  </div>
+  <div data-url="https://cdn.shopify.com/extensions/019d76c9-263e-7b16-942c-49dfd17e2872/freegifts-190/assets/upsell.min.js" id="bogos-upsell-script">
+  </div>
+  <div data-url="https://cdn.shopify.com/extensions/019d76c9-263e-7b16-942c-49dfd17e2872/freegifts-190/assets/discount.min.js" id="bogos-discount-script">
+  </div>
+  <div data-url="https://cdn.shopify.com/extensions/019d76c9-263e-7b16-942c-49dfd17e2872/freegifts-190/assets/bundle-page.min.js" id="bogos-bundle-page-script">
+  </div>
+  <div data-url="https://cdn.shopify.com/extensions/019d76c9-263e-7b16-942c-49dfd17e2872/freegifts-190/assets/booster.min.js" id="bogos-booster-script">
+  </div>
+  <div data-url="https://cdn.shopify.com/extensions/019d76c9-263e-7b16-942c-49dfd17e2872/freegifts-190/assets/booster-page.min.js" id="bogos-booster-page-script">
+  </div>
+  <div data-url="https://cdn.shopify.com/extensions/019d76c9-263e-7b16-942c-49dfd17e2872/freegifts-190/assets/bogos.bundle.min.css" id="bogos-bundle-style">
+  </div>
+  <div data-url="https://cdn.shopify.com/extensions/019d76c9-263e-7b16-942c-49dfd17e2872/freegifts-190/assets/bogos.upsell.min.css" id="bogos-upsell-style">
+  </div>
+  <div data-url="https://cdn.shopify.com/extensions/019d76c9-263e-7b16-942c-49dfd17e2872/freegifts-190/assets/bogos.discount.min.css" id="bogos-discount-style">
+  </div>
+  <div data-url="https://cdn.shopify.com/extensions/019d76c9-263e-7b16-942c-49dfd17e2872/freegifts-190/assets/bogos.bundle-page.min.css" id="bogos-bundle-page-style">
+  </div>
+  <div data-url="https://cdn.shopify.com/extensions/019d76c9-263e-7b16-942c-49dfd17e2872/freegifts-190/assets/bogos.booster.min.css" id="bogos-booster-style">
+  </div>
+  <div data-url="https://cdn.shopify.com/extensions/019d76c9-263e-7b16-942c-49dfd17e2872/freegifts-190/assets/bogos.booster-page.min.css" id="bogos-booster-page-style">
+  </div>
+  <!-- END app snippet -->
+ </div>
+ <div class="shopify-block shopify-app-block" id="shopify-block-AVU0zK1p3ZlJNdWpsN__15796953133730294439">
+  <!-- BEGIN app snippet: socialshopwave-helper-v2 -->
+  <style id="for-wl-btn">
+   .gw-wl-add-to-wishlist-placeholder {
+    margin-bottom: 25px;
+  }
+  .gw-wl-add-to-wishlist-product-page-widget .gw-btn.gw-button.--contained {
+    height: 50px;
+  }
+  .gw-wl-add-to-wishlist-product-page-widget span {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: max(calc(var(--typeBaseSize) - 4px), 16px);
+    font-family: var(--typeBasePrimary), var(--typeBaseFallback);
+    letter-spacing: 0.3em;
+  }
+  </style>
+  <style id="for-wl-header">
+   .gw-wl-header-icon-placeholder {
+    display: inline-block !important;
+    vertical-align: middle;
+    --color: var(--colorNavText)
+  }
+  .is-light .gw-wl-header-icon-placeholder {
+    --color: #fff;
+  }
+  .gw-wl-go-to-wishlist-header-widget .gw-wl-icon {
+    color: var(--color);
+  }
+  </style>
+  <style id="for-wl-page">
+   .gw-wl-page__header-title {
+    display: none;
+  }
+  .gw-wl-page-item__editable-options-wrapper {
+    display: none;
+  }
+  </style>
+  <style id="for-rv-page">
+   .gw-rv-reviews-page__title {
+    display: none;
+  }
+  </style>
+  <style id="for-rd-tier">
+   .gw-rd-vip-tiers-page-widget-card__list-item:nth-child(2) {
+    display: none !important;
+  }
+  </style>
+  <style id="for-wl-shared">
+   .gw-wl-page-item__footer .gw-wl-page-item__editable-options-wrapper{
+    /* display: none !important; */
+  }
+  </style>
+  <div class="gw-widget-placeholder-LC-wrapper" style="display: block">
+   <div class="gw-widget-placeholder-LC">
+   </div>
+  </div>
+  <div class="gw-widget-placeholder-RC-wrapper" style="display: block">
+   <div class="gw-widget-placeholder-RC">
+   </div>
+  </div>
+  <div class="gw-widget-placeholder-BR-wrapper" style="display: block">
+   <div class="gw-widget-placeholder-BR">
+   </div>
+  </div>
+  <div class="gw-widget-placeholder-BL-wrapper" style="display: block">
+   <div class="gw-widget-placeholder-BL">
+   </div>
+  </div>
+  <!-- TODO use theme settings from the variables -->
+  <!-- END app snippet -->
+ </div>
+</link>
+
+{%endblock %}
