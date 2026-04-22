@@ -1,0 +1,26 @@
+.velvetskin-index-about-2 {
+  padding: 80px 0; }
+  .velvetskin-index-about-2 .heading-title {
+    margin-bottom: 0; }
+    .velvetskin-index-about-2 .heading-title .title1 {
+      color: #68513f; }
+    .velvetskin-index-about-2 .heading-title .desc {
+      margin-top: 20px; }
+  .velvetskin-index-about-2 .btn-more {
+    margin-top: 40px; }
+  .velvetskin-index-about-2 .about-banner img {
+    border-radius: 10px; }
+  @media (min-width: 1200px) {
+    .velvetskin-index-about-2 .about-content {
+      padding: 0 60px; } }
+  @media (max-width: 991px) {
+    .velvetskin-index-about-2 .row {
+      flex-flow: column-reverse;
+      gap: 40px; } }
+  @media (max-width: 767px) {
+    .velvetskin-index-about-2 {
+      padding: 40px 0; }
+      .velvetskin-index-about-2 .row {
+        gap: 30px; }
+      .velvetskin-index-about-2 .btn-more {
+        margin-top: 20px; } }
