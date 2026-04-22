@@ -1,0 +1,26 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(translate('Đăng nhập')).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ getKeyContentValue('META_KEYWORDS') }}">
+<meta name="description" content="{{ getKeyContentValue('META_DESCRIPTION') }}">
+<meta property="og:title" content="{{ getKeyContentValue('META_TITLE') }}">
+<meta property="og:url" content="{{ getCurrentUrl() }}">
+<meta property="og:image" content="{{ getBusinessLogo() }}">
+<link rel="canonical" href="{{ getCurrentUrl() }}">
+{%endblock %}
+
+{%block body %}
+
+<noscript>
+ <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-NF7SPWCZ" style="display:none;visibility:hidden" width="0">
+ </iframe>
+</noscript>
+<noscript>
+ You need to enable JavaScript to run this app.
+</noscript>
+<div id="root">
+ <div id="loading">
+ </div>
+</div>
+
+{%endblock %}
