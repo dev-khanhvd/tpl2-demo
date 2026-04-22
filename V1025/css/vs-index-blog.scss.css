@@ -1,0 +1,55 @@
+.velvetskin-index-blog {
+  padding: 80px 0; }
+  .velvetskin-index-blog .heading-title {
+    margin-bottom: 60px; }
+    .velvetskin-index-blog .heading-title .title1 {
+      color: #68513f; }
+  .velvetskin-index-blog .btn-more {
+    margin-top: 60px; }
+  .velvetskin-index-blog .article-loop .article-inner {
+    display: flex;
+    gap: 30px; }
+    .velvetskin-index-blog .article-loop .article-inner > div {
+      flex: 0 0 auto;
+      width: calc(50% - 15px); }
+    .velvetskin-index-blog .article-loop .article-inner .article-image {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px; }
+      .velvetskin-index-blog .article-loop .article-inner .article-image img {
+        transition: all 0.5s; }
+    .velvetskin-index-blog .article-loop .article-inner .article-detail {
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      align-items: start;
+      gap: 20px; }
+      .velvetskin-index-blog .article-loop .article-inner .article-detail .post-title {
+        font-size: 28px; }
+      .velvetskin-index-blog .article-loop .article-inner .article-detail .button {
+        background: transparent;
+        border: 1px solid;
+        color: #000000;
+        padding: 8px 15px; }
+    .velvetskin-index-blog .article-loop .article-inner:hover .article-image img {
+      transform: scale(1.08); }
+  @media (max-width: 991px) {
+    .velvetskin-index-blog .list-blog {
+      gap: 40px; } }
+  @media (max-width: 767px) {
+    .velvetskin-index-blog {
+      padding: 40px 0; }
+      .velvetskin-index-blog .heading-title {
+        margin-bottom: 30px; }
+      .velvetskin-index-blog .list-blog {
+        gap: 30px; }
+      .velvetskin-index-blog .article-loop .article-inner {
+        gap: 15px;
+        flex-flow: column; }
+        .velvetskin-index-blog .article-loop .article-inner > div {
+          width: 100%; }
+        .velvetskin-index-blog .article-loop .article-inner .article-detail .post-title {
+          font-size: 20px;
+          margin-bottom: 8px; }
+      .velvetskin-index-blog .btn-more {
+        margin-top: 30px; } }
