@@ -1,0 +1,32 @@
+.velvetskin-index-banner .banner-item {
+  position: relative;
+  overflow: hidden; }
+  .velvetskin-index-banner .banner-item .title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(8px);
+    color: #fff;
+    border: 1px solid #fff;
+    text-transform: uppercase;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.08s ease , opacity 0.1s ease;
+    will-change: transform , opacity;
+    opacity: 0; }
+
+@media (max-width: 1199px) {
+  .velvetskin-index-banner .banner-item .title {
+    opacity: 1;
+    inset: 0; } }
+
+@media (max-width: 767px) {
+  .velvetskin-index-banner .banner-item .title {
+    width: 120px;
+    height: 120px; } }
