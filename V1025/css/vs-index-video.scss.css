@@ -1,0 +1,5 @@
+.velvetskin-index-video .video-box {
+  display: flex; }
+  .velvetskin-index-video .video-box video {
+    width: 100%;
+    border-radius: 10px; }
