@@ -1,0 +1,1344 @@
+{%extends "layout/layout" %}
+{%block meta %}
+{{ headTitle(translate('Trang chủ')).setSeparator(' - ').setAutoEscape(false)|raw }}
+<meta name="keywords" content="{{ getKeyContentValue('META_KEYWORDS') }}">
+<meta name="description" content="{{ getKeyContentValue('META_DESCRIPTION') }}">
+<meta property="og:title" content="{{ getKeyContentValue('META_TITLE') }}">
+<meta property="og:url" content="{{ getCurrentUrl() }}">
+<meta property="og:image" content="{{ getBusinessLogo() }}">
+<link rel="canonical" href="{{ getCurrentUrl() }}">
+{%endblock %}
+
+{%block body %}
+
+<div hidden="">
+ <!--$-->
+ <!--/$-->
+</div>
+<main>
+ <section class="relative min-h-screen overflow-hidden flex items-center justify-center pt-24">
+  <div class="absolute inset-0 -z-10">
+   <img alt="Khách Gạo Nâu — concept áo dài sen" class="object-cover object-top" data-nimg="fill" decoding="async" sizes="100vw" src="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=3840&amp;q=75" srcset="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=640&amp;q=75 640w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=750&amp;q=75 750w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=828&amp;q=75 828w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=3840&amp;q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+   <video aria-hidden="true" autoplay="" class="absolute inset-0 size-full object-cover object-center" loop="" muted="" playsinline="" poster="/wp-content/uploads/2023/05/ao-dai-sen.jpg" preload="auto">
+    <source src="/videos/gaonau-home-hero.mp4" type="video/mp4"/>
+   </video>
+   <div class="absolute inset-0 bg-gradient-to-b from-background/72 via-background/42 to-background/95">
+   </div>
+   <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(47,33,23,0.18)_100%)]">
+   </div>
+   <div aria-hidden="true" class="absolute inset-0 bg-repeat opacity-[0.1] mix-blend-multiply" style="background-image:url('/brand/visual-element-line-pattern-gold.png');background-size:clamp(320px, 36vw, 560px) auto">
+   </div>
+  </div>
+  <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 py-20 md:py-28 max-w-5xl mx-auto">
+   <p class="text-xs uppercase tracking-[0.3em] text-primary font-semibold mb-6 bg-background/70 backdrop-blur-sm px-4 py-2 rounded-full">
+    Studio kể chuyện bằng ánh sáng · từ 2021
+   </p>
+   <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-normal leading-[0.95] tracking-tight mb-8 text-foreground">
+    <span>
+     Mỗi bức ảnh
+     <br/>
+    </span>
+    <span>
+     là một
+     <br/>
+    </span>
+    <span>
+     <span class="italic text-primary">
+      câu chuyện
+     </span>
+    </span>
+   </h1>
+   <p class="text-base md:text-xl text-foreground/90 leading-relaxed mb-10 max-w-2xl bg-background/60 backdrop-blur-md px-6 py-4 rounded-2xl">
+    Gạo Nâu không tạo ra vẻ đẹp mới — chúng tôi tôn lên vẻ đẹp vốn có của bạn. Chân dung, gia đình, áo dài tại Hà Nội &amp; TP HCM.
+    <!-- -->
+    <span class="font-semibold text-foreground">
+     Từ 3.800.000đ trọn gói.
+    </span>
+   </p>
+   <div class="flex flex-col sm:flex-row gap-4 mb-14">
+    <a href="/dat-lich">
+     <button class="group/button inline-flex shrink-0 items-center justify-center border border-transparent bg-clip-padding font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 text-primary-foreground [a]:hover:bg-primary/80 gap-1.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 rounded-full px-12 h-14 text-base bg-primary hover:bg-primary/90 shadow-[0_8px_32px_rgba(142,97,38,0.35)] w-full sm:w-auto" data-slot="button" tabindex="0" type="button">
+      Kể câu chuyện của bạn →
+     </button>
+    </a>
+    <a href="/bang-gia-chup-anh">
+     <button class="group/button inline-flex shrink-0 items-center justify-center border bg-clip-padding font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50 gap-1.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 rounded-full px-12 h-14 text-base border-foreground/40 bg-background/60 backdrop-blur-md text-foreground hover:bg-background w-full sm:w-auto" data-slot="button" tabindex="0" type="button">
+      Xem 3 gói dịch vụ
+     </button>
+    </a>
+   </div>
+   <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 w-full max-w-3xl">
+    <div class="bg-background/70 backdrop-blur-md rounded-2xl px-4 py-5 border border-border/50">
+     <div class="font-serif text-2xl md:text-3xl text-primary mb-1">
+      10K+
+     </div>
+     <div class="text-xs uppercase tracking-wider text-muted-foreground">
+      Phụ nữ đã chụp
+     </div>
+    </div>
+    <div class="bg-background/70 backdrop-blur-md rounded-2xl px-4 py-5 border border-border/50">
+     <div class="font-serif text-2xl md:text-3xl text-primary mb-1">
+      35%
+     </div>
+     <div class="text-xs uppercase tracking-wider text-muted-foreground">
+      Quay lại lần 2-3
+     </div>
+    </div>
+    <div class="bg-background/70 backdrop-blur-md rounded-2xl px-4 py-5 border border-border/50">
+     <div class="font-serif text-2xl md:text-3xl text-primary mb-1">
+      ★ 5,0
+     </div>
+     <div class="text-xs uppercase tracking-wider text-muted-foreground">
+      16.904 đánh giá Google
+     </div>
+    </div>
+    <div class="bg-background/70 backdrop-blur-md rounded-2xl px-4 py-5 border border-border/50">
+     <div class="font-serif text-2xl md:text-3xl text-primary mb-1">
+      4
+     </div>
+     <div class="text-xs uppercase tracking-wider text-muted-foreground">
+      Báo tier-1 đưa tin
+     </div>
+    </div>
+   </div>
+  </div>
+ </section>
+ <section aria-label="Báo chí nói về Gạo Nâu" class="gn-monogram-surface gn-surface-line border-y border-border/50 py-10 md:py-14">
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0 z-0 bg-repeat opacity-[0.08]" style="background-image:url('/brand/visual-element-line-pattern-gold.png');background-size:clamp(320px, 36vw, 560px) auto">
+  </div>
+  <div class="relative z-10 mx-auto max-w-6xl px-6 md:px-12">
+   <p class="mb-6 text-center text-xs uppercase tracking-[0.3em] text-muted-foreground md:mb-8">
+    Báo chí nói về Gạo Nâu
+   </p>
+   <ul class="grid grid-cols-2 items-center gap-x-6 gap-y-6 md:grid-cols-4 md:gap-x-12">
+    <li class="flex justify-center">
+     <a class="group block text-center transition-opacity hover:opacity-100 opacity-70" href="https://cafef.vn/founder-gao-nau-ke-chuyen-bo-hoc-theo-nganh-anh-tu-can-gac-100m2-o-duong-lang-den-studio-1000m2-o-sai-gon-moi-thang-don-vai-nghin-luot-khach-den-chup-anh-188250201075308893.chn" rel="noopener noreferrer" target="_blank" title="Founder Gạo Nâu kể chuyện bỏ học theo ngành ảnh: Từ căn gác 100m² ở đường Láng đến studio 1.000m² ở Sài Gòn">
+      <span class="inline-block leading-none text-foreground font-sans text-2xl md:text-3xl font-extrabold tracking-tight">
+       Cafe
+       <span class="text-primary">
+        F
+       </span>
+      </span>
+      <span class="mt-2 block text-[10px] uppercase tracking-wider text-muted-foreground/70 group-hover:text-primary transition-colors">
+       Đọc bài →
+      </span>
+     </a>
+    </li>
+    <li class="flex justify-center">
+     <a class="group block text-center transition-opacity hover:opacity-100 opacity-70" href="https://vtv.vn/goc-doanh-nghiep/gao-nau-chup-anh-noi-ton-vinh-nhung-ca-tinh-20241022123909685.htm" rel="noopener noreferrer" target="_blank" title="Gạo Nâu Chụp Ảnh — Nơi tôn vinh những cá tính">
+      <span class="inline-block leading-none text-foreground font-sans text-2xl md:text-3xl font-black tracking-[0.15em]">
+       VTV
+      </span>
+      <span class="mt-2 block text-[10px] uppercase tracking-wider text-muted-foreground/70 group-hover:text-primary transition-colors">
+       Đọc bài →
+      </span>
+     </a>
+    </li>
+    <li class="flex justify-center">
+     <a class="group block text-center transition-opacity hover:opacity-100 opacity-70" href="https://tienphong.vn/bi-quyet-tao-nen-nhung-buc-anh-ke-chuyen-tai-gao-nau-chup-anh-post1688451.tpo" rel="noopener noreferrer" target="_blank" title="Bí quyết tạo nên những bức ảnh 'kể chuyện' tại Gạo Nâu Chụp Ảnh">
+      <span class="inline-block leading-none text-foreground font-serif text-2xl md:text-3xl tracking-tight">
+       Tiền
+       <span class="text-primary">
+        Phong
+       </span>
+      </span>
+      <span class="mt-2 block text-[10px] uppercase tracking-wider text-muted-foreground/70 group-hover:text-primary transition-colors">
+       Đọc bài →
+      </span>
+     </a>
+    </li>
+    <li class="flex justify-center">
+     <a class="group block text-center transition-opacity hover:opacity-100 opacity-70" href="https://vnexpress.net/studio-gao-nau-chup-anh-trien-khai-du-an-anh-gia-dinh-dip-1-6-4752901.html" rel="noopener noreferrer" target="_blank" title="Studio Gạo Nâu Chụp Ảnh triển khai dự án ảnh gia đình dịp 1/6">
+      <span class="inline-block leading-none text-foreground font-sans text-2xl md:text-3xl font-bold italic tracking-tight">
+       <span class="text-primary">
+        Vn
+       </span>
+       Express
+      </span>
+      <span class="mt-2 block text-[10px] uppercase tracking-wider text-muted-foreground/70 group-hover:text-primary transition-colors">
+       Đọc bài →
+      </span>
+     </a>
+    </li>
+   </ul>
+   <div class="mt-8 text-center md:mt-10">
+    <a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="/bao-chi">
+     Xem tất cả báo chí đã đưa tin →
+    </a>
+   </div>
+  </div>
+ </section>
+ <section class="gn-monogram-surface gn-surface-line py-16 md:py-24 px-6 md:px-12">
+  <div aria-hidden="true" class="pointer-events-none absolute inset-x-0 top-0 h-28 bg-repeat-x opacity-[0.12]" style="background-image:url('/brand/visual-element-line-pattern-gold.png');background-size:clamp(320px, 36vw, 560px) auto">
+  </div>
+  <div class="relative z-10 max-w-7xl mx-auto">
+   <div class="gn-monogram-surface gn-surface-petal-gold gn-story-teaser-surface rounded-3xl shadow-[0_24px_64px_rgba(47,33,23,0.18)]">
+    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2">
+     <div class="gn-story-teaser-copy order-2 lg:order-1 flex flex-col justify-center p-5 sm:p-8 md:p-12 lg:p-14">
+      <p class="inline-flex items-center gap-2 text-[0.7rem] sm:text-xs uppercase tracking-[0.3em] font-semibold text-accent mb-2 sm:mb-5">
+       <svg aria-hidden="true" class="lucide lucide-sparkles w-4 h-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z">
+        </path>
+        <path d="M20 2v4">
+        </path>
+        <path d="M22 4h-4">
+        </path>
+        <circle cx="4" cy="20" r="2">
+        </circle>
+       </svg>
+       Mùa sen 2026
+      </p>
+      <h2 class="gn-story-teaser-heading font-serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-normal leading-[1.1] sm:leading-[1.05] tracking-tight mb-2 sm:mb-5">
+       Hóa nàng thơ mùa sen
+       <br/>
+       <span class="gn-story-teaser-accent italic text-accent">
+        đẹp dịu dàng trong tà áo dài
+       </span>
+      </h2>
+      <p class="gn-story-teaser-body text-sm sm:text-base md:text-lg opacity-90 leading-relaxed mb-3 sm:mb-4 max-w-xl">
+       Sen thật, ánh sáng chủ động, kín đáo và mát mẻ — bạn chụp đẹp quanh năm, không lo nắng mưa hay chen chân ngoài đầm.
+      </p>
+      <p class="text-sm md:text-base font-semibold text-accent mb-4 sm:mb-7">
+       Ưu đãi đặt sớm — chỉ 20 khách đầu tiên: giảm 400.000đ hoặc tặng thêm 1 bộ trang phục.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 sm:items-center">
+       <a class="inline-flex items-center justify-center gap-2 rounded-full bg-accent text-primary font-semibold px-6 sm:px-7 py-3.5 sm:py-4 text-sm tracking-wide hover:opacity-90 transition-opacity" href="/chup-anh-sen">
+        Khám phá bộ ảnh sen
+        <svg aria-hidden="true" class="lucide lucide-arrow-right w-4 h-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M5 12h14">
+         </path>
+         <path d="m12 5 7 7-7 7">
+         </path>
+        </svg>
+       </a>
+       <span class="text-xs opacity-70">
+        Hà Nội · TP Hồ Chí Minh · Studio 4.9tr · Đầm sen 7.3tr
+       </span>
+      </div>
+     </div>
+     <div class="relative order-1 lg:order-2 min-h-[380px] sm:min-h-[440px] lg:min-h-[480px]">
+      <img alt="Concept chụp ảnh sen trong studio Gạo Nâu — áo dài trắng bên sen hồng, phông nền ấm sắc đất" class="object-cover" data-nimg="fill" decoding="async" loading="lazy" sizes="(min-width: 1024px) 50vw, 100vw" src="/_next/image?url=%2Fimages%2Fconcepts%2Fsen-studio-2026%2Fsen-studio-2026-hero.jpg&amp;w=3840&amp;q=75" srcset="/_next/image?url=%2Fimages%2Fconcepts%2Fsen-studio-2026%2Fsen-studio-2026-hero.jpg&amp;w=384&amp;q=75 384w, /_next/image?url=%2Fimages%2Fconcepts%2Fsen-studio-2026%2Fsen-studio-2026-hero.jpg&amp;w=640&amp;q=75 640w, /_next/image?url=%2Fimages%2Fconcepts%2Fsen-studio-2026%2Fsen-studio-2026-hero.jpg&amp;w=750&amp;q=75 750w, /_next/image?url=%2Fimages%2Fconcepts%2Fsen-studio-2026%2Fsen-studio-2026-hero.jpg&amp;w=828&amp;q=75 828w, /_next/image?url=%2Fimages%2Fconcepts%2Fsen-studio-2026%2Fsen-studio-2026-hero.jpg&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2Fimages%2Fconcepts%2Fsen-studio-2026%2Fsen-studio-2026-hero.jpg&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2Fimages%2Fconcepts%2Fsen-studio-2026%2Fsen-studio-2026-hero.jpg&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2Fimages%2Fconcepts%2Fsen-studio-2026%2Fsen-studio-2026-hero.jpg&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2Fimages%2Fconcepts%2Fsen-studio-2026%2Fsen-studio-2026-hero.jpg&amp;w=3840&amp;q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+     </div>
+    </div>
+   </div>
+  </div>
+ </section>
+ <section class="gn-monogram-surface gn-surface-line py-16 md:py-24 px-6 md:px-12">
+  <div aria-hidden="true" class="pointer-events-none absolute inset-x-0 top-0 h-28 bg-repeat-x opacity-[0.12]" style="background-image:url('/brand/visual-element-line-pattern-gold.png');background-size:clamp(320px, 36vw, 560px) auto">
+  </div>
+  <div class="relative z-10 max-w-7xl mx-auto">
+   <div class="gn-monogram-surface gn-surface-petal-gold gn-story-teaser-surface rounded-3xl shadow-[0_24px_64px_rgba(47,33,23,0.18)]">
+    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2">
+     <div class="gn-story-teaser-copy p-8 md:p-12 lg:p-16 flex flex-col justify-center">
+      <p class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] font-semibold text-accent mb-6">
+       <svg aria-hidden="true" class="lucide lucide-sparkles w-4 h-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z">
+        </path>
+        <path d="M20 2v4">
+        </path>
+        <path d="M22 4h-4">
+        </path>
+        <circle cx="4" cy="20" r="2">
+        </circle>
+       </svg>
+       Đã ra mắt 07 / 05 / 2026
+      </p>
+      <h2 class="gn-story-teaser-heading font-serif text-4xl md:text-5xl lg:text-6xl font-normal leading-[1.05] tracking-tight mb-6">
+       GẠO NÂU CHỤP ẢNH
+       <br/>
+       <span class="gn-story-teaser-accent italic text-accent">
+        Studio kể chuyện bằng ánh sáng
+       </span>
+      </h2>
+      <p class="gn-story-teaser-body text-base md:text-lg opacity-90 leading-relaxed mb-8 max-w-xl">
+       Một buổi chụp 2 tiếng. Một website Ký Ức riêng cho gia đình bạn. Một chương ký ức bạn có thể đọc lại sau 50 năm — rất ít studio Việt Nam đang làm.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 sm:items-center">
+       <a class="inline-flex items-center gap-2 rounded-full bg-accent text-primary font-semibold px-7 py-4 text-sm tracking-wide hover:opacity-90 transition-opacity" href="/landingstory">
+        Khám phá Gạo Nâu Chụp Ảnh
+        <svg aria-hidden="true" class="lucide lucide-arrow-right w-4 h-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M5 12h14">
+         </path>
+         <path d="m12 5 7 7-7 7">
+         </path>
+        </svg>
+       </a>
+       <span class="text-xs opacity-70">
+        Hà Nội · TP Hồ Chí Minh · Family Legacy · Web Ký Ức
+       </span>
+      </div>
+     </div>
+     <div class="relative min-h-[320px] lg:min-h-[480px]">
+      <img alt="Bộ ảnh khách Gạo Nâu — chân dung, gia đình, áo dài" class="object-cover" data-nimg="fill" decoding="async" loading="lazy" sizes="(max-width: 1024px) 100vw, 50vw" src="/_next/image?url=%2Fimages%2Flanding%2Fgao-nau-2-0-photos.jpg&amp;w=3840&amp;q=75" srcset="/_next/image?url=%2Fimages%2Flanding%2Fgao-nau-2-0-photos.jpg&amp;w=384&amp;q=75 384w, /_next/image?url=%2Fimages%2Flanding%2Fgao-nau-2-0-photos.jpg&amp;w=640&amp;q=75 640w, /_next/image?url=%2Fimages%2Flanding%2Fgao-nau-2-0-photos.jpg&amp;w=750&amp;q=75 750w, /_next/image?url=%2Fimages%2Flanding%2Fgao-nau-2-0-photos.jpg&amp;w=828&amp;q=75 828w, /_next/image?url=%2Fimages%2Flanding%2Fgao-nau-2-0-photos.jpg&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2Fimages%2Flanding%2Fgao-nau-2-0-photos.jpg&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2Fimages%2Flanding%2Fgao-nau-2-0-photos.jpg&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2Fimages%2Flanding%2Fgao-nau-2-0-photos.jpg&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2Fimages%2Flanding%2Fgao-nau-2-0-photos.jpg&amp;w=3840&amp;q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+     </div>
+    </div>
+   </div>
+  </div>
+ </section>
+ <section class="gn-monogram-surface gn-surface-line py-20 md:py-28 px-6 md:px-12">
+  <div aria-hidden="true" class="pointer-events-none absolute inset-x-0 top-0 h-96 bg-repeat opacity-[0.055]" style="background-image:url('/brand/visual-element-line-pattern-gold.png');background-size:clamp(320px, 36vw, 560px) auto">
+  </div>
+  <div class="relative z-10 max-w-7xl mx-auto">
+   <div class="text-center mb-16">
+    <p class="text-xs uppercase tracking-[0.3em] text-primary font-semibold mb-4">
+     Dịch vụ
+    </p>
+    <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-normal leading-tight tracking-tight text-foreground mb-6">
+     Câu chuyện kể bằng ánh sáng
+    </h2>
+    <p class="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+     Sáu dịch vụ — mỗi dịch vụ là một câu chuyện riêng. Bạn muốn kể câu chuyện nào?
+    </p>
+   </div>
+   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+    <a class="group relative aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(47,33,23,0.08)] hover:shadow-[0_12px_40px_rgba(47,33,23,0.15)] transition-all duration-300 hover:-translate-y-1" href="/chup-anh-chan-dung">
+     <img alt="Chụp ảnh chân dung — Tôn lên vẻ đẹp vốn có của bạn | Gạo Nâu studio" class="object-cover object-top transition-transform duration-700 group-hover:scale-105" data-nimg="fill" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" src="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F4.2-HN-MS-PHUONG-HA-16H-T1681-scaled.jpg&amp;w=3840&amp;q=75" srcset="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F4.2-HN-MS-PHUONG-HA-16H-T1681-scaled.jpg&amp;w=256&amp;q=75 256w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F4.2-HN-MS-PHUONG-HA-16H-T1681-scaled.jpg&amp;w=384&amp;q=75 384w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F4.2-HN-MS-PHUONG-HA-16H-T1681-scaled.jpg&amp;w=640&amp;q=75 640w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F4.2-HN-MS-PHUONG-HA-16H-T1681-scaled.jpg&amp;w=750&amp;q=75 750w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F4.2-HN-MS-PHUONG-HA-16H-T1681-scaled.jpg&amp;w=828&amp;q=75 828w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F4.2-HN-MS-PHUONG-HA-16H-T1681-scaled.jpg&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F4.2-HN-MS-PHUONG-HA-16H-T1681-scaled.jpg&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F4.2-HN-MS-PHUONG-HA-16H-T1681-scaled.jpg&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F4.2-HN-MS-PHUONG-HA-16H-T1681-scaled.jpg&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F4.2-HN-MS-PHUONG-HA-16H-T1681-scaled.jpg&amp;w=3840&amp;q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+     <div class="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/30 to-transparent">
+     </div>
+     <div class="absolute inset-x-0 bottom-0 p-6 md:p-8 text-background">
+      <p class="text-xs uppercase tracking-widest opacity-80 mb-2">
+       Concept
+      </p>
+      <h3 class="font-serif text-2xl md:text-3xl font-normal leading-tight mb-2">
+       Chụp ảnh chân dung
+      </h3>
+      <p class="text-sm opacity-90 mb-4 line-clamp-2">
+       Tôn lên vẻ đẹp vốn có của bạn
+      </p>
+      <div class="flex items-center justify-between">
+       <span class="text-xs uppercase tracking-wider opacity-90">
+        Từ 3.800.000đ
+       </span>
+       <span class="text-sm font-semibold opacity-90 group-hover:translate-x-1 transition-transform">
+        Xem chi tiết
+        <!-- -->
+        →
+       </span>
+      </div>
+     </div>
+    </a>
+    <a class="group relative aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(47,33,23,0.08)] hover:shadow-[0_12px_40px_rgba(47,33,23,0.15)] transition-all duration-300 hover:-translate-y-1" href="/chup-anh-gia-dinh">
+     <img alt="Chụp ảnh gia đình — Lưu giữ câu chuyện của cả nhà | Gạo Nâu studio" class="object-cover object-top transition-transform duration-700 group-hover:scale-105" data-nimg="fill" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" src="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fgia-dinh-6-nguoi.jpg&amp;w=3840&amp;q=75" srcset="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fgia-dinh-6-nguoi.jpg&amp;w=256&amp;q=75 256w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fgia-dinh-6-nguoi.jpg&amp;w=384&amp;q=75 384w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fgia-dinh-6-nguoi.jpg&amp;w=640&amp;q=75 640w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fgia-dinh-6-nguoi.jpg&amp;w=750&amp;q=75 750w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fgia-dinh-6-nguoi.jpg&amp;w=828&amp;q=75 828w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fgia-dinh-6-nguoi.jpg&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fgia-dinh-6-nguoi.jpg&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fgia-dinh-6-nguoi.jpg&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fgia-dinh-6-nguoi.jpg&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fgia-dinh-6-nguoi.jpg&amp;w=3840&amp;q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+     <div class="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/30 to-transparent">
+     </div>
+     <div class="absolute inset-x-0 bottom-0 p-6 md:p-8 text-background">
+      <p class="text-xs uppercase tracking-widest opacity-80 mb-2">
+       Concept
+      </p>
+      <h3 class="font-serif text-2xl md:text-3xl font-normal leading-tight mb-2">
+       Chụp ảnh gia đình
+      </h3>
+      <p class="text-sm opacity-90 mb-4 line-clamp-2">
+       Lưu giữ câu chuyện của cả nhà
+      </p>
+      <div class="flex items-center justify-between">
+       <span class="text-xs uppercase tracking-wider opacity-90">
+        Từ 3.500.000đ
+       </span>
+       <span class="text-sm font-semibold opacity-90 group-hover:translate-x-1 transition-transform">
+        Xem chi tiết
+        <!-- -->
+        →
+       </span>
+      </div>
+     </div>
+    </a>
+    <a class="group relative aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(47,33,23,0.08)] hover:shadow-[0_12px_40px_rgba(47,33,23,0.15)] transition-all duration-300 hover:-translate-y-1" href="/chup-anh-ao-dai">
+     <img alt="Chụp ảnh áo dài — Nét đẹp truyền thống Việt | Gạo Nâu studio" class="object-cover object-top transition-transform duration-700 group-hover:scale-105" data-nimg="fill" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" src="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=3840&amp;q=75" srcset="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=256&amp;q=75 256w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=384&amp;q=75 384w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=640&amp;q=75 640w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=750&amp;q=75 750w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=828&amp;q=75 828w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=3840&amp;q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+     <div class="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/30 to-transparent">
+     </div>
+     <div class="absolute inset-x-0 bottom-0 p-6 md:p-8 text-background">
+      <p class="text-xs uppercase tracking-widest opacity-80 mb-2">
+       Concept
+      </p>
+      <h3 class="font-serif text-2xl md:text-3xl font-normal leading-tight mb-2">
+       Chụp ảnh áo dài
+      </h3>
+      <p class="text-sm opacity-90 mb-4 line-clamp-2">
+       Nét đẹp truyền thống Việt
+      </p>
+      <div class="flex items-center justify-between">
+       <span class="text-xs uppercase tracking-wider opacity-90">
+        Từ 3.800.000đ
+       </span>
+       <span class="text-sm font-semibold opacity-90 group-hover:translate-x-1 transition-transform">
+        Xem chi tiết
+        <!-- -->
+        →
+       </span>
+      </div>
+     </div>
+    </a>
+    <a class="group relative aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(47,33,23,0.08)] hover:shadow-[0_12px_40px_rgba(47,33,23,0.15)] transition-all duration-300 hover:-translate-y-1" href="/chup-anh-nang-tho">
+     <img alt="Chụp ảnh nàng thơ — Câu chuyện kể bằng ánh sáng | Gạo Nâu studio" class="object-cover object-top transition-transform duration-700 group-hover:scale-105" data-nimg="fill" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" src="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fnang-tho-ao-do-hoa-mai.jpg&amp;w=3840&amp;q=75" srcset="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fnang-tho-ao-do-hoa-mai.jpg&amp;w=256&amp;q=75 256w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fnang-tho-ao-do-hoa-mai.jpg&amp;w=384&amp;q=75 384w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fnang-tho-ao-do-hoa-mai.jpg&amp;w=640&amp;q=75 640w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fnang-tho-ao-do-hoa-mai.jpg&amp;w=750&amp;q=75 750w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fnang-tho-ao-do-hoa-mai.jpg&amp;w=828&amp;q=75 828w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fnang-tho-ao-do-hoa-mai.jpg&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fnang-tho-ao-do-hoa-mai.jpg&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fnang-tho-ao-do-hoa-mai.jpg&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fnang-tho-ao-do-hoa-mai.jpg&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fnang-tho-ao-do-hoa-mai.jpg&amp;w=3840&amp;q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+     <div class="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/30 to-transparent">
+     </div>
+     <div class="absolute inset-x-0 bottom-0 p-6 md:p-8 text-background">
+      <p class="text-xs uppercase tracking-widest opacity-80 mb-2">
+       Concept
+      </p>
+      <h3 class="font-serif text-2xl md:text-3xl font-normal leading-tight mb-2">
+       Chụp ảnh nàng thơ
+      </h3>
+      <p class="text-sm opacity-90 mb-4 line-clamp-2">
+       Câu chuyện kể bằng ánh sáng
+      </p>
+      <div class="flex items-center justify-between">
+       <span class="text-xs uppercase tracking-wider opacity-90">
+        Từ 3.800.000đ
+       </span>
+       <span class="text-sm font-semibold opacity-90 group-hover:translate-x-1 transition-transform">
+        Xem chi tiết
+        <!-- -->
+        →
+       </span>
+      </div>
+     </div>
+    </a>
+    <a class="group relative aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(47,33,23,0.08)] hover:shadow-[0_12px_40px_rgba(47,33,23,0.15)] transition-all duration-300 hover:-translate-y-1" href="/chup-anh-me-bau">
+     <img alt="Chụp ảnh mẹ bầu — Đồng hành cùng mẹ trong 9 tháng | Gạo Nâu studio" class="object-cover object-top transition-transform duration-700 group-hover:scale-105" data-nimg="fill" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" src="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fme-bau-dam-ren.jpg&amp;w=3840&amp;q=75" srcset="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fme-bau-dam-ren.jpg&amp;w=256&amp;q=75 256w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fme-bau-dam-ren.jpg&amp;w=384&amp;q=75 384w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fme-bau-dam-ren.jpg&amp;w=640&amp;q=75 640w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fme-bau-dam-ren.jpg&amp;w=750&amp;q=75 750w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fme-bau-dam-ren.jpg&amp;w=828&amp;q=75 828w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fme-bau-dam-ren.jpg&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fme-bau-dam-ren.jpg&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fme-bau-dam-ren.jpg&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fme-bau-dam-ren.jpg&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fme-bau-dam-ren.jpg&amp;w=3840&amp;q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+     <div class="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/30 to-transparent">
+     </div>
+     <div class="absolute inset-x-0 bottom-0 p-6 md:p-8 text-background">
+      <p class="text-xs uppercase tracking-widest opacity-80 mb-2">
+       Concept
+      </p>
+      <h3 class="font-serif text-2xl md:text-3xl font-normal leading-tight mb-2">
+       Chụp ảnh mẹ bầu
+      </h3>
+      <p class="text-sm opacity-90 mb-4 line-clamp-2">
+       Đồng hành cùng mẹ trong 9 tháng
+      </p>
+      <div class="flex items-center justify-between">
+       <span class="text-xs uppercase tracking-wider opacity-90">
+        Từ 3.800.000đ
+       </span>
+       <span class="text-sm font-semibold opacity-90 group-hover:translate-x-1 transition-transform">
+        Xem chi tiết
+        <!-- -->
+        →
+       </span>
+      </div>
+     </div>
+    </a>
+    <a class="group relative aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(47,33,23,0.08)] hover:shadow-[0_12px_40px_rgba(47,33,23,0.15)] transition-all duration-300 hover:-translate-y-1" href="/chup-anh-sinh-nhat">
+     <img alt="Chụp ảnh sinh nhật &amp; nhóm bạn — Kỷ niệm đáng để lưu giữ | Gạo Nâu studio" class="object-cover object-top transition-transform duration-700 group-hover:scale-105" data-nimg="fill" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" src="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F25.11-HN-MS-KOL-NOEL-118980-scaled.jpg&amp;w=3840&amp;q=75" srcset="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F25.11-HN-MS-KOL-NOEL-118980-scaled.jpg&amp;w=256&amp;q=75 256w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F25.11-HN-MS-KOL-NOEL-118980-scaled.jpg&amp;w=384&amp;q=75 384w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F25.11-HN-MS-KOL-NOEL-118980-scaled.jpg&amp;w=640&amp;q=75 640w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F25.11-HN-MS-KOL-NOEL-118980-scaled.jpg&amp;w=750&amp;q=75 750w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F25.11-HN-MS-KOL-NOEL-118980-scaled.jpg&amp;w=828&amp;q=75 828w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F25.11-HN-MS-KOL-NOEL-118980-scaled.jpg&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F25.11-HN-MS-KOL-NOEL-118980-scaled.jpg&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F25.11-HN-MS-KOL-NOEL-118980-scaled.jpg&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F25.11-HN-MS-KOL-NOEL-118980-scaled.jpg&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F25.11-HN-MS-KOL-NOEL-118980-scaled.jpg&amp;w=3840&amp;q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+     <div class="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/30 to-transparent">
+     </div>
+     <div class="absolute inset-x-0 bottom-0 p-6 md:p-8 text-background">
+      <p class="text-xs uppercase tracking-widest opacity-80 mb-2">
+       Concept
+      </p>
+      <h3 class="font-serif text-2xl md:text-3xl font-normal leading-tight mb-2">
+       Chụp ảnh sinh nhật &amp; nhóm bạn
+      </h3>
+      <p class="text-sm opacity-90 mb-4 line-clamp-2">
+       Kỷ niệm đáng để lưu giữ
+      </p>
+      <div class="flex items-center justify-between">
+       <span class="text-xs uppercase tracking-wider opacity-90">
+        Từ 5.000.000đ
+       </span>
+       <span class="text-sm font-semibold opacity-90 group-hover:translate-x-1 transition-transform">
+        Xem chi tiết
+        <!-- -->
+        →
+       </span>
+      </div>
+     </div>
+    </a>
+   </div>
+  </div>
+ </section>
+ <section class="gn-monogram-surface gn-surface-line py-20 md:py-28 px-6 md:px-12">
+  <div aria-hidden="true" class="pointer-events-none absolute inset-x-0 top-0 h-[34rem] bg-repeat opacity-[0.07]" style="background-image:url('/brand/visual-element-line-pattern-gold.png');background-size:clamp(320px, 36vw, 560px) auto">
+  </div>
+  <div class="relative z-10 max-w-7xl mx-auto">
+   <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-6">
+    <div>
+     <p class="text-xs uppercase tracking-[0.3em] text-primary font-semibold mb-4">
+      Thư viện ảnh
+     </p>
+     <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-normal leading-tight tracking-tight text-foreground">
+      <span class="italic">
+       100.000+
+      </span>
+      bộ ảnh
+      <br/>
+      đã chụp
+     </h2>
+    </div>
+    <a href="/bo-suu-tap">
+     <button class="group/button inline-flex shrink-0 items-center justify-center border bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50 gap-1.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 rounded-full px-8 h-12 border-foreground/20" data-slot="button" tabindex="0" type="button">
+      Xem toàn bộ thư viện →
+     </button>
+    </a>
+   </div>
+   <div class="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+    <div class="relative break-inside-avoid rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(47,33,23,0.08)] aspect-[3/4]">
+     <img alt="Bộ ảnh chân dung nghệ thuật tại Gạo Nâu studio — Hà Nội &amp; Sài Gòn" class="object-cover object-top hover:scale-105 transition-transform duration-700" data-nimg="fill" decoding="async" loading="lazy" sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" src="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F29.3-Mau-SINY-TRANG1900-scaled.jpg&amp;w=3840&amp;q=75" srcset="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F29.3-Mau-SINY-TRANG1900-scaled.jpg&amp;w=256&amp;q=75 256w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F29.3-Mau-SINY-TRANG1900-scaled.jpg&amp;w=384&amp;q=75 384w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F29.3-Mau-SINY-TRANG1900-scaled.jpg&amp;w=640&amp;q=75 640w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F29.3-Mau-SINY-TRANG1900-scaled.jpg&amp;w=750&amp;q=75 750w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F29.3-Mau-SINY-TRANG1900-scaled.jpg&amp;w=828&amp;q=75 828w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F29.3-Mau-SINY-TRANG1900-scaled.jpg&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F29.3-Mau-SINY-TRANG1900-scaled.jpg&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F29.3-Mau-SINY-TRANG1900-scaled.jpg&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F29.3-Mau-SINY-TRANG1900-scaled.jpg&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F29.3-Mau-SINY-TRANG1900-scaled.jpg&amp;w=3840&amp;q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+    </div>
+    <div class="relative break-inside-avoid rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(47,33,23,0.08)] aspect-[4/5]">
+     <img alt="Bộ ảnh chân dung nghệ thuật tại Gạo Nâu studio — Hà Nội &amp; Sài Gòn" class="object-cover object-top hover:scale-105 transition-transform duration-700" data-nimg="fill" decoding="async" loading="lazy" sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" src="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F4.2-HN-MS-PHUONG-HA-16H-T1681-scaled.jpg&amp;w=3840&amp;q=75" srcset="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F4.2-HN-MS-PHUONG-HA-16H-T1681-scaled.jpg&amp;w=256&amp;q=75 256w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F4.2-HN-MS-PHUONG-HA-16H-T1681-scaled.jpg&amp;w=384&amp;q=75 384w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F4.2-HN-MS-PHUONG-HA-16H-T1681-scaled.jpg&amp;w=640&amp;q=75 640w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F4.2-HN-MS-PHUONG-HA-16H-T1681-scaled.jpg&amp;w=750&amp;q=75 750w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F4.2-HN-MS-PHUONG-HA-16H-T1681-scaled.jpg&amp;w=828&amp;q=75 828w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F4.2-HN-MS-PHUONG-HA-16H-T1681-scaled.jpg&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F4.2-HN-MS-PHUONG-HA-16H-T1681-scaled.jpg&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F4.2-HN-MS-PHUONG-HA-16H-T1681-scaled.jpg&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F4.2-HN-MS-PHUONG-HA-16H-T1681-scaled.jpg&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F4.2-HN-MS-PHUONG-HA-16H-T1681-scaled.jpg&amp;w=3840&amp;q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+    </div>
+    <div class="relative break-inside-avoid rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(47,33,23,0.08)] aspect-[3/4]">
+     <img alt="Bộ ảnh áo dài nghệ thuật tại Gạo Nâu studio — Hà Nội &amp; Sài Gòn" class="object-cover object-top hover:scale-105 transition-transform duration-700" data-nimg="fill" decoding="async" loading="lazy" sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" src="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fnang-tho-ao-do-hoa-mai.jpg&amp;w=3840&amp;q=75" srcset="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fnang-tho-ao-do-hoa-mai.jpg&amp;w=256&amp;q=75 256w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fnang-tho-ao-do-hoa-mai.jpg&amp;w=384&amp;q=75 384w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fnang-tho-ao-do-hoa-mai.jpg&amp;w=640&amp;q=75 640w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fnang-tho-ao-do-hoa-mai.jpg&amp;w=750&amp;q=75 750w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fnang-tho-ao-do-hoa-mai.jpg&amp;w=828&amp;q=75 828w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fnang-tho-ao-do-hoa-mai.jpg&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fnang-tho-ao-do-hoa-mai.jpg&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fnang-tho-ao-do-hoa-mai.jpg&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fnang-tho-ao-do-hoa-mai.jpg&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fnang-tho-ao-do-hoa-mai.jpg&amp;w=3840&amp;q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+    </div>
+    <div class="relative break-inside-avoid rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(47,33,23,0.08)] aspect-[4/5]">
+     <img alt="Bộ ảnh áo dài nghệ thuật tại Gạo Nâu studio — Hà Nội &amp; Sài Gòn" class="object-cover object-top hover:scale-105 transition-transform duration-700" data-nimg="fill" decoding="async" loading="lazy" sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" src="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fchan-dung-ao-den-cham-nguc.jpg&amp;w=3840&amp;q=75" srcset="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fchan-dung-ao-den-cham-nguc.jpg&amp;w=256&amp;q=75 256w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fchan-dung-ao-den-cham-nguc.jpg&amp;w=384&amp;q=75 384w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fchan-dung-ao-den-cham-nguc.jpg&amp;w=640&amp;q=75 640w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fchan-dung-ao-den-cham-nguc.jpg&amp;w=750&amp;q=75 750w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fchan-dung-ao-den-cham-nguc.jpg&amp;w=828&amp;q=75 828w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fchan-dung-ao-den-cham-nguc.jpg&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fchan-dung-ao-den-cham-nguc.jpg&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fchan-dung-ao-den-cham-nguc.jpg&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fchan-dung-ao-den-cham-nguc.jpg&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fchan-dung-ao-den-cham-nguc.jpg&amp;w=3840&amp;q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+    </div>
+    <div class="relative break-inside-avoid rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(47,33,23,0.08)] aspect-[3/4]">
+     <img alt="Bộ ảnh chân dung nghệ thuật tại Gạo Nâu studio — Hà Nội &amp; Sài Gòn" class="object-cover object-top hover:scale-105 transition-transform duration-700" data-nimg="fill" decoding="async" loading="lazy" sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" src="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F22.2SGMSMAY01761-scaled.jpg&amp;w=3840&amp;q=75" srcset="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F22.2SGMSMAY01761-scaled.jpg&amp;w=256&amp;q=75 256w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F22.2SGMSMAY01761-scaled.jpg&amp;w=384&amp;q=75 384w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F22.2SGMSMAY01761-scaled.jpg&amp;w=640&amp;q=75 640w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F22.2SGMSMAY01761-scaled.jpg&amp;w=750&amp;q=75 750w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F22.2SGMSMAY01761-scaled.jpg&amp;w=828&amp;q=75 828w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F22.2SGMSMAY01761-scaled.jpg&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F22.2SGMSMAY01761-scaled.jpg&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F22.2SGMSMAY01761-scaled.jpg&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F22.2SGMSMAY01761-scaled.jpg&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2F22.2SGMSMAY01761-scaled.jpg&amp;w=3840&amp;q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+    </div>
+    <div class="relative break-inside-avoid rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(47,33,23,0.08)] aspect-[4/5]">
+     <img alt="Bộ ảnh gia đình nghệ thuật tại Gạo Nâu studio — Hà Nội &amp; Sài Gòn" class="object-cover object-top hover:scale-105 transition-transform duration-700" data-nimg="fill" decoding="async" loading="lazy" sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" src="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fgia-dinh-tre-cuoi.jpg&amp;w=3840&amp;q=75" srcset="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fgia-dinh-tre-cuoi.jpg&amp;w=256&amp;q=75 256w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fgia-dinh-tre-cuoi.jpg&amp;w=384&amp;q=75 384w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fgia-dinh-tre-cuoi.jpg&amp;w=640&amp;q=75 640w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fgia-dinh-tre-cuoi.jpg&amp;w=750&amp;q=75 750w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fgia-dinh-tre-cuoi.jpg&amp;w=828&amp;q=75 828w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fgia-dinh-tre-cuoi.jpg&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fgia-dinh-tre-cuoi.jpg&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fgia-dinh-tre-cuoi.jpg&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fgia-dinh-tre-cuoi.jpg&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Fgia-dinh-tre-cuoi.jpg&amp;w=3840&amp;q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+    </div>
+    <div class="relative break-inside-avoid rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(47,33,23,0.08)] aspect-[3/4]">
+     <img alt="Bộ ảnh áo dài nghệ thuật tại Gạo Nâu studio — Hà Nội &amp; Sài Gòn" class="object-cover object-top hover:scale-105 transition-transform duration-700" data-nimg="fill" decoding="async" loading="lazy" sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" src="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=3840&amp;q=75" srcset="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=256&amp;q=75 256w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=384&amp;q=75 384w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=640&amp;q=75 640w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=750&amp;q=75 750w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=828&amp;q=75 828w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F05%2Fao-dai-sen.jpg&amp;w=3840&amp;q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+    </div>
+    <div class="relative break-inside-avoid rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(47,33,23,0.08)] aspect-[4/5]">
+     <img alt="Bộ ảnh chân dung nghệ thuật tại Gạo Nâu studio — Hà Nội &amp; Sài Gòn" class="object-cover object-top hover:scale-105 transition-transform duration-700" data-nimg="fill" decoding="async" loading="lazy" sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" src="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Ftest.-010277-scaled.jpg&amp;w=3840&amp;q=75" srcset="/_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Ftest.-010277-scaled.jpg&amp;w=256&amp;q=75 256w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Ftest.-010277-scaled.jpg&amp;w=384&amp;q=75 384w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Ftest.-010277-scaled.jpg&amp;w=640&amp;q=75 640w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Ftest.-010277-scaled.jpg&amp;w=750&amp;q=75 750w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Ftest.-010277-scaled.jpg&amp;w=828&amp;q=75 828w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Ftest.-010277-scaled.jpg&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Ftest.-010277-scaled.jpg&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Ftest.-010277-scaled.jpg&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Ftest.-010277-scaled.jpg&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2Fwp-content%2Fuploads%2F2023%2F04%2Ftest.-010277-scaled.jpg&amp;w=3840&amp;q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+    </div>
+   </div>
+  </div>
+ </section>
+ <section class="gn-monogram-surface gn-surface-lattice-deep py-20 md:py-28 px-6 md:px-12">
+  <div class="relative z-10 max-w-7xl mx-auto">
+   <div class="text-center mb-16">
+    <p class="text-xs uppercase tracking-[0.3em] text-accent font-semibold mb-4">
+     Ba điều chỉ có ở Gạo Nâu
+    </p>
+    <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-normal leading-tight tracking-tight mb-6">
+     Cam kết giữ bằng
+     <br/>
+     <span class="italic text-accent">
+      hành động, không lời
+     </span>
+    </h2>
+   </div>
+   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+    <a class="group block text-center md:text-left" href="/bang-gia-chup-anh">
+     <div class="flex items-center justify-center md:justify-start gap-3 mb-6">
+      <span class="font-serif text-5xl text-accent">
+       0
+       <!-- -->
+       1
+      </span>
+     </div>
+     <h3 class="font-serif text-3xl md:text-4xl font-normal leading-tight mb-4 group-hover:text-accent transition-colors">
+      Chăm sóc trước buổi chụp
+     </h3>
+     <p class="text-base text-background/80 leading-relaxed mb-4">
+      Đắp mặt nạ và massage chân trước khi chụp — thư giãn trọn vẹn để từng khung hình thật nhất.
+     </p>
+     <span class="text-sm font-semibold text-accent group-hover:translate-x-1 inline-block transition-transform">
+      Tìm hiểu thêm
+      <!-- -->
+      →
+     </span>
+    </a>
+    <a class="group block text-center md:text-left" href="/tour-360">
+     <div class="flex items-center justify-center md:justify-start gap-3 mb-6">
+      <span class="font-serif text-5xl text-accent">
+       0
+       <!-- -->
+       2
+      </span>
+     </div>
+     <h3 class="font-serif text-3xl md:text-4xl font-normal leading-tight mb-4 group-hover:text-accent transition-colors">
+      Tour studio 360°
+     </h3>
+     <p class="text-base text-background/80 leading-relaxed mb-4">
+      Xem trước không gian studio và đội ngũ qua video 360° — trước cả khi đặt lịch. Để bạn yên tâm ngay từ phút đầu tiên.
+     </p>
+     <span class="text-sm font-semibold text-accent group-hover:translate-x-1 inline-block transition-transform">
+      Tìm hiểu thêm
+      <!-- -->
+      →
+     </span>
+    </a>
+    <a class="group block text-center md:text-left" href="/bang-gia-chup-anh">
+     <div class="flex items-center justify-center md:justify-start gap-3 mb-6">
+      <span class="font-serif text-5xl text-accent">
+       0
+       <!-- -->
+       3
+      </span>
+     </div>
+     <h3 class="font-serif text-3xl md:text-4xl font-normal leading-tight mb-4 group-hover:text-accent transition-colors">
+      Glow-Up Moment
+     </h3>
+     <p class="text-base text-background/80 leading-relaxed mb-4">
+      Mỗi khách nhận thêm một clip 15 giây kể câu chuyện riêng của mình. Món quà nhỏ, kỷ niệm lâu dài.
+     </p>
+     <span class="text-sm font-semibold text-accent group-hover:translate-x-1 inline-block transition-transform">
+      Tìm hiểu thêm
+      <!-- -->
+      →
+     </span>
+    </a>
+   </div>
+  </div>
+ </section>
+ <section class="gn-monogram-surface gn-surface-petal py-20 md:py-28 px-6 md:px-12">
+  <div class="relative z-10 max-w-7xl mx-auto">
+   <div class="text-center mb-16">
+    <p class="text-xs uppercase tracking-[0.3em] text-primary font-semibold mb-4">
+     Ba gói · Ba câu chuyện
+    </p>
+    <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-normal leading-tight tracking-tight text-foreground mb-6">
+     Câu chuyện nào
+     <br/>
+     <span class="italic text-primary">
+      thuộc về bạn?
+     </span>
+    </h2>
+    <p class="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+     Tìm gói phù hợp với câu chuyện bạn muốn kể
+    </p>
+   </div>
+   <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+    <div class="relative isolate overflow-hidden rounded-3xl p-8 md:p-10 flex flex-col bg-card border border-border shadow-[0_4px_24px_rgba(47,33,23,0.06)]">
+     <div class="relative z-10 mb-8">
+      <h3 class="font-serif text-3xl mb-2">
+       Khoảnh Khắc
+      </h3>
+      <p class="text-sm text-muted-foreground">
+       Ghi lại một khoảnh khắc đẹp — nhẹ nhàng, trọn vẹn
+      </p>
+     </div>
+     <div class="relative z-10 mb-8">
+      <div class="flex items-baseline gap-2">
+       <span class="font-serif text-5xl">
+        3.800.000đ
+       </span>
+      </div>
+      <p class="text-xs uppercase tracking-wider mt-2 text-muted-foreground">
+       Giá trọn gói
+      </p>
+     </div>
+     <ul class="relative z-10 space-y-3 mb-10 flex-1">
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-check size-5 shrink-0 mt-0.5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6 9 17l-5-5">
+        </path>
+       </svg>
+       <span>
+        1 layout makeup và làm tóc dành cho nữ
+       </span>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-check size-5 shrink-0 mt-0.5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6 9 17l-5-5">
+        </path>
+       </svg>
+       <span>
+        1 layout trang phục của Gạo Nâu chuẩn bị và phụ kiện kèm theo concept
+       </span>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-check size-5 shrink-0 mt-0.5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6 9 17l-5-5">
+        </path>
+       </svg>
+       <span>
+        10 ảnh chỉnh sửa kỹ lưỡng
+       </span>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-check size-5 shrink-0 mt-0.5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6 9 17l-5-5">
+        </path>
+       </svg>
+       <span>
+        1 background của Gạo Nâu khách hàng lựa chọn
+       </span>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-check size-5 shrink-0 mt-0.5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6 9 17l-5-5">
+        </path>
+       </svg>
+       <span>
+        Dịch vụ chăm sóc trước buổi chụp (đắp mặt nạ &amp; massage chân)
+       </span>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-check size-5 shrink-0 mt-0.5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6 9 17l-5-5">
+        </path>
+       </svg>
+       <span>
+        Ekip hỗ trợ tạo dáng, chọn góc xuyên suốt buổi chụp
+       </span>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-check size-5 shrink-0 mt-0.5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6 9 17l-5-5">
+        </path>
+       </svg>
+       <span>
+        Không gian và bối cảnh chụp
+       </span>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-check size-5 shrink-0 mt-0.5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6 9 17l-5-5">
+        </path>
+       </svg>
+       <span>
+        Toàn bộ ảnh gốc
+       </span>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-check size-5 shrink-0 mt-0.5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6 9 17l-5-5">
+        </path>
+       </svg>
+       <span>
+        Trả toàn bộ file ảnh gốc trong ngày
+       </span>
+      </li>
+     </ul>
+     <a class="relative z-10 block" href="/dat-lich">
+      <button class="group/button inline-flex shrink-0 items-center justify-center border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 [a]:hover:bg-primary/80 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 w-full rounded-full h-12 bg-primary text-primary-foreground hover:bg-primary/90" data-slot="button" tabindex="0" type="button">
+       Khoảnh Khắc
+      </button>
+     </a>
+    </div>
+    <div class="relative isolate overflow-hidden rounded-3xl p-8 md:p-10 flex flex-col gn-monogram-surface gn-surface-lattice-deep shadow-[0_24px_60px_rgba(47,33,23,0.22)] pt-14 md:scale-105 md:pt-16">
+     <div class="absolute top-5 left-1/2 z-20 inline-flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full bg-primary px-5 py-2 text-xs font-semibold uppercase tracking-wider text-primary-foreground">
+      Phổ biến nhất
+     </div>
+     <div class="relative z-10 mb-8">
+      <h3 class="font-serif text-3xl mb-2">
+       Câu Chuyện
+      </h3>
+      <p class="text-sm text-background/70">
+       Kể câu chuyện của bạn qua từng khung hình tinh tế
+      </p>
+     </div>
+     <div class="relative z-10 mb-8">
+      <div class="flex items-baseline gap-2">
+       <span class="font-serif text-5xl">
+        4.800.000đ
+       </span>
+      </div>
+      <p class="text-xs uppercase tracking-wider mt-2 text-background/60">
+       Giá trọn gói
+      </p>
+     </div>
+     <ul class="relative z-10 space-y-3 mb-10 flex-1">
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-check size-5 shrink-0 mt-0.5 text-accent" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6 9 17l-5-5">
+        </path>
+       </svg>
+       <span>
+        1 layout makeup và làm tóc dành cho nữ
+       </span>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-check size-5 shrink-0 mt-0.5 text-accent" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6 9 17l-5-5">
+        </path>
+       </svg>
+       <span>
+        1 layout trang phục của Gạo Nâu chuẩn bị và phụ kiện kèm theo concept
+       </span>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-check size-5 shrink-0 mt-0.5 text-accent" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6 9 17l-5-5">
+        </path>
+       </svg>
+       <span>
+        10 ảnh chỉnh sửa kỹ lưỡng
+       </span>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-check size-5 shrink-0 mt-0.5 text-accent" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6 9 17l-5-5">
+        </path>
+       </svg>
+       <span>
+        1 background của Gạo Nâu khách hàng lựa chọn
+       </span>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-check size-5 shrink-0 mt-0.5 text-accent" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6 9 17l-5-5">
+        </path>
+       </svg>
+       <span>
+        Dịch vụ chăm sóc trước buổi chụp (đắp mặt nạ &amp; massage chân)
+       </span>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-check size-5 shrink-0 mt-0.5 text-accent" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6 9 17l-5-5">
+        </path>
+       </svg>
+       <span>
+        Ekip hỗ trợ tạo dáng, chọn góc xuyên suốt buổi chụp
+       </span>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-check size-5 shrink-0 mt-0.5 text-accent" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6 9 17l-5-5">
+        </path>
+       </svg>
+       <span>
+        Không gian và bối cảnh chụp
+       </span>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-check size-5 shrink-0 mt-0.5 text-accent" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6 9 17l-5-5">
+        </path>
+       </svg>
+       <span>
+        Toàn bộ ảnh gốc
+       </span>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-check size-5 shrink-0 mt-0.5 text-accent" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6 9 17l-5-5">
+        </path>
+       </svg>
+       <span>
+        Trả toàn bộ file ảnh gốc trong ngày
+       </span>
+      </li>
+     </ul>
+     <a class="relative z-10 block" href="/dat-lich">
+      <button class="group/button inline-flex shrink-0 items-center justify-center border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 [a]:hover:bg-primary/80 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 w-full rounded-full h-12 bg-accent text-foreground hover:bg-accent/90" data-slot="button" tabindex="0" type="button">
+       Câu Chuyện
+      </button>
+     </a>
+    </div>
+    <div class="relative isolate overflow-hidden rounded-3xl p-8 md:p-10 flex flex-col bg-card border border-border shadow-[0_4px_24px_rgba(47,33,23,0.06)]">
+     <div class="relative z-10 mb-8">
+      <h3 class="font-serif text-3xl mb-2">
+       Di Sản
+      </h3>
+      <p class="text-sm text-muted-foreground">
+       Tác phẩm để lưu giữ — không chỉ cho hôm nay
+      </p>
+     </div>
+     <div class="relative z-10 mb-8">
+      <div class="flex items-baseline gap-2">
+       <span class="font-serif text-5xl">
+        6.800.000đ
+       </span>
+      </div>
+      <p class="text-xs uppercase tracking-wider mt-2 text-muted-foreground">
+       Giá trọn gói
+      </p>
+     </div>
+     <ul class="relative z-10 space-y-3 mb-10 flex-1">
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-check size-5 shrink-0 mt-0.5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6 9 17l-5-5">
+        </path>
+       </svg>
+       <span>
+        1 layout makeup và làm tóc CAO CẤP dành cho nữ
+       </span>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-check size-5 shrink-0 mt-0.5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6 9 17l-5-5">
+        </path>
+       </svg>
+       <span>
+        1 layout trang phục của Gạo Nâu chuẩn bị và phụ kiện kèm theo concept
+       </span>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-check size-5 shrink-0 mt-0.5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6 9 17l-5-5">
+        </path>
+       </svg>
+       <span>
+        10 ảnh chỉnh sửa kỹ lưỡng
+       </span>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-check size-5 shrink-0 mt-0.5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6 9 17l-5-5">
+        </path>
+       </svg>
+       <span>
+        1 background của Gạo Nâu khách hàng lựa chọn
+       </span>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-check size-5 shrink-0 mt-0.5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6 9 17l-5-5">
+        </path>
+       </svg>
+       <span>
+        Dịch vụ chăm sóc trước buổi chụp (đắp mặt nạ &amp; massage chân)
+       </span>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-check size-5 shrink-0 mt-0.5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6 9 17l-5-5">
+        </path>
+       </svg>
+       <span>
+        Ekip hỗ trợ tạo dáng, chọn góc xuyên suốt buổi chụp
+       </span>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-check size-5 shrink-0 mt-0.5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6 9 17l-5-5">
+        </path>
+       </svg>
+       <span>
+        Không gian và bối cảnh chụp
+       </span>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-check size-5 shrink-0 mt-0.5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6 9 17l-5-5">
+        </path>
+       </svg>
+       <span>
+        Toàn bộ ảnh gốc
+       </span>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-check size-5 shrink-0 mt-0.5 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 6 9 17l-5-5">
+        </path>
+       </svg>
+       <span>
+        Trả toàn bộ file ảnh gốc trong ngày
+       </span>
+      </li>
+     </ul>
+     <a class="relative z-10 block" href="/dat-lich">
+      <button class="group/button inline-flex shrink-0 items-center justify-center border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 [a]:hover:bg-primary/80 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 w-full rounded-full h-12 bg-primary text-primary-foreground hover:bg-primary/90" data-slot="button" tabindex="0" type="button">
+       Di Sản
+      </button>
+     </a>
+    </div>
+   </div>
+   <p class="text-center text-sm text-muted-foreground mt-10">
+    💡 Ghi chú: Giá có thể thay đổi theo concept đặc biệt và dịp lễ. Liên hệ
+    <a class="text-primary font-semibold" href="tel:+84396387597">
+     0396 387 597
+    </a>
+    để được tư vấn chi tiết.
+   </p>
+  </div>
+ </section>
+ <section class="bg-gradient-to-b from-[#fbf7ed] to-[#f7efe0] py-20 px-6 md:px-12 md:py-28">
+  <div class="relative z-10 max-w-7xl mx-auto">
+   <div class="text-center mb-16">
+    <p class="text-xs uppercase tracking-[0.3em] text-primary font-semibold mb-4">
+     Câu chuyện khách hàng
+    </p>
+    <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-normal leading-tight tracking-tight text-foreground mb-6">
+     Hơn cả những bộ ảnh
+     <br/>
+     là
+     <span class="italic text-primary">
+      câu chuyện thật
+     </span>
+    </h2>
+   </div>
+   <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+    <article class="group rounded-3xl bg-card overflow-hidden shadow-[0_4px_24px_rgba(47,33,23,0.06)] hover:shadow-[0_12px_40px_rgba(47,33,23,0.12)] transition-all duration-300 flex flex-col">
+     <div class="relative aspect-[4/5] overflow-hidden">
+      <img alt="Dấu nặng ra đi, những dấu nhỏ ở lại — khách hàng Gạo Nâu studio" class="object-cover object-top group-hover:scale-105 transition-transform duration-700" data-nimg="fill" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 33vw" src="/_next/image?url=%2Fapi%2Fmedia%2Ffile%2FBooking_37933-01.jpg&amp;w=3840&amp;q=75" srcset="/_next/image?url=%2Fapi%2Fmedia%2Ffile%2FBooking_37933-01.jpg&amp;w=256&amp;q=75 256w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FBooking_37933-01.jpg&amp;w=384&amp;q=75 384w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FBooking_37933-01.jpg&amp;w=640&amp;q=75 640w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FBooking_37933-01.jpg&amp;w=750&amp;q=75 750w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FBooking_37933-01.jpg&amp;w=828&amp;q=75 828w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FBooking_37933-01.jpg&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FBooking_37933-01.jpg&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FBooking_37933-01.jpg&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FBooking_37933-01.jpg&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FBooking_37933-01.jpg&amp;w=3840&amp;q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+     </div>
+     <div class="relative isolate p-8 flex-1 flex flex-col">
+      <svg aria-hidden="true" class="lucide lucide-quote size-8 text-primary/40 mb-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z">
+       </path>
+       <path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z">
+       </path>
+      </svg>
+      <p class="relative z-10 font-serif text-xl md:text-2xl leading-relaxed text-foreground italic mb-6 flex-1">
+       “
+       <!-- -->
+       Gửi những năm thương nhớ tới sau này
+       <!-- -->
+       ”
+      </p>
+      <div class="relative z-10 border-t border-border pt-4">
+       <p class="font-semibold text-foreground">
+        Dấu nặng ra đi, những dấu nhỏ ở lại
+       </p>
+       <p class="text-sm text-muted-foreground">
+       </p>
+      </div>
+     </div>
+    </article>
+    <article class="group rounded-3xl bg-card overflow-hidden shadow-[0_4px_24px_rgba(47,33,23,0.06)] hover:shadow-[0_12px_40px_rgba(47,33,23,0.12)] transition-all duration-300 flex flex-col">
+     <div class="relative aspect-[4/5] overflow-hidden">
+      <img alt="Sau ánh hào quang là thầm lặng — Nam Khánh · Content Creator, khách hàng Gạo Nâu" class="object-cover object-top group-hover:scale-105 transition-transform duration-700" data-nimg="fill" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 33vw" src="/_next/image?url=%2Fwp-content%2Fuploads%2F2026%2F06%2Fsau-anh-hao-quang-la-tham-lang%2Fsau-anh-hao-quang-la-tham-lang-06.jpg&amp;w=3840&amp;q=75" srcset="/_next/image?url=%2Fwp-content%2Fuploads%2F2026%2F06%2Fsau-anh-hao-quang-la-tham-lang%2Fsau-anh-hao-quang-la-tham-lang-06.jpg&amp;w=256&amp;q=75 256w, /_next/image?url=%2Fwp-content%2Fuploads%2F2026%2F06%2Fsau-anh-hao-quang-la-tham-lang%2Fsau-anh-hao-quang-la-tham-lang-06.jpg&amp;w=384&amp;q=75 384w, /_next/image?url=%2Fwp-content%2Fuploads%2F2026%2F06%2Fsau-anh-hao-quang-la-tham-lang%2Fsau-anh-hao-quang-la-tham-lang-06.jpg&amp;w=640&amp;q=75 640w, /_next/image?url=%2Fwp-content%2Fuploads%2F2026%2F06%2Fsau-anh-hao-quang-la-tham-lang%2Fsau-anh-hao-quang-la-tham-lang-06.jpg&amp;w=750&amp;q=75 750w, /_next/image?url=%2Fwp-content%2Fuploads%2F2026%2F06%2Fsau-anh-hao-quang-la-tham-lang%2Fsau-anh-hao-quang-la-tham-lang-06.jpg&amp;w=828&amp;q=75 828w, /_next/image?url=%2Fwp-content%2Fuploads%2F2026%2F06%2Fsau-anh-hao-quang-la-tham-lang%2Fsau-anh-hao-quang-la-tham-lang-06.jpg&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2Fwp-content%2Fuploads%2F2026%2F06%2Fsau-anh-hao-quang-la-tham-lang%2Fsau-anh-hao-quang-la-tham-lang-06.jpg&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2Fwp-content%2Fuploads%2F2026%2F06%2Fsau-anh-hao-quang-la-tham-lang%2Fsau-anh-hao-quang-la-tham-lang-06.jpg&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2Fwp-content%2Fuploads%2F2026%2F06%2Fsau-anh-hao-quang-la-tham-lang%2Fsau-anh-hao-quang-la-tham-lang-06.jpg&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2Fwp-content%2Fuploads%2F2026%2F06%2Fsau-anh-hao-quang-la-tham-lang%2Fsau-anh-hao-quang-la-tham-lang-06.jpg&amp;w=3840&amp;q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+     </div>
+     <div class="relative isolate p-8 flex-1 flex flex-col">
+      <svg aria-hidden="true" class="lucide lucide-quote size-8 text-primary/40 mb-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z">
+       </path>
+       <path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z">
+       </path>
+      </svg>
+      <p class="relative z-10 font-serif text-xl md:text-2xl leading-relaxed text-foreground italic mb-6 flex-1">
+       “
+       <!-- -->
+       hành trình trở thành một người biết lắng nghe hơn
+       <!-- -->
+       ”
+      </p>
+      <div class="relative z-10 border-t border-border pt-4">
+       <p class="font-semibold text-foreground">
+        Sau ánh hào quang là thầm lặng
+       </p>
+       <p class="text-sm text-muted-foreground">
+        Nam Khánh · Content Creator
+       </p>
+      </div>
+     </div>
+    </article>
+    <article class="group rounded-3xl bg-card overflow-hidden shadow-[0_4px_24px_rgba(47,33,23,0.06)] hover:shadow-[0_12px_40px_rgba(47,33,23,0.12)] transition-all duration-300 flex flex-col">
+     <div class="relative aspect-[4/5] overflow-hidden">
+      <img alt="Một người mẹ bắt đầu yêu lại chính mình — mebopiu - mẹ đơn thân, khách hàng Gạo Nâu" class="object-cover object-top group-hover:scale-105 transition-transform duration-700" data-nimg="fill" decoding="async" loading="lazy" sizes="(max-width: 768px) 100vw, 33vw" src="/_next/image?url=%2Fwp-content%2Fuploads%2F2026%2F06%2Fmebopiu%2Fmebopiu-10.jpg&amp;w=3840&amp;q=75" srcset="/_next/image?url=%2Fwp-content%2Fuploads%2F2026%2F06%2Fmebopiu%2Fmebopiu-10.jpg&amp;w=256&amp;q=75 256w, /_next/image?url=%2Fwp-content%2Fuploads%2F2026%2F06%2Fmebopiu%2Fmebopiu-10.jpg&amp;w=384&amp;q=75 384w, /_next/image?url=%2Fwp-content%2Fuploads%2F2026%2F06%2Fmebopiu%2Fmebopiu-10.jpg&amp;w=640&amp;q=75 640w, /_next/image?url=%2Fwp-content%2Fuploads%2F2026%2F06%2Fmebopiu%2Fmebopiu-10.jpg&amp;w=750&amp;q=75 750w, /_next/image?url=%2Fwp-content%2Fuploads%2F2026%2F06%2Fmebopiu%2Fmebopiu-10.jpg&amp;w=828&amp;q=75 828w, /_next/image?url=%2Fwp-content%2Fuploads%2F2026%2F06%2Fmebopiu%2Fmebopiu-10.jpg&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2Fwp-content%2Fuploads%2F2026%2F06%2Fmebopiu%2Fmebopiu-10.jpg&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2Fwp-content%2Fuploads%2F2026%2F06%2Fmebopiu%2Fmebopiu-10.jpg&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2Fwp-content%2Fuploads%2F2026%2F06%2Fmebopiu%2Fmebopiu-10.jpg&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2Fwp-content%2Fuploads%2F2026%2F06%2Fmebopiu%2Fmebopiu-10.jpg&amp;w=3840&amp;q=75 3840w" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"/>
+     </div>
+     <div class="relative isolate p-8 flex-1 flex flex-col">
+      <svg aria-hidden="true" class="lucide lucide-quote size-8 text-primary/40 mb-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z">
+       </path>
+       <path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z">
+       </path>
+      </svg>
+      <p class="relative z-10 font-serif text-xl md:text-2xl leading-relaxed text-foreground italic mb-6 flex-1">
+       “
+       <!-- -->
+       Con trai là lý do khiến mình mạnh mẽ hơn
+       <!-- -->
+       ”
+      </p>
+      <div class="relative z-10 border-t border-border pt-4">
+       <p class="font-semibold text-foreground">
+        Một người mẹ bắt đầu yêu lại chính mình
+       </p>
+       <p class="text-sm text-muted-foreground">
+        mebopiu - mẹ đơn thân
+       </p>
+      </div>
+     </div>
+    </article>
+   </div>
+  </div>
+ </section>
+ <section class="gn-monogram-surface gn-surface-petal py-20 md:py-28 px-6 md:px-12">
+  <div class="relative z-10 max-w-7xl mx-auto">
+   <div class="text-center mb-16">
+    <p class="text-xs uppercase tracking-[0.3em] text-primary font-semibold mb-4">
+     Cơ sở
+    </p>
+    <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-normal leading-tight tracking-tight text-foreground mb-6">
+     Gặp Gạo Nâu tại
+     <br/>
+     <span class="italic text-primary">
+      Hà Nội &amp; Sài Gòn
+     </span>
+    </h2>
+   </div>
+   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+    <article class="relative isolate overflow-hidden rounded-3xl bg-card p-8 md:p-10 border border-border shadow-[0_4px_24px_rgba(47,33,23,0.05)] hover:border-primary/30 transition-all duration-300">
+     <div class="relative z-10 flex items-start justify-between mb-6">
+      <div>
+       <p class="text-xs uppercase tracking-[0.2em] text-primary font-semibold mb-2">
+        Cơ sở
+       </p>
+       <h3 class="font-serif text-3xl md:text-4xl font-normal leading-tight">
+        Hà Nội
+       </h3>
+      </div>
+     </div>
+     <ul class="relative z-10 space-y-4 mb-8">
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-map-pin size-5 text-primary shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+        </path>
+        <circle cx="12" cy="10" r="3">
+        </circle>
+       </svg>
+       <span class="text-foreground">
+        Sảnh Thương Mại, Tầng 3, Tòa HH01 Meco Complex, Ngõ 102 Trường Chinh, Phường Kim Liên, Hà Nội
+       </span>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-phone size-5 text-primary shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384">
+        </path>
+       </svg>
+       <a class="text-foreground font-semibold hover:text-primary" href="tel:+84396387597">
+        0396 387 597
+       </a>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-clock size-5 text-primary shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="10">
+        </circle>
+        <path d="M12 6v6l4 2">
+        </path>
+       </svg>
+       <span class="text-foreground">
+        Mở cửa: 8:00 - 20:00 (Thứ 2 - Chủ nhật)
+       </span>
+      </li>
+     </ul>
+     <div class="relative z-10 flex flex-col sm:flex-row gap-3">
+      <a class="flex-1 inline-flex items-center justify-center h-11 px-6 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-colors" href="/co-so/ha-noi">
+       Xem chi tiết
+      </a>
+      <a class="flex-1 inline-flex items-center justify-center h-11 px-6 rounded-full border border-foreground/20 text-foreground font-semibold text-sm hover:bg-foreground/5 transition-colors" href="https://maps.app.goo.gl/7Wxd7mmXkdK6FL9F7" rel="noopener noreferrer" target="_blank">
+       Chỉ đường →
+      </a>
+     </div>
+    </article>
+    <article class="relative isolate overflow-hidden rounded-3xl bg-card p-8 md:p-10 border border-border shadow-[0_4px_24px_rgba(47,33,23,0.05)] hover:border-primary/30 transition-all duration-300">
+     <div class="relative z-10 flex items-start justify-between mb-6">
+      <div>
+       <p class="text-xs uppercase tracking-[0.2em] text-primary font-semibold mb-2">
+        Cơ sở
+       </p>
+       <h3 class="font-serif text-3xl md:text-4xl font-normal leading-tight">
+        TP Hồ Chí Minh
+       </h3>
+      </div>
+     </div>
+     <ul class="relative z-10 space-y-4 mb-8">
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-map-pin size-5 text-primary shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+        </path>
+        <circle cx="12" cy="10" r="3">
+        </circle>
+       </svg>
+       <span class="text-foreground">
+        351/45 Lê Văn Sỹ, Phường Nhiêu Lộc, Thành Phố Hồ Chí Minh
+       </span>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-phone size-5 text-primary shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384">
+        </path>
+       </svg>
+       <a class="text-foreground font-semibold hover:text-primary" href="tel:+84396387597">
+        0396 387 597
+       </a>
+      </li>
+      <li class="flex items-start gap-3 text-sm">
+       <svg aria-hidden="true" class="lucide lucide-clock size-5 text-primary shrink-0 mt-0.5" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="10">
+        </circle>
+        <path d="M12 6v6l4 2">
+        </path>
+       </svg>
+       <span class="text-foreground">
+        Mở cửa: 8:00 - 20:00 (Thứ 2 - Chủ nhật)
+       </span>
+      </li>
+     </ul>
+     <div class="relative z-10 flex flex-col sm:flex-row gap-3">
+      <a class="flex-1 inline-flex items-center justify-center h-11 px-6 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-colors" href="/co-so/sai-gon">
+       Xem chi tiết
+      </a>
+      <a class="flex-1 inline-flex items-center justify-center h-11 px-6 rounded-full border border-foreground/20 text-foreground font-semibold text-sm hover:bg-foreground/5 transition-colors" href="https://maps.app.goo.gl/vggcpYdcawXzqLTK8" rel="noopener noreferrer" target="_blank">
+       Chỉ đường →
+      </a>
+     </div>
+    </article>
+   </div>
+  </div>
+ </section>
+ <section class="gn-monogram-surface gn-surface-lattice-gold py-20 md:py-32 px-6 md:px-12" id="dat-lich">
+  <div class="relative z-10 max-w-5xl mx-auto text-center">
+   <p class="text-xs uppercase tracking-[0.3em] text-accent font-semibold mb-6">
+    Khi bạn sẵn sàng
+   </p>
+   <h2 class="font-serif text-4xl md:text-6xl lg:text-7xl font-normal leading-tight tracking-tight mb-6">
+    Câu chuyện của bạn
+    <br/>
+    <span class="italic">
+     bắt đầu ở đây
+    </span>
+   </h2>
+   <p class="text-base md:text-lg opacity-90 max-w-2xl mx-auto mb-12">
+    Để lại thông tin, ekip Gạo Nâu sẽ liên hệ lắng nghe câu chuyện của bạn và tư vấn concept phù hợp — không vội vàng, không áp lực.
+   </p>
+   <div class="max-w-2xl mx-auto rounded-3xl bg-card text-foreground p-6 md:p-8 shadow-[0_24px_64px_rgba(47,33,23,0.22)] text-left">
+    <form aria-label="Form gửi thông tin liên hệ Gạo Nâu" class="space-y-4 md:space-y-5">
+     <input aria-hidden="true" autocomplete="off" class="absolute opacity-0 pointer-events-none h-0 w-0" name="website" tabindex="-1" type="text"/>
+     <div>
+      <label class="block text-sm font-medium text-foreground mb-2" for="final-cta-name">
+       Họ và tên
+       <!-- -->
+       <span class="text-primary">
+        *
+       </span>
+      </label>
+      <input aria-invalid="false" autocomplete="name" class="w-full min-w-0 border py-1 text-base transition-colors outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:bg-input/50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 md:text-sm dark:bg-input/30 dark:disabled:bg-input/80 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 h-11 rounded-full px-5 bg-background border-border disabled:opacity-60 md:h-12" data-slot="input" id="final-cta-name" name="name" placeholder="VD: Nguyễn Thị Hoa" required="" type="text"/>
+     </div>
+     <div>
+      <label class="block text-sm font-medium text-foreground mb-2" for="final-cta-phone">
+       Số điện thoại
+       <!-- -->
+       <span class="text-primary">
+        *
+       </span>
+      </label>
+      <input aria-invalid="false" autocomplete="tel" class="w-full min-w-0 border py-1 text-base transition-colors outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:bg-input/50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 md:text-sm dark:bg-input/30 dark:disabled:bg-input/80 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 h-11 rounded-full px-5 bg-background border-border disabled:opacity-60 md:h-12" data-slot="input" id="final-cta-phone" name="phone" placeholder="VD: 0901 234 567" required="" type="tel"/>
+     </div>
+     <div>
+      <label class="block text-sm font-medium text-foreground mb-2" for="final-cta-service">
+       Concept yêu thích
+      </label>
+      <select class="w-full h-11 rounded-full px-5 bg-background border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary disabled:opacity-60 md:h-12" id="final-cta-service" name="service">
+       <option selected="" value="">
+        -- Chọn dịch vụ --
+       </option>
+       <option value="chup-anh-chan-dung">
+        Chụp ảnh chân dung
+       </option>
+       <option value="chup-anh-gia-dinh">
+        Chụp ảnh gia đình
+       </option>
+       <option value="chup-anh-ao-dai">
+        Chụp ảnh áo dài
+       </option>
+       <option value="chup-anh-nang-tho">
+        Chụp ảnh nàng thơ
+       </option>
+       <option value="chup-anh-me-bau">
+        Chụp ảnh mẹ và con
+       </option>
+       <option value="chup-anh-sinh-nhat">
+        Chụp ảnh sinh nhật &amp; nhóm bạn
+       </option>
+       <option value="other">
+        Chưa rõ — cần tư vấn
+       </option>
+      </select>
+     </div>
+     <div>
+      <label class="block text-sm font-medium text-foreground mb-2" for="final-cta-concept">
+       Ý tưởng concept cụ thể
+       <!-- -->
+       <span class="text-muted-foreground font-normal">
+        (nếu có)
+       </span>
+      </label>
+      <input autocomplete="off" class="w-full min-w-0 border py-1 text-base transition-colors outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:bg-input/50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 md:text-sm dark:bg-input/30 dark:disabled:bg-input/80 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 h-11 rounded-full px-5 bg-background border-border disabled:opacity-60 md:h-12" data-slot="input" id="final-cta-concept" maxlength="200" name="concept" placeholder="VD: Áo dài sen, Mẹ và con, Retro Sài Gòn xưa…" type="text"/>
+     </div>
+     <div>
+      <label class="block text-sm font-medium text-foreground mb-2">
+       Cơ sở gần nhất
+      </label>
+      <div class="grid grid-cols-2 gap-3">
+       <label class="cursor-pointer rounded-2xl border border-border bg-background p-3 hover:border-primary transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5 md:p-4">
+        <input class="sr-only" name="location" type="radio" value="ha-noi"/>
+        <div>
+         <div class="flex items-center gap-2 mb-1">
+          <svg aria-hidden="true" class="lucide lucide-map-pin w-4 h-4 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+           </path>
+           <circle cx="12" cy="10" r="3">
+           </circle>
+          </svg>
+          <span class="text-sm font-semibold text-foreground">
+           Hà Nội
+          </span>
+         </div>
+         <p class="text-xs text-muted-foreground">
+          Cơ sở Hà Nội
+         </p>
+        </div>
+       </label>
+       <label class="cursor-pointer rounded-2xl border border-border bg-background p-3 hover:border-primary transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5 md:p-4">
+        <input class="sr-only" name="location" type="radio" value="sai-gon"/>
+        <div>
+         <div class="flex items-center gap-2 mb-1">
+          <svg aria-hidden="true" class="lucide lucide-map-pin w-4 h-4 text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+           </path>
+           <circle cx="12" cy="10" r="3">
+           </circle>
+          </svg>
+          <span class="text-sm font-semibold text-foreground">
+           TP Hồ Chí Minh
+          </span>
+         </div>
+         <p class="text-xs text-muted-foreground">
+          Cơ sở Sài Gòn
+         </p>
+        </div>
+       </label>
+      </div>
+     </div>
+     <div>
+      <label class="block text-sm font-medium text-foreground mb-2" for="final-cta-note">
+       Ghi chú thêm
+       <!-- -->
+       <span class="text-muted-foreground font-normal">
+        (tuỳ chọn)
+       </span>
+      </label>
+      <textarea class="w-full rounded-2xl px-5 py-3 bg-background border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-none disabled:opacity-60" id="final-cta-note" name="note" placeholder="VD: Muốn chụp dịp sinh nhật, cần concept Tết, đi cùng bé 3 tuổi..." rows="4"></textarea>
+     </div>
+     <button class="group/button inline-flex shrink-0 items-center justify-center border border-transparent bg-clip-padding font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 text-primary-foreground [a]:hover:bg-primary/80 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 w-full rounded-full h-14 text-base bg-primary hover:bg-primary/90 disabled:opacity-70" data-slot="button" tabindex="0" type="submit">
+      Để ekip liên hệ với bạn →
+     </button>
+     <p class="text-xs text-muted-foreground text-center">
+      Gạo Nâu cam kết chỉ gọi một cuộc để tư vấn. Không spam, không làm phiền nếu bạn chưa sẵn sàng.
+     </p>
+    </form>
+   </div>
+   <div class="pt-10">
+    <p class="text-sm opacity-80 mb-4">
+     Hoặc liên hệ trực tiếp:
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-4">
+     <a class="inline-flex items-center gap-2 bg-background/15 backdrop-blur-sm hover:bg-background/25 px-6 h-12 rounded-full font-semibold transition-colors" href="tel:+84396387597">
+      ☎ Gọi
+      <!-- -->
+      <!-- -->
+      0396 387 597
+     </a>
+     <a class="inline-flex items-center gap-2 bg-background/15 backdrop-blur-sm hover:bg-background/25 px-6 h-12 rounded-full font-semibold transition-colors" href="https://zalo.me/2780520369440427485" rel="noopener noreferrer" target="_blank">
+      💬 Nhắn Zalo
+     </a>
+     <a class="inline-flex items-center gap-2 bg-background/15 backdrop-blur-sm hover:bg-background/25 px-6 h-12 rounded-full font-semibold transition-colors" href="https://www.facebook.com/gaonauchupanh" rel="noopener noreferrer" target="_blank">
+      💌 Messenger
+     </a>
+    </div>
+   </div>
+  </div>
+ </section>
+</main>
+$/$
+<div aria-hidden="true" class="fixed inset-0 z-[45] bg-foreground/35 backdrop-blur-[3px] transition-opacity duration-[250ms] ease-out opacity-0 pointer-events-none">
+</div>
+<div class="fixed bottom-5 right-5 z-50 flex flex-col-reverse items-end gap-2.5 font-sans">
+ <button aria-controls="bottom-fab-menu-items" aria-expanded="false" aria-label="Mở menu nhảy nhanh" class="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-accent text-primary-foreground border-0 shadow-[0_10px_28px_rgba(142,97,38,0.4),0_3px_10px_rgba(0,0,0,0.15)] flex items-center justify-center cursor-pointer transition-transform duration-[250ms] ease-[cubic-bezier(.2,.9,.3,1.4)] active:scale-95 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background" type="button">
+  <svg aria-hidden="true" class="lucide lucide-menu w-6 h-6" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+   <path d="M4 5h16">
+   </path>
+   <path d="M4 12h16">
+   </path>
+   <path d="M4 19h16">
+   </path>
+  </svg>
+ </button>
+</div>
+
+{%endblock %}
